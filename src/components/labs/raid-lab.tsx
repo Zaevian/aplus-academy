@@ -2,22 +2,22 @@
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-import type { Lab } from "@/content/schema";
-
-type Level = "0" | "1" | "5" | "6" | "10";
+import type { LabSimProps } from "@/components/labs/lab-kit";
+import { LabStatus, useSolved } from "@/components/labs/lab-kit";
+import { raidArrayDead, raid10PairFailed, raid10SplitFailures, type RaidLevel } from "@/lib/raid";
 
 const META: Record<
-  Level,
-  { min: number; parity: string; fail: number; note: string }
+  RaidLevel,
+  { min: number; parity: string; note: string }
 > = {
-  "0": { min: 2, parity: "none", fail: 0, note: "Striping only. Any disk death loses the array." },
-  "1": { min: 2, parity: "mirror", fail: 1, note: "Each block exists twice. One disk can die." },
-  "5": { min: 3, parity: "1 distributed", fail: 1, note: "One parity stripe. One disk can die. Rebuild is stressful." },
-  "6": { min: 4, parity: "2 distributed", fail: 2, note: "Two parity. Two disks can die. Capacity cost is higher." },
-  "10": { min: 4, parity: "mirrored pairs", fail: 1, note: "Can lose one disk per pair. Not two in the same pair." },
+  "0": { min: 2, parity: "none", note: "Striping only. Any disk death loses the array." },
+  "1": { min: 2, parity: "mirror", note: "Each block exists twice. One disk can die on a 2-disk mirror." },
+  "5": { min: 3, parity: "1 distributed", note: "One parity stripe. One disk can die. Rebuild is stressful." },
+  "6": { min: 4, parity: "2 distributed", note: "Two parity. Two disks can die. Capacity cost is higher." },
+  "10": { min: 4, parity: "mirrored pairs", note: "Can lose one disk per pair. Not two in the same pair. RAID is not a backup." },
 };
 
-function usable(level: Level, n: number, size: number): number {
+function usable(level: RaidLevel, n: number, size: number): number {
   if (n < META[level].min) return 0;
   if (level === "0") return n * size;
   if (level === "1") return Math.floor(n / 2) * size;
@@ -26,30 +26,51 @@ function usable(level: Level, n: number, size: number): number {
   return Math.floor(n / 2) * size;
 }
 
-export function RaidLab({ lab }: { lab: Lab }) {
+export function RaidLab({ lab, onSolved }: LabSimProps) {
   void lab;
-  const [level, setLevel] = useState<Level>("1");
+  const { solved, markSolved } = useSolved(onSolved);
+  const [level, setLevel] = useState<RaidLevel>("10");
   const [disks, setDisks] = useState(4);
   const [failed, setFailed] = useState<number[]>([]);
+  const [sawSplit, setSawSplit] = useState(false);
+  const [sawPairKill, setSawPairKill] = useState(false);
   const size = 1;
   const cap = usable(level, disks, size);
+  const dead = raidArrayDead(level, disks, failed);
   const failedCount = failed.length;
-  const dead =
-    (level === "0" && failedCount >= 1) ||
-    (level === "1" && failedCount >= disks) ||
-    (level === "5" && failedCount >= 2) ||
-    (level === "6" && failedCount >= 3) ||
-    (level === "10" && failedCount >= 2);
 
   const blocks = useMemo(() => ["A", "B", "C", "D"], []);
 
+  function pairOf(i: number) {
+    return Math.floor(i / 2);
+  }
+
+  function toggleDisk(i: number) {
+    const next = failed.includes(i) ? failed.filter((x) => x !== i) : [...failed, i];
+    setFailed(next);
+    if (level === "10") {
+      const pairKill = raid10PairFailed(disks, next);
+      const split = raid10SplitFailures(disks, next);
+      const nextSplit = sawSplit || split;
+      const nextKill = sawPairKill || pairKill;
+      if (split) setSawSplit(true);
+      if (pairKill) setSawPairKill(true);
+      if (nextSplit && nextKill) markSolved();
+    }
+  }
+
   return (
     <div className="space-y-3 text-sm">
+      <LabStatus
+        solved={solved}
+        mission="RAID 10 mission: fail two disks in different pairs (array stays up), then fail both disks in one pair (array dies). RAID is not a backup."
+      />
       <div className="flex flex-wrap gap-2">
-        {(Object.keys(META) as Level[]).map((l) => (
+        {(Object.keys(META) as RaidLevel[]).map((l) => (
           <Button
             key={l}
             size="sm"
+            className="min-h-11"
             variant={level === l ? "default" : "outline"}
             onClick={() => {
               setLevel(l);
@@ -81,21 +102,31 @@ export function RaidLab({ lab }: { lab: Lab }) {
         <strong>{cap} TB</strong> · failed disks {failedCount} · array{" "}
         {dead ? "offline / data lost" : failedCount ? "degraded" : "healthy"}
       </p>
+      {level === "10" ? (
+        <p className="text-xs text-muted-foreground">
+          Pairs:{" "}
+          {Array.from({ length: Math.floor(disks / 2) }, (_, p) => (
+            <span key={p} className="mr-2">
+              [{p * 2 + 1}+{p * 2 + 2}]
+            </span>
+          ))}
+          Two failed disks are fatal only when they are the same mirrored pair.
+        </p>
+      ) : null}
       <div className="flex flex-wrap gap-2">
         {Array.from({ length: disks }).map((_, i) => (
           <button
             key={i}
             type="button"
-            onClick={() =>
-              setFailed((f) =>
-                f.includes(i) ? f.filter((x) => x !== i) : [...f, i],
-              )
-            }
-            className={`w-24 rounded border p-2 text-left ${
+            onClick={() => toggleDisk(i)}
+            className={`min-h-11 w-24 rounded border p-2 text-left focus-visible:ring-3 focus-visible:ring-ring/50 ${
               failed.includes(i) ? "border-destructive bg-destructive/10" : ""
             }`}
           >
-            <div className="text-xs text-muted-foreground">Disk {i + 1}</div>
+            <div className="text-xs text-muted-foreground">
+              Disk {i + 1}
+              {level === "10" ? ` · pair ${pairOf(i) + 1}` : ""}
+            </div>
             <div className="font-mono text-xs">
               {failed.includes(i)
                 ? "FAIL"

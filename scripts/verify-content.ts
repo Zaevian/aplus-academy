@@ -1,6 +1,9 @@
 import { ALL_OBJECTIVES } from "../src/content/catalog";
 import { getLabs, getLessons, getQuestions, buildCoverage } from "../src/content/registry";
 import { QuestionSchema, LessonSchema } from "../src/content/schema";
+import { LABS } from "../src/content/labs";
+import { LAB_HOST_COMPONENTS } from "../src/content/labs/implemented";
+import { PORTS } from "../src/content/ports";
 
 const errors: string[] = [];
 
@@ -33,6 +36,43 @@ for (const row of coverage) {
 }
 
 if (getLabs().length < 10) errors.push("Expected at least 10 labs");
+
+const implemented = new Set<string>(LAB_HOST_COMPONENTS);
+for (const lab of LABS) {
+  if (lab.component === "InteractiveSimLab") {
+    errors.push(`Lab ${lab.slug} still uses InteractiveSimLab`);
+  }
+  if (!implemented.has(lab.component)) {
+    errors.push(
+      `Lab ${lab.slug} component ${lab.component} has no LabHost mapper (InteractiveSimLab fallback is forbidden)`,
+    );
+  }
+}
+
+const officialPorts = [
+  "20/21",
+  "22",
+  "23",
+  "25",
+  "53",
+  "67/68",
+  "80",
+  "110",
+  "143",
+  "137-139",
+  "389",
+  "443",
+  "445",
+  "3389",
+];
+if (PORTS.map((p) => p.ports).join() !== officialPorts.join()) {
+  errors.push("PORTS must equal the official 2.1 list");
+}
+
+const ai = ALL_OBJECTIVES.find((o) => o.id === "C2-D4-O10");
+if (!ai || !ai.officialCode.startsWith("4.10")) {
+  errors.push("AI fundamentals must be cataloged as objective 4.10");
+}
 
 if (errors.length) {
   console.error(`Content verification failed (${errors.length}):`);

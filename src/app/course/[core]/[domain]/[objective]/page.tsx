@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ALL_OBJECTIVES } from "@/content/catalog";
+import { ALL_OBJECTIVES, DOMAINS } from "@/content/catalog";
 import { getLessons } from "@/content/registry";
 import { objectivePath } from "@/lib/course";
+import { DomainGate } from "@/components/course/domain-gate";
 
 export default async function ObjectivePage({
   params,
@@ -17,7 +18,9 @@ export default async function ObjectivePage({
   if (!o) notFound();
   const lessons = getLessons().filter((l) => l.objectiveId === o.id);
   const base = objectivePath(o);
+  const domain = DOMAINS.find((d) => d.core === o.core && d.number === o.domain);
   return (
+    <DomainGate domainId={domain?.id ?? "FND-D0"}>
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
       <p className="text-xs text-muted-foreground">{o.id}</p>
       <h1 className="text-2xl font-semibold">
@@ -47,5 +50,6 @@ export default async function ObjectivePage({
         )}
       </ul>
     </div>
+    </DomainGate>
   );
 }

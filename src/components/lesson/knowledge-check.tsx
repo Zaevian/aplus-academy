@@ -8,16 +8,24 @@ import { shuffle, isCorrect } from "@/lib/questions";
 import { completeBlock, recordAnswer } from "@/lib/progress-actions";
 import { useAcademy } from "@/components/academy-provider";
 
+function saltFromId(id: string): number {
+  let n = 0;
+  for (let i = 0; i < id.length; i++) n = (n * 31 + id.charCodeAt(i)) >>> 0;
+  return (n % 1_000_000) / 1_000_000;
+}
+
 export function KnowledgeCheck({
   blockId,
   questions,
   context = "block",
   onPassed,
+  onItemResult,
 }: {
   blockId: string;
   questions: Question[];
   context?: "block" | "checkpoint" | "domain-quiz" | "review" | "practice";
   onPassed?: () => void;
+  onItemResult?: (index: number, correct: boolean) => void;
 }) {
   const { progress } = useAcademy();
   const already = progress?.completedBlocks.includes(blockId) ?? false;
@@ -29,7 +37,7 @@ export function KnowledgeCheck({
 
   const question = questions[index];
   const order = useMemo(
-    () => (question ? shuffle(question.choices, question.id.length) : []),
+    () => (question ? shuffle(question.choices, saltFromId(question.id)) : []),
     [question],
   );
 
@@ -37,6 +45,22 @@ export function KnowledgeCheck({
 
   const locked = already && context === "block";
   const multi = question.type === "multi";
+
+  if (locked) {
+    return (
+      <section
+        className="rounded-lg border bg-card p-4"
+        aria-labelledby={`${blockId}-title`}
+      >
+        <h3 id={`${blockId}-title`} className="text-sm font-semibold">
+          Knowledge check complete
+        </h3>
+        <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-400">
+          This check is complete. Later blocks stay unlocked after reload.
+        </p>
+      </section>
+    );
+  }
 
   async function submit() {
     const result = await recordAnswer({
@@ -46,6 +70,7 @@ export function KnowledgeCheck({
     });
     setSubmitted(true);
     setCorrectNow(result.correct);
+    onItemResult?.(index, result.correct);
     if (result.correct) {
       const last = index === questions.length - 1;
       if (last) {
@@ -76,6 +101,14 @@ export function KnowledgeCheck({
     setAlt(false);
   }
 
+  const chosen = question.choices.filter((c) => selected.includes(c.id));
+  const correctChoices = question.choices.filter((c) =>
+    question.correct.includes(c.id),
+  );
+  const otherDistractors = question.choices.filter(
+    (c) => !question.correct.includes(c.id) && !selected.includes(c.id),
+  );
+
   return (
     <section
       className="rounded-lg border bg-card p-4"
@@ -83,17 +116,22 @@ export function KnowledgeCheck({
     >
       <h3 id={`${blockId}-title`} className="text-sm font-semibold">
         {context === "checkpoint" ? "Objective checkpoint" : "Knowledge check"}{" "}
-        <span className="font-normal text-muted-foreground">
+        <span className="font-normal text-muted-foreground" data-testid="check-counter">
           {index + 1} / {questions.length}
         </span>
       </h3>
+      {multi ? (
+        <p className="mt-1 text-xs text-muted-foreground">
+          Select every correct option, then check.
+        </p>
+      ) : null}
       {question.scenario ? (
         <p className="mt-2 rounded-md bg-muted/60 p-3 text-sm leading-6">
           {question.scenario}
         </p>
       ) : null}
       <p className="mt-3 text-sm leading-6 font-medium">{question.stem}</p>
-      <ul className="mt-3 space-y-2">
+      <ul className="mt-3 space-y-2" key={question.id}>
         {order.map((choice) => {
           const on = selected.includes(choice.id);
           const show = submitted;
@@ -104,7 +142,7 @@ export function KnowledgeCheck({
                 type="button"
                 onClick={() => toggle(choice.id)}
                 className={cn(
-                  "w-full rounded-md border px-3 py-2 text-left text-sm leading-6 transition-colors",
+                  "w-full min-h-11 rounded-md border px-3 py-2 text-left text-sm leading-6 transition-colors focus-visible:ring-3 focus-visible:ring-ring/50",
                   on && !show && "border-foreground bg-muted",
                   show && isKey && "border-emerald-600 bg-emerald-500/10",
                   show && on && !isKey && "border-destructive bg-destructive/10",
@@ -125,18 +163,19 @@ export function KnowledgeCheck({
         {!correctNow ? (
           <Button
             size="sm"
+            className="min-h-11"
             onClick={() => void submit()}
             disabled={selected.length === 0}
           >
             Check answer
           </Button>
         ) : index < questions.length - 1 ? (
-          <Button size="sm" onClick={next}>
+          <Button size="sm" className="min-h-11" onClick={next}>
             Next question
           </Button>
         ) : (
           <p className="text-sm text-emerald-700 dark:text-emerald-400">
-            {locked || already
+            {already
               ? "This check is complete. Continue."
               : "Correct. This block is unlocked."}
           </p>
@@ -145,6 +184,7 @@ export function KnowledgeCheck({
           <Button
             size="sm"
             variant="ghost"
+            className="min-h-11"
             onClick={() => {
               setAlt((v) => !v);
             }}
@@ -155,6 +195,22 @@ export function KnowledgeCheck({
       </div>
       {submitted && !correctNow ? (
         <div className="mt-3 space-y-2 text-sm leading-6">
+          <p>
+            <span className="font-medium">Why your choice is wrong. </span>
+            {chosen
+              .map((c) => c.rationale)
+              .join(" ") || "That option is not the key."}
+          </p>
+          <p>
+            <span className="font-medium">Why the correct answer is right. </span>
+            {correctChoices.map((c) => c.rationale).join(" ")}
+          </p>
+          {otherDistractors.length ? (
+            <p>
+              <span className="font-medium">Why the other distractors fail. </span>
+              {otherDistractors.map((c) => `${c.text}: ${c.rationale}`).join(" ")}
+            </p>
+          ) : null}
           <p>{question.explanation}</p>
           {alt ? (
             <p className="text-muted-foreground">

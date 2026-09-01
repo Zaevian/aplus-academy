@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { DOMAINS } from "@/content/catalog";
 import { getQuestions } from "@/content/registry";
 import { QuizPlayer } from "@/components/quiz/quiz-player";
+import { DomainGate } from "@/components/course/domain-gate";
 
 export default async function DomainQuizPage({
   params,
@@ -17,6 +18,7 @@ export default async function DomainQuizPage({
     d.objectiveIds.includes(q.objectiveId),
   );
   return (
+    <DomainGate domainId={d.id}>
     <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
       <h1 className="text-2xl font-semibold">{d.title} mastery quiz</h1>
       <p className="text-sm text-muted-foreground">
@@ -25,5 +27,6 @@ export default async function DomainQuizPage({
       </p>
       <QuizPlayer kind="domain" targetId={d.id} pool={pool} count={12} />
     </div>
+    </DomainGate>
   );
 }

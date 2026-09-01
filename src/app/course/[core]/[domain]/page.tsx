@@ -4,6 +4,7 @@ import { DOMAINS, objectivesForDomain } from "@/content/catalog";
 import { getLessons, getQuestions } from "@/content/registry";
 import { objectivePath } from "@/lib/course";
 import { Button } from "@/components/ui/button";
+import { DomainGate } from "@/components/course/domain-gate";
 
 export default async function DomainPage({
   params,
@@ -19,6 +20,7 @@ export default async function DomainPage({
   const objectives = objectivesForDomain(d.id);
   const lessons = getLessons();
   return (
+    <DomainGate domainId={d.id}>
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
       <h1 className="text-2xl font-semibold">
         {d.number}.0 {d.title}
@@ -48,5 +50,6 @@ export default async function DomainPage({
         })}
       </ul>
     </div>
+    </DomainGate>
   );
 }

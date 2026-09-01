@@ -1,23 +1,32 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { searchCourse } from "@/lib/search";
 
-export default function SearchPage() {
-  const [q, setQ] = useState("");
+function SearchInner() {
+  const params = useSearchParams();
+  const router = useRouter();
+  const q = params.get("q") ?? "";
   const hits = useMemo(() => searchCourse(q), [q]);
   return (
     <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
       <h1 className="text-2xl font-semibold">Search</h1>
       <p className="text-xs text-muted-foreground">
-        Locked assessment answers are not included.
+        Search looks at lesson text, labs, objectives, and glossary entries. It
+        does not list assessment answer keys. Practice questions still load in
+        the study client for quizzes you take here.
       </p>
       <input
-        className="w-full rounded-md border bg-background px-3 py-2 text-sm"
+        className="min-h-11 w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:ring-3 focus-visible:ring-ring/50"
         placeholder="RAID, DHCP, 169.254, BitLocker, ghost printing"
         value={q}
-        onChange={(e) => setQ(e.target.value)}
+        onChange={(e) => {
+          const value = e.target.value;
+          const qs = value.trim() ? `?q=${encodeURIComponent(value)}` : "";
+          router.replace(`/search${qs}`);
+        }}
       />
       <ul className="space-y-2">
         {hits.map((h, i) => (
@@ -31,5 +40,13 @@ export default function SearchPage() {
         ))}
       </ul>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<p className="p-6 text-sm">Loading search…</p>}>
+      <SearchInner />
+    </Suspense>
   );
 }

@@ -13,9 +13,9 @@ export default function SettingsPage() {
     <div className="mx-auto max-w-lg space-y-6 px-4 py-8">
       <h1 className="text-2xl font-semibold">Settings</h1>
       <p className="text-sm text-muted-foreground">
-        Guest profile: {profile?.displayName ?? "not created"}. Cloud sync enables
-        itself when NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are
-        set. Accounts are optional.
+        Guest profile: {profile?.displayName ?? "not created"}. Cloud sync is off.
+        Progress stays on this device. An account is optional and is not required
+        to study.
       </p>
       <div className="space-y-2">
         <p className="text-sm font-medium">Theme</p>
@@ -24,6 +24,7 @@ export default function SettingsPage() {
             <Button
               key={t}
               size="sm"
+              className="min-h-11"
               variant={theme === t ? "default" : "outline"}
               onClick={() => {
                 setTheme(t);
@@ -35,14 +36,14 @@ export default function SettingsPage() {
           ))}
         </div>
       </div>
-      <label className="flex items-center justify-between gap-4 text-sm">
+      <label className="flex min-h-11 items-center justify-between gap-4 text-sm">
         Reduced motion
         <Switch
           checked={settings?.reducedMotion ?? false}
           onCheckedChange={(v) => void updateSettings({ reducedMotion: v })}
         />
       </label>
-      <label className="flex items-center justify-between gap-4 text-sm">
+      <label className="flex min-h-11 items-center justify-between gap-4 text-sm">
         Show transcripts
         <Switch
           checked={settings?.showTranscripts ?? true}

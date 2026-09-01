@@ -1,6 +1,7 @@
 import { ALL_OBJECTIVES } from "@/content/catalog";
 import { ACRONYMS } from "@/content/glossary/acronyms";
 import { getLabs, getLessons } from "@/content/registry";
+import { lessonPath } from "@/lib/course";
 
 export type SearchHit = {
   type: "lesson" | "glossary" | "lab" | "objective";
@@ -9,29 +10,62 @@ export type SearchHit = {
   snippet: string;
 };
 
+function tokensOf(query: string): string[] {
+  return query
+    .trim()
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 2);
+}
+
+function stem(token: string): string {
+  if (token.length > 5 && token.endsWith("ing")) return token.slice(0, -3);
+  if (token.length > 4 && token.endsWith("ed")) return token.slice(0, -2);
+  if (token.length > 4 && token.endsWith("ing")) return token.slice(0, 5);
+  return token.length > 5 ? token.slice(0, 5) : token;
+}
+
+export function matchesTokens(haystack: string, tokens: string[]): boolean {
+  if (tokens.length === 0) return false;
+  const h = haystack.toLowerCase();
+  return tokens.every((t) => {
+    if (h.includes(t)) return true;
+    const s = stem(t);
+    if (s.length >= 3 && h.includes(s)) return true;
+    return h.split(/[^a-z0-9]+/).some((w) => w.startsWith(s) || s.startsWith(w) && w.length >= 4);
+  });
+}
+
+function lessonHaystack(lesson: ReturnType<typeof getLessons>[number]): string {
+  const bits = [lesson.title, lesson.description, lesson.slug];
+  for (const block of lesson.blocks) {
+    if (block.type === "reading") bits.push(block.markdown);
+    if (block.type === "callout") bits.push(block.callout.title, block.callout.body);
+    if (block.type === "summary") bits.push(...block.bullets);
+    if (block.type === "table") bits.push(block.title, ...block.headers, ...block.rows.flat());
+    if ("title" in block && block.title) bits.push(block.title);
+  }
+  return bits.join("\n");
+}
+
 export function searchCourse(query: string): SearchHit[] {
-  const q = query.trim().toLowerCase();
-  if (q.length < 2) return [];
+  const tokens = tokensOf(query);
+  if (tokens.length === 0) return [];
   const hits: SearchHit[] = [];
   for (const lesson of getLessons()) {
-    if (
-      lesson.title.toLowerCase().includes(q) ||
-      lesson.description.toLowerCase().includes(q)
-    ) {
+    const hay = lessonHaystack(lesson);
+    if (matchesTokens(hay, tokens)) {
       hits.push({
         type: "lesson",
         title: lesson.title,
-        href: `/course`,
+        href: lessonPath(lesson.id),
         snippet: lesson.description,
       });
     }
   }
   for (const a of ACRONYMS) {
-    if (
-      a.acronym.toLowerCase().includes(q) ||
-      a.expansion.toLowerCase().includes(q) ||
-      a.blurb.toLowerCase().includes(q)
-    ) {
+    const hay = `${a.acronym} ${a.expansion} ${a.blurb}`;
+    if (matchesTokens(hay, tokens)) {
       hits.push({
         type: "glossary",
         title: `${a.acronym} — ${a.expansion}`,
@@ -41,7 +75,8 @@ export function searchCourse(query: string): SearchHit[] {
     }
   }
   for (const lab of getLabs()) {
-    if (lab.title.toLowerCase().includes(q) || lab.description.toLowerCase().includes(q)) {
+    const hay = `${lab.title} ${lab.description} ${lab.slug}`;
+    if (matchesTokens(hay, tokens)) {
       hits.push({
         type: "lab",
         title: lab.title,
@@ -51,7 +86,8 @@ export function searchCourse(query: string): SearchHit[] {
     }
   }
   for (const o of ALL_OBJECTIVES) {
-    if (o.title.toLowerCase().includes(q) || o.paraphrase.toLowerCase().includes(q)) {
+    const hay = `${o.title} ${o.paraphrase} ${o.officialCode} ${o.subtopics.join(" ")}`;
+    if (matchesTokens(hay, tokens)) {
       hits.push({
         type: "objective",
         title: `${o.officialCode} ${o.title}`,

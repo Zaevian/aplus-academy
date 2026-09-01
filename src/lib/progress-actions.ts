@@ -9,9 +9,29 @@ import {
   type QuestionAttempt,
 } from "@/db/client";
 import { applyAttemptToMastery } from "@/lib/review";
-import { nextDomainId } from "@/lib/course";
-import { getQuestions } from "@/content/registry";
+import { healedUnlocks, nextDomainInCore, sameStringSet } from "@/lib/domain-unlock";
+import { getLabs, getQuestions } from "@/content/registry";
 import { isCorrect } from "@/lib/questions";
+import { ALL_OBJECTIVES } from "@/content/catalog";
+import { lessonPath, objectivePath } from "@/lib/course";
+export { applyCompleteBlock } from "@/lib/lesson-lock";
+
+async function updateProgress(
+  mutator: (progress: ProgressSnapshot) => void,
+): Promise<void> {
+  await ensureLocalState();
+  await db.transaction("rw", db.progress, async () => {
+    const progress = await db.progress.get("local");
+    if (!progress) return;
+    mutator(progress);
+    const unlocked = healedUnlocks(progress);
+    if (!sameStringSet(progress.unlockedDomainIds, unlocked)) {
+      progress.unlockedDomainIds = unlocked;
+    }
+    progress.updatedAt = Date.now();
+    await db.progress.put(progress);
+  });
+}
 
 function todayStamp(d = new Date()): string {
   return d.toISOString().slice(0, 10);
@@ -42,78 +62,54 @@ export async function completeOnboarding(input: {
     diagnosticComplete: false,
   };
   await db.profiles.put(profile);
-  const progress = (await db.progress.get("local")) ?? initialProgress();
-  await db.progress.put({
-    ...progress,
-    currentLocation: "/course/foundation",
-    unlockedDomainIds: Array.from(
-      new Set([...progress.unlockedDomainIds, "FND-D0"]),
-    ),
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    progress.currentLocation = "/course/foundation";
+    progress.unlockedDomainIds = healedUnlocks({
+      ...progress,
+      unlockedDomainIds: [...progress.unlockedDomainIds, "FND-D0", "C1-D1", "C2-D1"],
+    });
   });
 }
 
 export async function touchLocation(pathname: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  const day = todayStamp();
-  let streakDays = progress.streakDays;
-  if (progress.lastStudyDay !== day) {
-    const yesterday = todayStamp(new Date(Date.now() - 86400000));
-    streakDays =
-      progress.lastStudyDay === yesterday ? progress.streakDays + 1 : 1;
-  }
-  await db.progress.put({
-    ...progress,
-    currentLocation: pathname,
-    lastStudyDay: day,
-    streakDays,
-    updatedAt: Date.now(),
-    sessionStartedAt: progress.sessionStartedAt ?? Date.now(),
+  await updateProgress((progress) => {
+    const day = todayStamp();
+    if (progress.lastStudyDay !== day) {
+      const yesterday = todayStamp(new Date(Date.now() - 86400000));
+      progress.streakDays =
+        progress.lastStudyDay === yesterday ? progress.streakDays + 1 : 1;
+    }
+    progress.currentLocation = pathname;
+    progress.lastStudyDay = day;
+    progress.sessionStartedAt = progress.sessionStartedAt ?? Date.now();
   });
 }
 
 export async function completeBlock(blockId: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  if (progress.completedBlocks.includes(blockId)) return;
-  await db.progress.put({
-    ...progress,
-    completedBlocks: [...progress.completedBlocks, blockId],
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    if (progress.completedBlocks.includes(blockId)) return;
+    progress.completedBlocks = [...progress.completedBlocks, blockId];
   });
 }
 
 export async function completeLesson(lessonId: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  if (progress.completedLessons.includes(lessonId)) return;
-  await db.progress.put({
-    ...progress,
-    completedLessons: [...progress.completedLessons, lessonId],
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    if (progress.completedLessons.includes(lessonId)) return;
+    progress.completedLessons = [...progress.completedLessons, lessonId];
   });
 }
 
 export async function completeObjective(objectiveId: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  if (progress.completedObjectives.includes(objectiveId)) return;
-  await db.progress.put({
-    ...progress,
-    completedObjectives: [...progress.completedObjectives, objectiveId],
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    if (progress.completedObjectives.includes(objectiveId)) return;
+    progress.completedObjectives = [...progress.completedObjectives, objectiveId];
   });
 }
 
 export async function completeLab(labId: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  if (progress.completedLabs.includes(labId)) return;
-  await db.progress.put({
-    ...progress,
-    completedLabs: [...progress.completedLabs, labId],
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    if (progress.completedLabs.includes(labId)) return;
+    progress.completedLabs = [...progress.completedLabs, labId];
   });
 }
 
@@ -168,21 +164,82 @@ export async function recordQuiz(input: {
 }
 
 async function unlockAfterDomain(domainId: string): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  const next = nextDomainId(domainId);
-  const unlocked = new Set(progress.unlockedDomainIds);
-  unlocked.add(domainId);
-  if (next) unlocked.add(next);
-  const completedDomains = progress.completedDomains.includes(domainId)
-    ? progress.completedDomains
-    : [...progress.completedDomains, domainId];
-  await db.progress.put({
-    ...progress,
-    unlockedDomainIds: [...unlocked],
-    completedDomains,
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    const next = nextDomainInCore(domainId);
+    const unlocked = new Set(progress.unlockedDomainIds);
+    unlocked.add(domainId);
+    if (next) unlocked.add(next);
+    progress.unlockedDomainIds = [...unlocked];
+    if (!progress.completedDomains.includes(domainId)) {
+      progress.completedDomains = [...progress.completedDomains, domainId];
+    }
   });
+}
+
+export function bookmarkHref(bookmark: {
+  targetType: "lesson" | "block" | "lab" | "objective";
+  targetId: string;
+}): string {
+  if (bookmark.targetType === "lesson") return lessonPath(bookmark.targetId);
+  if (bookmark.targetType === "lab") {
+    const lab = getLabs().find((l) => l.id === bookmark.targetId);
+    return lab ? `/labs/${lab.slug}` : "/labs";
+  }
+  if (bookmark.targetType === "objective") {
+    const objective = ALL_OBJECTIVES.find((o) => o.id === bookmark.targetId);
+    return objective ? objectivePath(objective) : "/objectives";
+  }
+  return "/notes";
+}
+
+export async function deleteBookmark(id: string): Promise<void> {
+  await db.bookmarks.delete(id);
+}
+
+export async function toggleLessonBookmark(
+  lessonId: string,
+  label: string,
+): Promise<boolean> {
+  const existing = await db.bookmarks
+    .where("targetId")
+    .equals(lessonId)
+    .filter((b) => b.targetType === "lesson")
+    .first();
+  if (existing) {
+    await db.bookmarks.delete(existing.id);
+    return false;
+  }
+  await addBookmark("lesson", lessonId, label);
+  return true;
+}
+
+export async function upsertNote(input: {
+  id?: string;
+  targetType: "lesson" | "block" | "lab" | "objective";
+  targetId: string;
+  body: string;
+}): Promise<void> {
+  const now = Date.now();
+  const body = input.body.trim();
+  if (!body) return;
+  if (input.id) {
+    const row = await db.notes.get(input.id);
+    if (!row) return;
+    await db.notes.put({ ...row, body, updatedAt: now });
+    return;
+  }
+  await db.notes.add({
+    id: nanoid(),
+    targetType: input.targetType,
+    targetId: input.targetId,
+    body,
+    createdAt: now,
+    updatedAt: now,
+  });
+}
+
+export async function deleteNote(id: string): Promise<void> {
+  await db.notes.delete(id);
 }
 
 export async function addNote(
@@ -216,12 +273,8 @@ export async function addBookmark(
 }
 
 export async function addStudyTime(ms: number): Promise<void> {
-  const progress = await db.progress.get("local");
-  if (!progress) return;
-  await db.progress.put({
-    ...progress,
-    totalMs: progress.totalMs + ms,
-    updatedAt: Date.now(),
+  await updateProgress((progress) => {
+    progress.totalMs += ms;
   });
 }
 

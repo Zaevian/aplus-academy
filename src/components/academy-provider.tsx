@@ -11,6 +11,7 @@ import {
 import { liveQuery } from "dexie";
 import {
   db,
+  ensureLocalState,
   type LearnerProfile,
   type Note,
   type ProgressSnapshot,
@@ -20,7 +21,7 @@ import {
   type MasteryRow,
 } from "@/db/client";
 import { touchLocation } from "@/lib/progress-actions";
-import { ensureLocalState } from "@/db/client";
+import { healedUnlocks, sameStringSet } from "@/lib/domain-unlock";
 import { usePathname } from "next/navigation";
 
 type AcademyState = {
@@ -61,7 +62,20 @@ export function AcademyProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    void ensureLocalState();
+    void (async () => {
+      await ensureLocalState();
+      const row = await db.progress.get("local");
+      if (row) {
+        const unlocked = healedUnlocks(row);
+        if (!sameStringSet(row.unlockedDomainIds, unlocked)) {
+          await db.progress.put({
+            ...row,
+            unlockedDomainIds: unlocked,
+            updatedAt: Date.now(),
+          });
+        }
+      }
+    })();
     const subs = [
       liveQuery(() => db.progress.get("local")).subscribe((p) => {
         if (p) setProgress(p);

@@ -103,7 +103,7 @@ export type StudySession = {
   focus: string;
 };
 
-const INITIAL_UNLOCKS = ["FND-D0"];
+const INITIAL_UNLOCKS = ["FND-D0", "C1-D1", "C2-D1"];
 
 export const initialProgress = (): ProgressSnapshot => ({
   id: "local",

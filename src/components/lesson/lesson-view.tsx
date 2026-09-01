@@ -1,18 +1,25 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { Lesson } from "@/content/schema";
 import { getQuestions, getLab } from "@/content/registry";
 import { Prose } from "@/components/lesson/prose";
 import { KnowledgeCheck } from "@/components/lesson/knowledge-check";
 import { TechnicalDiagram } from "@/components/diagrams/registry";
 import { useAcademy } from "@/components/academy-provider";
-import { completeLesson, completeObjective } from "@/lib/progress-actions";
+import {
+  completeLesson,
+  completeObjective,
+  toggleLessonBookmark,
+} from "@/lib/progress-actions";
 import { LabHost } from "@/components/labs/lab-host";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { addBookmark } from "@/lib/progress-actions";
 import { SOURCES } from "@/content/sources";
+import { lockAtIndex } from "@/lib/lesson-lock";
+import { ALL_OBJECTIVES, DOMAINS } from "@/content/catalog";
+import { DomainGate } from "@/components/course/domain-gate";
+import { addNote } from "@/lib/progress-actions";
 
 const CALLOUT_STYLES: Record<string, string> = {
   exam: "border-l-foreground",
@@ -25,21 +32,26 @@ const CALLOUT_STYLES: Record<string, string> = {
 };
 
 export function LessonView({ lesson }: { lesson: Lesson }) {
-  const { progress } = useAcademy();
+  const { progress, bookmarks } = useAcademy();
   const completed = new Set(progress?.completedBlocks ?? []);
+  const [noteBody, setNoteBody] = useState("");
+  const bookmarked = bookmarks.some(
+    (b) => b.targetType === "lesson" && b.targetId === lesson.id,
+  );
 
   const questionsById = useMemo(() => {
     const map = new Map(getQuestions().map((q) => [q.id, q]));
     return map;
   }, []);
 
-  const lockAt = lesson.blocks.findIndex(
-    (block) =>
-      (block.type === "knowledge-check" || block.type === "checkpoint") &&
-      !completed.has(block.id),
-  );
+  const lockAt = lockAtIndex(lesson.blocks, completed);
+  const objective = ALL_OBJECTIVES.find((o) => o.id === lesson.objectiveId);
+  const domain = objective
+    ? DOMAINS.find((d) => d.core === objective.core && d.number === objective.domain)
+    : undefined;
 
   return (
+    <DomainGate domainId={domain?.id ?? "FND-D0"}>
     <article className="mx-auto max-w-3xl space-y-8 px-4 py-8">
       <header className="space-y-2">
         <p className="text-xs tracking-wide text-muted-foreground uppercase">
@@ -47,15 +59,35 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         </p>
         <h1 className="text-2xl font-semibold tracking-tight">{lesson.title}</h1>
         <p className="text-muted-foreground">{lesson.description}</p>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() =>
-            void addBookmark("lesson", lesson.id, lesson.title)
-          }
+        <div className="flex flex-wrap gap-2">
+          <Button
+            variant={bookmarked ? "default" : "outline"}
+            size="sm"
+            className="min-h-11"
+            onClick={() => void toggleLessonBookmark(lesson.id, lesson.title)}
+          >
+            {bookmarked ? "Bookmarked" : "Bookmark"}
+          </Button>
+        </div>
+        <form
+          className="flex flex-col gap-2 sm:flex-row"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (!noteBody.trim()) return;
+            void addNote("lesson", lesson.id, noteBody);
+            setNoteBody("");
+          }}
         >
-          Bookmark
-        </Button>
+          <textarea
+            className="min-h-11 flex-1 rounded-md border bg-background px-3 py-2 text-sm"
+            placeholder="Write a note about this lesson"
+            value={noteBody}
+            onChange={(e) => setNoteBody(e.target.value)}
+          />
+          <Button type="submit" size="sm" className="min-h-11" disabled={!noteBody.trim()}>
+            Save note
+          </Button>
+        </form>
       </header>
 
       {lesson.blocks.map((block, index) => {
@@ -213,5 +245,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         . Verified {lesson.lastVerified}.
       </footer>
     </article>
+    </DomainGate>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import type { Lab } from "@/content/schema";
+import { LabStatus } from "@/components/labs/lab-kit";
 
 const WIN: Record<string, string> = {
   help: "Sandboxed educational prompt. Try: ipconfig, ping 1.1.1.1, ping intranet.lab, nslookup, hostname, whoami, sfc, gpresult.",
@@ -33,10 +34,13 @@ const LINUX: Record<string, string> = {
 };
 
 export function CliLab({
+  lab,
   flavor,
+  onSolved,
 }: {
   lab: Lab;
   flavor: "windows" | "linux";
+  onSolved?: () => void;
 }) {
   const map = flavor === "windows" ? WIN : LINUX;
   const prompt = flavor === "windows" ? "C:\\Users\\tech>" : "tech@lab:~$";
@@ -44,7 +48,9 @@ export function CliLab({
     "Educational sandbox. It cannot execute commands on this machine or the server.",
     'Type "help".',
   ]);
+  const [ranRequired, setRanRequired] = useState(false);
   const input = useRef<HTMLInputElement>(null);
+  const required = flavor === "windows" ? "ipconfig" : "ls";
 
   function run(raw: string) {
     const cmd = raw.trim();
@@ -54,9 +60,19 @@ export function CliLab({
       ? map[key]
       : `'${cmd}' is not recognized in this sandbox. Try help.`;
     setLines((l) => [...l, `${prompt} ${cmd}`, out ?? ""]);
+    if (cmd.toLowerCase() === required || cmd.toLowerCase().startsWith(`${required} `)) {
+      setRanRequired(true);
+      onSolved?.();
+    }
   }
 
+  void lab;
   return (
+    <div className="space-y-2">
+    <LabStatus
+      solved={ranRequired}
+      mission={`Sandbox only — it never runs on the host. Type ${required} to complete.`}
+    />
     <div
       className="rounded-md bg-zinc-950 p-3 font-mono text-xs text-zinc-100"
       onClick={() => input.current?.focus()}
@@ -77,11 +93,12 @@ export function CliLab({
         <span>{prompt}</span>
         <input
           ref={input}
-          className="flex-1 bg-transparent outline-none"
+          className="min-h-11 flex-1 bg-transparent outline-none"
           aria-label="Sandbox command"
           autoComplete="off"
         />
       </form>
+    </div>
     </div>
   );
 }
