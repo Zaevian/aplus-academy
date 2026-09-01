@@ -429,6 +429,15 @@ Exam stems love **BEST** on this set: the BEST way to let a home user reach a sh
 Regulatory domain matters. Channel 12/13 on 2.4 GHz may be legal in some countries and not in the U.S. A traveling AP set to "world" can surprise you. For the exam, remember **1/6/11** as the 2.4 GHz non-overlap set you deploy on purpose.`,
       },
       {
+        type: "video",
+        id: "C1-D2-O2-L1-see1",
+        assetId: "wifi-band-reach",
+        title: "SEE: 2.4, 5, and 6 GHz reach",
+        caption: "6 GHz needs Wi-Fi 6E radios. No fake dBm heatmap.",
+        transcript:
+          "2.4 GHz travels farthest and collides more. 5 GHz is shorter and cleaner. 6 GHz is smallest and needs Wi-Fi 6E radios on both the AP and the client.",
+      },
+      {
         type: "diagram",
         id: "C1-D2-O2-L1-d1",
         component: "SpectrumDiagram",
@@ -1093,6 +1102,15 @@ The **default gateway** is the IP of the router on **your** subnet — the first
 **NAT** is why private hosts reach public sites: the router rewrites the source. Inbound services need port forwarding or a VPN; they do not magically publish 192.168.1.50 to the world.`,
       },
       {
+        type: "video",
+        id: "C1-D2-O6-L1-see1",
+        assetId: "apipa-lease",
+        title: "SEE: DHCP fail then 169.254",
+        caption: "Stylized terminal. One IPv4 line. Not a Windows screenshot.",
+        transcript:
+          "When DHCP does not answer, Windows assigns a link-local APIPA address in 169.254.0.0/16. There is no useful default gateway.",
+      },
+      {
         type: "diagram",
         id: "C1-D2-O6-L1-d1",
         component: "Ipv4Diagram",
@@ -1469,6 +1487,15 @@ A **toner and probe** (fox and hound) identify **which** cable is which in a bun
 A **loopback plug** reflects a signal to the **same NIC** so you can prove the port/firmware path without a switch. Serial loopbacks still exist for RS-232; Ethernet loopbacks are less common in the field than they are on exams, but the idea is "prove this interface, not the network." If a server NIC fails loopback, do not replace the switch.
 
 Do not use a crimper on a punchdown block. Do not use a toner as a PoE injector. Do not unplug a production uplink to "test" when a toner would have found the drop.`,
+      },
+      {
+        type: "video",
+        id: "C1-D2-O8-L1-see1",
+        assetId: "rj45-click-crimp",
+        title: "SEE: RJ45 click then crimp",
+        caption: "No tester LCD numbers. Labels are HTML.",
+        transcript:
+          "Push an RJ45 into a jack until the tab clicks. Building a patch cord uses a crimper after the conductors are in T568 order. Do not invent tester LCD numbers from a generated frame.",
       },
       {
         type: "table",

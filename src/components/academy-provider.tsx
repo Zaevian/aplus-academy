@@ -98,6 +98,19 @@ export function AcademyProvider({ children }: { children: React.ReactNode }) {
     void touchLocation(pathname);
   }, [pathname, ready]);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => {
+      document.documentElement.classList.toggle(
+        "reduce-motion",
+        mq.matches || Boolean(settings?.reducedMotion),
+      );
+    };
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, [settings?.reducedMotion]);
+
   const value = useMemo(
     () => ({
       ready,

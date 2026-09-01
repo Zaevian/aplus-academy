@@ -177,6 +177,15 @@ Symptoms that actually point at RAM: failure to POST after a memory change, beep
 Core 1 Domain 3 will go deeper on ECC, channels, and DDR numbering. For 1.1, the scored skill is: identify SODIMM versus DIMM, respect the generation notch, and know when the laptop simply has no socket.`,
       },
       {
+        type: "video",
+        id: "C1-D1-O1-L2-see1",
+        assetId: "sodimm-angle",
+        title: "SEE: SODIMM at an angle, DIMM for scale",
+        caption: "Do not force a desktop DIMM into a laptop slot.",
+        transcript:
+          "A SODIMM starts at an angle, then presses flat until the clips catch. A desktop DIMM is about twice as long and does not belong in a laptop slot.",
+      },
+      {
         type: "diagram",
         id: "C1-D1-O1-L2-d1",
         component: "DimmVsSodimmDiagram",
@@ -306,6 +315,24 @@ The **camera / webcam** is a small module at the top bezel, often sharing a cabl
 Microphones also pick up chassis noise if they are left rattling. Seat the module, replace the foam if the vendor included it, and keep tape off the ports.
 
 None of this is the same as a failed **digitizer** or LCD, which Domain 3 and 5 treat as display faults. 1.1 cares that you know the camera, mic, and antennas are FRUs that ride in the lid.`,
+      },
+      {
+        type: "video",
+        id: "C1-D1-O1-L3-see1",
+        assetId: "privacy-shutter",
+        title: "SEE: privacy shutter and webcam LED",
+        caption: "Hardware cover. The OS cannot override it.",
+        transcript:
+          "A privacy shutter is a physical cover the operating system cannot override. When the shutter is open the webcam LED can light. When the shutter closes, the LED goes off.",
+      },
+      {
+        type: "diagram",
+        id: "C1-D1-O1-L3-d1",
+        component: "PrivacyShutterDiagram",
+        title: "Webcam shutter",
+        caption: "LED on, shutter closes, LED off.",
+        notice: "Closed shutter is not a missing driver.",
+        alt: "Laptop webcam with a sliding privacy shutter and LED.",
       },
       {
         type: "table",

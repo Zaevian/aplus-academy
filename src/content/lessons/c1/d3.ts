@@ -287,6 +287,16 @@ Distance, noise, and the switch's NIC speed decide the category — not the colo
 **Direct-burial** twisted pair is gel-filled or otherwise moisture-blocked for dirt. Indoor UTP in a trench becomes a green sponge. **Coaxial** (RG-6 with an **F-type** connector in consumer video/cable-modem work) is a different copper story: a center conductor, dielectric, shield, and jacket. You will still see F-type on cable modems. Do not put an RJ45 on RG-6 and call it Ethernet.`,
       },
       {
+        type: "video",
+        id: "C1-D3-O2-L1-see1",
+        assetId: "t568-pair-swap",
+        title: "SEE: T568 orange/green pair swap",
+        caption:
+          "Pins 1–8 stay numbered in HTML. Only the orange and green pairs move. This is not a generated photo.",
+        transcript:
+          "T568A and T568B use the same eight pin numbers. Only the orange and green pairs swap. Pins 4-5 stay blue and 7-8 stay brown. Same standard on both ends is a straight-through cable.",
+      },
+      {
         type: "diagram",
         id: "C1-D3-O2-L1-d1",
         component: "T568Diagram",
@@ -400,6 +410,16 @@ Connectors you must recognize:
 - **USB-C** as a video path uses DisplayPort Alt Mode or Thunderbolt. The cable and the port both have to support it.
 
 A black-screen "HDMI cable" ticket is often a port that is DisplayPort, a dongle that needs power, or a cable that is USB-C charge-only.`,
+      },
+      {
+        type: "video",
+        id: "C1-D3-O2-L2-see1",
+        assetId: "connector-seat",
+        title: "SEE: HDMI, DisplayPort, VGA, and USB orientation",
+        caption:
+          "Each video plug seats only in its matching port. USB-A is trident-up. USB-C seats either way.",
+        transcript:
+          "HDMI, DisplayPort, and VGA are keyed differently. A plug that is not the matching port lifts back out. USB-A seats trident-up. USB-C seats either way. USB-C is a shell, not a protocol.",
       },
       {
         type: "diagram",
@@ -530,6 +550,24 @@ Pick the cable for distance and purpose: LC multimode across a building, HDMI or
 Install with the notch aligned, firm even pressure until side clips catch (or the laptop clip seats). Do not touch gold contacts. For laptops, disconnect power and battery if the service manual says so. Insufficient RAM looks like heavy swap, disk thrash, and "the PC is slow after Chrome." Failing RAM looks like random reboots, crash screens, and memory-diagnostic errors. Those are different tickets.
 
 When you quote a kit, quote the generation, the speed class, and the capacity per stick — not "a 16 gig stick" with no DDR number. Boards list a maximum per slot and a maximum total. Two 32 GB DIMMs on a board that caps at 16 GB per slot will not POST no matter how expensive they were. After install, confirm size in firmware first, then in the operating system. If firmware sees 16 GB and Windows sees 8 GB, you have a seating, channel, or integrated-graphics reservation story, not a Windows reinstall story.`
+      },
+      {
+        type: "video",
+        id: "C1-D3-O3-L1-see1",
+        assetId: "dimm-click",
+        title: "SEE: DIMM notch and latches",
+        caption: "HTML overlay says DIMM. Do not trust generated frame text.",
+        transcript:
+          "Align the DIMM notch to the slot. Press evenly until both side latches close. Do not force a different DDR generation.",
+      },
+      {
+        type: "video",
+        id: "C1-D3-O3-L1-see2",
+        assetId: "sodimm-angle",
+        title: "SEE: SODIMM angle versus DIMM scale",
+        caption: "Laptop stick is shorter. Desktop DIMM does not fit.",
+        transcript:
+          "A SODIMM starts at an angle, then presses flat until the clips catch. A desktop DIMM is about twice as long and does not belong in a laptop slot.",
       },
       {
         type: "diagram",
@@ -666,6 +704,24 @@ Capacity on the box is decimal (1 TB = 1,000,000,000,000 bytes in vendor ads). T
         caption: "Both can be SATA. 2.5-inch is not automatically an SSD. Measure the bay and the caddy.",
       },
       {
+        type: "video",
+        id: "C1-D3-O4-L1-see1",
+        assetId: "hdd-ruler",
+        title: "SEE: 3.5-inch versus 2.5-inch next to a ruler",
+        caption: "Size is not the same as SSD. rpm means HDD.",
+        transcript:
+          "3.5-inch drives are desktop and NAS bays. 2.5-inch drives are laptops and some caddies. Form factor is size, not SSD versus spinning rust.",
+      },
+      {
+        type: "diagram",
+        id: "C1-D3-O4-L1-d1",
+        component: "HddFormFactorDiagram",
+        title: "HDD form factors",
+        caption: "3.5-inch beside 2.5-inch with a millimeter scale.",
+        notice: "A 2.5-inch bay can hold an HDD or a SATA SSD. rpm is the HDD tell.",
+        alt: "3.5-inch and 2.5-inch drive outlines next to a ruler.",
+      },
+      {
         type: "knowledge-check",
         id: "C1-D3-O4-L1-kc1",
         questionIds: ["C1-D3-O4-HDD-Q001"],
@@ -754,6 +810,24 @@ The **interface** decides how the SSD talks to the rest of the PC:
 **mSATA** is an older mini-SATA card used in some laptops. It is not M.2. Forcing mSATA into M.2 (or the reverse) is a parts mismatch.
 
 Install NVMe in the slot the manual prefers (often the CPU-attached slot, not a chipset slot) if you care about maximum lanes. Do not cover the SSD with a sticker sandwich that prevents the motherboard heatspreader from contacting the NAND if the vendor shipped a thermal pad.`,
+      },
+      {
+        type: "video",
+        id: "C1-D3-O4-L2-see1",
+        assetId: "m2-screw",
+        title: "SEE: M.2 is the slot; NVMe is the protocol",
+        caption: "HTML labels, not generated silkscreen.",
+        transcript:
+          "M.2 is the slot form factor. NVMe is the protocol that usually rides PCIe on that slot. Seat the card at an angle and fasten the one screw.",
+      },
+      {
+        type: "video",
+        id: "C1-D3-O4-L2-see2",
+        assetId: "sata-data-power",
+        title: "SEE: SATA data versus SATA power",
+        caption: "Thin L-shaped data. Wide 15-pin power.",
+        transcript:
+          "SATA data is the thin L-shaped cable. SATA power is the wider 15-pin cable. Both click. They are not interchangeable with Molex without an adapter.",
       },
       {
         type: "diagram",
@@ -872,6 +946,15 @@ You care about four numbers for every level:
 Hardware RAID with a battery- or flash-backed cache can acknowledge writes faster; if you steal the cache battery and lose power, you can corrupt the array. Software RAID is cheaper and portable. Either way, **hot spares** sit idle until a member dies, then the rebuild starts without a truck roll. Rebuilds are stressful: remaining disks work harder, and a second failure during a long RAID 5 rebuild is a well-known way to lose the array. That is one reason RAID 6 and RAID 10 exist.
 
 In the diagram and lab, treat each rectangle as a physical disk and the big box as the logical volume. Then start failing disks.`,
+      },
+      {
+        type: "video",
+        id: "C1-D3-O4-L3-see1",
+        assetId: "raid-stripe-mirror",
+        title: "SEE: RAID 0 stripe versus RAID 1 copy, then FAIL",
+        caption: "RAID is not a backup. Pair math for RAID 10 stays in the RAID lab.",
+        transcript:
+          "RAID 0 stripes A1 and A2 across two disks. Fail disk 2 and the volume is empty. RAID 1 copies A1 to both disks. Fail disk 2 and A1 is still on disk 1. That is redundancy, not a backup.",
       },
       {
         type: "diagram",
@@ -1460,6 +1543,15 @@ Today's PCs are **12 V-heavy**. Wattage on the 12 V rail is the number that actu
 Do not open the PSU chassis. There are no user-serviceable rails inside, and **high-voltage capacitors** can remain charged with the cord unplugged.`,
       },
       {
+        type: "video",
+        id: "C1-D3-O6-L1-see1",
+        assetId: "atx-24-pin-eps",
+        title: "SEE: 24-pin ATX then CPU EPS",
+        caption: "HTML overlays: 24-pin and CPU / EPS. Missing mp4 is not an error.",
+        transcript:
+          "The 24-pin ATX connector powers the board. The 8-pin EPS connector near the CPU socket is required on modern boards. Both must fully seat.",
+      },
+      {
         type: "diagram",
         id: "C1-D3-O6-L1-d1",
         component: "PsuRailsDiagram",
@@ -1724,6 +1816,15 @@ Deploy like a system: place, firmware, network, time/NTP, driver language, queue
 Maintenance the objectives name: **replace toner**, **apply a maintenance kit** (fuser, rollers, transfer parts on a click count), **calibrate** (especially color registration), and **clean** (paper path, corona/charge roller per manual — no vacuum without a toner-rated filter).
 
 Do not put a household vacuum on toner; it is fine powder that can pass a normal filter and become an airborne mess. Use a toner vac or damp wipe as the vendor says. The fuser is hot. Let it cool.`,
+      },
+      {
+        type: "video",
+        id: "C1-D3-O8-L1-see1",
+        assetId: "inkjet-laser-slide",
+        title: "SEE: inkjet cartridge versus laser toner seating",
+        caption: "Seating only. The seven-step laser process stays on the still diagram.",
+        transcript:
+          "Inkjet uses liquid ink cartridges. Laser uses a toner cartridge of charged powder. This clip only shows seating. The seven-step laser imaging process stays on the still diagram.",
       },
       {
         type: "diagram",

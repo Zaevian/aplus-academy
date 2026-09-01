@@ -919,6 +919,15 @@ A **static** address with the wrong mask or gateway looks like "limited" or "no 
 **Intermittent internet** that tracks a time of day can be a full DHCP pool, a WAN that drops, or a parental schedule on a SOHO router.`,
       },
       {
+        type: "video",
+        id: "C1-D5-O5-L1-see1",
+        assetId: "apipa-lease",
+        title: "SEE: limited connectivity is 169.254",
+        caption: "APIPA has no useful gateway. DNS is a later test.",
+        transcript:
+          "A 169.254.x.x address means DHCP did not answer. Ping a gateway on 192.168.1.1 will fail until you have a real lease. DNS is not the first fork.",
+      },
+      {
         type: "diagram",
         id: "C1-D5-O5-L1-d1",
         component: "Ipv4Diagram",

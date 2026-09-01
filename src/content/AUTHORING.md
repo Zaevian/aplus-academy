@@ -56,6 +56,17 @@ ExamMapDiagram, LearningCycleDiagram, StemDecoderDiagram, TsMethodDiagram, Units
 
 Labs via `type: "lab"` and labId from `src/content/labs/index.ts` when relevant (RAID, motherboard, cables, router, CLI, malware, tickets, backup, voice, landscape).
 
+## SEE clips
+
+LEARN → SEE → INTERACT → CHECK. Technical labels are HTML/SVG. Do not treat generated video text as a pinout, RAID rule, port, or malware step.
+
+- Prefer `type: "diagram"` with a named animated component in `see-clips.tsx`.
+- Optional `type: "video"` with `assetId` recorded in `src/content/media-manifest.json`. If `public/media/<id>.mp4` is missing, the player shows the fallback diagram + transcript — never a broken box.
+- Imagine only for physical seating (hands, straps, plugs). Overlay labels in HTML. `verified: false` until a human checks the frame.
+- Do not Imagine: UEFI, Task Manager, TCP flags, Event Viewer, CPU guts, Wi-Fi heatmaps, the 10-step malware reorder, talking-head helpdesk.
+- Do not replace LabHost with a clip. Watching is not a knowledge-check gate.
+- `showTranscripts` in settings shows or collapses clip transcripts.
+
 ## Domain-specific must-teach notes
 
 Follow official V15 numbering (not older blogs):

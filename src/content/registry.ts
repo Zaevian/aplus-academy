@@ -50,7 +50,12 @@ export function buildCoverage(): CoverageEntry[] {
     const interactions = [
       ...lessons.flatMap((l) =>
         l.blocks
-          .filter((b) => b.type === "diagram" || b.type === "lab")
+          .filter(
+            (b) =>
+              b.type === "diagram" ||
+              b.type === "lab" ||
+              b.type === "video",
+          )
           .map((b) => b.id),
       ),
       ...labs.map((l) => l.id),

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LabStatus, useSolved } from "@/components/labs/lab-kit";
 import { raidArrayDead, raid10PairFailed, raid10SplitFailures, type RaidLevel } from "@/lib/raid";
+import { RaidDegradedStrip } from "@/components/diagrams/see-clips";
 
 const META: Record<
   RaidLevel,
@@ -65,6 +66,7 @@ export function RaidLab({ lab, onSolved }: LabSimProps) {
         solved={solved}
         mission="RAID 10 mission: fail two disks in different pairs (array stays up), then fail both disks in one pair (array dies). RAID is not a backup."
       />
+      <RaidDegradedStrip />
       <div className="flex flex-wrap gap-2">
         {(Object.keys(META) as RaidLevel[]).map((l) => (
           <Button

@@ -13,6 +13,7 @@ import {
   toggleLessonBookmark,
 } from "@/lib/progress-actions";
 import { LabHost } from "@/components/labs/lab-host";
+import { VideoBlock } from "@/components/lesson/video-block";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SOURCES } from "@/content/sources";
@@ -161,6 +162,17 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             />
           );
         }
+        if (block.type === "video") {
+          return (
+            <VideoBlock
+              key={block.id}
+              assetId={block.assetId}
+              title={block.title}
+              transcript={block.transcript}
+              caption={block.caption}
+            />
+          );
+        }
         if (block.type === "table") {
           return (
             <div key={block.id} className="overflow-x-auto">
@@ -255,30 +267,21 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             </section>
           );
         }
-        if (block.type === "illustration" || block.type === "video" || block.type === "voice") {
-          const spoken =
-            "transcript" in block
-              ? String(block.transcript)
-              : "caption" in block
-                ? String(block.caption)
-                : "";
+        if (block.type === "illustration") {
           return (
             <div key={block.id} className="rounded-lg border p-3 text-sm">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <Badge variant="secondary">Media fallback</Badge>
-                {spoken ? (
-                  <ListenButton text={spoken} title={"title" in block ? String(block.title) : "Media"} />
-                ) : null}
-              </div>
-              <p className="mt-2">
-                {"title" in block ? block.title : "Media"} — transcript/caption
-                remains available without generation credentials.
+              <Badge variant="secondary">Illustration fallback</Badge>
+              <p className="mt-2 text-muted-foreground">{block.caption}</p>
+            </div>
+          );
+        }
+        if (block.type === "voice") {
+          return (
+            <div key={block.id} className="rounded-lg border p-3 text-sm">
+              <p className="font-medium">{block.title}</p>
+              <p className="mt-1 text-muted-foreground">
+                Voice scenarios use the visible transcript in the help-desk lab.
               </p>
-              {"transcript" in block ? (
-                <p className="mt-2 text-muted-foreground">{block.transcript}</p>
-              ) : "caption" in block ? (
-                <p className="mt-2 text-muted-foreground">{block.caption}</p>
-              ) : null}
             </div>
           );
         }

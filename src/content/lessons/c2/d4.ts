@@ -562,6 +562,15 @@ Self-grounding (touch the metal chassis) is a weak field improvisation, not a su
 Make the bench safe **before** the case screws come out. Strap on, mat down, bag open, power unplugged, residual charge drained. That sequence is the objective. A P1 ticket does not waive physics: the DIMM you kill in a hurry is a second ticket, and the shock from a live PSU is a workers' compensation form. If you cannot find earth ground, you do not invent a clip onto painted metal — you move the job to a real bench.`,
       },
       {
+        type: "video",
+        id: "C2-D4-O4-L1-see1",
+        assetId: "esd-strap",
+        title: "SEE: strap on unpainted chassis metal",
+        caption: "Painted metal is not a ground.",
+        transcript:
+          "An ESD wrist strap connects you to ground through a resistor. Clip it to unpainted chassis metal or a grounded mat. Painted metal is not a ground.",
+      },
+      {
         type: "table",
         id: "C2-D4-O4-L1-t1",
         title: "Bench safety map",
@@ -666,6 +675,15 @@ Make the bench safe **before** you open the case. That order is the whole object
 **Dust**: compressed air **upright** (so you do not spray liquid propellant), outdoors or with a filter, not into another PC's intake. A vacuum used in IT spaces should be ESD-safe and HEPA-minded; a household vacuum on toner is the wrong tool.
 
 Walk the closet like an auditor: intake clear, UPS breathing, no cardboard on fans, no dripping HVAC, no lithium packs in the trash, SDS binder or link actually reachable. A 40 °C closet with a daisy-chained surge strip is not "a bit warm"; it is an incident you scheduled. Temperature and humidity loggers are cheap compared with a RAID of thermally throttled disks that also fail the next brownout.`,
+      },
+      {
+        type: "video",
+        id: "C2-D4-O5-L1-see1",
+        assetId: "ups-brick",
+        title: "SEE: PC into UPS into wall",
+        caption: "LED overlay: on battery. A surge strip is not a UPS.",
+        transcript:
+          "The PC plugs into the UPS. The UPS plugs into the wall. On a blackout the LED shows on battery so you can shut down cleanly. A surge strip does nothing for a brownout.",
       },
       {
         type: "table",

@@ -1,6 +1,31 @@
 "use client";
 
 import type { CSSProperties, JSX, ReactNode } from "react";
+import {
+  RaidArrayDiagram,
+  T568Diagram,
+  SpectrumDiagram,
+  ConnectorGallery,
+  Ipv4Diagram,
+  DimmVsSodimmDiagram,
+  LaserPrinterDiagram,
+  PsuRailsDiagram,
+  WifiBandDiagram,
+  ApipaTerminalDiagram,
+  CartridgeSlideDiagram,
+  HddFormFactorDiagram,
+  PrivacyShutterDiagram,
+  AtxEpsSeatDiagram,
+  DimmSeatDiagram,
+  SodimmSeatDiagram,
+  M2NvmeDiagram,
+  SataCablesDiagram,
+  Rj45CrimpDiagram,
+  EsdStrapDiagram,
+  UpsBrickDiagram,
+  DriveShredDiagram,
+  PhishingHoverDiagram,
+} from "@/components/diagrams/see-clips";
 
 function Frame({
   title,
@@ -178,77 +203,6 @@ export function UnitsDiagram() {
           ))}
         </tbody>
       </table>
-    </Frame>
-  );
-}
-
-export function RaidArrayDiagram() {
-  const levels = [
-    { name: "RAID 0", disks: ["A", "B", "C", "D"], note: "Stripe. Fail one = all gone." },
-    { name: "RAID 1", disks: ["A", "A"], note: "Mirror. Fail one, data lives." },
-    { name: "RAID 5", disks: ["A", "B", "P"], note: "Stripe + 1 parity." },
-    { name: "RAID 6", disks: ["A", "B", "P", "Q"], note: "Two parity, two-disk fail." },
-    { name: "RAID 10", disks: ["A", "A", "B", "B"], note: "Mirrored pairs, striped." },
-  ];
-  return (
-    <Frame title="RAID at a glance" alt="RAID 0 1 5 6 10 block layout">
-      <div className="space-y-3">
-        {levels.map((l) => (
-          <div key={l.name} className="flex flex-wrap items-center gap-2">
-            <span className="w-16 text-xs font-medium">{l.name}</span>
-            {l.disks.map((d, i) => (
-              <span
-                key={i}
-                className="flex size-9 items-center justify-center rounded border font-mono text-xs"
-              >
-                {d}
-              </span>
-            ))}
-            <span className="text-xs text-muted-foreground">{l.note}</span>
-          </div>
-        ))}
-      </div>
-    </Frame>
-  );
-}
-
-export function T568Diagram() {
-  const a = ["G/W", "G", "O/W", "Bl", "Bl/W", "O", "Br/W", "Br"];
-  const b = ["O/W", "O", "G/W", "Bl", "Bl/W", "G", "Br/W", "Br"];
-  const color: Record<string, string> = {
-    "G/W": "#86efac",
-    G: "#16a34a",
-    "O/W": "#fdba74",
-    O: "#ea580c",
-    Bl: "#2563eb",
-    "Bl/W": "#93c5fd",
-    "Br/W": "#d6b894",
-    Br: "#7c4a1e",
-  };
-  return (
-    <Frame title="T568A / T568B" alt="Eight-pin T568A and T568B wire order">
-      <div className="grid gap-4 md:grid-cols-2">
-        {[
-          ["T568A", a],
-          ["T568B", b],
-        ].map(([name, wires]) => (
-          <div key={name as string}>
-            <p className="mb-2 text-xs font-medium">{name as string} pin 1→8</p>
-            <div className="flex gap-1">
-              {(wires as string[]).map((w, i) => (
-                <div key={i} className="flex flex-1 flex-col items-center gap-1">
-                  <div
-                    className="h-16 w-full rounded-sm border"
-                    style={{ background: color[w] }}
-                  />
-                  <span className="text-[10px] tabular-nums">{i + 1}</span>
-                  <span className="text-[10px]">{w}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
     </Frame>
   );
 }
@@ -494,21 +448,9 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
       "Webcam / mic in the lid",
     ],
   },
-  DimmVsSodimmDiagram: {
-    title: "DIMM vs SODIMM",
-    lines: ["DIMM: desktop, taller", "SODIMM: laptop, about half the length", "Generation (DDR4/5) still must match"],
-  },
-  ConnectorGallery: {
-    title: "Connectors",
-    lines: ["USB-A / USB-C / micro / mini / Lightning", "RJ45 vs RJ11", "HDMI / DP / DVI / VGA", "SATA data vs SATA power vs Molex"],
-  },
   PhoneSettingsDiagram: {
     title: "Phone settings map",
     lines: ["Radios: Wi-Fi, Cellular, Bluetooth, Hotspot", "SIM / eSIM profiles", "Accounts & sync", "MDM / device management"],
-  },
-  SpectrumDiagram: {
-    title: "Bands",
-    lines: ["2.4 GHz: range, congestion, 20/40 MHz", "5 GHz: shorter, cleaner, more channels", "6 GHz: Wi-Fi 6E, indoor, very clean when supported"],
   },
   DnsFlowDiagram: {
     title: "DNS vs IP",
@@ -526,21 +468,9 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
     title: "SOHO path",
     lines: ["ISP → ONT/modem → router/firewall → switch → AP / PCs"],
   },
-  Ipv4Diagram: {
-    title: "Addressing",
-    lines: ["IP + mask define the LAN", "Gateway is the LAN's door", "DNS is a different field"],
-  },
   DisplayCompareDiagram: {
     title: "Panels",
     lines: ["TN: fast, poor angles", "IPS: color/angles", "VA: contrast", "OLED: emissive, burn-in", "Mini-LED: local dimming backlight"],
-  },
-  PsuRailsDiagram: {
-    title: "PSU",
-    lines: ["Input 110–120 vs 220–240 VAC", "3.3 / 5 / 12 V rails", "24-pin + CPU EPS + PCIe + SATA"],
-  },
-  LaserPrinterDiagram: {
-    title: "Laser process",
-    lines: ["Processing, charging, exposing, developing, transferring, fusing, cleaning"],
   },
   DisplayFaultDiagram: {
     title: "Display faults",
@@ -601,6 +531,27 @@ const NAMED: Record<string, () => JSX.Element> = {
   MalwareStepsDiagram,
   BackupChainDiagram,
   AiPolicyDiagram,
+  SpectrumDiagram,
+  ConnectorGallery,
+  Ipv4Diagram,
+  DimmVsSodimmDiagram,
+  LaserPrinterDiagram,
+  PsuRailsDiagram,
+  WifiBandDiagram,
+  ApipaTerminalDiagram,
+  CartridgeSlideDiagram,
+  HddFormFactorDiagram,
+  PrivacyShutterDiagram,
+  AtxEpsSeatDiagram,
+  DimmSeatDiagram,
+  SodimmSeatDiagram,
+  M2NvmeDiagram,
+  SataCablesDiagram,
+  Rj45CrimpDiagram,
+  EsdStrapDiagram,
+  UpsBrickDiagram,
+  DriveShredDiagram,
+  PhishingHoverDiagram,
 };
 
 export function TechnicalDiagram({

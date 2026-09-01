@@ -785,6 +785,16 @@ An **evil twin** is a rogue AP using a trusted SSID (or a near-clone) so clients
 Do not confuse evil twin with **on-path** (formerly man-in-the-middle) as a category: evil twin is a way to become on-path on wireless.`,
       },
       {
+        type: "video",
+        id: "C2-D2-O5-L1-see1",
+        assetId: "phishing-hover",
+        title: "SEE: displayed paypal.com versus real URL",
+        caption:
+          "HTML overlays spell paypal.com and paypa1-secure.example. Do not trust Imagine spelling.",
+        transcript:
+          "The friendly text can say paypal.com while the real URL is paypa1-secure.example. Trust the HTML overlay strings in this academy, not any spelling drawn inside a generated frame.",
+      },
+      {
         type: "table",
         id: "C2-D2-O5-L1-t1",
         title: "Name the play",
@@ -1422,6 +1432,15 @@ MFA authenticator apps on a lost phone are an identity incident, not only a hard
 **Outsourcing:** a **third-party vendor** with a **certificate of destruction (CoD)** (or recycling) is how companies prove a chain when they cannot shred on site. You still need serial-number inventory and a chain of custody. Regulatory and **environmental** rules (e-waste, hazardous components) forbid throwing drives in the dumpster even after a wipe.
 
 Paper and optical discs: shred (cross-cut) or incinerate per policy. Phones: MDM wipe, then factory reset is not enough for high assurance — destroy or use a certified e-waste process after crypto-erase.`,
+      },
+      {
+        type: "video",
+        id: "C2-D2-O9-L1-see1",
+        assetId: "drive-shred",
+        title: "SEE: Degauss, Wipe, Shred — drive goes to shred",
+        caption: "Degauss is not for SSD. RAID is not destruction.",
+        transcript:
+          "Shredding destroys platters so the drive cannot be reused. Degaussing is for magnetic media, not SSD. Wipe is for reuse. RAID is not a destruction method.",
       },
       {
         type: "table",

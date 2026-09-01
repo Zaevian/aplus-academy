@@ -132,3 +132,85 @@
     outline-offset: 2px;
   }
 }
+
+/* SEE clips: HTML/SVG labels. Reduced motion freezes on the last frame. */
+@keyframes see-t568-swap {
+  0%, 18% { transform: translateX(0); }
+  40%, 100% { transform: translateX(var(--see-dx, 0)); }
+}
+@keyframes see-fail-red {
+  0%, 45% { background-color: var(--card); color: inherit; }
+  55%, 100% { background-color: color-mix(in oklab, var(--destructive) 18%, var(--card)); color: var(--destructive); }
+}
+@keyframes see-empty {
+  0%, 50% { opacity: 1; }
+  60%, 100% { opacity: 0.15; }
+}
+@keyframes see-grow {
+  0% { transform: scale(0.2); opacity: 0.4; }
+  35%, 100% { transform: scale(1); opacity: 1; }
+}
+@keyframes see-type {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+@keyframes see-seat {
+  0% { transform: translateY(-28px); }
+  40%, 100% { transform: translateY(0); }
+}
+@keyframes see-reject {
+  0%, 20% { transform: translateY(-20px); }
+  40% { transform: translateY(-4px); }
+  55% { transform: translateY(-16px); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes see-flip {
+  0% { transform: rotate(180deg) translateY(-10px); }
+  40% { transform: rotate(0deg) translateY(-10px); }
+  70%, 100% { transform: rotate(0deg) translateY(0); }
+}
+@keyframes see-slide-in {
+  0% { transform: translateX(-40%); }
+  45%, 100% { transform: translateX(0); }
+}
+@keyframes see-shutter {
+  0%, 25% { transform: translateX(-100%); }
+  55%, 100% { transform: translateX(0); }
+}
+@keyframes see-led {
+  0%, 50% { background-color: #22c55e; }
+  60%, 100% { background-color: #3f3f46; }
+}
+@keyframes see-angle {
+  0% { transform: rotate(-30deg) translateY(-8px); }
+  50%, 100% { transform: rotate(0deg) translateY(0); }
+}
+@keyframes see-latch {
+  0%, 40% { transform: rotate(25deg); }
+  70%, 100% { transform: rotate(0deg); }
+}
+@keyframes see-move-shred {
+  0% { transform: translateX(0); }
+  50%, 100% { transform: translateX(168%); }
+}
+
+.see-anim {
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.see-frozen .see-anim {
+  animation-play-state: paused;
+  animation-delay: -6.9s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .see-anim {
+    animation-play-state: paused;
+    animation-delay: -6.9s;
+  }
+}
+html.reduce-motion .see-anim {
+  animation-play-state: paused;
+  animation-delay: -6.9s;
+}
