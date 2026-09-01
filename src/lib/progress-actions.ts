@@ -63,7 +63,7 @@ export async function completeOnboarding(input: {
   };
   await db.profiles.put(profile);
   await updateProgress((progress) => {
-    progress.currentLocation = "/course/foundation";
+    progress.currentLocation = "/course/foundation/what-a-plus-is";
     progress.unlockedDomainIds = healedUnlocks({
       ...progress,
       unlockedDomainIds: [...progress.unlockedDomainIds, "FND-D0", "C1-D1", "C2-D1"],

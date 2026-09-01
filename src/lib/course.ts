@@ -47,6 +47,7 @@ export function lessonPath(lessonId: string): string {
   if (!lesson) return "/course";
   const objective = ALL_OBJECTIVES.find((o) => o.id === lesson.objectiveId);
   if (!objective) return "/course";
+  if (objective.core === "FND") return `/course/foundation/${lesson.slug}`;
   return `${objectivePath(objective)}/${lesson.slug}`;
 }
 

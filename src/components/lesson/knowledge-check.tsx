@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { shuffle, isCorrect } from "@/lib/questions";
 import { completeBlock, recordAnswer } from "@/lib/progress-actions";
 import { useAcademy } from "@/components/academy-provider";
+import { ListenButton } from "@/components/voice/listen-button";
 
 function saltFromId(id: string): number {
   let n = 0;
@@ -130,7 +131,14 @@ export function KnowledgeCheck({
           {question.scenario}
         </p>
       ) : null}
-      <p className="mt-3 text-sm leading-6 font-medium">{question.stem}</p>
+      <div className="mt-3 flex flex-wrap items-start justify-between gap-2">
+        <p className="text-sm leading-6 font-medium">{question.stem}</p>
+        <ListenButton
+          text={`${question.scenario ? question.scenario + ". " : ""}${question.stem}. ${order.map((c) => c.text).join(". ")}`}
+          title={`Check ${index + 1}`}
+          label="Listen"
+        />
+      </div>
       <ul className="mt-3 space-y-2" key={question.id}>
         {order.map((choice) => {
           const on = selected.includes(choice.id);

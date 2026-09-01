@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LabStatus, useSolved } from "@/components/labs/lab-kit";
+import { ListenButton } from "@/components/voice/listen-button";
 
 const CALLS = [
   {
@@ -113,12 +114,15 @@ export function VoiceLab({ lab, onSolved }: LabSimProps) {
         mission="Read each transcript (always visible — a silent player is not the lab) and pick the BEST response."
       />
       <p className="text-xs text-muted-foreground">
-        Audio is optional and not required. The transcript is the lab when no
-        voice service is configured.
+        Press Listen on each transcript. Cloud voice is used when available;
+        otherwise this device speaks. The written transcript is always the lab.
       </p>
       {CALLS.map((call) => (
         <section key={call.id} className="rounded border p-3">
-          <h3 className="font-medium">{call.title}</h3>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="font-medium">{call.title}</h3>
+            <ListenButton text={call.transcript} title={call.title} />
+          </div>
           <p className="mt-2 rounded bg-muted/60 p-3 leading-6">{call.transcript}</p>
           <ul className="mt-2 space-y-2">
             {call.options.map((o) => (

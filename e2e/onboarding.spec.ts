@@ -5,7 +5,7 @@ test("new learner is gated by a wrong knowledge check then unlocked", async ({ p
   for (let i = 0; i < 7; i++) {
     await page.getByRole("button", { name: "Continue" }).click();
   }
-  await page.getByRole("button", { name: "Create local profile" }).click();
+  await page.getByRole("button", { name: /Start lesson 1/i }).click();
   await expect(page).toHaveURL(/foundation/);
   await page.goto("/course/foundation/what-a-plus-is");
   await expect(page.getByText("Knowledge check")).toBeVisible();

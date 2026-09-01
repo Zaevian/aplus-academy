@@ -20,6 +20,10 @@ import { lockAtIndex } from "@/lib/lesson-lock";
 import { ALL_OBJECTIVES, DOMAINS } from "@/content/catalog";
 import { DomainGate } from "@/components/course/domain-gate";
 import { addNote } from "@/lib/progress-actions";
+import { ListenButton } from "@/components/voice/listen-button";
+import { lessonSpokenText, stripForSpeech } from "@/lib/spoken-text";
+import { nextLessonAfter } from "@/lib/study-path";
+import Link from "next/link";
 
 const CALLOUT_STYLES: Record<string, string> = {
   exam: "border-l-foreground",
@@ -60,6 +64,11 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         <h1 className="text-2xl font-semibold tracking-tight">{lesson.title}</h1>
         <p className="text-muted-foreground">{lesson.description}</p>
         <div className="flex flex-wrap gap-2">
+          <ListenButton
+            text={lessonSpokenText(lesson)}
+            title={lesson.title}
+            label="Listen to this lesson"
+          />
           <Button
             variant={bookmarked ? "default" : "outline"}
             size="sm"
@@ -108,9 +117,16 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         if (block.type === "reading") {
           return (
             <section key={block.id} className="space-y-2">
-              {block.title ? (
-                <h2 className="text-lg font-semibold">{block.title}</h2>
-              ) : null}
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                {block.title ? (
+                  <h2 className="text-lg font-semibold">{block.title}</h2>
+                ) : <span />}
+                <ListenButton
+                  text={stripForSpeech(`${block.title ?? ""}. ${block.markdown}`)}
+                  title={block.title ?? "Reading"}
+                  label="Listen"
+                />
+              </div>
               <Prose markdown={block.markdown} />
             </section>
           );
@@ -121,7 +137,14 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               key={block.id}
               className={`rounded-md border border-l-4 bg-card p-3 text-sm leading-6 ${CALLOUT_STYLES[block.callout.kind]}`}
             >
-              <p className="font-medium">{block.callout.title}</p>
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <p className="font-medium">{block.callout.title}</p>
+                <ListenButton
+                  text={`${block.callout.title}. ${block.callout.body}`}
+                  title={block.callout.title}
+                  label="Listen"
+                />
+              </div>
               <p className="mt-1 text-muted-foreground">{block.callout.body}</p>
             </aside>
           );
@@ -198,30 +221,55 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
           );
         }
         if (block.type === "summary") {
+          const nxt = nextLessonAfter(lesson.id);
           return (
             <section key={block.id}>
-              <h2 className="text-lg font-semibold">Summary</h2>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2 className="text-lg font-semibold">Summary</h2>
+                <ListenButton
+                  text={`Summary. ${block.bullets.join(". ")}`}
+                  title="Summary"
+                  label="Listen"
+                />
+              </div>
               <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6">
                 {block.bullets.map((b) => (
                   <li key={b}>{b}</li>
                 ))}
               </ul>
-              <div className="mt-4">
+              <div className="mt-4 flex flex-wrap gap-2">
                 <Button
                   onClick={() => void completeLesson(lesson.id)}
                   variant="outline"
                   size="sm"
+                  className="min-h-11"
                 >
                   Mark lesson complete
                 </Button>
+                {nxt ? (
+                  <Button size="sm" className="min-h-11" render={<Link href={nxt.href} />}>
+                    Next: {nxt.title}
+                  </Button>
+                ) : null}
               </div>
             </section>
           );
         }
         if (block.type === "illustration" || block.type === "video" || block.type === "voice") {
+          const spoken =
+            "transcript" in block
+              ? String(block.transcript)
+              : "caption" in block
+                ? String(block.caption)
+                : "";
           return (
             <div key={block.id} className="rounded-lg border p-3 text-sm">
-              <Badge variant="secondary">Media fallback</Badge>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <Badge variant="secondary">Media fallback</Badge>
+                {spoken ? (
+                  <ListenButton text={spoken} title={"title" in block ? String(block.title) : "Media"} />
+                ) : null}
+              </div>
               <p className="mt-2">
                 {"title" in block ? block.title : "Media"} — transcript/caption
                 remains available without generation credentials.

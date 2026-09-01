@@ -50,6 +50,11 @@ export default function SettingsPage() {
           onCheckedChange={(v) => void updateSettings({ showTranscripts: v })}
         />
       </label>
+      <p className="text-sm text-muted-foreground">
+        Listen buttons read lesson text aloud. Cloud voice is used when it is
+        configured on the server. Otherwise this device speaks. Guest study still
+        works with no keys.
+      </p>
     </div>
   );
 }

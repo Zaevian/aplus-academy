@@ -17,7 +17,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
       {PRIMARY_NAV.map((item) => {
         const active =
           pathname === item.href ||
-          (item.href !== "/dashboard" && pathname.startsWith(item.href));
+          (item.href !== "/start" && pathname.startsWith(item.href));
         const Icon = item.icon;
         return (
           <Link
@@ -66,9 +66,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-svh bg-background">
       <aside className="hidden w-56 shrink-0 border-r bg-sidebar text-sidebar-foreground md:flex md:flex-col">
         <div className="px-3 py-3">
-          <Link href="/dashboard" className="block">
+          <Link href="/start" className="block">
             <div className="text-sm font-semibold tracking-tight">A+ Academy</div>
-            <div className="text-xs text-muted-foreground">CompTIA A+ V15</div>
+            <div className="text-xs text-muted-foreground">Start here · A+ V15</div>
           </Link>
         </div>
         <Separator />
@@ -103,7 +103,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             const Icon = item.icon;
             const active =
               pathname === item.href ||
-              (item.href !== "/dashboard" && pathname.startsWith(item.href));
+              (item.href !== "/start" && pathname.startsWith(item.href));
             return (
               <Link
                 key={item.href}

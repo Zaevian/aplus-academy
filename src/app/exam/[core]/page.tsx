@@ -9,6 +9,7 @@ import { recordQuiz } from "@/lib/progress-actions";
 import { Button } from "@/components/ui/button";
 import { INTERNAL_SCORING_DISCLAIMER } from "@/lib/exam-meta";
 import { cn } from "@/lib/utils";
+import { ListenButton } from "@/components/voice/listen-button";
 
 const PBQ_ID = "EXAM-PBQ-PORTS";
 
@@ -28,10 +29,16 @@ function PortsPbq({
   const options = ["SSH", "FTP", "DNS", "SMB", "RDP", "Telnet"];
   return (
     <div className="space-y-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
       <p className="font-medium">
         PBQ: match each official 2.1 port to its protocol. This is one exam item,
         not four.
       </p>
+      <ListenButton
+        text="Match each official two point one port to its protocol. Twenty-two SSH. Fifty-three DNS. Four forty-five SMB. Thirty-three eighty-nine RDP."
+        title="Exam PBQ"
+      />
+      </div>
       <ul className="space-y-2">
         {pairs.map((p, i) => (
           <li key={p.port} className="flex items-center gap-2 text-sm">
@@ -203,7 +210,13 @@ export default function MockExamPage() {
           {q.scenario ? (
             <p className="rounded-md bg-muted/60 p-3 text-sm">{q.scenario}</p>
           ) : null}
-          <p className="font-medium">{q.stem}</p>
+          <div className="flex flex-wrap items-start justify-between gap-2">
+            <p className="font-medium">{q.stem}</p>
+            <ListenButton
+              text={`${q.scenario ? q.scenario + ". " : ""}${q.stem}. ${q.choices.map((c) => c.text).join(". ")}`}
+              title={`Exam ${i + 1}`}
+            />
+          </div>
           <ul className="space-y-2">
             {shuffle(q.choices, q.id.length / 100).map((c) => (
               <li key={c.id}>

@@ -7,6 +7,7 @@ import { getLabs, getQuestions } from "@/content/registry";
 import { INTERNAL_SCORING_DISCLAIMER } from "@/lib/exam-meta";
 import { masteryPercent } from "@/lib/review";
 import { Button } from "@/components/ui/button";
+import { nextStudy } from "@/lib/study-path";
 
 export default function DashboardPage() {
   const { ready, profile, progress, mastery, quizzes } = useAcademy();
@@ -40,20 +41,35 @@ export default function DashboardPage() {
       (progress?.completedDomains.length ?? 0) / Math.max(DOMAINS.length, 1) * 0.3) *
       100,
   );
+  const next = nextStudy(progress);
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {profile ? `Continue, ${profile.displayName}` : "Dashboard"}
+      <section className="rounded-xl border-2 border-foreground p-5">
+        <p className="text-xs font-medium tracking-wide uppercase text-muted-foreground">
+          This page is an overview, not the course
+        </p>
+        <h1 className="mt-1 text-2xl font-semibold tracking-tight">
+          {profile ? `${profile.displayName}, start studying here` : "Start studying here"}
         </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {next.stepLabel}: {next.title}. {next.detail}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Button className="min-h-11" render={<Link href={next.href} />}>
+            Open the next lesson
+          </Button>
+          <Button variant="outline" className="min-h-11" render={<Link href="/start" />}>
+            See the 3-step path
+          </Button>
+        </div>
+      </section>
+      <header>
+        <h2 className="text-lg font-semibold tracking-tight">Scoreboard</h2>
         <p className="text-sm text-muted-foreground">{INTERNAL_SCORING_DISCLAIMER}</p>
       </header>
       <div className="flex flex-wrap gap-2">
-        <Button render={<Link href={progress?.currentLocation || "/course/foundation"} />}>
-          Resume exactly where you stopped
-        </Button>
-        <Button variant="outline" render={<Link href="/review" />}>
+        <Button variant="outline" className="min-h-11" render={<Link href="/review" />}>
           Reviews due ({due.length})
         </Button>
       </div>

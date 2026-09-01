@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { applyCompleteBlock, lockAtIndex } from "../lesson-lock";
+import { lessonPath } from "../course";
+import { FIRST_LESSON_HREF } from "../study-path";
 import { initialProgress } from "@/db/client";
 
 describe("knowledge-check persist / remount", () => {
@@ -24,5 +26,9 @@ describe("knowledge-check persist / remount", () => {
     expect(persisted.completedBlocks).toContain("FND-D0-O1-L1-kc1");
     const remount = lockAtIndex(blocks, persisted.completedBlocks);
     expect(remount).toBe(-1);
+  });
+
+  it("Foundation lesson 1 is a real start URL", () => {
+    expect(lessonPath("FND-D0-O1-L1")).toBe(FIRST_LESSON_HREF);
   });
 });
