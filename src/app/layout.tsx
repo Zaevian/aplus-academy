@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -20,7 +21,9 @@ export const metadata: Metadata = {
     "Primary self-study academy for CompTIA A+ Core 1 (220-1201) and Core 2 (220-1202). Internal readiness only — not a guaranteed exam result.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html
       lang="en"
