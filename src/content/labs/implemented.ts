@@ -21,6 +21,7 @@ export const LAB_HOST_COMPONENTS = [
   "TicketShiftLab",
   "LaptopUpgradeLab",
   "RamInstallLab",
+  "PortsDrillLab",
   "CloudServiceLab",
 ] as const;
 

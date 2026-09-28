@@ -119,19 +119,39 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ---
 
+## 2026-09-28 — C1 Domain 2 Networking follow-on (holdout + ports lab)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d2-networking-holdout` from master @ 9197840 after Hardware #2)  
+**Official:** 220-1201 Domain 2 Networking **23%**
+
+### Shipped
+- **Holdout:** `HOLDOUT_DOMAIN_IDS` includes `C1-D2` alongside `C1-D3`; disjoint `reviewQuestionIds` for all eight Networking objectives; lesson KC/checkpoint IDs protected
+- **Scored ports PBQ lab:** `C1-D2-O1-PORTS-LAB` → `PortsDrillLab` (ticket → official 2.1 port match) via LabHost + O1-L3 lesson block
+
+### Still open
+- O3/O4/O7/O8 scored labs (tools drill still missing)
+- Weak distractor rationales / misconception tags on Networking bank
+- Mobile Devices and remaining domains without holdout
+
+### Verdict
+**Not Exam Ready** for Networking as a whole — holdout + O1 ports lab close two gaps from the earlier Networking audit; PBQ suite and rationale quality still incomplete.
+
+---
+
 ## 2026-09-28 — C1 Domain 4 Virtualization and Cloud (fourth weekly rotation)
 
 **Auditor:** Miyuki  
 **Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d4-virtualization` from master @ 9197840)  
 **Official:** 220-1201 Domain 4 Virtualization and Cloud Computing **~11%** (Exam Objectives Document Version 3.0)  
-**Note:** PR #3 Networking left untouched (waiting on Zae).
+**Note:** Restacked onto master after PR #3 (C1-D2 Networking holdout + ports lab).
 
 ### Coverage snapshot
 - Objectives 4.1–4.2 (`C1-D4-O1`, `C1-D4-O2`): coverage `verified` (MCQ depth ≥40); **6** lessons; **82** questions
 - Scored LabHost labs **before** this PR: **0** pbqLabIds on both objectives
 - **This PR:** Cloud service model lab `C1-D4-O2-CLOUD-LAB` → `CloudServiceLab` for O2 (IaaS/PaaS/SaaS ticket match; on-prem/container distractors unused)
 - Still **0** pbqLabIds on O1 (Type 1/2, VDI, containers)
-- Holdout: `HOLDOUT_DOMAIN_IDS` now includes **C1-D4** alongside C1-D3; lesson KC/checkpoint IDs stay in practice only
+- Holdout: `HOLDOUT_DOMAIN_IDS` now includes **C1-D4** alongside C1-D2 and C1-D3; lesson KC/checkpoint IDs stay in practice only
 - SHOW: `HypervisorDiagram` / `CloudModelsDiagram` were real components (not SIMPLE stubs) but thin — upgraded to Type1/Type2/container contrast and on-prem→SaaS responsibility stack
 
 ### Findings

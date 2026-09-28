@@ -24,6 +24,7 @@ import { VoiceLab } from "@/components/labs/voice-lab";
 import { TicketShiftLab } from "@/components/labs/ticket-shift-lab";
 import { LaptopUpgradeLab } from "@/components/labs/laptop-upgrade-lab";
 import { RamInstallLab } from "@/components/labs/ram-install-lab";
+import { PortsDrillLab } from "@/components/labs/ports-drill-lab";
 import { CloudServiceLab } from "@/components/labs/cloud-service-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
@@ -54,6 +55,7 @@ export const LAB_COMPONENT_MAP: Record<
   TicketShiftLab,
   LaptopUpgradeLab,
   RamInstallLab,
+  PortsDrillLab,
   CloudServiceLab,
 };
 
