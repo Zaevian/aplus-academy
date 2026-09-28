@@ -4,14 +4,15 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { getQuestions } from "@/content/registry";
 import { ALL_OBJECTIVES } from "@/content/catalog";
-import { unseenFirst, isCorrect, shuffle } from "@/lib/questions";
-import { recordQuiz } from "@/lib/progress-actions";
+import { isCorrect, shuffle, domainWeightedSample } from "@/lib/questions";
+import { exposedQuestionIds, recordQuiz } from "@/lib/progress-actions";
 import { Button } from "@/components/ui/button";
-import { INTERNAL_SCORING_DISCLAIMER } from "@/lib/exam-meta";
+import { EXAM_META, INTERNAL_SCORING_DISCLAIMER } from "@/lib/exam-meta";
 import { cn } from "@/lib/utils";
 import { ListenButton } from "@/components/voice/listen-button";
 
-const PBQ_ID = "EXAM-PBQ-PORTS";
+const PORTS_PBQ_ID = "EXAM-PBQ-PORTS";
+const TOOLS_PBQ_ID = "EXAM-PBQ-WIN-TOOLS";
 
 function PortsPbq({
   value,
@@ -66,7 +67,7 @@ function PortsPbq({
   );
 }
 
-function pbqCorrect(selected: string[]): boolean {
+function portsPbqCorrect(selected: string[]): boolean {
   return (
     selected[0] === "SSH" &&
     selected[1] === "DNS" &&
@@ -75,9 +76,95 @@ function pbqCorrect(selected: string[]): boolean {
   );
 }
 
+/** Core 2 PBQ: match Windows tools / malware symptoms / permission levels. */
+function Core2ToolsPbq({
+  value,
+  onChange,
+}: {
+  value: string[];
+  onChange: (v: string[]) => void;
+}) {
+  const rows = [
+    {
+      clue: "Fans scream; a helper.exe process sits at 98% CPU after a download.",
+      want: "Task Manager",
+    },
+    {
+      clue: "At boot a service failed to start; you need the Error, not Information noise.",
+      want: "Event Viewer",
+    },
+    {
+      clue: "Sales needs Read over the share; IT needs Modify; deny must win.",
+      want: "NTFS + share ACL",
+    },
+    {
+      clue: "SOHO malware: verify → quarantine → disable System Restore → remediate…",
+      want: "Malware removal sequence",
+    },
+  ];
+  const options = [
+    "Task Manager",
+    "Event Viewer",
+    "Disk Management",
+    "NTFS + share ACL",
+    "Malware removal sequence",
+    "Device Manager",
+  ];
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <p className="font-medium">
+          PBQ: match each Core 2 symptom to the correct Windows tool, permission
+          model, or malware process. This is one exam item, not four.
+        </p>
+        <ListenButton
+          text="Match each Core 2 symptom to Task Manager, Event Viewer, NTFS and share ACL, or the malware removal sequence."
+          title="Exam PBQ"
+        />
+      </div>
+      <ul className="space-y-2">
+        {rows.map((row, i) => (
+          <li key={row.want} className="space-y-1 text-sm">
+            <p className="text-muted-foreground">{row.clue}</p>
+            <select
+              className="min-h-11 w-full rounded-md border bg-background px-2"
+              value={value[i] ?? ""}
+              onChange={(e) => {
+                const next = [...value];
+                next[i] = e.target.value;
+                onChange(next);
+              }}
+            >
+              <option value="">Select match</option>
+              {options.map((o) => (
+                <option key={o} value={o}>
+                  {o}
+                </option>
+              ))}
+            </select>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function core2PbqCorrect(selected: string[]): boolean {
+  return (
+    selected[0] === "Task Manager" &&
+    selected[1] === "Event Viewer" &&
+    selected[2] === "NTFS + share ACL" &&
+    selected[3] === "Malware removal sequence"
+  );
+}
+
 export default function MockExamPage() {
   const params = useParams<{ core: string }>();
   const coreId = params.core === "core-1" ? "C1" : "C2";
+  const isCore1 = coreId === "C1";
+  const pbqId = isCore1 ? PORTS_PBQ_ID : TOOLS_PBQ_ID;
+  const meta = isCore1 ? EXAM_META.core1 : EXAM_META.core2;
+
   const pool = useMemo(
     () =>
       getQuestions().filter((q) => {
@@ -86,7 +173,37 @@ export default function MockExamPage() {
       }),
     [coreId],
   );
-  const mcq = useMemo(() => unseenFirst(pool, new Set(), 89), [pool]);
+
+  const [exposed, setExposed] = useState<Set<string>>(new Set());
+  const [exposureReady, setExposureReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    void exposedQuestionIds().then((ids) => {
+      if (cancelled) return;
+      setExposed(ids);
+      setExposureReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const domainPercents = useMemo(
+    () =>
+      meta.domains.map((d) => ({
+        domainNumber: d.number,
+        percent: d.percent,
+        objectivePrefix: `${coreId}-D${d.number}-`,
+      })),
+    [meta.domains, coreId],
+  );
+
+  const mcq = useMemo(() => {
+    if (!exposureReady) return [];
+    return domainWeightedSample(pool, exposed, 89, domainPercents);
+  }, [pool, exposed, exposureReady, domainPercents]);
+
   const items = mcq;
   const [i, setI] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
@@ -113,9 +230,13 @@ export default function MockExamPage() {
   const mm = Math.floor(seconds / 60);
   const ss = seconds % 60;
 
+  function pbqIsCorrect(selected: string[]): boolean {
+    return isCore1 ? portsPbqCorrect(selected) : core2PbqCorrect(selected);
+  }
+
   async function finish() {
     if (submitted) return;
-    let score = pbqCorrect(pbq) ? 1 : 0;
+    let score = pbqIsCorrect(pbq) ? 1 : 0;
     const missed: string[] = [];
     for (const item of items) {
       const sel = answers[item.id] ?? [];
@@ -125,7 +246,7 @@ export default function MockExamPage() {
     await recordQuiz({
       kind: "mock",
       targetId: coreId,
-      questionIds: [PBQ_ID, ...items.map((x) => x.id)],
+      questionIds: [pbqId, ...items.map((x) => x.id)],
       score,
       total: totalItems,
       missedConceptIds: missed,
@@ -133,13 +254,13 @@ export default function MockExamPage() {
     setSubmitted(true);
   }
 
-  if (items.length === 0) {
+  if (!exposureReady || items.length === 0) {
     return <p className="p-6 text-sm">Question bank for this core is still loading.</p>;
   }
 
   if (submitted) {
     const score =
-      (pbqCorrect(pbq) ? 1 : 0) +
+      (pbqIsCorrect(pbq) ? 1 : 0) +
       items.filter((item) => isCorrect(item, answers[item.id] ?? [])).length;
     const pct = Math.round((score / totalItems) * 100);
     return (
@@ -153,11 +274,15 @@ export default function MockExamPage() {
         </p>
         <ul className="space-y-3 text-sm">
           <li className="rounded border p-2">
-            <p>PBQ ports match</p>
+            <p>{isCore1 ? "PBQ ports match" : "PBQ Windows tools / security match"}</p>
             <p className="text-muted-foreground">
-              {pbqCorrect(pbq)
-                ? "Matched 22/SSH, 53/DNS, 445/SMB, 3389/RDP."
-                : "Need 22=SSH, 53=DNS, 445=SMB, 3389=RDP from the official 2.1 list."}
+              {pbqIsCorrect(pbq)
+                ? isCore1
+                  ? "Matched 22/SSH, 53/DNS, 445/SMB, 3389/RDP."
+                  : "Matched Task Manager, Event Viewer, NTFS+share ACL, and malware sequence."
+                : isCore1
+                  ? "Need 22=SSH, 53=DNS, 445=SMB, 3389=RDP from the official 2.1 list."
+                  : "Need Task Manager, Event Viewer, NTFS + share ACL, Malware removal sequence."}
             </p>
           </li>
           {items.map((item) => (
@@ -199,7 +324,11 @@ export default function MockExamPage() {
       </div>
       <p className="text-xs text-muted-foreground">{INTERNAL_SCORING_DISCLAIMER}</p>
       {onPbq ? (
-        <PortsPbq value={pbq} onChange={setPbq} />
+        isCore1 ? (
+          <PortsPbq value={pbq} onChange={setPbq} />
+        ) : (
+          <Core2ToolsPbq value={pbq} onChange={setPbq} />
+        )
       ) : q ? (
         <>
           {multi ? (
@@ -258,7 +387,7 @@ export default function MockExamPage() {
           className="min-h-11"
           variant="ghost"
           onClick={() => {
-            const id = onPbq ? PBQ_ID : q?.id;
+            const id = onPbq ? pbqId : q?.id;
             if (!id) return;
             setFlagged((f) => {
               const n = new Set(f);
@@ -268,7 +397,7 @@ export default function MockExamPage() {
             });
           }}
         >
-          {flagged.has(onPbq ? PBQ_ID : q?.id ?? "") ? "Unflag" : "Flag"}
+          {flagged.has(onPbq ? pbqId : q?.id ?? "") ? "Unflag" : "Flag"}
         </Button>
         <Button size="sm" className="min-h-11" onClick={() => void finish()}>
           Submit exam
@@ -278,7 +407,7 @@ export default function MockExamPage() {
         <button
           type="button"
           className={`size-11 rounded border text-[10px] ${
-            flagged.has(PBQ_ID) ? "bg-amber-500/20" : pbq.length ? "bg-muted" : ""
+            flagged.has(pbqId) ? "bg-amber-500/20" : pbq.length ? "bg-muted" : ""
           }`}
           onClick={() => setI(0)}
         >

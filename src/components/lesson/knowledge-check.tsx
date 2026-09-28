@@ -26,7 +26,12 @@ export function KnowledgeCheck({
   questions: Question[];
   context?: "block" | "checkpoint" | "domain-quiz" | "review" | "practice";
   onPassed?: () => void;
-  onItemResult?: (index: number, correct: boolean) => void;
+  /** Fires on every check. `firstAttempt` is true only for the first submit on this item. */
+  onItemResult?: (
+    index: number,
+    correct: boolean,
+    meta?: { firstAttempt: boolean; assisted: boolean },
+  ) => void;
 }) {
   const { progress } = useAcademy();
   const already = progress?.completedBlocks.includes(blockId) ?? false;
@@ -35,6 +40,9 @@ export function KnowledgeCheck({
   const [submitted, setSubmitted] = useState(false);
   const [correctNow, setCorrectNow] = useState(false);
   const [alt, setAlt] = useState(false);
+  /** Stays true after the explanation has been revealed for the current item. */
+  const [explanationShown, setExplanationShown] = useState(false);
+  const [attemptNumber, setAttemptNumber] = useState(1);
 
   const question = questions[index];
   const order = useMemo(
@@ -64,14 +72,22 @@ export function KnowledgeCheck({
   }
 
   async function submit() {
+    const assisted = explanationShown;
+    const firstAttempt = attemptNumber === 1 && !explanationShown;
     const result = await recordAnswer({
       questionId: question.id,
       selected,
       context,
+      assisted,
+      attemptNumber,
     });
     setSubmitted(true);
     setCorrectNow(result.correct);
-    onItemResult?.(index, result.correct);
+    if (!result.correct) {
+      setExplanationShown(true);
+    }
+    onItemResult?.(index, result.correct, { firstAttempt, assisted });
+    setAttemptNumber((n) => n + 1);
     if (result.correct) {
       const last = index === questions.length - 1;
       if (last) {
@@ -100,6 +116,8 @@ export function KnowledgeCheck({
     setSubmitted(false);
     setCorrectNow(false);
     setAlt(false);
+    setExplanationShown(false);
+    setAttemptNumber(1);
   }
 
   const chosen = question.choices.filter((c) => selected.includes(c.id));

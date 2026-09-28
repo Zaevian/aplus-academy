@@ -22,6 +22,7 @@ import { TicketLab } from "@/components/labs/ticket-lab";
 import { BackupLab } from "@/components/labs/backup-lab";
 import { VoiceLab } from "@/components/labs/voice-lab";
 import { TicketShiftLab } from "@/components/labs/ticket-shift-lab";
+import { LaptopUpgradeLab } from "@/components/labs/laptop-upgrade-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -49,6 +50,7 @@ export const LAB_COMPONENT_MAP: Record<
   BackupLab,
   VoiceLab,
   TicketShiftLab,
+  LaptopUpgradeLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

@@ -48,3 +48,57 @@ export function unseenFirst(
   }
   return picked.slice(0, count);
 }
+
+/** Proportional MCQ sampling biased to EXAM_META domain percents for a core. */
+export function domainWeightedSample(
+  bank: Question[],
+  exposedIds: Set<string>,
+  count: number,
+  domainPercents: { domainNumber: number; percent: number; objectivePrefix: string }[],
+): Question[] {
+  if (count <= 0 || bank.length === 0) return [];
+  const totalPct = domainPercents.reduce((s, d) => s + d.percent, 0) || 1;
+  const buckets: { domainNumber: number; want: number; pool: Question[] }[] = domainPercents.map(
+    (d) => ({
+      domainNumber: d.domainNumber,
+      want: Math.max(1, Math.round((d.percent / totalPct) * count)),
+      pool: bank.filter((q) => q.objectiveId.startsWith(d.objectivePrefix)),
+    }),
+  );
+  // Fix rounding so sum === count
+  let allocated = buckets.reduce((s, b) => s + b.want, 0);
+  while (allocated > count) {
+    const richest = buckets.reduce((a, b) => (b.want > a.want ? b : a));
+    if (richest.want <= 1) break;
+    richest.want -= 1;
+    allocated -= 1;
+  }
+  while (allocated < count) {
+    const neediest = buckets.reduce((a, b) =>
+      b.pool.length - b.want > a.pool.length - a.want ? b : a,
+    );
+    neediest.want += 1;
+    allocated += 1;
+  }
+
+  const picked: Question[] = [];
+  const used = new Set<string>();
+  for (const bucket of buckets) {
+    const slice = unseenFirst(bucket.pool, exposedIds, bucket.want);
+    for (const q of slice) {
+      if (used.has(q.id)) continue;
+      picked.push(q);
+      used.add(q.id);
+    }
+  }
+  if (picked.length < count) {
+    const filler = unseenFirst(
+      bank.filter((q) => !used.has(q.id)),
+      exposedIds,
+      count - picked.length,
+    );
+    picked.push(...filler);
+  }
+  return shuffle(picked).slice(0, count);
+}
+

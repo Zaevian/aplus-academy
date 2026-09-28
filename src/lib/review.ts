@@ -5,12 +5,18 @@ const DAYS = 24 * 60 * MINUTES;
 
 const DEFAULT_INTERVALS = [0, 1, 3, 7, 14, 30];
 
+export type ScheduleOptions = {
+  /** Correct only after the explanation was already shown for this item. */
+  assisted?: boolean;
+};
+
 export function scheduleAfterAnswer(
   row: MasteryRow | undefined,
   id: string,
   kind: MasteryRow["kind"],
   correct: boolean,
   now = Date.now(),
+  options?: ScheduleOptions,
 ): MasteryRow {
   const current: MasteryRow = row ?? {
     id,
@@ -23,6 +29,19 @@ export function scheduleAfterAnswer(
     lastAt: 0,
     exposure: 0,
   };
+
+  const assisted = Boolean(options?.assisted);
+
+  // Assisted retry: record exposure only. Do not grant full mastery credit or
+  // advance easiness/interval. Original incorrect counts stay untouched.
+  if (correct && assisted) {
+    return {
+      ...current,
+      dueAt: now + 20 * MINUTES,
+      lastAt: now,
+      exposure: current.exposure + 1,
+    };
+  }
 
   let easiness = current.easiness;
   let intervalDays = current.intervalDays;
@@ -58,10 +77,13 @@ export function scheduleAfterAnswer(
 export async function applyAttemptToMastery(
   conceptIds: string[],
   correct: boolean,
+  options?: ScheduleOptions,
 ): Promise<void> {
   for (const id of conceptIds) {
     const existing = await db.mastery.get(id);
-    await db.mastery.put(scheduleAfterAnswer(existing, id, "concept", correct));
+    await db.mastery.put(
+      scheduleAfterAnswer(existing, id, "concept", correct, Date.now(), options),
+    );
   }
 }
 

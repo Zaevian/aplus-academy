@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T13:30:55.001Z",
+  "generated": "2026-09-28T13:53:59.102Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -148,7 +148,11 @@
       ],
       "interactionIds": [
         "C1-D1-O1-L1-d1",
-        "C1-D1-O1-L2-d1"
+        "C1-D1-O1-L2-see1",
+        "C1-D1-O1-L2-d1",
+        "C1-D1-O1-L3-see1",
+        "C1-D1-O1-L3-d1",
+        "C1-D1-O1-LAPTOP-LAB"
       ],
       "quizQuestionIds": [
         "C1-D1-O1-BATTERY-Q001",
@@ -228,7 +232,9 @@
         "C1-D1-O1-BIOMETRIC-Q003",
         "C1-D1-O1-BIOMETRIC-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O1-LAPTOP-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -519,6 +525,7 @@
         "C1-D2-O2-L1"
       ],
       "interactionIds": [
+        "C1-D2-O2-L1-see1",
         "C1-D2-O2-L1-d1",
         "C1-D2-O2-L1-d2",
         "C1-D2-O2-L1-lab",
@@ -838,6 +845,7 @@
         "C1-D2-O6-L2"
       ],
       "interactionIds": [
+        "C1-D2-O6-L1-see1",
         "C1-D2-O6-L1-d1",
         "C1-D2-O6-L2-lab",
         "C1-D2-O5-RACK-LAB",
@@ -999,7 +1007,9 @@
       "lessonIds": [
         "C1-D2-O8-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O8-L1-see1"
+      ],
       "quizQuestionIds": [
         "C1-D2-O8-CRIMPER-Q001",
         "C1-D2-O8-CRIMPER-Q002",
@@ -1151,8 +1161,10 @@
         "C1-D3-O2-L2"
       ],
       "interactionIds": [
+        "C1-D3-O2-L1-see1",
         "C1-D3-O2-L1-d1",
         "C1-D3-O2-L1-lab",
+        "C1-D3-O2-L2-see1",
         "C1-D3-O2-L2-d1",
         "C1-D3-O2-CABLE-LAB"
       ],
@@ -1235,6 +1247,8 @@
         "C1-D3-O3-L1"
       ],
       "interactionIds": [
+        "C1-D3-O3-L1-see1",
+        "C1-D3-O3-L1-see2",
         "C1-D3-O3-L1-d1"
       ],
       "quizQuestionIds": [
@@ -1312,7 +1326,12 @@
         "C1-D3-O4-L3"
       ],
       "interactionIds": [
+        "C1-D3-O4-L1-see1",
+        "C1-D3-O4-L1-d1",
+        "C1-D3-O4-L2-see1",
+        "C1-D3-O4-L2-see2",
         "C1-D3-O4-L2-d1",
+        "C1-D3-O4-L3-see1",
         "C1-D3-O4-L3-d1",
         "C1-D3-O4-L3-lab",
         "C1-D3-O4-RAID-LAB"
@@ -1532,6 +1551,7 @@
         "C1-D3-O6-L1"
       ],
       "interactionIds": [
+        "C1-D3-O6-L1-see1",
         "C1-D3-O6-L1-d1"
       ],
       "quizQuestionIds": [
@@ -1682,6 +1702,7 @@
         "C1-D3-O8-L1"
       ],
       "interactionIds": [
+        "C1-D3-O8-L1-see1",
         "C1-D3-O8-L1-d1",
         "C1-D3-O8-L1-lab",
         "C1-D3-O8-PRINTER-LAB"
@@ -2312,6 +2333,7 @@
         "C1-D5-O5-L2"
       ],
       "interactionIds": [
+        "C1-D5-O5-L1-see1",
         "C1-D5-O5-L1-d1",
         "C1-D5-O5-L1-lab",
         "C1-D5-O5-L2-d1",
@@ -3781,6 +3803,7 @@
         "C2-D2-O5-L2"
       ],
       "interactionIds": [
+        "C2-D2-O5-L1-see1",
         "C2-D2-O5-L1-lab",
         "C2-D2-O5-PHISH-LAB"
       ],
@@ -4118,7 +4141,9 @@
       "lessonIds": [
         "C2-D2-O9-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O9-L1-see1"
+      ],
       "quizQuestionIds": [
         "C2-D2-O9-DEGAUSS-Q001",
         "C2-D2-O9-DEGAUSS-Q002",
@@ -4902,7 +4927,9 @@
       "lessonIds": [
         "C2-D4-O4-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O4-L1-see1"
+      ],
       "quizQuestionIds": [
         "C2-D4-O4-ESD-Q001",
         "C2-D4-O4-ESD-Q002",
@@ -4969,7 +4996,9 @@
       "lessonIds": [
         "C2-D4-O5-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O5-L1-see1"
+      ],
       "quizQuestionIds": [
         "C2-D4-O5-MSDS-Q001",
         "C2-D4-O5-MSDS-Q002",

@@ -61,6 +61,14 @@ export type QuestionAttempt = {
     | "mock"
     | "core-review"
     | "diagnostic";
+  /** True when the learner had already seen the explanation before this success. */
+  assisted?: boolean;
+  /** 1-based attempt number for this question in the current answer stream. */
+  attemptNumber?: number;
+  /** Whether this was the first attempt on the question and it was correct. */
+  firstAttemptCorrect?: boolean;
+  /** Explanation was visible before a successful submit on this item. */
+  explanationShownBeforeSuccess?: boolean;
 };
 
 export type QuizAttempt = {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import type { Question } from "@/content/schema";
 import { KnowledgeCheck } from "@/components/lesson/knowledge-check";
 import { recordQuiz } from "@/lib/progress-actions";
@@ -53,6 +53,8 @@ export function QuizPlayer({
 
   const [done, setDone] = useState(false);
   const [score, setScore] = useState<number | null>(null);
+  /** First-attempt outcome per item index (true=correct on first check). */
+  const firstOutcomes = useRef<Map<number, boolean>>(new Map());
 
   if (items.length === 0) {
     return (
@@ -63,29 +65,49 @@ export function QuizPlayer({
   }
 
   const required = kind === "domain" ? items.length : Math.ceil(items.length * 0.8);
-  const passedNow = score !== null && score >= required;
+  const passedNow = score !== null && (kind === "domain" ? done : score >= required);
 
   return (
     <div className="space-y-4">
       <p className="text-sm font-medium" data-testid="quiz-counter">
         Item set: {items.length} questions. Answer each item; the counter advances
-        only after a correct check and Next.
+        only after a correct check and Next. Recorded score uses first-attempt
+        outcomes (assisted retries after the explanation do not inflate mastery).
       </p>
       <KnowledgeCheck
         key={`${kind}-${targetId}-${attempt}`}
         blockId={`${kind}-${targetId}-${attempt}`}
         questions={items}
         context={kind === "domain" ? "domain-quiz" : kind === "mock" ? "practice" : "checkpoint"}
+        onItemResult={(index, correct, meta) => {
+          if (meta?.firstAttempt && !firstOutcomes.current.has(index)) {
+            firstOutcomes.current.set(index, correct);
+          } else if (!firstOutcomes.current.has(index)) {
+            // Fallback if meta omitted: treat first callback as first attempt.
+            firstOutcomes.current.set(index, correct);
+          }
+        }}
         onPassed={() => {
+          let firstCorrect = 0;
+          const missedConceptIds: string[] = [];
+          items.forEach((item, i) => {
+            const ok = firstOutcomes.current.get(i);
+            if (ok === true) firstCorrect += 1;
+            else missedConceptIds.push(...item.conceptIds);
+          });
+          // Domain gate still unlocks after retry-until-correct finishes;
+          // recorded score stays honest to first attempts.
+          const gatePassed = kind === "domain" ? true : firstCorrect >= required;
           void recordQuiz({
             kind,
             targetId,
             questionIds: items.map((i) => i.id),
-            score: items.length,
+            score: firstCorrect,
             total: items.length,
-            missedConceptIds: [],
+            missedConceptIds: [...new Set(missedConceptIds)],
+            passed: gatePassed,
           }).then((r) => {
-            setScore(items.length);
+            setScore(firstCorrect);
             setDone(true);
             if (!r.passed) return;
           });
@@ -93,18 +115,18 @@ export function QuizPlayer({
       />
       {kind === "domain" ? (
         <p className="text-xs text-muted-foreground">
-          Domain mastery requires 100%. A missed item stays on this question until
-          you choose the key. Passing unlocks the next domain; this is enforced on
-          the domain pages, not only recorded.
+          Domain mastery requires eventually answering every item correctly to
+          unlock the next domain. The recorded score still reflects first-attempt
+          misses so Internal Readiness is not inflated by assisted retries.
         </p>
       ) : null}
       {done && score !== null ? (
         <p className="text-sm">
-          Recorded {score}/{items.length}.{" "}
+          Recorded first-attempt {score}/{items.length}.{" "}
           {kind === "domain"
             ? passedNow
-              ? "Next domain unlocked."
-              : "100% required — start a new attempt."
+              ? "Next domain unlocked (gate cleared after retry-until-correct)."
+              : "100% eventual correct required — start a new attempt."
             : null}
         </p>
       ) : null}
@@ -115,6 +137,7 @@ export function QuizPlayer({
         onClick={() => {
           setDone(false);
           setScore(null);
+          firstOutcomes.current = new Map();
           setAttempt((a) => a + 1);
         }}
       >
