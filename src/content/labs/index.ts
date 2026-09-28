@@ -200,6 +200,27 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C2-D1-O3-EDITION-LAB",
+    slug: "windows-editions",
+    title: "Windows edition matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O3"],
+    conceptIds: [
+      "C2-D1-O3-HOME",
+      "C2-D1-O3-PRO",
+      "C2-D1-O3-ENT",
+      "C2-D1-O3-BITLOCKER",
+      "C2-D1-O3-GPEDIT",
+    ],
+    component: "WindowsEditionLab",
+    description:
+      "Match Home, Pro, Pro for Workstations, and Enterprise to domain join, RDP host, BitLocker, gpedit, RAM, and volume-licensing tickets.",
+    solution:
+      "Home is consumer-only. Pro unlocks AD, RDP host, BitLocker, and gpedit. Pro for Workstations adds 6 TB / four sockets / ReFS. Enterprise is the volume AppLocker SKU. Home N and ChromeOS do not satisfy those tickets.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O8-PRINTER-LAB",
     slug: "printer-lab",
     title: "Printer output and maintenance lab",

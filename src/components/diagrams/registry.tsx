@@ -479,6 +479,51 @@ export function DisplayCompareDiagram() {
 }
 
 
+
+export function OsMatrixDiagram() {
+  const rows: [string, string, string, string][] = [
+    ["Windows", "PC / laptop", "NTFS", "AD / Entra / Intune"],
+    ["Linux", "PC, server, appliance", "ext4 or XFS", "Distro / LDAP / local"],
+    ["macOS", "Mac", "APFS", "Apple Business Manager / MDM"],
+    ["ChromeOS", "Chromebook", "ext4 + cloud home", "Google Admin"],
+    ["iOS", "iPhone", "APFS", "Apple MDM"],
+    ["iPadOS", "iPad", "APFS", "Apple MDM"],
+    ["Android", "Phone / tablet", "ext4 or f2fs", "Android Enterprise / OEM"],
+  ];
+  return (
+    <Frame
+      title="OS family matrix"
+      alt="Workstation and mobile OS families with default filesystems and management"
+    >
+      <table className="w-full text-left text-xs">
+        <thead>
+          <tr className="border-b text-muted-foreground">
+            <th className="py-1 pr-2">OS</th>
+            <th className="pr-2">Typical device</th>
+            <th className="pr-2">Default FS</th>
+            <th>Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([os, device, fs, mgmt]) => (
+            <tr key={os} className="border-b border-border/60">
+              <td className="py-1.5 pr-2 font-medium">{os}</td>
+              <td className="pr-2">{device}</td>
+              <td className="pr-2">{fs}</td>
+              <td className="text-muted-foreground">{mgmt}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        ChromeOS is a workstation OS on the exam, not mobile. iPadOS is listed
+        separately from iOS. ReFS/exFAT/FAT32 appear as special-case volumes, not
+        everyday boot defaults for these families.
+      </p>
+    </Frame>
+  );
+}
+
 const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   LaptopExplodedDiagram: {
     title: "Laptop internals",
@@ -517,10 +562,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   PrinterOutputDiagram: {
     title: "Output patterns",
     lines: ["Faded: toner/ink", "Repeating marks: drum circumference", "Ghosting: fuser/drum", "Garbled: language/driver"],
-  },
-  OsMatrixDiagram: {
-    title: "OS pick",
-    lines: ["Windows: domain, GPO, most line-of-business", "macOS: creative shops, FileVault, Apple ID", "Linux: servers, cost, packages", "ChromeOS: managed web-first"],
   },
   PermissionDiagram: {
     title: "Effective access",
@@ -570,6 +611,7 @@ const NAMED: Record<string, () => JSX.Element> = {
   BackupChainDiagram,
   AiPolicyDiagram,
   DisplayCompareDiagram,
+  OsMatrixDiagram,
   SpectrumDiagram,
   ConnectorGallery,
   Ipv4Diagram,

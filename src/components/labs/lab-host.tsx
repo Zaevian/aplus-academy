@@ -24,6 +24,7 @@ import { VoiceLab } from "@/components/labs/voice-lab";
 import { TicketShiftLab } from "@/components/labs/ticket-shift-lab";
 import { LaptopUpgradeLab } from "@/components/labs/laptop-upgrade-lab";
 import { RamInstallLab } from "@/components/labs/ram-install-lab";
+import { WindowsEditionLab } from "@/components/labs/windows-edition-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -53,6 +54,7 @@ export const LAB_COMPONENT_MAP: Record<
   TicketShiftLab,
   LaptopUpgradeLab,
   RamInstallLab,
+  WindowsEditionLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {
