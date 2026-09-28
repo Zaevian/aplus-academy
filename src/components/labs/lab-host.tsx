@@ -31,6 +31,10 @@ import { DisplayFaultLab } from "@/components/labs/display-fault-lab";
 import { WindowsEditionLab } from "@/components/labs/windows-edition-lab";
 import { AuthFactorsLab } from "@/components/labs/auth-factors-lab";
 import { MobileOsLab } from "@/components/labs/mobile-os-lab";
+import { DisplayMatchLab } from "@/components/labs/display-match-lab";
+import { HypervisorMatchLab } from "@/components/labs/hypervisor-match-lab";
+import { MobileHardwareTsLab } from "@/components/labs/mobile-hardware-ts-lab";
+import { CompromisedPhoneLab } from "@/components/labs/compromised-phone-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -67,6 +71,10 @@ export const LAB_COMPONENT_MAP: Record<
   WindowsEditionLab,
   AuthFactorsLab,
   MobileOsLab,
+  DisplayMatchLab,
+  HypervisorMatchLab,
+  MobileHardwareTsLab,
+  CompromisedPhoneLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

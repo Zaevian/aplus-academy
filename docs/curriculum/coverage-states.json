@@ -1,0 +1,7352 @@
+{
+  "generated": "2026-09-28T23:34:45.314Z",
+  "summary": {
+    "Missing": 0,
+    "Taught": 0,
+    "Practiced": 5,
+    "Assessed": 3,
+    "Retained": 22,
+    "Exam Ready": 38
+  },
+  "rules": {
+    "states": [
+      "Missing",
+      "Taught",
+      "Practiced",
+      "Assessed",
+      "Retained",
+      "Exam Ready"
+    ],
+    "examReadyRequires": [
+      "disjoint holdout (reviewQuestionIds independent of quizQuestionIds)",
+      "scored LabHost PBQ (pbqLabIds non-empty)",
+      "assessment depth ≥ 8 practice questions"
+    ],
+    "neverExamReadyFrom": [
+      "coverage.status === verified alone",
+      "lesson presence alone",
+      "MCQ bank alone without holdout + PBQ"
+    ]
+  },
+  "entries": [
+    {
+      "objectiveId": "FND-D0-O1",
+      "core": "FND",
+      "domain": "FND-D0",
+      "officialCode": "0.1",
+      "title": "What CompTIA A+ is — and is not",
+      "examPercent": 0,
+      "coverageStatus": "missing",
+      "state": "Practiced",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 4,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "Assessment depth 4 (need ≥8 practice/quiz items)",
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "FND-D0-O1-CERT",
+          "label": "CERT",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O1-CORES",
+          "label": "CORES",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O1-SCORES",
+          "label": "SCORES",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Core 1 vs Core 2",
+          "state": "Assessed"
+        },
+        {
+          "label": "exam structure and question formats",
+          "state": "Assessed"
+        },
+        {
+          "label": "objective numbering",
+          "state": "Practiced"
+        },
+        {
+          "label": "internal readiness vs CompTIA scaled scores",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "FND-D0-O2",
+      "core": "FND",
+      "domain": "FND-D0",
+      "officialCode": "0.2",
+      "title": "How this academy teaches",
+      "examPercent": 0,
+      "coverageStatus": "missing",
+      "state": "Practiced",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 3,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "FND-D0-O5-LANDSCAPE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "Assessment depth 3 (need ≥8 practice/quiz items)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "FND-D0-O2-CYCLE",
+          "label": "CYCLE",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": true
+        },
+        {
+          "conceptId": "FND-D0-O2-GATES",
+          "label": "GATES",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O2-REVIEW",
+          "label": "REVIEW",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "learning cycle",
+          "state": "Practiced"
+        },
+        {
+          "label": "knowledge checks",
+          "state": "Assessed"
+        },
+        {
+          "label": "domain gates",
+          "state": "Practiced"
+        },
+        {
+          "label": "review queue",
+          "state": "Taught"
+        },
+        {
+          "label": "guest vs signed-in progress",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "FND-D0-O3",
+      "core": "FND",
+      "domain": "FND-D0",
+      "officialCode": "0.3",
+      "title": "CompTIA-style language: BEST, FIRST, NEXT",
+      "examPercent": 0,
+      "coverageStatus": "missing",
+      "state": "Practiced",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 3,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "Assessment depth 3 (need ≥8 practice/quiz items)",
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "FND-D0-O3-STEMS",
+          "label": "STEMS",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O3-PBQ",
+          "label": "PBQ",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "BEST/FIRST/NEXT",
+          "state": "Assessed"
+        },
+        {
+          "label": "PBQ vs MCQ",
+          "state": "Practiced"
+        },
+        {
+          "label": "distractors",
+          "state": "Taught"
+        },
+        {
+          "label": "understanding vs memorization",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "FND-D0-O4",
+      "core": "FND",
+      "domain": "FND-D0",
+      "officialCode": "0.4",
+      "title": "A practical troubleshooting mindset",
+      "examPercent": 0,
+      "coverageStatus": "missing",
+      "state": "Practiced",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 3,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "Assessment depth 3 (need ≥8 practice/quiz items)",
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "FND-D0-O4-TS-METHOD",
+          "label": "METHOD",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O4-DOCUMENT",
+          "label": "DOCUMENT",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "identify the problem",
+          "state": "Assessed"
+        },
+        {
+          "label": "probable cause",
+          "state": "Practiced"
+        },
+        {
+          "label": "test the theory",
+          "state": "Taught"
+        },
+        {
+          "label": "plan of action",
+          "state": "Taught"
+        },
+        {
+          "label": "verify and prevent",
+          "state": "Taught"
+        },
+        {
+          "label": "document",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "FND-D0-O5",
+      "core": "FND",
+      "domain": "FND-D0",
+      "officialCode": "0.5",
+      "title": "Safety, documentation, and units",
+      "examPercent": 0,
+      "coverageStatus": "missing",
+      "state": "Practiced",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 3,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "FND-D0-O5-LANDSCAPE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "Assessment depth 3 (need ≥8 practice/quiz items)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "FND-D0-O5-SAFETY",
+          "label": "SAFETY",
+          "state": "Practiced",
+          "questionCount": 1,
+          "inPbq": false
+        },
+        {
+          "conceptId": "FND-D0-O5-UNITS",
+          "label": "UNITS",
+          "state": "Assessed",
+          "questionCount": 2,
+          "inPbq": true
+        },
+        {
+          "conceptId": "FND-D0-O5-TICKETS",
+          "label": "TICKETS",
+          "state": "Taught",
+          "questionCount": 0,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "ESD",
+          "state": "Practiced"
+        },
+        {
+          "label": "PPE",
+          "state": "Assessed"
+        },
+        {
+          "label": "ticketing mindset",
+          "state": "Taught"
+        },
+        {
+          "label": "binary vs decimal units",
+          "state": "Taught"
+        },
+        {
+          "label": "bandwidth units",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D1-O1",
+      "core": "C1",
+      "domain": "C1-D1",
+      "officialCode": "1.1",
+      "title": "Laptop and mobile hardware replacement",
+      "examPercent": 13,
+      "coverageStatus": "verified",
+      "state": "Assessed",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 37,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D1-O1-LAPTOP-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D1-O1-BATTERY",
+          "label": "BATTERY",
+          "state": "Assessed",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D1-O1-KEYBOARD",
+          "label": "KEYBOARD",
+          "state": "Assessed",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O1-SODIMM",
+          "label": "SODIMM",
+          "state": "Assessed",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D1-O1-STORAGE",
+          "label": "STORAGE",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O1-WLAN",
+          "label": "WLAN",
+          "state": "Assessed",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D1-O1-ANTENNA",
+          "label": "ANTENNA",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O1-BIOMETRIC",
+          "label": "BIOMETRIC",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O1-WEBCAM",
+          "label": "WEBCAM",
+          "state": "Assessed",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "battery",
+          "state": "Assessed"
+        },
+        {
+          "label": "keyboard",
+          "state": "Assessed"
+        },
+        {
+          "label": "RAM",
+          "state": "Assessed"
+        },
+        {
+          "label": "HDD/SSD",
+          "state": "Assessed"
+        },
+        {
+          "label": "wireless cards",
+          "state": "Assessed"
+        },
+        {
+          "label": "privacy/security hardware",
+          "state": "Assessed"
+        },
+        {
+          "label": "Wi-Fi antenna placement",
+          "state": "Assessed"
+        },
+        {
+          "label": "camera",
+          "state": "Assessed"
+        },
+        {
+          "label": "microphone",
+          "state": "Taught"
+        },
+        {
+          "label": "biometrics",
+          "state": "Taught"
+        },
+        {
+          "label": "near-field scanner",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D1-O2",
+      "core": "C1",
+      "domain": "C1-D1",
+      "officialCode": "1.2",
+      "title": "Mobile accessories and connectivity",
+      "examPercent": 13,
+      "coverageStatus": "verified",
+      "state": "Assessed",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 35,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D1-O2-USB",
+          "label": "USB",
+          "state": "Assessed",
+          "questionCount": 10,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O2-LIGHTNING",
+          "label": "LIGHTNING",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O2-NFC",
+          "label": "NFC",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O2-BT",
+          "label": "BT",
+          "state": "Assessed",
+          "questionCount": 9,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O2-DOCK",
+          "label": "DOCK",
+          "state": "Assessed",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O2-REPLICATOR",
+          "label": "REPLICATOR",
+          "state": "Assessed",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "USB/USB-C/micro/mini",
+          "state": "Assessed"
+        },
+        {
+          "label": "Lightning",
+          "state": "Assessed"
+        },
+        {
+          "label": "NFC",
+          "state": "Assessed"
+        },
+        {
+          "label": "Bluetooth",
+          "state": "Assessed"
+        },
+        {
+          "label": "tethering/hotspot",
+          "state": "Assessed"
+        },
+        {
+          "label": "stylus",
+          "state": "Assessed"
+        },
+        {
+          "label": "headsets",
+          "state": "Taught"
+        },
+        {
+          "label": "speakers",
+          "state": "Taught"
+        },
+        {
+          "label": "webcam",
+          "state": "Taught"
+        },
+        {
+          "label": "docking station",
+          "state": "Taught"
+        },
+        {
+          "label": "port replicator",
+          "state": "Taught"
+        },
+        {
+          "label": "trackpad/drawing pad",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D1-O3",
+      "core": "C1",
+      "domain": "C1-D1",
+      "officialCode": "1.3",
+      "title": "Mobile networking, MDM, and synchronization",
+      "examPercent": 13,
+      "coverageStatus": "verified",
+      "state": "Assessed",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 36,
+        "hasDisjointHoldout": false,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No disjoint holdout pool (review ≡ quiz)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D1-O3-CELLULAR",
+          "label": "CELLULAR",
+          "state": "Assessed",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-ESIM",
+          "label": "ESIM",
+          "state": "Assessed",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-GPS",
+          "label": "GPS",
+          "state": "Assessed",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-SYNC",
+          "label": "SYNC",
+          "state": "Assessed",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-MDM",
+          "label": "MDM",
+          "state": "Assessed",
+          "questionCount": 11,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-BYOD",
+          "label": "BYOD",
+          "state": "Assessed",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D1-O3-DATACAP",
+          "label": "DATACAP",
+          "state": "Assessed",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "3G/4G/5G",
+          "state": "Assessed"
+        },
+        {
+          "label": "hotspot",
+          "state": "Assessed"
+        },
+        {
+          "label": "Wi-Fi",
+          "state": "Assessed"
+        },
+        {
+          "label": "SIM/eSIM",
+          "state": "Assessed"
+        },
+        {
+          "label": "Bluetooth pairing sequence",
+          "state": "Assessed"
+        },
+        {
+          "label": "GPS and cellular location",
+          "state": "Assessed"
+        },
+        {
+          "label": "calendar/contacts/mail/cloud sync",
+          "state": "Assessed"
+        },
+        {
+          "label": "data caps",
+          "state": "Taught"
+        },
+        {
+          "label": "MDM",
+          "state": "Taught"
+        },
+        {
+          "label": "BYOD vs corporate",
+          "state": "Taught"
+        },
+        {
+          "label": "policy enforcement",
+          "state": "Taught"
+        },
+        {
+          "label": "business apps",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O1",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.1",
+      "title": "TCP, UDP, ports, and common protocols",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O1-PORTS-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O1-TCP",
+          "label": "TCP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O1-UDP",
+          "label": "UDP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O1-PORTS",
+          "label": "PORTS",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-FTP",
+          "label": "FTP",
+          "state": "Exam Ready",
+          "questionCount": 3,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-SSH",
+          "label": "SSH",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-DNS",
+          "label": "DNS",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-DHCP",
+          "label": "DHCP",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-HTTP",
+          "label": "HTTP",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-RDP",
+          "label": "RDP",
+          "state": "Exam Ready",
+          "questionCount": 2,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O1-SMB",
+          "label": "SMB",
+          "state": "Exam Ready",
+          "questionCount": 2,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "FTP 20/21",
+          "state": "Retained"
+        },
+        {
+          "label": "SSH 22",
+          "state": "Retained"
+        },
+        {
+          "label": "Telnet 23",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "SMTP 25",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "DNS 53",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "DHCP 67/68",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "HTTP 80",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "POP3 110",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "IMAP 143",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "NetBIOS/NetBT 137-139",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "LDAP 389",
+          "state": "Taught"
+        },
+        {
+          "label": "HTTPS 443",
+          "state": "Taught"
+        },
+        {
+          "label": "SMB/CIFS 445",
+          "state": "Taught"
+        },
+        {
+          "label": "RDP 3389",
+          "state": "Taught"
+        },
+        {
+          "label": "TCP vs UDP",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O2",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.2",
+      "title": "Wireless networking technologies",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O2-WIFI-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O2-24GHZ",
+          "label": "24GHZ",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O2-5GHZ",
+          "label": "5GHZ",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O2-6GHZ",
+          "label": "6GHZ",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O2-80211",
+          "label": "80211",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O2-RFID",
+          "label": "RFID",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O2-CHANNEL",
+          "label": "CHANNEL",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "2.4 GHz",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "5 GHz",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "6 GHz",
+          "state": "Retained"
+        },
+        {
+          "label": "channel regulations and width",
+          "state": "Retained"
+        },
+        {
+          "label": "Bluetooth",
+          "state": "Retained"
+        },
+        {
+          "label": "802.11 standards",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "NFC",
+          "state": "Taught"
+        },
+        {
+          "label": "RFID",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O3",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.3",
+      "title": "Networked hosts and internet appliances",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O3-DNSSRV",
+          "label": "DNSSRV",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-DHCPSRV",
+          "label": "DHCPSRV",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-AAA",
+          "label": "AAA",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-UTM",
+          "label": "UTM",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-NTP",
+          "label": "NTP",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-SCADA",
+          "label": "SCADA",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O3-IOT",
+          "label": "IOT",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "DNS",
+          "state": "Retained"
+        },
+        {
+          "label": "DHCP",
+          "state": "Retained"
+        },
+        {
+          "label": "fileshare",
+          "state": "Retained"
+        },
+        {
+          "label": "print",
+          "state": "Retained"
+        },
+        {
+          "label": "mail",
+          "state": "Retained"
+        },
+        {
+          "label": "syslog",
+          "state": "Retained"
+        },
+        {
+          "label": "web",
+          "state": "Retained"
+        },
+        {
+          "label": "AAA",
+          "state": "Taught"
+        },
+        {
+          "label": "database",
+          "state": "Taught"
+        },
+        {
+          "label": "NTP",
+          "state": "Taught"
+        },
+        {
+          "label": "spam gateway",
+          "state": "Taught"
+        },
+        {
+          "label": "UTM",
+          "state": "Taught"
+        },
+        {
+          "label": "load balancer",
+          "state": "Taught"
+        },
+        {
+          "label": "proxy",
+          "state": "Taught"
+        },
+        {
+          "label": "SCADA",
+          "state": "Taught"
+        },
+        {
+          "label": "IoT",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O4",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.4",
+      "title": "DNS, DHCP, VLAN, and VPN concepts",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O4-DNSREC",
+          "label": "DNSREC",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-SPF",
+          "label": "SPF",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-DKIM",
+          "label": "DKIM",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-DMARC",
+          "label": "DMARC",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-DHCPPOOL",
+          "label": "DHCPPOOL",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-VLAN",
+          "label": "VLAN",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O4-VPN",
+          "label": "VPN",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "A",
+          "state": "Retained"
+        },
+        {
+          "label": "AAAA",
+          "state": "Retained"
+        },
+        {
+          "label": "CNAME",
+          "state": "Retained"
+        },
+        {
+          "label": "MX",
+          "state": "Retained"
+        },
+        {
+          "label": "TXT",
+          "state": "Retained"
+        },
+        {
+          "label": "DKIM",
+          "state": "Retained"
+        },
+        {
+          "label": "SPF",
+          "state": "Retained"
+        },
+        {
+          "label": "DMARC",
+          "state": "Taught"
+        },
+        {
+          "label": "DHCP scope/lease/reservation/exclusion",
+          "state": "Taught"
+        },
+        {
+          "label": "VLAN",
+          "state": "Taught"
+        },
+        {
+          "label": "VPN",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O5",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.5",
+      "title": "Networking hardware devices",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O5-RACK-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O5-ROUTER",
+          "label": "ROUTER",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O5-SWITCH",
+          "label": "SWITCH",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O5-AP",
+          "label": "AP",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O5-FIREWALL",
+          "label": "FIREWALL",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O5-POE",
+          "label": "POE",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O5-ONT",
+          "label": "ONT",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O5-NIC",
+          "label": "NIC",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O5-MAC",
+          "label": "MAC",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "router",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "managed switch",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "unmanaged switch",
+          "state": "Retained"
+        },
+        {
+          "label": "AP",
+          "state": "Retained"
+        },
+        {
+          "label": "firewall",
+          "state": "Retained"
+        },
+        {
+          "label": "patch panel",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "PoE injector/switch/standards",
+          "state": "Retained"
+        },
+        {
+          "label": "cable modem",
+          "state": "Retained"
+        },
+        {
+          "label": "DSL",
+          "state": "Taught"
+        },
+        {
+          "label": "ONT",
+          "state": "Taught"
+        },
+        {
+          "label": "NIC",
+          "state": "Taught"
+        },
+        {
+          "label": "MAC address",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O6",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.6",
+      "title": "SOHO addressing and basic router setup",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 26,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O5-RACK-LAB",
+          "C1-D2-O6-ROUTER-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O6-IPV4",
+          "label": "IPV4",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O6-IPV6",
+          "label": "IPV6",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O6-APIPA",
+          "label": "APIPA",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O6-MASK",
+          "label": "MASK",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O6-GATEWAY",
+          "label": "GATEWAY",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D2-O6-STATIC",
+          "label": "STATIC",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "IPv4 public/private",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "IPv6",
+          "state": "Retained"
+        },
+        {
+          "label": "APIPA",
+          "state": "Retained"
+        },
+        {
+          "label": "static",
+          "state": "Retained"
+        },
+        {
+          "label": "dynamic",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "subnet mask",
+          "state": "Retained"
+        },
+        {
+          "label": "gateway",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O7",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.7",
+      "title": "Internet connections and network types",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O7-FIBER",
+          "label": "FIBER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-CABLE",
+          "label": "CABLE",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-DSL",
+          "label": "DSL",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-SAT",
+          "label": "SAT",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-WISP",
+          "label": "WISP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-LAN",
+          "label": "LAN",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-WAN",
+          "label": "WAN",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O7-SAN",
+          "label": "SAN",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "satellite",
+          "state": "Retained"
+        },
+        {
+          "label": "fiber",
+          "state": "Retained"
+        },
+        {
+          "label": "cable",
+          "state": "Retained"
+        },
+        {
+          "label": "DSL",
+          "state": "Retained"
+        },
+        {
+          "label": "cellular",
+          "state": "Retained"
+        },
+        {
+          "label": "WISP",
+          "state": "Retained"
+        },
+        {
+          "label": "LAN",
+          "state": "Retained"
+        },
+        {
+          "label": "WAN",
+          "state": "Retained"
+        },
+        {
+          "label": "PAN",
+          "state": "Taught"
+        },
+        {
+          "label": "MAN",
+          "state": "Taught"
+        },
+        {
+          "label": "SAN",
+          "state": "Taught"
+        },
+        {
+          "label": "WLAN",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D2-O8",
+      "core": "C1",
+      "domain": "C1-D2",
+      "officialCode": "2.8",
+      "title": "Networking tools",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D2-O8-CRIMPER",
+          "label": "CRIMPER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-PUNCHDOWN",
+          "label": "PUNCHDOWN",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-TESTER",
+          "label": "TESTER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-TONER",
+          "label": "TONER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-LOOPBACK",
+          "label": "LOOPBACK",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-TAP",
+          "label": "TAP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D2-O8-ANALYZER",
+          "label": "ANALYZER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "crimper",
+          "state": "Retained"
+        },
+        {
+          "label": "cable stripper",
+          "state": "Retained"
+        },
+        {
+          "label": "punchdown",
+          "state": "Retained"
+        },
+        {
+          "label": "cable tester",
+          "state": "Retained"
+        },
+        {
+          "label": "Wi-Fi analyzer",
+          "state": "Retained"
+        },
+        {
+          "label": "loopback plug",
+          "state": "Retained"
+        },
+        {
+          "label": "toner probe",
+          "state": "Retained"
+        },
+        {
+          "label": "network tap",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O1",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.1",
+      "title": "Display technologies and attributes",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O1-DISPLAY-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O1-IPS",
+          "label": "IPS",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O1-TN",
+          "label": "TN",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O1-VA",
+          "label": "VA",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O1-OLED",
+          "label": "OLED",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O1-MINILED",
+          "label": "MINILED",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O1-DIGITIZER",
+          "label": "DIGITIZER",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O1-INVERTER",
+          "label": "INVERTER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "LCD",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "IPS",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "TN",
+          "state": "Retained"
+        },
+        {
+          "label": "VA",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "OLED",
+          "state": "Retained"
+        },
+        {
+          "label": "Mini-LED",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "touch/digitizer",
+          "state": "Retained"
+        },
+        {
+          "label": "inverter",
+          "state": "Taught"
+        },
+        {
+          "label": "pixel density",
+          "state": "Taught"
+        },
+        {
+          "label": "refresh",
+          "state": "Taught"
+        },
+        {
+          "label": "resolution",
+          "state": "Taught"
+        },
+        {
+          "label": "color gamut",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O2",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.2",
+      "title": "Cables and connectors",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O2-CABLE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O2-T568",
+          "label": "T568",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O2-UTP",
+          "label": "UTP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O2-FIBER",
+          "label": "FIBER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O2-HDMI",
+          "label": "HDMI",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O2-USB",
+          "label": "USB",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O2-SATA",
+          "label": "SATA",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O2-RJ45",
+          "label": "RJ45",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O2-MOLEX",
+          "label": "MOLEX",
+          "state": "Retained",
+          "questionCount": 2,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O2-DB9",
+          "label": "DB9",
+          "state": "Retained",
+          "questionCount": 2,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "copper categories",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "T568A/T568B",
+          "state": "Retained"
+        },
+        {
+          "label": "coax",
+          "state": "Retained"
+        },
+        {
+          "label": "STP/UTP",
+          "state": "Retained"
+        },
+        {
+          "label": "direct burial",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "plenum",
+          "state": "Retained"
+        },
+        {
+          "label": "SM/MM fiber",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "USB 2/3",
+          "state": "Retained"
+        },
+        {
+          "label": "Thunderbolt",
+          "state": "Retained"
+        },
+        {
+          "label": "HDMI",
+          "state": "Taught"
+        },
+        {
+          "label": "DisplayPort",
+          "state": "Taught"
+        },
+        {
+          "label": "DVI",
+          "state": "Taught"
+        },
+        {
+          "label": "VGA",
+          "state": "Taught"
+        },
+        {
+          "label": "USB-C",
+          "state": "Taught"
+        },
+        {
+          "label": "SATA/eSATA",
+          "state": "Taught"
+        },
+        {
+          "label": "RJ11",
+          "state": "Taught"
+        },
+        {
+          "label": "RJ45",
+          "state": "Taught"
+        },
+        {
+          "label": "F-type",
+          "state": "Taught"
+        },
+        {
+          "label": "ST",
+          "state": "Taught"
+        },
+        {
+          "label": "SC",
+          "state": "Taught"
+        },
+        {
+          "label": "LC",
+          "state": "Taught"
+        },
+        {
+          "label": "punchdown",
+          "state": "Taught"
+        },
+        {
+          "label": "micro/mini USB",
+          "state": "Taught"
+        },
+        {
+          "label": "Molex",
+          "state": "Taught"
+        },
+        {
+          "label": "Lightning",
+          "state": "Taught"
+        },
+        {
+          "label": "DB9",
+          "state": "Taught"
+        },
+        {
+          "label": "adapters",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O3",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.3",
+      "title": "RAM characteristics",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O3-RAM-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O3-DIMM",
+          "label": "DIMM",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O3-SODIMM",
+          "label": "SODIMM",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O3-DDR",
+          "label": "DDR",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O3-ECC",
+          "label": "ECC",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O3-CHANNELS",
+          "label": "CHANNELS",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "SODIMM",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "DIMM",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "DDR iterations",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "ECC vs non-ECC",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "channel configurations",
+          "state": "Exam Ready"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O4",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.4",
+      "title": "Storage devices and RAID",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 34,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O4-RAID-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O4-HDD",
+          "label": "HDD",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O4-SSD",
+          "label": "SSD",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O4-NVME",
+          "label": "NVME",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O4-M2",
+          "label": "M2",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O4-RAID0",
+          "label": "RAID0",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O4-RAID1",
+          "label": "RAID1",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O4-RAID5",
+          "label": "RAID5",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O4-RAID6",
+          "label": "RAID6",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O4-RAID10",
+          "label": "RAID10",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "spindle speeds",
+          "state": "Retained"
+        },
+        {
+          "label": "2.5/3.5",
+          "state": "Retained"
+        },
+        {
+          "label": "NVMe",
+          "state": "Retained"
+        },
+        {
+          "label": "SATA SSD",
+          "state": "Retained"
+        },
+        {
+          "label": "PCIe",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "SAS",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "M.2",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "mSATA",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "RAID 0/1/5/6/10",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "flash",
+          "state": "Taught"
+        },
+        {
+          "label": "memory cards",
+          "state": "Taught"
+        },
+        {
+          "label": "optical",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O5",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.5",
+      "title": "Motherboards, CPUs, firmware, and expansion",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 34,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O5-MOBO-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O5-ATX",
+          "label": "ATX",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O5-PCIE",
+          "label": "PCIE",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O5-UEFI",
+          "label": "UEFI",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O5-TPM",
+          "label": "TPM",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O5-HSM",
+          "label": "HSM",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O5-ARM",
+          "label": "ARM",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O5-COOLING",
+          "label": "COOLING",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O5-CPU",
+          "label": "CPU",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "ATX",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "microATX",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "ITX",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "PCI/PCIe",
+          "state": "Retained"
+        },
+        {
+          "label": "power connectors",
+          "state": "Retained"
+        },
+        {
+          "label": "SATA/eSATA",
+          "state": "Retained"
+        },
+        {
+          "label": "headers",
+          "state": "Retained"
+        },
+        {
+          "label": "M.2",
+          "state": "Retained"
+        },
+        {
+          "label": "AMD/Intel sockets",
+          "state": "Taught"
+        },
+        {
+          "label": "multisocket",
+          "state": "Taught"
+        },
+        {
+          "label": "UEFI/BIOS",
+          "state": "Taught"
+        },
+        {
+          "label": "Secure Boot",
+          "state": "Taught"
+        },
+        {
+          "label": "TPM",
+          "state": "Taught"
+        },
+        {
+          "label": "HSM",
+          "state": "Taught"
+        },
+        {
+          "label": "x86/x64/ARM",
+          "state": "Taught"
+        },
+        {
+          "label": "cores",
+          "state": "Taught"
+        },
+        {
+          "label": "sound/video/capture/NIC cards",
+          "state": "Taught"
+        },
+        {
+          "label": "fans",
+          "state": "Taught"
+        },
+        {
+          "label": "heatsink",
+          "state": "Taught"
+        },
+        {
+          "label": "paste",
+          "state": "Taught"
+        },
+        {
+          "label": "liquid",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O6",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.6",
+      "title": "Power supplies",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O6-VAC",
+          "label": "VAC",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O6-RAILS",
+          "label": "RAILS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O6-ATX24",
+          "label": "ATX24",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O6-MODULAR",
+          "label": "MODULAR",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O6-WATTAGE",
+          "label": "WATTAGE",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "110-120 vs 220-240 VAC",
+          "state": "Retained"
+        },
+        {
+          "label": "3.3/5/12 V",
+          "state": "Retained"
+        },
+        {
+          "label": "20+4 pin",
+          "state": "Retained"
+        },
+        {
+          "label": "redundant PSU",
+          "state": "Retained"
+        },
+        {
+          "label": "modular",
+          "state": "Retained"
+        },
+        {
+          "label": "wattage",
+          "state": "Taught"
+        },
+        {
+          "label": "efficiency",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O7",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.7",
+      "title": "Printer and MFD deployment",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O7-PCL",
+          "label": "PCL",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O7-PS",
+          "label": "PS",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O7-ADF",
+          "label": "ADF",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O7-SECUREPRINT",
+          "label": "SECUREPRINT",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O7-PRINTSERVER",
+          "label": "PRINTSERVER",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "unbox/placement",
+          "state": "Retained"
+        },
+        {
+          "label": "PCL vs PostScript",
+          "state": "Retained"
+        },
+        {
+          "label": "firmware",
+          "state": "Retained"
+        },
+        {
+          "label": "USB/Ethernet/wireless",
+          "state": "Retained"
+        },
+        {
+          "label": "printer share",
+          "state": "Retained"
+        },
+        {
+          "label": "print server",
+          "state": "Taught"
+        },
+        {
+          "label": "duplex/orientation/trays/quality",
+          "state": "Taught"
+        },
+        {
+          "label": "auth/badging/audit/secured prints",
+          "state": "Taught"
+        },
+        {
+          "label": "email/SMB/cloud scan",
+          "state": "Taught"
+        },
+        {
+          "label": "ADF/flatbed",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D3-O8",
+      "core": "C1",
+      "domain": "C1-D3",
+      "officialCode": "3.8",
+      "title": "Printer maintenance",
+      "examPercent": 25,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O8-PRINTER-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D3-O8-LASER",
+          "label": "LASER",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O8-INKJET",
+          "label": "INKJET",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O8-THERMAL",
+          "label": "THERMAL",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O8-IMPACT",
+          "label": "IMPACT",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O8-FUSER",
+          "label": "FUSER",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O8-DRUM",
+          "label": "DRUM",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "laser toner/kit/calibrate/clean",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "inkjet cartridge/head/roller/feeder",
+          "state": "Retained"
+        },
+        {
+          "label": "thermal paper/element/debris",
+          "state": "Retained"
+        },
+        {
+          "label": "impact ribbon/head/multipart paper",
+          "state": "Retained"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D4-O1",
+      "core": "C1",
+      "domain": "C1-D4",
+      "officialCode": "4.1",
+      "title": "Virtualization concepts",
+      "examPercent": 11,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 32,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D4-O1-HYPERVISOR-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D4-O1-VM",
+          "label": "VM",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D4-O1-TYPE1",
+          "label": "TYPE1",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O1-TYPE2",
+          "label": "TYPE2",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O1-VDI",
+          "label": "VDI",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O1-CONTAINER",
+          "label": "CONTAINER",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "sandbox",
+          "state": "Retained"
+        },
+        {
+          "label": "test/dev",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "legacy/cross-platform",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "VDI",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "containers",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "Type 1",
+          "state": "Taught"
+        },
+        {
+          "label": "Type 2",
+          "state": "Taught"
+        },
+        {
+          "label": "network/storage/security requirements",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D4-O2",
+      "core": "C1",
+      "domain": "C1-D4",
+      "officialCode": "4.2",
+      "title": "Cloud computing concepts",
+      "examPercent": 11,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 34,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D4-O2-CLOUD-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D4-O2-IAAS",
+          "label": "IAAS",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O2-PAAS",
+          "label": "PAAS",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O2-SAAS",
+          "label": "SAAS",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D4-O2-HYBRID",
+          "label": "HYBRID",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D4-O2-ELASTIC",
+          "label": "ELASTIC",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D4-O2-MULTITENANT",
+          "label": "MULTITENANT",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "private/public/hybrid/community",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "IaaS",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "SaaS",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "PaaS",
+          "state": "Retained"
+        },
+        {
+          "label": "shared vs dedicated",
+          "state": "Retained"
+        },
+        {
+          "label": "metered ingress/egress",
+          "state": "Retained"
+        },
+        {
+          "label": "elasticity",
+          "state": "Taught"
+        },
+        {
+          "label": "availability",
+          "state": "Taught"
+        },
+        {
+          "label": "file sync",
+          "state": "Taught"
+        },
+        {
+          "label": "multitenancy",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O1",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.1",
+      "title": "Troubleshoot motherboard, RAM, CPU, and power",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 32,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D5-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O1-POST",
+          "label": "POST",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O1-NOPOWER",
+          "label": "NOPOWER",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O1-OVERHEAT",
+          "label": "OVERHEAT",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O1-CAPACITOR",
+          "label": "CAPACITOR",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O1-CMOS",
+          "label": "CMOS",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "POST beeps",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "crash screens",
+          "state": "Retained"
+        },
+        {
+          "label": "blank screen",
+          "state": "Retained"
+        },
+        {
+          "label": "no power",
+          "state": "Retained"
+        },
+        {
+          "label": "sluggish",
+          "state": "Retained"
+        },
+        {
+          "label": "overheating",
+          "state": "Taught"
+        },
+        {
+          "label": "burning smell",
+          "state": "Taught"
+        },
+        {
+          "label": "random shutdown",
+          "state": "Taught"
+        },
+        {
+          "label": "app crashes",
+          "state": "Taught"
+        },
+        {
+          "label": "unusual noise",
+          "state": "Taught"
+        },
+        {
+          "label": "capacitor swelling",
+          "state": "Taught"
+        },
+        {
+          "label": "wrong date/time",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O2",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.2",
+      "title": "Troubleshoot drives and RAID",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O4-RAID-LAB",
+          "C1-D5-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O2-SMART",
+          "label": "SMART",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O2-CLICKING",
+          "label": "CLICKING",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O2-RAIDFAIL",
+          "label": "RAIDFAIL",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O2-IOPS",
+          "label": "IOPS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "LED status",
+          "state": "Retained"
+        },
+        {
+          "label": "grinding",
+          "state": "Retained"
+        },
+        {
+          "label": "clicking",
+          "state": "Retained"
+        },
+        {
+          "label": "boot device not found",
+          "state": "Retained"
+        },
+        {
+          "label": "corruption",
+          "state": "Taught"
+        },
+        {
+          "label": "RAID failure",
+          "state": "Taught"
+        },
+        {
+          "label": "SMART",
+          "state": "Taught"
+        },
+        {
+          "label": "slow IOPS",
+          "state": "Taught"
+        },
+        {
+          "label": "missing drives",
+          "state": "Taught"
+        },
+        {
+          "label": "missing array",
+          "state": "Taught"
+        },
+        {
+          "label": "alarms",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O3",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.3",
+      "title": "Troubleshoot displays and projectors",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D5-O3-DISPLAY-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O3-SOURCE",
+          "label": "SOURCE",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O3-BURNIN",
+          "label": "BURNIN",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O3-DEADPIXEL",
+          "label": "DEADPIXEL",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O3-PROJECTOR",
+          "label": "PROJECTOR",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "wrong source",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "cabling",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "bulb",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "fuzzy",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "burn-in",
+          "state": "Taught"
+        },
+        {
+          "label": "dead pixels",
+          "state": "Taught"
+        },
+        {
+          "label": "flashing",
+          "state": "Taught"
+        },
+        {
+          "label": "color",
+          "state": "Taught"
+        },
+        {
+          "label": "audio",
+          "state": "Taught"
+        },
+        {
+          "label": "dim",
+          "state": "Taught"
+        },
+        {
+          "label": "projector shutdown",
+          "state": "Taught"
+        },
+        {
+          "label": "sizing",
+          "state": "Taught"
+        },
+        {
+          "label": "distortion",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O4",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.4",
+      "title": "Troubleshoot mobile devices",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D5-O4-MOBILE-HW-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O4-SWELL",
+          "label": "SWELL",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O4-DIGITIZER",
+          "label": "DIGITIZER",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O4-LIQUID",
+          "label": "LIQUID",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O4-MOBILEMALWARE",
+          "label": "MOBILEMALWARE",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "battery health",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "swollen battery",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "broken screen",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "charging",
+          "state": "Retained"
+        },
+        {
+          "label": "connectivity",
+          "state": "Taught"
+        },
+        {
+          "label": "liquid",
+          "state": "Taught"
+        },
+        {
+          "label": "heat",
+          "state": "Taught"
+        },
+        {
+          "label": "digitizer",
+          "state": "Taught"
+        },
+        {
+          "label": "damaged ports",
+          "state": "Taught"
+        },
+        {
+          "label": "malware",
+          "state": "Taught"
+        },
+        {
+          "label": "cursor drift",
+          "state": "Taught"
+        },
+        {
+          "label": "app install",
+          "state": "Taught"
+        },
+        {
+          "label": "stylus",
+          "state": "Taught"
+        },
+        {
+          "label": "degraded performance",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O5",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.5",
+      "title": "Troubleshoot networks",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 32,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O2-WIFI-LAB",
+          "C1-D5-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O5-LIMITED",
+          "label": "LIMITED",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O5-JITTER",
+          "label": "JITTER",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O5-VOIP",
+          "label": "VOIP",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O5-FLAPPING",
+          "label": "FLAPPING",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O5-LATENCY",
+          "label": "LATENCY",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "intermittent wireless",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "slow speeds",
+          "state": "Retained"
+        },
+        {
+          "label": "limited connectivity",
+          "state": "Retained"
+        },
+        {
+          "label": "jitter",
+          "state": "Retained"
+        },
+        {
+          "label": "poor VoIP",
+          "state": "Retained"
+        },
+        {
+          "label": "port flapping",
+          "state": "Taught"
+        },
+        {
+          "label": "high latency",
+          "state": "Taught"
+        },
+        {
+          "label": "interference",
+          "state": "Taught"
+        },
+        {
+          "label": "auth failures",
+          "state": "Taught"
+        },
+        {
+          "label": "intermittent internet",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C1-D5-O6",
+      "core": "C1",
+      "domain": "C1-D5",
+      "officialCode": "5.6",
+      "title": "Troubleshoot printers",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O8-PRINTER-LAB",
+          "C1-D5-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C1-D5-O6-FADED",
+          "label": "FADED",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O6-GHOST",
+          "label": "GHOST",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C1-D5-O6-JAM",
+          "label": "JAM",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O6-GARBLED",
+          "label": "GARBLED",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C1-D5-O6-QUEUE",
+          "label": "QUEUE",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "lines",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "garbled",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "jams",
+          "state": "Retained"
+        },
+        {
+          "label": "faded",
+          "state": "Retained"
+        },
+        {
+          "label": "not feeding",
+          "state": "Retained"
+        },
+        {
+          "label": "multipage misfeed",
+          "state": "Taught"
+        },
+        {
+          "label": "queue",
+          "state": "Taught"
+        },
+        {
+          "label": "speckling",
+          "state": "Taught"
+        },
+        {
+          "label": "ghosting",
+          "state": "Taught"
+        },
+        {
+          "label": "grinding",
+          "state": "Taught"
+        },
+        {
+          "label": "staple/hole punch",
+          "state": "Taught"
+        },
+        {
+          "label": "orientation",
+          "state": "Taught"
+        },
+        {
+          "label": "tray not recognized",
+          "state": "Taught"
+        },
+        {
+          "label": "connectivity",
+          "state": "Taught"
+        },
+        {
+          "label": "frozen queue",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O1",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.1",
+      "title": "Operating system types and purposes",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 26,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O1-WIN",
+          "label": "WIN",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O1-LINUX",
+          "label": "LINUX",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O1-MAC",
+          "label": "MAC",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O1-CHROMEOS",
+          "label": "CHROMEOS",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O1-FS",
+          "label": "FS",
+          "state": "Retained",
+          "questionCount": 12,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O1-EOL",
+          "label": "EOL",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Windows",
+          "state": "Retained"
+        },
+        {
+          "label": "Linux",
+          "state": "Retained"
+        },
+        {
+          "label": "macOS",
+          "state": "Retained"
+        },
+        {
+          "label": "ChromeOS",
+          "state": "Retained"
+        },
+        {
+          "label": "iPadOS",
+          "state": "Retained"
+        },
+        {
+          "label": "iOS",
+          "state": "Retained"
+        },
+        {
+          "label": "Android",
+          "state": "Taught"
+        },
+        {
+          "label": "NTFS",
+          "state": "Taught"
+        },
+        {
+          "label": "ReFS",
+          "state": "Taught"
+        },
+        {
+          "label": "FAT32",
+          "state": "Taught"
+        },
+        {
+          "label": "ext4",
+          "state": "Taught"
+        },
+        {
+          "label": "XFS",
+          "state": "Taught"
+        },
+        {
+          "label": "APFS",
+          "state": "Taught"
+        },
+        {
+          "label": "exFAT",
+          "state": "Taught"
+        },
+        {
+          "label": "EOL",
+          "state": "Taught"
+        },
+        {
+          "label": "update limits",
+          "state": "Taught"
+        },
+        {
+          "label": "cross-OS compatibility",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O2",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.2",
+      "title": "OS installation, partitions, and upgrades",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O2-CLEAN",
+          "label": "CLEAN",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O2-IMAGE",
+          "label": "IMAGE",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O2-ZEROTOUCH",
+          "label": "ZEROTOUCH",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O2-GPT",
+          "label": "GPT",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O2-MBR",
+          "label": "MBR",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "USB/network/flash/internet/external/internal/multiboot",
+          "state": "Retained"
+        },
+        {
+          "label": "clean/upgrade/image/remote/zero-touch/recovery/repair",
+          "state": "Retained"
+        },
+        {
+          "label": "third-party drivers",
+          "state": "Retained"
+        },
+        {
+          "label": "GPT",
+          "state": "Retained"
+        },
+        {
+          "label": "MBR",
+          "state": "Retained"
+        },
+        {
+          "label": "format",
+          "state": "Taught"
+        },
+        {
+          "label": "upgrade backups/compat",
+          "state": "Taught"
+        },
+        {
+          "label": "feature updates",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O3",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.3",
+      "title": "Windows 10 and 11 editions",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O3-EDITION-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O3-HOME",
+          "label": "HOME",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O3-PRO",
+          "label": "PRO",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O3-ENT",
+          "label": "ENT",
+          "state": "Exam Ready",
+          "questionCount": 5,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O3-BITLOCKER",
+          "label": "BITLOCKER",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O3-GPEDIT",
+          "label": "GPEDIT",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O3-TPMWIN",
+          "label": "TPMWIN",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Win10 Home/Pro/Pro for Workstations/Enterprise",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "Win11 Home/Pro/Enterprise",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "N versions",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "domain vs workgroup",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "RDP availability",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "RAM limits",
+          "state": "Retained"
+        },
+        {
+          "label": "BitLocker",
+          "state": "Taught"
+        },
+        {
+          "label": "gpedit.msc",
+          "state": "Taught"
+        },
+        {
+          "label": "in-place vs clean",
+          "state": "Taught"
+        },
+        {
+          "label": "TPM",
+          "state": "Taught"
+        },
+        {
+          "label": "UEFI",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O4",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.4",
+      "title": "Windows administrative tools",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 30,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O4-WINTOOLS-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O4-TASKMGR",
+          "label": "TASKMGR",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O4-EVENTVWR",
+          "label": "EVENTVWR",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O4-DISKMGMT",
+          "label": "DISKMGMT",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O4-MMC",
+          "label": "MMC",
+          "state": "Retained",
+          "questionCount": 12,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Task Manager",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "eventvwr",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "diskmgmt",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "taskschd",
+          "state": "Retained"
+        },
+        {
+          "label": "devmgmt",
+          "state": "Taught"
+        },
+        {
+          "label": "certmgr",
+          "state": "Taught"
+        },
+        {
+          "label": "lusrmgr",
+          "state": "Taught"
+        },
+        {
+          "label": "perfmon",
+          "state": "Taught"
+        },
+        {
+          "label": "gpedit",
+          "state": "Taught"
+        },
+        {
+          "label": "msinfo32",
+          "state": "Taught"
+        },
+        {
+          "label": "resmon",
+          "state": "Taught"
+        },
+        {
+          "label": "msconfig",
+          "state": "Taught"
+        },
+        {
+          "label": "cleanmgr",
+          "state": "Taught"
+        },
+        {
+          "label": "dfrgui",
+          "state": "Taught"
+        },
+        {
+          "label": "regedit",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O5",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.5",
+      "title": "Windows command-line tools",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 36,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O5-CMD-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O5-IPCONFIG",
+          "label": "IPCONFIG",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O5-PING",
+          "label": "PING",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O5-SFC",
+          "label": "SFC",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O5-DISKPART",
+          "label": "DISKPART",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O5-GPUPDATE",
+          "label": "GPUPDATE",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "cd",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "dir",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "ipconfig",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "ping",
+          "state": "Retained"
+        },
+        {
+          "label": "netstat",
+          "state": "Retained"
+        },
+        {
+          "label": "nslookup",
+          "state": "Taught"
+        },
+        {
+          "label": "net use",
+          "state": "Taught"
+        },
+        {
+          "label": "tracert",
+          "state": "Taught"
+        },
+        {
+          "label": "pathping",
+          "state": "Taught"
+        },
+        {
+          "label": "chkdsk",
+          "state": "Taught"
+        },
+        {
+          "label": "format",
+          "state": "Taught"
+        },
+        {
+          "label": "diskpart",
+          "state": "Taught"
+        },
+        {
+          "label": "md",
+          "state": "Taught"
+        },
+        {
+          "label": "rmdir",
+          "state": "Taught"
+        },
+        {
+          "label": "robocopy",
+          "state": "Taught"
+        },
+        {
+          "label": "hostname",
+          "state": "Taught"
+        },
+        {
+          "label": "net user",
+          "state": "Taught"
+        },
+        {
+          "label": "winver",
+          "state": "Taught"
+        },
+        {
+          "label": "whoami",
+          "state": "Taught"
+        },
+        {
+          "label": "/? ",
+          "state": "Taught"
+        },
+        {
+          "label": "gpupdate",
+          "state": "Taught"
+        },
+        {
+          "label": "gpresult",
+          "state": "Taught"
+        },
+        {
+          "label": "sfc",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O6",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.6",
+      "title": "Windows settings and Control Panel utilities",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O6-POWER",
+          "label": "POWER",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O6-FIREWALL",
+          "label": "FIREWALL",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O6-INDEXING",
+          "label": "INDEXING",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O6-EXPLOREROPT",
+          "label": "EXPLOREROPT",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Internet Options",
+          "state": "Retained"
+        },
+        {
+          "label": "Devices and Printers",
+          "state": "Retained"
+        },
+        {
+          "label": "Programs and Features",
+          "state": "Retained"
+        },
+        {
+          "label": "Network and Sharing",
+          "state": "Retained"
+        },
+        {
+          "label": "System",
+          "state": "Taught"
+        },
+        {
+          "label": "Defender Firewall",
+          "state": "Taught"
+        },
+        {
+          "label": "Mail",
+          "state": "Taught"
+        },
+        {
+          "label": "Sound",
+          "state": "Taught"
+        },
+        {
+          "label": "User Accounts",
+          "state": "Taught"
+        },
+        {
+          "label": "Device Manager",
+          "state": "Taught"
+        },
+        {
+          "label": "Indexing",
+          "state": "Taught"
+        },
+        {
+          "label": "Admin Tools",
+          "state": "Taught"
+        },
+        {
+          "label": "File Explorer Options",
+          "state": "Taught"
+        },
+        {
+          "label": "Power Options",
+          "state": "Taught"
+        },
+        {
+          "label": "Ease of Access",
+          "state": "Taught"
+        },
+        {
+          "label": "Time/Language",
+          "state": "Taught"
+        },
+        {
+          "label": "Update and Security",
+          "state": "Taught"
+        },
+        {
+          "label": "Personalization",
+          "state": "Taught"
+        },
+        {
+          "label": "Apps",
+          "state": "Taught"
+        },
+        {
+          "label": "Privacy",
+          "state": "Taught"
+        },
+        {
+          "label": "Accounts",
+          "state": "Taught"
+        },
+        {
+          "label": "Gaming",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O7",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.7",
+      "title": "Windows client networking",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O7-WORKGROUP",
+          "label": "WORKGROUP",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O7-DOMAINJOIN",
+          "label": "DOMAINJOIN",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O7-UNC",
+          "label": "UNC",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O7-METERED",
+          "label": "METERED",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O7-PROXY",
+          "label": "PROXY",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "domain vs workgroup",
+          "state": "Retained"
+        },
+        {
+          "label": "shares/printers/mapped drives",
+          "state": "Retained"
+        },
+        {
+          "label": "VPN/wireless/wired/WWAN",
+          "state": "Retained"
+        },
+        {
+          "label": "local firewall",
+          "state": "Retained"
+        },
+        {
+          "label": "proxy",
+          "state": "Retained"
+        },
+        {
+          "label": "public vs private",
+          "state": "Taught"
+        },
+        {
+          "label": "UNC paths",
+          "state": "Taught"
+        },
+        {
+          "label": "metered",
+          "state": "Taught"
+        },
+        {
+          "label": "IP/DNS/mask/gateway/static vs dynamic",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O8",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.8",
+      "title": "macOS tools and features",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O8-MACOS-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O8-DMG",
+          "label": "DMG",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O8-TIMEMACHINE",
+          "label": "TIMEMACHINE",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O8-FILEVAULT",
+          "label": "FILEVAULT",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O8-KEYCHAIN",
+          "label": "KEYCHAIN",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O8-RSR",
+          "label": "RSR",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "dmg/pkg/app/App Store",
+          "state": "Retained"
+        },
+        {
+          "label": "Displays/Networks/Printers/Privacy/Accessibility/Time Machine",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "/Applications /Users /Library /System",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "Mission Control",
+          "state": "Retained"
+        },
+        {
+          "label": "Keychain",
+          "state": "Retained"
+        },
+        {
+          "label": "Spotlight",
+          "state": "Taught"
+        },
+        {
+          "label": "iCloud",
+          "state": "Taught"
+        },
+        {
+          "label": "FileVault",
+          "state": "Taught"
+        },
+        {
+          "label": "Disk Utility",
+          "state": "Taught"
+        },
+        {
+          "label": "Terminal",
+          "state": "Taught"
+        },
+        {
+          "label": "Force Quit",
+          "state": "Taught"
+        },
+        {
+          "label": "RSR",
+          "state": "Taught"
+        },
+        {
+          "label": "Continuity",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O9",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.9",
+      "title": "Linux client tools and files",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 34,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O9-LINUX-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O9-CHMOD",
+          "label": "CHMOD",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O9-SUDO",
+          "label": "SUDO",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D1-O9-APT",
+          "label": "APT",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O9-SYSTEMD",
+          "label": "SYSTEMD",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O9-ETC",
+          "label": "ETC",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "ls/pwd/mv/cp/rm/chmod/chown/grep/find",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "fsck/mount",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "su/sudo",
+          "state": "Retained"
+        },
+        {
+          "label": "apt/dnf",
+          "state": "Retained"
+        },
+        {
+          "label": "ip/ping/curl/dig/traceroute",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "man/cat/top/ps/du/df",
+          "state": "Taught"
+        },
+        {
+          "label": "nano",
+          "state": "Taught"
+        },
+        {
+          "label": "passwd/shadow/hosts/fstab/resolv.conf",
+          "state": "Taught"
+        },
+        {
+          "label": "systemd/kernel/bootloader",
+          "state": "Taught"
+        },
+        {
+          "label": "root",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O10",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.10",
+      "title": "Application installation requirements",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 24,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O10-X86APP",
+          "label": "X86APP",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O10-VRAM",
+          "label": "VRAM",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O10-ISO",
+          "label": "ISO",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O10-IMPACT",
+          "label": "IMPACT",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "32 vs 64-bit",
+          "state": "Retained"
+        },
+        {
+          "label": "dedicated vs integrated GPU",
+          "state": "Retained"
+        },
+        {
+          "label": "VRAM/RAM/CPU/storage",
+          "state": "Retained"
+        },
+        {
+          "label": "hardware tokens",
+          "state": "Retained"
+        },
+        {
+          "label": "OS compatibility",
+          "state": "Taught"
+        },
+        {
+          "label": "physical vs ISO vs download vs image",
+          "state": "Taught"
+        },
+        {
+          "label": "device/network/operation/business impact",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D1-O11",
+      "core": "C2",
+      "domain": "C2-D1",
+      "officialCode": "1.11",
+      "title": "Cloud-based productivity",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D1-O11-EMAILSYNC",
+          "label": "EMAILSYNC",
+          "state": "Retained",
+          "questionCount": 10,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O11-LICENSE",
+          "label": "LICENSE",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D1-O11-COLLAB",
+          "label": "COLLAB",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "email",
+          "state": "Retained"
+        },
+        {
+          "label": "storage sync/folder settings",
+          "state": "Retained"
+        },
+        {
+          "label": "spreadsheets",
+          "state": "Retained"
+        },
+        {
+          "label": "video meetings",
+          "state": "Taught"
+        },
+        {
+          "label": "presentations",
+          "state": "Taught"
+        },
+        {
+          "label": "docs",
+          "state": "Taught"
+        },
+        {
+          "label": "IM",
+          "state": "Taught"
+        },
+        {
+          "label": "identity sync",
+          "state": "Taught"
+        },
+        {
+          "label": "licensing",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O1",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.1",
+      "title": "Physical and logical security controls",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O1-AUTH-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O1-VESTIBULE",
+          "label": "VESTIBULE",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O1-ZEROTRUST",
+          "label": "ZEROTRUST",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O1-MFA",
+          "label": "MFA",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O1-SAML",
+          "label": "SAML",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O1-PAM",
+          "label": "PAM",
+          "state": "Exam Ready",
+          "questionCount": 4,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O1-DLP",
+          "label": "DLP",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O1-IAM",
+          "label": "IAM",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "bollards",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "access control vestibule",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "badges",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "cameras",
+          "state": "Retained"
+        },
+        {
+          "label": "alarms",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "motion",
+          "state": "Retained"
+        },
+        {
+          "label": "locks",
+          "state": "Retained"
+        },
+        {
+          "label": "guards",
+          "state": "Taught"
+        },
+        {
+          "label": "fences",
+          "state": "Taught"
+        },
+        {
+          "label": "fobs/smart cards/mobile keys",
+          "state": "Taught"
+        },
+        {
+          "label": "biometrics",
+          "state": "Taught"
+        },
+        {
+          "label": "lighting",
+          "state": "Taught"
+        },
+        {
+          "label": "magnetometers",
+          "state": "Taught"
+        },
+        {
+          "label": "least privilege",
+          "state": "Taught"
+        },
+        {
+          "label": "Zero Trust",
+          "state": "Taught"
+        },
+        {
+          "label": "ACLs",
+          "state": "Taught"
+        },
+        {
+          "label": "MFA",
+          "state": "Taught"
+        },
+        {
+          "label": "SAML",
+          "state": "Taught"
+        },
+        {
+          "label": "SSO",
+          "state": "Taught"
+        },
+        {
+          "label": "JIT/PAM",
+          "state": "Taught"
+        },
+        {
+          "label": "MDM",
+          "state": "Taught"
+        },
+        {
+          "label": "DLP",
+          "state": "Taught"
+        },
+        {
+          "label": "IAM",
+          "state": "Taught"
+        },
+        {
+          "label": "directory",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O2",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.2",
+      "title": "Windows OS security settings",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O2-ACL-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O2-NTFS",
+          "label": "NTFS",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O2-SHAREPERM",
+          "label": "SHAREPERM",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O2-UAC",
+          "label": "UAC",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O2-EFS",
+          "label": "EFS",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O2-AD",
+          "label": "AD",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O2-HELLO",
+          "label": "HELLO",
+          "state": "Retained",
+          "questionCount": 3,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Defender",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "firewall",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "local vs Microsoft accounts",
+          "state": "Retained"
+        },
+        {
+          "label": "NTFS vs share + inheritance",
+          "state": "Retained"
+        },
+        {
+          "label": "UAC",
+          "state": "Retained"
+        },
+        {
+          "label": "BitLocker/To Go",
+          "state": "Retained"
+        },
+        {
+          "label": "EFS",
+          "state": "Taught"
+        },
+        {
+          "label": "AD join/OU/GPO/logon script/home folders/redirection/security groups",
+          "state": "Taught"
+        },
+        {
+          "label": "Windows Hello/SSO",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O3",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.3",
+      "title": "Wireless security protocols",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O3-WPA2",
+          "label": "WPA2",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O3-WPA3",
+          "label": "WPA3",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O3-AES",
+          "label": "AES",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O3-RADIUS",
+          "label": "RADIUS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O3-KERBEROS",
+          "label": "KERBEROS",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "WPA2",
+          "state": "Retained"
+        },
+        {
+          "label": "WPA3",
+          "state": "Retained"
+        },
+        {
+          "label": "TKIP",
+          "state": "Retained"
+        },
+        {
+          "label": "AES",
+          "state": "Retained"
+        },
+        {
+          "label": "RADIUS",
+          "state": "Retained"
+        },
+        {
+          "label": "TACACS+",
+          "state": "Taught"
+        },
+        {
+          "label": "Kerberos",
+          "state": "Taught"
+        },
+        {
+          "label": "multifactor",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O4",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.4",
+      "title": "Malware types and detection tools",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O5-PHISH-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O4-RANSOM",
+          "label": "RANSOM",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O4-FILELESS",
+          "label": "FILELESS",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O4-EDR",
+          "label": "EDR",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O4-XDR",
+          "label": "XDR",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O4-PUP",
+          "label": "PUP",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "Trojan",
+          "state": "Retained"
+        },
+        {
+          "label": "rootkit",
+          "state": "Retained"
+        },
+        {
+          "label": "virus",
+          "state": "Retained"
+        },
+        {
+          "label": "spyware",
+          "state": "Retained"
+        },
+        {
+          "label": "ransomware",
+          "state": "Retained"
+        },
+        {
+          "label": "keylogger",
+          "state": "Taught"
+        },
+        {
+          "label": "boot sector",
+          "state": "Taught"
+        },
+        {
+          "label": "cryptominer",
+          "state": "Taught"
+        },
+        {
+          "label": "stalkerware",
+          "state": "Taught"
+        },
+        {
+          "label": "fileless",
+          "state": "Taught"
+        },
+        {
+          "label": "adware",
+          "state": "Taught"
+        },
+        {
+          "label": "PUP",
+          "state": "Taught"
+        },
+        {
+          "label": "recovery console",
+          "state": "Taught"
+        },
+        {
+          "label": "EDR",
+          "state": "Taught"
+        },
+        {
+          "label": "MDR",
+          "state": "Taught"
+        },
+        {
+          "label": "XDR",
+          "state": "Taught"
+        },
+        {
+          "label": "AV/AM",
+          "state": "Taught"
+        },
+        {
+          "label": "email gateway",
+          "state": "Taught"
+        },
+        {
+          "label": "software firewall",
+          "state": "Taught"
+        },
+        {
+          "label": "user education",
+          "state": "Taught"
+        },
+        {
+          "label": "reinstall",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O5",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.5",
+      "title": "Social engineering, attacks, and vulnerabilities",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O5-PHISH-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O5-PHISH",
+          "label": "PHISH",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O5-BEC",
+          "label": "BEC",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O5-EVILTWIN",
+          "label": "EVILTWIN",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O5-ONPATH",
+          "label": "ONPATH",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O5-XSS",
+          "label": "XSS",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "phishing/vishing/smishing/QR/spear/whaling",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "shoulder surfing",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "tailgating",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "impersonation",
+          "state": "Retained"
+        },
+        {
+          "label": "dumpster diving",
+          "state": "Retained"
+        },
+        {
+          "label": "DoS/DDoS",
+          "state": "Taught"
+        },
+        {
+          "label": "evil twin",
+          "state": "Taught"
+        },
+        {
+          "label": "zero-day",
+          "state": "Taught"
+        },
+        {
+          "label": "spoofing",
+          "state": "Taught"
+        },
+        {
+          "label": "on-path",
+          "state": "Taught"
+        },
+        {
+          "label": "brute/dictionary",
+          "state": "Taught"
+        },
+        {
+          "label": "insider",
+          "state": "Taught"
+        },
+        {
+          "label": "SQLi",
+          "state": "Taught"
+        },
+        {
+          "label": "XSS",
+          "state": "Taught"
+        },
+        {
+          "label": "BEC",
+          "state": "Taught"
+        },
+        {
+          "label": "supply chain",
+          "state": "Taught"
+        },
+        {
+          "label": "noncompliant/unpatched/unprotected/EOL/BYOD",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O6",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.6",
+      "title": "SOHO malware removal process",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O6-MALWARE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O6-QUARANTINE",
+          "label": "QUARANTINE",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O6-SYSRESTORE",
+          "label": "SYSRESTORE",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O6-REIMAGE",
+          "label": "REIMAGE",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "investigate/verify",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "quarantine",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "disable System Restore (Windows Home)",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "remediate",
+          "state": "Taught"
+        },
+        {
+          "label": "update anti-malware",
+          "state": "Taught"
+        },
+        {
+          "label": "scan/removal (safe mode/PE)",
+          "state": "Taught"
+        },
+        {
+          "label": "reimage/reinstall",
+          "state": "Taught"
+        },
+        {
+          "label": "schedule scans/updates",
+          "state": "Taught"
+        },
+        {
+          "label": "enable System Restore + restore point",
+          "state": "Taught"
+        },
+        {
+          "label": "educate user",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O7",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.7",
+      "title": "Workstation hardening",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O7-HARDEN",
+          "label": "HARDEN",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O7-AUTORUN",
+          "label": "AUTORUN",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O7-LOCKOUT",
+          "label": "LOCKOUT",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O7-BIOSPW",
+          "label": "BIOSPW",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "data-at-rest encryption",
+          "state": "Retained"
+        },
+        {
+          "label": "password length/types/uniqueness/complexity/expiration",
+          "state": "Retained"
+        },
+        {
+          "label": "BIOS/UEFI passwords",
+          "state": "Retained"
+        },
+        {
+          "label": "screensaver/logoff/PII",
+          "state": "Retained"
+        },
+        {
+          "label": "restrict permissions/logon hours",
+          "state": "Taught"
+        },
+        {
+          "label": "disable guest",
+          "state": "Taught"
+        },
+        {
+          "label": "lockout",
+          "state": "Taught"
+        },
+        {
+          "label": "timeout",
+          "state": "Taught"
+        },
+        {
+          "label": "expiration",
+          "state": "Taught"
+        },
+        {
+          "label": "change default admin",
+          "state": "Taught"
+        },
+        {
+          "label": "disable AutoRun",
+          "state": "Taught"
+        },
+        {
+          "label": "disable unused services",
+          "state": "Taught"
+        },
+        {
+          "label": "OS/app patching",
+          "state": "Taught"
+        },
+        {
+          "label": "endpoint AV/AM/content filter",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O8",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.8",
+      "title": "Mobile device security",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O8-REMOTEWIPE",
+          "label": "REMOTEWIPE",
+          "state": "Retained",
+          "questionCount": 10,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O8-SCREENLOCK",
+          "label": "SCREENLOCK",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O8-MDMPROFILE",
+          "label": "MDMPROFILE",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "device encryption",
+          "state": "Retained"
+        },
+        {
+          "label": "face/PIN/fingerprint/pattern/swipe",
+          "state": "Retained"
+        },
+        {
+          "label": "configuration profiles",
+          "state": "Retained"
+        },
+        {
+          "label": "locator",
+          "state": "Taught"
+        },
+        {
+          "label": "remote wipe",
+          "state": "Taught"
+        },
+        {
+          "label": "remote backup",
+          "state": "Taught"
+        },
+        {
+          "label": "failed logon limits",
+          "state": "Taught"
+        },
+        {
+          "label": "MDM",
+          "state": "Taught"
+        },
+        {
+          "label": "BYOD vs corporate",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O9",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.9",
+      "title": "Data destruction and disposal",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O9-DEGAUSS",
+          "label": "DEGAUSS",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O9-WIPE",
+          "label": "WIPE",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O9-SHRED",
+          "label": "SHRED",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O9-COD",
+          "label": "COD",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "drill",
+          "state": "Retained"
+        },
+        {
+          "label": "shred",
+          "state": "Retained"
+        },
+        {
+          "label": "degauss",
+          "state": "Retained"
+        },
+        {
+          "label": "incinerate",
+          "state": "Retained"
+        },
+        {
+          "label": "erase/wipe",
+          "state": "Taught"
+        },
+        {
+          "label": "low-level format",
+          "state": "Taught"
+        },
+        {
+          "label": "standard format",
+          "state": "Taught"
+        },
+        {
+          "label": "third-party CoD",
+          "state": "Taught"
+        },
+        {
+          "label": "regulatory/environmental",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O10",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.10",
+      "title": "Secure SOHO wired and wireless networks",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O6-ROUTER-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O10-UPNP",
+          "label": "UPNP",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D2-O10-SSID",
+          "label": "SSID",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O10-PORTFWD",
+          "label": "PORTFWD",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O10-DMZ",
+          "label": "DMZ",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "default passwords",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "IP/content filtering",
+          "state": "Retained"
+        },
+        {
+          "label": "firmware",
+          "state": "Retained"
+        },
+        {
+          "label": "placement",
+          "state": "Retained"
+        },
+        {
+          "label": "UPnP",
+          "state": "Taught"
+        },
+        {
+          "label": "screened subnet",
+          "state": "Taught"
+        },
+        {
+          "label": "secure management",
+          "state": "Taught"
+        },
+        {
+          "label": "SSID change/disable broadcast",
+          "state": "Taught"
+        },
+        {
+          "label": "encryption",
+          "state": "Taught"
+        },
+        {
+          "label": "guest",
+          "state": "Taught"
+        },
+        {
+          "label": "disable unused ports",
+          "state": "Taught"
+        },
+        {
+          "label": "port forwarding",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D2-O11",
+      "core": "C2",
+      "domain": "C2-D2",
+      "officialCode": "2.11",
+      "title": "Browser security settings",
+      "examPercent": 28,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D2-O11-CERTWARN",
+          "label": "CERTWARN",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O11-HASH",
+          "label": "HASH",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O11-PRIVACYMODE",
+          "label": "PRIVACYMODE",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D2-O11-SECUREDNS",
+          "label": "SECUREDNS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "trusted vs untrusted download",
+          "state": "Retained"
+        },
+        {
+          "label": "hashing",
+          "state": "Retained"
+        },
+        {
+          "label": "patching",
+          "state": "Retained"
+        },
+        {
+          "label": "extensions",
+          "state": "Retained"
+        },
+        {
+          "label": "password managers",
+          "state": "Taught"
+        },
+        {
+          "label": "certificates",
+          "state": "Taught"
+        },
+        {
+          "label": "pop-up blocker",
+          "state": "Taught"
+        },
+        {
+          "label": "clear data/cache",
+          "state": "Taught"
+        },
+        {
+          "label": "private browsing",
+          "state": "Taught"
+        },
+        {
+          "label": "sync",
+          "state": "Taught"
+        },
+        {
+          "label": "ad blockers",
+          "state": "Taught"
+        },
+        {
+          "label": "proxy",
+          "state": "Taught"
+        },
+        {
+          "label": "secure DNS",
+          "state": "Taught"
+        },
+        {
+          "label": "feature enable/disable",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D3-O1",
+      "core": "C2",
+      "domain": "C2-D3",
+      "officialCode": "3.1",
+      "title": "Troubleshoot Windows OS issues",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O5-CMD-LAB",
+          "C2-D1-O4-WINTOOLS-LAB",
+          "C2-D3-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D3-O1-BSOD",
+          "label": "BSOD",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O1-PROFILE",
+          "label": "PROFILE",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D3-O1-TIMEDRIFT",
+          "label": "TIMEDRIFT",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D3-O1-USBRES",
+          "label": "USBRES",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "BSOD",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "degraded performance",
+          "state": "Retained"
+        },
+        {
+          "label": "boot",
+          "state": "Retained"
+        },
+        {
+          "label": "frequent shutdowns",
+          "state": "Retained"
+        },
+        {
+          "label": "services",
+          "state": "Taught"
+        },
+        {
+          "label": "app crashes",
+          "state": "Taught"
+        },
+        {
+          "label": "low memory",
+          "state": "Taught"
+        },
+        {
+          "label": "USB controller resource",
+          "state": "Taught"
+        },
+        {
+          "label": "system instability",
+          "state": "Taught"
+        },
+        {
+          "label": "no OS found",
+          "state": "Taught"
+        },
+        {
+          "label": "slow profile",
+          "state": "Taught"
+        },
+        {
+          "label": "time drift",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D3-O2",
+      "core": "C2",
+      "domain": "C2-D3",
+      "officialCode": "3.2",
+      "title": "Troubleshoot mobile OS and apps",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D3-O2-MOBILE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D3-O2-APPCRASH",
+          "label": "APPCRASH",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O2-AUTOROTATE",
+          "label": "AUTOROTATE",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O2-MOBILEUPDATE",
+          "label": "MOBILEUPDATE",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "fail to launch/close/update/install",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "slow",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "OS update fail",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "battery life",
+          "state": "Taught"
+        },
+        {
+          "label": "BT/Wi-Fi/NFC",
+          "state": "Taught"
+        },
+        {
+          "label": "autorotate",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D3-O3",
+      "core": "C2",
+      "domain": "C2-D3",
+      "officialCode": "3.3",
+      "title": "Troubleshoot mobile security symptoms",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D3-O3-COMPROMISE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D3-O3-JAILBREAK",
+          "label": "JAILBREAK",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O3-SPOOFAPP",
+          "label": "SPOOFAPP",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O3-DATAUSAGE",
+          "label": "DATAUSAGE",
+          "state": "Exam Ready",
+          "questionCount": 9,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "unofficial stores",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "developer mode",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "root/jailbreak",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "malicious/spoofed apps",
+          "state": "Taught"
+        },
+        {
+          "label": "high traffic",
+          "state": "Taught"
+        },
+        {
+          "label": "slow response",
+          "state": "Taught"
+        },
+        {
+          "label": "data-usage limit",
+          "state": "Taught"
+        },
+        {
+          "label": "limited/no internet",
+          "state": "Taught"
+        },
+        {
+          "label": "ads",
+          "state": "Taught"
+        },
+        {
+          "label": "fake warnings",
+          "state": "Taught"
+        },
+        {
+          "label": "unexpected behavior",
+          "state": "Taught"
+        },
+        {
+          "label": "leaked data",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D3-O4",
+      "core": "C2",
+      "domain": "C2-D3",
+      "officialCode": "3.4",
+      "title": "Troubleshoot PC security symptoms",
+      "examPercent": 23,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 22,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D3-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D3-O4-REDIRECT",
+          "label": "REDIRECT",
+          "state": "Exam Ready",
+          "questionCount": 10,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D3-O4-FAKEAV",
+          "label": "FAKEAV",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D3-O4-CERTBROWSER",
+          "label": "CERTBROWSER",
+          "state": "Retained",
+          "questionCount": 9,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "no network",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "desktop alerts",
+          "state": "Retained"
+        },
+        {
+          "label": "false AV",
+          "state": "Retained"
+        },
+        {
+          "label": "altered/missing files",
+          "state": "Taught"
+        },
+        {
+          "label": "unwanted notifications",
+          "state": "Taught"
+        },
+        {
+          "label": "OS update failures",
+          "state": "Taught"
+        },
+        {
+          "label": "browser pop-ups/certs/redirects/slow browser",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O1",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.1",
+      "title": "Documentation, ticketing, and asset management",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O1-TICKET-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O1-TICKET",
+          "label": "TICKET",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O1-CMDB",
+          "label": "CMDB",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O1-SLA",
+          "label": "SLA",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O1-SOP",
+          "label": "SOP",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "ticket fields",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "severity/escalation",
+          "state": "Retained"
+        },
+        {
+          "label": "asset inventory/CMDB/tags",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "procurement/warranty/licensing",
+          "state": "Retained"
+        },
+        {
+          "label": "incident reports",
+          "state": "Taught"
+        },
+        {
+          "label": "SOP",
+          "state": "Taught"
+        },
+        {
+          "label": "onboarding/offboarding",
+          "state": "Taught"
+        },
+        {
+          "label": "SLA",
+          "state": "Taught"
+        },
+        {
+          "label": "knowledge base",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O2",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.2",
+      "title": "Change management",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O2-CHANGE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O2-CAB",
+          "label": "CAB",
+          "state": "Exam Ready",
+          "questionCount": 7,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O2-ROLLBACK",
+          "label": "ROLLBACK",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O2-FREEZE",
+          "label": "FREEZE",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O2-EMERGENCY",
+          "label": "EMERGENCY",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "rollback/backup/sandbox/owners",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "request/purpose/scope",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "standard/normal/emergency",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "freeze/maintenance window",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "impact",
+          "state": "Taught"
+        },
+        {
+          "label": "risk",
+          "state": "Taught"
+        },
+        {
+          "label": "CAB",
+          "state": "Taught"
+        },
+        {
+          "label": "implement",
+          "state": "Taught"
+        },
+        {
+          "label": "peer review",
+          "state": "Taught"
+        },
+        {
+          "label": "user acceptance",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O3",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.3",
+      "title": "Backups and recovery",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O3-BACKUP-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O3-FULL",
+          "label": "FULL",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O3-INCR",
+          "label": "INCR",
+          "state": "Exam Ready",
+          "questionCount": 8,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O3-DIFF",
+          "label": "DIFF",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O3-GFS",
+          "label": "GFS",
+          "state": "Exam Ready",
+          "questionCount": 6,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O3-321",
+          "label": "321",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "full",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "incremental",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "differential",
+          "state": "Retained"
+        },
+        {
+          "label": "synthetic full",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "in-place vs alternate location",
+          "state": "Retained"
+        },
+        {
+          "label": "testing/frequency",
+          "state": "Taught"
+        },
+        {
+          "label": "onsite/offsite",
+          "state": "Taught"
+        },
+        {
+          "label": "GFS",
+          "state": "Taught"
+        },
+        {
+          "label": "3-2-1",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O4",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.4",
+      "title": "Safety procedures",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O4-ESD",
+          "label": "ESD",
+          "state": "Retained",
+          "questionCount": 8,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O4-GROUND",
+          "label": "GROUND",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O4-PPE",
+          "label": "PPE",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O4-LIFT",
+          "label": "LIFT",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "ESD strap/mat",
+          "state": "Retained"
+        },
+        {
+          "label": "grounding",
+          "state": "Retained"
+        },
+        {
+          "label": "component handling",
+          "state": "Retained"
+        },
+        {
+          "label": "cable management",
+          "state": "Retained"
+        },
+        {
+          "label": "antistatic bags",
+          "state": "Taught"
+        },
+        {
+          "label": "disconnect power",
+          "state": "Taught"
+        },
+        {
+          "label": "lifting",
+          "state": "Taught"
+        },
+        {
+          "label": "fire",
+          "state": "Taught"
+        },
+        {
+          "label": "goggles",
+          "state": "Taught"
+        },
+        {
+          "label": "air filter mask",
+          "state": "Taught"
+        },
+        {
+          "label": "regulations",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O5",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.5",
+      "title": "Environmental and power controls",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O5-MSDS",
+          "label": "MSDS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O5-UPS",
+          "label": "UPS",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O5-BROWNOUT",
+          "label": "BROWNOUT",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O5-HUMIDITY",
+          "label": "HUMIDITY",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "MSDS",
+          "state": "Retained"
+        },
+        {
+          "label": "battery/toner/asset disposal",
+          "state": "Retained"
+        },
+        {
+          "label": "temperature/humidity/ventilation",
+          "state": "Retained"
+        },
+        {
+          "label": "placement",
+          "state": "Retained"
+        },
+        {
+          "label": "dust/compressed air/vacuum",
+          "state": "Taught"
+        },
+        {
+          "label": "surge/brownout/blackout",
+          "state": "Taught"
+        },
+        {
+          "label": "UPS",
+          "state": "Taught"
+        },
+        {
+          "label": "surge suppressor",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O6",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.6",
+      "title": "Privacy, licensing, and incident handling",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O6-COC",
+          "label": "COC",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O6-VOLATILITY",
+          "label": "VOLATILITY",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O6-PII",
+          "label": "PII",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O6-EULA",
+          "label": "EULA",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O6-AUP",
+          "label": "AUP",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "chain of custody",
+          "state": "Retained"
+        },
+        {
+          "label": "management/LE",
+          "state": "Retained"
+        },
+        {
+          "label": "drive copy",
+          "state": "Retained"
+        },
+        {
+          "label": "order of volatility",
+          "state": "Retained"
+        },
+        {
+          "label": "EULA/DRM/open source/perpetual vs personal vs corporate",
+          "state": "Retained"
+        },
+        {
+          "label": "NDA/MNDA",
+          "state": "Taught"
+        },
+        {
+          "label": "payment/gov/PII/health/retention",
+          "state": "Taught"
+        },
+        {
+          "label": "AUP",
+          "state": "Taught"
+        },
+        {
+          "label": "splash screens",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O7",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.7",
+      "title": "Professional communication",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O7-VOICE-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O7-LISTEN",
+          "label": "LISTEN",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O7-DIFFICULT",
+          "label": "DIFFICULT",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O7-CONFIDENTIAL",
+          "label": "CONFIDENTIAL",
+          "state": "Retained",
+          "questionCount": 12,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "attire",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "language",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "listening",
+          "state": "Retained"
+        },
+        {
+          "label": "cultural sensitivity",
+          "state": "Taught"
+        },
+        {
+          "label": "punctuality",
+          "state": "Taught"
+        },
+        {
+          "label": "distractions",
+          "state": "Taught"
+        },
+        {
+          "label": "difficult customers",
+          "state": "Taught"
+        },
+        {
+          "label": "expectations",
+          "state": "Taught"
+        },
+        {
+          "label": "confidential materials",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O8",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.8",
+      "title": "Scripting basics",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O8-PS1",
+          "label": "PS1",
+          "state": "Retained",
+          "questionCount": 7,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O8-BAT",
+          "label": "BAT",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O8-PY",
+          "label": "PY",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O8-SCRIPTRISK",
+          "label": "SCRIPTRISK",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": ".bat",
+          "state": "Retained"
+        },
+        {
+          "label": ".ps1",
+          "state": "Retained"
+        },
+        {
+          "label": ".vbs",
+          "state": "Retained"
+        },
+        {
+          "label": ".sh",
+          "state": "Retained"
+        },
+        {
+          "label": ".js",
+          "state": "Taught"
+        },
+        {
+          "label": ".py",
+          "state": "Taught"
+        },
+        {
+          "label": "automation/restart/map/install/backup/inventory/update",
+          "state": "Taught"
+        },
+        {
+          "label": "malware",
+          "state": "Taught"
+        },
+        {
+          "label": "settings change",
+          "state": "Taught"
+        },
+        {
+          "label": "crashes",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O9",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.9",
+      "title": "Remote access technologies",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Retained",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 20,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": false,
+        "scoredPbqIds": [],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No scored LabHost PBQ (pbqLabIds empty)",
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O9-RDP",
+          "label": "RDP",
+          "state": "Retained",
+          "questionCount": 6,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O9-VNC",
+          "label": "VNC",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O9-RMM",
+          "label": "RMM",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O9-WINRM",
+          "label": "WINRM",
+          "state": "Retained",
+          "questionCount": 5,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O9-SPICE",
+          "label": "SPICE",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "RDP",
+          "state": "Retained"
+        },
+        {
+          "label": "VPN",
+          "state": "Retained"
+        },
+        {
+          "label": "VNC",
+          "state": "Retained"
+        },
+        {
+          "label": "SSH",
+          "state": "Retained"
+        },
+        {
+          "label": "RMM",
+          "state": "Retained"
+        },
+        {
+          "label": "SPICE",
+          "state": "Taught"
+        },
+        {
+          "label": "WinRM",
+          "state": "Taught"
+        },
+        {
+          "label": "screen share/video/file transfer/desktop management",
+          "state": "Taught"
+        },
+        {
+          "label": "security per method",
+          "state": "Taught"
+        }
+      ]
+    },
+    {
+      "objectiveId": "C2-D4-O10",
+      "core": "C2",
+      "domain": "C2-D4",
+      "officialCode": "4.10",
+      "title": "Artificial intelligence fundamentals",
+      "examPercent": 21,
+      "coverageStatus": "verified",
+      "state": "Exam Ready",
+      "evidence": {
+        "hasLessons": true,
+        "hasPracticeInteractions": true,
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D3-SHIFT-LAB"
+        ],
+        "hasDelayedRetentionHook": false
+      },
+      "blockers": [
+        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
+      ],
+      "concepts": [
+        {
+          "conceptId": "C2-D4-O10-HALLUCINATION",
+          "label": "HALLUCINATION",
+          "state": "Exam Ready",
+          "questionCount": 12,
+          "inPbq": true
+        },
+        {
+          "conceptId": "C2-D4-O10-AIPOLICY",
+          "label": "AIPOLICY",
+          "state": "Retained",
+          "questionCount": 12,
+          "inPbq": false
+        },
+        {
+          "conceptId": "C2-D4-O10-PRIVATEAI",
+          "label": "PRIVATEAI",
+          "state": "Retained",
+          "questionCount": 12,
+          "inPbq": false
+        }
+      ],
+      "subtopics": [
+        {
+          "label": "application integration",
+          "state": "Exam Ready"
+        },
+        {
+          "label": "appropriate use",
+          "state": "Retained"
+        },
+        {
+          "label": "plagiarism",
+          "state": "Retained"
+        },
+        {
+          "label": "bias",
+          "state": "Taught"
+        },
+        {
+          "label": "hallucinations",
+          "state": "Taught"
+        },
+        {
+          "label": "accuracy",
+          "state": "Taught"
+        },
+        {
+          "label": "private vs public",
+          "state": "Taught"
+        },
+        {
+          "label": "data security/source/privacy",
+          "state": "Taught"
+        }
+      ]
+    }
+  ]
+}

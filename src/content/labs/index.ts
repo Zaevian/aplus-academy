@@ -459,4 +459,82 @@ export const LABS: Lab[] = [
     estimatedMinutes: 25,
     capstone: true,
   },
+  {
+    id: "C1-D3-O1-DISPLAY-LAB",
+    slug: "display-match",
+    title: "Display technology matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D3-O1"],
+    conceptIds: [
+      "C1-D3-O1-IPS",
+      "C1-D3-O1-TN",
+      "C1-D3-O1-OLED",
+      "C1-D3-O1-DIGITIZER",
+    ],
+    component: "DisplayMatchLab",
+    description:
+      "Match IPS, high-refresh TN, OLED, and digitizer FRU choices to design, esports, film, and touch-dead tickets; leave CCFL inverter and whole-panel-for-touch unused.",
+    solution:
+      "IPS for wide-angle design reviews. Fast TN/high-refresh for esports. OLED for dark-room contrast (burn-in risk). Digitizer when the image is fine but touch is dead. CCFL inverters are not for LED/OLED; do not order a whole panel for touch alone.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D4-O1-HYPERVISOR-LAB",
+    slug: "hypervisor-match",
+    title: "Virtualization stack matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D4-O1"],
+    conceptIds: [
+      "C1-D4-O1-TYPE1",
+      "C1-D4-O1-TYPE2",
+      "C1-D4-O1-VDI",
+      "C1-D4-O1-CONTAINER",
+    ],
+    component: "HypervisorMatchLab",
+    description:
+      "Match Type 1, Type 2, VDI, and containers to datacenter, laptop-lab, clinic, and microservice tickets; leave SaaS mail and thick-client reimage unused.",
+    solution:
+      "Type 1 bare-metal for datacenter consolidation. Type 2 hosted on a tech laptop. VDI keeps ward desktops central. Containers share a kernel for dense microservices. SaaS email and reimaging thick clients are not virtualization stack answers.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D5-O4-MOBILE-HW-LAB",
+    slug: "mobile-hardware-ts",
+    title: "Mobile hardware troubleshooting lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D5-O4"],
+    conceptIds: [
+      "C1-D5-O4-SWELL",
+      "C1-D5-O4-DIGITIZER",
+      "C1-D5-O4-LIQUID",
+    ],
+    component: "MobileHardwareTsLab",
+    description:
+      "Match swollen-battery, digitizer, liquid, and charge-path FIRST actions; leave factory-reset-first and buy-a-phone unused.",
+    solution:
+      "Swollen pack: power off, do not charge, OEM replace. Digitizer when image is fine. Liquid: power off, do not charge. Charge issues: known-good cable/port before battery. Factory reset and buying a phone are not FIRST on unsafe hardware.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D3-O3-COMPROMISE-LAB",
+    slug: "compromised-phone",
+    title: "Compromised phone triage lab",
+    kind: "security",
+    objectiveIds: ["C2-D3-O3"],
+    conceptIds: [
+      "C2-D3-O3-JAILBREAK",
+      "C2-D3-O3-SPOOFAPP",
+      "C2-D3-O3-DATAUSAGE",
+    ],
+    component: "CompromisedPhoneLab",
+    description:
+      "Match sideload, jailbreak/root, data-spike, and overlay scareware tickets to FIRST software actions; leave battery-swap and raise-cap unused.",
+    solution:
+      "Sideload → remove unofficial apps. Jailbreak → isolate and wipe to stock. Data spike → sort by app. Scareware overlay → revoke overlay/uninstall. Do not swap batteries or raise the carrier cap as FIRST.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];
