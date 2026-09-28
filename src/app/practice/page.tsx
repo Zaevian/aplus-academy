@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { getQuestions } from "@/content/registry";
+import { getPracticeQuestions } from "@/content/registry";
 import { QuizPlayer } from "@/components/quiz/quiz-player";
 import { ALL_OBJECTIVES } from "@/content/catalog";
 
 export default function PracticePage() {
-  const all = getQuestions();
+  const all = getPracticeQuestions();
   const [core, setCore] = useState<"all" | "C1" | "C2">("all");
   const [unseen, setUnseen] = useState(true);
   const pool = useMemo(() => {

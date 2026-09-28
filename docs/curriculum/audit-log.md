@@ -65,4 +65,54 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 `/workspace/aplus-audit-md/out/mobile-devices-audit-2026-09-28.json`
 
 ### Next rotation
-**C1 Domain 3 Hardware (3.0)**
+**C1 Domain 3 Hardware (3.0)** — see entry below.
+
+---
+
+## 2026-09-28 — C1 Domain 3 Hardware (third weekly rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d3-hardware-audit` from master @ ddb5ed4)  
+**Official:** 220-1201 Domain 3 Hardware **25%** (Exam Objectives Document Version 3.0)
+
+### Coverage snapshot
+- Objectives 3.1–3.8 (`C1-D3-O1`…`O8`): all coverage `verified` (MCQ depth ≥28); **14** lessons; **254** questions
+- Scored LabHost labs before this PR: Cable (`O2`), RAID (`O4`), Motherboard (`O5`), Printer (`O8`)
+- **This PR:** RAM install matching lab `C1-D3-O3-RAM-LAB` → `RamInstallLab` for O3 (DIMM/SODIMM/DDR/ECC/channels)
+- Still **0** pbqLabIds on O1 (displays), O6 (PSU), O7 (printer deploy)
+- Holdout: disjoint `reviewQuestionIds` for all eight Hardware objectives (first domain with a real split); lesson KC/checkpoint IDs stay in practice only
+
+### Live guest walkthrough (2026-09-28 ET)
+- Hardware domain **hard-locked** until Networking mastery 100% (Networking behind Mobile/Foundation). Guest could not open Hardware lessons/quiz; landing previously showed only gate text with **no** lesson/Q/lab counts.
+- Practice (Core 1) works independently of the domain gate; distractor rationales often short but present.
+- Core 1 mock opens with networking Ports PBQ / cloud / TCP early — not Hardware-weighted lead items (domain-weighted sampler still draws full Core 1 bank after PBQ).
+- Labs catalog: ~20 entries; Hardware-relevant RAID / Motherboard / Cable / Printer visible; **no RAM lab on live** until this PR deploys; no search/filter before this PR. Motherboard lab has a real interactive diagram.
+- Screenshots: `/workspace/hardware-domain-lock.png`, `labs-catalog.png`, `practice-quiz-san.png`, `motherboard-lab-diagram.png`
+
+### Findings
+- **High (process):** Domain hard-lock blocks guest/auditor self-serve sampling of Hardware content — intentional curriculum order, but Exam-Ready/audit friction. Soft read-only syllabus preview added; gate preserved.
+- **High (cross-cutting, prior):** Mastery honesty + mock exposure fixed in Phase 1; do not re-litigate unless regressing.
+- **High → fixed this PR:** `DisplayCompareDiagram` was a SIMPLE text stub used by O1 lessons.
+- **High → partial:** `reviewQuestionIds === quizQuestionIds` globally; Hardware now has a disjoint holdout consumed by domain quiz + practice pools. Other domains still mirrored.
+- **Medium:** Uneven PBQ — O1/O6/O7 still lack scored labs; O3 gained RAM lab.
+- **Medium → partial:** Weak D3 rationales / zero misconception tags; ~18 questions upgraded with tags.
+- **Low → fixed:** Labs catalog lacked search/kind filter.
+
+### Strengths
+- Deep MCQ bank (≥28/objective); real LabHost motherboard/cable/RAID/printer sims; SEE clips for DIMM/SODIMM; official 25% Hardware weight in `EXAM_META`.
+
+### Fixes shipped (this PR)
+- `RamInstallLab` + lesson wire for C1-D3-O3; LabHost registration
+- Holdout split pattern (`HOLDOUT_DOMAIN_IDS`) starting with C1-D3; domain quiz + practice exclude holdout
+- Real `DisplayCompareDiagram`; ~18 rationale/tag upgrades
+- DomainGate read-only syllabus preview; Labs search + kind filter
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + partial PBQ (O2/O3/O4/O5/O8). Coverage `"verified"` still overstates practical readiness without O1/O6/O7 labs, fuller rationale quality, and holdout extended beyond Hardware. Domain hard-lock remains deliberate progression — preview only.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/hardware-audit-2026-09-28.json`
+
+### Next rotation
+**C1 Domain 4 Virtualization and Cloud (4.0)** — or deepen Hardware O1/O6/O7 PBQs before rotating.

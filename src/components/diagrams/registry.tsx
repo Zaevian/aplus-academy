@@ -437,6 +437,48 @@ export function AiPolicyDiagram() {
   );
 }
 
+export function DisplayCompareDiagram() {
+  const rows: [string, string, string, string][] = [
+    ["TN", "LCD", "Fast response", "Poor off-axis color"],
+    ["IPS", "LCD", "Angles + color", "Possible IPS glow"],
+    ["VA", "LCD", "High contrast", "Moderate angles"],
+    ["OLED", "Emissive", "True black", "Burn-in risk"],
+    ["Mini-LED", "Backlight", "Local dimming", "Still needs a panel"],
+  ];
+  return (
+    <Frame
+      title="Display families"
+      alt="Comparison of TN, IPS, VA, OLED, and Mini-LED"
+    >
+      <table className="w-full text-left text-xs">
+        <thead>
+          <tr className="border-b text-muted-foreground">
+            <th className="py-1 pr-2">Family</th>
+            <th className="pr-2">Kind</th>
+            <th className="pr-2">Strength</th>
+            <th>Watch-out</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([name, kind, strength, watch]) => (
+            <tr key={name} className="border-b border-border/60">
+              <td className="py-1.5 pr-2 font-medium">{name}</td>
+              <td className="pr-2">{kind}</td>
+              <td className="pr-2">{strength}</td>
+              <td className="text-muted-foreground">{watch}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Digitizer is the touch/pen layer (separate from the image). Inverter is
+        a CCFL backlight high-voltage board — not used on LED-backlit panels.
+      </p>
+    </Frame>
+  );
+}
+
+
 const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   LaptopExplodedDiagram: {
     title: "Laptop internals",
@@ -467,10 +509,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   NetworkRackDiagram: {
     title: "SOHO path",
     lines: ["ISP → ONT/modem → router/firewall → switch → AP / PCs"],
-  },
-  DisplayCompareDiagram: {
-    title: "Panels",
-    lines: ["TN: fast, poor angles", "IPS: color/angles", "VA: contrast", "OLED: emissive, burn-in", "Mini-LED: local dimming backlight"],
   },
   DisplayFaultDiagram: {
     title: "Display faults",
@@ -531,6 +569,7 @@ const NAMED: Record<string, () => JSX.Element> = {
   MalwareStepsDiagram,
   BackupChainDiagram,
   AiPolicyDiagram,
+  DisplayCompareDiagram,
   SpectrumDiagram,
   ConnectorGallery,
   Ipv4Diagram,

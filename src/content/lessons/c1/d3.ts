@@ -627,6 +627,14 @@ On a help-desk call, "I added RAM and it is still slow" is not automatically a b
         questionIds: ["C1-D3-O3-ECC-Q001"],
       },
       {
+        type: "lab",
+        id: "C1-D3-O3-L1-lab",
+        labId: "C1-D3-O3-RAM-LAB",
+        title: "RAM install matching lab",
+        prompt:
+          "Assign the correct module to the desktop dual-channel pair, the laptop SODIMM bay, and the ECC hypervisor host. Leave wrong-generation DDR5, SODIMM adapters, and non-ECC RGB unused.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D3-O3-L1-cp",
         questionIds: [

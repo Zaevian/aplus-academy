@@ -31,6 +31,27 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D3-O3-RAM-LAB",
+    slug: "ram-install",
+    title: "RAM install matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D3-O3"],
+    conceptIds: [
+      "C1-D3-O3-DIMM",
+      "C1-D3-O3-SODIMM",
+      "C1-D3-O3-DDR",
+      "C1-D3-O3-ECC",
+      "C1-D3-O3-CHANNELS",
+    ],
+    component: "RamInstallLab",
+    description:
+      "Match DIMM vs SODIMM, DDR generation, dual-channel kit, and ECC to desktop, laptop, and server tickets.",
+    solution:
+      "Desktop dual-channel takes a matched DDR4 DIMM kit. Laptops take SODIMM. Hypervisor hosts need ECC on a supported platform. Wrong-generation DDR5, SODIMM adapters, and non-ECC RGB fail those tickets.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O4-RAID-LAB",
     slug: "raid-builder",
     title: "RAID builder and failure lab",
