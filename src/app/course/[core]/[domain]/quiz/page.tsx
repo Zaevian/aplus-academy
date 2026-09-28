@@ -14,7 +14,7 @@ export default async function DomainQuizPage({
   const num = Number(domain.replace("domain-", ""));
   const d = DOMAINS.find((x) => x.core === coreId && x.number === num);
   if (!d) notFound();
-  // Uses coverage quizQuestionIds so Hardware holdout items are not in mastery practice.
+  // Uses coverage quizQuestionIds so holdout items (Networking/Hardware) are not in mastery practice.
   const pool = getDomainPracticeQuestions(d.objectiveIds);
   return (
     <DomainGate domainId={d.id}>

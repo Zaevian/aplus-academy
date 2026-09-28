@@ -6,12 +6,12 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D3 this PR) | Holdout split live for Hardware (`HOLDOUT_DOMAIN_IDS`); other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D2 + C1-D3) | Holdout split live for Networking and Hardware (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
 | mobile-zero-pbq | critical/high | **fixed** (≥1 lab, this PR) | C1-D1 had 0 `pbqLabIds` | `src/content/labs/index.ts`, `src/components/labs/laptop-upgrade-lab.tsx`, `src/content/labs/implemented.ts`, `src/components/labs/lab-host.tsx` |
-| networking-uneven-pbq | medium | open | Only O2/O5/O6 have labs; O1 ports + O8 tools lack scored PBQs | `src/content/labs/index.ts`, catalog `requiredInteractions` |
+| networking-uneven-pbq | medium | **partial** (O1 ports lab) | O1 gained `C1-D2-O1-PORTS-LAB`; O3/O4/O7/O8 still lack scored PBQs | `src/content/labs/index.ts`, `src/components/labs/ports-drill-lab.tsx`, catalog `requiredInteractions` |
 | weak-rationales | medium | open | Hundreds of distractor rationales &lt;25 chars (D1 + D2) | `src/content/questions/c1/d1.ts`, `src/content/questions/c1/d2.ts` |
 | missing-misconception-tags | medium | open | Near-zero `tags[]` on Mobile/Networking banks | question banks under `src/content/questions/` |
 | diagram-simple-fallback | high | open | Mobile flagship diagrams are text fallbacks | `src/components/diagrams/` |
