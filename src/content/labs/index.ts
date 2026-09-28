@@ -297,6 +297,26 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D5-O3-DISPLAY-LAB",
+    slug: "display-fault-match",
+    title: "Display and projector fault matching",
+    kind: "hardware",
+    objectiveIds: ["C1-D5-O3"],
+    conceptIds: [
+      "C1-D5-O3-SOURCE",
+      "C1-D5-O3-BURNIN",
+      "C1-D5-O3-DEADPIXEL",
+      "C1-D5-O3-PROJECTOR",
+    ],
+    component: "DisplayFaultLab",
+    description:
+      "Match no-signal, burn-in, dead pixel, dim lamp, and thermal shutdown tickets to the correct display/projector cause; leave GPU-first and reimage distractors unused.",
+    solution:
+      "Source/input and Win+P before hardware. Burn-in is a stable UI ghost on OLED. Dead pixels stay put. Dim high-hour projectors are lamps/filters. Early shutdown with packed vents is thermal. GPU-first when the laptop panel works, reimage for a pixel, and RAID for soft resolution stay unmatched.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D5-SHIFT-LAB",
     slug: "ticket-shift-core1",
     title: "Core 1 troubleshooting shift",

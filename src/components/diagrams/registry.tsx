@@ -479,6 +479,65 @@ export function DisplayCompareDiagram() {
 }
 
 
+
+export function DisplayFaultDiagram() {
+  const cells: { label: string; look: string; first: string }[] = [
+    {
+      label: "No signal",
+      look: "Black panel / 'No Signal' OSD",
+      first: "Input source, Win+P, known-good cable",
+    },
+    {
+      label: "Dead pixel",
+      look: "Tiny fixed black/RGB dot",
+      first: "Confirm it never moves; warranty policy",
+    },
+    {
+      label: "Burn-in",
+      look: "Stable ghost of taskbar/logo",
+      first: "Emissive panel wear — not a cable swap",
+    },
+    {
+      label: "Dim lamp",
+      look: "Whole image dim/pink, high hours",
+      first: "Lamp assembly + filter clean",
+    },
+    {
+      label: "Thermal cut",
+      look: "OK for minutes, then hot shutdown",
+      first: "Cool-down, vents, filter — no power-cycle loop",
+    },
+    {
+      label: "Keystone / soft",
+      look: "Trapezoid or soft non-native image",
+      first: "Throw/focus/keystone; set native resolution",
+    },
+  ];
+  return (
+    <Frame
+      title="Display and projector fault gallery"
+      alt="Six labeled display faults with look and FIRST action"
+    >
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        {cells.map((c) => (
+          <div key={c.label} className="rounded-md border bg-muted/30 p-2">
+            <p className="text-xs font-semibold">{c.label}</p>
+            <p className="mt-1 text-[11px] leading-4">{c.look}</p>
+            <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
+              <span className="font-medium text-foreground">FIRST: </span>
+              {c.first}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        If the laptop panel and the external both fail, think GPU/OS/output. If
+        only room 12 fails, think that room&apos;s source, cable, lamp, or filter.
+      </p>
+    </Frame>
+  );
+}
+
 const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   LaptopExplodedDiagram: {
     title: "Laptop internals",
@@ -509,10 +568,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   NetworkRackDiagram: {
     title: "SOHO path",
     lines: ["ISP → ONT/modem → router/firewall → switch → AP / PCs"],
-  },
-  DisplayFaultDiagram: {
-    title: "Display faults",
-    lines: ["Wrong source, cable, bulb, dead pixels, burn-in, dim, overheat shutdown"],
   },
   PrinterOutputDiagram: {
     title: "Output patterns",
@@ -570,6 +625,7 @@ const NAMED: Record<string, () => JSX.Element> = {
   BackupChainDiagram,
   AiPolicyDiagram,
   DisplayCompareDiagram,
+  DisplayFaultDiagram,
   SpectrumDiagram,
   ConnectorGallery,
   Ipv4Diagram,

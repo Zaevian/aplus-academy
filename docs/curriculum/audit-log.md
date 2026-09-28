@@ -116,3 +116,47 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C1 Domain 4 Virtualization and Cloud (4.0)** — or deepen Hardware O1/O6/O7 PBQs before rotating.
+
+---
+
+## 2026-09-28 — C1 Domain 5 Hardware and Network Troubleshooting (fifth weekly rotation)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d5-troubleshooting` from master @ 9197840)  
+**Official:** 220-1201 Domain 5 Hardware and Network Troubleshooting **28%** (Exam Objectives Document Version 3.0)  
+**Diablo:** leave PR #3 (D2 holdout) and #4 (D4 virtualization) open — Zae merge hold. This PR does not merge or modify those branches.
+
+### Coverage snapshot
+- Objectives 5.1–5.6 (`C1-D5-O1`…`O6`): all coverage `verified`; **11** lessons; **194** questions
+- Scored LabHost labs before this PR: borrowed RAID/Wi-Fi/Printer + capstone `C1-D5-SHIFT-LAB` (TicketShiftLab) covering O1/O2/O5/O6
+- **O3 (displays/projectors) and O4 (mobile TS) had 0 dedicated pbqLabIds**
+- **This PR:** display/projector symptom→cause lab `C1-D5-O3-DISPLAY-LAB` → `DisplayFaultLab` for O3
+- Holdout: `HOLDOUT_DOMAIN_IDS` on master was `["C1-D3"]` only; **this PR adds `C1-D5`**. D2/D4 holdout remain on unmerged PRs #3/#4 and land when those merge.
+- `quizQuestionIds === reviewQuestionIds` on D5 before this PR; after: disjoint holdout for all six D5 objectives
+
+### Findings
+- **Critical/High → partial:** O3/O4 lacked dedicated scored PBQs; O3 gains DisplayFaultLab; O4 still open
+- **High → partial:** Holdout now live for C1-D3 and C1-D5 on master; D2/D4 await PR merge
+- **High → fixed:** `DisplayFaultDiagram` was a SIMPLE text stub used by O3 — upgraded to labeled fault gallery
+- **Medium → partial:** ~11 O3 questions upgraded with fuller distractor rationales + misconception tags; hundreds of D5 rationales remain &lt;25 chars
+- **Medium (open):** O4 mobile troubleshooting still has no scored LabHost lab; catalog `device-inspect` unmet
+- **Low:** D5 lessons cite only `c1-obj-3.0` + `comptia-a-v15`
+
+### Strengths
+- Deep MCQ (≥28/objective, O1/O5 at 40); real TicketShiftLab capstone; borrowed RAID/Wi-Fi/Printer labs already wired into D5 lessons
+
+### Fixes shipped (this PR)
+- `DisplayFaultLab` + lesson wire for C1-D5-O3; LabHost + implemented registration
+- `HOLDOUT_DOMAIN_IDS` includes C1-D5 alongside C1-D3; holdout tests extended (document D2/D4 pending #3/#4)
+- Real `DisplayFaultDiagram` fault gallery
+- ~11 O3 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry; machine-readable audit JSON in workspace
+
+### Verdict
+**Not Exam Ready.** Strong MCQ + partial PBQ (O1/O2/O3/O5/O6). O4 still zero dedicated labs; rationale quality still thin outside the upgraded sample; holdout for D2/D4 waits on open PRs.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/troubleshooting-audit-2026-09-28.json`
+
+### Next rotation
+**C1-D4 deepening (O1 virtualization PBQ)** after PR #4 merges — or **C1-D5-O4 mobile inspect lab** / O1 dedicated system-board PBQ.

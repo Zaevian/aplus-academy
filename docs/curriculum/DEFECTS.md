@@ -1,12 +1,12 @@
 # Phase 1 confirmed defects
 
-Tracked from Miyuki Domain 1 (Mobile Devices), Domain 2 (Networking), and Domain 3 (Hardware) audits, 2026-09-28.
+Tracked from Miyuki Domain 1–5 audits (Mobile, Networking, Hardware, Virtualization-on-PR#4, Troubleshooting), 2026-09-28.
 Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
 
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D3 this PR) | Holdout split live for Hardware (`HOLDOUT_DOMAIN_IDS`); other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D3 + C1-D5) | Holdout live for Hardware + Troubleshooting on master; D2/D4 land when PRs #3/#4 merge; other domains still mirror | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
@@ -21,6 +21,11 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | hardware-weak-rationales | medium | **partial** (~18 Qs this PR) | Hundreds of D3 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c1/d3.ts` |
 | domain-hard-lock-preview | medium | **fixed** (preview this PR) | Locked domain pages showed only gate text — no syllabus counts; soft read-only preview added; hard gate preserved | `src/components/course/domain-gate.tsx` |
 | labs-no-filter | low | **fixed** (this PR) | Labs catalog had no search/kind filter | `src/app/labs/page.tsx` |
+
+| troubleshooting-o3-zero-pbq | critical/high | **fixed** (≥1 lab, this PR) | C1-D5-O3 had 0 `pbqLabIds`; added DisplayFaultLab | `src/content/labs/index.ts`, `src/components/labs/display-fault-lab.tsx`, `src/components/labs/lab-host.tsx` |
+| troubleshooting-o4-zero-pbq | high | open | C1-D5-O4 mobile TS still has 0 dedicated scored labs; catalog `device-inspect` unmet | `src/content/labs/index.ts`, catalog |
+| troubleshooting-display-simple | high | **fixed** (this PR) | `DisplayFaultDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
+| troubleshooting-weak-rationales | medium | **partial** (~11 Qs this PR) | Hundreds of D5 distractor rationales still &lt;25 chars; O3 sample + misconception tags shipped | `src/content/questions/c1/d5.ts` |
 
 ## Educational state notes (quick)
 
