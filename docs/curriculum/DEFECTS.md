@@ -1,12 +1,12 @@
 # Phase 1 confirmed defects
 
-Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–2 audits, 2026-09-28.
+Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–3 audits, 2026-09-28.
 Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
 
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1 + C2-D2) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, Operating Systems, and Security (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1 + C2-D2 + C2-D3) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, Operating Systems, Security, and Software Troubleshooting (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
@@ -21,6 +21,9 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | hardware-weak-rationales | medium | **partial** (~18 Qs this PR) | Hundreds of D3 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c1/d3.ts` |
 | domain-hard-lock-preview | medium | **fixed** (preview this PR) | Locked domain pages showed only gate text — no syllabus counts; soft read-only preview added; hard gate preserved | `src/components/course/domain-gate.tsx` |
 | labs-no-filter | low | **fixed** (this PR) | Labs catalog had no search/kind filter | `src/app/labs/page.tsx` |
+| software-ts-uneven-pbq | medium | **partial** (O2 mobile lab this PR) | C2-D3 O3 still 0 scored PBQs; O1 reuses Win CLI/Tools; O4 only shift | `src/content/labs/index.ts`, `src/components/labs/mobile-os-lab.tsx` |
+| software-ts-phone-settings-simple | high | **fixed** (this PR) | `PhoneSettingsDiagram` was SIMPLE text fallback used by O2/O3 lessons | `src/components/diagrams/registry.tsx` |
+| software-ts-weak-rationales | medium | **partial** (~10 O2 Qs this PR) | Hundreds of C2-D3 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d3.ts` |
 
 | virtualization-zero-pbq | critical/high | **partial** (O2 cloud lab this PR) | C1-D4 had 0 pbqLabIds; O2 has CloudServiceLab; O1 still lacks scored Type1/Type2/VDI/container PBQ | `src/content/labs/index.ts`, `src/components/labs/cloud-service-lab.tsx` |
 | virtualization-diagram-thin | medium | **fixed** (this PR) | HypervisorDiagram / CloudModelsDiagram were thin vs lesson captions; upgraded stack + container contrast | `src/components/diagrams/registry.tsx` |

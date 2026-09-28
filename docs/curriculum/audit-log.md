@@ -307,3 +307,39 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C2 Domain 3 Software Troubleshooting (3.0)** — or deepen Security wireless/browser/mobile/destruction PBQs before rotating.
+
+---
+
+## 2026-09-28 — C2 Domain 3 Software Troubleshooting
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c2-d3-software-ts` from master @ 9197840)  
+**Official:** 220-1202 Domain 3 Software Troubleshooting **23%** (Exam Objectives Document Version 3.0)  
+**Note:** Restacked onto master after PRs #3–#7.
+
+### Coverage snapshot
+- Objectives 3.1–3.4 (`C2-D3-O1`…`O4`): all coverage `verified` (MCQ depth 28); **9** lessons; **112** questions
+- Before this PR: O1 shared Win CLI/Tools + shift; O2/O3 **0** dedicated pbqLabIds; O4 shift only; `quizQuestionIds === reviewQuestionIds`
+- **This PR:** `C2-D3-O2-MOBILE-LAB` → `MobileOsLab`; C2-D3 holdout enabled; real `PhoneSettingsDiagram`; ~10 O2 rationale/tag upgrades
+- Still **0** dedicated scored labs on O3 (mobile security symptoms); O4 still only shift
+
+### Findings
+- **High → partial:** Uneven PBQ — O2 gained mobile triage lab; O3 still empty; O1/O4 lean on shared/shift labs
+- **High → fixed:** `PhoneSettingsDiagram` was a SIMPLE stub on O2/O3 lessons
+- **High → partial:** Holdout now includes C2-D3 alongside C1-D2, C1-D3, C1-D4, C1-D5, C2-D1, and C2-D2; other domains still mirrored
+- **Medium → partial:** Weak/short rationales across C2-D3; ~10 O2 items upgraded with misconception tags
+
+### Fixes shipped (this PR)
+- `MobileOsLab` + lesson wire for C2-D3-O2; LabHost registration
+- `HOLDOUT_DOMAIN_IDS` adds C2-D3 alongside C1-D2, C1-D3, C1-D4, C1-D5, C2-D1, and C2-D2
+- Real `PhoneSettingsDiagram`; ~10 O2 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + partial PBQ (O1 shared tools, O2 mobile triage, O4 shift). Coverage `"verified"` still overstates practical readiness without O3/O4 dedicated labs and fuller rationale quality.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/software-troubleshooting-audit-2026-09-28.json`
+
+### Next rotation
+**C2 Domain 4 Operational Procedures (4.0)** — or deepen Software-TS O3/O4 PBQs before rotating.

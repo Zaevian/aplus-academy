@@ -511,6 +511,74 @@ export function PermissionDiagram() {
   );
 }
 
+export function PhoneSettingsDiagram() {
+  const panels: { title: string; items: string[] }[] = [
+    {
+      title: "App info (one app)",
+      items: [
+        "Force stop / force quit",
+        "Permissions (Camera, Photos, …)",
+        "Storage: Clear cache ≠ Clear data",
+        "Battery usage for this package",
+        "Open by default / notifications",
+      ],
+    },
+    {
+      title: "Radios & network",
+      items: [
+        "Airplane mode (isolation test)",
+        "Wi-Fi vs Cellular",
+        "Bluetooth pair / forget",
+        "NFC + default wallet",
+        "VPN / hotspot / SIM·eSIM",
+      ],
+    },
+    {
+      title: "Display & sensors",
+      items: [
+        "Rotation lock / Control Center",
+        "Auto-rotate / orientation",
+        "Brightness / Always On",
+        "Case magnets → Hall sensor",
+      ],
+    },
+    {
+      title: "System & security clues",
+      items: [
+        "Battery usage (all apps)",
+        "Developer options / USB debugging",
+        "Install unknown apps / sideload",
+        "MDM / work profile / accounts",
+        "OS update: charge + free space + Wi-Fi",
+      ],
+    },
+  ];
+  return (
+    <Frame
+      title="Phone settings map"
+      alt="Labeled phone settings panels for app info, radios, rotation, battery, and compromise clues"
+    >
+      <div className="grid gap-2 text-xs sm:grid-cols-2">
+        {panels.map((panel) => (
+          <div key={panel.title} className="rounded border p-2">
+            <p className="font-medium">{panel.title}</p>
+            <ul className="mt-1 list-disc space-y-0.5 pl-4 text-muted-foreground">
+              {panel.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Clear cache is the cheap experiment. Clear data resets that app&apos;s
+        login. Factory reset is last — after backup. Developer options + unknown
+        sources on a user phone is a 3.3 security clue, not a launch fix.
+      </p>
+    </Frame>
+  );
+}
+
 export function DisplayCompareDiagram() {
   const rows: [string, string, string, string][] = [
     ["TN", "LCD", "Fast response", "Poor off-axis color"],
@@ -667,10 +735,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
       "Webcam / mic in the lid",
     ],
   },
-  PhoneSettingsDiagram: {
-    title: "Phone settings map",
-    lines: ["Radios: Wi-Fi, Cellular, Bluetooth, Hotspot", "SIM / eSIM profiles", "Accounts & sync", "MDM / device management"],
-  },
   DnsFlowDiagram: {
     title: "DNS vs IP",
     lines: ["Ping IP works + name fails → resolver/DNS", "Nothing pings → path/NIC/gateway", "APIPA 169.254 → DHCP failed"],
@@ -735,6 +799,7 @@ const NAMED: Record<string, () => JSX.Element> = {
   BackupChainDiagram,
   AiPolicyDiagram,
   PermissionDiagram,
+  PhoneSettingsDiagram,
   DisplayCompareDiagram,
   OsMatrixDiagram,
   DisplayFaultDiagram,

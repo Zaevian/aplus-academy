@@ -412,6 +412,25 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C2-D3-O2-MOBILE-LAB",
+    slug: "mobile-os-triage",
+    title: "Mobile OS symptom triage lab",
+    kind: "os",
+    objectiveIds: ["C2-D3-O2"],
+    conceptIds: [
+      "C2-D3-O2-APPCRASH",
+      "C2-D3-O2-MOBILEUPDATE",
+      "C2-D3-O2-AUTOROTATE",
+    ],
+    component: "MobileOsLab",
+    description:
+      "Match app crash, OS update stall, battery drain, and autorotate tickets to the BEST FIRST software actions.",
+    solution:
+      "One app → force-stop/clear cache. Update stall → free space, charge, Wi-Fi. Overnight drain → Battery usage on the named app. No rotate → rotation lock. Leave factory reset, blind battery swap, jailbreak, and digitizer FIRST unused.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C2-D3-SHIFT-LAB",
     slug: "ticket-shift-core2",
     title: "Core 2 software-troubleshooting shift",
