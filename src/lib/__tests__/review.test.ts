@@ -15,4 +15,39 @@ describe("spaced review", () => {
     expect(row.intervalDays).toBeGreaterThan(0);
     expect(masteryPercent(row)).toBeGreaterThan(0);
   });
+
+  it("miss then assisted correct does not inflate like unassisted correct", () => {
+    const miss = scheduleAfterAnswer(undefined, "c", "concept", false, 1_000);
+    expect(miss.incorrect).toBe(1);
+    expect(miss.correct).toBe(0);
+    expect(miss.intervalDays).toBe(0);
+
+    const assisted = scheduleAfterAnswer(miss, "c", "concept", true, 2_000, {
+      assisted: true,
+    });
+    // Original miss preserved; no full mastery credit on assisted retry.
+    expect(assisted.incorrect).toBe(1);
+    expect(assisted.correct).toBe(0);
+    expect(assisted.easiness).toBe(miss.easiness);
+    expect(assisted.intervalDays).toBe(0);
+    expect(assisted.exposure).toBe(miss.exposure + 1);
+    expect(masteryPercent(assisted)).toBe(0);
+
+    const unassisted = scheduleAfterAnswer(miss, "c", "concept", true, 2_000);
+    expect(unassisted.correct).toBe(1);
+    expect(unassisted.incorrect).toBe(1);
+    expect(unassisted.easiness).toBeGreaterThan(miss.easiness);
+    expect(unassisted.intervalDays).toBeGreaterThan(0);
+    expect(masteryPercent(unassisted)).toBeGreaterThan(masteryPercent(assisted));
+  });
+
+  it("unassisted correct after a miss still grants credit while keeping the miss", () => {
+    const miss = scheduleAfterAnswer(undefined, "c", "concept", false, 1_000);
+    const hit = scheduleAfterAnswer(miss, "c", "concept", true, 2_000, {
+      assisted: false,
+    });
+    expect(hit.incorrect).toBe(1);
+    expect(hit.correct).toBe(1);
+    expect(hit.intervalDays).toBeGreaterThan(0);
+  });
 });

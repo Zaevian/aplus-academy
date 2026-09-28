@@ -16,6 +16,21 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
   },
   {
+    id: "C1-D1-O1-LAPTOP-LAB",
+    slug: "laptop-upgrade",
+    title: "Laptop FRU upgrade lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D1-O1"],
+    conceptIds: ["C1-D1-O1-SODIMM", "C1-D1-O1-BATTERY", "C1-D1-O1-WLAN"],
+    component: "LaptopUpgradeLab",
+    description:
+      "Match SODIMM, OEM battery pack, and M.2 Wi-Fi card to the correct laptop bays; leave desktop-only parts unused.",
+    solution:
+      "Memory bay takes SODIMM DDR4, not desktop DIMM. Swollen packs need an OEM Li-ion replacement, not a CMOS coin. WLAN uses an M.2 card with antenna leads — not a desktop PCIe NIC.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O4-RAID-LAB",
     slug: "raid-builder",
     title: "RAID builder and failure lab",

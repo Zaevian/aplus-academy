@@ -117,10 +117,20 @@ export async function recordAnswer(input: {
   questionId: string;
   selected: string[];
   context: QuestionAttempt["context"];
+  /** True when explanation was already shown for this item before submit. */
+  assisted?: boolean;
+  attemptNumber?: number;
 }): Promise<{ correct: boolean }> {
   const question = getQuestions().find((q) => q.id === input.questionId);
   if (!question) return { correct: false };
   const correct = isCorrect(question, input.selected);
+  const prior = await db.attempts
+    .where("questionId")
+    .equals(input.questionId)
+    .toArray();
+  const attemptNumber = input.attemptNumber ?? prior.length + 1;
+  const assisted = Boolean(input.assisted);
+  const firstAttemptCorrect = attemptNumber === 1 ? correct : false;
   await db.attempts.add({
     id: nanoid(),
     questionId: input.questionId,
@@ -128,8 +138,12 @@ export async function recordAnswer(input: {
     correct,
     at: Date.now(),
     context: input.context,
+    assisted,
+    attemptNumber,
+    firstAttemptCorrect,
+    explanationShownBeforeSuccess: assisted && correct,
   });
-  await applyAttemptToMastery(question.conceptIds, correct);
+  await applyAttemptToMastery(question.conceptIds, correct, { assisted });
   return { correct };
 }
 
@@ -140,9 +154,14 @@ export async function recordQuiz(input: {
   score: number;
   total: number;
   missedConceptIds: string[];
+  /** Override score-derived pass (e.g. domain gate after retry-until-correct). */
+  passed?: boolean;
 }): Promise<{ passed: boolean }> {
   const passed =
-    input.kind === "domain" ? input.score === input.total : input.score / input.total >= 0.8;
+    input.passed ??
+    (input.kind === "domain"
+      ? input.score === input.total
+      : input.score / input.total >= 0.8);
   await db.quizzes.add({
     id: nanoid(),
     kind: input.kind,
@@ -293,5 +312,10 @@ export async function updateSettings(
 
 export async function exposedQuestionIds(): Promise<Set<string>> {
   const attempts = await db.attempts.toArray();
-  return new Set(attempts.map((a) => a.questionId));
+  const quizzes = await db.quizzes.toArray();
+  const ids = new Set(attempts.map((a) => a.questionId));
+  for (const quiz of quizzes) {
+    for (const qid of quiz.questionIds) ids.add(qid);
+  }
+  return ids;
 }
