@@ -116,3 +116,24 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C1 Domain 4 Virtualization and Cloud (4.0)** — or deepen Hardware O1/O6/O7 PBQs before rotating.
+
+---
+
+## 2026-09-28 — C1 Domain 2 Networking follow-on (holdout + ports lab)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d2-networking-holdout` from master @ 9197840 after Hardware #2)  
+**Official:** 220-1201 Domain 2 Networking **23%**
+
+### Shipped
+- **Holdout:** `HOLDOUT_DOMAIN_IDS` includes `C1-D2` alongside `C1-D3`; disjoint `reviewQuestionIds` for all eight Networking objectives; lesson KC/checkpoint IDs protected
+- **Scored ports PBQ lab:** `C1-D2-O1-PORTS-LAB` → `PortsDrillLab` (ticket → official 2.1 port match) via LabHost + O1-L3 lesson block
+
+### Still open
+- O3/O4/O7/O8 scored labs (tools drill still missing)
+- Weak distractor rationales / misconception tags on Networking bank
+- Mobile Devices and remaining domains without holdout
+
+### Verdict
+**Not Exam Ready** for Networking as a whole — holdout + O1 ports lab close two gaps from the earlier Networking audit; PBQ suite and rationale quality still incomplete.
+

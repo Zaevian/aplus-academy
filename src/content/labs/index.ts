@@ -131,6 +131,31 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D2-O1-PORTS-LAB",
+    slug: "ports-drill",
+    title: "Official 2.1 ports drill",
+    kind: "network",
+    objectiveIds: ["C1-D2-O1"],
+    conceptIds: [
+      "C1-D2-O1-PORTS",
+      "C1-D2-O1-FTP",
+      "C1-D2-O1-SSH",
+      "C1-D2-O1-DNS",
+      "C1-D2-O1-DHCP",
+      "C1-D2-O1-HTTP",
+      "C1-D2-O1-SMB",
+      "C1-D2-O1-RDP",
+    ],
+    component: "PortsDrillLab",
+    description:
+      "Match help-desk tickets (send mail, names, APIPA, shell, share, RDP) to official 2.1 ports; leave Telnet/HTTP/FTP unused.",
+    solution:
+      "SMTP 25 for send, DNS 53 for names, DHCP 67/68 for APIPA, SSH 22 for encrypted shell, SMB 445 for Windows shares, RDP 3389 for remote desktop. Telnet 23, HTTP 80, and FTP 20/21 are not the answers for this queue.",
+    estimatedMinutes: 14,
+    capstone: true,
+  },
+
+  {
     id: "C1-D2-O2-WIFI-LAB",
     slug: "wifi-lab",
     title: "Wi-Fi interference lab",
