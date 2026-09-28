@@ -137,3 +137,46 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 ### Verdict
 **Not Exam Ready** for Networking as a whole — holdout + O1 ports lab close two gaps from the earlier Networking audit; PBQ suite and rationale quality still incomplete.
 
+---
+
+## 2026-09-28 — C1 Domain 4 Virtualization and Cloud (fourth weekly rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d4-virtualization` from master @ 9197840)  
+**Official:** 220-1201 Domain 4 Virtualization and Cloud Computing **~11%** (Exam Objectives Document Version 3.0)  
+**Note:** Restacked onto master after PR #3 (C1-D2 Networking holdout + ports lab).
+
+### Coverage snapshot
+- Objectives 4.1–4.2 (`C1-D4-O1`, `C1-D4-O2`): coverage `verified` (MCQ depth ≥40); **6** lessons; **82** questions
+- Scored LabHost labs **before** this PR: **0** pbqLabIds on both objectives
+- **This PR:** Cloud service model lab `C1-D4-O2-CLOUD-LAB` → `CloudServiceLab` for O2 (IaaS/PaaS/SaaS ticket match; on-prem/container distractors unused)
+- Still **0** pbqLabIds on O1 (Type 1/2, VDI, containers)
+- Holdout: `HOLDOUT_DOMAIN_IDS` now includes **C1-D4** alongside C1-D2 and C1-D3; lesson KC/checkpoint IDs stay in practice only
+- SHOW: `HypervisorDiagram` / `CloudModelsDiagram` were real components (not SIMPLE stubs) but thin — upgraded to Type1/Type2/container contrast and on-prem→SaaS responsibility stack
+
+### Findings
+- **Critical → partial:** Zero scored Virtualization/Cloud PBQs; O2 gained cloud lab; O1 still open
+- **High → partial:** Holdout extended to C1-D4; other domains still mirrored
+- **Medium → fixed:** Cloud/hypervisor diagrams under-delivered vs lesson captions
+- **Medium → partial:** Weak D4 rationales; ~13 questions upgraded with tags
+- **Low:** Lessons still cite only generic CompTIA sources
+- **Medium:** Catalog `requiredInteractions` (stack-builder, type-compare, vm-vs-container, cloud-chooser, elasticity-slider) still mostly unmet by named labs
+
+### Strengths
+- Deep, scenario-heavy MCQ bank; clear first-principles lessons (host/guest, Type 1 vs 2, VDI vs container, deployment vs service models, elasticity/metering/shared responsibility)
+
+### Fixes shipped (this PR)
+- `CloudServiceLab` + lesson wire for C1-D4-O2; LabHost registration
+- Holdout split for C1-D4; tests extended
+- `CloudModelsDiagram` + `HypervisorDiagram` upgrades
+- ~13 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + **one** cloud PBQ (O2). Coverage `"verified"` still overstates practical readiness without an O1 virtualization PBQ, fuller rationale quality, and holdout beyond D3/D4.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/virtualization-audit-2026-09-28.json`
+
+### Next rotation
+**C1 Domain 5 Hardware and Network Troubleshooting** — or add O1 hypervisor/container matching PBQ before rotating.

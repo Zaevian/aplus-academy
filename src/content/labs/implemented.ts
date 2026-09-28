@@ -22,6 +22,7 @@ export const LAB_HOST_COMPONENTS = [
   "LaptopUpgradeLab",
   "RamInstallLab",
   "PortsDrillLab",
+  "CloudServiceLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];
