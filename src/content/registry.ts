@@ -12,9 +12,8 @@ import { EXAM_META } from "@/lib/exam-meta";
  * Domains that carve a disjoint holdout (reviewQuestionIds) from the
  * practice/quiz pool (quizQuestionIds). Extend this list as other domains
  * get split — do not claim Exam Ready until holdout is live AND consumed.
- * Note: C1-D2 / C1-D4 holdout land when PRs #3 / #4 merge; master currently has C1-D3 + C1-D5.
  */
-export const HOLDOUT_DOMAIN_IDS = ["C1-D3", "C1-D5"] as const;
+export const HOLDOUT_DOMAIN_IDS = ["C1-D2", "C1-D3", "C1-D4", "C1-D5"] as const;
 
 export function getLessons(): Lesson[] {
   return LESSONS;

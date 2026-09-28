@@ -52,6 +52,21 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D4-O2-CLOUD-LAB",
+    slug: "cloud-service-models",
+    title: "Cloud service model matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D4-O2"],
+    conceptIds: ["C1-D4-O2-IAAS", "C1-D4-O2-PAAS", "C1-D4-O2-SAAS"],
+    component: "CloudServiceLab",
+    description:
+      "Match IaaS, PaaS, and SaaS tickets; leave on-prem Type 1, thin-provision, and container distractors unused.",
+    solution:
+      "IaaS is a Windows VM you patch and RDP into. PaaS is git-push without managing the OS/runtime. SaaS is licensed email/docs in a browser. Bare-metal ESXi, datastore fills, and laptop Docker are not service models.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O4-RAID-LAB",
     slug: "raid-builder",
     title: "RAID builder and failure lab",
@@ -130,6 +145,31 @@ export const LABS: Lab[] = [
     estimatedMinutes: 18,
     capstone: true,
   },
+  {
+    id: "C1-D2-O1-PORTS-LAB",
+    slug: "ports-drill",
+    title: "Official 2.1 ports drill",
+    kind: "network",
+    objectiveIds: ["C1-D2-O1"],
+    conceptIds: [
+      "C1-D2-O1-PORTS",
+      "C1-D2-O1-FTP",
+      "C1-D2-O1-SSH",
+      "C1-D2-O1-DNS",
+      "C1-D2-O1-DHCP",
+      "C1-D2-O1-HTTP",
+      "C1-D2-O1-SMB",
+      "C1-D2-O1-RDP",
+    ],
+    component: "PortsDrillLab",
+    description:
+      "Match help-desk tickets (send mail, names, APIPA, shell, share, RDP) to official 2.1 ports; leave Telnet/HTTP/FTP unused.",
+    solution:
+      "SMTP 25 for send, DNS 53 for names, DHCP 67/68 for APIPA, SSH 22 for encrypted shell, SMB 445 for Windows shares, RDP 3389 for remote desktop. Telnet 23, HTTP 80, and FTP 20/21 are not the answers for this queue.",
+    estimatedMinutes: 14,
+    capstone: true,
+  },
+
   {
     id: "C1-D2-O2-WIFI-LAB",
     slug: "wifi-lab",
