@@ -358,6 +358,14 @@ Exam stems love **BEST** on this set: the BEST way to let a home user reach a sh
         },
       },
       {
+        type: "lab",
+        id: "C1-D2-O1-L3-lab",
+        labId: "C1-D2-O1-PORTS-LAB",
+        title: "Official 2.1 ports drill",
+        prompt:
+          "Match each ticket to the official port: send mail, names-fail, APIPA floor, encrypted shell, Windows share, and RDP timeout. Leave Telnet, HTTP, and FTP unused.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D2-O1-L3-cp",
         questionIds: [

@@ -630,6 +630,14 @@ Laptop **privacy screens** and low-brightness outdoor use are not projector faul
         ],
       },
       {
+        type: "lab",
+        id: "C1-D5-O3-L1-lab",
+        labId: "C1-D5-O3-DISPLAY-LAB",
+        title: "Display and projector fault matching",
+        prompt:
+          "Match no-signal, burn-in, dead pixel, dim lamp, and thermal-shutdown tickets to the correct cause. Leave GPU-first, reimage-for-a-pixel, and RAID-for-softness unused.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D5-O3-L1-cp",
         questionIds: [

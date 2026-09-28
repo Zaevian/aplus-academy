@@ -119,19 +119,127 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ---
 
+## 2026-09-28 — C1 Domain 2 Networking follow-on (holdout + ports lab)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d2-networking-holdout` from master @ 9197840 after Hardware #2)  
+**Official:** 220-1201 Domain 2 Networking **23%**
+
+### Shipped
+- **Holdout:** `HOLDOUT_DOMAIN_IDS` includes `C1-D2` alongside `C1-D3`; disjoint `reviewQuestionIds` for all eight Networking objectives; lesson KC/checkpoint IDs protected
+- **Scored ports PBQ lab:** `C1-D2-O1-PORTS-LAB` → `PortsDrillLab` (ticket → official 2.1 port match) via LabHost + O1-L3 lesson block
+
+### Still open
+- O3/O4/O7/O8 scored labs (tools drill still missing)
+- Weak distractor rationales / misconception tags on Networking bank
+- Mobile Devices and remaining domains without holdout
+
+### Verdict
+**Not Exam Ready** for Networking as a whole — holdout + O1 ports lab close two gaps from the earlier Networking audit; PBQ suite and rationale quality still incomplete.
+
+---
+
+## 2026-09-28 — C1 Domain 4 Virtualization and Cloud (fourth weekly rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d4-virtualization` from master @ 9197840)  
+**Official:** 220-1201 Domain 4 Virtualization and Cloud Computing **~11%** (Exam Objectives Document Version 3.0)  
+**Note:** Restacked onto master after PR #3 (C1-D2 Networking holdout + ports lab).
+
+### Coverage snapshot
+- Objectives 4.1–4.2 (`C1-D4-O1`, `C1-D4-O2`): coverage `verified` (MCQ depth ≥40); **6** lessons; **82** questions
+- Scored LabHost labs **before** this PR: **0** pbqLabIds on both objectives
+- **This PR:** Cloud service model lab `C1-D4-O2-CLOUD-LAB` → `CloudServiceLab` for O2 (IaaS/PaaS/SaaS ticket match; on-prem/container distractors unused)
+- Still **0** pbqLabIds on O1 (Type 1/2, VDI, containers)
+- Holdout: `HOLDOUT_DOMAIN_IDS` now includes **C1-D4** alongside C1-D2 and C1-D3; lesson KC/checkpoint IDs stay in practice only
+- SHOW: `HypervisorDiagram` / `CloudModelsDiagram` were real components (not SIMPLE stubs) but thin — upgraded to Type1/Type2/container contrast and on-prem→SaaS responsibility stack
+
+### Findings
+- **Critical → partial:** Zero scored Virtualization/Cloud PBQs; O2 gained cloud lab; O1 still open
+- **High → partial:** Holdout extended to C1-D4; other domains still mirrored
+- **Medium → fixed:** Cloud/hypervisor diagrams under-delivered vs lesson captions
+- **Medium → partial:** Weak D4 rationales; ~13 questions upgraded with tags
+- **Low:** Lessons still cite only generic CompTIA sources
+- **Medium:** Catalog `requiredInteractions` (stack-builder, type-compare, vm-vs-container, cloud-chooser, elasticity-slider) still mostly unmet by named labs
+
+### Strengths
+- Deep, scenario-heavy MCQ bank; clear first-principles lessons (host/guest, Type 1 vs 2, VDI vs container, deployment vs service models, elasticity/metering/shared responsibility)
+
+### Fixes shipped (this PR)
+- `CloudServiceLab` + lesson wire for C1-D4-O2; LabHost registration
+- Holdout split for C1-D4; tests extended
+- `CloudModelsDiagram` + `HypervisorDiagram` upgrades
+- ~13 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + **one** cloud PBQ (O2). Coverage `"verified"` still overstates practical readiness without an O1 virtualization PBQ, fuller rationale quality, and holdout beyond D3/D4.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/virtualization-audit-2026-09-28.json`
+
+### Next rotation
+**C1 Domain 5 Hardware and Network Troubleshooting** — or add O1 hypervisor/container matching PBQ before rotating.
+
+---
+
+## 2026-09-28 — C1 Domain 5 Hardware and Network Troubleshooting (fifth weekly rotation)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c1-d5-troubleshooting` from master @ 9197840)  
+**Official:** 220-1201 Domain 5 Hardware and Network Troubleshooting **28%** (Exam Objectives Document Version 3.0)  
+**Note:** Restacked onto master after PR #3 (C1-D2) and PR #4 (C1-D4).
+
+### Coverage snapshot
+- Objectives 5.1–5.6 (`C1-D5-O1`…`O6`): all coverage `verified`; **11** lessons; **194** questions
+- Scored LabHost labs before this PR: borrowed RAID/Wi-Fi/Printer + capstone `C1-D5-SHIFT-LAB` (TicketShiftLab) covering O1/O2/O5/O6
+- **O3 (displays/projectors) and O4 (mobile TS) had 0 dedicated pbqLabIds**
+- **This PR:** display/projector symptom→cause lab `C1-D5-O3-DISPLAY-LAB` → `DisplayFaultLab` for O3
+- Holdout: **this PR adds `C1-D5`** alongside C1-D2, C1-D3, and C1-D4 already on master.
+- `quizQuestionIds === reviewQuestionIds` on D5 before this PR; after: disjoint holdout for all six D5 objectives
+
+### Findings
+- **Critical/High → partial:** O3/O4 lacked dedicated scored PBQs; O3 gains DisplayFaultLab; O4 still open
+- **High → partial:** Holdout now live for C1-D2, C1-D3, C1-D4, and C1-D5; other domains still mirrored
+- **High → fixed:** `DisplayFaultDiagram` was a SIMPLE text stub used by O3 — upgraded to labeled fault gallery
+- **Medium → partial:** ~11 O3 questions upgraded with fuller distractor rationales + misconception tags; hundreds of D5 rationales remain &lt;25 chars
+- **Medium (open):** O4 mobile troubleshooting still has no scored LabHost lab; catalog `device-inspect` unmet
+- **Low:** D5 lessons cite only `c1-obj-3.0` + `comptia-a-v15`
+
+### Strengths
+- Deep MCQ (≥28/objective, O1/O5 at 40); real TicketShiftLab capstone; borrowed RAID/Wi-Fi/Printer labs already wired into D5 lessons
+
+### Fixes shipped (this PR)
+- `DisplayFaultLab` + lesson wire for C1-D5-O3; LabHost + implemented registration
+- `HOLDOUT_DOMAIN_IDS` includes C1-D5 alongside C1-D2, C1-D3, and C1-D4; holdout tests extended
+- Real `DisplayFaultDiagram` fault gallery
+- ~11 O3 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry; machine-readable audit JSON in workspace
+
+### Verdict
+**Not Exam Ready.** Strong MCQ + partial PBQ (O1/O2/O3/O5/O6). O4 still zero dedicated labs; rationale quality still thin outside the upgraded sample.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/troubleshooting-audit-2026-09-28.json`
+
+### Next rotation
+**C1-D5-O4 mobile inspect lab** or an O1 dedicated system-board PBQ — or deepen C1-D4 O1 virtualization PBQ.
+
+---
+
 ## 2026-09-28 — C2 Domain 1 Operating Systems (first Core 2 weekly rotation)
 
 **Auditor:** Miyuki  
 **Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c2-d1-operating-systems` from master @ 9197840)  
 **Official:** 220-1202 Domain 1 Operating Systems **28%** (Exam Objectives Document Version 3.0)  
-**Note:** Core 1 rotation complete through D5 with open PRs #3 (Networking holdout), #4 (Virtualization), #5 (Troubleshooting) — left untouched.
+**Note:** Restacked onto master after PRs #3–#5 (C1-D2, C1-D4, C1-D5).
 
 ### Coverage snapshot
 - Objectives 1.1–1.11 (`C2-D1-O1`…`O11`): all coverage `verified`; **23** lessons; **362** questions
 - Scored LabHost labs before this PR: Windows tools (`O4`), Windows CLI (`O5`), macOS (`O8`), Linux (`O9`)
 - **This PR:** Windows edition matching lab `C2-D1-O3-EDITION-LAB` → `WindowsEditionLab` for O3 (Home/Pro/Pro for Workstations/Enterprise)
 - Still **0** pbqLabIds on O1 (OS types/FS), O2 (install/partition), O6 (Settings), O7 (client networking), O10 (app install), O11 (cloud productivity)
-- Holdout: `HOLDOUT_DOMAIN_IDS` now `C1-D3` + `C2-D1` (D2/D4/D5 holdouts arrive when those PRs merge)
+- Holdout: **this PR adds `C2-D1`** alongside C1-D2, C1-D3, C1-D4, and C1-D5 already on master
 - Core 2 mock PBQ: Windows tools / security match (`TOOLS_PBQ_ID`) — Ports PBQ correctly Core-1-only (Phase 1)
 
 ### Findings
@@ -146,7 +254,7 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Fixes shipped (this PR)
 - `WindowsEditionLab` + lesson wire for C2-D1-O3; LabHost registration
-- Holdout split for C2-D1 alongside existing C1-D3
+- Holdout split for C2-D1 alongside C1-D2, C1-D3, C1-D4, and C1-D5
 - Real `OsMatrixDiagram`; ~10 rationale/tag upgrades
 - `docs/curriculum/DEFECTS.md` + this audit entry
 
