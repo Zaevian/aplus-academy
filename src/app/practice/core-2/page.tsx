@@ -1,11 +1,11 @@
 "use client";
 
-import { getQuestions } from "@/content/registry";
+import { getPracticeQuestions } from "@/content/registry";
 import { ALL_OBJECTIVES } from "@/content/catalog";
 import { QuizPlayer } from "@/components/quiz/quiz-player";
 
 export default function PracticeCore2() {
-  const pool = getQuestions().filter((q) => {
+  const pool = getPracticeQuestions((q) => {
     const o = ALL_OBJECTIVES.find((x) => x.id === q.objectiveId);
     return o?.core === "C2";
   });
