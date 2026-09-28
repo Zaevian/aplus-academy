@@ -25,6 +25,12 @@ import { VoiceLab } from "@/components/labs/voice-lab";
 import { TicketShiftLab } from "@/components/labs/ticket-shift-lab";
 import { LaptopUpgradeLab } from "@/components/labs/laptop-upgrade-lab";
 import { RamInstallLab } from "@/components/labs/ram-install-lab";
+import { PortsDrillLab } from "@/components/labs/ports-drill-lab";
+import { CloudServiceLab } from "@/components/labs/cloud-service-lab";
+import { DisplayFaultLab } from "@/components/labs/display-fault-lab";
+import { WindowsEditionLab } from "@/components/labs/windows-edition-lab";
+import { AuthFactorsLab } from "@/components/labs/auth-factors-lab";
+import { MobileOsLab } from "@/components/labs/mobile-os-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -55,6 +61,12 @@ export const LAB_COMPONENT_MAP: Record<
   TicketShiftLab,
   LaptopUpgradeLab,
   RamInstallLab,
+  PortsDrillLab,
+  CloudServiceLab,
+  DisplayFaultLab,
+  WindowsEditionLab,
+  AuthFactorsLab,
+  MobileOsLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

@@ -317,18 +317,30 @@ export function MotherboardDiagram() {
 
 export function HypervisorDiagram() {
   return (
-    <Frame title="Type 1 vs Type 2" alt="Hypervisor stacks">
-      <div className="grid gap-3 text-xs md:grid-cols-2">
+    <Frame title="Type 1 vs Type 2" alt="Hypervisor stacks compared to containers">
+      <div className="grid gap-3 text-xs md:grid-cols-3">
         <div className="space-y-1">
-          <div className="rounded border px-2 py-1">Guests</div>
+          <p className="font-medium">Type 1 (bare metal)</p>
+          <div className="rounded border px-2 py-1">Guest OS (own kernel)</div>
           <div className="rounded border px-2 py-1">Type 1 hypervisor</div>
           <div className="rounded border bg-muted px-2 py-1">Hardware</div>
+          <p className="text-[10px] text-muted-foreground">Datacenter / VDI farm</p>
         </div>
         <div className="space-y-1">
-          <div className="rounded border px-2 py-1">Guests</div>
+          <p className="font-medium">Type 2 (hosted)</p>
+          <div className="rounded border px-2 py-1">Guest OS (own kernel)</div>
           <div className="rounded border px-2 py-1">Type 2 hypervisor</div>
           <div className="rounded border px-2 py-1">Host OS</div>
           <div className="rounded border bg-muted px-2 py-1">Hardware</div>
+          <p className="text-[10px] text-muted-foreground">Laptop / workstation lab</p>
+        </div>
+        <div className="space-y-1">
+          <p className="font-medium">Container (contrast)</p>
+          <div className="rounded border px-2 py-1">App + libs</div>
+          <div className="rounded border px-2 py-1">Container engine</div>
+          <div className="rounded border px-2 py-1">Shared host kernel / OS</div>
+          <div className="rounded border bg-muted px-2 py-1">Hardware</div>
+          <p className="text-[10px] text-muted-foreground">Not a separate guest kernel</p>
         </div>
       </div>
     </Frame>
@@ -336,34 +348,56 @@ export function HypervisorDiagram() {
 }
 
 export function CloudModelsDiagram() {
+  const layers = ["Data", "Application", "Runtime / OS", "Hypervisor", "Hardware"];
+  // Count of top layers the customer still owns (Data first).
+  // On-prem: all five; IaaS: Data+App+Runtime/OS; PaaS: Data+App; SaaS: Data (+identity).
+  const owned: Record<string, number> = {
+    "On-prem": 5,
+    IaaS: 3,
+    PaaS: 2,
+    SaaS: 1,
+  };
+  const cols = Object.keys(owned);
   return (
-    <Frame title="Service models" alt="IaaS PaaS SaaS responsibility">
-      <table className="w-full text-left text-xs">
-        <thead>
-          <tr className="border-b text-muted-foreground">
-            <th className="py-1">Model</th>
-            <th>You manage</th>
-            <th>Provider manages</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-b">
-            <td className="py-1">IaaS</td>
-            <td>OS, apps, data</td>
-            <td>Hardware, hypervisor</td>
-          </tr>
-          <tr className="border-b">
-            <td className="py-1">PaaS</td>
-            <td>App, data</td>
-            <td>OS and runtime</td>
-          </tr>
-          <tr>
-            <td className="py-1">SaaS</td>
-            <td>Use + identity</td>
-            <td>The application</td>
-          </tr>
-        </tbody>
-      </table>
+    <Frame
+      title="Cloud responsibility stack"
+      alt="Layer ownership for on-premises, IaaS, PaaS, and SaaS"
+    >
+      <div className="grid grid-cols-4 gap-2 text-[10px] leading-4 sm:text-xs">
+        {cols.map((col) => (
+          <div key={col} className="space-y-1">
+            <p className="text-center font-medium">{col}</p>
+            {layers.map((layer, idx) => {
+              const yours = idx < owned[col];
+              return (
+                <div
+                  key={layer}
+                  className={
+                    yours
+                      ? "rounded border border-foreground/40 bg-background px-1 py-1 text-center"
+                      : "rounded border border-dashed bg-muted px-1 py-1 text-center text-muted-foreground"
+                  }
+                >
+                  {layer}
+                  <span className="mt-0.5 block text-[9px] opacity-80">
+                    {yours ? "you" : "provider"}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Shaded (dashed) layers are the provider&apos;s. Solid borders are yours.
+        The line moves up the stack from IaaS → PaaS → SaaS. Data classification
+        never fully leaves you — even in SaaS you own identity and sharing.
+      </p>
+      <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
+        Deployment models (public / private / hybrid / community) answer{" "}
+        <span className="italic">where and with whom</span>; this stack answers{" "}
+        <span className="italic">which layer you manage</span>.
+      </p>
     </Frame>
   );
 }
@@ -437,6 +471,114 @@ export function AiPolicyDiagram() {
   );
 }
 
+export function PermissionDiagram() {
+  const rows: [string, string, string][] = [
+    ["Local console user", "NTFS only", "Share ACL is ignored"],
+    ["Remote SMB user", "Share ∩ NTFS", "Most restrictive wins"],
+    ["Share = Change, NTFS = Read", "Read remotely", "Share caps the session"],
+    ["Share = Full, NTFS = Modify", "Modify remotely", "NTFS is the real ceiling"],
+    ["Explicit Deny on NTFS", "Denied", "Deny beats Allow when evaluated"],
+  ];
+  return (
+    <Frame
+      title="Effective access"
+      alt="How share permissions and NTFS combine for local versus remote users"
+    >
+      <table className="w-full text-left text-xs">
+        <thead>
+          <tr className="border-b text-muted-foreground">
+            <th className="py-1 pr-2">Situation</th>
+            <th className="pr-2">What applies</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([sit, applies, result]) => (
+            <tr key={sit} className="border-b border-border/60">
+              <td className="py-1.5 pr-2 font-medium">{sit}</td>
+              <td className="pr-2">{applies}</td>
+              <td className="text-muted-foreground">{result}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Practice pattern: keep the share ACL simple (Authenticated Users =
+        Change) and do the detailed work in NTFS. Local interactive logons never
+        see the share ACL.
+      </p>
+    </Frame>
+  );
+}
+
+export function PhoneSettingsDiagram() {
+  const panels: { title: string; items: string[] }[] = [
+    {
+      title: "App info (one app)",
+      items: [
+        "Force stop / force quit",
+        "Permissions (Camera, Photos, …)",
+        "Storage: Clear cache ≠ Clear data",
+        "Battery usage for this package",
+        "Open by default / notifications",
+      ],
+    },
+    {
+      title: "Radios & network",
+      items: [
+        "Airplane mode (isolation test)",
+        "Wi-Fi vs Cellular",
+        "Bluetooth pair / forget",
+        "NFC + default wallet",
+        "VPN / hotspot / SIM·eSIM",
+      ],
+    },
+    {
+      title: "Display & sensors",
+      items: [
+        "Rotation lock / Control Center",
+        "Auto-rotate / orientation",
+        "Brightness / Always On",
+        "Case magnets → Hall sensor",
+      ],
+    },
+    {
+      title: "System & security clues",
+      items: [
+        "Battery usage (all apps)",
+        "Developer options / USB debugging",
+        "Install unknown apps / sideload",
+        "MDM / work profile / accounts",
+        "OS update: charge + free space + Wi-Fi",
+      ],
+    },
+  ];
+  return (
+    <Frame
+      title="Phone settings map"
+      alt="Labeled phone settings panels for app info, radios, rotation, battery, and compromise clues"
+    >
+      <div className="grid gap-2 text-xs sm:grid-cols-2">
+        {panels.map((panel) => (
+          <div key={panel.title} className="rounded border p-2">
+            <p className="font-medium">{panel.title}</p>
+            <ul className="mt-1 list-disc space-y-0.5 pl-4 text-muted-foreground">
+              {panel.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Clear cache is the cheap experiment. Clear data resets that app&apos;s
+        login. Factory reset is last — after backup. Developer options + unknown
+        sources on a user phone is a 3.3 security clue, not a launch fix.
+      </p>
+    </Frame>
+  );
+}
+
 export function DisplayCompareDiagram() {
   const rows: [string, string, string, string][] = [
     ["TN", "LCD", "Fast response", "Poor off-axis color"],
@@ -479,6 +621,109 @@ export function DisplayCompareDiagram() {
 }
 
 
+
+export function OsMatrixDiagram() {
+  const rows: [string, string, string, string][] = [
+    ["Windows", "PC / laptop", "NTFS", "AD / Entra / Intune"],
+    ["Linux", "PC, server, appliance", "ext4 or XFS", "Distro / LDAP / local"],
+    ["macOS", "Mac", "APFS", "Apple Business Manager / MDM"],
+    ["ChromeOS", "Chromebook", "ext4 + cloud home", "Google Admin"],
+    ["iOS", "iPhone", "APFS", "Apple MDM"],
+    ["iPadOS", "iPad", "APFS", "Apple MDM"],
+    ["Android", "Phone / tablet", "ext4 or f2fs", "Android Enterprise / OEM"],
+  ];
+  return (
+    <Frame
+      title="OS family matrix"
+      alt="Workstation and mobile OS families with default filesystems and management"
+    >
+      <table className="w-full text-left text-xs">
+        <thead>
+          <tr className="border-b text-muted-foreground">
+            <th className="py-1 pr-2">OS</th>
+            <th className="pr-2">Typical device</th>
+            <th className="pr-2">Default FS</th>
+            <th>Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([os, device, fs, mgmt]) => (
+            <tr key={os} className="border-b border-border/60">
+              <td className="py-1.5 pr-2 font-medium">{os}</td>
+              <td className="pr-2">{device}</td>
+              <td className="pr-2">{fs}</td>
+              <td className="text-muted-foreground">{mgmt}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        ChromeOS is a workstation OS on the exam, not mobile. iPadOS is listed
+        separately from iOS. ReFS/exFAT/FAT32 appear as special-case volumes, not
+        everyday boot defaults for these families.
+      </p>
+    </Frame>
+  );
+}
+
+export function DisplayFaultDiagram() {
+  const cells: { label: string; look: string; first: string }[] = [
+    {
+      label: "No signal",
+      look: "Black panel / 'No Signal' OSD",
+      first: "Input source, Win+P, known-good cable",
+    },
+    {
+      label: "Dead pixel",
+      look: "Tiny fixed black/RGB dot",
+      first: "Confirm it never moves; warranty policy",
+    },
+    {
+      label: "Burn-in",
+      look: "Stable ghost of taskbar/logo",
+      first: "Emissive panel wear — not a cable swap",
+    },
+    {
+      label: "Dim lamp",
+      look: "Whole image dim/pink, high hours",
+      first: "Lamp assembly + filter clean",
+    },
+    {
+      label: "Thermal cut",
+      look: "OK for minutes, then hot shutdown",
+      first: "Cool-down, vents, filter — no power-cycle loop",
+    },
+    {
+      label: "Keystone / soft",
+      look: "Trapezoid or soft non-native image",
+      first: "Throw/focus/keystone; set native resolution",
+    },
+  ];
+  return (
+    <Frame
+      title="Display and projector fault gallery"
+      alt="Six labeled display faults with look and FIRST action"
+    >
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        {cells.map((c) => (
+          <div key={c.label} className="rounded-md border bg-muted/30 p-2">
+            <p className="text-xs font-semibold">{c.label}</p>
+            <p className="mt-1 text-[11px] leading-4">{c.look}</p>
+            <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
+              <span className="font-medium text-foreground">FIRST: </span>
+              {c.first}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        If the laptop panel and the external both fail, think GPU/OS/output. If
+        only room 12 fails, think that room&apos;s source, cable, lamp, or filter.
+      </p>
+    </Frame>
+  );
+}
+
 const SIMPLE: Record<string, { title: string; lines: string[] }> = {
   LaptopExplodedDiagram: {
     title: "Laptop internals",
@@ -489,10 +734,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
       "WLAN card + antenna leads in the bezel",
       "Webcam / mic in the lid",
     ],
-  },
-  PhoneSettingsDiagram: {
-    title: "Phone settings map",
-    lines: ["Radios: Wi-Fi, Cellular, Bluetooth, Hotspot", "SIM / eSIM profiles", "Accounts & sync", "MDM / device management"],
   },
   DnsFlowDiagram: {
     title: "DNS vs IP",
@@ -510,21 +751,9 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
     title: "SOHO path",
     lines: ["ISP → ONT/modem → router/firewall → switch → AP / PCs"],
   },
-  DisplayFaultDiagram: {
-    title: "Display faults",
-    lines: ["Wrong source, cable, bulb, dead pixels, burn-in, dim, overheat shutdown"],
-  },
   PrinterOutputDiagram: {
     title: "Output patterns",
     lines: ["Faded: toner/ink", "Repeating marks: drum circumference", "Ghosting: fuser/drum", "Garbled: language/driver"],
-  },
-  OsMatrixDiagram: {
-    title: "OS pick",
-    lines: ["Windows: domain, GPO, most line-of-business", "macOS: creative shops, FileVault, Apple ID", "Linux: servers, cost, packages", "ChromeOS: managed web-first"],
-  },
-  PermissionDiagram: {
-    title: "Effective access",
-    lines: ["Share ACL caps remote users", "NTFS is the real file ACL", "Most restrictive combo wins remotely"],
   },
   WifiHeatDiagram: {
     title: "Interference",
@@ -569,7 +798,11 @@ const NAMED: Record<string, () => JSX.Element> = {
   MalwareStepsDiagram,
   BackupChainDiagram,
   AiPolicyDiagram,
+  PermissionDiagram,
+  PhoneSettingsDiagram,
   DisplayCompareDiagram,
+  OsMatrixDiagram,
+  DisplayFaultDiagram,
   SpectrumDiagram,
   ConnectorGallery,
   Ipv4Diagram,

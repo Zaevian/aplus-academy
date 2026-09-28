@@ -6,25 +6,31 @@ import {
   splitPracticeAndHoldout,
 } from "@/content/registry";
 
-describe("Holdout split", () => {
-  it("lists C1-D3 and C2-D4 as holdout-enabled domains on this branch", () => {
+describe("Holdout split (through Operational Procedures)", () => {
+  it("lists C1-D2 through C2-D4 as holdout-enabled domains", () => {
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D2");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D3");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D4");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D5");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D1");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D2");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D3");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D4");
   });
 
   it("keeps lesson KC/checkpoint items out of the holdout pool", () => {
-    const protectedIds = lessonProtectedQuestionIds("C1-D3-O3");
+    const protectedIds = lessonProtectedQuestionIds("C1-D2-O1");
     expect(protectedIds.size).toBeGreaterThan(0);
     const all = [
       ...protectedIds,
-      "C1-D3-O3-HOLD-A",
-      "C1-D3-O3-HOLD-B",
-      "C1-D3-O3-HOLD-C",
-      "C1-D3-O3-HOLD-D",
-      "C1-D3-O3-HOLD-E",
-      "C1-D3-O3-HOLD-F",
-      "C1-D3-O3-HOLD-G",
-      "C1-D3-O3-HOLD-H",
+      "C1-D2-O1-HOLD-A",
+      "C1-D2-O1-HOLD-B",
+      "C1-D2-O1-HOLD-C",
+      "C1-D2-O1-HOLD-D",
+      "C1-D2-O1-HOLD-E",
+      "C1-D2-O1-HOLD-F",
+      "C1-D2-O1-HOLD-G",
+      "C1-D2-O1-HOLD-H",
     ];
     const { quizQuestionIds, reviewQuestionIds } = splitPracticeAndHoldout(
       all,
@@ -41,8 +47,8 @@ describe("Holdout split", () => {
     }
   });
 
-  it("splits every C1-D3 coverage row into disjoint practice vs holdout", () => {
-    const rows = buildCoverage().filter((r) => r.domain === "C1-D3");
+  it("splits every C1-D2 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C1-D2");
     expect(rows.length).toBe(8);
     for (const row of rows) {
       const practice = new Set(row.quizQuestionIds);
@@ -51,13 +57,113 @@ describe("Holdout split", () => {
       for (const id of row.reviewQuestionIds) {
         expect(practice.has(id)).toBe(false);
       }
-      // Holdout never overlaps lesson-embedded checks.
       const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
       for (const id of row.reviewQuestionIds) {
         expect(protectedIds.has(id)).toBe(false);
       }
     }
   });
+
+  it("keeps C1-D3 Hardware holdout disjoint", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C1-D3");
+    expect(rows.length).toBe(8);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+    }
+  });
+
+  it("splits every C1-D4 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C1-D4");
+    expect(rows.length).toBe(2);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+  it("splits every C1-D5 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C1-D5");
+    expect(rows.length).toBe(6);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+
+  it("splits every C2-D1 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C2-D1");
+    expect(rows.length).toBe(11);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+
+  it("splits every C2-D2 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C2-D2");
+    expect(rows.length).toBe(11);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+
+  it("splits every C2-D3 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C2-D3");
+    expect(rows.length).toBe(4);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
 
   it("splits every C2-D4 coverage row into disjoint practice vs holdout", () => {
     const rows = buildCoverage().filter((r) => r.domain === "C2-D4");

@@ -554,6 +554,14 @@ If any of those checks fail, stop and do a clean install onto supported hardware
         questionIds: ["C2-D1-O3-BITLOCKER-Q001", "C2-D1-O3-GPEDIT-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D1-O3-L1-lab",
+        labId: "C2-D1-O3-EDITION-LAB",
+        title: "Windows edition matching lab",
+        prompt:
+          "Match Home, Pro, Pro for Workstations, and Enterprise to the four purchasing tickets. Leave Home N and ChromeOS unused.",
+      },
+      {
         type: "summary",
         id: "C2-D1-O3-L1-sum",
         bullets: [

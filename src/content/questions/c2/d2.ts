@@ -99,15 +99,16 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Which phrase correctly describes the principle of least privilege?",
     choices: [
-      { id: "a", text: "Grant only the rights needed for the job, for the minimum time", rationale: "Correct." },
-      { id: "b", text: "Give every technician Domain Admin so tickets close faster", rationale: "That is standing excessive privilege." },
-      { id: "c", text: "Trust any process that starts from Program Files", rationale: "Path is not a privilege model." },
-      { id: "d", text: "Disable logging so administrators are not slowed down", rationale: "Logging is part of accountability, not least privilege." },
+      { id: "a", text: "Grant only the rights needed for the job, for the minimum time", rationale: "Correct. Least privilege is minimum rights for minimum duration — not standing Domain Admin." },
+      { id: "b", text: "Give every technician Domain Admin so tickets close faster", rationale: "Standing Domain Admin is excessive privilege; PAM/JIT exists to avoid this." },
+      { id: "c", text: "Trust any process that starts from Program Files", rationale: "Install path is not an authorization model; malware can live under Program Files too." },
+      { id: "d", text: "Disable logging so administrators are not slowed down", rationale: "Logging supports accountability; turning it off is not least privilege." },
     ],
     correct: "a",
     explanation: "Least privilege is minimum rights, minimum duration. PAM/JIT is how enterprises time-box the rest.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["least-privilege", "misconception"],
   }),
   q({
     id: "C2-D2-O1-ZEROTRUST-Q003",
@@ -116,8 +117,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A laptop on the corporate SSID still receives a prompt for SSO plus device-compliance before opening a SaaS HR app. What is this enforcing?",
     choices: [
-      { id: "a", text: "Zero Trust / conditional access rather than 'inside the Wi-Fi equals trusted'", rationale: "Correct." },
-      { id: "b", text: "WEP encryption on the AP", rationale: "WEP is obsolete and not what an SSO prompt is." },
+      { id: "a", text: "Zero Trust / conditional access rather than 'inside the Wi-Fi equals trusted'", rationale: "Correct. Conditional access still challenges identity/device on the corporate SSID — classic Zero Trust." },
+      { id: "b", text: "WEP encryption on the AP", rationale: "WEP is an obsolete Wi-Fi cipher; an SSO compliance prompt is not wireless encryption." },
       { id: "c", text: "A screened subnet for printers", rationale: "Unrelated network zoning." },
       { id: "d", text: "Degaussing of the laptop TPM", rationale: "Nonsensical destruction of a live device." },
     ],
@@ -125,6 +126,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "Re-checking identity and device health for each app is Zero Trust, not a wireless cipher.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["zero-trust", "conditional-access"],
   }),
   q({
     id: "C2-D2-O1-ZEROTRUST-Q004",
@@ -133,7 +135,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "What is an ACL in the A+ logical-security list?",
     choices: [
-      { id: "a", text: "A list of permit/deny rules on a resource such as a file, folder, or firewall", rationale: "Correct." },
+      { id: "a", text: "A list of permit/deny rules on a resource such as a file, folder, or firewall", rationale: "Correct. An ACL is the ordered permit/deny list on a file, folder, firewall, or similar resource." },
       { id: "b", text: "A biometric face template stored in a camera", rationale: "That is a biometric sample, not an ACL." },
       { id: "c", text: "A certificate of destruction from a shredding vendor", rationale: "That is 2.9 paperwork." },
       { id: "d", text: "A WPA3 simultaneous authentication of equals handshake", rationale: "That is wireless authentication, not an ACL." },
@@ -142,6 +144,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "Access control lists are ordered permit/deny rules. They appear on files, shares, and network devices.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["acl-definition", "logical-controls"],
   }),
   q({
     id: "C2-D2-O1-MFA-Q001",
@@ -167,7 +170,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Which pair is NOT multifactor authentication?",
     choices: [
-      { id: "a", text: "Domain password plus a six-digit PIN the user invented", rationale: "Correct. Both are knowledge factors." },
+      { id: "a", text: "Domain password plus a six-digit PIN the user invented", rationale: "Correct. Password and PIN are both knowledge factors — that is not multifactor." },
       { id: "b", text: "Smart card plus PIN", rationale: "Have + know. That is MFA." },
       { id: "c", text: "Fingerprint plus password", rationale: "Are + know." },
       { id: "d", text: "Hardware token plus password", rationale: "Have + know." },
@@ -176,7 +179,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "Password and PIN are both something you know. MFA needs a second type (have or are).",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
-    tags: ["misconception"],
+    tags: ["mfa-factor-types", "misconception"],
   }),
   q({
     id: "C2-D2-O1-MFA-Q003",
@@ -237,7 +240,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A payroll SaaS app does not store the corporate password. After the user signs in at the company identity provider, the app accepts an assertion and opens. Which protocol is that pattern on A+?",
     choices: [
-      { id: "a", text: "SAML federation between an identity provider and a service provider", rationale: "Correct." },
+      { id: "a", text: "SAML federation between an identity provider and a service provider", rationale: "Correct. SAML is IdP→SP federation assertions; the SP does not store the corporate password." },
       { id: "b", text: "WPA3-SAE on the AP", rationale: "Wireless, not app federation." },
       { id: "c", text: "TKIP", rationale: "Legacy Wi-Fi cipher." },
       { id: "d", text: "Degaussing", rationale: "Media destruction." },
@@ -246,6 +249,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "SAML is how an IdP asserts identity to a service provider so the app does not hold the corporate password.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["saml-federation", "sso"],
   }),
   q({
     id: "C2-D2-O1-SAML-Q002",
@@ -272,15 +276,16 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "How does SAML relate to SSO?",
     choices: [
-      { id: "a", text: "SAML is a common protocol for implementing SSO across apps that trust an identity provider", rationale: "Correct." },
-      { id: "b", text: "SAML is a symmetric cipher used instead of AES on WPA3", rationale: "Wrong layer." },
-      { id: "c", text: "SAML is the Windows Hello PIN", rationale: "Hello is device-bound local auth." },
-      { id: "d", text: "SAML is a type of bollard", rationale: "Physical control, not federation." },
+      { id: "a", text: "SAML is a common protocol for implementing SSO across apps that trust an identity provider", rationale: "Correct. SAML federation assertions from an IdP are a common SSO implementation — not a Wi-Fi cipher or bollard." },
+      { id: "b", text: "SAML is a symmetric cipher used instead of AES on WPA3", rationale: "Wrong layer: SAML is federation XML, not a wireless cipher." },
+      { id: "c", text: "SAML is the Windows Hello PIN", rationale: "Hello PIN is device-bound local auth, not cross-app federation." },
+      { id: "d", text: "SAML is a type of bollard", rationale: "Bollards are physical vehicle barriers — unrelated to SSO." },
     ],
     correct: "a",
-    explanation: "SSO is the user experience; SAML is a federation protocol that often provides it.",
+    explanation: "SSO is the user experience; SAML is a federation protocol that often provides it. Do not confuse SAML with Kerberos (Windows ticket protocol) or RADIUS.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["saml-federation", "sso"],
   }),
   q({
     id: "C2-D2-O1-SAML-Q004",
@@ -306,7 +311,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Technicians currently log on to Windows every morning as Domain Admin. Which control BEST reduces that standing privilege?",
     choices: [
-      { id: "a", text: "Privileged access management with just-in-time elevation so admin rights expire after the change", rationale: "Correct." },
+      { id: "a", text: "Privileged access management with just-in-time elevation so admin rights expire after the change", rationale: "Correct. PAM/JIT checks out privileged roles for a limited window instead of standing admin." },
       { id: "b", text: "Sharing the Domain Admin password in a team chat so it is 'not written down'", rationale: "Worse standing privilege." },
       { id: "c", text: "Disabling UAC so elevation is silent", rationale: "Removes a workstation control." },
       { id: "d", text: "Putting all PCs in the consumer DMZ host feature", rationale: "Exposes them." },
@@ -315,6 +320,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "PAM/JIT is the named A+ control for standing admin rights.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["pam-jit", "privilege"],
   }),
   q({
     id: "C2-D2-O1-PAM-Q002",
@@ -323,7 +329,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "What does just-in-time access typically do?",
     choices: [
-      { id: "a", text: "Grants a privileged role for a limited window, then removes it", rationale: "Correct." },
+      { id: "a", text: "Grants a privileged role for a limited window, then removes it", rationale: "Correct. JIT elevates briefly then removes rights — the opposite of standing Domain Admin." },
       { id: "b", text: "Opens every inbound port during business hours", rationale: "That is the opposite of least privilege." },
       { id: "c", text: "Skips MFA when the user is busy", rationale: "JIT is not an MFA bypass." },
       { id: "d", text: "Formats the disk at scheduled midnight", rationale: "Unrelated." },
@@ -332,6 +338,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "JIT is time-boxed privilege, usually via a PAM vault or PIM-style role.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["pam-jit", "misconception"],
   }),
   q({
     id: "C2-D2-O1-PAM-Q003",
@@ -391,7 +398,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Why is DLP not a substitute for EDR?",
     choices: [
-      { id: "a", text: "DLP looks for sensitive data in motion/at rest leaving channels; EDR watches endpoint behavior for malware", rationale: "Correct." },
+      { id: "a", text: "DLP looks for sensitive data in motion/at rest leaving channels; EDR watches endpoint behavior for malware", rationale: "Correct. DLP watches sensitive data leaving approved channels — it is not antivirus." },
       { id: "b", text: "They are identical products with two marketing names", rationale: "They are not." },
       { id: "c", text: "DLP degausses SSDs; EDR degausses HDDs", rationale: "Neither is a destruction tool." },
       { id: "d", text: "EDR only works on printers", rationale: "False." },
@@ -400,6 +407,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "Different questions: 'is this file allowed to leave?' versus 'is this process hostile?'",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["dlp-vs-av", "misconception"],
   }),
   q({
     id: "C2-D2-O1-DLP-Q003",
@@ -425,7 +433,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "What does identity and access management (IAM) answer?",
     choices: [
-      { id: "a", text: "Who a user is and what they may do across systems", rationale: "Correct." },
+      { id: "a", text: "Who a user is and what they may do across systems", rationale: "Correct. IAM answers who you are and what you may do across systems — bigger than one ACL." },
       { id: "b", text: "Which RAID level a file server uses", rationale: "Storage, Core 1." },
       { id: "c", text: "Whether a drive should be shredded or degaussed", rationale: "2.9." },
       { id: "d", text: "Which 802.11 channel is least crowded", rationale: "RF planning." },
@@ -434,6 +442,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     explanation: "IAM is identity plus authorization, usually backed by directory services.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O1-L2",
+    tags: ["iam-scope", "scenario"],
   }),
   q({
     id: "C2-D2-O1-IAM-Q002",

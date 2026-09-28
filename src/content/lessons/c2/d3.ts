@@ -521,6 +521,14 @@ Do not skip the OS battery-health screen. A pack at 94% with one greedy app is a
         questionIds: ["C2-D3-O2-AUTOROTATE-Q002"],
       },
       {
+        type: "lab",
+        id: "C2-D3-O2-L2-lab",
+        labId: "C2-D3-O2-MOBILE-LAB",
+        title: "Mobile OS symptom triage",
+        prompt:
+          "Match four help-desk tickets — single-app crash, OS update stall, overnight battery drain, and no autorotate — to the BEST FIRST software action. Leave factory reset, blind battery swap, jailbreak, and digitizer FIRST unused.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D3-O2-L2-cp",
         questionIds: [

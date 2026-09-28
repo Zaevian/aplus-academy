@@ -52,6 +52,21 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D4-O2-CLOUD-LAB",
+    slug: "cloud-service-models",
+    title: "Cloud service model matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D4-O2"],
+    conceptIds: ["C1-D4-O2-IAAS", "C1-D4-O2-PAAS", "C1-D4-O2-SAAS"],
+    component: "CloudServiceLab",
+    description:
+      "Match IaaS, PaaS, and SaaS tickets; leave on-prem Type 1, thin-provision, and container distractors unused.",
+    solution:
+      "IaaS is a Windows VM you patch and RDP into. PaaS is git-push without managing the OS/runtime. SaaS is licensed email/docs in a browser. Bare-metal ESXi, datastore fills, and laptop Docker are not service models.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O4-RAID-LAB",
     slug: "raid-builder",
     title: "RAID builder and failure lab",
@@ -131,6 +146,31 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D2-O1-PORTS-LAB",
+    slug: "ports-drill",
+    title: "Official 2.1 ports drill",
+    kind: "network",
+    objectiveIds: ["C1-D2-O1"],
+    conceptIds: [
+      "C1-D2-O1-PORTS",
+      "C1-D2-O1-FTP",
+      "C1-D2-O1-SSH",
+      "C1-D2-O1-DNS",
+      "C1-D2-O1-DHCP",
+      "C1-D2-O1-HTTP",
+      "C1-D2-O1-SMB",
+      "C1-D2-O1-RDP",
+    ],
+    component: "PortsDrillLab",
+    description:
+      "Match help-desk tickets (send mail, names, APIPA, shell, share, RDP) to official 2.1 ports; leave Telnet/HTTP/FTP unused.",
+    solution:
+      "SMTP 25 for send, DNS 53 for names, DHCP 67/68 for APIPA, SSH 22 for encrypted shell, SMB 445 for Windows shares, RDP 3389 for remote desktop. Telnet 23, HTTP 80, and FTP 20/21 are not the answers for this queue.",
+    estimatedMinutes: 14,
+    capstone: true,
+  },
+
+  {
     id: "C1-D2-O2-WIFI-LAB",
     slug: "wifi-lab",
     title: "Wi-Fi interference lab",
@@ -200,6 +240,27 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C2-D1-O3-EDITION-LAB",
+    slug: "windows-editions",
+    title: "Windows edition matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O3"],
+    conceptIds: [
+      "C2-D1-O3-HOME",
+      "C2-D1-O3-PRO",
+      "C2-D1-O3-ENT",
+      "C2-D1-O3-BITLOCKER",
+      "C2-D1-O3-GPEDIT",
+    ],
+    component: "WindowsEditionLab",
+    description:
+      "Match Home, Pro, Pro for Workstations, and Enterprise to domain join, RDP host, BitLocker, gpedit, RAM, and volume-licensing tickets.",
+    solution:
+      "Home is consumer-only. Pro unlocks AD, RDP host, BitLocker, and gpedit. Pro for Workstations adds 6 TB / four sockets / ReFS. Enterprise is the volume AppLocker SKU. Home N and ChromeOS do not satisfy those tickets.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D3-O8-PRINTER-LAB",
     slug: "printer-lab",
     title: "Printer output and maintenance lab",
@@ -211,6 +272,26 @@ export const LABS: Lab[] = [
     solution:
       "Faded laser often means toner or density. Repeating marks follow drum circumference. Ghosting often implicates the fuser or drum. Garbled output is language/driver, not paper.",
     estimatedMinutes: 15,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O1-AUTH-LAB",
+    slug: "auth-factors",
+    title: "Physical and logical controls lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O1"],
+    conceptIds: [
+      "C2-D2-O1-VESTIBULE",
+      "C2-D2-O1-MFA",
+      "C2-D2-O1-PAM",
+      "C2-D2-O1-ZEROTRUST",
+    ],
+    component: "AuthFactorsLab",
+    description:
+      "Match vestibule, bollards, password+TOTP MFA, and PAM/JIT to four security tickets; leave password+PIN and camera-only unused.",
+    solution:
+      "Tailgating needs an access control vestibule. Vehicle ramming needs bollards. SaaS MFA needs know+have (password + authenticator TOTP), not two knowledge secrets. Standing Domain Admin is fixed with PAM/JIT. Cameras record — they do not interlock doors.",
+    estimatedMinutes: 12,
     capstone: true,
   },
   {
@@ -312,6 +393,26 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C1-D5-O3-DISPLAY-LAB",
+    slug: "display-fault-match",
+    title: "Display and projector fault matching",
+    kind: "hardware",
+    objectiveIds: ["C1-D5-O3"],
+    conceptIds: [
+      "C1-D5-O3-SOURCE",
+      "C1-D5-O3-BURNIN",
+      "C1-D5-O3-DEADPIXEL",
+      "C1-D5-O3-PROJECTOR",
+    ],
+    component: "DisplayFaultLab",
+    description:
+      "Match no-signal, burn-in, dead pixel, dim lamp, and thermal shutdown tickets to the correct display/projector cause; leave GPU-first and reimage distractors unused.",
+    solution:
+      "Source/input and Win+P before hardware. Burn-in is a stable UI ghost on OLED. Dead pixels stay put. Dim high-hour projectors are lamps/filters. Early shutdown with packed vents is thermal. GPU-first when the laptop panel works, reimage for a pixel, and RAID for soft resolution stay unmatched.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C1-D5-SHIFT-LAB",
     slug: "ticket-shift-core1",
     title: "Core 1 troubleshooting shift",
@@ -323,6 +424,25 @@ export const LABS: Lab[] = [
     solution:
       "FIRST actions gather information or make the environment safe. Replacing parts before testing is a common miss.",
     estimatedMinutes: 25,
+    capstone: true,
+  },
+  {
+    id: "C2-D3-O2-MOBILE-LAB",
+    slug: "mobile-os-triage",
+    title: "Mobile OS symptom triage lab",
+    kind: "os",
+    objectiveIds: ["C2-D3-O2"],
+    conceptIds: [
+      "C2-D3-O2-APPCRASH",
+      "C2-D3-O2-MOBILEUPDATE",
+      "C2-D3-O2-AUTOROTATE",
+    ],
+    component: "MobileOsLab",
+    description:
+      "Match app crash, OS update stall, battery drain, and autorotate tickets to the BEST FIRST software actions.",
+    solution:
+      "One app → force-stop/clear cache. Update stall → free space, charge, Wi-Fi. Overnight drain → Battery usage on the named app. No rotate → rotation lock. Leave factory reset, blind battery swap, jailbreak, and digitizer FIRST unused.",
+    estimatedMinutes: 12,
     capstone: true,
   },
   {
