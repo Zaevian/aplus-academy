@@ -581,6 +581,14 @@ When a stem offers all three models, pick the one that matches the *layer the cu
         ],
       },
       {
+        type: "lab",
+        id: "C1-D4-O2-L2-lab",
+        labId: "C1-D4-O2-CLOUD-LAB",
+        title: "Cloud service model matching lab",
+        prompt:
+          "Match the Windows VM, git-push app, and licensed email tickets to IaaS, PaaS, and SaaS. Leave bare-metal ESXi, thin-provision datastore, and laptop Docker unmatched.",
+      },
+      {
         type: "knowledge-check",
         id: "C1-D4-O2-L2-kc2",
         questionIds: ["C1-D4-O2-SAAS-Q001", "C1-D4-O2-PAAS-Q001"],
