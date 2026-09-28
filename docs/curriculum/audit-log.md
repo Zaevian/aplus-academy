@@ -224,3 +224,45 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C1-D5-O4 mobile inspect lab** or an O1 dedicated system-board PBQ — or deepen C1-D4 O1 virtualization PBQ.
+
+---
+
+## 2026-09-28 — C2 Domain 1 Operating Systems (first Core 2 weekly rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c2-d1-operating-systems` from master @ 9197840)  
+**Official:** 220-1202 Domain 1 Operating Systems **28%** (Exam Objectives Document Version 3.0)  
+**Note:** Restacked onto master after PRs #3–#5 (C1-D2, C1-D4, C1-D5).
+
+### Coverage snapshot
+- Objectives 1.1–1.11 (`C2-D1-O1`…`O11`): all coverage `verified`; **23** lessons; **362** questions
+- Scored LabHost labs before this PR: Windows tools (`O4`), Windows CLI (`O5`), macOS (`O8`), Linux (`O9`)
+- **This PR:** Windows edition matching lab `C2-D1-O3-EDITION-LAB` → `WindowsEditionLab` for O3 (Home/Pro/Pro for Workstations/Enterprise)
+- Still **0** pbqLabIds on O1 (OS types/FS), O2 (install/partition), O6 (Settings), O7 (client networking), O10 (app install), O11 (cloud productivity)
+- Holdout: **this PR adds `C2-D1`** alongside C1-D2, C1-D3, C1-D4, and C1-D5 already on master
+- Core 2 mock PBQ: Windows tools / security match (`TOOLS_PBQ_ID`) — Ports PBQ correctly Core-1-only (Phase 1)
+
+### Findings
+- **High → partial:** Uneven PBQ — O3 gained edition lab; six objectives still empty
+- **High → fixed:** `OsMatrixDiagram` was a SIMPLE text stub used by O1 lessons
+- **Medium (open):** `EditionMatrixDiagram` still SIMPLE (lesson table already covers features; deferred)
+- **Medium → partial:** Hundreds of short distractor rationales; ~10 O1/O3 Qs upgraded with tags
+- **High → partial:** Holdout extended to C2-D1; other Core 2 domains still mirrored
+
+### Strengths
+- Deep MCQ bank (≥28/objective); real LabHost Windows tools/CLI + macOS + Linux sims; official 28% OS weight in `EXAM_META`; Core 2 exam PBQ already split from Ports
+
+### Fixes shipped (this PR)
+- `WindowsEditionLab` + lesson wire for C2-D1-O3; LabHost registration
+- Holdout split for C2-D1 alongside C1-D2, C1-D3, C1-D4, and C1-D5
+- Real `OsMatrixDiagram`; ~10 rationale/tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + partial PBQ (O3/O4/O5/O8/O9). Coverage `"verified"` still overstates practical readiness without O1/O2/O6/O7/O10/O11 labs, EditionMatrix SHOW, fuller rationales, and holdout across remaining Core 2 domains.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/operating-systems-audit-2026-09-28.json`
+
+### Next rotation
+**C2 Domain 2 Security (2.0)** — or deepen OS install/Settings/network PBQs before rotating.

@@ -1,12 +1,12 @@
 # Phase 1 confirmed defects
 
-Tracked from Miyuki Domain 1 (Mobile Devices), Domain 2 (Networking), Domain 3 (Hardware), Domain 4 (Virtualization/Cloud), and Domain 5 (Hardware and Network Troubleshooting) audits, 2026-09-28.
+Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domain 1 (Operating Systems) audits, 2026-09-28.
 Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
 
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5) | Holdout split live for Networking, Hardware, Virtualization/Cloud, and Troubleshooting (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, and Operating Systems (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
@@ -29,6 +29,10 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | troubleshooting-o4-zero-pbq | high | open | C1-D5-O4 mobile TS still has 0 dedicated scored labs; catalog `device-inspect` unmet | `src/content/labs/index.ts`, catalog |
 | troubleshooting-display-simple | high | **fixed** (this PR) | `DisplayFaultDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | troubleshooting-weak-rationales | medium | **partial** (~11 Qs this PR) | Hundreds of D5 distractor rationales still &lt;25 chars; O3 sample + misconception tags shipped | `src/content/questions/c1/d5.ts` |
+| os-uneven-pbq | medium | **partial** (O3 edition lab this PR) | C2-D1 O1/O2/O6/O7/O10/O11 still lack scored PBQs; O3/O4/O5/O8/O9 have LabHost labs | `src/content/labs/index.ts` |
+| os-matrix-simple | high | **fixed** (this PR) | `OsMatrixDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
+| os-edition-matrix-simple | medium | open | `EditionMatrixDiagram` still SIMPLE (lesson table covers features) | `src/components/diagrams/registry.tsx` |
+| os-weak-rationales | medium | **partial** (~10 Qs this PR) | Hundreds of C2-D1 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d1.ts` |
 
 ## Educational state notes (quick)
 
