@@ -116,3 +116,46 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C1 Domain 4 Virtualization and Cloud (4.0)** — or deepen Hardware O1/O6/O7 PBQs before rotating.
+
+---
+
+## 2026-09-28 — C2 Domain 4 Operational Procedures (final Core 1+2 first-pass rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c2-d4-ops` from master @ 9197840)  
+**Official:** 220-1202 Domain 4 Operational Procedures **21%** (Exam Objectives Document Version 3.0)
+
+### Coverage snapshot
+- Objectives 4.1–4.10 (`C2-D4-O1`…`O10`): all coverage `verified`; **14** lessons; **283** questions
+- Scored LabHost labs before this PR: Ticket (`O1`, also claimed `O2`), Backup (`O3`), Voice (`O7`); AI (`O10`) only via shared `C2-D3-SHIFT-LAB`
+- **This PR:** Change pipeline lab `C2-D4-O2-CHANGE-LAB` → `ChangePipelineLab` for O2 (standard/normal/emergency + freeze + real rollback); TicketLab scoped to O1 only
+- Still **0** pbqLabIds on O4 (safety), O5 (environment), O6 (privacy/incident), O8 (scripting), O9 (remote access)
+- Holdout: disjoint `reviewQuestionIds` for all ten Ops objectives; lesson KC/checkpoint IDs stay in practice only
+- SHOW: `BackupChainDiagram` + `AiPolicyDiagram` already NAMED — **no** SIMPLE stub referenced by C2-D4
+
+### Findings
+- **High → partial:** Uneven PBQ — O2 gained dedicated change lab; O4/O5/O6/O8/O9 still unmet vs catalog `requiredInteractions`
+- **High → partial:** Holdout split for C2-D4 (+ C1-D3 on master). PRs #3–#8 carry other domain holdouts
+- **Medium → partial:** Weak O2 rationales / zero misconception tags; ~11 questions upgraded with tags
+- **Low / n/a:** No critical C2-D4 SHOW stub to fix this rotation
+
+### Strengths
+- Deep MCQ across all ten objectives (≥25/objective); real Ticket/Backup/Voice LabHost sims; change-management first principles before CAB memorization
+
+### Fixes shipped (this PR)
+- `ChangePipelineLab` + lesson wire for C2-D4-O2; LabHost registration; TicketLab → O1 only
+- `HOLDOUT_DOMAIN_IDS` adds C2-D4 alongside C1-D3
+- ~11 O2 rationale + misconception-tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + partial PBQ (O1 ticket, O2 change, O3 backup, O7 voice; O10 shared shift). Remaining: safety/environment/privacy/scripting/remote scored labs, broader rationales, and holdouts landing when PRs #3–#8 merge.
+
+### Domain rotation
+**First full Core 1 + Core 2 domain audit rotation is complete** pending merges of open PRs #3–#8 (C1-D2–D5, C2-D1–D3). C1-D1 Mobile audited earlier; C1-D3 Hardware merged as #2; this PR closes C2-D4 Ops.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/operational-procedures-audit-2026-09-28.json`
+
+### Next
+Deepen Ops O4/O5/O6/O8/O9 PBQs, or second-pass remediations after open PRs merge.

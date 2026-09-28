@@ -6,9 +6,10 @@ import {
   splitPracticeAndHoldout,
 } from "@/content/registry";
 
-describe("Hardware holdout split", () => {
-  it("lists C1-D3 as the first holdout-enabled domain", () => {
+describe("Holdout split", () => {
+  it("lists C1-D3 and C2-D4 as holdout-enabled domains on this branch", () => {
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D3");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D4");
   });
 
   it("keeps lesson KC/checkpoint items out of the holdout pool", () => {
@@ -51,6 +52,23 @@ describe("Hardware holdout split", () => {
         expect(practice.has(id)).toBe(false);
       }
       // Holdout never overlaps lesson-embedded checks.
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+  it("splits every C2-D4 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C2-D4");
+    expect(rows.length).toBe(10);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
       const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
       for (const id of row.reviewQuestionIds) {
         expect(protectedIds.has(id)).toBe(false);

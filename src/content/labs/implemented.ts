@@ -16,6 +16,7 @@ export const LAB_HOST_COMPONENTS = [
   "MalwareLab",
   "PermissionsLab",
   "TicketLab",
+  "ChangePipelineLab",
   "BackupLab",
   "VoiceLab",
   "TicketShiftLab",

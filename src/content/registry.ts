@@ -13,7 +13,7 @@ import { EXAM_META } from "@/lib/exam-meta";
  * practice/quiz pool (quizQuestionIds). Extend this list as other domains
  * get split — do not claim Exam Ready until holdout is live AND consumed.
  */
-export const HOLDOUT_DOMAIN_IDS = ["C1-D3"] as const;
+export const HOLDOUT_DOMAIN_IDS = ["C1-D3", "C2-D4"] as const;
 
 export function getLessons(): Lesson[] {
   return LESSONS;

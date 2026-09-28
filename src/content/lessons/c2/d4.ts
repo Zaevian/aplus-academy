@@ -292,6 +292,14 @@ The **change advisory board (CAB)** is the people who can see blast radius you c
         questionIds: ["C2-D4-O2-ROLLBACK-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D4-O2-L1-lab",
+        labId: "C2-D4-O2-CHANGE-LAB",
+        title: "Change management pipeline",
+        prompt:
+          "Freeze week is active. Classify each request as standard, normal, or emergency, then attach a written rollback — not 'we'll figure it out.' VoIP VLAN waits; ransomware block does not.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D4-O2-L1-cp",
         questionIds: [
