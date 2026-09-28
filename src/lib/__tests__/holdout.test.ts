@@ -6,8 +6,8 @@ import {
   splitPracticeAndHoldout,
 } from "@/content/registry";
 
-describe("Holdout split (through Software Troubleshooting)", () => {
-  it("lists C1-D2 through C2-D3 as holdout-enabled domains", () => {
+describe("Holdout split (through Operational Procedures)", () => {
+  it("lists C1-D2 through C2-D4 as holdout-enabled domains", () => {
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D2");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D3");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D4");
@@ -15,6 +15,7 @@ describe("Holdout split (through Software Troubleshooting)", () => {
     expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D1");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D2");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D3");
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C2-D4");
   });
 
   it("keeps lesson KC/checkpoint items out of the holdout pool", () => {
@@ -149,6 +150,24 @@ describe("Holdout split (through Software Troubleshooting)", () => {
   it("splits every C2-D3 coverage row into disjoint practice vs holdout", () => {
     const rows = buildCoverage().filter((r) => r.domain === "C2-D3");
     expect(rows.length).toBe(4);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
+  });
+
+
+  it("splits every C2-D4 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C2-D4");
+    expect(rows.length).toBe(10);
     for (const row of rows) {
       const practice = new Set(row.quizQuestionIds);
       expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);

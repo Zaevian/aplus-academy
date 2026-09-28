@@ -19,6 +19,7 @@ import { PhishingLab } from "@/components/labs/phishing-lab";
 import { MalwareLab } from "@/components/labs/malware-lab";
 import { PermissionsLab } from "@/components/labs/permissions-lab";
 import { TicketLab } from "@/components/labs/ticket-lab";
+import { ChangePipelineLab } from "@/components/labs/change-pipeline-lab";
 import { BackupLab } from "@/components/labs/backup-lab";
 import { VoiceLab } from "@/components/labs/voice-lab";
 import { TicketShiftLab } from "@/components/labs/ticket-shift-lab";
@@ -54,6 +55,7 @@ export const LAB_COMPONENT_MAP: Record<
   MalwareLab,
   PermissionsLab,
   TicketLab,
+  ChangePipelineLab,
   BackupLab,
   VoiceLab,
   TicketShiftLab,

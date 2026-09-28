@@ -340,12 +340,27 @@ export const LABS: Lab[] = [
     slug: "ticketing-lab",
     title: "Help-desk ticket lab",
     kind: "ticket",
-    objectiveIds: ["C2-D4-O1", "C2-D4-O2"],
+    objectiveIds: ["C2-D4-O1"],
     conceptIds: ["C2-D4-O1-TICKET", "C2-D4-O1-SLA"],
     component: "TicketLab",
     description: "Turn 'PC broken' into a documented, prioritized incident.",
     solution:
       "Capture user, device, category, severity, reproduction, and next action. Close with resolution notes a stranger could follow.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O2-CHANGE-LAB",
+    slug: "change-pipeline-lab",
+    title: "Change management pipeline",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O2"],
+    conceptIds: ["C2-D4-O2-CAB", "C2-D4-O2-ROLLBACK", "C2-D4-O2-FREEZE", "C2-D4-O2-EMERGENCY"],
+    component: "ChangePipelineLab",
+    description:
+      "Classify standard, normal, and emergency changes during a freeze and attach real rollback plans.",
+    solution:
+      "Standard follows the SOP; normal waits for CAB and a window; emergency is for outages/exploits with paperwork after. Rollback is a written reverse, not hope.",
     estimatedMinutes: 12,
     capstone: true,
   },

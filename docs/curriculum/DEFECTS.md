@@ -1,12 +1,12 @@
 # Phase 1 confirmed defects
 
-Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–3 audits, 2026-09-28.
+Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–4 audits, 2026-09-28.
 Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
 
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1 + C2-D2 + C2-D3) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, Operating Systems, Security, and Software Troubleshooting (`HOLDOUT_DOMAIN_IDS`); Mobile and other domains still mirror pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1 + C2-D2 + C2-D3 + C2-D4) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, Operating Systems, Security, Software Troubleshooting, and Operational Procedures (`HOLDOUT_DOMAIN_IDS`); Mobile still mirrors pools | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
@@ -39,6 +39,10 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | security-uneven-pbq | medium | **partial** (O1 AUTH lab this PR) | C2-D2 O3/O7/O8/O9/O11 still lack dedicated scored PBQs; O1/O2/O4/O5/O6/O10 covered (O10 via Core1 router) | `src/content/labs/index.ts`, `src/components/labs/auth-factors-lab.tsx` |
 | security-permission-simple | high | **fixed** (this PR) | `PermissionDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | security-weak-rationales | medium | **partial** (~10 O1 Qs this PR) | Hundreds of C2-D2 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d2.ts` |
+
+| ops-uneven-pbq | medium | **partial** (O2 change lab this PR) | C2-D4 O4/O5/O6/O8/O9 still lack scored PBQs; O1/O2/O3/O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `change-pipeline-lab.tsx` |
+| ops-weak-rationales | medium | **partial** (~11 O2 Qs this PR) | Hundreds of D4 distractor rationales still &lt;25 chars; sample change-management batch + misconception tags shipped | `src/content/questions/c2/d4.ts` |
+| ops-o4-o9-lab-gap | medium | open | Catalog `safe-bench` / `it-room` / `evidence-timeline` / `script-viewer` / `remote-chooser` unmet by scored labs | `src/content/catalog.ts`, labs index |
 
 ## Educational state notes (quick)
 
