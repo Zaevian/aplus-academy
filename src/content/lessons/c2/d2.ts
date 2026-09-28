@@ -214,6 +214,14 @@ When a user cannot open an app after SSO is enabled, check group membership in t
         ],
       },
       {
+        type: "lab",
+        id: "C2-D2-O1-L2-lab",
+        labId: "C2-D2-O1-AUTH-LAB",
+        title: "Physical and logical controls lab",
+        prompt:
+          "Match vestibule, bollards, password+TOTP MFA, and PAM/JIT to the four tickets. Leave password+PIN and camera-only unused.",
+      },
+      {
         type: "summary",
         id: "C2-D2-O1-L2-sum",
         bullets: [

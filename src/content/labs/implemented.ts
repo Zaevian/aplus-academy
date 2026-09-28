@@ -25,6 +25,7 @@ export const LAB_HOST_COMPONENTS = [
   "CloudServiceLab",
   "DisplayFaultLab",
   "WindowsEditionLab",
+  "AuthFactorsLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];
