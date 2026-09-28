@@ -437,6 +437,47 @@ export function AiPolicyDiagram() {
   );
 }
 
+
+export function PermissionDiagram() {
+  const rows: [string, string, string][] = [
+    ["Local console user", "NTFS only", "Share ACL is ignored"],
+    ["Remote SMB user", "Share ∩ NTFS", "Most restrictive wins"],
+    ["Share = Change, NTFS = Read", "Read remotely", "Share caps the session"],
+    ["Share = Full, NTFS = Modify", "Modify remotely", "NTFS is the real ceiling"],
+    ["Explicit Deny on NTFS", "Denied", "Deny beats Allow when evaluated"],
+  ];
+  return (
+    <Frame
+      title="Effective access"
+      alt="How share permissions and NTFS combine for local versus remote users"
+    >
+      <table className="w-full text-left text-xs">
+        <thead>
+          <tr className="border-b text-muted-foreground">
+            <th className="py-1 pr-2">Situation</th>
+            <th className="pr-2">What applies</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([sit, applies, result]) => (
+            <tr key={sit} className="border-b border-border/60">
+              <td className="py-1.5 pr-2 font-medium">{sit}</td>
+              <td className="pr-2">{applies}</td>
+              <td className="text-muted-foreground">{result}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] leading-4 text-muted-foreground">
+        Practice pattern: keep the share ACL simple (Authenticated Users =
+        Change) and do the detailed work in NTFS. Local interactive logons never
+        see the share ACL.
+      </p>
+    </Frame>
+  );
+}
+
 export function DisplayCompareDiagram() {
   const rows: [string, string, string, string][] = [
     ["TN", "LCD", "Fast response", "Poor off-axis color"],
@@ -522,10 +563,6 @@ const SIMPLE: Record<string, { title: string; lines: string[] }> = {
     title: "OS pick",
     lines: ["Windows: domain, GPO, most line-of-business", "macOS: creative shops, FileVault, Apple ID", "Linux: servers, cost, packages", "ChromeOS: managed web-first"],
   },
-  PermissionDiagram: {
-    title: "Effective access",
-    lines: ["Share ACL caps remote users", "NTFS is the real file ACL", "Most restrictive combo wins remotely"],
-  },
   WifiHeatDiagram: {
     title: "Interference",
     lines: ["Co-channel overlap is worse than adjacent on 2.4", "Walls eat 5/6 GHz first"],
@@ -567,6 +604,7 @@ const NAMED: Record<string, () => JSX.Element> = {
   HypervisorDiagram,
   CloudModelsDiagram,
   MalwareStepsDiagram,
+  PermissionDiagram,
   BackupChainDiagram,
   AiPolicyDiagram,
   DisplayCompareDiagram,

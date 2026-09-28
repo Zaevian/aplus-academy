@@ -214,6 +214,26 @@ export const LABS: Lab[] = [
     capstone: true,
   },
   {
+    id: "C2-D2-O1-AUTH-LAB",
+    slug: "auth-factors",
+    title: "Physical and logical controls lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O1"],
+    conceptIds: [
+      "C2-D2-O1-VESTIBULE",
+      "C2-D2-O1-MFA",
+      "C2-D2-O1-PAM",
+      "C2-D2-O1-ZEROTRUST",
+    ],
+    component: "AuthFactorsLab",
+    description:
+      "Match vestibule, bollards, password+TOTP MFA, and PAM/JIT to four security tickets; leave password+PIN and camera-only unused.",
+    solution:
+      "Tailgating needs an access control vestibule. Vehicle ramming needs bollards. SaaS MFA needs know+have (password + authenticator TOTP), not two knowledge secrets. Standing Domain Admin is fixed with PAM/JIT. Cameras record — they do not interlock doors.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
     id: "C2-D2-O5-PHISH-LAB",
     slug: "phishing-lab",
     title: "Phishing and social-engineering lab",

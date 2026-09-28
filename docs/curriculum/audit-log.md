@@ -116,3 +116,45 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ### Next rotation
 **C1 Domain 4 Virtualization and Cloud (4.0)** — or deepen Hardware O1/O6/O7 PBQs before rotating.
+
+---
+
+## 2026-09-28 — C2 Domain 2 Security (Core 2 weekly rotation)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/c2-d2-security` from master @ 9197840)  
+**Official:** 220-1202 Domain 2 Security **28%** (Exam Objectives Document Version 3.0)  
+**Note:** Open PRs #3 (Networking holdout), #4 (Virtualization), #5 (Troubleshooting), #6 (Operating Systems) — left untouched. This PR adds C2-D2 holdout alongside master C1-D3 only.
+
+### Coverage snapshot
+- Objectives 2.1–2.11 (`C2-D2-O1`…`O11`): all coverage `verified`; **16** lessons; **332** questions (≥28/objective)
+- Scored LabHost labs before this PR: ACL (`O2`), Phishing (`O5`/`O4`), Malware removal (`O6`); O10 reuses Core 1 router lab
+- **This PR:** Physical/logical controls matching lab `C2-D2-O1-AUTH-LAB` → `AuthFactorsLab` for O1 (vestibule, bollards, MFA factor types, PAM/JIT)
+- Still **0** dedicated pbqLabIds on O3 (wireless), O7 (workstation harden), O8 (mobile), O9 (destruction), O11 (browser)
+- Holdout: `HOLDOUT_DOMAIN_IDS` now `C1-D3` + `C2-D2` (D2/D4/D5/C2-D1 holdouts arrive when those PRs merge)
+
+### Findings
+- **High → partial:** Uneven PBQ — O1 gained auth/controls lab; five objectives still empty of dedicated Security labs
+- **High → fixed:** `PermissionDiagram` was a SIMPLE text stub used by O2 NTFS/share lesson
+- **Medium (open):** `PhoneSettingsDiagram` (O8) and `DnsFlowDiagram` (O11) still SIMPLE
+- **Medium → partial:** Hundreds of short distractor rationales; ~10 O1 Qs upgraded with tags
+- **High → partial:** Holdout extended to C2-D2; other Core 2 domains still mirrored on master
+
+### Strengths
+- Deep MCQ bank (≥28/objective); real LabHost phishing/malware/ACL sims already shipped; official 28% Security weight in `EXAM_META`; Core 2 exam PBQ already split from Ports (Phase 1)
+
+### Fixes shipped (this PR)
+- `AuthFactorsLab` + lesson wire for C2-D2-O1; LabHost registration
+- Holdout split for C2-D2 alongside existing C1-D3
+- Real `PermissionDiagram`; ~10 O1 rationale + misconception-tag upgrades
+- `docs/curriculum/DEFECTS.md` + this audit entry
+
+### Verdict
+**Not Exam Ready.** Taught/Assessed via strong MCQ + partial PBQ (O1/O2/O4/O5/O6/O10). Coverage `"verified"` still overstates practical readiness without O3/O7/O8/O9/O11 labs, remaining SHOW stubs, fuller rationales, and holdout across remaining domains.
+
+### Machine-readable (workspace)
+`/workspace/aplus-audit-md/out/security-audit-2026-09-28.json`
+
+### Next rotation
+**C2 Domain 3 Software Troubleshooting (3.0)** — or deepen Security wireless/browser/mobile/destruction PBQs before rotating.
+
