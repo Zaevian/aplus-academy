@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:07:43.140Z",
+  "generated": "2026-09-29T00:11:14.472Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -447,7 +447,10 @@
       "lessonIds": [
         "C1-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O3-L1-lab",
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O3-AAA-Q001",
         "C1-D2-O3-AAA-Q002",
@@ -480,7 +483,9 @@
         "C1-D2-O3-UTM-Q004",
         "C1-D2-O3-UTM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1062,7 +1067,9 @@
       ],
       "interactionIds": [
         "C1-D3-O6-L1-see1",
-        "C1-D3-O6-L1-d1"
+        "C1-D3-O6-L1-d1",
+        "C1-D3-O6-L1-lab",
+        "C1-D3-O6-PSU-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O6-ATX24-Q001",
@@ -1096,7 +1103,9 @@
         "C1-D3-O6-WATTAGE-Q004",
         "C1-D3-O6-WATTAGE-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O6-PSU-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1751,7 +1760,10 @@
         "C2-D1-O2-L1",
         "C2-D1-O2-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O2-L1-lab",
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O2-CLEAN-Q001",
         "C2-D1-O2-CLEAN-Q002",
@@ -1786,7 +1798,9 @@
         "C2-D1-O2-ZEROTOUCH-Q005",
         "C2-D1-O2-ZEROTOUCH-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2623,7 +2637,10 @@
       "lessonIds": [
         "C2-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O7-L1-lab",
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O7-AUTORUN-Q001",
         "C2-D2-O7-AUTORUN-Q002",
@@ -2656,7 +2673,9 @@
         "C2-D2-O7-LOCKOUT-Q006",
         "C2-D2-O7-LOCKOUT-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

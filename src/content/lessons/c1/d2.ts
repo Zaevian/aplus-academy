@@ -675,6 +675,14 @@ Hostname versus IP: people remember names. You still document the IP of the UTM,
         ],
       },
       {
+        type: "lab",
+        id: "C1-D2-O3-L1-lab",
+        labId: "C1-D2-O3-HOSTS-LAB",
+        title: "Network hosts and appliances matching lab",
+        prompt:
+          "Match AAA, UTM, NTP, and SCADA isolation. Leave DNS-as-auth and IoT-on-SCADA unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D2-O3-L1-sum",
         bullets: [

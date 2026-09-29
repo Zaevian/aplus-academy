@@ -701,4 +701,87 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+  {
+    id: "C1-D2-O3-HOSTS-LAB",
+    slug: "network-hosts",
+    title: "Network hosts and appliances matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O3"],
+    conceptIds: [
+      "C1-D2-O3-AAA",
+      "C1-D2-O3-UTM",
+      "C1-D2-O3-NTP",
+      "C1-D2-O3-SCADA",
+      "C1-D2-O3-IOT",
+    ],
+    component: "NetworkHostsLab",
+    description:
+      "Match AAA, UTM, NTP, and SCADA isolation tickets; leave DNS-as-auth and IoT-on-SCADA unused.",
+    solution:
+      "RADIUS AAA for edge auth. UTM for combined SOHO security. NTP after outages. Isolate SCADA. DNS is not authentication; IoT stays off the SCADA VLAN.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D3-O6-PSU-LAB",
+    slug: "psu-match",
+    title: "PSU wattage, modular, 24-pin, and rails matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D3-O6"],
+    conceptIds: [
+      "C1-D3-O6-WATTAGE",
+      "C1-D3-O6-MODULAR",
+      "C1-D3-O6-ATX24",
+      "C1-D3-O6-RAILS",
+      "C1-D3-O6-VAC",
+    ],
+    component: "PsuMatchLab",
+    description:
+      "Match wattage, modular, ATX 24-pin, and 12V-rail tickets; leave open-PSU and ignore-VAC unused.",
+    solution:
+      "Wattage headroom under GPU load. Modular for airflow. Seat the ATX 24-pin. Mind the 12V rail. Never open a PSU or ignore the input-voltage switch.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O2-BOOT-LAB",
+    slug: "boot-install",
+    title: "Boot media and installation types matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O2"],
+    conceptIds: [
+      "C2-D1-O2-CLEAN",
+      "C2-D1-O2-IMAGE",
+      "C2-D1-O2-ZEROTOUCH",
+      "C2-D1-O2-GPT",
+      "C2-D1-O2-MBR",
+    ],
+    component: "BootInstallLab",
+    description:
+      "Match clean install, image deploy, zero-touch, and GPT+UEFI; leave in-place-on-malware and MBR-on-UEFI unused.",
+    solution:
+      "Clean wipe for untrusted surplus. Image for fleet gold masters. Zero-touch/Autopilot for remote ship. GPT+UEFI for large modern disks. Do not in-place upgrade malware or force MBR on UEFI-only.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O7-HARDEN-LAB",
+    slug: "workstation-harden",
+    title: "Workstation hardening matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O7"],
+    conceptIds: [
+      "C2-D2-O7-HARDEN",
+      "C2-D2-O7-AUTORUN",
+      "C2-D2-O7-LOCKOUT",
+      "C2-D2-O7-BIOSPW",
+    ],
+    component: "WorkstationHardenLab",
+    description:
+      "Match encryption/patch baseline, AutoRun off, lockout, and firmware password; leave shared-admin and AutoRun-enable unused.",
+    solution:
+      "Encrypt+patch+trim services. Disable AutoRun. Set lockout thresholds. Firmware password against boot tampering. No shared local admin; no AutoRun for 'training USBs'.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

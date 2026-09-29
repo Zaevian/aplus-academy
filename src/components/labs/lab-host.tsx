@@ -43,6 +43,10 @@ import { MobileMdmLab } from "@/components/labs/mobile-mdm-lab";
 import { NetworkToolsLab } from "@/components/labs/network-tools-lab";
 import { WirelessSecurityLab } from "@/components/labs/wireless-security-lab";
 import { EnvironmentControlsLab } from "@/components/labs/environment-controls-lab";
+import { NetworkHostsLab } from "@/components/labs/network-hosts-lab";
+import { PsuMatchLab } from "@/components/labs/psu-match-lab";
+import { BootInstallLab } from "@/components/labs/boot-install-lab";
+import { WorkstationHardenLab } from "@/components/labs/workstation-harden-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -91,6 +95,10 @@ export const LAB_COMPONENT_MAP: Record<
   NetworkToolsLab,
   WirelessSecurityLab,
   EnvironmentControlsLab,
+  NetworkHostsLab,
+  PsuMatchLab,
+  BootInstallLab,
+  WorkstationHardenLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

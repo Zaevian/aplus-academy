@@ -40,6 +40,10 @@ export const LAB_HOST_COMPONENTS = [
   "NetworkToolsLab",
   "WirelessSecurityLab",
   "EnvironmentControlsLab",
+  "NetworkHostsLab",
+  "PsuMatchLab",
+  "BootInstallLab",
+  "WorkstationHardenLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];

@@ -1288,6 +1288,14 @@ When you image a new PC, harden before you hand it over: encryption, local admin
         ],
       },
       {
+        type: "lab",
+        id: "C2-D2-O7-L1-lab",
+        labId: "C2-D2-O7-HARDEN-LAB",
+        title: "Workstation hardening matching lab",
+        prompt:
+          "Match encryption/patch baseline, AutoRun off, lockout, and firmware password. Leave shared-admin and AutoRun-enable unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D2-O7-L1-sum",
         bullets: [

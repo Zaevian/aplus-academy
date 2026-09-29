@@ -333,6 +333,14 @@ A **recovery partition** reimage is a factory-ish reset. A **repair installation
         questionIds: ["C2-D1-O2-ZEROTOUCH-Q001", "C2-D1-O2-CLEAN-Q002"],
       },
       {
+        type: "lab",
+        id: "C2-D1-O2-L1-lab",
+        labId: "C2-D1-O2-BOOT-LAB",
+        title: "Boot media and installation types matching lab",
+        prompt:
+          "Match clean install, image deploy, zero-touch, and GPT+UEFI. Leave in-place-on-malware and MBR-on-UEFI unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D1-O2-L1-sum",
         bullets: [
