@@ -44,6 +44,10 @@ export const LAB_HOST_COMPONENTS = [
   "PsuMatchLab",
   "BootInstallLab",
   "WorkstationHardenLab",
+  "NetworkTypesLab",
+  "MfdDeployLab",
+  "MobileDeviceSecLab",
+  "PrivacyIncidentLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];

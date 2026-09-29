@@ -47,6 +47,10 @@ import { NetworkHostsLab } from "@/components/labs/network-hosts-lab";
 import { PsuMatchLab } from "@/components/labs/psu-match-lab";
 import { BootInstallLab } from "@/components/labs/boot-install-lab";
 import { WorkstationHardenLab } from "@/components/labs/workstation-harden-lab";
+import { NetworkTypesLab } from "@/components/labs/network-types-lab";
+import { MfdDeployLab } from "@/components/labs/mfd-deploy-lab";
+import { MobileDeviceSecLab } from "@/components/labs/mobile-device-sec-lab";
+import { PrivacyIncidentLab } from "@/components/labs/privacy-incident-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -99,6 +103,10 @@ export const LAB_COMPONENT_MAP: Record<
   PsuMatchLab,
   BootInstallLab,
   WorkstationHardenLab,
+  NetworkTypesLab,
+  MfdDeployLab,
+  MobileDeviceSecLab,
+  PrivacyIncidentLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

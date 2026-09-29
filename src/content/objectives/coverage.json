@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:11:14.472Z",
+  "generated": "2026-09-29T00:14:15.260Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -663,7 +663,10 @@
       "lessonIds": [
         "C1-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O7-L1-lab",
+        "C1-D2-O7-WAN-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O7-CABLE-Q001",
         "C1-D2-O7-CABLE-Q002",
@@ -696,7 +699,9 @@
         "C1-D2-O7-WISP-Q003",
         "C1-D2-O7-WISP-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O7-WAN-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1118,7 +1123,9 @@
         "C1-D3-O7-L1"
       ],
       "interactionIds": [
-        "C1-D3-O7-L1-d1"
+        "C1-D3-O7-L1-d1",
+        "C1-D3-O7-L1-lab",
+        "C1-D3-O7-MFD-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O7-ADF-Q001",
@@ -1152,7 +1159,9 @@
         "C1-D3-O7-SECUREPRINT-Q005",
         "C1-D3-O7-SECUREPRINT-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O7-MFD-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2688,7 +2697,9 @@
         "C2-D2-O8-L1"
       ],
       "interactionIds": [
-        "C2-D2-O8-L1-d1"
+        "C2-D2-O8-L1-d1",
+        "C2-D2-O8-L1-lab",
+        "C2-D2-O8-MOBSEC-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O8-MDMPROFILE-Q001",
@@ -2722,7 +2733,9 @@
         "C2-D2-O8-SCREENLOCK-Q008",
         "C2-D2-O8-SCREENLOCK-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O8-MOBSEC-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3343,7 +3356,10 @@
       "lessonIds": [
         "C2-D4-O6-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O6-L1-lab",
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O6-AUP-Q001",
         "C2-D4-O6-AUP-Q002",
@@ -3373,7 +3389,9 @@
         "C2-D4-O6-VOLATILITY-Q005",
         "C2-D4-O6-VOLATILITY-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

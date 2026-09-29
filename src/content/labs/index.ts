@@ -784,4 +784,83 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+{
+    id: "C1-D2-O7-WAN-LAB",
+    slug: "network-types",
+    title: "Internet connections and network types matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O7"],
+    conceptIds: [
+      "C1-D2-O7-FIBER",
+      "C1-D2-O7-DSL",
+      "C1-D2-O7-SAT",
+      "C1-D2-O7-SAN",
+    ],
+    component: "NetworkTypesLab",
+    description:
+      "Match fiber, DSL, satellite, and SAN tickets; leave WLAN-as-WAN and WISP-as-Wi-Fi unused.",
+    solution:
+      "Fiber/ONT for low-latency clinics. DSL when copper distance rules. Satellite when only sky coverage works. SAN for block LUNs. WLAN is not the ISP uplink; WISP is not office Wi-Fi.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D3-O7-MFD-LAB",
+    slug: "mfd-deploy",
+    title: "Printer and MFD deployment matching lab",
+    kind: "printer",
+    objectiveIds: ["C1-D3-O7"],
+    conceptIds: [
+      "C1-D3-O7-ADF",
+      "C1-D3-O7-SECUREPRINT",
+      "C1-D3-O7-PRINTSERVER",
+      "C1-D3-O7-PS",
+    ],
+    component: "MfdDeployLab",
+    description:
+      "Match ADF, secure print, print server, and PostScript; leave flatbed-for-stacks and USB-share unused.",
+    solution:
+      "ADF for multi-page stacks. Secure/held print for payroll. Print server for the floor. PostScript for design vectors. Flatbed is not for 40-page stacks; USB under-desk shares are not department queues.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O8-MOBSEC-LAB",
+    slug: "mobile-device-security",
+    title: "Mobile device security matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O8"],
+    conceptIds: [
+      "C2-D2-O8-REMOTEWIPE",
+      "C2-D2-O8-SCREENLOCK",
+      "C2-D2-O8-MDMPROFILE",
+    ],
+    component: "MobileDeviceSecLab",
+    description:
+      "Match remote wipe, screen lock, MDM profile, and device encryption; leave swipe-only and skip-MDM unused.",
+    solution:
+      "Remote wipe for stolen devices. Real PIN/biometric locks — not swipe. MDM profiles for BYOD/corp. Encrypt at rest. Swipe-only unlock and hope-based factory reset stay findings.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O6-PRIVACY-LAB",
+    slug: "privacy-incident",
+    title: "Privacy, licensing, and incident matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O6"],
+    conceptIds: [
+      "C2-D4-O6-COC",
+      "C2-D4-O6-VOLATILITY",
+      "C2-D4-O6-PII",
+      "C2-D4-O6-AUP",
+    ],
+    component: "PrivacyIncidentLab",
+    description:
+      "Match chain of custody, order of volatility, PII handling, and AUP; leave reboot-first and PII-to-Slack unused.",
+    solution:
+      "Chain of custody for evidence handoffs. Capture volatile state before power-off. Need-to-know PII with retention. AUP for acceptable use. Do not reboot first or paste SSNs into public chat.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

@@ -1769,6 +1769,14 @@ Deploy like a system: place, firmware, network, time/NTP, driver language, queue
         questionIds: ["C1-D3-O7-SECUREPRINT-Q001"],
       },
       {
+        type: "lab",
+        id: "C1-D3-O7-L1-lab",
+        labId: "C1-D3-O7-MFD-LAB",
+        title: "Printer and MFD deployment matching lab",
+        prompt:
+          "Match ADF, secure print, print server, and PostScript. Leave flatbed-for-stacks and USB-share unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D3-O7-L1-cp",
         questionIds: [

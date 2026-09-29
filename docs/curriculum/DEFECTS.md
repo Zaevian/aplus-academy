@@ -1,5 +1,7 @@
 # Phase 1 confirmed defects
 
+**PBQ deepen-3d (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Four new scored LabHost labs: C1-D2-O7 WAN/network types, C1-D3-O7 MFD deploy, C2-D2-O8 mobile device security, C2-D4-O6 privacy/incident. Regen coverage (Exam Ready 51→55). See audit-log.
+
 **PBQ deepen-3c (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Four new scored LabHost labs: C1-D2-O3 hosts/appliances, C1-D3-O6 PSU, C2-D1-O2 boot/install, C2-D2-O7 workstation harden. Regen coverage (Exam Ready 47→51). See audit-log.
 
 **PBQ deepen-3b (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Four new scored LabHost labs: C1-D1-O3 MDM/cellular, C1-D2-O8 tools, C2-D2-O3 wireless security, C2-D4-O5 environment/power. No C1-D1 holdout re-add. See audit-log.
@@ -17,12 +19,12 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
 | mobile-zero-pbq | critical/high | **fixed** (O1/O2/O3) | C1-D1-O1 laptop; O2 accessories; O3 MDM/cellular lab + holdout → Exam Ready O1–O3 | `src/content/labs/index.ts`, `mobile-mdm-lab.tsx`, `registry.ts` |
-| networking-uneven-pbq | medium | **partial** (O1 ports + O3 hosts + O4 services + O8 tools) | O3 gained `C1-D2-O3-HOSTS-LAB`; O7 still lacks scored PBQ | `src/content/labs/index.ts`, `network-hosts-lab.tsx` |
+| networking-uneven-pbq | medium | **partial** (O1 ports + O3 hosts + O4 services + O7 types + O8 tools) | O7 gained `C1-D2-O7-WAN-LAB`; remaining networking gaps closed for listed O's | `src/content/labs/index.ts`, `network-types-lab.tsx` |
 | weak-rationales | medium | open | Hundreds of distractor rationales &lt;25 chars (D1 + D2) | `src/content/questions/c1/d1.ts`, `src/content/questions/c1/d2.ts` |
 | missing-misconception-tags | medium | open | Near-zero `tags[]` on Mobile/Networking banks | question banks under `src/content/questions/` |
 | diagram-simple-fallback | high | open | Mobile flagship diagrams are text fallbacks | `src/components/diagrams/` |
 | thin-vendor-sources | medium | open | Mobile lessons cite only generic CompTIA sources | `src/content/lessons/c1/d1.ts`, `src/content/sources.ts` |
-| hardware-uneven-pbq | medium | **partial** (O1 display + O6 PSU) | C1-D3 O7 still lacks scored PBQ; O1/O2/O3/O4/O5/O6/O8 have LabHost labs | `src/content/labs/index.ts`, `psu-match-lab.tsx` |
+| hardware-uneven-pbq | medium | **partial** (O1 display + O6 PSU + O7 MFD) | C1-D3 O7 gained `C1-D3-O7-MFD-LAB`; O1/O2/O3/O4/O5/O6/O7/O8 have LabHost labs | `src/content/labs/index.ts`, `mfd-deploy-lab.tsx` |
 | hardware-display-simple | high | **fixed** (this PR) | `DisplayCompareDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | hardware-weak-rationales | medium | **partial** (~18 Qs this PR) | Hundreds of D3 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c1/d3.ts` |
 | domain-hard-lock-preview | medium | **fixed** (preview this PR) | Locked domain pages showed only gate text — no syllabus counts; soft read-only preview added; hard gate preserved | `src/components/course/domain-gate.tsx` |
@@ -42,16 +44,16 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | os-matrix-simple | high | **fixed** (this PR) | `OsMatrixDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | os-edition-matrix-simple | medium | open | `EditionMatrixDiagram` still SIMPLE (lesson table covers features) | `src/components/diagrams/registry.tsx` |
 | os-weak-rationales | medium | **partial** (~10 Qs this PR) | Hundreds of C2-D1 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d1.ts` |
-| security-uneven-pbq | medium | **partial** (O1 AUTH + O3 Wi-Fi sec + O7 harden) | C2-D2 O8/O9/O11 still lack dedicated scored PBQs; O1/O2/O3/O4/O5/O6/O7/O10 covered | `src/content/labs/index.ts`, `workstation-harden-lab.tsx` |
+| security-uneven-pbq | medium | **partial** (O1 AUTH + O3 Wi-Fi sec + O7 harden + O8 mobsec) | C2-D2 O9/O11 still lack dedicated scored PBQs; O1–O8/O10 covered | `src/content/labs/index.ts`, `mobile-device-sec-lab.tsx` |
 | security-permission-simple | high | **fixed** (this PR) | `PermissionDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | security-weak-rationales | medium | **partial** (~10 O1 Qs this PR) | Hundreds of C2-D2 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d2.ts` |
 
-| ops-uneven-pbq | medium | **partial** (O2 change + O4 safety + O5 env) | C2-D4 O6/O8/O9 still lack scored PBQs; O1/O2/O3/O4/O5/O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `environment-controls-lab.tsx` |
+| ops-uneven-pbq | medium | **partial** (O2 change + O4 safety + O5 env + O6 privacy) | C2-D4 O8/O9 still lack scored PBQs; O1–O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `privacy-incident-lab.tsx` |
 | ops-weak-rationales | medium | **partial** (~11 O2 Qs this PR) | Hundreds of D4 distractor rationales still &lt;25 chars; sample change-management batch + misconception tags shipped | `src/content/questions/c2/d4.ts` |
 | ops-o4-o9-lab-gap | medium | **partial** (O4 safety lab) | `safe-bench` covered by SafetyProceduresLab; `it-room` / `evidence-timeline` / `script-viewer` / `remote-chooser` still unmet | `src/content/catalog.ts`, `safety-procedures-lab.tsx` |
 
 | coverage-states-map | medium | **fixed** (this PR) | No machine-readable educational states; `verified` overstated Exam Ready | `docs/curriculum/coverage-states.json`, `src/content/coverage-states.ts`, `scripts/write-coverage.ts` |
-| pbq-deepen-batch | medium | **partial** (+4 labs deepen-3c) | Closed C1-D2-O3, C1-D3-O6, C2-D1-O2, C2-D2-O7; remain C1-D2-O7, C1-D3-O7, C2-D1-O6/O7/O10/O11, C2-D2-O8/O9/O11, C2-D4-O6/O8/O9 | `src/content/labs/index.ts` |
+| pbq-deepen-batch | medium | **partial** (+4 labs deepen-3d) | Closed C1-D2-O7, C1-D3-O7, C2-D2-O8, C2-D4-O6; remain C2-D1-O6/O7/O10/O11, C2-D2-O9/O11, C2-D4-O8/O9 | `src/content/labs/index.ts` |
 
 ## Educational state notes (quick)
 

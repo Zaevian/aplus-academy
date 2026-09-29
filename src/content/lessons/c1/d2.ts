@@ -1441,6 +1441,14 @@ Do not mix WISP (a WAN access method) with WLAN (local 802.11). A WISP customer 
         },
       },
       {
+        type: "lab",
+        id: "C1-D2-O7-L1-lab",
+        labId: "C1-D2-O7-WAN-LAB",
+        title: "Internet connections and network types matching lab",
+        prompt:
+          "Match fiber, DSL, satellite, and SAN. Leave WLAN-as-WAN and WISP-as-Wi-Fi unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D2-O7-L1-cp",
         questionIds: [

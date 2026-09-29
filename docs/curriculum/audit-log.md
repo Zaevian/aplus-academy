@@ -458,6 +458,27 @@ C1-D1-O3; C1-D2-O3/O7/O8; C1-D3-O6/O7; C2-D1-O2/O6/O7/O10/O11; C2-D2-O3/O7/O8/O9
 ### Verdict
 Mobile can now reach Exam Ready where scored PBQ + holdout exist (O1/O2). Curriculum still **not fully Exam Ready** end-to-end.
 
+## 2026-09-28 — PBQ deepen-3d (+4 LabHost; extends #11)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` @ prior tip 3a6b138)  
+**Live:** https://aplus-academy-gules.vercel.app/
+
+### Shipped
+1. **Four new scored LabHost labs** (diverse domains; matching tickets with distractors):
+   - `C1-D2-O7-WAN-LAB` → `NetworkTypesLab` (fiber / DSL / satellite / SAN)
+   - `C1-D3-O7-MFD-LAB` → `MfdDeployLab` (ADF / secure print / print server / PostScript)
+   - `C2-D2-O8-MOBSEC-LAB` → `MobileDeviceSecLab` (remote wipe / screen lock / MDM / encryption)
+   - `C2-D4-O6-PRIVACY-LAB` → `PrivacyIncidentLab` (CoC / volatility / PII / AUP)
+2. Lessons wired with lab blocks; labs/index + implemented + LabHost registered; coverage-states regenerated (Exam Ready **51→55**).
+
+### Still empty pbqLabIds (skip FND)
+C2-D1-O6/O7/O10/O11; C2-D2-O9/O11; C2-D4-O8/O9.
+
+### Verdict
+Four more high-weight PBQ gaps closed on #11. Curriculum still **not fully Exam Ready** end-to-end.
+
+---
 ## 2026-09-28 — PBQ deepen-3c (+4 LabHost; extends #11)
 
 **Auditor / implementer:** Miyuki  

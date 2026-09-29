@@ -865,6 +865,14 @@ Customer materials on a desk, a printer output tray, or an unlocked desktop are 
         questionIds: ["C2-D4-O6-COC-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D4-O6-L1-lab",
+        labId: "C2-D4-O6-PRIVACY-LAB",
+        title: "Privacy, licensing, and incident matching lab",
+        prompt:
+          "Match chain of custody, order of volatility, PII handling, and AUP. Leave reboot-first and PII-to-Slack unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D4-O6-L1-cp",
         questionIds: [

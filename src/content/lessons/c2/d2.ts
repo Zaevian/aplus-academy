@@ -1389,6 +1389,14 @@ MFA authenticator apps on a lost phone are an identity incident, not only a hard
         questionIds: ["C2-D2-O8-MDMPROFILE-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D2-O8-L1-lab",
+        labId: "C2-D2-O8-MOBSEC-LAB",
+        title: "Mobile device security matching lab",
+        prompt:
+          "Match remote wipe, screen lock, MDM profile, and device encryption. Leave swipe-only and skip-MDM unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D2-O8-L1-cp",
         questionIds: [

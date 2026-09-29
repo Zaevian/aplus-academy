@@ -43,9 +43,13 @@ describe("educational coverage states", () => {
       "C2-D1-O2",
       "C2-D2-O3",
       "C2-D2-O7",
+      "C2-D2-O8",
       "C2-D3-O3",
       "C2-D4-O4",
       "C2-D4-O5",
+      "C2-D4-O6",
+      "C1-D2-O7",
+      "C1-D3-O7",
     ];
     for (const id of ids) {
       const row = states.find((r) => r.objectiveId === id);
