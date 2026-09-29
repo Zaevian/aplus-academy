@@ -619,4 +619,86 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+
+  {
+    id: "C1-D1-O3-MDM-LAB",
+    slug: "mobile-mdm",
+    title: "Mobile MDM and cellular matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D1-O3"],
+    conceptIds: [
+      "C1-D1-O3-ESIM",
+      "C1-D1-O3-MDM",
+      "C1-D1-O3-BYOD",
+      "C1-D1-O3-DATACAP",
+    ],
+    component: "MobileMdmLab",
+    description:
+      "Match eSIM/cellular identity, MDM enroll, BYOD selective wipe, and data-cap tickets; leave full-wipe-BYOD and WLAN-for-GPS unused.",
+    solution:
+      "eSIM/SIM for missing cellular. MDM enroll for corp compliance. Selective wipe for BYOD return. Data meter / Wi-Fi sync for caps. Do not full-wipe personal BYOD or swap WLAN for GPS faults.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D2-O8-TOOLS-LAB",
+    slug: "network-tools",
+    title: "Networking tools matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O8"],
+    conceptIds: [
+      "C1-D2-O8-CRIMPER",
+      "C1-D2-O8-PUNCHDOWN",
+      "C1-D2-O8-TONER",
+      "C1-D2-O8-ANALYZER",
+    ],
+    component: "NetworkToolsLab",
+    description:
+      "Match crimper, punchdown, toner, and Wi-Fi analyzer tickets; leave loopback-for-Wi-Fi and tap-for-crimp unused.",
+    solution:
+      "Crimper terminates patch plugs. Punchdown lands horizontal cable on IDC. Toner finds unlabeled drops. Wi-Fi analyzer for channel overlap. Loopback is not RF planning; a tap does not terminate cable.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O3-WIFISEC-LAB",
+    slug: "wireless-security",
+    title: "Wireless security protocols matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O3"],
+    conceptIds: [
+      "C2-D2-O3-WPA3",
+      "C2-D2-O3-WPA2",
+      "C2-D2-O3-AES",
+      "C2-D2-O3-RADIUS",
+      "C2-D2-O3-KERBEROS",
+    ],
+    component: "WirelessSecurityLab",
+    description:
+      "Match WPA3-Personal, Enterprise+RADIUS, AES-only, and Kerberos SSO; leave WEP/open and TKIP-for-speed unused.",
+    solution:
+      "WPA3-Personal (SAE) upgrades guest PSK. Enterprise+RADIUS for per-user corp Wi-Fi. AES-only — disable TKIP. Kerberos is domain SSO, not an AP passphrase. WEP/open and TKIP stay findings.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O5-ENV-LAB",
+    slug: "environment-controls",
+    title: "Environmental and power controls matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O5"],
+    conceptIds: [
+      "C2-D4-O5-UPS",
+      "C2-D4-O5-BROWNOUT",
+      "C2-D4-O5-MSDS",
+      "C2-D4-O5-HUMIDITY",
+    ],
+    component: "EnvironmentControlsLab",
+    description:
+      "Match UPS, surge suppressor, SDS disposal, and humidity/ESD tickets; leave daisy-chain and water-on-lithium unused.",
+    solution:
+      "UPS for brownout/blackout ride-through. Surge when no battery is needed. SDS for toner/battery disposal. Humidity/vents for ESD/dust. Never daisy-chain UPS/strips or water lithium like Class A trash.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

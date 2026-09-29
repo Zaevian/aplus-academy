@@ -1054,6 +1054,14 @@ Core 2 will return to mobile security (locks, remote wipe, encryption) in more d
         ],
       },
       {
+        type: "lab",
+        id: "C1-D1-O3-L3-lab",
+        labId: "C1-D1-O3-MDM-LAB",
+        title: "Mobile MDM and cellular matching lab",
+        prompt:
+          "Match eSIM identity, MDM enroll, BYOD selective wipe, and data-cap tickets. Leave full-wipe-BYOD and WLAN-for-GPS unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D1-O3-L3-sum",
         bullets: [

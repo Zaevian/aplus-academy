@@ -757,6 +757,14 @@ Place the UPS where it can breathe, replace batteries on the vendor's calendar (
         ],
       },
       {
+        type: "lab",
+        id: "C2-D4-O5-L1-lab",
+        labId: "C2-D4-O5-ENV-LAB",
+        title: "Environmental and power controls matching lab",
+        prompt:
+          "Match UPS, surge suppressor, SDS disposal, and humidity/ESD tickets. Leave daisy-chain and water-on-lithium unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D4-O5-L1-sum",
         bullets: [

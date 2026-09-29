@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:04:19.539Z",
+  "generated": "2026-09-29T00:07:43.140Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -271,7 +271,9 @@
         "C1-D1-O3-L3"
       ],
       "interactionIds": [
-        "C1-D1-O3-L1-d1"
+        "C1-D1-O3-L1-d1",
+        "C1-D1-O3-L3-lab",
+        "C1-D1-O3-MDM-LAB"
       ],
       "quizQuestionIds": [
         "C1-D1-O3-BYOD-Q001",
@@ -313,7 +315,9 @@
         "C1-D1-O3-SYNC-Q004",
         "C1-D1-O3-SYNC-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O3-MDM-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -700,7 +704,9 @@
         "C1-D2-O8-L1"
       ],
       "interactionIds": [
-        "C1-D2-O8-L1-see1"
+        "C1-D2-O8-L1-see1",
+        "C1-D2-O8-L1-lab",
+        "C1-D2-O8-TOOLS-LAB"
       ],
       "quizQuestionIds": [
         "C1-D2-O8-ANALYZER-Q001",
@@ -734,7 +740,9 @@
         "C1-D2-O8-TONER-Q003",
         "C1-D2-O8-TONER-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O8-TOOLS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2387,7 +2395,10 @@
       "lessonIds": [
         "C2-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O3-L1-lab",
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O3-AES-Q001",
         "C2-D2-O3-AES-Q002",
@@ -2420,7 +2431,9 @@
         "C2-D2-O3-WPA3-Q005",
         "C2-D2-O3-WPA3-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3264,7 +3277,9 @@
         "C2-D4-O5-L1"
       ],
       "interactionIds": [
-        "C2-D4-O5-L1-see1"
+        "C2-D4-O5-L1-see1",
+        "C2-D4-O5-L1-lab",
+        "C2-D4-O5-ENV-LAB"
       ],
       "quizQuestionIds": [
         "C2-D4-O5-BROWNOUT-Q001",
@@ -3295,7 +3310,9 @@
         "C2-D4-O5-UPS-Q006",
         "C2-D4-O5-UPS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O5-ENV-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

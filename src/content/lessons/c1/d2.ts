@@ -1583,6 +1583,14 @@ A technician who loves one tool will mis-apply it. The analyzer will not tell yo
         ],
       },
       {
+        type: "lab",
+        id: "C1-D2-O8-L1-lab",
+        labId: "C1-D2-O8-TOOLS-LAB",
+        title: "Networking tools matching lab",
+        prompt:
+          "Match crimper, punchdown, toner, and Wi-Fi analyzer tickets. Leave loopback-for-Wi-Fi and tap-for-crimp unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D2-O8-L1-sum",
         bullets: [

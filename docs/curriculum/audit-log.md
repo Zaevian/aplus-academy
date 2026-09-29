@@ -7,6 +7,25 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ---
 
+## 2026-09-28 — PBQ deepen-3b (+4 scored LabHost labs on #11)
+
+**Auditor/Implementer:** Miyuki  
+**Branch:** `miyuki/pbq-deepen-3` (updates open PR #11 in place; tip was 528162c)  
+**Official:** CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps
+
+### Shipped
+- `C1-D1-O3-MDM-LAB` → `MobileMdmLab` (eSIM, MDM enroll, BYOD selective wipe, data cap)
+- `C1-D2-O8-TOOLS-LAB` → `NetworkToolsLab` (crimper, punchdown, toner, Wi-Fi analyzer)
+- `C2-D2-O3-WIFISEC-LAB` → `WirelessSecurityLab` (WPA3-Personal, Enterprise+RADIUS, AES, Kerberos)
+- `C2-D4-O5-ENV-LAB` → `EnvironmentControlsLab` (UPS, surge, SDS, humidity/ESD)
+- Full wire: `labs/index.ts`, `implemented.ts`, `lab-host.tsx`, lesson lab blocks
+- Regenerated `coverage-states.json` / `coverage.json`; did **not** re-touch C1-D1 holdout
+
+### Coverage
+Exam Ready rises with the four new PBQ+holdout objectives (see regenerated summary). Remaining empty PBQ (skip FND): C1-D2-O3/O7, C1-D3-O6/O7, C2-D1-O2/O6/O7/O10/O11, C2-D2-O7/O8/O9/O11, C2-D4-O6/O8/O9.
+
+---
+
 ## 2026-09-28 — C1 Domain 1 Mobile Devices (first weekly rotation)
 
 **Auditor:** Miyuki  

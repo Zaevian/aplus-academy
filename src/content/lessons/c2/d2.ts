@@ -538,6 +538,14 @@ Hardening an AP: unique admin password, HTTPS or SSH management only from a mana
         ],
       },
       {
+        type: "lab",
+        id: "C2-D2-O3-L1-lab",
+        labId: "C2-D2-O3-WIFISEC-LAB",
+        title: "Wireless security protocols matching lab",
+        prompt:
+          "Match WPA3-Personal, Enterprise+RADIUS, AES-only, and Kerberos SSO. Leave WEP/open and TKIP-for-speed unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D2-O3-L1-sum",
         bullets: [
