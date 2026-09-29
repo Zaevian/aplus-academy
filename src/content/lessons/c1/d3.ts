@@ -230,6 +230,14 @@ Technician reading of a spec sheet: do not upsell 4K at 13 inches to a user who 
         ],
       },
       {
+        type: "lab",
+        id: "C1-D3-O1-L2-lab",
+        labId: "C1-D3-O1-DISPLAY-LAB",
+        title: "Display technology matching lab",
+        prompt:
+          "Match IPS, high-refresh TN, OLED, and digitizer choices to the design, esports, film, and touch-dead tickets. Leave the CCFL inverter and whole-panel-for-touch unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D3-O1-L2-sum",
         bullets: [

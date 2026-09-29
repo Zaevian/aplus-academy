@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T23:29:41.480Z",
+  "generated": "2026-09-28T23:34:45.313Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -849,7 +849,9 @@
       ],
       "interactionIds": [
         "C1-D3-O1-L1-d1",
-        "C1-D3-O1-L2-d1"
+        "C1-D3-O1-L2-d1",
+        "C1-D3-O1-L2-lab",
+        "C1-D3-O1-DISPLAY-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O1-DIGITIZER-Q001",
@@ -883,7 +885,9 @@
         "C1-D3-O1-VA-Q003",
         "C1-D3-O1-VA-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O1-DISPLAY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1300,7 +1304,9 @@
       "interactionIds": [
         "C1-D4-O1-L1-d1",
         "C1-D4-O1-L2-d1",
-        "C1-D4-O1-L3-d1"
+        "C1-D4-O1-L3-d1",
+        "C1-D4-O1-L3-lab",
+        "C1-D4-O1-HYPERVISOR-LAB"
       ],
       "quizQuestionIds": [
         "C1-D4-O1-CONTAINER-Q001",
@@ -1346,7 +1352,9 @@
         "C1-D4-O1-VM-Q006",
         "C1-D4-O1-VM-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D4-O1-HYPERVISOR-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1601,7 +1609,9 @@
       ],
       "interactionIds": [
         "C1-D5-O4-L1-d1",
-        "C1-D5-O4-L2-d1"
+        "C1-D5-O4-L2-d1",
+        "C1-D5-O4-L2-lab",
+        "C1-D5-O4-MOBILE-HW-LAB"
       ],
       "quizQuestionIds": [
         "C1-D5-O4-DIGITIZER-Q001",
@@ -1635,7 +1645,9 @@
         "C1-D5-O4-SWELL-Q005",
         "C1-D5-O4-SWELL-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D5-O4-MOBILE-HW-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3042,7 +3054,9 @@
         "C2-D3-O3-L2"
       ],
       "interactionIds": [
-        "C2-D3-O3-L1-d1"
+        "C2-D3-O3-L1-d1",
+        "C2-D3-O3-L2-lab",
+        "C2-D3-O3-COMPROMISE-LAB"
       ],
       "quizQuestionIds": [
         "C2-D3-O3-DATAUSAGE-Q001",
@@ -3076,7 +3090,9 @@
         "C2-D3-O3-SPOOFAPP-Q008",
         "C2-D3-O3-SPOOFAPP-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D3-O3-COMPROMISE-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

@@ -753,6 +753,14 @@ Tell the user which accounts to rotate from a **clean** device: Apple ID / Googl
         ],
       },
       {
+        type: "lab",
+        id: "C2-D3-O3-L2-lab",
+        labId: "C2-D3-O3-COMPROMISE-LAB",
+        title: "Compromised phone triage lab",
+        prompt:
+          "Match sideload, jailbreak, data-spike, and overlay scareware tickets to FIRST software actions. Leave battery-swap and raise-cap unused.",
+      },
+      {
         type: "summary",
         id: "C2-D3-O3-L2-sum",
         bullets: [

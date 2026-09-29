@@ -860,6 +860,14 @@ Document IMEI/serial, MDM state, the apps you removed, and that you did not char
         },
       },
       {
+        type: "lab",
+        id: "C1-D5-O4-L2-lab",
+        labId: "C1-D5-O4-MOBILE-HW-LAB",
+        title: "Mobile hardware troubleshooting lab",
+        prompt:
+          "Match swollen-battery, digitizer, liquid, and charge-path FIRST actions. Leave factory-reset-first and buy-a-phone unused.",
+      },
+      {
         type: "summary",
         id: "C1-D5-O4-L2-sum",
         bullets: [

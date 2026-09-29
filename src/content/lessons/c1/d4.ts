@@ -368,6 +368,14 @@ On the exam, a stem that says "lightweight, shares the host OS, microservices" i
         },
       },
       {
+        type: "lab",
+        id: "C1-D4-O1-L3-lab",
+        labId: "C1-D4-O1-HYPERVISOR-LAB",
+        title: "Virtualization stack matching lab",
+        prompt:
+          "Match Type 1, Type 2, VDI, and containers to the datacenter, laptop-lab, clinic, and microservice tickets. Leave SaaS mail and thick-client reimage unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D4-O1-L3-sum",
         bullets: [
