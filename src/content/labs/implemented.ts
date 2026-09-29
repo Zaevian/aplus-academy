@@ -32,6 +32,10 @@ export const LAB_HOST_COMPONENTS = [
   "HypervisorMatchLab",
   "MobileHardwareTsLab",
   "CompromisedPhoneLab",
+  "MobileAccessoriesLab",
+  "NetworkServicesLab",
+  "OsTypesLab",
+  "SafetyProceduresLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];

@@ -222,6 +222,14 @@ ChromeOS devices have an **Auto Update Expiration** printed per model. After tha
         ],
       },
       {
+        type: "lab",
+        id: "C2-D1-O1-L2-lab",
+        labId: "C2-D1-O1-OSTYPES-LAB",
+        title: "OS types and filesystems matching lab",
+        prompt:
+          "Match Windows domain, Linux/ext4, ChromeOS kiosk, and macOS/APFS tickets. Leave NTFS-USB-for-Mac and Win7-EOL unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D1-O1-L2-sum",
         bullets: [

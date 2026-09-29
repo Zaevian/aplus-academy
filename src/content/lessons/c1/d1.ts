@@ -677,6 +677,14 @@ Match the accessory to the constraint: warehouse gloves → not a fingerprint-on
         ],
       },
       {
+        type: "lab",
+        id: "C1-D1-O2-L2-lab",
+        labId: "C1-D1-O2-ACCESSORY-LAB",
+        title: "Mobile accessories matching lab",
+        prompt:
+          "Match NFC tap, Thunderbolt dock, port replicator, and Bluetooth headset tickets. Leave WLAN-for-pen and Lightning-on-Android unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D1-O2-L2-sum",
         bullets: [

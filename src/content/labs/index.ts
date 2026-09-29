@@ -537,4 +537,86 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+  {
+    id: "C1-D1-O2-ACCESSORY-LAB",
+    slug: "mobile-accessories",
+    title: "Mobile accessories matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D1-O2"],
+    conceptIds: [
+      "C1-D1-O2-NFC",
+      "C1-D1-O2-BT",
+      "C1-D1-O2-DOCK",
+      "C1-D1-O2-REPLICATOR",
+    ],
+    component: "MobileAccessoriesLab",
+    description:
+      "Match NFC tap, Thunderbolt dock, port replicator, and Bluetooth headset tickets; leave WLAN-for-pen and Lightning-on-Android unused.",
+    solution:
+      "NFC for short-range badge taps. Thunderbolt/USB-C dock for charge + displays + Ethernet. Port replicator multiplies ports without PD. Headset silence is profile/default device. WLAN does not fix pen offset; Lightning is not for USB-C Android.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D2-O4-SERVICES-LAB",
+    slug: "network-services",
+    title: "DNS DHCP VLAN VPN matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O4"],
+    conceptIds: [
+      "C1-D2-O4-DNSREC",
+      "C1-D2-O4-DHCPPOOL",
+      "C1-D2-O4-VLAN",
+      "C1-D2-O4-VPN",
+    ],
+    component: "NetworkServicesLab",
+    description:
+      "Match DNS A/AAAA, DHCP reservation, VLAN guest isolation, and VPN remote access; leave port-forward-as-VPN and mask-as-VLAN unused.",
+    solution:
+      "Fix names with DNS A/AAAA. Sticky printer IPs use DHCP reservation. Guests get a separate VLAN. Hotel workers use client VPN. Port-forward is not a corp VPN; changing one PC mask is not a VLAN.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O1-OSTYPES-LAB",
+    slug: "os-types",
+    title: "OS types and filesystems matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O1"],
+    conceptIds: [
+      "C2-D1-O1-WIN",
+      "C2-D1-O1-LINUX",
+      "C2-D1-O1-MAC",
+      "C2-D1-O1-CHROMEOS",
+      "C2-D1-O1-FS",
+      "C2-D1-O1-EOL",
+    ],
+    component: "OsTypesLab",
+    description:
+      "Match Windows domain, Linux/ext4, ChromeOS kiosk, and macOS/APFS tickets; leave NTFS-USB-for-Mac and Win7-EOL unused.",
+    solution:
+      "Windows for domain GPO. Linux with ext4/XFS for the forge VM. ChromeOS for managed lobby kiosks. macOS with APFS for creative Macs. Shared flash for Mac+Windows wants exFAT; EOL Win7 is unsupported even if it boots.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O4-SAFETY-LAB",
+    slug: "safety-procedures",
+    title: "Safety procedures matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O4"],
+    conceptIds: [
+      "C2-D4-O4-ESD",
+      "C2-D4-O4-GROUND",
+      "C2-D4-O4-PPE",
+      "C2-D4-O4-LIFT",
+    ],
+    component: "SafetyProceduresLab",
+    description:
+      "Match ESD, disconnect-power, PPE, and team-lift tickets; leave open-PSU and Class-A-on-electrical unused.",
+    solution:
+      "ESD strap+mat before boards. Unplug/drain before opening a case. Goggles/mask for toner dust. Team-lift heavy UPS gear. Never service inside a PSU; electrical fires are not Class A water jobs.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

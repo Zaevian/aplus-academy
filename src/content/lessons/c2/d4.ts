@@ -637,6 +637,14 @@ Make the bench safe **before** you open the case. That order is the whole object
         ],
       },
       {
+        type: "lab",
+        id: "C2-D4-O4-L1-lab",
+        labId: "C2-D4-O4-SAFETY-LAB",
+        title: "Safety procedures matching lab",
+        prompt:
+          "Match ESD, disconnect-power, PPE, and team-lift tickets. Leave open-PSU and Class-A-on-electrical unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D4-O4-L1-sum",
         bullets: [

@@ -908,6 +908,14 @@ Do not confuse VLAN with VPN. VLAN is a LAN segmentation tool. VPN is an encrypt
         ],
       },
       {
+        type: "lab",
+        id: "C1-D2-O4-L2-lab",
+        labId: "C1-D2-O4-SERVICES-LAB",
+        title: "DNS DHCP VLAN VPN matching lab",
+        prompt:
+          "Match DNS A/AAAA, DHCP reservation, VLAN guest isolation, and VPN remote access. Leave port-forward-as-VPN and mask-as-VLAN unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D2-O4-L2-sum",
         bullets: [

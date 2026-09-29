@@ -415,3 +415,27 @@ Deepen Ops O4/O5/O6/O8/O9 PBQs, or second-pass remediations after open PRs merge
 ### Verdict
 Coverage map now machine-readable with honest Exam Ready gates. Four high-weight PBQ gaps closed. Curriculum still **not fully Exam Ready** end-to-end.
 
+---
+
+## 2026-09-28 — PBQ deepen-3 + Mobile holdout (C1-D1)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` from master @ 11a8c1a)  
+**Live:** https://aplus-academy-gules.vercel.app/  
+**HOLDOUT_DOMAIN_IDS:** added **C1-D1** (was the holdout gap called out after #10). Left C1-D2…C2-D4 unchanged.
+
+### Shipped
+1. **C1-D1 Mobile holdout** — `HOLDOUT_DOMAIN_IDS` includes Mobile; practice/review pools now disjoint (tests updated; mirror-pool assertion removed).
+2. **Four new scored LabHost labs** (mix across cores/domains; matching tickets with distractors):
+   - `C1-D1-O2-ACCESSORY-LAB` → `MobileAccessoriesLab` (NFC / dock / replicator / headset)
+   - `C1-D2-O4-SERVICES-LAB` → `NetworkServicesLab` (DNS / DHCP reservation / VLAN / VPN)
+   - `C2-D1-O1-OSTYPES-LAB` → `OsTypesLab` (Windows / Linux / ChromeOS / macOS + FS/EOL distractors)
+   - `C2-D4-O4-SAFETY-LAB` → `SafetyProceduresLab` (ESD / disconnect / PPE / lift)
+3. Lessons wired with lab blocks; labs/index + implemented + LabHost registered; coverage-states regenerated.
+
+### Still empty pbqLabIds (skip FND)
+C1-D1-O3; C1-D2-O3/O7/O8; C1-D3-O6/O7; C2-D1-O2/O6/O7/O10/O11; C2-D2-O3/O7/O8/O9/O11; C2-D4-O5/O6/O8/O9.
+
+### Verdict
+Mobile can now reach Exam Ready where scored PBQ + holdout exist (O1/O2). Curriculum still **not fully Exam Ready** end-to-end.
+

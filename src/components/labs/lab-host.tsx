@@ -35,6 +35,10 @@ import { DisplayMatchLab } from "@/components/labs/display-match-lab";
 import { HypervisorMatchLab } from "@/components/labs/hypervisor-match-lab";
 import { MobileHardwareTsLab } from "@/components/labs/mobile-hardware-ts-lab";
 import { CompromisedPhoneLab } from "@/components/labs/compromised-phone-lab";
+import { MobileAccessoriesLab } from "@/components/labs/mobile-accessories-lab";
+import { NetworkServicesLab } from "@/components/labs/network-services-lab";
+import { OsTypesLab } from "@/components/labs/os-types-lab";
+import { SafetyProceduresLab } from "@/components/labs/safety-procedures-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -75,6 +79,10 @@ export const LAB_COMPONENT_MAP: Record<
   HypervisorMatchLab,
   MobileHardwareTsLab,
   CompromisedPhoneLab,
+  MobileAccessoriesLab,
+  NetworkServicesLab,
+  OsTypesLab,
+  SafetyProceduresLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

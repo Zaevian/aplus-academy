@@ -1,6 +1,6 @@
 # Phase 1 confirmed defects
 
-**Post-merge resume (2026-09-28 ET):** master @ fd86077; branch `miyuki/coverage-map-pbq-deepen`. HOLDOUT_DOMAIN_IDS not reopened. Coverage educational states + 4 PBQ labs shipped; see audit-log entry.
+**PBQ deepen-3 (2026-09-28 ET):** master @ 11a8c1a; branch `miyuki/pbq-deepen-3`. Added **C1-D1** to `HOLDOUT_DOMAIN_IDS` (Mobile holdout gap from #10). Four new scored LabHost labs (O2 accessories, O4 DNS/DHCP/VLAN/VPN, O1 OS types, O4 safety). See audit-log.
 
 Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–4 audits, 2026-09-28.
 Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
@@ -8,12 +8,12 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
 | mastery-inflation | critical | **fixed** (this PR) | Any correct (including assisted retry after explanation) advanced easiness/interval; domain quiz always recorded perfect score + empty `missedConceptIds` | `src/lib/review.ts`, `src/lib/progress-actions.ts`, `src/components/lesson/knowledge-check.tsx`, `src/components/quiz/quiz-player.tsx`, `src/db/client.ts` |
-| no-holdout-pool | high | **partial** (C1-D2 + C1-D3 + C1-D4 + C1-D5 + C2-D1 + C2-D2 + C2-D3 + C2-D4) | Holdout split live for Networking, Hardware, Virtualization/Cloud, Troubleshooting, Operating Systems, Security, Software Troubleshooting, and Operational Procedures (`HOLDOUT_DOMAIN_IDS`); Mobile still mirrors pools | `src/content/registry.ts`, domain quiz + practice pools |
+| no-holdout-pool | high | **partial** (C1-D1…C2-D4) | Holdout split live for Mobile + Networking + Hardware + Virtualization/Cloud + Troubleshooting + OS + Security + Software-TS + Ops (`HOLDOUT_DOMAIN_IDS` now includes **C1-D1**) | `src/content/registry.ts`, domain quiz + practice pools |
 | mock-empty-exposure | high | **fixed** (this PR) | Mock used `unseenFirst(pool, new Set(), 89)` | `src/app/exam/[core]/page.tsx`, `exposedQuestionIds` in `src/lib/progress-actions.ts` |
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
-| mobile-zero-pbq | critical/high | **fixed** (≥1 lab, this PR) | C1-D1 had 0 `pbqLabIds` | `src/content/labs/index.ts`, `src/components/labs/laptop-upgrade-lab.tsx`, `src/content/labs/implemented.ts`, `src/components/labs/lab-host.tsx` |
-| networking-uneven-pbq | medium | **partial** (O1 ports lab) | O1 gained `C1-D2-O1-PORTS-LAB`; O3/O4/O7/O8 still lack scored PBQs | `src/content/labs/index.ts`, `src/components/labs/ports-drill-lab.tsx`, catalog `requiredInteractions` |
+| mobile-zero-pbq | critical/high | **fixed** (O1 laptop + O2 accessories) | C1-D1-O1 laptop lab; O2 accessories lab + domain holdout enable Exam Ready for O1/O2 | `src/content/labs/index.ts`, `mobile-accessories-lab.tsx`, `registry.ts` |
+| networking-uneven-pbq | medium | **partial** (O1 ports + O4 services) | O4 gained `C1-D2-O4-SERVICES-LAB`; O3/O7/O8 still lack scored PBQs | `src/content/labs/index.ts`, `network-services-lab.tsx` |
 | weak-rationales | medium | open | Hundreds of distractor rationales &lt;25 chars (D1 + D2) | `src/content/questions/c1/d1.ts`, `src/content/questions/c1/d2.ts` |
 | missing-misconception-tags | medium | open | Near-zero `tags[]` on Mobile/Networking banks | question banks under `src/content/questions/` |
 | diagram-simple-fallback | high | open | Mobile flagship diagrams are text fallbacks | `src/components/diagrams/` |
@@ -34,7 +34,7 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | troubleshooting-o4-zero-pbq | high | **fixed** (mobile HW lab this PR) | C1-D5-O4 scored `MobileHardwareTsLab`; catalog `device-inspect` still a soft gap vs interactive inspect UI | `src/content/labs/index.ts`, `mobile-hardware-ts-lab.tsx` |
 | troubleshooting-display-simple | high | **fixed** (this PR) | `DisplayFaultDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | troubleshooting-weak-rationales | medium | **partial** (~11 Qs this PR) | Hundreds of D5 distractor rationales still &lt;25 chars; O3 sample + misconception tags shipped | `src/content/questions/c1/d5.ts` |
-| os-uneven-pbq | medium | **partial** (O3 edition lab this PR) | C2-D1 O1/O2/O6/O7/O10/O11 still lack scored PBQs; O3/O4/O5/O8/O9 have LabHost labs | `src/content/labs/index.ts` |
+| os-uneven-pbq | medium | **partial** (O1 OS types + O3 edition) | C2-D1 O2/O6/O7/O10/O11 still lack scored PBQs; O1/O3/O4/O5/O8/O9 have LabHost labs | `src/content/labs/index.ts`, `os-types-lab.tsx` |
 | os-matrix-simple | high | **fixed** (this PR) | `OsMatrixDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | os-edition-matrix-simple | medium | open | `EditionMatrixDiagram` still SIMPLE (lesson table covers features) | `src/components/diagrams/registry.tsx` |
 | os-weak-rationales | medium | **partial** (~10 Qs this PR) | Hundreds of C2-D1 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d1.ts` |
@@ -42,12 +42,12 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | security-permission-simple | high | **fixed** (this PR) | `PermissionDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | security-weak-rationales | medium | **partial** (~10 O1 Qs this PR) | Hundreds of C2-D2 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d2.ts` |
 
-| ops-uneven-pbq | medium | **partial** (O2 change lab this PR) | C2-D4 O4/O5/O6/O8/O9 still lack scored PBQs; O1/O2/O3/O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `change-pipeline-lab.tsx` |
+| ops-uneven-pbq | medium | **partial** (O2 change + O4 safety) | C2-D4 O5/O6/O8/O9 still lack scored PBQs; O1/O2/O3/O4/O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `safety-procedures-lab.tsx` |
 | ops-weak-rationales | medium | **partial** (~11 O2 Qs this PR) | Hundreds of D4 distractor rationales still &lt;25 chars; sample change-management batch + misconception tags shipped | `src/content/questions/c2/d4.ts` |
-| ops-o4-o9-lab-gap | medium | open | Catalog `safe-bench` / `it-room` / `evidence-timeline` / `script-viewer` / `remote-chooser` unmet by scored labs | `src/content/catalog.ts`, labs index |
+| ops-o4-o9-lab-gap | medium | **partial** (O4 safety lab) | `safe-bench` covered by SafetyProceduresLab; `it-room` / `evidence-timeline` / `script-viewer` / `remote-chooser` still unmet | `src/content/catalog.ts`, `safety-procedures-lab.tsx` |
 
 | coverage-states-map | medium | **fixed** (this PR) | No machine-readable educational states; `verified` overstated Exam Ready | `docs/curriculum/coverage-states.json`, `src/content/coverage-states.ts`, `scripts/write-coverage.ts` |
-| pbq-deepen-batch | medium | **partial** (4 labs this PR) | Many 0-PBQ objectives remain across C1-D1/D2, C1-D3 O6/O7, C2-D1/D2/D4 | `src/content/labs/index.ts` |
+| pbq-deepen-batch | medium | **partial** (+4 labs deepen-3) | Closed C1-D1-O2, C1-D2-O4, C2-D1-O1, C2-D4-O4; remain C1-D1-O3, C1-D2-O3/O7/O8, C1-D3-O6/O7, C2-D1-O2/O6/O7/O10/O11, C2-D2-O3/O7/O8/O9/O11, C2-D4-O5/O6/O8/O9 | `src/content/labs/index.ts` |
 
 ## Educational state notes (quick)
 
