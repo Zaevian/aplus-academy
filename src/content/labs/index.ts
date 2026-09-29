@@ -863,4 +863,163 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+{
+    id: "C2-D1-O6-SETTINGS-LAB",
+    slug: "windows-settings",
+    title: "Windows settings and Control Panel matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O6"],
+    conceptIds: [
+      "C2-D1-O6-POWER",
+      "C2-D1-O6-FIREWALL",
+      "C2-D1-O6-INDEXING",
+      "C2-D1-O6-EXPLOREROPT",
+    ],
+    component: "WindowsSettingsLab",
+    description:
+      "Match power, firewall profile, indexing, and Explorer extensions; leave disable-firewall and SSD-defrag unused.",
+    solution:
+      "Power plans for overnight drain. Firewall private vs public profiles. Indexing for slow search. Show extensions against .pdf.exe. Do not disable the firewall or defrag SSDs for search.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O7-CLIENTNET-LAB",
+    slug: "win-client-net",
+    title: "Windows client networking matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O7"],
+    conceptIds: [
+      "C2-D1-O7-WORKGROUP",
+      "C2-D1-O7-DOMAINJOIN",
+      "C2-D1-O7-UNC",
+      "C2-D1-O7-METERED",
+    ],
+    component: "WinClientNetLab",
+    description:
+      "Match workgroup, domain join, UNC, and metered connection; leave proxy-for-SMB and fake-domain unused.",
+    solution:
+      "Workgroup for home peers. Domain join for GPO. UNC for shares. Metered for LTE caps. HTTP proxy is not SMB; renaming a workgroup is not a domain join.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O10-APPINSTALL-LAB",
+    slug: "app-install",
+    title: "Application installation requirements matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O10"],
+    conceptIds: [
+      "C2-D1-O10-X86APP",
+      "C2-D1-O10-VRAM",
+      "C2-D1-O10-ISO",
+      "C2-D1-O10-IMPACT",
+    ],
+    component: "AppInstallLab",
+    description:
+      "Match x86/WoW64, GPU+VRAM, ISO media, and change-window impact; leave force-x64 and ignore-VRAM unused.",
+    solution:
+      "Install the supported 32-bit build on WoW64. Check dedicated GPU VRAM for CAD. Mount ISO for offline media. Schedule installs for business impact. Do not force wrong architecture or treat RAM as VRAM.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O11-CLOUDPROD-LAB",
+    slug: "cloud-productivity",
+    title: "Cloud-based productivity matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O11"],
+    conceptIds: [
+      "C2-D1-O11-EMAILSYNC",
+      "C2-D1-O11-LICENSE",
+      "C2-D1-O11-COLLAB",
+    ],
+    component: "CloudProductivityLab",
+    description:
+      "Match mailbox sync, license SKU, collab suite, and Files On-Demand; leave shared-password and local-only unused.",
+    solution:
+      "Cloud mailbox sync for mail/calendar. Assign SKUs for Teams/docs. Collab suite for co-authoring. Files On-Demand for offline sync. No shared cloud passwords; local-only skips the objective.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O9-DESTROY-LAB",
+    slug: "data-destruction",
+    title: "Data destruction and disposal matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O9"],
+    conceptIds: [
+      "C2-D2-O9-DEGAUSS",
+      "C2-D2-O9-WIPE",
+      "C2-D2-O9-SHRED",
+      "C2-D2-O9-COD",
+    ],
+    component: "DataDestructionLab",
+    description:
+      "Match degauss, wipe, shred, and Certificate of Destruction; leave quick-format and degauss-SSD unused.",
+    solution:
+      "Degauss magnetic HDD/tape. Wipe/secure-erase for reuse. Shred for physical destroy. CoD for vendor proof. Quick format is not sanitization; magnets do not erase flash.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O11-BROWSER-LAB",
+    slug: "browser-security",
+    title: "Browser security settings matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O11"],
+    conceptIds: [
+      "C2-D2-O11-CERTWARN",
+      "C2-D2-O11-HASH",
+      "C2-D2-O11-PRIVACYMODE",
+      "C2-D2-O11-SECUREDNS",
+    ],
+    component: "BrowserSecurityLab",
+    description:
+      "Match cert warnings, hash verify, private mode, and Secure DNS; leave ignore-cert and disable-updates unused.",
+    solution:
+      "Investigate cert warnings. Hash installers before run. Private mode on kiosks. Secure DNS when policy allows. Never teach permanent cert exceptions or disable browser updates.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O8-SCRIPT-LAB",
+    slug: "scripting-basics",
+    title: "Scripting basics matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O8"],
+    conceptIds: [
+      "C2-D4-O8-PS1",
+      "C2-D4-O8-BAT",
+      "C2-D4-O8-PY",
+      "C2-D4-O8-SCRIPTRISK",
+    ],
+    component: "ScriptingBasicsLab",
+    description:
+      "Match PowerShell, batch, Python, and script-risk; leave run-blind and rename-ps1 unused.",
+    solution:
+      "PowerShell for Windows automation. Batch for legacy maps. Python for cross-platform glue. Treat unsolicited scripts as malware. Do not run emailed scripts elevated or rename .ps1 to .bat.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O9-REMOTE-LAB",
+    slug: "remote-access",
+    title: "Remote access technologies matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O9"],
+    conceptIds: [
+      "C2-D4-O9-RDP",
+      "C2-D4-O9-VNC",
+      "C2-D4-O9-RMM",
+      "C2-D4-O9-WINRM",
+    ],
+    component: "RemoteAccessLab",
+    description:
+      "Match RDP, VNC, RMM, and WinRM; leave SPICE-as-RDP and open-3389 unused.",
+    solution:
+      "RDP for Windows GUI. VNC for cross-platform framebuffer. RMM for MSP fleets. WinRM for PowerShell remoting. SPICE is not default help-desk RDP; naked 3389 to the internet is a finding.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

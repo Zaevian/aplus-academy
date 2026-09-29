@@ -458,6 +458,32 @@ C1-D1-O3; C1-D2-O3/O7/O8; C1-D3-O6/O7; C2-D1-O2/O6/O7/O10/O11; C2-D2-O3/O7/O8/O9
 ### Verdict
 Mobile can now reach Exam Ready where scored PBQ + holdout exist (O1/O2). Curriculum still **not fully Exam Ready** end-to-end.
 
+## 2026-09-28 — PBQ deepen-3e (+8 LabHost; extends #11)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` @ prior tip 430a8f3)  
+**Live:** https://aplus-academy-gules.vercel.app/
+
+### Shipped
+1. **Eight new scored LabHost labs** (closes remaining empty non-FND PBQs):
+   - `C2-D1-O6-SETTINGS-LAB` → `WindowsSettingsLab`
+   - `C2-D1-O7-CLIENTNET-LAB` → `WinClientNetLab`
+   - `C2-D1-O10-APPINSTALL-LAB` → `AppInstallLab`
+   - `C2-D1-O11-CLOUDPROD-LAB` → `CloudProductivityLab`
+   - `C2-D2-O9-DESTROY-LAB` → `DataDestructionLab`
+   - `C2-D2-O11-BROWSER-LAB` → `BrowserSecurityLab`
+   - `C2-D4-O8-SCRIPT-LAB` → `ScriptingBasicsLab`
+   - `C2-D4-O9-REMOTE-LAB` → `RemoteAccessLab`
+2. Lessons wired; labs/index + implemented + LabHost registered; coverage-states regenerated (Exam Ready **55→63**).
+3. **HOLDOUT_DOMAIN_IDS** unchanged (C1-D1…C2-D4).
+
+### Still empty pbqLabIds (skip FND)
+None remaining among Core 1/2 numbered objectives tracked on this deepen branch (Foundation stubs excluded).
+
+### Verdict
+Remaining empty non-FND PBQ list from deepen-3d closed on #11. Curriculum still **not fully Exam Ready** end-to-end (Foundation + delayed-retention hooks).
+
+---
 ## 2026-09-28 — PBQ deepen-3d (+4 LabHost; extends #11)
 
 **Auditor / implementer:** Miyuki  

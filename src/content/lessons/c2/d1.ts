@@ -1577,6 +1577,14 @@ A practical bench checklist after imaging: show extensions, show hidden files, s
         questionIds: ["C2-D1-O6-POWER-Q002", "C2-D1-O6-EXPLOREROPT-Q002"],
       },
       {
+        type: "lab",
+        id: "C2-D1-O6-L2-lab",
+        labId: "C2-D1-O6-SETTINGS-LAB",
+        title: "Windows settings and Control Panel matching lab",
+        prompt:
+          "Match power, firewall profile, indexing, and Explorer extensions. Leave disable-firewall and SSD-defrag unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D1-O6-L2-cp",
         questionIds: [
@@ -1788,6 +1796,14 @@ Change settings in \`ncpa.cpl\` → NIC → Properties → IPv4, or Settings →
         type: "knowledge-check",
         id: "C2-D1-O7-L2-kc2",
         questionIds: ["C2-D1-O7-PROXY-Q002", "C2-D1-O7-METERED-Q002"],
+      },
+      {
+        type: "lab",
+        id: "C2-D1-O7-L2-lab",
+        labId: "C2-D1-O7-CLIENTNET-LAB",
+        title: "Windows client networking matching lab",
+        prompt:
+          "Match workgroup, domain join, UNC, and metered. Leave proxy-for-SMB and fake-domain unmatched.",
       },
       {
         type: "checkpoint",
@@ -2454,6 +2470,14 @@ A technician who installs a "free" codec pack on a finance PC has created a supp
         questionIds: ["C2-D1-O10-ISO-Q001", "C2-D1-O10-IMPACT-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D1-O10-L1-lab",
+        labId: "C2-D1-O10-APPINSTALL-LAB",
+        title: "Application installation requirements matching lab",
+        prompt:
+          "Match x86/WoW64, GPU+VRAM, ISO, and change-window impact. Leave force-x64 and ignore-VRAM unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D1-O10-L1-cp",
         questionIds: [
@@ -2587,6 +2611,14 @@ Document the UPN. "I signed into the personal Outlook.com in the desktop app" is
         type: "knowledge-check",
         id: "C2-D1-O11-L1-kc2",
         questionIds: ["C2-D1-O11-COLLAB-Q001", "C2-D1-O11-LICENSE-Q002"],
+      },
+      {
+        type: "lab",
+        id: "C2-D1-O11-L1-lab",
+        labId: "C2-D1-O11-CLOUDPROD-LAB",
+        title: "Cloud-based productivity matching lab",
+        prompt:
+          "Match mailbox sync, license SKU, collab suite, and Files On-Demand. Leave shared-password and local-only unmatched.",
       },
       {
         type: "checkpoint",

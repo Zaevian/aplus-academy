@@ -48,6 +48,14 @@ export const LAB_HOST_COMPONENTS = [
   "MfdDeployLab",
   "MobileDeviceSecLab",
   "PrivacyIncidentLab",
+  "WindowsSettingsLab",
+  "WinClientNetLab",
+  "AppInstallLab",
+  "CloudProductivityLab",
+  "DataDestructionLab",
+  "BrowserSecurityLab",
+  "ScriptingBasicsLab",
+  "RemoteAccessLab",
 ] as const;
 
 export type LabHostComponent = (typeof LAB_HOST_COMPONENTS)[number];

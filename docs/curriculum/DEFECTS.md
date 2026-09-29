@@ -1,5 +1,7 @@
 # Phase 1 confirmed defects
 
+**PBQ deepen-3e (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Eight new scored LabHost labs closing remaining empty non-FND PBQs: C2-D1-O6/O7/O10/O11, C2-D2-O9/O11, C2-D4-O8/O9. Regen coverage (Exam Ready 55→63). See audit-log.
+
 **PBQ deepen-3d (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Four new scored LabHost labs: C1-D2-O7 WAN/network types, C1-D3-O7 MFD deploy, C2-D2-O8 mobile device security, C2-D4-O6 privacy/incident. Regen coverage (Exam Ready 51→55). See audit-log.
 
 **PBQ deepen-3c (2026-09-28 ET):** branch `miyuki/pbq-deepen-3` (extends #11). Four new scored LabHost labs: C1-D2-O3 hosts/appliances, C1-D3-O6 PSU, C2-D1-O2 boot/install, C2-D2-O7 workstation harden. Regen coverage (Exam Ready 47→51). See audit-log.
@@ -40,20 +42,20 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | troubleshooting-o4-zero-pbq | high | **fixed** (mobile HW lab this PR) | C1-D5-O4 scored `MobileHardwareTsLab`; catalog `device-inspect` still a soft gap vs interactive inspect UI | `src/content/labs/index.ts`, `mobile-hardware-ts-lab.tsx` |
 | troubleshooting-display-simple | high | **fixed** (this PR) | `DisplayFaultDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | troubleshooting-weak-rationales | medium | **partial** (~11 Qs this PR) | Hundreds of D5 distractor rationales still &lt;25 chars; O3 sample + misconception tags shipped | `src/content/questions/c1/d5.ts` |
-| os-uneven-pbq | medium | **partial** (O1 OS types + O2 boot/install + O3 edition) | C2-D1 O6/O7/O10/O11 still lack scored PBQs; O1/O2/O3/O4/O5/O8/O9 have LabHost labs | `src/content/labs/index.ts`, `boot-install-lab.tsx` |
+| os-uneven-pbq | medium | **fixed** (O6 settings + O7 client-net + O10 app-install + O11 cloud-prod) | C2-D1 numbered objectives now have scored LabHost PBQs | `src/content/labs/index.ts`, `windows-settings-lab.tsx` |
 | os-matrix-simple | high | **fixed** (this PR) | `OsMatrixDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | os-edition-matrix-simple | medium | open | `EditionMatrixDiagram` still SIMPLE (lesson table covers features) | `src/components/diagrams/registry.tsx` |
 | os-weak-rationales | medium | **partial** (~10 Qs this PR) | Hundreds of C2-D1 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d1.ts` |
-| security-uneven-pbq | medium | **partial** (O1 AUTH + O3 Wi-Fi sec + O7 harden + O8 mobsec) | C2-D2 O9/O11 still lack dedicated scored PBQs; O1–O8/O10 covered | `src/content/labs/index.ts`, `mobile-device-sec-lab.tsx` |
+| security-uneven-pbq | medium | **fixed** (O9 destruction + O11 browser) | C2-D2 numbered objectives with scored LabHost PBQs for O1–O11 (O10 via router lab) | `src/content/labs/index.ts`, `data-destruction-lab.tsx` |
 | security-permission-simple | high | **fixed** (this PR) | `PermissionDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
 | security-weak-rationales | medium | **partial** (~10 O1 Qs this PR) | Hundreds of C2-D2 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c2/d2.ts` |
 
-| ops-uneven-pbq | medium | **partial** (O2 change + O4 safety + O5 env + O6 privacy) | C2-D4 O8/O9 still lack scored PBQs; O1–O7 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `privacy-incident-lab.tsx` |
+| ops-uneven-pbq | medium | **partial** (O8 scripting + O9 remote) | C2-D4 O1–O9 have LabHost labs; O10 only shared shift | `src/content/labs/index.ts`, `scripting-basics-lab.tsx` |
 | ops-weak-rationales | medium | **partial** (~11 O2 Qs this PR) | Hundreds of D4 distractor rationales still &lt;25 chars; sample change-management batch + misconception tags shipped | `src/content/questions/c2/d4.ts` |
 | ops-o4-o9-lab-gap | medium | **partial** (O4 safety lab) | `safe-bench` covered by SafetyProceduresLab; `it-room` / `evidence-timeline` / `script-viewer` / `remote-chooser` still unmet | `src/content/catalog.ts`, `safety-procedures-lab.tsx` |
 
 | coverage-states-map | medium | **fixed** (this PR) | No machine-readable educational states; `verified` overstated Exam Ready | `docs/curriculum/coverage-states.json`, `src/content/coverage-states.ts`, `scripts/write-coverage.ts` |
-| pbq-deepen-batch | medium | **partial** (+4 labs deepen-3d) | Closed C1-D2-O7, C1-D3-O7, C2-D2-O8, C2-D4-O6; remain C2-D1-O6/O7/O10/O11, C2-D2-O9/O11, C2-D4-O8/O9 | `src/content/labs/index.ts` |
+| pbq-deepen-batch | medium | **fixed** (+8 labs deepen-3e) | Closed remaining empty non-FND PBQs on #11 (C2-D1-O6/O7/O10/O11, C2-D2-O9/O11, C2-D4-O8/O9) | `src/content/labs/index.ts` |
 
 ## Educational state notes (quick)
 

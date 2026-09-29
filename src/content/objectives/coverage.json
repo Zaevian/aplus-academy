@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:14:15.260Z",
+  "generated": "2026-09-29T00:17:43.455Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -2006,7 +2006,10 @@
         "C2-D1-O6-L1",
         "C2-D1-O6-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O6-L2-lab",
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O6-EXPLOREROPT-Q001",
         "C2-D1-O6-EXPLOREROPT-Q002",
@@ -2041,7 +2044,9 @@
         "C2-D1-O6-POWER-Q007",
         "C2-D1-O6-POWER-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2055,7 +2060,9 @@
         "C2-D1-O7-L2"
       ],
       "interactionIds": [
-        "C2-D1-O7-L2-d1"
+        "C2-D1-O7-L2-d1",
+        "C2-D1-O7-L2-lab",
+        "C2-D1-O7-CLIENTNET-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O7-DOMAINJOIN-Q001",
@@ -2091,7 +2098,9 @@
         "C2-D1-O7-WORKGROUP-Q005",
         "C2-D1-O7-WORKGROUP-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O7-CLIENTNET-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2221,7 +2230,10 @@
       "lessonIds": [
         "C2-D1-O10-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O10-L1-lab",
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O10-IMPACT-Q001",
         "C2-D1-O10-IMPACT-Q002",
@@ -2256,7 +2268,9 @@
         "C2-D1-O10-X86APP-Q007",
         "C2-D1-O10-X86APP-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2269,7 +2283,9 @@
         "C2-D1-O11-L1"
       ],
       "interactionIds": [
-        "C2-D1-O11-L1-d1"
+        "C2-D1-O11-L1-d1",
+        "C2-D1-O11-L1-lab",
+        "C2-D1-O11-CLOUDPROD-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O11-COLLAB-Q001",
@@ -2303,7 +2319,9 @@
         "C2-D1-O11-LICENSE-Q008",
         "C2-D1-O11-LICENSE-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O11-CLOUDPROD-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2748,7 +2766,9 @@
         "C2-D2-O9-L1"
       ],
       "interactionIds": [
-        "C2-D2-O9-L1-see1"
+        "C2-D2-O9-L1-see1",
+        "C2-D2-O9-L1-lab",
+        "C2-D2-O9-DESTROY-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O9-COD-Q001",
@@ -2782,7 +2802,9 @@
         "C2-D2-O9-WIPE-Q006",
         "C2-D2-O9-WIPE-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O9-DESTROY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2845,7 +2867,9 @@
         "C2-D2-O11-L1"
       ],
       "interactionIds": [
-        "C2-D2-O11-L1-d1"
+        "C2-D2-O11-L1-d1",
+        "C2-D2-O11-L1-lab",
+        "C2-D2-O11-BROWSER-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O11-CERTWARN-Q001",
@@ -2879,7 +2903,9 @@
         "C2-D2-O11-SECUREDNS-Q006",
         "C2-D2-O11-SECUREDNS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O11-BROWSER-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3462,7 +3488,10 @@
       "lessonIds": [
         "C2-D4-O8-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O8-L1-lab",
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O8-BAT-Q001",
         "C2-D4-O8-BAT-Q002",
@@ -3492,7 +3521,9 @@
         "C2-D4-O8-SCRIPTRISK-Q005",
         "C2-D4-O8-SCRIPTRISK-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3504,7 +3535,10 @@
       "lessonIds": [
         "C2-D4-O9-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O9-L1-lab",
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O9-RDP-Q001",
         "C2-D4-O9-RDP-Q002",
@@ -3534,7 +3568,9 @@
         "C2-D4-O9-WINRM-Q004",
         "C2-D4-O9-WINRM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

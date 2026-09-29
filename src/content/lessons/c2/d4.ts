@@ -1179,6 +1179,14 @@ Read-only viewing, code review, and running as a least-privilege account in a sa
         questionIds: ["C2-D4-O8-SCRIPTRISK-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D4-O8-L1-lab",
+        labId: "C2-D4-O8-SCRIPT-LAB",
+        title: "Scripting basics matching lab",
+        prompt:
+          "Match PowerShell, batch, Python, and script-risk. Leave run-blind and rename-ps1 unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D4-O8-L1-cp",
         questionIds: [
@@ -1287,6 +1295,14 @@ If the user is on a hotel network, VPN first, then RDP. If the user cannot insta
         type: "knowledge-check",
         id: "C2-D4-O9-L1-kc2",
         questionIds: ["C2-D4-O9-RMM-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D4-O9-L1-lab",
+        labId: "C2-D4-O9-REMOTE-LAB",
+        title: "Remote access technologies matching lab",
+        prompt:
+          "Match RDP, VNC, RMM, and WinRM. Leave SPICE-as-RDP and open-3389 unmatched.",
       },
       {
         type: "checkpoint",

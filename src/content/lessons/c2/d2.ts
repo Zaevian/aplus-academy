@@ -1521,6 +1521,14 @@ Never donate a PC with a quick-formatted disk. Wipe or remove the disk.`,
         questionIds: ["C2-D2-O9-SHRED-Q001", "C2-D2-O9-COD-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D2-O9-L1-lab",
+        labId: "C2-D2-O9-DESTROY-LAB",
+        title: "Data destruction and disposal matching lab",
+        prompt:
+          "Match degauss, wipe, shred, and Certificate of Destruction. Leave quick-format and degauss-SSD unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D2-O9-L1-cp",
         questionIds: [
@@ -1750,6 +1758,14 @@ A **screened subnet** (the modern exam language around what people still call a 
         type: "knowledge-check",
         id: "C2-D2-O11-L1-kc2",
         questionIds: ["C2-D2-O11-PRIVACYMODE-Q001", "C2-D2-O11-SECUREDNS-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D2-O11-L1-lab",
+        labId: "C2-D2-O11-BROWSER-LAB",
+        title: "Browser security settings matching lab",
+        prompt:
+          "Match cert warnings, hash verify, private mode, and Secure DNS. Leave ignore-cert and disable-updates unmatched.",
       },
       {
         type: "checkpoint",
