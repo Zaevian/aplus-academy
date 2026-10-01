@@ -4,6 +4,9 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LabStatus, useSolved } from "@/components/labs/lab-kit";
+import { AnswerChoice, bigCheckClass } from "@/components/quiz/answer-choice";
+import { MISS_LINE, choiceLetter, successLine } from "@/lib/answer-feedback";
+import { vibrateFail, vibrateSuccess } from "@/lib/haptics";
 import { shuffle } from "@/lib/questions";
 
 type Ticket = {
@@ -319,21 +322,34 @@ export function TicketShiftLab({ lab, onSolved }: LabSimProps) {
   const [closed, setClosed] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const [msg, setMsg] = useState("");
+  const [verdict, setVerdict] = useState<"idle" | "correct" | "wrong">("idle");
+  const [feedbackTick, setFeedbackTick] = useState(0);
   const ticket = items[i];
 
   function submit() {
-    if (!ticket || !picked) return;
+    if (!ticket || !picked || verdict === "correct") return;
     const choice = ticket.choices.find((c) => c.id === picked);
     if (picked !== ticket.correct) {
+      vibrateFail();
+      setVerdict("wrong");
+      setFeedbackTick((n) => n + 1);
       setMsg(
-        `Why that fails: ${choice?.why ?? ""} Correct FIRST: ${ticket.choices.find((c) => c.id === ticket.correct)?.text}`,
+        `${MISS_LINE} Why that fails: ${choice?.why ?? ""} Correct FIRST: ${ticket.choices.find((c) => c.id === ticket.correct)?.text}`,
       );
       return;
     }
+    vibrateSuccess();
+    setVerdict("correct");
+    setFeedbackTick((n) => n + 1);
+    setMsg(successLine(closed));
+  }
+
+  function advance() {
     const nextClosed = closed + 1;
     setClosed(nextClosed);
-    setMsg("Ticket closed.");
     setPicked(null);
+    setVerdict("idle");
+    setMsg("");
     if (nextClosed >= 8) {
       markSolved();
       return;
@@ -357,25 +373,51 @@ export function TicketShiftLab({ lab, onSolved }: LabSimProps) {
         Ticket {Math.min(closed + 1, 8)} / 8 · {ticket.title}
       </p>
       <p className="rounded bg-muted/60 p-3 leading-6">{ticket.body}</p>
-      <ul className="space-y-2">
-        {ticket.choices.map((c) => (
-          <li key={c.id}>
-            <button
-              type="button"
-              className={`min-h-11 w-full rounded border px-3 py-2 text-left ${
-                picked === c.id ? "border-foreground bg-muted" : ""
-              }`}
-              onClick={() => setPicked(c.id)}
-            >
-              {c.text}
-            </button>
-          </li>
-        ))}
+      <ul className="space-y-3" key={feedbackTick}>
+        {ticket.choices.map((c, choiceIndex) => {
+          const on = picked === c.id;
+          const show = verdict !== "idle";
+          const isKey = c.id === ticket.correct;
+          const mark =
+            show && isKey ? "correct" : show && on && !isKey ? "wrong" : undefined;
+          return (
+            <li key={c.id}>
+              <AnswerChoice
+                letter={choiceLetter(choiceIndex)}
+                text={c.text}
+                pressed={on}
+                mark={mark}
+                dim={show && !isKey && !on}
+                disabled={verdict === "correct"}
+                onClick={() => {
+                  if (verdict === "correct") return;
+                  setPicked(c.id);
+                  setVerdict("idle");
+                  setMsg("");
+                }}
+              />
+            </li>
+          );
+        })}
       </ul>
-      <Button size="sm" className="min-h-11" disabled={!picked} onClick={submit}>
-        Close ticket
-      </Button>
-      {msg ? <p className="text-muted-foreground">{msg}</p> : null}
+      {verdict === "correct" ? (
+        <p role="status" data-testid="answer-feedback" data-state="correct" className="text-base font-semibold text-emerald-700 dark:text-emerald-300">
+          {msg}
+        </p>
+      ) : verdict === "wrong" ? (
+        <p role="status" data-testid="answer-feedback" data-state="wrong" className="text-sm leading-6 text-red-800 dark:text-red-200">
+          {msg}
+        </p>
+      ) : null}
+      {verdict === "correct" ? (
+        <Button className={bigCheckClass} onClick={advance}>
+          {closed + 1 >= 8 ? "Finish shift" : "Next ticket"}
+        </Button>
+      ) : (
+        <Button className={bigCheckClass} disabled={!picked} onClick={submit}>
+          Close ticket
+        </Button>
+      )}
     </div>
   );
 }

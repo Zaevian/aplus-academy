@@ -7,6 +7,8 @@ import { ALL_OBJECTIVES } from "@/content/catalog";
 import { isCorrect, shuffle, domainWeightedSample } from "@/lib/questions";
 import { exposedQuestionIds, recordQuiz } from "@/lib/progress-actions";
 import { Button } from "@/components/ui/button";
+import { AnswerChoice, bigCheckClass } from "@/components/quiz/answer-choice";
+import { choiceLetter } from "@/lib/answer-feedback";
 import { EXAM_META, INTERNAL_SCORING_DISCLAIMER } from "@/lib/exam-meta";
 import { cn } from "@/lib/utils";
 import { ListenButton } from "@/components/voice/listen-button";
@@ -333,59 +335,51 @@ export default function MockExamPage() {
         <>
           {multi ? (
             <p className="text-xs text-muted-foreground">
-              Multiple response — select every correct option.
+              Multiple response: select every correct option.
             </p>
           ) : null}
           {q.scenario ? (
             <p className="rounded-md bg-muted/60 p-3 text-sm">{q.scenario}</p>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-2">
-            <p className="font-medium">{q.stem}</p>
+            <p className="text-base font-semibold">{q.stem}</p>
             <ListenButton
               text={`${q.scenario ? q.scenario + ". " : ""}${q.stem}. ${q.choices.map((c) => c.text).join(". ")}`}
               title={`Exam ${i + 1}`}
             />
           </div>
-          <ul className="space-y-2">
-            {shuffle(q.choices, q.id.length / 100).map((c) => (
+          <ul className="space-y-3">
+            {shuffle(q.choices, q.id.length / 100).map((c, choiceIndex) => (
               <li key={c.id}>
-                <button
-                  type="button"
-                  className={cn(
-                    "w-full min-h-11 rounded border px-3 py-2 text-left text-sm focus-visible:ring-3 focus-visible:ring-ring/50",
-                    answers[q.id]?.includes(c.id) && "border-foreground bg-muted",
-                  )}
+                <AnswerChoice
+                  letter={choiceLetter(choiceIndex)}
+                  text={c.text}
+                  pressed={answers[q.id]?.includes(c.id) ?? false}
                   onClick={() => toggleChoice(c.id)}
-                >
-                  {c.text}
-                  {answers[q.id]?.includes(c.id) ? " ✓" : ""}
-                </button>
+                />
               </li>
             ))}
           </ul>
         </>
       ) : null}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         <Button
-          size="sm"
-          className="min-h-11"
           variant="outline"
+          className="h-12 flex-1 rounded-full px-5 text-base"
           onClick={() => setI(Math.max(0, i - 1))}
         >
           Previous
         </Button>
         <Button
-          size="sm"
-          className="min-h-11"
           variant="outline"
+          className="h-12 flex-1 rounded-full px-5 text-base"
           onClick={() => setI(Math.min(totalItems - 1, i + 1))}
         >
           Next
         </Button>
         <Button
-          size="sm"
-          className="min-h-11"
-          variant="ghost"
+          variant="outline"
+          className="h-12 rounded-full px-5 text-base"
           onClick={() => {
             const id = onPbq ? pbqId : q?.id;
             if (!id) return;
@@ -399,7 +393,7 @@ export default function MockExamPage() {
         >
           {flagged.has(onPbq ? pbqId : q?.id ?? "") ? "Unflag" : "Flag"}
         </Button>
-        <Button size="sm" className="min-h-11" onClick={() => void finish()}>
+        <Button className={cn(bigCheckClass, "sm:w-auto")} onClick={() => void finish()}>
           Submit exam
         </Button>
       </div>

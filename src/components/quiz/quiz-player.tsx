@@ -126,14 +126,13 @@ export function QuizPlayer({
           {kind === "domain"
             ? passedNow
               ? "Next domain unlocked (gate cleared after retry-until-correct)."
-              : "100% eventual correct required — start a new attempt."
+              : "100% eventual correct required. Start a new attempt."
             : null}
         </p>
       ) : null}
       <Button
         variant="outline"
-        size="sm"
-        className="min-h-11"
+        className="h-12 rounded-full px-5 text-base font-semibold"
         onClick={() => {
           setDone(false);
           setScore(null);

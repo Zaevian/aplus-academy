@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LabStatus, useSolved } from "@/components/labs/lab-kit";
+import { AnswerChoice, bigCheckClass } from "@/components/quiz/answer-choice";
+import { MISS_LINE, choiceLetter, successLine } from "@/lib/answer-feedback";
+import { vibrateFail, vibrateSuccess } from "@/lib/haptics";
 import { ListenButton } from "@/components/voice/listen-button";
 
 const CALLS = [
@@ -89,21 +92,28 @@ export function VoiceLab({ lab, onSolved }: LabSimProps) {
   const { solved, markSolved } = useSolved(onSolved);
   const [picks, setPicks] = useState<Record<string, string>>({});
   const [msg, setMsg] = useState("");
+  const [revealed, setRevealed] = useState(false);
+  const [ok, setOk] = useState(false);
 
   function check() {
     const missed = CALLS.filter((c) => picks[c.id] !== c.best);
+    setRevealed(true);
     if (missed.length) {
+      vibrateFail();
+      setOk(false);
       setMsg(
-        missed
+        `${MISS_LINE} ${missed
           .map(
             (c) =>
               `${c.title}: BEST acknowledges, restates, and sets a timeline. Arguing, jargon dumps, and blame fail 4.7.`,
           )
-          .join(" "),
+          .join(" ")}`,
       );
       return;
     }
-    setMsg("All three BEST responses selected. Audio is optional; the transcript is the lab.");
+    vibrateSuccess();
+    setOk(true);
+    setMsg(`${successLine(0)} All three BEST responses selected. Audio is optional; the transcript is the lab.`);
     markSolved();
   }
 
@@ -124,27 +134,51 @@ export function VoiceLab({ lab, onSolved }: LabSimProps) {
             <ListenButton text={call.transcript} title={call.title} />
           </div>
           <p className="mt-2 rounded bg-muted/60 p-3 leading-6">{call.transcript}</p>
-          <ul className="mt-2 space-y-2">
-            {call.options.map((o) => (
-              <li key={o.id}>
-                <button
-                  type="button"
-                  className={`min-h-11 w-full rounded border px-3 py-2 text-left ${
-                    picks[call.id] === o.id ? "border-foreground bg-muted" : ""
-                  }`}
-                  onClick={() => setPicks((p) => ({ ...p, [call.id]: o.id }))}
-                >
-                  {o.text}
-                </button>
-              </li>
-            ))}
+          <ul className="mt-3 space-y-3">
+            {call.options.map((o, choiceIndex) => {
+              const on = picks[call.id] === o.id;
+              const isKey = o.id === call.best;
+              const mark =
+                revealed && isKey ? "correct" : revealed && on && !isKey ? "wrong" : undefined;
+              return (
+                <li key={o.id}>
+                  <AnswerChoice
+                    letter={choiceLetter(choiceIndex)}
+                    text={o.text}
+                    pressed={on}
+                    mark={mark}
+                    dim={revealed && !isKey && !on}
+                    disabled={ok}
+                    onClick={() => {
+                      if (ok) return;
+                      setPicks((p) => ({ ...p, [call.id]: o.id }));
+                      setRevealed(false);
+                      setMsg("");
+                    }}
+                  />
+                </li>
+              );
+            })}
           </ul>
         </section>
       ))}
-      <Button size="sm" className="min-h-11" onClick={check}>
+      {msg ? (
+        <p
+          role="status"
+          data-testid="answer-feedback"
+          data-state={ok ? "correct" : "wrong"}
+          className={
+            ok
+              ? "text-base font-semibold text-emerald-700 dark:text-emerald-300"
+              : "text-sm leading-6 text-red-800 dark:text-red-200"
+          }
+        >
+          {msg}
+        </p>
+      ) : null}
+      <Button className={bigCheckClass} onClick={check} disabled={ok}>
         Check responses
       </Button>
-      {msg ? <p className="text-muted-foreground">{msg}</p> : null}
     </div>
   );
 }

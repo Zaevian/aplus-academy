@@ -96,7 +96,10 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
         <Link
           href={resume.href}
           aria-label={primary.aria}
-          className={cn(buttonVariants(), "min-h-12 w-full text-base sm:w-auto")}
+          className={cn(
+            buttonVariants(),
+            "h-14 w-full rounded-full bg-emerald-600 px-6 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 sm:w-auto",
+          )}
         >
           {primary.label}
         </Link>
@@ -113,7 +116,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
               render={
                 <Button
                   variant="outline"
-                  className="min-h-12 w-full text-base sm:w-auto"
+                  className="h-14 w-full rounded-full px-6 text-base font-semibold sm:w-auto"
                   aria-label="Start over from Foundation lesson 1"
                 />
               }
@@ -136,7 +139,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
               <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
                 <Button
                   variant="outline"
-                  className="min-h-11"
+                  className="h-12 rounded-full px-5 text-base"
                   disabled={pending}
                   onClick={() => setOpen(false)}
                 >
@@ -144,7 +147,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
                 </Button>
                 <Button
                   variant="destructive"
-                  className="min-h-11"
+                  className="h-12 rounded-full px-5 text-base font-semibold"
                   disabled={pending}
                   onClick={() => void confirmRestart()}
                 >
@@ -159,7 +162,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
             aria-label="Start over from Foundation lesson 1"
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "min-h-12 w-full text-base sm:w-auto",
+              "h-14 w-full rounded-full px-6 text-base font-semibold sm:w-auto",
             )}
           >
             Start over
