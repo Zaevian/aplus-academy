@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import { useAcademy } from "@/components/academy-provider";
-import { Button } from "@/components/ui/button";
 import { ListenButton } from "@/components/voice/listen-button";
-import { nextStudy, studySteps } from "@/lib/study-path";
+import { OpeningHero } from "@/components/start/opening-hero";
+import { openingResume, studySteps } from "@/lib/study-path";
 import { cn } from "@/lib/utils";
 
 const INTRO =
-  "Start here. CompTIA A+ is two exams: Core 1 then Core 2. This academy begins with a short Foundation, then Core 1 hardware, then Core 2 software and security. The dashboard is only a scoreboard. Press the green Start button.";
+  "CompTIA A+ is two exams: Core 1, then Core 2. This academy begins with a short Foundation, then Core 1 hardware, then Core 2 software and security. Continue your latest lesson, or begin Foundation lesson 1. The list below is the path. Progress is the scoreboard.";
 
 export default function StartPage() {
   const { ready, progress, profile } = useAcademy();
   if (!ready) return <p className="p-6 text-sm">Loading…</p>;
-  const next = nextStudy(progress);
+  const resume = openingResume(progress);
   const steps = studySteps(progress);
   const name = profile?.displayName ? `, ${profile.displayName}` : "";
 
@@ -30,22 +30,7 @@ export default function StartPage() {
         <ListenButton text={INTRO} title="Where to begin" label="Listen to this page" />
       </header>
 
-      <section className="rounded-xl border-2 border-foreground bg-card p-5">
-        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          {next.stepLabel}
-        </p>
-        <h2 className="mt-1 text-xl font-semibold">{next.title}</h2>
-        <p className="mt-1 text-sm text-muted-foreground">{next.detail}</p>
-        <Button
-          className="mt-4 min-h-12 w-full text-base sm:w-auto"
-          render={<Link href={next.href} />}
-        >
-          {next.stepLabel.includes("Foundation") &&
-          next.href.includes("what-a-plus-is")
-            ? "Begin lesson 1"
-            : "Continue this lesson"}
-        </Button>
-      </section>
+      <OpeningHero resume={resume} />
 
       <ol className="space-y-3">
         {steps.map((s) => (

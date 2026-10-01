@@ -14,6 +14,7 @@ import { getLabs, getQuestions } from "@/content/registry";
 import { isCorrect } from "@/lib/questions";
 import { ALL_OBJECTIVES } from "@/content/catalog";
 import { lessonPath, objectivePath } from "@/lib/course";
+import { FIRST_LESSON_HREF, rememberContentHref } from "@/lib/study-path";
 export { applyCompleteBlock } from "@/lib/lesson-lock";
 
 async function updateProgress(
@@ -79,9 +80,25 @@ export async function touchLocation(pathname: string): Promise<void> {
       progress.streakDays =
         progress.lastStudyDay === yesterday ? progress.streakDays + 1 : 1;
     }
-    progress.currentLocation = pathname;
+    const remembered = rememberContentHref(progress, pathname);
+    progress.currentLocation = remembered.currentLocation;
+    progress.lastContentHref = remembered.lastContentHref;
     progress.lastStudyDay = day;
     progress.sessionStartedAt = progress.sessionStartedAt ?? Date.now();
+  });
+}
+
+/** Clear course progress on this device and point at Foundation lesson 1. Notes, bookmarks, and the profile stay. */
+export async function restartCourse(): Promise<void> {
+  await ensureLocalState();
+  await db.transaction("rw", [db.progress, db.attempts, db.quizzes, db.mastery], async () => {
+    await db.attempts.clear();
+    await db.quizzes.clear();
+    await db.mastery.clear();
+    const fresh = initialProgress();
+    fresh.currentLocation = FIRST_LESSON_HREF;
+    fresh.lastContentHref = null;
+    await db.progress.put(fresh);
   });
 }
 
