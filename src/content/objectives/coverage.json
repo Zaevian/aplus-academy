@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T23:34:45.313Z",
+  "generated": "2026-09-29T00:17:43.455Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -155,12 +155,20 @@
         "C1-D1-O1-LAPTOP-LAB"
       ],
       "quizQuestionIds": [
+        "C1-D1-O1-ANTENNA-Q001",
+        "C1-D1-O1-ANTENNA-Q002",
+        "C1-D1-O1-ANTENNA-Q003",
+        "C1-D1-O1-ANTENNA-Q004",
         "C1-D1-O1-BATTERY-Q001",
         "C1-D1-O1-BATTERY-Q002",
         "C1-D1-O1-BATTERY-Q003",
         "C1-D1-O1-BATTERY-Q004",
         "C1-D1-O1-BATTERY-Q005",
         "C1-D1-O1-BATTERY-Q006",
+        "C1-D1-O1-BIOMETRIC-Q001",
+        "C1-D1-O1-BIOMETRIC-Q002",
+        "C1-D1-O1-BIOMETRIC-Q003",
+        "C1-D1-O1-BIOMETRIC-Q004",
         "C1-D1-O1-KEYBOARD-Q001",
         "C1-D1-O1-KEYBOARD-Q002",
         "C1-D1-O1-KEYBOARD-Q003",
@@ -175,62 +183,17 @@
         "C1-D1-O1-STORAGE-Q002",
         "C1-D1-O1-STORAGE-Q003",
         "C1-D1-O1-STORAGE-Q004",
-        "C1-D1-O1-STORAGE-Q005",
-        "C1-D1-O1-WLAN-Q001",
-        "C1-D1-O1-WLAN-Q002",
-        "C1-D1-O1-WLAN-Q003",
-        "C1-D1-O1-WLAN-Q004",
-        "C1-D1-O1-ANTENNA-Q001",
-        "C1-D1-O1-ANTENNA-Q002",
-        "C1-D1-O1-ANTENNA-Q003",
-        "C1-D1-O1-ANTENNA-Q004",
         "C1-D1-O1-WEBCAM-Q001",
-        "C1-D1-O1-WEBCAM-Q002",
-        "C1-D1-O1-WEBCAM-Q003",
-        "C1-D1-O1-WEBCAM-Q004",
-        "C1-D1-O1-BIOMETRIC-Q001",
-        "C1-D1-O1-BIOMETRIC-Q002",
-        "C1-D1-O1-BIOMETRIC-Q003",
-        "C1-D1-O1-BIOMETRIC-Q004"
+        "C1-D1-O1-WLAN-Q001"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O1-BATTERY-Q001",
-        "C1-D1-O1-BATTERY-Q002",
-        "C1-D1-O1-BATTERY-Q003",
-        "C1-D1-O1-BATTERY-Q004",
-        "C1-D1-O1-BATTERY-Q005",
-        "C1-D1-O1-BATTERY-Q006",
-        "C1-D1-O1-KEYBOARD-Q001",
-        "C1-D1-O1-KEYBOARD-Q002",
-        "C1-D1-O1-KEYBOARD-Q003",
-        "C1-D1-O1-KEYBOARD-Q004",
-        "C1-D1-O1-SODIMM-Q001",
-        "C1-D1-O1-SODIMM-Q002",
-        "C1-D1-O1-SODIMM-Q003",
-        "C1-D1-O1-SODIMM-Q004",
-        "C1-D1-O1-SODIMM-Q005",
-        "C1-D1-O1-SODIMM-Q006",
-        "C1-D1-O1-STORAGE-Q001",
-        "C1-D1-O1-STORAGE-Q002",
-        "C1-D1-O1-STORAGE-Q003",
-        "C1-D1-O1-STORAGE-Q004",
         "C1-D1-O1-STORAGE-Q005",
-        "C1-D1-O1-WLAN-Q001",
-        "C1-D1-O1-WLAN-Q002",
-        "C1-D1-O1-WLAN-Q003",
-        "C1-D1-O1-WLAN-Q004",
-        "C1-D1-O1-ANTENNA-Q001",
-        "C1-D1-O1-ANTENNA-Q002",
-        "C1-D1-O1-ANTENNA-Q003",
-        "C1-D1-O1-ANTENNA-Q004",
-        "C1-D1-O1-WEBCAM-Q001",
         "C1-D1-O1-WEBCAM-Q002",
         "C1-D1-O1-WEBCAM-Q003",
         "C1-D1-O1-WEBCAM-Q004",
-        "C1-D1-O1-BIOMETRIC-Q001",
-        "C1-D1-O1-BIOMETRIC-Q002",
-        "C1-D1-O1-BIOMETRIC-Q003",
-        "C1-D1-O1-BIOMETRIC-Q004"
+        "C1-D1-O1-WLAN-Q002",
+        "C1-D1-O1-WLAN-Q003",
+        "C1-D1-O1-WLAN-Q004"
       ],
       "pbqLabIds": [
         "C1-D1-O1-LAPTOP-LAB"
@@ -248,16 +211,24 @@
         "C1-D1-O2-L2"
       ],
       "interactionIds": [
-        "C1-D1-O2-L1-d1"
+        "C1-D1-O2-L1-d1",
+        "C1-D1-O2-L2-lab",
+        "C1-D1-O2-ACCESSORY-LAB"
       ],
       "quizQuestionIds": [
-        "C1-D1-O2-USB-Q001",
-        "C1-D1-O2-USB-Q002",
-        "C1-D1-O2-USB-Q003",
-        "C1-D1-O2-USB-Q004",
-        "C1-D1-O2-USB-Q005",
-        "C1-D1-O2-USB-Q006",
-        "C1-D1-O2-USB-Q007",
+        "C1-D1-O2-BT-Q001",
+        "C1-D1-O2-BT-Q002",
+        "C1-D1-O2-BT-Q003",
+        "C1-D1-O2-BT-Q004",
+        "C1-D1-O2-BT-Q005",
+        "C1-D1-O2-BT-Q006",
+        "C1-D1-O2-BT-Q007",
+        "C1-D1-O2-DOCK-Q001",
+        "C1-D1-O2-DOCK-Q002",
+        "C1-D1-O2-DOCK-Q003",
+        "C1-D1-O2-DOCK-Q004",
+        "C1-D1-O2-DOCK-Q005",
+        "C1-D1-O2-DOCK-Q006",
         "C1-D1-O2-LIGHTNING-Q001",
         "C1-D1-O2-LIGHTNING-Q002",
         "C1-D1-O2-LIGHTNING-Q003",
@@ -267,64 +238,25 @@
         "C1-D1-O2-NFC-Q003",
         "C1-D1-O2-NFC-Q004",
         "C1-D1-O2-NFC-Q005",
-        "C1-D1-O2-BT-Q001",
-        "C1-D1-O2-BT-Q002",
-        "C1-D1-O2-BT-Q003",
-        "C1-D1-O2-BT-Q004",
-        "C1-D1-O2-BT-Q005",
-        "C1-D1-O2-BT-Q006",
-        "C1-D1-O2-DOCK-Q001",
-        "C1-D1-O2-DOCK-Q002",
-        "C1-D1-O2-DOCK-Q003",
-        "C1-D1-O2-DOCK-Q004",
-        "C1-D1-O2-DOCK-Q005",
         "C1-D1-O2-REPLICATOR-Q001",
         "C1-D1-O2-REPLICATOR-Q002",
         "C1-D1-O2-REPLICATOR-Q003",
-        "C1-D1-O2-REPLICATOR-Q004",
-        "C1-D1-O2-REPLICATOR-Q005",
-        "C1-D1-O2-USB-Q008",
-        "C1-D1-O2-BT-Q007",
-        "C1-D1-O2-DOCK-Q006"
+        "C1-D1-O2-USB-Q001",
+        "C1-D1-O2-USB-Q002",
+        "C1-D1-O2-USB-Q003"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O2-USB-Q001",
-        "C1-D1-O2-USB-Q002",
-        "C1-D1-O2-USB-Q003",
+        "C1-D1-O2-REPLICATOR-Q004",
+        "C1-D1-O2-REPLICATOR-Q005",
         "C1-D1-O2-USB-Q004",
         "C1-D1-O2-USB-Q005",
         "C1-D1-O2-USB-Q006",
         "C1-D1-O2-USB-Q007",
-        "C1-D1-O2-LIGHTNING-Q001",
-        "C1-D1-O2-LIGHTNING-Q002",
-        "C1-D1-O2-LIGHTNING-Q003",
-        "C1-D1-O2-LIGHTNING-Q004",
-        "C1-D1-O2-NFC-Q001",
-        "C1-D1-O2-NFC-Q002",
-        "C1-D1-O2-NFC-Q003",
-        "C1-D1-O2-NFC-Q004",
-        "C1-D1-O2-NFC-Q005",
-        "C1-D1-O2-BT-Q001",
-        "C1-D1-O2-BT-Q002",
-        "C1-D1-O2-BT-Q003",
-        "C1-D1-O2-BT-Q004",
-        "C1-D1-O2-BT-Q005",
-        "C1-D1-O2-BT-Q006",
-        "C1-D1-O2-DOCK-Q001",
-        "C1-D1-O2-DOCK-Q002",
-        "C1-D1-O2-DOCK-Q003",
-        "C1-D1-O2-DOCK-Q004",
-        "C1-D1-O2-DOCK-Q005",
-        "C1-D1-O2-REPLICATOR-Q001",
-        "C1-D1-O2-REPLICATOR-Q002",
-        "C1-D1-O2-REPLICATOR-Q003",
-        "C1-D1-O2-REPLICATOR-Q004",
-        "C1-D1-O2-REPLICATOR-Q005",
-        "C1-D1-O2-USB-Q008",
-        "C1-D1-O2-BT-Q007",
-        "C1-D1-O2-DOCK-Q006"
+        "C1-D1-O2-USB-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O2-ACCESSORY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -339,15 +271,26 @@
         "C1-D1-O3-L3"
       ],
       "interactionIds": [
-        "C1-D1-O3-L1-d1"
+        "C1-D1-O3-L1-d1",
+        "C1-D1-O3-L3-lab",
+        "C1-D1-O3-MDM-LAB"
       ],
       "quizQuestionIds": [
+        "C1-D1-O3-BYOD-Q001",
+        "C1-D1-O3-BYOD-Q002",
+        "C1-D1-O3-BYOD-Q003",
+        "C1-D1-O3-BYOD-Q004",
+        "C1-D1-O3-BYOD-Q005",
         "C1-D1-O3-CELLULAR-Q001",
         "C1-D1-O3-CELLULAR-Q002",
         "C1-D1-O3-CELLULAR-Q003",
         "C1-D1-O3-CELLULAR-Q004",
         "C1-D1-O3-CELLULAR-Q005",
         "C1-D1-O3-CELLULAR-Q006",
+        "C1-D1-O3-DATACAP-Q001",
+        "C1-D1-O3-DATACAP-Q002",
+        "C1-D1-O3-DATACAP-Q003",
+        "C1-D1-O3-DATACAP-Q004",
         "C1-D1-O3-ESIM-Q001",
         "C1-D1-O3-ESIM-Q002",
         "C1-D1-O3-ESIM-Q003",
@@ -357,67 +300,24 @@
         "C1-D1-O3-GPS-Q002",
         "C1-D1-O3-GPS-Q003",
         "C1-D1-O3-GPS-Q004",
-        "C1-D1-O3-SYNC-Q001",
-        "C1-D1-O3-SYNC-Q002",
-        "C1-D1-O3-SYNC-Q003",
-        "C1-D1-O3-SYNC-Q004",
-        "C1-D1-O3-SYNC-Q005",
         "C1-D1-O3-MDM-Q001",
         "C1-D1-O3-MDM-Q002",
         "C1-D1-O3-MDM-Q003",
         "C1-D1-O3-MDM-Q004",
-        "C1-D1-O3-MDM-Q005",
-        "C1-D1-O3-MDM-Q006",
-        "C1-D1-O3-MDM-Q007",
-        "C1-D1-O3-BYOD-Q001",
-        "C1-D1-O3-BYOD-Q002",
-        "C1-D1-O3-BYOD-Q003",
-        "C1-D1-O3-BYOD-Q004",
-        "C1-D1-O3-BYOD-Q005",
-        "C1-D1-O3-DATACAP-Q001",
-        "C1-D1-O3-DATACAP-Q002",
-        "C1-D1-O3-DATACAP-Q003",
-        "C1-D1-O3-DATACAP-Q004"
+        "C1-D1-O3-SYNC-Q001"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O3-CELLULAR-Q001",
-        "C1-D1-O3-CELLULAR-Q002",
-        "C1-D1-O3-CELLULAR-Q003",
-        "C1-D1-O3-CELLULAR-Q004",
-        "C1-D1-O3-CELLULAR-Q005",
-        "C1-D1-O3-CELLULAR-Q006",
-        "C1-D1-O3-ESIM-Q001",
-        "C1-D1-O3-ESIM-Q002",
-        "C1-D1-O3-ESIM-Q003",
-        "C1-D1-O3-ESIM-Q004",
-        "C1-D1-O3-ESIM-Q005",
-        "C1-D1-O3-GPS-Q001",
-        "C1-D1-O3-GPS-Q002",
-        "C1-D1-O3-GPS-Q003",
-        "C1-D1-O3-GPS-Q004",
-        "C1-D1-O3-SYNC-Q001",
-        "C1-D1-O3-SYNC-Q002",
-        "C1-D1-O3-SYNC-Q003",
-        "C1-D1-O3-SYNC-Q004",
-        "C1-D1-O3-SYNC-Q005",
-        "C1-D1-O3-MDM-Q001",
-        "C1-D1-O3-MDM-Q002",
-        "C1-D1-O3-MDM-Q003",
-        "C1-D1-O3-MDM-Q004",
         "C1-D1-O3-MDM-Q005",
         "C1-D1-O3-MDM-Q006",
         "C1-D1-O3-MDM-Q007",
-        "C1-D1-O3-BYOD-Q001",
-        "C1-D1-O3-BYOD-Q002",
-        "C1-D1-O3-BYOD-Q003",
-        "C1-D1-O3-BYOD-Q004",
-        "C1-D1-O3-BYOD-Q005",
-        "C1-D1-O3-DATACAP-Q001",
-        "C1-D1-O3-DATACAP-Q002",
-        "C1-D1-O3-DATACAP-Q003",
-        "C1-D1-O3-DATACAP-Q004"
+        "C1-D1-O3-SYNC-Q002",
+        "C1-D1-O3-SYNC-Q003",
+        "C1-D1-O3-SYNC-Q004",
+        "C1-D1-O3-SYNC-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O3-MDM-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -547,7 +447,10 @@
       "lessonIds": [
         "C1-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O3-L1-lab",
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O3-AAA-Q001",
         "C1-D2-O3-AAA-Q002",
@@ -580,7 +483,9 @@
         "C1-D2-O3-UTM-Q004",
         "C1-D2-O3-UTM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -596,7 +501,9 @@
       "interactionIds": [
         "C1-D2-O4-L1-d1",
         "C1-D2-O4-L2-d1",
-        "C1-D2-O4-L2-d2"
+        "C1-D2-O4-L2-d2",
+        "C1-D2-O4-L2-lab",
+        "C1-D2-O4-SERVICES-LAB"
       ],
       "quizQuestionIds": [
         "C1-D2-O4-DHCPPOOL-Q001",
@@ -632,7 +539,9 @@
         "C1-D2-O4-VPN-Q004",
         "C1-D2-O4-VPN-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O4-SERVICES-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -754,7 +663,10 @@
       "lessonIds": [
         "C1-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O7-L1-lab",
+        "C1-D2-O7-WAN-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O7-CABLE-Q001",
         "C1-D2-O7-CABLE-Q002",
@@ -787,7 +699,9 @@
         "C1-D2-O7-WISP-Q003",
         "C1-D2-O7-WISP-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O7-WAN-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -800,7 +714,9 @@
         "C1-D2-O8-L1"
       ],
       "interactionIds": [
-        "C1-D2-O8-L1-see1"
+        "C1-D2-O8-L1-see1",
+        "C1-D2-O8-L1-lab",
+        "C1-D2-O8-TOOLS-LAB"
       ],
       "quizQuestionIds": [
         "C1-D2-O8-ANALYZER-Q001",
@@ -834,7 +750,9 @@
         "C1-D2-O8-TONER-Q003",
         "C1-D2-O8-TONER-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O8-TOOLS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1154,7 +1072,9 @@
       ],
       "interactionIds": [
         "C1-D3-O6-L1-see1",
-        "C1-D3-O6-L1-d1"
+        "C1-D3-O6-L1-d1",
+        "C1-D3-O6-L1-lab",
+        "C1-D3-O6-PSU-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O6-ATX24-Q001",
@@ -1188,7 +1108,9 @@
         "C1-D3-O6-WATTAGE-Q004",
         "C1-D3-O6-WATTAGE-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O6-PSU-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1201,7 +1123,9 @@
         "C1-D3-O7-L1"
       ],
       "interactionIds": [
-        "C1-D3-O7-L1-d1"
+        "C1-D3-O7-L1-d1",
+        "C1-D3-O7-L1-lab",
+        "C1-D3-O7-MFD-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O7-ADF-Q001",
@@ -1235,7 +1159,9 @@
         "C1-D3-O7-SECUREPRINT-Q005",
         "C1-D3-O7-SECUREPRINT-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O7-MFD-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1788,7 +1714,9 @@
         "C2-D1-O1-L2"
       ],
       "interactionIds": [
-        "C2-D1-O1-L1-d1"
+        "C2-D1-O1-L1-d1",
+        "C2-D1-O1-L2-lab",
+        "C2-D1-O1-OSTYPES-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O1-CHROMEOS-Q001",
@@ -1826,7 +1754,9 @@
         "C2-D1-O1-WIN-Q005",
         "C2-D1-O1-WIN-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O1-OSTYPES-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -1839,7 +1769,10 @@
         "C2-D1-O2-L1",
         "C2-D1-O2-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O2-L1-lab",
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O2-CLEAN-Q001",
         "C2-D1-O2-CLEAN-Q002",
@@ -1874,7 +1807,9 @@
         "C2-D1-O2-ZEROTOUCH-Q005",
         "C2-D1-O2-ZEROTOUCH-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2071,7 +2006,10 @@
         "C2-D1-O6-L1",
         "C2-D1-O6-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O6-L2-lab",
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O6-EXPLOREROPT-Q001",
         "C2-D1-O6-EXPLOREROPT-Q002",
@@ -2106,7 +2044,9 @@
         "C2-D1-O6-POWER-Q007",
         "C2-D1-O6-POWER-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2120,7 +2060,9 @@
         "C2-D1-O7-L2"
       ],
       "interactionIds": [
-        "C2-D1-O7-L2-d1"
+        "C2-D1-O7-L2-d1",
+        "C2-D1-O7-L2-lab",
+        "C2-D1-O7-CLIENTNET-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O7-DOMAINJOIN-Q001",
@@ -2156,7 +2098,9 @@
         "C2-D1-O7-WORKGROUP-Q005",
         "C2-D1-O7-WORKGROUP-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O7-CLIENTNET-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2286,7 +2230,10 @@
       "lessonIds": [
         "C2-D1-O10-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O10-L1-lab",
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O10-IMPACT-Q001",
         "C2-D1-O10-IMPACT-Q002",
@@ -2321,7 +2268,9 @@
         "C2-D1-O10-X86APP-Q007",
         "C2-D1-O10-X86APP-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2334,7 +2283,9 @@
         "C2-D1-O11-L1"
       ],
       "interactionIds": [
-        "C2-D1-O11-L1-d1"
+        "C2-D1-O11-L1-d1",
+        "C2-D1-O11-L1-lab",
+        "C2-D1-O11-CLOUDPROD-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O11-COLLAB-Q001",
@@ -2368,7 +2319,9 @@
         "C2-D1-O11-LICENSE-Q008",
         "C2-D1-O11-LICENSE-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O11-CLOUDPROD-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2483,7 +2436,10 @@
       "lessonIds": [
         "C2-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O3-L1-lab",
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O3-AES-Q001",
         "C2-D2-O3-AES-Q002",
@@ -2516,7 +2472,9 @@
         "C2-D2-O3-WPA3-Q005",
         "C2-D2-O3-WPA3-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2706,7 +2664,10 @@
       "lessonIds": [
         "C2-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O7-L1-lab",
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O7-AUTORUN-Q001",
         "C2-D2-O7-AUTORUN-Q002",
@@ -2739,7 +2700,9 @@
         "C2-D2-O7-LOCKOUT-Q006",
         "C2-D2-O7-LOCKOUT-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2752,7 +2715,9 @@
         "C2-D2-O8-L1"
       ],
       "interactionIds": [
-        "C2-D2-O8-L1-d1"
+        "C2-D2-O8-L1-d1",
+        "C2-D2-O8-L1-lab",
+        "C2-D2-O8-MOBSEC-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O8-MDMPROFILE-Q001",
@@ -2786,7 +2751,9 @@
         "C2-D2-O8-SCREENLOCK-Q008",
         "C2-D2-O8-SCREENLOCK-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O8-MOBSEC-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2799,7 +2766,9 @@
         "C2-D2-O9-L1"
       ],
       "interactionIds": [
-        "C2-D2-O9-L1-see1"
+        "C2-D2-O9-L1-see1",
+        "C2-D2-O9-L1-lab",
+        "C2-D2-O9-DESTROY-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O9-COD-Q001",
@@ -2833,7 +2802,9 @@
         "C2-D2-O9-WIPE-Q006",
         "C2-D2-O9-WIPE-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O9-DESTROY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -2896,7 +2867,9 @@
         "C2-D2-O11-L1"
       ],
       "interactionIds": [
-        "C2-D2-O11-L1-d1"
+        "C2-D2-O11-L1-d1",
+        "C2-D2-O11-L1-lab",
+        "C2-D2-O11-BROWSER-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O11-CERTWARN-Q001",
@@ -2930,7 +2903,9 @@
         "C2-D2-O11-SECUREDNS-Q006",
         "C2-D2-O11-SECUREDNS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O11-BROWSER-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3312,7 +3287,9 @@
         "C2-D4-O4-L1"
       ],
       "interactionIds": [
-        "C2-D4-O4-L1-see1"
+        "C2-D4-O4-L1-see1",
+        "C2-D4-O4-L1-lab",
+        "C2-D4-O4-SAFETY-LAB"
       ],
       "quizQuestionIds": [
         "C2-D4-O4-ESD-Q001",
@@ -3343,7 +3320,9 @@
         "C2-D4-O4-PPE-Q005",
         "C2-D4-O4-PPE-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O4-SAFETY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3356,7 +3335,9 @@
         "C2-D4-O5-L1"
       ],
       "interactionIds": [
-        "C2-D4-O5-L1-see1"
+        "C2-D4-O5-L1-see1",
+        "C2-D4-O5-L1-lab",
+        "C2-D4-O5-ENV-LAB"
       ],
       "quizQuestionIds": [
         "C2-D4-O5-BROWNOUT-Q001",
@@ -3387,7 +3368,9 @@
         "C2-D4-O5-UPS-Q006",
         "C2-D4-O5-UPS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O5-ENV-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3399,7 +3382,10 @@
       "lessonIds": [
         "C2-D4-O6-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O6-L1-lab",
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O6-AUP-Q001",
         "C2-D4-O6-AUP-Q002",
@@ -3429,7 +3415,9 @@
         "C2-D4-O6-VOLATILITY-Q005",
         "C2-D4-O6-VOLATILITY-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3500,7 +3488,10 @@
       "lessonIds": [
         "C2-D4-O8-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O8-L1-lab",
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O8-BAT-Q001",
         "C2-D4-O8-BAT-Q002",
@@ -3530,7 +3521,9 @@
         "C2-D4-O8-SCRIPTRISK-Q005",
         "C2-D4-O8-SCRIPTRISK-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },
@@ -3542,7 +3535,10 @@
       "lessonIds": [
         "C2-D4-O9-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O9-L1-lab",
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O9-RDP-Q001",
         "C2-D4-O9-RDP-Q002",
@@ -3572,7 +3568,9 @@
         "C2-D4-O9-WINRM-Q004",
         "C2-D4-O9-WINRM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "status": "verified",
       "lastVerified": "2026-09-01"
     },

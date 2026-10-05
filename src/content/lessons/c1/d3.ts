@@ -1639,6 +1639,14 @@ Symptoms of a dying PSU (Domain 5 will drill them): no power, random shutdowns u
         ],
       },
       {
+        type: "lab",
+        id: "C1-D3-O6-L1-lab",
+        labId: "C1-D3-O6-PSU-LAB",
+        title: "PSU wattage, modular, 24-pin, and rails matching lab",
+        prompt:
+          "Match wattage, modular, ATX 24-pin, and 12V-rail fixes. Leave open-PSU and ignore-VAC unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D3-O6-L1-sum",
         bullets: [
@@ -1759,6 +1767,14 @@ Deploy like a system: place, firmware, network, time/NTP, driver language, queue
         type: "knowledge-check",
         id: "C1-D3-O7-L1-kc2",
         questionIds: ["C1-D3-O7-SECUREPRINT-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C1-D3-O7-L1-lab",
+        labId: "C1-D3-O7-MFD-LAB",
+        title: "Printer and MFD deployment matching lab",
+        prompt:
+          "Match ADF, secure print, print server, and PostScript. Leave flatbed-for-stacks and USB-share unmatched.",
       },
       {
         type: "checkpoint",

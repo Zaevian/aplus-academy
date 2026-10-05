@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-28T23:34:45.314Z",
+  "generated": "2026-09-29T00:17:43.457Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
     "Practiced": 5,
-    "Assessed": 3,
-    "Retained": 22,
-    "Exam Ready": 38
+    "Assessed": 0,
+    "Retained": 0,
+    "Exam Ready": 63
   },
   "rules": {
     "states": [
@@ -371,12 +371,12 @@
       "title": "Laptop and mobile hardware replacement",
       "examPercent": 13,
       "coverageStatus": "verified",
-      "state": "Assessed",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 37,
-        "hasDisjointHoldout": false,
+        "assessedDepth": 30,
+        "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
           "C1-D1-O1-LAPTOP-LAB"
@@ -384,63 +384,62 @@
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No disjoint holdout pool (review ≡ quiz)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D1-O1-BATTERY",
           "label": "BATTERY",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 7,
           "inPbq": true
         },
         {
           "conceptId": "C1-D1-O1-KEYBOARD",
           "label": "KEYBOARD",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 4,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O1-SODIMM",
           "label": "SODIMM",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 6,
           "inPbq": true
         },
         {
           "conceptId": "C1-D1-O1-STORAGE",
           "label": "STORAGE",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O1-WLAN",
           "label": "WLAN",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 6,
           "inPbq": true
         },
         {
           "conceptId": "C1-D1-O1-ANTENNA",
           "label": "ANTENNA",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O1-BIOMETRIC",
           "label": "BIOMETRIC",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O1-WEBCAM",
           "label": "WEBCAM",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 4,
           "inPbq": false
         }
@@ -448,35 +447,35 @@
       "subtopics": [
         {
           "label": "battery",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "keyboard",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "RAM",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "HDD/SSD",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "wireless cards",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "privacy/security hardware",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "Wi-Fi antenna placement",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "camera",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "microphone",
@@ -500,89 +499,89 @@
       "title": "Mobile accessories and connectivity",
       "examPercent": 13,
       "coverageStatus": "verified",
-      "state": "Assessed",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 35,
-        "hasDisjointHoldout": false,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "assessedDepth": 28,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D1-O2-ACCESSORY-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
-        "No disjoint holdout pool (review ≡ quiz)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D1-O2-USB",
           "label": "USB",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 10,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O2-LIGHTNING",
           "label": "LIGHTNING",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O2-NFC",
           "label": "NFC",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O2-BT",
           "label": "BT",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O2-DOCK",
           "label": "DOCK",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O2-REPLICATOR",
           "label": "REPLICATOR",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "USB/USB-C/micro/mini",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "Lightning",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "NFC",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "Bluetooth",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "tethering/hotspot",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "stylus",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "headsets",
@@ -618,100 +617,100 @@
       "title": "Mobile networking, MDM, and synchronization",
       "examPercent": 13,
       "coverageStatus": "verified",
-      "state": "Assessed",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 36,
-        "hasDisjointHoldout": false,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "assessedDepth": 29,
+        "hasDisjointHoldout": true,
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D1-O3-MDM-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
-        "No disjoint holdout pool (review ≡ quiz)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D1-O3-CELLULAR",
           "label": "CELLULAR",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 7,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O3-ESIM",
           "label": "ESIM",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O3-GPS",
           "label": "GPS",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 4,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O3-SYNC",
           "label": "SYNC",
-          "state": "Assessed",
+          "state": "Retained",
           "questionCount": 6,
           "inPbq": false
         },
         {
           "conceptId": "C1-D1-O3-MDM",
           "label": "MDM",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 11,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O3-BYOD",
           "label": "BYOD",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D1-O3-DATACAP",
           "label": "DATACAP",
-          "state": "Assessed",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "3G/4G/5G",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "hotspot",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "Wi-Fi",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "SIM/eSIM",
-          "state": "Assessed"
+          "state": "Retained"
         },
         {
           "label": "Bluetooth pairing sequence",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "GPS and cellular location",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "calendar/contacts/mail/cloud sync",
-          "state": "Assessed"
+          "state": "Exam Ready"
         },
         {
           "label": "data caps",
@@ -1003,18 +1002,19 @@
       "title": "Networked hosts and internet appliances",
       "examPercent": 23,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O3-HOSTS-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
@@ -1035,37 +1035,37 @@
         {
           "conceptId": "C1-D2-O3-AAA",
           "label": "AAA",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O3-UTM",
           "label": "UTM",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O3-NTP",
           "label": "NTP",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 3,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O3-SCADA",
           "label": "SCADA",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O3-IOT",
           "label": "IOT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
@@ -1079,23 +1079,23 @@
         },
         {
           "label": "fileshare",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "print",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "mail",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "syslog",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "web",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "AAA",
@@ -1143,27 +1143,28 @@
       "title": "DNS, DHCP, VLAN, and VPN concepts",
       "examPercent": 23,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 24,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O4-SERVICES-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D2-O4-DNSREC",
           "label": "DNSREC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O4-SPF",
@@ -1189,29 +1190,29 @@
         {
           "conceptId": "C1-D2-O4-DHCPPOOL",
           "label": "DHCPPOOL",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O4-VLAN",
           "label": "VLAN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O4-VPN",
           "label": "VPN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "A",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "AAAA",
@@ -1227,15 +1228,15 @@
         },
         {
           "label": "TXT",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "DKIM",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "SPF",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "DMARC",
@@ -1494,27 +1495,28 @@
       "title": "Internet connections and network types",
       "examPercent": 23,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O7-WAN-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D2-O7-FIBER",
           "label": "FIBER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O7-CABLE",
@@ -1526,16 +1528,16 @@
         {
           "conceptId": "C1-D2-O7-DSL",
           "label": "DSL",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 3,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O7-SAT",
           "label": "SAT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O7-WISP",
@@ -1561,15 +1563,15 @@
         {
           "conceptId": "C1-D2-O7-SAN",
           "label": "SAN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 3,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "satellite",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "fiber",
@@ -1577,11 +1579,11 @@
         },
         {
           "label": "cable",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "DSL",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "cellular",
@@ -1597,7 +1599,7 @@
         },
         {
           "label": "WAN",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "PAN",
@@ -1625,34 +1627,35 @@
       "title": "Networking tools",
       "examPercent": 23,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D2-O8-TOOLS-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D2-O8-CRIMPER",
           "label": "CRIMPER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O8-PUNCHDOWN",
           "label": "PUNCHDOWN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O8-TESTER",
@@ -1664,9 +1667,9 @@
         {
           "conceptId": "C1-D2-O8-TONER",
           "label": "TONER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D2-O8-LOOPBACK",
@@ -1685,19 +1688,19 @@
         {
           "conceptId": "C1-D2-O8-ANALYZER",
           "label": "ANALYZER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "crimper",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "cable stripper",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "punchdown",
@@ -1705,7 +1708,7 @@
         },
         {
           "label": "cable tester",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Wi-Fi analyzer",
@@ -1717,7 +1720,7 @@
         },
         {
           "label": "toner probe",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "network tap",
@@ -2447,77 +2450,78 @@
       "title": "Power supplies",
       "examPercent": 25,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O6-PSU-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C1-D3-O6-VAC",
           "label": "VAC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O6-RAILS",
           "label": "RAILS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O6-ATX24",
           "label": "ATX24",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O6-MODULAR",
           "label": "MODULAR",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O6-WATTAGE",
           "label": "WATTAGE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "110-120 vs 220-240 VAC",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "3.3/5/12 V",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "20+4 pin",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "redundant PSU",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "modular",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "wattage",
@@ -2537,18 +2541,19 @@
       "title": "Printer and MFD deployment",
       "examPercent": 25,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C1-D3-O7-MFD-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
@@ -2562,30 +2567,30 @@
         {
           "conceptId": "C1-D3-O7-PS",
           "label": "PS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O7-ADF",
           "label": "ADF",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O7-SECUREPRINT",
           "label": "SECUREPRINT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C1-D3-O7-PRINTSERVER",
           "label": "PRINTSERVER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
@@ -2595,19 +2600,19 @@
         },
         {
           "label": "PCL vs PostScript",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "firmware",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "USB/Ethernet/wireless",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "printer share",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "print server",
@@ -3590,88 +3595,89 @@
       "title": "Operating system types and purposes",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 26,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O1-OSTYPES-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O1-WIN",
           "label": "WIN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O1-LINUX",
           "label": "LINUX",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O1-MAC",
           "label": "MAC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O1-CHROMEOS",
           "label": "CHROMEOS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O1-FS",
           "label": "FS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 12,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O1-EOL",
           "label": "EOL",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "Windows",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Linux",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "macOS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "ChromeOS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "iPadOS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "iOS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Android",
@@ -3727,77 +3733,78 @@
       "title": "OS installation, partitions, and upgrades",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 24,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O2-BOOT-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O2-CLEAN",
           "label": "CLEAN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O2-IMAGE",
           "label": "IMAGE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O2-ZEROTOUCH",
           "label": "ZEROTOUCH",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O2-GPT",
           "label": "GPT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O2-MBR",
           "label": "MBR",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "USB/network/flash/internet/external/internal/multiboot",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "clean/upgrade/image/remote/zero-touch/recovery/repair",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "third-party drivers",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "GPT",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "MBR",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "format",
@@ -4206,66 +4213,67 @@
       "title": "Windows settings and Control Panel utilities",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 24,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O6-SETTINGS-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O6-POWER",
           "label": "POWER",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O6-FIREWALL",
           "label": "FIREWALL",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O6-INDEXING",
           "label": "INDEXING",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O6-EXPLOREROPT",
           "label": "EXPLOREROPT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "Internet Options",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Devices and Printers",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Programs and Features",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "Network and Sharing",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "System",
@@ -4349,48 +4357,49 @@
       "title": "Windows client networking",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 24,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O7-CLIENTNET-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O7-WORKGROUP",
           "label": "WORKGROUP",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O7-DOMAINJOIN",
           "label": "DOMAINJOIN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O7-UNC",
           "label": "UNC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O7-METERED",
           "label": "METERED",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O7-PROXY",
@@ -4403,19 +4412,19 @@
       "subtopics": [
         {
           "label": "domain vs workgroup",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "shares/printers/mapped drives",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "VPN/wireless/wired/WWAN",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "local firewall",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "proxy",
@@ -4665,66 +4674,67 @@
       "title": "Application installation requirements",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 24,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O10-APPINSTALL-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O10-X86APP",
           "label": "X86APP",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O10-VRAM",
           "label": "VRAM",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O10-ISO",
           "label": "ISO",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O10-IMPACT",
           "label": "IMPACT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "32 vs 64-bit",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "dedicated vs integrated GPU",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "VRAM/RAM/CPU/storage",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "hardware tokens",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "OS compatibility",
@@ -4748,55 +4758,56 @@
       "title": "Cloud-based productivity",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D1-O11-CLOUDPROD-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D1-O11-EMAILSYNC",
           "label": "EMAILSYNC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 10,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O11-LICENSE",
           "label": "LICENSE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D1-O11-COLLAB",
           "label": "COLLAB",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "email",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "storage sync/folder settings",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "spreadsheets",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "video meetings",
@@ -5111,77 +5122,78 @@
       "title": "Wireless security protocols",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O3-WIFISEC-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D2-O3-WPA2",
           "label": "WPA2",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O3-WPA3",
           "label": "WPA3",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O3-AES",
           "label": "AES",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O3-RADIUS",
           "label": "RADIUS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O3-KERBEROS",
           "label": "KERBEROS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "WPA2",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "WPA3",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "TKIP",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "AES",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "RADIUS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "TACACS+",
@@ -5572,66 +5584,67 @@
       "title": "Workstation hardening",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O7-HARDEN-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D2-O7-HARDEN",
           "label": "HARDEN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O7-AUTORUN",
           "label": "AUTORUN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O7-LOCKOUT",
           "label": "LOCKOUT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O7-BIOSPW",
           "label": "BIOSPW",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "data-at-rest encryption",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "password length/types/uniqueness/complexity/expiration",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "BIOS/UEFI passwords",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "screensaver/logoff/PII",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "restrict permissions/logon hours",
@@ -5683,55 +5696,56 @@
       "title": "Mobile device security",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O8-MOBSEC-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D2-O8-REMOTEWIPE",
           "label": "REMOTEWIPE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 10,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O8-SCREENLOCK",
           "label": "SCREENLOCK",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O8-MDMPROFILE",
           "label": "MDMPROFILE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 9,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "device encryption",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "face/PIN/fingerprint/pattern/swipe",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "configuration profiles",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "locator",
@@ -5767,66 +5781,67 @@
       "title": "Data destruction and disposal",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O9-DESTROY-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D2-O9-DEGAUSS",
           "label": "DEGAUSS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O9-WIPE",
           "label": "WIPE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O9-SHRED",
           "label": "SHRED",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O9-COD",
           "label": "COD",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "drill",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "shred",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "degauss",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "incinerate",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "erase/wipe",
@@ -5962,66 +5977,67 @@
       "title": "Browser security settings",
       "examPercent": 28,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 22,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D2-O11-BROWSER-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D2-O11-CERTWARN",
           "label": "CERTWARN",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O11-HASH",
           "label": "HASH",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O11-PRIVACYMODE",
           "label": "PRIVACYMODE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D2-O11-SECUREDNS",
           "label": "SECUREDNS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "trusted vs untrusted download",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "hashing",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "patching",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "extensions",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "password managers",
@@ -6713,66 +6729,67 @@
       "title": "Safety procedures",
       "examPercent": 21,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 20,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O4-SAFETY-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D4-O4-ESD",
           "label": "ESD",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 8,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O4-GROUND",
           "label": "GROUND",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O4-PPE",
           "label": "PPE",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O4-LIFT",
           "label": "LIFT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "ESD strap/mat",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "grounding",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "component handling",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "cable management",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "antistatic bags",
@@ -6812,66 +6829,67 @@
       "title": "Environmental and power controls",
       "examPercent": 21,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 20,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O5-ENV-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D4-O5-MSDS",
           "label": "MSDS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O5-UPS",
           "label": "UPS",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O5-BROWNOUT",
           "label": "BROWNOUT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O5-HUMIDITY",
           "label": "HUMIDITY",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "MSDS",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "battery/toner/asset disposal",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "temperature/humidity/ventilation",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "placement",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "dust/compressed air/vacuum",
@@ -6899,41 +6917,42 @@
       "title": "Privacy, licensing, and incident handling",
       "examPercent": 21,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 20,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O6-PRIVACY-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D4-O6-COC",
           "label": "COC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O6-VOLATILITY",
           "label": "VOLATILITY",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O6-PII",
           "label": "PII",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O6-EULA",
@@ -6945,23 +6964,23 @@
         {
           "conceptId": "C2-D4-O6-AUP",
           "label": "AUP",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 4,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": "chain of custody",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "management/LE",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "drive copy",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "order of volatility",
@@ -6969,7 +6988,7 @@
         },
         {
           "label": "EULA/DRM/open source/perpetual vs personal vs corporate",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "NDA/MNDA",
@@ -7082,66 +7101,67 @@
       "title": "Scripting basics",
       "examPercent": 21,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 20,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O8-SCRIPT-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D4-O8-PS1",
           "label": "PS1",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 7,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O8-BAT",
           "label": "BAT",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O8-PY",
           "label": "PY",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O8-SCRIPTRISK",
           "label": "SCRIPTRISK",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         }
       ],
       "subtopics": [
         {
           "label": ".bat",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": ".ps1",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": ".vbs",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": ".sh",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": ".js",
@@ -7177,48 +7197,49 @@
       "title": "Remote access technologies",
       "examPercent": 21,
       "coverageStatus": "verified",
-      "state": "Retained",
+      "state": "Exam Ready",
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
         "assessedDepth": 20,
         "hasDisjointHoldout": true,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
+        "hasScoredPbq": true,
+        "scoredPbqIds": [
+          "C2-D4-O9-REMOTE-LAB"
+        ],
         "hasDelayedRetentionHook": false
       },
       "blockers": [
-        "No scored LabHost PBQ (pbqLabIds empty)",
         "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
       ],
       "concepts": [
         {
           "conceptId": "C2-D4-O9-RDP",
           "label": "RDP",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 6,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O9-VNC",
           "label": "VNC",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O9-RMM",
           "label": "RMM",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O9-WINRM",
           "label": "WINRM",
-          "state": "Retained",
+          "state": "Exam Ready",
           "questionCount": 5,
-          "inPbq": false
+          "inPbq": true
         },
         {
           "conceptId": "C2-D4-O9-SPICE",
@@ -7231,19 +7252,19 @@
       "subtopics": [
         {
           "label": "RDP",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "VPN",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "VNC",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "SSH",
-          "state": "Retained"
+          "state": "Exam Ready"
         },
         {
           "label": "RMM",
