@@ -415,3 +415,41 @@ Deepen Ops O4/O5/O6/O8/O9 PBQs, or second-pass remediations after open PRs merge
 ### Verdict
 Coverage map now machine-readable with honest Exam Ready gates. Four high-weight PBQ gaps closed. Curriculum still **not fully Exam Ready** end-to-end.
 
+
+---
+
+## 2026-10-05 — C1 Domain 2 Networking (second-pass rotation, weekly learner audit)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (master @ 5891031; PR #11 tip 7c1d09d reviewed for Networking labs)  
+**Live:** https://aplus-academy-gules.vercel.app/ (`/course/core-1/domain-2`, `/practice/core-1`, `/exam/core-1`, `/labs` all 200)  
+**Official:** 220-1201 Domain 2.0 Networking **23%** — re-checked against the Exam Objectives Document Version 3.0 PDF on CompTIA's CDN; 2.1–2.8 titles match the catalog.
+
+### Coverage snapshot (master)
+- 8 objectives, 240 Networking questions, all `verified`, disjoint holdout on every objective
+- Exam Ready on master: O1 (ports lab), O2 (Wi-Fi lab), O5 (rack lab), O6 (router lab). O3/O4/O7/O8 are Retained only (no scored PBQ)
+- PR #11 (held) adds `NetworkHostsLab`, `NetworkServicesLab`, `NetworkTypesLab`, `NetworkToolsLab`, which would close all four Networking PBQ gaps
+- Keyword sweep of every official 2.1–2.8 bullet found each one taught and assessed (regulations and channel width are lesson-light but present)
+
+### Findings
+- **High (cross-domain, mastery inflation):** The mock exam (`src/app/exam/[core]/page.tsx`) shuffles choices with `shuffle(q.choices, q.id.length / 100)`. The salt depends only on ID length, so every question with the same ID length gets the same permutation. Because authors put the key at choice `a` 70–100% of the time, the displayed key clusters. Simulated weighted by domain: Core 2 shows the correct answer in the 2nd slot **56%** of the time and the 4th slot only 6% (C2-D3 alone is 84% 2nd slot); Core 1 is 36% 2nd slot (C1-D5 61%). Networking alone is roughly even (28/25/28/19) by luck of ID lengths. Knowledge checks and domain quizzes use a per-ID hash and are fine (~25% each slot).
+- **Medium (cross-domain):** The mock-exam Listen button reads choices in authored order, not displayed order, so audio users hear the key first in most items and the spoken order doesn't match the screen.
+- **Medium (Networking distractors):** The correct choice is the longest option in 145/240 Networking items (60%; worst O4 22/30, O6 23/32). Test-wise length cue.
+- **Medium (Networking depth):** Only 6 `exam`-difficulty and 8 `scenario` items out of 240 for a 23% domain; 0 misconception tags (debt from first pass still open).
+- **Low:** PR #11 Networking labs are single-pass 4-ticket matching with 2 distractors; some distractors are obvious jokes ("call it a corporate VPN"). O4 lab does not exercise MX/TXT/SPF/DKIM/DMARC (MCQ-only).
+- **Low:** No Networking clip files exist in `public/media` (`wifi-band-reach`, `apipa-lease`, `rj45-click-crimp` all 404); the video block falls back to code diagrams cleanly. Manifest still marks two of them `verified: true`.
+
+### Fixes shipped
+None this run. Cursor cloud-agent usage is exhausted (on-demand off), so no fix branch was launched. This entry is docs-only.
+
+### Ready-to-launch fix (when usage returns)
+1. Exam page: salt the choice shuffle per question with a hash of the full ID (reuse `saltFromId` from `knowledge-check.tsx`, ideally mixed with the attempt seed) and memoize per attempt.
+2. Exam Listen button: read choices in the displayed order.
+3. Add a unit test that the displayed key position across each core bank is near-uniform (for example, no slot above 35%).
+4. Follow-up content pass: shorten or pad Networking correct choices so length isn't a cue; add exam-level scenario items and misconception tags for O3/O4/O6.
+
+### Verdict
+**Networking content is strong but not Exam Ready end-to-end on master** (4/8 objectives lack a scored PBQ until PR #11 merges). The cross-domain mock-exam shuffle bug inflates readiness scores, most on Core 2, and is the top fix.
+
+### Next rotation
+C1-D3 Hardware (second pass).
