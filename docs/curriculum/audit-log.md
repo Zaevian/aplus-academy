@@ -526,3 +526,26 @@ C1-D2-O7; C1-D3-O7; C2-D1-O6/O7/O10/O11; C2-D2-O8/O9/O11; C2-D4-O6/O8/O9.
 Four more high-weight PBQ gaps closed on #11. Curriculum still **not fully Exam Ready** end-to-end.
 
 ---
+## 2026-10-12 — Second pass C1-D2 Networking (220-1201 obj 2.1–2.8, v3.0)
+
+**Auditor / implementer:** Miyuki  
+**Branch:** `miyuki/audit-2026-10-12-c1d2-networking` (from master @ 03911ed)  
+**Live checked:** https://aplus-academy-gules.vercel.app/ — `/course/core-1/domain-2`, `/labs` and all nine Networking labs (ports-drill, wifi-lab, network-hosts, network-services, network-builder, soho-router, network-types, network-tools, cable-lab) return 200.
+
+### Learner pass
+240 C1-D2 items answered from stems first, then checked against keys and the official v3.0 objectives. Every O1–O8 objective has a scored LabHost PBQ (O1 ports, O2 Wi-Fi, O3 hosts, O4 services, O5 rack, O6 SOHO router, O7 WAN types, O8 tools), so **networking-uneven-pbq is closed**. SNMP 161/162 is correctly treated as off-list (it sits in the 1101→1201 "Removed" column).
+
+### Deepen-3 did NOT close the bank debt
+Before this pass: 365 of 720 C1-D2 distractor rationales were under 25 characters, and 0 of 240 items had `tags`.
+
+### Fixed
+1. **Factual (medium):** IMAP was expanded as "Internet *Mail* Access Protocol" in `ports.ts` and the glossary; corrected to Internet **Message** Access Protocol.
+2. **Weak rationales (medium):** all 78 short distractor rationales in O1 (ports) and O6 (IP addressing) were rewritten to name the trap and the right fact. O1 and O6 now have none under 25 characters.
+3. **Misconception tags (medium):** all 240 C1-D2 items now carry `misconception` plus a trap tag per concept family (`C1_D2_MISCONCEPTION_TAGS`).
+4. **Learner flow (low):** the mock-exam missed-item review showed scenario-dependent stems ("Which tool FIRST?") without their scenario, so the scenario is now shown above the stem.
+5. Regression test `src/lib/__tests__/c1-d2-audit.test.ts`.
+
+### Still open
+Short rationales remain in O2/O3/O4/O5/O7/O8 (287). The next pass should take O8 and O7 first, since they have the highest short ratios.
+
+---

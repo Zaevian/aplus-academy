@@ -64,7 +64,7 @@ export const ACRONYMS: Acronym[] = [
   { id: "HTTPS", acronym: "HTTPS", expansion: "HTTP Secure", blurb: "HTTP over TLS on TCP 443.", objectiveIds: ["C1-D2-O1"] },
   { id: "IaaS", acronym: "IaaS", expansion: "Infrastructure as a Service", blurb: "Cloud provider rents VMs, storage, and networks. You still patch the OS.", objectiveIds: ["C1-D4-O2"] },
   { id: "IAM", acronym: "IAM", expansion: "Identity and Access Management", blurb: "Who a user is and what they may do across systems.", objectiveIds: ["C2-D2-O1"] },
-  { id: "IMAP", acronym: "IMAP", expansion: "Internet Mail Access Protocol", blurb: "Keeps mail on the server for multi-device access. Port 143.", objectiveIds: ["C1-D2-O1"] },
+  { id: "IMAP", acronym: "IMAP", expansion: "Internet Message Access Protocol", blurb: "Keeps mail on the server for multi-device access. Port 143.", objectiveIds: ["C1-D2-O1"] },
   { id: "IOPS", acronym: "IOPS", expansion: "Input/Output Operations Per Second", blurb: "Storage performance measure. Collapsing IOPS is a drive/RAID clue.", objectiveIds: ["C1-D5-O2"] },
   { id: "IoT", acronym: "IoT", expansion: "Internet of Things", blurb: "Embedded devices on the network — cameras, sensors, printers with apps.", objectiveIds: ["C1-D2-O3"] },
   { id: "IP", acronym: "IP", expansion: "Internet Protocol", blurb: "Addressing and routing layer. IPv4 and IPv6 are both in A+ scope.", objectiveIds: ["C1-D2-O6"] },

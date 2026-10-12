@@ -85,7 +85,7 @@ export const PORTS: PortRecord[] = [
   {
     ports: "143",
     protocol: "IMAP",
-    name: "Internet Mail Access Protocol",
+    name: "Internet Message Access Protocol",
     transport: "TCP",
     purpose: "Accesses mail on the server so multiple devices stay synchronized.",
     secure: "insecure",
