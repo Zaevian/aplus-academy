@@ -7,6 +7,51 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ---
 
+## 2026-10-12 — C1 Domain 4 Virtualization and Cloud (second-pass rotation, weekly learner audit)
+
+**Auditor:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (master @ **`03911ed`** post PR #11)  
+**Live:** https://aplus-academy-gules.vercel.app/  
+**Official:** 220-1201 Domain 4.0 Virtualization and Cloud Computing **11%** — Exam Objectives Document Version **3.0** (local PDF/text locked; bullets 4.1–4.2 extracted).
+
+### Coverage snapshot (tip `03911ed`)
+- 2 objectives, **6** lessons, **82** questions
+- States: **O1–O2 Exam Ready** — each has scored LabHost PBQ (`HypervisorMatchLab`, `CloudServiceLab`) + disjoint holdout (`C1-D4` in `HOLDOUT_DOMAIN_IDS`)
+- Diagrams: `HypervisorDiagram` + `CloudModelsDiagram` are real registry exports (not SIMPLE stubs)
+- Keyword sweep: every official 4.1–4.2 family taught; soft P2 on literal “application virtualization” / MCQ “test development” phrasing
+
+### Live guest smoke (2026-10-12 ET)
+- Domain overview + `4-1-virtualization` / `4-2-cloud` + all six lesson slugs **200**
+- Labs `hypervisor-match` + `cloud-service-models` **200**; in-lesson lab blocks carry correct `labId`s
+- Domain quiz, `/practice/core-1`, `/exam/core-1` **200**; bogus objective **404**
+
+### Findings
+- **MUST-FIX (Virtualization structural): NO** on tip `03911ed`
+- **High (cross-domain, already reported):** Mock exam choice-shuffle salt `id.length/100` affects D4 pool (authored A≈76% → post-salt slots ≈12/31/33/24); Diablo holds fix — no new shuffle patch
+- **Medium/P1 bank:** O2 correct-as-A **97.4%** (37/38); domain unique-longest correct **57.3%**; short rationales **64%**; only 9 exam-difficulty items
+- **Low/P2:** Misconception tags present but thin (9/82); add literal CompTIA “application virtualization” phrasing
+- **Factual:** No clear V3.0 contradictions found this pass
+
+### Fixes shipped
+None this run. Docs-only branch `miyuki/audit-2026-10-12-virtualization` (audit-log append). No code PR.
+
+### Ready-to-launch when prioritized
+1. Diablo-held exam shuffle saltFromId + Listen-order fix (sitewide; covers D4)
+2. D4 P1: O2 key redistribution (and light O1), longest-cue trim, expand distractor rationales, bump exam/scenario slice
+3. D4 P2: one lesson line + 1–2 MCQs with “application virtualization” / “test development” wording
+
+### Verdict
+**Virtualization/Cloud is Exam Ready end-to-end on tip `03911ed` structurally.** Residual work is bank-quality + sitewide shuffle. MUST-FIX = **no**.
+
+### Machine-readable
+`/workspace/aplus-audit-d4-virtualization-2026-10-12/` — REPORT.md, defects.json, coverage-d4.md, qs-parsed.json, smoke-results.txt
+
+### Next rotation
+**C1-D5 Hardware and Network Troubleshooting (second pass)** — Networking (D2), Mobile (D1), Hardware (D3), and Virtualization (D4) second-passes filed through 2026-10-12.
+
+---
+
+
 ## 2026-09-28 — PBQ deepen-3b (+4 scored LabHost labs on #11)
 
 **Auditor/Implementer:** Miyuki  
