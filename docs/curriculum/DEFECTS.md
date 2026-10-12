@@ -21,9 +21,9 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | core2-ports-pbq | high | **fixed** (this PR) | Same Ports PBQ for C1 and C2 mocks | `src/app/exam/[core]/page.tsx` |
 | mock-no-domain-weight | medium | **fixed** (groundwork, this PR) | MCQ pick ignored `EXAM_META` domain percents | `src/lib/questions.ts` `domainWeightedSample`, exam page |
 | mobile-zero-pbq | critical/high | **fixed** (O1/O2/O3) | C1-D1-O1 laptop; O2 accessories; O3 MDM/cellular lab + holdout → Exam Ready O1–O3 | `src/content/labs/index.ts`, `mobile-mdm-lab.tsx`, `registry.ts` |
-| networking-uneven-pbq | medium | **partial** (O1 ports + O3 hosts + O4 services + O7 types + O8 tools) | O7 gained `C1-D2-O7-WAN-LAB`; remaining networking gaps closed for listed O's | `src/content/labs/index.ts`, `network-types-lab.tsx` |
-| weak-rationales | medium | open | Hundreds of distractor rationales &lt;25 chars (D1 + D2) | `src/content/questions/c1/d1.ts`, `src/content/questions/c1/d2.ts` |
-| missing-misconception-tags | medium | open | Near-zero `tags[]` on Mobile/Networking banks | question banks under `src/content/questions/` |
+| networking-uneven-pbq | medium | **fixed** (2026-10-12 second pass verified O1–O8 all have scored LabHost PBQs) | O7 gained `C1-D2-O7-WAN-LAB`; live learner pass confirmed every C1-D2 objective has a lab | `src/content/labs/index.ts`, `network-types-lab.tsx` |
+| weak-rationales | medium | **partial** (C1-D2 O1 + O6 fixed 2026-10-12; 287 short remain in D2 O2–O5/O7/O8) | Hundreds of distractor rationales &lt;25 chars (D1 + D2) | `src/content/questions/c1/d1.ts`, `src/content/questions/c1/d2.ts` |
+| missing-misconception-tags | medium | **partial** (C1-D2 all 240 tagged 2026-10-12; Mobile open) | Near-zero `tags[]` on Mobile/Networking banks | question banks under `src/content/questions/` |
 | diagram-simple-fallback | high | open | Mobile flagship diagrams are text fallbacks | `src/components/diagrams/` |
 | thin-vendor-sources | medium | open | Mobile lessons cite only generic CompTIA sources | `src/content/lessons/c1/d1.ts`, `src/content/sources.ts` |
 | hardware-uneven-pbq | medium | **partial** (O1 display + O6 PSU + O7 MFD) | C1-D3 O7 gained `C1-D3-O7-MFD-LAB`; O1/O2/O3/O4/O5/O6/O7/O8 have LabHost labs | `src/content/labs/index.ts`, `mfd-deploy-lab.tsx` |
