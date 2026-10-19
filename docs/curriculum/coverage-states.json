@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T00:17:43.457Z",
+  "generated": "2026-10-19T14:43:49.391Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
@@ -18,7 +18,7 @@
       "Exam Ready"
     ],
     "examReadyRequires": [
-      "disjoint holdout (reviewQuestionIds independent of quizQuestionIds)",
+      "disjoint holdout (reviewQuestionIds ⊄ quizQuestionIds)",
       "scored LabHost PBQ (pbqLabIds non-empty)",
       "assessment depth ≥ 8 practice questions"
     ],
@@ -1740,7 +1740,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 26,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -1800,6 +1800,13 @@
           "state": "Retained",
           "questionCount": 4,
           "inPbq": false
+        },
+        {
+          "conceptId": "C1-D3-O1-ATTR",
+          "label": "ATTR",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
         }
       ],
       "subtopics": [
@@ -1833,7 +1840,7 @@
         },
         {
           "label": "inverter",
-          "state": "Taught"
+          "state": "Retained"
         },
         {
           "label": "pixel density",
@@ -1865,7 +1872,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 24,
+        "assessedDepth": 26,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -1888,21 +1895,21 @@
           "conceptId": "C1-D3-O2-UTP",
           "label": "UTP",
           "state": "Retained",
-          "questionCount": 4,
+          "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D3-O2-FIBER",
           "label": "FIBER",
           "state": "Retained",
-          "questionCount": 4,
+          "questionCount": 5,
           "inPbq": false
         },
         {
           "conceptId": "C1-D3-O2-HDMI",
           "label": "HDMI",
           "state": "Retained",
-          "questionCount": 3,
+          "questionCount": 4,
           "inPbq": false
         },
         {
@@ -2064,7 +2071,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 23,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2094,7 +2101,7 @@
           "conceptId": "C1-D3-O3-DDR",
           "label": "DDR",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": true
         },
         {
@@ -2147,7 +2154,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 34,
+        "assessedDepth": 38,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2221,6 +2228,13 @@
           "state": "Exam Ready",
           "questionCount": 7,
           "inPbq": true
+        },
+        {
+          "conceptId": "C1-D3-O4-REMOVABLE",
+          "label": "REMOVABLE",
+          "state": "Retained",
+          "questionCount": 4,
+          "inPbq": false
         }
       ],
       "subtopics": [
@@ -2262,7 +2276,7 @@
         },
         {
           "label": "flash",
-          "state": "Taught"
+          "state": "Retained"
         },
         {
           "label": "memory cards",
@@ -2286,7 +2300,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 34,
+        "assessedDepth": 36,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2309,7 +2323,7 @@
           "conceptId": "C1-D3-O5-PCIE",
           "label": "PCIE",
           "state": "Exam Ready",
-          "questionCount": 6,
+          "questionCount": 7,
           "inPbq": true
         },
         {
@@ -2351,7 +2365,7 @@
           "conceptId": "C1-D3-O5-CPU",
           "label": "CPU",
           "state": "Retained",
-          "questionCount": 8,
+          "questionCount": 9,
           "inPbq": false
         }
       ],

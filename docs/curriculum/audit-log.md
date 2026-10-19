@@ -1,9 +1,48 @@
 # Curriculum audit log
 
-Weekly learner-perspective + repo audits against CompTIA A+ V15 / Exam Objectives Document Version 3.0.
+Weekly learner-perspective + repo audits against CompTIA A+ V15 / Exam Objectives Document Version 4.0 (posted 2025-11-25; objective bullets identical to Version 3.0 — see 2026-10-19 entry).
 Live site: https://aplus-academy-gules.vercel.app/
 
 Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Agents path dropped; Diablo authorized local-clone PRs). `gh` authenticated as Zaevian.
+
+---
+
+## 2026-10-19 — C1 Domain 3 Hardware second-pass learner audit
+
+**Auditor/Implementer:** Miyuki (Diablo rotation)
+**Branch:** `miyuki/audit-2026-10-19-c1d3-hardware` from `master` @ 44333cf. Independent of open #16 (no `d2.ts` changes).
+**Official:** CompTIA A+ V15 / Exam Objectives Document **Version 4.0**. No dumps.
+
+### Objectives check (top finding)
+- comptia.org V15 pages (fetched 2026-10-19) now link **Version 4.0** PDFs for 220-1201 and 220-1202 (CMP files last-modified 2025-11-25). The repo and the 2026-10 cert-health check still pinned Version 3.0.
+- A full text diff of 3.0 vs 4.0 (both cores) shows only two changes: (1) the accreditation wording (ANSI → ANAB, ISO spelled out), and (2) the acronym list. The list adds CAS, eSIM, FaaS, GUI, ISP, NAS, NAT, OEM, SDS, SNMP, and WEP, and drops MSDS (SDS replaces it). **Every objective bullet, domain weight (13/23/25/11/28; 28/28/23/21), question count, and passing score is unchanged.** No content depends on anything that changed, so the D3 fixes proceeded.
+- Shipped: `exam-meta.ts` and `sources.ts` now point at the 4.0 PDFs (lastVerified 2026-10-19). Source ids stay `c1-obj-3.0`/`c2-obj-3.0` for stability. README updated. Glossary gains the 11 new acronyms; MSDS now points to SDS. The C1 4.0 PDF expands NAT as "Network Access Translation" (C2 prints the standard "Address"); the glossary notes the typo.
+
+### Learner pass — findings
+- **Key-letter bias (MUST-FIX):** among the 277 correct keys, 65% were "a", 30% "b", 5% "c", and **0% "d"**. A learner could pass by always answering a/b. The mock exam keeps source order, apart from its Diablo-held `id.length` salt, so the bias leaked into the mock.
+- **Weak rationales:** 453 distractor rationales and 60 key rationales were under 25 characters ("No.", "Printers.", "Listed."). Five keys said only "Correct.".
+- **Wrong or misleading items:** `O5-PCIE-Q003` called a *USB* NIC an expansion card. `O6-WATTAGE-Q003` had a garbled stem ("600 W at the wall-DC side"). `O7-ADF-Q005` was a negative "does not automatically mean" trick with three true distractors. `O4-RAID5-Q002/c` gave a weak restore rationale. `O8-LASER-Q001` implied the seven imaging steps are a 220-1201 bullet (they are not; 3.8 lists maintenance).
+- **Coverage gaps (no keyed MCQ):** 3.1 pixel density, refresh rate, resolution, and color gamut. 3.2 ST/SC, punchdown block, and DVI. 3.3 CAS latency. 3.4 flash, memory cards, and optical. 3.5 sound card and AMD/Intel socket mismatch.
+- **Misconception tags:** only 18 of 254 items carried tags (the 2026-10-05 sample batch).
+- **PCL naming:** objective 3.7 prints "Printer Control Language", but the acronym list says "Printer Command Language".
+- Labs/PBQs (O1–O8 LabHost), the mock D3 slice, and holdout were spot-checked. No broken labs. Prior hardware rows were re-read, and none of the already-fixed work was redone.
+
+### Shipped
+- `src/content/questions/c1/d3.ts`: **513 rationales rewritten** (all 453 short distractors, all 60 short keys) plus 6 weak keys and 3 weak distractors. **5 factual/quality fixes** (PCIE-Q003, WATTAGE-Q003, ADF-Q005 rewritten as a positive diagnostic, RAID5-Q002/c, LASER-Q001 note). **+14 MCQs** (254 → 268): O1-ATTR ×4, O2 ST/punchdown/DVI ×3, O3 CAS ×1, O4-REMOVABLE ×4, O5 sound card + socket ×2. **Key letters rebalanced** by rotation (text and rationale stay paired), now a/b/c/d = 78/72/70/73. Added `C1_D3_MISCONCEPTION_TAGS` (56 families; all 268 tagged; the 18 existing per-item tags are kept) and `C1_D3_BEYOND_OBJECTIVES` (6 laser-process items tagged `beyond-objectives`).
+- `catalog.ts`: new concepts `C1-D3-O1-ATTR` and `C1-D3-O4-REMOVABLE`, appended at the end so the positional subtopic mapping is preserved.
+- `lessons/c1/d3.ts`: a CAS latency line in the RAM lesson and the PCL Command/Control note.
+- `src/lib/__tests__/c1-d3-audit.test.ts`: tags, ≥25-char rationales, key balance, coverage-gap items, PCIE/ADF fixes, beyond-objectives tags, and V4.0 meta plus acronyms.
+- Regenerated `coverage-states.json` and `coverage.json`. D3 subtopics "pixel density"/"inverter" and "flash" moved Taught → Retained. Exam Ready is still 63/68.
+
+### Residuals
+- The longest option is still the correct one in 81% of single-answer items. Rotation fixes the letter, not the length.
+- About 209 distractors are still implausible cross-domain fillers (e.g., "Fuser rollers" on a PCIe item). Their rationales now explain the trap, but the next pass should replace them with in-domain distractors.
+- The exam/scenario slice is thin: 28 scenario and 29 exam-difficulty items out of 268.
+- The mock shuffle `id.length/100` salt is Diablo-held. Source rebalancing mitigates it.
+- Laser imaging-step items are 220-1101 carry-over. They are tagged, not removed.
+- `coverage-states.ts` pairs subtopics with concepts by index, so some D3 subtopic labels show a neighbour's state.
+
+**Next rotation:** C1-D4 Virtualization and Cloud Computing.
 
 ---
 

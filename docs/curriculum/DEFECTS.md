@@ -11,7 +11,7 @@
 **PBQ deepen-3 (2026-09-28 ET):** master @ 11a8c1a; branch `miyuki/pbq-deepen-3`. Added **C1-D1** to `HOLDOUT_DOMAIN_IDS` (Mobile holdout gap from #10). Four new scored LabHost labs (O2 accessories, O4 DNS/DHCP/VLAN/VPN, O1 OS types, O4 safety). See audit-log.
 
 Tracked from Miyuki Core 1 Domains 1–5 and Core 2 Domains 1–4 audits, 2026-09-28.
-Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps.
+Official authority: CompTIA A+ V15 / Exam Objectives Document Version 4.0 (bullets identical to 3.0) — no dumps.
 
 | ID | Severity | Status | Summary | Primary paths |
 |---|---|---|---|---|
@@ -28,7 +28,13 @@ Official authority: CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no
 | thin-vendor-sources | medium | open | Mobile lessons cite only generic CompTIA sources | `src/content/lessons/c1/d1.ts`, `src/content/sources.ts` |
 | hardware-uneven-pbq | medium | **partial** (O1 display + O6 PSU + O7 MFD) | C1-D3 O7 gained `C1-D3-O7-MFD-LAB`; O1/O2/O3/O4/O5/O6/O7/O8 have LabHost labs | `src/content/labs/index.ts`, `mfd-deploy-lab.tsx` |
 | hardware-display-simple | high | **fixed** (this PR) | `DisplayCompareDiagram` was SIMPLE text fallback | `src/components/diagrams/registry.tsx` |
-| hardware-weak-rationales | medium | **partial** (~18 Qs this PR) | Hundreds of D3 distractor rationales still &lt;25 chars; sample batch + misconception tags shipped | `src/content/questions/c1/d3.ts` |
+| hardware-weak-rationales | medium | **fixed** (2026-10-19 second pass) | All 453 short D3 distractor and 60 short key rationales rewritten (≥25 chars, regression-tested); ~209 cross-domain filler distractors remain plausibility residual | `src/content/questions/c1/d3.ts`, `src/lib/__tests__/c1-d3-audit.test.ts` |
+| objectives-v4 | high | **fixed** (meta/sources/glossary, 2026-10-19) | CompTIA now serves Exam Objectives Document Version 4.0 (2025-11-25); repo pinned 3.0. Diff = accreditation wording + acronym list only (adds CAS, eSIM, FaaS, GUI, ISP, NAS, NAT, OEM, SDS, SNMP, WEP; drops MSDS); bullets/weights/scores unchanged | `src/lib/exam-meta.ts`, `src/content/sources.ts`, `src/content/glossary/acronyms.ts`, `README.md` |
+| hardware-key-bias | high | **fixed** (2026-10-19) | C1-D3 correct keys were a 65% / b 30% / c 5% / d 0%; rotated to 78/72/70/73 with paired rationales; longest-answer cue (81%) still open | `src/content/questions/c1/d3.ts` |
+| hardware-misconception-tags | medium | **fixed** (2026-10-19) | `C1_D3_MISCONCEPTION_TAGS` (56 families) tags all 268 D3 items; laser imaging-step items tagged `beyond-objectives` | `src/content/questions/c1/d3.ts` |
+| hardware-coverage-gaps | medium | **fixed** (2026-10-19) | No keyed MCQ for 3.1 density/refresh/resolution/gamut, 3.2 ST/punchdown/DVI, 3.3 CAS, 3.4 flash/cards/optical, 3.5 sound card/sockets; +14 MCQs and concepts ATTR/REMOVABLE | `src/content/questions/c1/d3.ts`, `src/content/catalog.ts` |
+| hardware-scenario-thin | low | open | Only 28 scenario / 29 exam-difficulty items of 268; many cross-domain filler distractors | `src/content/questions/c1/d3.ts` |
+| subtopic-concept-index-map | low | open | `coverage-states.ts` pairs subtopics with concepts by array index, so some subtopic labels show a neighbour concept's state | `src/content/coverage-states.ts` |
 | domain-hard-lock-preview | medium | **fixed** (preview this PR) | Locked domain pages showed only gate text — no syllabus counts; soft read-only preview added; hard gate preserved | `src/components/course/domain-gate.tsx` |
 | labs-no-filter | low | **fixed** (this PR) | Labs catalog had no search/kind filter | `src/app/labs/page.tsx` |
 | software-ts-uneven-pbq | medium | **partial** (O2 mobile + O3 compromise labs) | C2-D3 O3 has CompromisedPhoneLab; O1 reuses Win tools; O4 only shift | `src/content/labs/index.ts`, `compromised-phone-lab.tsx` |

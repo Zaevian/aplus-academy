@@ -10,17 +10,17 @@ export const SOURCES: Source[] = [
   },
   {
     id: "c1-obj-3.0",
-    title: "CompTIA A+ 220-1201 Exam Objectives v3.0",
-    url: "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+    title: "CompTIA A+ 220-1201 Exam Objectives v4.0 (bullets identical to v3.0)",
+    url: "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
     group: "certification",
-    verified: "2026-09-01",
+    verified: "2026-10-19",
   },
   {
     id: "c2-obj-3.0",
-    title: "CompTIA A+ 220-1202 Exam Objectives v3.0",
-    url: "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+    title: "CompTIA A+ 220-1202 Exam Objectives v4.0 (bullets identical to v3.0)",
+    url: "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
     group: "certification",
-    verified: "2026-09-01",
+    verified: "2026-10-19",
   },
   {
     id: "ms-windows",
