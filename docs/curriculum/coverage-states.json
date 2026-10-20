@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T14:43:49.391Z",
+  "generated": "2026-10-20T14:12:19.915Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
@@ -18,7 +18,7 @@
       "Exam Ready"
     ],
     "examReadyRequires": [
-      "disjoint holdout (reviewQuestionIds ⊄ quizQuestionIds)",
+      "disjoint holdout (reviewQuestionIds independent of quizQuestionIds)",
       "scored LabHost PBQ (pbqLabIds non-empty)",
       "assessment depth ≥ 8 practice questions"
     ],
