@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { Question } from "@/content/schema";
 import { KnowledgeCheck } from "@/components/lesson/knowledge-check";
 import { recordQuiz } from "@/lib/progress-actions";
@@ -8,6 +8,15 @@ import { unseenFirst } from "@/lib/questions";
 import { useAcademy } from "@/components/academy-provider";
 import { Button } from "@/components/ui/button";
 import { getQuestions } from "@/content/registry";
+
+const noopSubscribe = () => () => {};
+
+/** False during SSR and the hydration pass, true after. The item set is shuffled with
+ *  Math.random, so it must only be drawn on the client or the server HTML and the first
+ *  client render pick different questions (React hydration error #418). */
+function useHydrated(): boolean {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
 
 export function QuizPlayer({
   kind,
@@ -37,24 +46,35 @@ export function QuizPlayer({
     [quizzes, targetId],
   );
 
+  const hydrated = useHydrated();
   const [attempt, setAttempt] = useState(0);
   const items = useMemo(
     () =>
-      unseenFirst(
-        pool.length ? pool : getQuestions(),
-        exposed,
-        count,
-        missed,
-      ),
+      hydrated
+        ? unseenFirst(
+            pool.length ? pool : getQuestions(),
+            exposed,
+            count,
+            missed,
+          )
+        : [],
     // attempt is the only reshuffle trigger; do not reshuffle on liveQuery.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [pool, count, attempt],
+    [pool, count, attempt, hydrated],
   );
 
   const [done, setDone] = useState(false);
   const [score, setScore] = useState<number | null>(null);
   /** First-attempt outcome per item index (true=correct on first check). */
   const firstOutcomes = useRef<Map<number, boolean>>(new Map());
+
+  if (!hydrated) {
+    return (
+      <p className="text-sm text-muted-foreground" data-testid="quiz-loading">
+        Loading questions…
+      </p>
+    );
+  }
 
   if (items.length === 0) {
     return (
