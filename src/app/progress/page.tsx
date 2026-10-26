@@ -7,6 +7,7 @@ import { db } from "@/db/client";
 import { useEffect, useState } from "react";
 import { getQuestions } from "@/content/registry";
 import { ALL_OBJECTIVES } from "@/content/catalog";
+import { FIRST_LESSON_HREF } from "@/lib/study-path";
 
 export default function ProgressPage() {
   const { progress, quizzes, mastery } = useAcademy();
@@ -30,12 +31,12 @@ export default function ProgressPage() {
       <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
         <h1 className="text-2xl font-semibold">Progress</h1>
         <p className="text-sm text-muted-foreground">
-          No attempts yet. Progress is stored on this device. Start Foundation,
-          then Core 1 and Core 2 — Internal Readiness is this academy&apos;s own
+          No attempts yet. Progress is stored on this device. Start Core 1
+          lesson 1, then Core 2 — Internal Readiness is this academy&apos;s own
           percent, not CompTIA&apos;s 100–900 scale.
         </p>
-        <Link className="inline-flex min-h-11 items-center underline" href="/course/foundation">
-          Open Foundation
+        <Link className="inline-flex min-h-11 items-center underline" href={FIRST_LESSON_HREF}>
+          Open Core 1 lesson 1
         </Link>
       </div>
     );

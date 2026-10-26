@@ -5,14 +5,26 @@ import type { ProgressSnapshot } from "@/db/client";
 import type { Lesson } from "@/content/schema";
 
 /**
- * Foundation lesson 1. The old "What CompTIA A+ is" overview was removed, so the
- * path opens on the first real lesson. /course/foundation/what-a-plus-is
- * redirects here (next.config.ts) for old bookmarks and saved locations.
+ * Lesson 1 is real exam content: Core 1 (220-1201) objective 1.1, the first
+ * objective in CompTIA's own order. Foundation (academy orientation, exam
+ * wording, troubleshooting habits, safety/units) is optional study skills and no
+ * longer sits in front of Core 1. /course/foundation/what-a-plus-is redirects
+ * here (next.config.ts) for old bookmarks and saved locations.
  */
-export const FIRST_LESSON_HREF = "/course/foundation/how-the-academy-works";
-export const FIRST_LESSON_TITLE = "How this academy forces you to learn";
+export const FIRST_LESSON_ID = "C1-D1-O1-L1";
+export const FIRST_LESSON_HREF =
+  "/course/core-1/domain-1/1-1-laptop-hardware/laptop-battery-keyboard";
+export const FIRST_LESSON_TITLE = "Laptop serviceability, batteries, and keyboards";
+/** Short UI label for lesson 1 (hero, onboarding, start-over). */
+export const FIRST_LESSON_LABEL = "Core 1 lesson 1";
 /** Removed CompTIA overview lesson; kept only so old saved URLs can be recognized. */
 export const RETIRED_OVERVIEW_HREF = "/course/foundation/what-a-plus-is";
+/**
+ * Former lesson 1 (academy orientation). Still a live, optional Foundation
+ * lesson, but older onboarding wrote it into currentLocation before the
+ * learner opened anything, so an untouched pointer to it means "begin".
+ */
+export const FORMER_FIRST_LESSON_HREF = "/course/foundation/how-the-academy-works";
 
 export type OpeningResume = {
   /** saved: last lesson URL. next: completions exist but that URL was not stored. begin: nothing to resume. */
@@ -96,9 +108,10 @@ export function openingResume(progress?: ProgressSnapshot): OpeningResume {
   const located = lessonAtHref(progress?.currentLocation);
   const completions = progress ? completionCount(progress) : 0;
   // Onboarding writes lesson 1 into currentLocation before the learner opens it.
+  const locatedHref = located ? lessonPath(located.id) : null;
   const onboardingPointer =
     located != null &&
-    lessonPath(located.id) === FIRST_LESSON_HREF &&
+    (locatedHref === FIRST_LESSON_HREF || locatedHref === FORMER_FIRST_LESSON_HREF) &&
     completions === 0;
 
   if (located && !onboardingPointer) {
@@ -141,12 +154,37 @@ export type NextStudy = {
   detail: string;
 };
 
-function orderedLessons(): Lesson[] {
+function lessonsByCore() {
   const lessons = getLessons();
-  const fnd = lessons.filter((l) => l.objectiveId.startsWith("FND-"));
-  const c1 = lessons.filter((l) => l.objectiveId.startsWith("C1-"));
-  const c2 = lessons.filter((l) => l.objectiveId.startsWith("C2-"));
-  return [...fnd, ...c1, ...c2];
+  return {
+    fnd: lessons.filter((l) => l.objectiveId.startsWith("FND-")),
+    c1: lessons.filter((l) => l.objectiveId.startsWith("C1-")),
+    c2: lessons.filter((l) => l.objectiveId.startsWith("C2-")),
+  };
+}
+
+/** Required path: Core 1 then Core 2. Foundation is optional study skills. */
+function orderedLessons(): Lesson[] {
+  const { c1, c2 } = lessonsByCore();
+  return [...c1, ...c2];
+}
+
+/**
+ * Reading order for "next lesson" links. Foundation lessons chain among
+ * themselves and the last one hands off to Core 1 lesson 1; Core lessons
+ * follow the required path and never detour into Foundation.
+ */
+function readingOrderFor(lessonId: string): Lesson[] {
+  const { fnd, c1, c2 } = lessonsByCore();
+  if (fnd.some((l) => l.id === lessonId)) {
+    const first = c1.find((l) => l.id === FIRST_LESSON_ID);
+    return first ? [...fnd, first] : fnd;
+  }
+  return [...c1, ...c2];
+}
+
+export function foundationComplete(progress?: ProgressSnapshot): boolean {
+  return !lessonsByCore().fnd.some((l) => lessonIsOpen(l, progress));
 }
 
 export function lessonIsOpen(
@@ -171,61 +209,53 @@ export function nextStudy(progress?: ProgressSnapshot): NextStudy {
       title: "Exam simulator",
       stepLabel: "Path complete",
       detail:
-        "Foundation, Core 1, and Core 2 lessons are marked complete. Use labs, review, and the 90-question exam simulator next.",
+        "Core 1 and Core 2 lessons are marked complete. Use labs, review, and the 90-question exam simulator next.",
     };
   }
-  const core = next.objectiveId.startsWith("FND-")
-    ? "Foundation"
-    : next.objectiveId.startsWith("C1-")
-      ? "Core 1"
-      : "Core 2";
-  const step =
-    core === "Foundation" ? 1 : core === "Core 1" ? 2 : 3;
+  const core = next.objectiveId.startsWith("C1-") ? "Core 1" : "Core 2";
+  const step = core === "Core 1" ? 1 : 2;
   return {
     href: lessonPath(next.id),
     title: next.title,
-    stepLabel: `Step ${step} of 3 · ${core}`,
+    stepLabel: `Step ${step} of 2 · ${core}`,
     detail:
-      core === "Foundation"
-        ? "Start here. Foundation comes before Core 1 hardware."
-        : core === "Core 1"
-          ? "Core 1 (220-1201): hardware, networking, mobile, cloud, troubleshooting."
-          : "Core 2 (220-1202): OS, security, software troubleshooting, procedures.",
+      core === "Core 1"
+        ? "Core 1 (220-1201): mobile devices, networking, hardware, virtualization/cloud, troubleshooting."
+        : "Core 2 (220-1202): OS, security, software troubleshooting, procedures.",
   };
 }
 
 export function studySteps(progress?: ProgressSnapshot): StudyStep[] {
   const next = nextStudy(progress);
-  const fndDone = !next.stepLabel.includes("Foundation");
   const c1Done = next.stepLabel.includes("Core 2") || next.stepLabel.includes("Path complete");
   const allDone = next.stepLabel.includes("Path complete");
   return [
     {
       n: 1,
-      title: "Foundation",
-      href: FIRST_LESSON_HREF,
-      blurb: "How this course gates you, exam-style language, and how to think like a technician. Do this first.",
-      status: fndDone ? "done" : "current",
+      title: "Core 1 · 220-1201",
+      href: c1Done ? "/course/core-1" : FIRST_LESSON_HREF,
+      blurb: "Starts at 1.1 laptop hardware. Mobile devices, networking, hardware, virtualization/cloud, and hardware troubleshooting.",
+      status: allDone || c1Done ? "done" : "current",
     },
     {
       n: 2,
-      title: "Core 1 · 220-1201",
-      href: "/course/core-1",
-      blurb: "Hardware, mobile, networking, virtualization/cloud, and hardware troubleshooting.",
-      status: allDone || c1Done ? "done" : fndDone ? "current" : "next",
-    },
-    {
-      n: 3,
       title: "Core 2 · 220-1202",
       href: "/course/core-2",
       blurb: "Operating systems, security, software troubleshooting, and operational procedures.",
       status: allDone ? "done" : c1Done ? "current" : "next",
     },
+    {
+      n: 3,
+      title: "Study skills · optional",
+      href: "/course/foundation",
+      blurb: "How the academy gates you, BEST/FIRST/NEXT exam wording, a troubleshooting habit, and safety/units. Not scored; dip in any time.",
+      status: foundationComplete(progress) ? "done" : "next",
+    },
   ];
 }
 
 export function nextLessonAfter(lessonId: string): { href: string; title: string } | null {
-  const list = orderedLessons();
+  const list = readingOrderFor(lessonId);
   const i = list.findIndex((l) => l.id === lessonId);
   if (i === -1 || i === list.length - 1) return null;
   const n = list[i + 1]!;

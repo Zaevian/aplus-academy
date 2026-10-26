@@ -11,7 +11,7 @@ import {
 const CORE_LESSON = "C1-D1-O1-L1";
 
 describe("opening resume", () => {
-  it("begins Foundation lesson 1 when nothing is saved", () => {
+  it("begins Core 1 lesson 1 when nothing is saved", () => {
     const resume = openingResume(initialProgress());
     expect(resume.source).toBe("begin");
     expect(resume.href).toBe(FIRST_LESSON_HREF);
@@ -69,7 +69,7 @@ describe("opening resume", () => {
   it("falls back to the next open lesson when completions exist without a url", () => {
     const progress = initialProgress();
     progress.currentLocation = "/settings";
-    progress.completedLessons = ["FND-D0-O2-L1"];
+    progress.completedLessons = ["C1-D1-O1-L1"];
     const resume = openingResume(progress);
     expect(resume.source).toBe("next");
     expect(resume.href.startsWith("/course/")).toBe(true);

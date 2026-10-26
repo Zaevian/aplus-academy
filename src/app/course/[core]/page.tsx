@@ -17,16 +17,16 @@ export default async function CorePage({
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
       <p className="text-xs tracking-wide text-muted-foreground uppercase">
-        {id === "C1" ? "Step 2 of 3" : "Step 3 of 3"} · after Foundation
+        {id === "C1" ? "Step 1 of 2 · start here" : "Step 2 of 2 · after Core 1"}
       </p>
       <h1 className="text-2xl font-semibold">
         {id === "C1" ? "Core 1 · 220-1201" : "Core 2 · 220-1202"}
       </h1>
       <p className="text-sm text-muted-foreground">
-        New here? Start Foundation lesson 1 before browsing these domains.
+        New here? Start Core 1 lesson 1 (1.1 laptop hardware) before browsing these domains.
       </p>
       <Button variant="outline" className="min-h-11" render={<Link href={FIRST_LESSON_HREF} />}>
-        Back to Foundation lesson 1
+        Open Core 1 lesson 1
       </Button>
       <ul className="space-y-2">
         {domains.map((d) => (

@@ -8,9 +8,12 @@ const nextConfig: NextConfig = {
     return [
       {
         // The "What CompTIA A+ is" overview lesson was removed. Send old
-        // bookmarks and saved locations to Foundation lesson 1.
+        // bookmarks and saved locations to lesson 1 (Core 1 objective 1.1).
+        // Keep in sync with FIRST_LESSON_HREF in src/lib/study-path.ts.
+        // /course/foundation/how-the-academy-works is still a live optional
+        // lesson, so it is not redirected.
         source: "/course/foundation/what-a-plus-is",
-        destination: "/course/foundation/how-the-academy-works",
+        destination: "/course/core-1/domain-1/1-1-laptop-hardware/laptop-battery-keyboard",
         permanent: false,
       },
     ];

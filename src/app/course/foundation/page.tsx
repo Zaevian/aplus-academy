@@ -10,18 +10,18 @@ export default function FoundationPage() {
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
       <p className="text-xs tracking-wide text-muted-foreground uppercase">
-        Step 1 of 3 · start here
+        Optional · study skills
       </p>
       <h1 className="text-2xl font-semibold">Course orientation & IT foundations</h1>
       <p className="text-sm text-muted-foreground">
-        Foundation before Core 1. Not a scored exam domain. Lesson 1 is the
-        beginning of the academy.
+        Optional and not a scored exam domain. Nothing here gates Core 1. Use it
+        any time you want the academy rules, exam wording, or technician habits.
       </p>
       <div className="rounded-xl border-2 border-foreground p-4">
-        <p className="text-xs font-medium uppercase text-muted-foreground">Lesson 1</p>
+        <p className="text-xs font-medium uppercase text-muted-foreground">Lesson 1 is Core 1</p>
         <p className="font-medium">{FIRST_LESSON_TITLE}</p>
         <Button className="mt-3 min-h-11" render={<Link href={FIRST_LESSON_HREF} />}>
-          Begin lesson 1
+          Begin Core 1 lesson 1
         </Button>
       </div>
       <ul className="space-y-2">

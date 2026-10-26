@@ -15,7 +15,7 @@ const STEPS = [
   },
   {
     title: "How you will study",
-    body: "The path is Foundation, then Core 1, then Core 2. You will read, inspect diagrams, use labs, and pass required multiple-choice checks. Domain mastery quizzes are 100 percent gates.",
+    body: "The path is Core 1, then Core 2, starting with real exam content. You will read, inspect diagrams, use labs, and pass required multiple-choice checks. Domain mastery quizzes are 100 percent gates. Foundation study skills are optional.",
   },
   {
     title: "Mandatory checks",
@@ -35,7 +35,7 @@ const STEPS = [
   },
   {
     title: "Start lesson 1",
-    body: `You will not land on a dashboard. Your first screen is Foundation lesson 1: ${FIRST_LESSON_TITLE}. That is where the course begins. ${INTERNAL_SCORING_DISCLAIMER}`,
+    body: `You will not land on a dashboard. Your first screen is Core 1 lesson 1: ${FIRST_LESSON_TITLE}. That is where the course begins. ${INTERNAL_SCORING_DISCLAIMER}`,
   },
 ];
 
