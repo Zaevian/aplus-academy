@@ -17,7 +17,7 @@ describe("C1-D2 second-pass audit (2026-10-12)", () => {
     }
   });
 
-  it.each(["C1-D2-O1", "C1-D2-O6"])("%s distractor rationales explain the trap (>= 25 chars)", (o) => {
+  it.each(["C1-D2-O1", "C1-D2-O6", "C1-D2-O7", "C1-D2-O8"])("%s distractor rationales explain the trap (>= 25 chars)", (o) => {
     const weak = distractors(o).filter((d) => d.r.length < 25);
     expect(weak).toEqual([]);
   });
