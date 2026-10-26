@@ -6,6 +6,42 @@ Live site: https://aplus-academy-gules.vercel.app/
 Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Agents path dropped; Diablo authorized local-clone PRs). `gh` authenticated as Zaevian.
 
 ---
+## 2026-10-26 — C1 Domain 4 Virtualization and Cloud Computing second-pass learner audit (fix pass)
+
+**Auditor/Implementer:** Miyuki (Diablo rotation order, 2026-10-26)
+**Branch:** `miyuki/audit-2026-10-26-c1d4-virtualization` from `master` @ 13747f0. Touches only `questions/c1/d4.ts`, `lessons/c1/d4.ts` (two table rows), a new test, and regenerated coverage files. Independent of open #16 (`d2.ts`) and draft #19 (`d5.ts`); the practice/mock shuffle fix stays held.
+**Official:** CompTIA A+ V15 220-1201 Domain 4.0 (11%), Exam Objectives Document Version 4.0. Re-downloaded the public V4.0 PDF on 2026-10-26: byte-identical to the 2026-10-19 copy, and the 4.1/4.2 bullets match Version 3.0 word for word. **No objective change.** No dumps.
+**Rotation note:** the 2026-10-12 D4 pass was docs-only on an unmerged branch (`miyuki/audit-2026-10-12-virtualization`) and shipped no fixes, so D4 got this fix pass before C2-D1.
+
+### Live smoke (2026-10-26 ET)
+`/course/core-1/domain-4`, the six D4 lesson pages, labs `hypervisor-match` and `cloud-service-models`, `/practice/core-1`, and `/exam/core-1` return 200. O1/O2 keep their scored LabHost PBQs and C1-D4 is still in `HOLDOUT_DOMAIN_IDS`.
+
+### Learner pass — findings
+- Answered all 82 bank items before reading keys: 82/82, and most could be solved by elimination alone because many distractors are cross-domain fillers (CMOS, APIPA, RAID, beep codes on cloud stems).
+- **Answer-key leak (MUST-FIX):** 64 of 89 keys were "a" (72%), 25 "b", none "c" or "d". O2 single-answer items were 37/38 "a". All seven multi-select items were keyed "a, b".
+- **Weak rationales:** 143 rationales under 25 characters (96 distractors, 47 keys), 44 keys saying only "Correct.", plus another 87 one-clause stubs ("No.", "Provider.", "Correct at A+ depth.").
+- **Misconception tags:** 9 of 82 items.
+- **Coverage gaps against 4.1/4.2 wording:** no item or lesson line used the official 4.1 phrases "test development" or "application virtualization". Cross-platform virtualization, guest-level security requirements, ingress vs egress as a definition, file-sync conflicts, shared vs dedicated trade-offs, and a private-cloud scenario each had at most a side mention.
+- Labs: both PBQs solved as intended; tickets and distractor notes match 4.1/4.2. D4 mock slice sampled through the bank: the source key bias is what the held shuffle salt has been partly masking.
+- No factual contradictions with the 4.1/4.2 bullets in existing keys.
+
+### Shipped
+- `src/content/questions/c1/d4.ts`: **230 rationales rewritten** (every rationale under 40 characters plus every stub "Correct. ..." key) so each names the deciding clue or the trap.
+- **+8 coverage items** (82 → 90): `O1-VM-Q009` test development, `O1-VM-Q010` application virtualization, `O1-VM-Q011` cross-platform virtualization, `O1-VM-Q012` guest security requirements (multi), `O2-ELASTIC-Q008` ingress vs egress, `O2-SAAS-Q008` file-sync conflict, `O2-MULTITENANT-Q008` shared vs dedicated, `O2-HYBRID-Q008` private cloud.
+- **Key letters rebalanced** by rotation (text and rationale stay paired; stems and explanations untouched). Keys now a/b/c/d/e = 22/23/25/26/2 across 90 items; multi-select keys rotated too.
+- `C1_D4_MISCONCEPTION_TAGS` (11 families); all 90 items tagged.
+- `src/content/lessons/c1/d4.ts`: two use-case table rows for test development and application virtualization (legacy / cross-platform).
+- `src/lib/__tests__/c1-d4-audit.test.ts`: tags, rationale length (40+), no stub keys, domain and per-objective key balance, an "always pick a" guard, multi-select spread, key letters point at real choices, coverage items, and the official 4.1 phrasing.
+- Regenerated D4 rows in `coverage.json` and `coverage-states.json` (Exam Ready still 63/68; `generated` stamp left alone so the files merge cleanly with #19).
+
+### Residuals
+- The longest choice is still correct in about 55% of single-answer items, and cross-domain filler distractors remain. Rationales now explain them, but the next D4 pass should swap fillers for plausible in-domain distractors.
+- Only 9 exam-difficulty items in D4.
+- The mock shuffle `id.length/100` salt is still Diablo-held; the source rebalance mitigates it for D4.
+
+**Next rotation:** C2-D1 Operating Systems.
+
+---
 
 ## 2026-10-19 — C1 Domain 3 Hardware second-pass learner audit
 

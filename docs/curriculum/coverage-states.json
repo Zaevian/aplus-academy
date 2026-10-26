@@ -18,7 +18,7 @@
       "Exam Ready"
     ],
     "examReadyRequires": [
-      "disjoint holdout (reviewQuestionIds ⊄ quizQuestionIds)",
+      "disjoint holdout (reviewQuestionIds independent of quizQuestionIds)",
       "scored LabHost PBQ (pbqLabIds non-empty)",
       "assessment depth ≥ 8 practice questions"
     ],
@@ -2748,7 +2748,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 32,
+        "assessedDepth": 36,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2764,7 +2764,7 @@
           "conceptId": "C1-D4-O1-VM",
           "label": "VM",
           "state": "Retained",
-          "questionCount": 8,
+          "questionCount": 12,
           "inPbq": false
         },
         {
@@ -2843,7 +2843,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 34,
+        "assessedDepth": 38,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2873,28 +2873,28 @@
           "conceptId": "C1-D4-O2-SAAS",
           "label": "SAAS",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": true
         },
         {
           "conceptId": "C1-D4-O2-HYBRID",
           "label": "HYBRID",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         },
         {
           "conceptId": "C1-D4-O2-ELASTIC",
           "label": "ELASTIC",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         },
         {
           "conceptId": "C1-D4-O2-MULTITENANT",
           "label": "MULTITENANT",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         }
       ],
