@@ -537,4 +537,489 @@ export const LABS: Lab[] = [
     estimatedMinutes: 12,
     capstone: true,
   },
+  {
+    id: "C1-D1-O2-ACCESSORY-LAB",
+    slug: "mobile-accessories",
+    title: "Mobile accessories matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D1-O2"],
+    conceptIds: [
+      "C1-D1-O2-NFC",
+      "C1-D1-O2-BT",
+      "C1-D1-O2-DOCK",
+      "C1-D1-O2-REPLICATOR",
+    ],
+    component: "MobileAccessoriesLab",
+    description:
+      "Match NFC tap, Thunderbolt dock, port replicator, and Bluetooth headset tickets; leave WLAN-for-pen and Lightning-on-Android unused.",
+    solution:
+      "NFC for short-range badge taps. Thunderbolt/USB-C dock for charge + displays + Ethernet. Port replicator multiplies ports without PD. Headset silence is profile/default device. WLAN does not fix pen offset; Lightning is not for USB-C Android.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D2-O4-SERVICES-LAB",
+    slug: "network-services",
+    title: "DNS DHCP VLAN VPN matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O4"],
+    conceptIds: [
+      "C1-D2-O4-DNSREC",
+      "C1-D2-O4-DHCPPOOL",
+      "C1-D2-O4-VLAN",
+      "C1-D2-O4-VPN",
+    ],
+    component: "NetworkServicesLab",
+    description:
+      "Match DNS A/AAAA, DHCP reservation, VLAN guest isolation, and VPN remote access; leave port-forward-as-VPN and mask-as-VLAN unused.",
+    solution:
+      "Fix names with DNS A/AAAA. Sticky printer IPs use DHCP reservation. Guests get a separate VLAN. Hotel workers use client VPN. Port-forward is not a corp VPN; changing one PC mask is not a VLAN.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O1-OSTYPES-LAB",
+    slug: "os-types",
+    title: "OS types and filesystems matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O1"],
+    conceptIds: [
+      "C2-D1-O1-WIN",
+      "C2-D1-O1-LINUX",
+      "C2-D1-O1-MAC",
+      "C2-D1-O1-CHROMEOS",
+      "C2-D1-O1-FS",
+      "C2-D1-O1-EOL",
+    ],
+    component: "OsTypesLab",
+    description:
+      "Match Windows domain, Linux/ext4, ChromeOS kiosk, and macOS/APFS tickets; leave NTFS-USB-for-Mac and Win7-EOL unused.",
+    solution:
+      "Windows for domain GPO. Linux with ext4/XFS for the forge VM. ChromeOS for managed lobby kiosks. macOS with APFS for creative Macs. Shared flash for Mac+Windows wants exFAT; EOL Win7 is unsupported even if it boots.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O4-SAFETY-LAB",
+    slug: "safety-procedures",
+    title: "Safety procedures matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O4"],
+    conceptIds: [
+      "C2-D4-O4-ESD",
+      "C2-D4-O4-GROUND",
+      "C2-D4-O4-PPE",
+      "C2-D4-O4-LIFT",
+    ],
+    component: "SafetyProceduresLab",
+    description:
+      "Match ESD, disconnect-power, PPE, and team-lift tickets; leave open-PSU and Class-A-on-electrical unused.",
+    solution:
+      "ESD strap+mat before boards. Unplug/drain before opening a case. Goggles/mask for toner dust. Team-lift heavy UPS gear. Never service inside a PSU; electrical fires are not Class A water jobs.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+
+  {
+    id: "C1-D1-O3-MDM-LAB",
+    slug: "mobile-mdm",
+    title: "Mobile MDM and cellular matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D1-O3"],
+    conceptIds: [
+      "C1-D1-O3-ESIM",
+      "C1-D1-O3-MDM",
+      "C1-D1-O3-BYOD",
+      "C1-D1-O3-DATACAP",
+    ],
+    component: "MobileMdmLab",
+    description:
+      "Match eSIM/cellular identity, MDM enroll, BYOD selective wipe, and data-cap tickets; leave full-wipe-BYOD and WLAN-for-GPS unused.",
+    solution:
+      "eSIM/SIM for missing cellular. MDM enroll for corp compliance. Selective wipe for BYOD return. Data meter / Wi-Fi sync for caps. Do not full-wipe personal BYOD or swap WLAN for GPS faults.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D2-O8-TOOLS-LAB",
+    slug: "network-tools",
+    title: "Networking tools matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O8"],
+    conceptIds: [
+      "C1-D2-O8-CRIMPER",
+      "C1-D2-O8-PUNCHDOWN",
+      "C1-D2-O8-TONER",
+      "C1-D2-O8-ANALYZER",
+    ],
+    component: "NetworkToolsLab",
+    description:
+      "Match crimper, punchdown, toner, and Wi-Fi analyzer tickets; leave loopback-for-Wi-Fi and tap-for-crimp unused.",
+    solution:
+      "Crimper terminates patch plugs. Punchdown lands horizontal cable on IDC. Toner finds unlabeled drops. Wi-Fi analyzer for channel overlap. Loopback is not RF planning; a tap does not terminate cable.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O3-WIFISEC-LAB",
+    slug: "wireless-security",
+    title: "Wireless security protocols matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O3"],
+    conceptIds: [
+      "C2-D2-O3-WPA3",
+      "C2-D2-O3-WPA2",
+      "C2-D2-O3-AES",
+      "C2-D2-O3-RADIUS",
+      "C2-D2-O3-KERBEROS",
+    ],
+    component: "WirelessSecurityLab",
+    description:
+      "Match WPA3-Personal, Enterprise+RADIUS, AES-only, and Kerberos SSO; leave WEP/open and TKIP-for-speed unused.",
+    solution:
+      "WPA3-Personal (SAE) upgrades guest PSK. Enterprise+RADIUS for per-user corp Wi-Fi. AES-only — disable TKIP. Kerberos is domain SSO, not an AP passphrase. WEP/open and TKIP stay findings.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O5-ENV-LAB",
+    slug: "environment-controls",
+    title: "Environmental and power controls matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O5"],
+    conceptIds: [
+      "C2-D4-O5-UPS",
+      "C2-D4-O5-BROWNOUT",
+      "C2-D4-O5-MSDS",
+      "C2-D4-O5-HUMIDITY",
+    ],
+    component: "EnvironmentControlsLab",
+    description:
+      "Match UPS, surge suppressor, SDS disposal, and humidity/ESD tickets; leave daisy-chain and water-on-lithium unused.",
+    solution:
+      "UPS for brownout/blackout ride-through. Surge when no battery is needed. SDS for toner/battery disposal. Humidity/vents for ESD/dust. Never daisy-chain UPS/strips or water lithium like Class A trash.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D2-O3-HOSTS-LAB",
+    slug: "network-hosts",
+    title: "Network hosts and appliances matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O3"],
+    conceptIds: [
+      "C1-D2-O3-AAA",
+      "C1-D2-O3-UTM",
+      "C1-D2-O3-NTP",
+      "C1-D2-O3-SCADA",
+      "C1-D2-O3-IOT",
+    ],
+    component: "NetworkHostsLab",
+    description:
+      "Match AAA, UTM, NTP, and SCADA isolation tickets; leave DNS-as-auth and IoT-on-SCADA unused.",
+    solution:
+      "RADIUS AAA for edge auth. UTM for combined SOHO security. NTP after outages. Isolate SCADA. DNS is not authentication; IoT stays off the SCADA VLAN.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D3-O6-PSU-LAB",
+    slug: "psu-match",
+    title: "PSU wattage, modular, 24-pin, and rails matching lab",
+    kind: "hardware",
+    objectiveIds: ["C1-D3-O6"],
+    conceptIds: [
+      "C1-D3-O6-WATTAGE",
+      "C1-D3-O6-MODULAR",
+      "C1-D3-O6-ATX24",
+      "C1-D3-O6-RAILS",
+      "C1-D3-O6-VAC",
+    ],
+    component: "PsuMatchLab",
+    description:
+      "Match wattage, modular, ATX 24-pin, and 12V-rail tickets; leave open-PSU and ignore-VAC unused.",
+    solution:
+      "Wattage headroom under GPU load. Modular for airflow. Seat the ATX 24-pin. Mind the 12V rail. Never open a PSU or ignore the input-voltage switch.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O2-BOOT-LAB",
+    slug: "boot-install",
+    title: "Boot media and installation types matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O2"],
+    conceptIds: [
+      "C2-D1-O2-CLEAN",
+      "C2-D1-O2-IMAGE",
+      "C2-D1-O2-ZEROTOUCH",
+      "C2-D1-O2-GPT",
+      "C2-D1-O2-MBR",
+    ],
+    component: "BootInstallLab",
+    description:
+      "Match clean install, image deploy, zero-touch, and GPT+UEFI; leave in-place-on-malware and MBR-on-UEFI unused.",
+    solution:
+      "Clean wipe for untrusted surplus. Image for fleet gold masters. Zero-touch/Autopilot for remote ship. GPT+UEFI for large modern disks. Do not in-place upgrade malware or force MBR on UEFI-only.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O7-HARDEN-LAB",
+    slug: "workstation-harden",
+    title: "Workstation hardening matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O7"],
+    conceptIds: [
+      "C2-D2-O7-HARDEN",
+      "C2-D2-O7-AUTORUN",
+      "C2-D2-O7-LOCKOUT",
+      "C2-D2-O7-BIOSPW",
+    ],
+    component: "WorkstationHardenLab",
+    description:
+      "Match encryption/patch baseline, AutoRun off, lockout, and firmware password; leave shared-admin and AutoRun-enable unused.",
+    solution:
+      "Encrypt+patch+trim services. Disable AutoRun. Set lockout thresholds. Firmware password against boot tampering. No shared local admin; no AutoRun for 'training USBs'.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+{
+    id: "C1-D2-O7-WAN-LAB",
+    slug: "network-types",
+    title: "Internet connections and network types matching lab",
+    kind: "network",
+    objectiveIds: ["C1-D2-O7"],
+    conceptIds: [
+      "C1-D2-O7-FIBER",
+      "C1-D2-O7-DSL",
+      "C1-D2-O7-SAT",
+      "C1-D2-O7-SAN",
+    ],
+    component: "NetworkTypesLab",
+    description:
+      "Match fiber, DSL, satellite, and SAN tickets; leave WLAN-as-WAN and WISP-as-Wi-Fi unused.",
+    solution:
+      "Fiber/ONT for low-latency clinics. DSL when copper distance rules. Satellite when only sky coverage works. SAN for block LUNs. WLAN is not the ISP uplink; WISP is not office Wi-Fi.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C1-D3-O7-MFD-LAB",
+    slug: "mfd-deploy",
+    title: "Printer and MFD deployment matching lab",
+    kind: "printer",
+    objectiveIds: ["C1-D3-O7"],
+    conceptIds: [
+      "C1-D3-O7-ADF",
+      "C1-D3-O7-SECUREPRINT",
+      "C1-D3-O7-PRINTSERVER",
+      "C1-D3-O7-PS",
+    ],
+    component: "MfdDeployLab",
+    description:
+      "Match ADF, secure print, print server, and PostScript; leave flatbed-for-stacks and USB-share unused.",
+    solution:
+      "ADF for multi-page stacks. Secure/held print for payroll. Print server for the floor. PostScript for design vectors. Flatbed is not for 40-page stacks; USB under-desk shares are not department queues.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O8-MOBSEC-LAB",
+    slug: "mobile-device-security",
+    title: "Mobile device security matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O8"],
+    conceptIds: [
+      "C2-D2-O8-REMOTEWIPE",
+      "C2-D2-O8-SCREENLOCK",
+      "C2-D2-O8-MDMPROFILE",
+    ],
+    component: "MobileDeviceSecLab",
+    description:
+      "Match remote wipe, screen lock, MDM profile, and device encryption; leave swipe-only and skip-MDM unused.",
+    solution:
+      "Remote wipe for stolen devices. Real PIN/biometric locks — not swipe. MDM profiles for BYOD/corp. Encrypt at rest. Swipe-only unlock and hope-based factory reset stay findings.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O6-PRIVACY-LAB",
+    slug: "privacy-incident",
+    title: "Privacy, licensing, and incident matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O6"],
+    conceptIds: [
+      "C2-D4-O6-COC",
+      "C2-D4-O6-VOLATILITY",
+      "C2-D4-O6-PII",
+      "C2-D4-O6-AUP",
+    ],
+    component: "PrivacyIncidentLab",
+    description:
+      "Match chain of custody, order of volatility, PII handling, and AUP; leave reboot-first and PII-to-Slack unused.",
+    solution:
+      "Chain of custody for evidence handoffs. Capture volatile state before power-off. Need-to-know PII with retention. AUP for acceptable use. Do not reboot first or paste SSNs into public chat.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+{
+    id: "C2-D1-O6-SETTINGS-LAB",
+    slug: "windows-settings",
+    title: "Windows settings and Control Panel matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O6"],
+    conceptIds: [
+      "C2-D1-O6-POWER",
+      "C2-D1-O6-FIREWALL",
+      "C2-D1-O6-INDEXING",
+      "C2-D1-O6-EXPLOREROPT",
+    ],
+    component: "WindowsSettingsLab",
+    description:
+      "Match power, firewall profile, indexing, and Explorer extensions; leave disable-firewall and SSD-defrag unused.",
+    solution:
+      "Power plans for overnight drain. Firewall private vs public profiles. Indexing for slow search. Show extensions against .pdf.exe. Do not disable the firewall or defrag SSDs for search.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O7-CLIENTNET-LAB",
+    slug: "win-client-net",
+    title: "Windows client networking matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O7"],
+    conceptIds: [
+      "C2-D1-O7-WORKGROUP",
+      "C2-D1-O7-DOMAINJOIN",
+      "C2-D1-O7-UNC",
+      "C2-D1-O7-METERED",
+    ],
+    component: "WinClientNetLab",
+    description:
+      "Match workgroup, domain join, UNC, and metered connection; leave proxy-for-SMB and fake-domain unused.",
+    solution:
+      "Workgroup for home peers. Domain join for GPO. UNC for shares. Metered for LTE caps. HTTP proxy is not SMB; renaming a workgroup is not a domain join.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O10-APPINSTALL-LAB",
+    slug: "app-install",
+    title: "Application installation requirements matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O10"],
+    conceptIds: [
+      "C2-D1-O10-X86APP",
+      "C2-D1-O10-VRAM",
+      "C2-D1-O10-ISO",
+      "C2-D1-O10-IMPACT",
+    ],
+    component: "AppInstallLab",
+    description:
+      "Match x86/WoW64, GPU+VRAM, ISO media, and change-window impact; leave force-x64 and ignore-VRAM unused.",
+    solution:
+      "Install the supported 32-bit build on WoW64. Check dedicated GPU VRAM for CAD. Mount ISO for offline media. Schedule installs for business impact. Do not force wrong architecture or treat RAM as VRAM.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D1-O11-CLOUDPROD-LAB",
+    slug: "cloud-productivity",
+    title: "Cloud-based productivity matching lab",
+    kind: "os",
+    objectiveIds: ["C2-D1-O11"],
+    conceptIds: [
+      "C2-D1-O11-EMAILSYNC",
+      "C2-D1-O11-LICENSE",
+      "C2-D1-O11-COLLAB",
+    ],
+    component: "CloudProductivityLab",
+    description:
+      "Match mailbox sync, license SKU, collab suite, and Files On-Demand; leave shared-password and local-only unused.",
+    solution:
+      "Cloud mailbox sync for mail/calendar. Assign SKUs for Teams/docs. Collab suite for co-authoring. Files On-Demand for offline sync. No shared cloud passwords; local-only skips the objective.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O9-DESTROY-LAB",
+    slug: "data-destruction",
+    title: "Data destruction and disposal matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O9"],
+    conceptIds: [
+      "C2-D2-O9-DEGAUSS",
+      "C2-D2-O9-WIPE",
+      "C2-D2-O9-SHRED",
+      "C2-D2-O9-COD",
+    ],
+    component: "DataDestructionLab",
+    description:
+      "Match degauss, wipe, shred, and Certificate of Destruction; leave quick-format and degauss-SSD unused.",
+    solution:
+      "Degauss magnetic HDD/tape. Wipe/secure-erase for reuse. Shred for physical destroy. CoD for vendor proof. Quick format is not sanitization; magnets do not erase flash.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D2-O11-BROWSER-LAB",
+    slug: "browser-security",
+    title: "Browser security settings matching lab",
+    kind: "security",
+    objectiveIds: ["C2-D2-O11"],
+    conceptIds: [
+      "C2-D2-O11-CERTWARN",
+      "C2-D2-O11-HASH",
+      "C2-D2-O11-PRIVACYMODE",
+      "C2-D2-O11-SECUREDNS",
+    ],
+    component: "BrowserSecurityLab",
+    description:
+      "Match cert warnings, hash verify, private mode, and Secure DNS; leave ignore-cert and disable-updates unused.",
+    solution:
+      "Investigate cert warnings. Hash installers before run. Private mode on kiosks. Secure DNS when policy allows. Never teach permanent cert exceptions or disable browser updates.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O8-SCRIPT-LAB",
+    slug: "scripting-basics",
+    title: "Scripting basics matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O8"],
+    conceptIds: [
+      "C2-D4-O8-PS1",
+      "C2-D4-O8-BAT",
+      "C2-D4-O8-PY",
+      "C2-D4-O8-SCRIPTRISK",
+    ],
+    component: "ScriptingBasicsLab",
+    description:
+      "Match PowerShell, batch, Python, and script-risk; leave run-blind and rename-ps1 unused.",
+    solution:
+      "PowerShell for Windows automation. Batch for legacy maps. Python for cross-platform glue. Treat unsolicited scripts as malware. Do not run emailed scripts elevated or rename .ps1 to .bat.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
+  {
+    id: "C2-D4-O9-REMOTE-LAB",
+    slug: "remote-access",
+    title: "Remote access technologies matching lab",
+    kind: "ticket",
+    objectiveIds: ["C2-D4-O9"],
+    conceptIds: [
+      "C2-D4-O9-RDP",
+      "C2-D4-O9-VNC",
+      "C2-D4-O9-RMM",
+      "C2-D4-O9-WINRM",
+    ],
+    component: "RemoteAccessLab",
+    description:
+      "Match RDP, VNC, RMM, and WinRM; leave SPICE-as-RDP and open-3389 unused.",
+    solution:
+      "RDP for Windows GUI. VNC for cross-platform framebuffer. RMM for MSP fleets. WinRM for PowerShell remoting. SPICE is not default help-desk RDP; naked 3389 to the internet is a finding.",
+    estimatedMinutes: 12,
+    capstone: true,
+  },
 ];

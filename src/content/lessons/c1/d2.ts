@@ -675,6 +675,14 @@ Hostname versus IP: people remember names. You still document the IP of the UTM,
         ],
       },
       {
+        type: "lab",
+        id: "C1-D2-O3-L1-lab",
+        labId: "C1-D2-O3-HOSTS-LAB",
+        title: "Network hosts and appliances matching lab",
+        prompt:
+          "Match AAA, UTM, NTP, and SCADA isolation. Leave DNS-as-auth and IoT-on-SCADA unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D2-O3-L1-sum",
         bullets: [
@@ -906,6 +914,14 @@ Do not confuse VLAN with VPN. VLAN is a LAN segmentation tool. VPN is an encrypt
           "C1-D2-O4-DMARC-Q002",
           "C1-D2-O4-DHCPPOOL-Q003",
         ],
+      },
+      {
+        type: "lab",
+        id: "C1-D2-O4-L2-lab",
+        labId: "C1-D2-O4-SERVICES-LAB",
+        title: "DNS DHCP VLAN VPN matching lab",
+        prompt:
+          "Match DNS A/AAAA, DHCP reservation, VLAN guest isolation, and VPN remote access. Leave port-forward-as-VPN and mask-as-VLAN unmatched.",
       },
       {
         type: "summary",
@@ -1425,6 +1441,14 @@ Do not mix WISP (a WAN access method) with WLAN (local 802.11). A WISP customer 
         },
       },
       {
+        type: "lab",
+        id: "C1-D2-O7-L1-lab",
+        labId: "C1-D2-O7-WAN-LAB",
+        title: "Internet connections and network types matching lab",
+        prompt:
+          "Match fiber, DSL, satellite, and SAN. Leave WLAN-as-WAN and WISP-as-Wi-Fi unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C1-D2-O7-L1-cp",
         questionIds: [
@@ -1573,6 +1597,14 @@ A technician who loves one tool will mis-apply it. The analyzer will not tell yo
           "C1-D2-O8-ANALYZER-Q002",
           "C1-D2-O8-TESTER-Q002",
         ],
+      },
+      {
+        type: "lab",
+        id: "C1-D2-O8-L1-lab",
+        labId: "C1-D2-O8-TOOLS-LAB",
+        title: "Networking tools matching lab",
+        prompt:
+          "Match crimper, punchdown, toner, and Wi-Fi analyzer tickets. Leave loopback-for-Wi-Fi and tap-for-crimp unmatched.",
       },
       {
         type: "summary",

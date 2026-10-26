@@ -35,6 +35,30 @@ import { DisplayMatchLab } from "@/components/labs/display-match-lab";
 import { HypervisorMatchLab } from "@/components/labs/hypervisor-match-lab";
 import { MobileHardwareTsLab } from "@/components/labs/mobile-hardware-ts-lab";
 import { CompromisedPhoneLab } from "@/components/labs/compromised-phone-lab";
+import { MobileAccessoriesLab } from "@/components/labs/mobile-accessories-lab";
+import { NetworkServicesLab } from "@/components/labs/network-services-lab";
+import { OsTypesLab } from "@/components/labs/os-types-lab";
+import { SafetyProceduresLab } from "@/components/labs/safety-procedures-lab";
+import { MobileMdmLab } from "@/components/labs/mobile-mdm-lab";
+import { NetworkToolsLab } from "@/components/labs/network-tools-lab";
+import { WirelessSecurityLab } from "@/components/labs/wireless-security-lab";
+import { EnvironmentControlsLab } from "@/components/labs/environment-controls-lab";
+import { NetworkHostsLab } from "@/components/labs/network-hosts-lab";
+import { PsuMatchLab } from "@/components/labs/psu-match-lab";
+import { BootInstallLab } from "@/components/labs/boot-install-lab";
+import { WorkstationHardenLab } from "@/components/labs/workstation-harden-lab";
+import { NetworkTypesLab } from "@/components/labs/network-types-lab";
+import { MfdDeployLab } from "@/components/labs/mfd-deploy-lab";
+import { MobileDeviceSecLab } from "@/components/labs/mobile-device-sec-lab";
+import { PrivacyIncidentLab } from "@/components/labs/privacy-incident-lab";
+import { WindowsSettingsLab } from "@/components/labs/windows-settings-lab";
+import { WinClientNetLab } from "@/components/labs/win-client-net-lab";
+import { AppInstallLab } from "@/components/labs/app-install-lab";
+import { CloudProductivityLab } from "@/components/labs/cloud-productivity-lab";
+import { DataDestructionLab } from "@/components/labs/data-destruction-lab";
+import { BrowserSecurityLab } from "@/components/labs/browser-security-lab";
+import { ScriptingBasicsLab } from "@/components/labs/scripting-basics-lab";
+import { RemoteAccessLab } from "@/components/labs/remote-access-lab";
 import { useAcademy } from "@/components/academy-provider";
 import type { LabSimProps } from "@/components/labs/lab-kit";
 import { LAB_HOST_COMPONENTS } from "@/content/labs/implemented";
@@ -75,6 +99,30 @@ export const LAB_COMPONENT_MAP: Record<
   HypervisorMatchLab,
   MobileHardwareTsLab,
   CompromisedPhoneLab,
+  MobileAccessoriesLab,
+  NetworkServicesLab,
+  OsTypesLab,
+  SafetyProceduresLab,
+  MobileMdmLab,
+  NetworkToolsLab,
+  WirelessSecurityLab,
+  EnvironmentControlsLab,
+  NetworkHostsLab,
+  PsuMatchLab,
+  BootInstallLab,
+  WorkstationHardenLab,
+  NetworkTypesLab,
+  MfdDeployLab,
+  MobileDeviceSecLab,
+  PrivacyIncidentLab,
+  WindowsSettingsLab,
+  WinClientNetLab,
+  AppInstallLab,
+  CloudProductivityLab,
+  DataDestructionLab,
+  BrowserSecurityLab,
+  ScriptingBasicsLab,
+  RemoteAccessLab,
 };
 
 export function LabHost({ lab }: { lab: Lab }) {

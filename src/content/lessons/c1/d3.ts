@@ -553,7 +553,7 @@ Pick the cable for distance and purpose: LC multimode across a building, HDMI or
 
 **DIMM (Dual In-line Memory Module)** is the desktop and server stick: roughly 133–140 mm long with contacts on both sides of the edge. **SODIMM (Small Outline DIMM)** is the laptop and some mini-PC stick: about half the length. You cannot put a DIMM in a SODIMM slot. Some ultra-thin laptops solder RAM; those are not field-upgradeable regardless of how badly the user wants 64 GB.
 
-**DDR (Double Data Rate)** generations — DDR3, DDR4, DDR5 in the machines you will still see — are electrically and physically keyed differently. The notch position changes so you should not be able to ram DDR4 into a DDR5 slot. They are **not** interchangeable, not with an adapter, not "if you push harder." Speeds are quoted in mega-transfers (e.g., DDR4-3200, DDR5-5600). The module, the CPU memory controller, and the motherboard QVL (qualified vendor list) must agree. Mixing sizes often works at the slowest common timing; mixing generations never does.
+**DDR (Double Data Rate)** generations — DDR3, DDR4, DDR5 in the machines you will still see — are electrically and physically keyed differently. The notch position changes so you should not be able to ram DDR4 into a DDR5 slot. They are **not** interchangeable, not with an adapter, not "if you push harder." Speeds are quoted in mega-transfers (e.g., DDR4-3200, DDR5-5600). Kits also list **CAS latency (CL)**, the Column Address Strobe delay in clock cycles (DDR5-6000 CL30): lower is quicker at the same data rate. The module, the CPU memory controller, and the motherboard QVL (qualified vendor list) must agree. Mixing sizes often works at the slowest common timing; mixing generations never does.
 
 Install with the notch aligned, firm even pressure until side clips catch (or the laptop clip seats). Do not touch gold contacts. For laptops, disconnect power and battery if the service manual says so. Insufficient RAM looks like heavy swap, disk thrash, and "the PC is slow after Chrome." Failing RAM looks like random reboots, crash screens, and memory-diagnostic errors. Those are different tickets.
 
@@ -1639,6 +1639,14 @@ Symptoms of a dying PSU (Domain 5 will drill them): no power, random shutdowns u
         ],
       },
       {
+        type: "lab",
+        id: "C1-D3-O6-L1-lab",
+        labId: "C1-D3-O6-PSU-LAB",
+        title: "PSU wattage, modular, 24-pin, and rails matching lab",
+        prompt:
+          "Match wattage, modular, ATX 24-pin, and 12V-rail fixes. Leave open-PSU and ignore-VAC unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D3-O6-L1-sum",
         bullets: [
@@ -1688,7 +1696,7 @@ Symptoms of a dying PSU (Domain 5 will drill them): no power, random shutdowns u
 
 **Drivers** must match the operating system architecture (x64 vs ARM) and the **page description language** the queue should speak:
 
-- **PCL (Printer Command Language)** — common in Windows offices, efficient for typical documents, vendor-flavored versions (PCL 5/6).
+- **PCL (Printer Command Language)** — the official acronym list says "Command"; objective 3.7 itself prints "Printer Control Language." Same thing. Common in Windows offices, efficient for typical documents, vendor-flavored versions (PCL 5/6).
 - **PostScript (PS)** — a full page-description language loved by design/print workflows and many macOS/Adobe pipelines. Better when the document is complex vector art; worse when you pick a PostScript driver for a PCL-only cheap laser.
 
 A wrong language looks like **garbled print** (symbols, wrong fonts), which Domain 5 will treat as a driver/language issue, not a toner issue.
@@ -1759,6 +1767,14 @@ Deploy like a system: place, firmware, network, time/NTP, driver language, queue
         type: "knowledge-check",
         id: "C1-D3-O7-L1-kc2",
         questionIds: ["C1-D3-O7-SECUREPRINT-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C1-D3-O7-L1-lab",
+        labId: "C1-D3-O7-MFD-LAB",
+        title: "Printer and MFD deployment matching lab",
+        prompt:
+          "Match ADF, secure print, print server, and PostScript. Leave flatbed-for-stacks and USB-share unmatched.",
       },
       {
         type: "checkpoint",

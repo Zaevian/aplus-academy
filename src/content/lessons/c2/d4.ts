@@ -637,6 +637,14 @@ Make the bench safe **before** you open the case. That order is the whole object
         ],
       },
       {
+        type: "lab",
+        id: "C2-D4-O4-L1-lab",
+        labId: "C2-D4-O4-SAFETY-LAB",
+        title: "Safety procedures matching lab",
+        prompt:
+          "Match ESD, disconnect-power, PPE, and team-lift tickets. Leave open-PSU and Class-A-on-electrical unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D4-O4-L1-sum",
         bullets: [
@@ -749,6 +757,14 @@ Place the UPS where it can breathe, replace batteries on the vendor's calendar (
         ],
       },
       {
+        type: "lab",
+        id: "C2-D4-O5-L1-lab",
+        labId: "C2-D4-O5-ENV-LAB",
+        title: "Environmental and power controls matching lab",
+        prompt:
+          "Match UPS, surge suppressor, SDS disposal, and humidity/ESD tickets. Leave daisy-chain and water-on-lithium unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D4-O5-L1-sum",
         bullets: [
@@ -847,6 +863,14 @@ Customer materials on a desk, a printer output tray, or an unlocked desktop are 
         type: "knowledge-check",
         id: "C2-D4-O6-L1-kc2",
         questionIds: ["C2-D4-O6-COC-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D4-O6-L1-lab",
+        labId: "C2-D4-O6-PRIVACY-LAB",
+        title: "Privacy, licensing, and incident matching lab",
+        prompt:
+          "Match chain of custody, order of volatility, PII handling, and AUP. Leave reboot-first and PII-to-Slack unmatched.",
       },
       {
         type: "checkpoint",
@@ -1155,6 +1179,14 @@ Read-only viewing, code review, and running as a least-privilege account in a sa
         questionIds: ["C2-D4-O8-SCRIPTRISK-Q001"],
       },
       {
+        type: "lab",
+        id: "C2-D4-O8-L1-lab",
+        labId: "C2-D4-O8-SCRIPT-LAB",
+        title: "Scripting basics matching lab",
+        prompt:
+          "Match PowerShell, batch, Python, and script-risk. Leave run-blind and rename-ps1 unmatched.",
+      },
+      {
         type: "checkpoint",
         id: "C2-D4-O8-L1-cp",
         questionIds: [
@@ -1263,6 +1295,14 @@ If the user is on a hotel network, VPN first, then RDP. If the user cannot insta
         type: "knowledge-check",
         id: "C2-D4-O9-L1-kc2",
         questionIds: ["C2-D4-O9-RMM-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D4-O9-L1-lab",
+        labId: "C2-D4-O9-REMOTE-LAB",
+        title: "Remote access technologies matching lab",
+        prompt:
+          "Match RDP, VNC, RMM, and WinRM. Leave SPICE-as-RDP and open-3389 unmatched.",
       },
       {
         type: "checkpoint",

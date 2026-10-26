@@ -538,6 +538,14 @@ Hardening an AP: unique admin password, HTTPS or SSH management only from a mana
         ],
       },
       {
+        type: "lab",
+        id: "C2-D2-O3-L1-lab",
+        labId: "C2-D2-O3-WIFISEC-LAB",
+        title: "Wireless security protocols matching lab",
+        prompt:
+          "Match WPA3-Personal, Enterprise+RADIUS, AES-only, and Kerberos SSO. Leave WEP/open and TKIP-for-speed unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D2-O3-L1-sum",
         bullets: [
@@ -1280,6 +1288,14 @@ When you image a new PC, harden before you hand it over: encryption, local admin
         ],
       },
       {
+        type: "lab",
+        id: "C2-D2-O7-L1-lab",
+        labId: "C2-D2-O7-HARDEN-LAB",
+        title: "Workstation hardening matching lab",
+        prompt:
+          "Match encryption/patch baseline, AutoRun off, lockout, and firmware password. Leave shared-admin and AutoRun-enable unmatched.",
+      },
+      {
         type: "summary",
         id: "C2-D2-O7-L1-sum",
         bullets: [
@@ -1371,6 +1387,14 @@ MFA authenticator apps on a lost phone are an identity incident, not only a hard
         type: "knowledge-check",
         id: "C2-D2-O8-L1-kc2",
         questionIds: ["C2-D2-O8-MDMPROFILE-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D2-O8-L1-lab",
+        labId: "C2-D2-O8-MOBSEC-LAB",
+        title: "Mobile device security matching lab",
+        prompt:
+          "Match remote wipe, screen lock, MDM profile, and device encryption. Leave swipe-only and skip-MDM unmatched.",
       },
       {
         type: "checkpoint",
@@ -1495,6 +1519,14 @@ Never donate a PC with a quick-formatted disk. Wipe or remove the disk.`,
         type: "knowledge-check",
         id: "C2-D2-O9-L1-kc2",
         questionIds: ["C2-D2-O9-SHRED-Q001", "C2-D2-O9-COD-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D2-O9-L1-lab",
+        labId: "C2-D2-O9-DESTROY-LAB",
+        title: "Data destruction and disposal matching lab",
+        prompt:
+          "Match degauss, wipe, shred, and Certificate of Destruction. Leave quick-format and degauss-SSD unmatched.",
       },
       {
         type: "checkpoint",
@@ -1726,6 +1758,14 @@ A **screened subnet** (the modern exam language around what people still call a 
         type: "knowledge-check",
         id: "C2-D2-O11-L1-kc2",
         questionIds: ["C2-D2-O11-PRIVACYMODE-Q001", "C2-D2-O11-SECUREDNS-Q001"],
+      },
+      {
+        type: "lab",
+        id: "C2-D2-O11-L1-lab",
+        labId: "C2-D2-O11-BROWSER-LAB",
+        title: "Browser security settings matching lab",
+        prompt:
+          "Match cert warnings, hash verify, private mode, and Secure DNS. Leave ignore-cert and disable-updates unmatched.",
       },
       {
         type: "checkpoint",

@@ -289,6 +289,9 @@ export default function MockExamPage() {
           </li>
           {items.map((item) => (
             <li key={item.id} className="rounded border p-2">
+              {item.scenario ? (
+                <p className="text-muted-foreground">{item.scenario}</p>
+              ) : null}
               <p>{item.stem}</p>
               <p className="text-muted-foreground">{item.explanation}</p>
             </li>

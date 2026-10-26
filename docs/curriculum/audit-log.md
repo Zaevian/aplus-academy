@@ -1,9 +1,137 @@
 # Curriculum audit log
 
-Weekly learner-perspective + repo audits against CompTIA A+ V15 / Exam Objectives Document Version 3.0.
+Weekly learner-perspective + repo audits against CompTIA A+ V15 / Exam Objectives Document Version 4.0 (posted 2025-11-25; objective bullets identical to Version 3.0 — see 2026-10-19 entry).
 Live site: https://aplus-academy-gules.vercel.app/
 
 Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Agents path dropped; Diablo authorized local-clone PRs). `gh` authenticated as Zaevian.
+
+---
+## 2026-10-26 — C1 Domain 4 Virtualization and Cloud Computing second-pass learner audit (fix pass)
+
+**Auditor/Implementer:** Miyuki (Diablo rotation order, 2026-10-26)
+**Branch:** `miyuki/audit-2026-10-26-c1d4-virtualization` from `master` @ 13747f0. Touches only `questions/c1/d4.ts`, `lessons/c1/d4.ts` (two table rows), a new test, and regenerated coverage files. Independent of open #16 (`d2.ts`) and draft #19 (`d5.ts`); the practice/mock shuffle fix stays held.
+**Official:** CompTIA A+ V15 220-1201 Domain 4.0 (11%), Exam Objectives Document Version 4.0. Re-downloaded the public V4.0 PDF on 2026-10-26: byte-identical to the 2026-10-19 copy, and the 4.1/4.2 bullets match Version 3.0 word for word. **No objective change.** No dumps.
+**Rotation note:** the 2026-10-12 D4 pass was docs-only on an unmerged branch (`miyuki/audit-2026-10-12-virtualization`) and shipped no fixes, so D4 got this fix pass before C2-D1.
+
+### Live smoke (2026-10-26 ET)
+`/course/core-1/domain-4`, the six D4 lesson pages, labs `hypervisor-match` and `cloud-service-models`, `/practice/core-1`, and `/exam/core-1` return 200. O1/O2 keep their scored LabHost PBQs and C1-D4 is still in `HOLDOUT_DOMAIN_IDS`.
+
+### Learner pass — findings
+- Answered all 82 bank items before reading keys: 82/82, and most could be solved by elimination alone because many distractors are cross-domain fillers (CMOS, APIPA, RAID, beep codes on cloud stems).
+- **Answer-key leak (MUST-FIX):** 64 of 89 keys were "a" (72%), 25 "b", none "c" or "d". O2 single-answer items were 37/38 "a". All seven multi-select items were keyed "a, b".
+- **Weak rationales:** 143 rationales under 25 characters (96 distractors, 47 keys), 44 keys saying only "Correct.", plus another 87 one-clause stubs ("No.", "Provider.", "Correct at A+ depth.").
+- **Misconception tags:** 9 of 82 items.
+- **Coverage gaps against 4.1/4.2 wording:** no item or lesson line used the official 4.1 phrases "test development" or "application virtualization". Cross-platform virtualization, guest-level security requirements, ingress vs egress as a definition, file-sync conflicts, shared vs dedicated trade-offs, and a private-cloud scenario each had at most a side mention.
+- Labs: both PBQs solved as intended; tickets and distractor notes match 4.1/4.2. D4 mock slice sampled through the bank: the source key bias is what the held shuffle salt has been partly masking.
+- No factual contradictions with the 4.1/4.2 bullets in existing keys.
+
+### Shipped
+- `src/content/questions/c1/d4.ts`: **230 rationales rewritten** (every rationale under 40 characters plus every stub "Correct. ..." key) so each names the deciding clue or the trap.
+- **+8 coverage items** (82 → 90): `O1-VM-Q009` test development, `O1-VM-Q010` application virtualization, `O1-VM-Q011` cross-platform virtualization, `O1-VM-Q012` guest security requirements (multi), `O2-ELASTIC-Q008` ingress vs egress, `O2-SAAS-Q008` file-sync conflict, `O2-MULTITENANT-Q008` shared vs dedicated, `O2-HYBRID-Q008` private cloud.
+- **Key letters rebalanced** by rotation (text and rationale stay paired; stems and explanations untouched). Keys now a/b/c/d/e = 22/23/25/26/2 across 90 items; multi-select keys rotated too.
+- `C1_D4_MISCONCEPTION_TAGS` (11 families); all 90 items tagged.
+- `src/content/lessons/c1/d4.ts`: two use-case table rows for test development and application virtualization (legacy / cross-platform).
+- `src/lib/__tests__/c1-d4-audit.test.ts`: tags, rationale length (40+), no stub keys, domain and per-objective key balance, an "always pick a" guard, multi-select spread, key letters point at real choices, coverage items, and the official 4.1 phrasing.
+- Regenerated D4 rows in `coverage.json` and `coverage-states.json` (Exam Ready still 63/68; `generated` stamp left alone so the files merge cleanly with #19).
+
+### Residuals
+- The longest choice is still correct in about 55% of single-answer items, and cross-domain filler distractors remain. Rationales now explain them, but the next D4 pass should swap fillers for plausible in-domain distractors.
+- Only 9 exam-difficulty items in D4.
+- The mock shuffle `id.length/100` salt is still Diablo-held; the source rebalance mitigates it for D4.
+
+**Next rotation:** C2-D1 Operating Systems.
+
+---
+
+## 2026-10-26 — C1 Domain 5 Hardware and Network Troubleshooting second-pass learner audit
+
+**Auditor/Implementer:** Miyuki (weekly rotation)
+**Branch:** `miyuki/audit-2026-10-26-c1d5-troubleshooting` from `master` @ 13747f0. Touches only `questions/c1/d5.ts`, a new test, and regenerated coverage files.
+**Official:** CompTIA A+ V15 220-1201 Domain 5 (28%), Exam Objectives Document Version 4.0 (bullets identical to 3.0; see 2026-10-19). No dumps.
+**Rotation note:** C1-D4 already had its second pass on 2026-10-12 (docs branch `miyuki/audit-2026-10-12-virtualization`), so this run moved on to C1-D5.
+
+### Live smoke
+`/course/core-1/domain-5`, its quiz and review pages, all 11 D5 lessons, and the D5 labs (`display-fault-match`, `mobile-hardware-ts`, `ticket-shift-core1`) return 200. O1 to O6 all have scored LabHost coverage (O1/O2/O5/O6 through the shift capstone and borrowed labs, O3 DisplayFaultLab, O4 MobileHardwareTsLab), and C1-D5 is in `HOLDOUT_DOMAIN_IDS`.
+
+### Learner pass — findings
+- **Answer-key leak (MUST-FIX):** of 221 correct keys, 193 were "a" (87%), 28 were "b", and none were "c" or "d". Every multi-select item was keyed "a, b". A beginner could score well by always choosing the first option, and the coverage map still showed all six objectives as Exam Ready.
+- **Longest-answer tell:** the correct choice was also the longest in 92% of single-answer items.
+- **Weak rationales:** 421 distractor rationales and 186 key rationales were under 25 characters ("No.", "Printer."), and 171 keys said only "Correct.". One rationale ("Criminal and stupid.") was off-tone for learners.
+- **Misconception tags:** 8 of 194 items carried them.
+- **Thin or missing bullet coverage (no keyed item, or one only as a side mention):** 5.1 proprietary crash screens; 5.2 extended read/write times and grinding noises; 5.3 sizing issues, audio issues, and intermittent projector shutdown; 5.4 broken screen and unable to install new applications; 5.5 authentication failures; 5.6 hole-punch finishing issues.
+- No factual contradictions with the 5.1 to 5.6 bullets were found in the existing keys.
+
+### Shipped
+- `src/content/questions/c1/d5.ts`: **all 607 short rationales rewritten** (421 distractors, 186 keys) so each names the trap or the deciding clue. **+10 coverage items** (194 → 204): `O1-POST-Q009` crash screens, `O2-IOPS-Q008` extended R/W, `O2-CLICKING-Q008` grinding, `O3-PROJECTOR-Q008` thermal shutdown, `O3-SOURCE-Q008` overscan sizing, `O3-SOURCE-Q009` HDMI audio, `O4-MOBILEMALWARE-Q008` app install, `O4-DIGITIZER-Q008` broken screen, `O5-LIMITED-Q009` Wi-Fi auth failure, `O6-JAM-Q007` hole punch. New items use same-length, in-domain distractors.
+- **Key letters rebalanced** by rotation (text and rationale stay paired; nothing reworded by the move). Now a/b/c/d = 52/57/56/55. Multi-select keys are rotated too.
+- `C1_D5_MISCONCEPTION_TAGS` (27 families); all 204 items tagged.
+- `src/lib/__tests__/c1-d5-audit.test.ts`: tags, rationale length, no bare "Correct.", key balance, multi-select spread, and the new coverage items.
+- Regenerated `coverage-states.json` and `coverage.json` (Exam Ready still 63/68).
+
+### Residuals
+- The longest choice is still correct in about 90% of single-answer items, and many distractors are cross-domain fillers (APIPA, projector lamp, CMOS on unrelated stems). Rationales now explain the trap, but the next pass should replace fillers with plausible in-domain distractors.
+- The mock shuffle `id.length/100` salt is still Diablo-held; the source rebalance mitigates it for D5.
+- **Cross-domain (MUST-FIX, not fixed here):** a bank-wide key check on master shows the same leak everywhere except D3 and D5. Share of keys on "a": C1-D1 71%, C1-D2 75%, C1-D4 72%, C2-D1 73%, C2-D2 94%, C2-D3 89%, C2-D4 87% (Foundation is b 69%). Either the held mock/practice shuffle fix or a per-domain source rotation like D3/D5 is needed before any of those domains can honestly be called Exam Ready. Left out of this PR to avoid conflicts with open PR #16 (`d2.ts`).
+
+**Next rotation:** C2-D1 Operating Systems.
+
+---
+
+## 2026-10-19 — C1 Domain 3 Hardware second-pass learner audit
+
+**Auditor/Implementer:** Miyuki (Diablo rotation)
+**Branch:** `miyuki/audit-2026-10-19-c1d3-hardware` from `master` @ 44333cf. Independent of open #16 (no `d2.ts` changes).
+**Official:** CompTIA A+ V15 / Exam Objectives Document **Version 4.0**. No dumps.
+
+### Objectives check (top finding)
+- comptia.org V15 pages (fetched 2026-10-19) now link **Version 4.0** PDFs for 220-1201 and 220-1202 (CMP files last-modified 2025-11-25). The repo and the 2026-10 cert-health check still pinned Version 3.0.
+- A full text diff of 3.0 vs 4.0 (both cores) shows only two changes: (1) the accreditation wording (ANSI → ANAB, ISO spelled out), and (2) the acronym list. The list adds CAS, eSIM, FaaS, GUI, ISP, NAS, NAT, OEM, SDS, SNMP, and WEP, and drops MSDS (SDS replaces it). **Every objective bullet, domain weight (13/23/25/11/28; 28/28/23/21), question count, and passing score is unchanged.** No content depends on anything that changed, so the D3 fixes proceeded.
+- Shipped: `exam-meta.ts` and `sources.ts` now point at the 4.0 PDFs (lastVerified 2026-10-19). Source ids stay `c1-obj-3.0`/`c2-obj-3.0` for stability. README updated. Glossary gains the 11 new acronyms; MSDS now points to SDS. The C1 4.0 PDF expands NAT as "Network Access Translation" (C2 prints the standard "Address"); the glossary notes the typo.
+
+### Learner pass — findings
+- **Key-letter bias (MUST-FIX):** among the 277 correct keys, 65% were "a", 30% "b", 5% "c", and **0% "d"**. A learner could pass by always answering a/b. The mock exam keeps source order, apart from its Diablo-held `id.length` salt, so the bias leaked into the mock.
+- **Weak rationales:** 453 distractor rationales and 60 key rationales were under 25 characters ("No.", "Printers.", "Listed."). Five keys said only "Correct.".
+- **Wrong or misleading items:** `O5-PCIE-Q003` called a *USB* NIC an expansion card. `O6-WATTAGE-Q003` had a garbled stem ("600 W at the wall-DC side"). `O7-ADF-Q005` was a negative "does not automatically mean" trick with three true distractors. `O4-RAID5-Q002/c` gave a weak restore rationale. `O8-LASER-Q001` implied the seven imaging steps are a 220-1201 bullet (they are not; 3.8 lists maintenance).
+- **Coverage gaps (no keyed MCQ):** 3.1 pixel density, refresh rate, resolution, and color gamut. 3.2 ST/SC, punchdown block, and DVI. 3.3 CAS latency. 3.4 flash, memory cards, and optical. 3.5 sound card and AMD/Intel socket mismatch.
+- **Misconception tags:** only 18 of 254 items carried tags (the 2026-10-05 sample batch).
+- **PCL naming:** objective 3.7 prints "Printer Control Language", but the acronym list says "Printer Command Language".
+- Labs/PBQs (O1–O8 LabHost), the mock D3 slice, and holdout were spot-checked. No broken labs. Prior hardware rows were re-read, and none of the already-fixed work was redone.
+
+### Shipped
+- `src/content/questions/c1/d3.ts`: **513 rationales rewritten** (all 453 short distractors, all 60 short keys) plus 6 weak keys and 3 weak distractors. **5 factual/quality fixes** (PCIE-Q003, WATTAGE-Q003, ADF-Q005 rewritten as a positive diagnostic, RAID5-Q002/c, LASER-Q001 note). **+14 MCQs** (254 → 268): O1-ATTR ×4, O2 ST/punchdown/DVI ×3, O3 CAS ×1, O4-REMOVABLE ×4, O5 sound card + socket ×2. **Key letters rebalanced** by rotation (text and rationale stay paired), now a/b/c/d = 78/72/70/73. Added `C1_D3_MISCONCEPTION_TAGS` (56 families; all 268 tagged; the 18 existing per-item tags are kept) and `C1_D3_BEYOND_OBJECTIVES` (6 laser-process items tagged `beyond-objectives`).
+- `catalog.ts`: new concepts `C1-D3-O1-ATTR` and `C1-D3-O4-REMOVABLE`, appended at the end so the positional subtopic mapping is preserved.
+- `lessons/c1/d3.ts`: a CAS latency line in the RAM lesson and the PCL Command/Control note.
+- `src/lib/__tests__/c1-d3-audit.test.ts`: tags, ≥25-char rationales, key balance, coverage-gap items, PCIE/ADF fixes, beyond-objectives tags, and V4.0 meta plus acronyms.
+- Regenerated `coverage-states.json` and `coverage.json`. D3 subtopics "pixel density"/"inverter" and "flash" moved Taught → Retained. Exam Ready is still 63/68.
+
+### Residuals
+- The longest option is still the correct one in 81% of single-answer items. Rotation fixes the letter, not the length.
+- About 209 distractors are still implausible cross-domain fillers (e.g., "Fuser rollers" on a PCIe item). Their rationales now explain the trap, but the next pass should replace them with in-domain distractors.
+- The exam/scenario slice is thin: 28 scenario and 29 exam-difficulty items out of 268.
+- The mock shuffle `id.length/100` salt is Diablo-held. Source rebalancing mitigates it.
+- Laser imaging-step items are 220-1101 carry-over. They are tagged, not removed.
+- `coverage-states.ts` pairs subtopics with concepts by index, so some D3 subtopic labels show a neighbour's state.
+
+**Next rotation:** C1-D4 Virtualization and Cloud Computing.
+
+---
+
+## 2026-09-28 — PBQ deepen-3b (+4 scored LabHost labs on #11)
+
+**Auditor/Implementer:** Miyuki  
+**Branch:** `miyuki/pbq-deepen-3` (updates open PR #11 in place; tip was 528162c)  
+**Official:** CompTIA A+ V15 / Exam Objectives Document Version 3.0 — no dumps
+
+### Shipped
+- `C1-D1-O3-MDM-LAB` → `MobileMdmLab` (eSIM, MDM enroll, BYOD selective wipe, data cap)
+- `C1-D2-O8-TOOLS-LAB` → `NetworkToolsLab` (crimper, punchdown, toner, Wi-Fi analyzer)
+- `C2-D2-O3-WIFISEC-LAB` → `WirelessSecurityLab` (WPA3-Personal, Enterprise+RADIUS, AES, Kerberos)
+- `C2-D4-O5-ENV-LAB` → `EnvironmentControlsLab` (UPS, surge, SDS, humidity/ESD)
+- Full wire: `labs/index.ts`, `implemented.ts`, `lab-host.tsx`, lesson lab blocks
+- Regenerated `coverage-states.json` / `coverage.json`; did **not** re-touch C1-D1 holdout
+
+### Coverage
+Exam Ready rises with the four new PBQ+holdout objectives (see regenerated summary). Remaining empty PBQ (skip FND): C1-D2-O3/O7, C1-D3-O6/O7, C2-D1-O2/O6/O7/O10/O11, C2-D2-O7/O8/O9/O11, C2-D4-O6/O8/O9.
 
 ---
 
@@ -415,3 +543,125 @@ Deepen Ops O4/O5/O6/O8/O9 PBQs, or second-pass remediations after open PRs merge
 ### Verdict
 Coverage map now machine-readable with honest Exam Ready gates. Four high-weight PBQ gaps closed. Curriculum still **not fully Exam Ready** end-to-end.
 
+---
+
+## 2026-09-28 — PBQ deepen-3 + Mobile holdout (C1-D1)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` from master @ 11a8c1a)  
+**Live:** https://aplus-academy-gules.vercel.app/  
+**HOLDOUT_DOMAIN_IDS:** added **C1-D1** (was the holdout gap called out after #10). Left C1-D2…C2-D4 unchanged.
+
+### Shipped
+1. **C1-D1 Mobile holdout** — `HOLDOUT_DOMAIN_IDS` includes Mobile; practice/review pools now disjoint (tests updated; mirror-pool assertion removed).
+2. **Four new scored LabHost labs** (mix across cores/domains; matching tickets with distractors):
+   - `C1-D1-O2-ACCESSORY-LAB` → `MobileAccessoriesLab` (NFC / dock / replicator / headset)
+   - `C1-D2-O4-SERVICES-LAB` → `NetworkServicesLab` (DNS / DHCP reservation / VLAN / VPN)
+   - `C2-D1-O1-OSTYPES-LAB` → `OsTypesLab` (Windows / Linux / ChromeOS / macOS + FS/EOL distractors)
+   - `C2-D4-O4-SAFETY-LAB` → `SafetyProceduresLab` (ESD / disconnect / PPE / lift)
+3. Lessons wired with lab blocks; labs/index + implemented + LabHost registered; coverage-states regenerated.
+
+### Still empty pbqLabIds (skip FND)
+C1-D1-O3; C1-D2-O3/O7/O8; C1-D3-O6/O7; C2-D1-O2/O6/O7/O10/O11; C2-D2-O3/O7/O8/O9/O11; C2-D4-O5/O6/O8/O9.
+
+### Verdict
+Mobile can now reach Exam Ready where scored PBQ + holdout exist (O1/O2). Curriculum still **not fully Exam Ready** end-to-end.
+
+## 2026-09-28 — PBQ deepen-3e (+8 LabHost; extends #11)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` @ prior tip 430a8f3)  
+**Live:** https://aplus-academy-gules.vercel.app/
+
+### Shipped
+1. **Eight new scored LabHost labs** (closes remaining empty non-FND PBQs):
+   - `C2-D1-O6-SETTINGS-LAB` → `WindowsSettingsLab`
+   - `C2-D1-O7-CLIENTNET-LAB` → `WinClientNetLab`
+   - `C2-D1-O10-APPINSTALL-LAB` → `AppInstallLab`
+   - `C2-D1-O11-CLOUDPROD-LAB` → `CloudProductivityLab`
+   - `C2-D2-O9-DESTROY-LAB` → `DataDestructionLab`
+   - `C2-D2-O11-BROWSER-LAB` → `BrowserSecurityLab`
+   - `C2-D4-O8-SCRIPT-LAB` → `ScriptingBasicsLab`
+   - `C2-D4-O9-REMOTE-LAB` → `RemoteAccessLab`
+2. Lessons wired; labs/index + implemented + LabHost registered; coverage-states regenerated (Exam Ready **55→63**).
+3. **HOLDOUT_DOMAIN_IDS** unchanged (C1-D1…C2-D4).
+
+### Still empty pbqLabIds (skip FND)
+None remaining among Core 1/2 numbered objectives tracked on this deepen branch (Foundation stubs excluded).
+
+### Verdict
+Remaining empty non-FND PBQ list from deepen-3d closed on #11. Curriculum still **not fully Exam Ready** end-to-end (Foundation + delayed-retention hooks).
+
+---
+## 2026-09-28 — PBQ deepen-3d (+4 LabHost; extends #11)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` @ prior tip 3a6b138)  
+**Live:** https://aplus-academy-gules.vercel.app/
+
+### Shipped
+1. **Four new scored LabHost labs** (diverse domains; matching tickets with distractors):
+   - `C1-D2-O7-WAN-LAB` → `NetworkTypesLab` (fiber / DSL / satellite / SAN)
+   - `C1-D3-O7-MFD-LAB` → `MfdDeployLab` (ADF / secure print / print server / PostScript)
+   - `C2-D2-O8-MOBSEC-LAB` → `MobileDeviceSecLab` (remote wipe / screen lock / MDM / encryption)
+   - `C2-D4-O6-PRIVACY-LAB` → `PrivacyIncidentLab` (CoC / volatility / PII / AUP)
+2. Lessons wired with lab blocks; labs/index + implemented + LabHost registered; coverage-states regenerated (Exam Ready **51→55**).
+
+### Still empty pbqLabIds (skip FND)
+C2-D1-O6/O7/O10/O11; C2-D2-O9/O11; C2-D4-O8/O9.
+
+### Verdict
+Four more high-weight PBQ gaps closed on #11. Curriculum still **not fully Exam Ready** end-to-end.
+
+---
+## 2026-09-28 — PBQ deepen-3c (+4 LabHost; extends #11)
+
+**Auditor / implementer:** Miyuki  
+**Repo:** github.com/Zaevian/aplus-academy (branch `miyuki/pbq-deepen-3` @ prior tip 9dc743f)  
+**Live:** https://aplus-academy-gules.vercel.app/
+
+### Shipped
+1. **Four new scored LabHost labs** (diverse domains; matching tickets with distractors):
+   - `C1-D2-O3-HOSTS-LAB` → `NetworkHostsLab` (AAA / UTM / NTP / SCADA)
+   - `C1-D3-O6-PSU-LAB` → `PsuMatchLab` (wattage / modular / ATX24 / 12V rails)
+   - `C2-D1-O2-BOOT-LAB` → `BootInstallLab` (clean / image / zero-touch / GPT)
+   - `C2-D2-O7-HARDEN-LAB` → `WorkstationHardenLab` (harden / AutoRun / lockout / BIOS PW)
+2. Lessons wired with lab blocks; labs/index + implemented + LabHost registered; coverage-states regenerated (Exam Ready **47→51**).
+
+### Still empty pbqLabIds (skip FND)
+C1-D2-O7; C1-D3-O7; C2-D1-O6/O7/O10/O11; C2-D2-O8/O9/O11; C2-D4-O6/O8/O9.
+
+### Verdict
+Four more high-weight PBQ gaps closed on #11. Curriculum still **not fully Exam Ready** end-to-end.
+
+---
+## 2026-10-12 — Second pass C1-D2 Networking (220-1201 obj 2.1–2.8, v3.0)
+
+**Auditor / implementer:** Miyuki  
+**Branch:** `miyuki/audit-2026-10-12-c1d2-networking` (from master @ 03911ed)  
+**Live checked:** https://aplus-academy-gules.vercel.app/ — `/course/core-1/domain-2`, `/labs` and all nine Networking labs (ports-drill, wifi-lab, network-hosts, network-services, network-builder, soho-router, network-types, network-tools, cable-lab) return 200.
+
+### Learner pass
+240 C1-D2 items answered from stems first, then checked against keys and the official v3.0 objectives. Every O1–O8 objective has a scored LabHost PBQ (O1 ports, O2 Wi-Fi, O3 hosts, O4 services, O5 rack, O6 SOHO router, O7 WAN types, O8 tools), so **networking-uneven-pbq is closed**. SNMP 161/162 is correctly treated as off-list (it sits in the 1101→1201 "Removed" column).
+
+### Deepen-3 did NOT close the bank debt
+Before this pass: 365 of 720 C1-D2 distractor rationales were under 25 characters, and 0 of 240 items had `tags`.
+
+### Fixed
+1. **Factual (medium):** IMAP was expanded as "Internet *Mail* Access Protocol" in `ports.ts` and the glossary; corrected to Internet **Message** Access Protocol.
+2. **Weak rationales (medium):** all 78 short distractor rationales in O1 (ports) and O6 (IP addressing) were rewritten to name the trap and the right fact. O1 and O6 now have none under 25 characters.
+3. **Misconception tags (medium):** all 240 C1-D2 items now carry `misconception` plus a trap tag per concept family (`C1_D2_MISCONCEPTION_TAGS`).
+4. **Learner flow (low):** the mock-exam missed-item review showed scenario-dependent stems ("Which tool FIRST?") without their scenario, so the scenario is now shown above the stem.
+5. Regression test `src/lib/__tests__/c1-d2-audit.test.ts`.
+
+### Still open
+Short rationales remain in O2/O3/O4/O5/O7/O8 (287). The next pass should take O8 and O7 first, since they have the highest short ratios.
+
+---
+## 2026-10-12 — C1-D2 O7/O8 distractor rationales (follow-up to #15)
+
+**Implementer:** Miyuki · **Branch:** `miyuki/c1d2-o7-o8-explanations`
+
+I rewrote all short (<25 chars) distractor rationales in O7 (63) and O8 (68), 131 in total, so each one names the mistake and states the correct 220-1201 v3.0 fact. The regression test now covers O1/O6/O7/O8. Remaining short rationales in C1-D2: O2 22, O3 27, O4 57, O5 50 (156 total). O6-MASK-Q004 is deliberately unchanged.
+
+---

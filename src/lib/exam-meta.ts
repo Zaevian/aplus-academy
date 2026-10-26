@@ -1,10 +1,15 @@
-/** Verified 2026-09-01 against CompTIA official pages and Exam Objectives v3.0 PDFs. */
+/**
+ * Verified 2026-10-19 against CompTIA official pages and Exam Objectives Document
+ * Version 4.0 PDFs (CompTIA CMP files last-modified 2025-11-25). V4.0 changes only
+ * the accreditation wording and the acronym list versus V3.0; every objective
+ * bullet, domain weight, and passing score is unchanged.
+ */
 export const EXAM_META = {
   version: "V15",
   series: "220-1200",
   launched: "2025-03-25",
-  objectivesDocument: "Exam Objectives Document Version 3.0",
-  lastVerified: "2026-09-01",
+  objectivesDocument: "Exam Objectives Document Version 4.0",
+  lastVerified: "2026-10-19",
   core1: {
     code: "220-1201",
     name: "Core 1",
@@ -40,9 +45,9 @@ export const EXAM_META = {
     product:
       "https://www.comptia.org/en-us/certifications/a/core-1-and-2-v15/",
     core1Pdf:
-      "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
     core2Pdf:
-      "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
   },
 } as const;
 

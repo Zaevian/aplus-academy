@@ -9,7 +9,7 @@ This is a primary study resource: textbook-depth lessons, required multiple-choi
 
 It does **not** guarantee an exam pass. **Internal Readiness** is this app's own mastery measure and is not CompTIA's scaled score.
 
-Official objectives were verified 2026-09-01 against CompTIA's V15 pages and Exam Objectives Document Version 3.0 PDFs.
+Official objectives were verified 2026-10-19 against CompTIA's V15 pages and Exam Objectives Document Version 4.0 PDFs. V4.0 (posted 2025-11-25) changes only the accreditation wording and the acronym list; objective bullets, weights, and passing scores match V3.0, so source ids such as `c1-obj-3.0` are kept.
 
 ## Stack
 

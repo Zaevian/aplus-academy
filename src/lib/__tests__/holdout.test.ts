@@ -7,7 +7,8 @@ import {
 } from "@/content/registry";
 
 describe("Holdout split (through Operational Procedures)", () => {
-  it("lists C1-D2 through C2-D4 as holdout-enabled domains", () => {
+  it("lists C1-D1 through C2-D4 as holdout-enabled domains", () => {
+    expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D1");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D2");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D3");
     expect(HOLDOUT_DOMAIN_IDS).toContain("C1-D4");
@@ -182,9 +183,20 @@ describe("Holdout split (through Operational Procedures)", () => {
     }
   });
 
-  it("still mirrors pools for domains without holdout enabled", () => {
-    const mobile = buildCoverage().find((r) => r.objectiveId === "C1-D1-O1");
-    expect(mobile).toBeTruthy();
-    expect(mobile!.quizQuestionIds).toEqual(mobile!.reviewQuestionIds);
+  it("splits every C1-D1 coverage row into disjoint practice vs holdout", () => {
+    const rows = buildCoverage().filter((r) => r.domain === "C1-D1");
+    expect(rows.length).toBe(3);
+    for (const row of rows) {
+      const practice = new Set(row.quizQuestionIds);
+      expect(row.quizQuestionIds.length).toBeGreaterThanOrEqual(8);
+      expect(row.reviewQuestionIds.length).toBeGreaterThanOrEqual(4);
+      for (const id of row.reviewQuestionIds) {
+        expect(practice.has(id)).toBe(false);
+      }
+      const protectedIds = lessonProtectedQuestionIds(row.objectiveId);
+      for (const id of row.reviewQuestionIds) {
+        expect(protectedIds.has(id)).toBe(false);
+      }
+    }
   });
 });

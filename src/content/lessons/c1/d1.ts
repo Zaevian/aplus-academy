@@ -677,6 +677,14 @@ Match the accessory to the constraint: warehouse gloves → not a fingerprint-on
         ],
       },
       {
+        type: "lab",
+        id: "C1-D1-O2-L2-lab",
+        labId: "C1-D1-O2-ACCESSORY-LAB",
+        title: "Mobile accessories matching lab",
+        prompt:
+          "Match NFC tap, Thunderbolt dock, port replicator, and Bluetooth headset tickets. Leave WLAN-for-pen and Lightning-on-Android unmatched.",
+      },
+      {
         type: "summary",
         id: "C1-D1-O2-L2-sum",
         bullets: [
@@ -1044,6 +1052,14 @@ Core 2 will return to mobile security (locks, remote wipe, encryption) in more d
           "C1-D1-O3-BYOD-Q002",
           "C1-D1-O3-MDM-Q003",
         ],
+      },
+      {
+        type: "lab",
+        id: "C1-D1-O3-L3-lab",
+        labId: "C1-D1-O3-MDM-LAB",
+        title: "Mobile MDM and cellular matching lab",
+        prompt:
+          "Match eSIM identity, MDM enroll, BYOD selective wipe, and data-cap tickets. Leave full-wipe-BYOD and WLAN-for-GPS unmatched.",
       },
       {
         type: "summary",

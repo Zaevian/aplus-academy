@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T23:34:45.313Z",
+  "generated": "2026-10-26T13:39:29.582Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -26,7 +26,7 @@
       ],
       "pbqLabIds": [],
       "status": "missing",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "FND-D0-O2",
@@ -55,7 +55,7 @@
         "FND-D0-O5-LANDSCAPE-LAB"
       ],
       "status": "missing",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "FND-D0-O3",
@@ -80,7 +80,7 @@
       ],
       "pbqLabIds": [],
       "status": "missing",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "FND-D0-O4",
@@ -105,7 +105,7 @@
       ],
       "pbqLabIds": [],
       "status": "missing",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "FND-D0-O5",
@@ -134,13 +134,13 @@
         "FND-D0-O5-LANDSCAPE-LAB"
       ],
       "status": "missing",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D1-O1",
       "core": "C1",
       "domain": "C1-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D1-O1-L1",
         "C1-D1-O1-L2",
@@ -155,12 +155,20 @@
         "C1-D1-O1-LAPTOP-LAB"
       ],
       "quizQuestionIds": [
+        "C1-D1-O1-ANTENNA-Q001",
+        "C1-D1-O1-ANTENNA-Q002",
+        "C1-D1-O1-ANTENNA-Q003",
+        "C1-D1-O1-ANTENNA-Q004",
         "C1-D1-O1-BATTERY-Q001",
         "C1-D1-O1-BATTERY-Q002",
         "C1-D1-O1-BATTERY-Q003",
         "C1-D1-O1-BATTERY-Q004",
         "C1-D1-O1-BATTERY-Q005",
         "C1-D1-O1-BATTERY-Q006",
+        "C1-D1-O1-BIOMETRIC-Q001",
+        "C1-D1-O1-BIOMETRIC-Q002",
+        "C1-D1-O1-BIOMETRIC-Q003",
+        "C1-D1-O1-BIOMETRIC-Q004",
         "C1-D1-O1-KEYBOARD-Q001",
         "C1-D1-O1-KEYBOARD-Q002",
         "C1-D1-O1-KEYBOARD-Q003",
@@ -175,89 +183,52 @@
         "C1-D1-O1-STORAGE-Q002",
         "C1-D1-O1-STORAGE-Q003",
         "C1-D1-O1-STORAGE-Q004",
-        "C1-D1-O1-STORAGE-Q005",
-        "C1-D1-O1-WLAN-Q001",
-        "C1-D1-O1-WLAN-Q002",
-        "C1-D1-O1-WLAN-Q003",
-        "C1-D1-O1-WLAN-Q004",
-        "C1-D1-O1-ANTENNA-Q001",
-        "C1-D1-O1-ANTENNA-Q002",
-        "C1-D1-O1-ANTENNA-Q003",
-        "C1-D1-O1-ANTENNA-Q004",
         "C1-D1-O1-WEBCAM-Q001",
-        "C1-D1-O1-WEBCAM-Q002",
-        "C1-D1-O1-WEBCAM-Q003",
-        "C1-D1-O1-WEBCAM-Q004",
-        "C1-D1-O1-BIOMETRIC-Q001",
-        "C1-D1-O1-BIOMETRIC-Q002",
-        "C1-D1-O1-BIOMETRIC-Q003",
-        "C1-D1-O1-BIOMETRIC-Q004"
+        "C1-D1-O1-WLAN-Q001"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O1-BATTERY-Q001",
-        "C1-D1-O1-BATTERY-Q002",
-        "C1-D1-O1-BATTERY-Q003",
-        "C1-D1-O1-BATTERY-Q004",
-        "C1-D1-O1-BATTERY-Q005",
-        "C1-D1-O1-BATTERY-Q006",
-        "C1-D1-O1-KEYBOARD-Q001",
-        "C1-D1-O1-KEYBOARD-Q002",
-        "C1-D1-O1-KEYBOARD-Q003",
-        "C1-D1-O1-KEYBOARD-Q004",
-        "C1-D1-O1-SODIMM-Q001",
-        "C1-D1-O1-SODIMM-Q002",
-        "C1-D1-O1-SODIMM-Q003",
-        "C1-D1-O1-SODIMM-Q004",
-        "C1-D1-O1-SODIMM-Q005",
-        "C1-D1-O1-SODIMM-Q006",
-        "C1-D1-O1-STORAGE-Q001",
-        "C1-D1-O1-STORAGE-Q002",
-        "C1-D1-O1-STORAGE-Q003",
-        "C1-D1-O1-STORAGE-Q004",
         "C1-D1-O1-STORAGE-Q005",
-        "C1-D1-O1-WLAN-Q001",
-        "C1-D1-O1-WLAN-Q002",
-        "C1-D1-O1-WLAN-Q003",
-        "C1-D1-O1-WLAN-Q004",
-        "C1-D1-O1-ANTENNA-Q001",
-        "C1-D1-O1-ANTENNA-Q002",
-        "C1-D1-O1-ANTENNA-Q003",
-        "C1-D1-O1-ANTENNA-Q004",
-        "C1-D1-O1-WEBCAM-Q001",
         "C1-D1-O1-WEBCAM-Q002",
         "C1-D1-O1-WEBCAM-Q003",
         "C1-D1-O1-WEBCAM-Q004",
-        "C1-D1-O1-BIOMETRIC-Q001",
-        "C1-D1-O1-BIOMETRIC-Q002",
-        "C1-D1-O1-BIOMETRIC-Q003",
-        "C1-D1-O1-BIOMETRIC-Q004"
+        "C1-D1-O1-WLAN-Q002",
+        "C1-D1-O1-WLAN-Q003",
+        "C1-D1-O1-WLAN-Q004"
       ],
       "pbqLabIds": [
         "C1-D1-O1-LAPTOP-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D1-O2",
       "core": "C1",
       "domain": "C1-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D1-O2-L1",
         "C1-D1-O2-L2"
       ],
       "interactionIds": [
-        "C1-D1-O2-L1-d1"
+        "C1-D1-O2-L1-d1",
+        "C1-D1-O2-L2-lab",
+        "C1-D1-O2-ACCESSORY-LAB"
       ],
       "quizQuestionIds": [
-        "C1-D1-O2-USB-Q001",
-        "C1-D1-O2-USB-Q002",
-        "C1-D1-O2-USB-Q003",
-        "C1-D1-O2-USB-Q004",
-        "C1-D1-O2-USB-Q005",
-        "C1-D1-O2-USB-Q006",
-        "C1-D1-O2-USB-Q007",
+        "C1-D1-O2-BT-Q001",
+        "C1-D1-O2-BT-Q002",
+        "C1-D1-O2-BT-Q003",
+        "C1-D1-O2-BT-Q004",
+        "C1-D1-O2-BT-Q005",
+        "C1-D1-O2-BT-Q006",
+        "C1-D1-O2-BT-Q007",
+        "C1-D1-O2-DOCK-Q001",
+        "C1-D1-O2-DOCK-Q002",
+        "C1-D1-O2-DOCK-Q003",
+        "C1-D1-O2-DOCK-Q004",
+        "C1-D1-O2-DOCK-Q005",
+        "C1-D1-O2-DOCK-Q006",
         "C1-D1-O2-LIGHTNING-Q001",
         "C1-D1-O2-LIGHTNING-Q002",
         "C1-D1-O2-LIGHTNING-Q003",
@@ -267,87 +238,59 @@
         "C1-D1-O2-NFC-Q003",
         "C1-D1-O2-NFC-Q004",
         "C1-D1-O2-NFC-Q005",
-        "C1-D1-O2-BT-Q001",
-        "C1-D1-O2-BT-Q002",
-        "C1-D1-O2-BT-Q003",
-        "C1-D1-O2-BT-Q004",
-        "C1-D1-O2-BT-Q005",
-        "C1-D1-O2-BT-Q006",
-        "C1-D1-O2-DOCK-Q001",
-        "C1-D1-O2-DOCK-Q002",
-        "C1-D1-O2-DOCK-Q003",
-        "C1-D1-O2-DOCK-Q004",
-        "C1-D1-O2-DOCK-Q005",
         "C1-D1-O2-REPLICATOR-Q001",
         "C1-D1-O2-REPLICATOR-Q002",
         "C1-D1-O2-REPLICATOR-Q003",
-        "C1-D1-O2-REPLICATOR-Q004",
-        "C1-D1-O2-REPLICATOR-Q005",
-        "C1-D1-O2-USB-Q008",
-        "C1-D1-O2-BT-Q007",
-        "C1-D1-O2-DOCK-Q006"
+        "C1-D1-O2-USB-Q001",
+        "C1-D1-O2-USB-Q002",
+        "C1-D1-O2-USB-Q003"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O2-USB-Q001",
-        "C1-D1-O2-USB-Q002",
-        "C1-D1-O2-USB-Q003",
+        "C1-D1-O2-REPLICATOR-Q004",
+        "C1-D1-O2-REPLICATOR-Q005",
         "C1-D1-O2-USB-Q004",
         "C1-D1-O2-USB-Q005",
         "C1-D1-O2-USB-Q006",
         "C1-D1-O2-USB-Q007",
-        "C1-D1-O2-LIGHTNING-Q001",
-        "C1-D1-O2-LIGHTNING-Q002",
-        "C1-D1-O2-LIGHTNING-Q003",
-        "C1-D1-O2-LIGHTNING-Q004",
-        "C1-D1-O2-NFC-Q001",
-        "C1-D1-O2-NFC-Q002",
-        "C1-D1-O2-NFC-Q003",
-        "C1-D1-O2-NFC-Q004",
-        "C1-D1-O2-NFC-Q005",
-        "C1-D1-O2-BT-Q001",
-        "C1-D1-O2-BT-Q002",
-        "C1-D1-O2-BT-Q003",
-        "C1-D1-O2-BT-Q004",
-        "C1-D1-O2-BT-Q005",
-        "C1-D1-O2-BT-Q006",
-        "C1-D1-O2-DOCK-Q001",
-        "C1-D1-O2-DOCK-Q002",
-        "C1-D1-O2-DOCK-Q003",
-        "C1-D1-O2-DOCK-Q004",
-        "C1-D1-O2-DOCK-Q005",
-        "C1-D1-O2-REPLICATOR-Q001",
-        "C1-D1-O2-REPLICATOR-Q002",
-        "C1-D1-O2-REPLICATOR-Q003",
-        "C1-D1-O2-REPLICATOR-Q004",
-        "C1-D1-O2-REPLICATOR-Q005",
-        "C1-D1-O2-USB-Q008",
-        "C1-D1-O2-BT-Q007",
-        "C1-D1-O2-DOCK-Q006"
+        "C1-D1-O2-USB-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O2-ACCESSORY-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D1-O3",
       "core": "C1",
       "domain": "C1-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D1-O3-L1",
         "C1-D1-O3-L2",
         "C1-D1-O3-L3"
       ],
       "interactionIds": [
-        "C1-D1-O3-L1-d1"
+        "C1-D1-O3-L1-d1",
+        "C1-D1-O3-L3-lab",
+        "C1-D1-O3-MDM-LAB"
       ],
       "quizQuestionIds": [
+        "C1-D1-O3-BYOD-Q001",
+        "C1-D1-O3-BYOD-Q002",
+        "C1-D1-O3-BYOD-Q003",
+        "C1-D1-O3-BYOD-Q004",
+        "C1-D1-O3-BYOD-Q005",
         "C1-D1-O3-CELLULAR-Q001",
         "C1-D1-O3-CELLULAR-Q002",
         "C1-D1-O3-CELLULAR-Q003",
         "C1-D1-O3-CELLULAR-Q004",
         "C1-D1-O3-CELLULAR-Q005",
         "C1-D1-O3-CELLULAR-Q006",
+        "C1-D1-O3-DATACAP-Q001",
+        "C1-D1-O3-DATACAP-Q002",
+        "C1-D1-O3-DATACAP-Q003",
+        "C1-D1-O3-DATACAP-Q004",
         "C1-D1-O3-ESIM-Q001",
         "C1-D1-O3-ESIM-Q002",
         "C1-D1-O3-ESIM-Q003",
@@ -357,75 +300,32 @@
         "C1-D1-O3-GPS-Q002",
         "C1-D1-O3-GPS-Q003",
         "C1-D1-O3-GPS-Q004",
-        "C1-D1-O3-SYNC-Q001",
-        "C1-D1-O3-SYNC-Q002",
-        "C1-D1-O3-SYNC-Q003",
-        "C1-D1-O3-SYNC-Q004",
-        "C1-D1-O3-SYNC-Q005",
         "C1-D1-O3-MDM-Q001",
         "C1-D1-O3-MDM-Q002",
         "C1-D1-O3-MDM-Q003",
         "C1-D1-O3-MDM-Q004",
-        "C1-D1-O3-MDM-Q005",
-        "C1-D1-O3-MDM-Q006",
-        "C1-D1-O3-MDM-Q007",
-        "C1-D1-O3-BYOD-Q001",
-        "C1-D1-O3-BYOD-Q002",
-        "C1-D1-O3-BYOD-Q003",
-        "C1-D1-O3-BYOD-Q004",
-        "C1-D1-O3-BYOD-Q005",
-        "C1-D1-O3-DATACAP-Q001",
-        "C1-D1-O3-DATACAP-Q002",
-        "C1-D1-O3-DATACAP-Q003",
-        "C1-D1-O3-DATACAP-Q004"
+        "C1-D1-O3-SYNC-Q001"
       ],
       "reviewQuestionIds": [
-        "C1-D1-O3-CELLULAR-Q001",
-        "C1-D1-O3-CELLULAR-Q002",
-        "C1-D1-O3-CELLULAR-Q003",
-        "C1-D1-O3-CELLULAR-Q004",
-        "C1-D1-O3-CELLULAR-Q005",
-        "C1-D1-O3-CELLULAR-Q006",
-        "C1-D1-O3-ESIM-Q001",
-        "C1-D1-O3-ESIM-Q002",
-        "C1-D1-O3-ESIM-Q003",
-        "C1-D1-O3-ESIM-Q004",
-        "C1-D1-O3-ESIM-Q005",
-        "C1-D1-O3-GPS-Q001",
-        "C1-D1-O3-GPS-Q002",
-        "C1-D1-O3-GPS-Q003",
-        "C1-D1-O3-GPS-Q004",
-        "C1-D1-O3-SYNC-Q001",
-        "C1-D1-O3-SYNC-Q002",
-        "C1-D1-O3-SYNC-Q003",
-        "C1-D1-O3-SYNC-Q004",
-        "C1-D1-O3-SYNC-Q005",
-        "C1-D1-O3-MDM-Q001",
-        "C1-D1-O3-MDM-Q002",
-        "C1-D1-O3-MDM-Q003",
-        "C1-D1-O3-MDM-Q004",
         "C1-D1-O3-MDM-Q005",
         "C1-D1-O3-MDM-Q006",
         "C1-D1-O3-MDM-Q007",
-        "C1-D1-O3-BYOD-Q001",
-        "C1-D1-O3-BYOD-Q002",
-        "C1-D1-O3-BYOD-Q003",
-        "C1-D1-O3-BYOD-Q004",
-        "C1-D1-O3-BYOD-Q005",
-        "C1-D1-O3-DATACAP-Q001",
-        "C1-D1-O3-DATACAP-Q002",
-        "C1-D1-O3-DATACAP-Q003",
-        "C1-D1-O3-DATACAP-Q004"
+        "C1-D1-O3-SYNC-Q002",
+        "C1-D1-O3-SYNC-Q003",
+        "C1-D1-O3-SYNC-Q004",
+        "C1-D1-O3-SYNC-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D1-O3-MDM-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O1",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O1-L1",
         "C1-D2-O1-L2",
@@ -482,13 +382,13 @@
         "C1-D2-O1-PORTS-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O2",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O2-L1"
       ],
@@ -537,17 +437,20 @@
         "C1-D2-O2-WIFI-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O3",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O3-L1-lab",
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O3-AAA-Q001",
         "C1-D2-O3-AAA-Q002",
@@ -580,15 +483,17 @@
         "C1-D2-O3-UTM-Q004",
         "C1-D2-O3-UTM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O3-HOSTS-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O4",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O4-L1",
         "C1-D2-O4-L2"
@@ -596,7 +501,9 @@
       "interactionIds": [
         "C1-D2-O4-L1-d1",
         "C1-D2-O4-L2-d1",
-        "C1-D2-O4-L2-d2"
+        "C1-D2-O4-L2-d2",
+        "C1-D2-O4-L2-lab",
+        "C1-D2-O4-SERVICES-LAB"
       ],
       "quizQuestionIds": [
         "C1-D2-O4-DHCPPOOL-Q001",
@@ -632,15 +539,17 @@
         "C1-D2-O4-VPN-Q004",
         "C1-D2-O4-VPN-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O4-SERVICES-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O5",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O5-L1"
       ],
@@ -685,13 +594,13 @@
         "C1-D2-O5-RACK-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O6",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O6-L1",
         "C1-D2-O6-L2"
@@ -744,17 +653,20 @@
         "C1-D2-O6-ROUTER-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O7",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C1-D2-O7-L1-lab",
+        "C1-D2-O7-WAN-LAB"
+      ],
       "quizQuestionIds": [
         "C1-D2-O7-CABLE-Q001",
         "C1-D2-O7-CABLE-Q002",
@@ -787,20 +699,24 @@
         "C1-D2-O7-WISP-Q003",
         "C1-D2-O7-WISP-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O7-WAN-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D2-O8",
       "core": "C1",
       "domain": "C1-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D2-O8-L1"
       ],
       "interactionIds": [
-        "C1-D2-O8-L1-see1"
+        "C1-D2-O8-L1-see1",
+        "C1-D2-O8-L1-lab",
+        "C1-D2-O8-TOOLS-LAB"
       ],
       "quizQuestionIds": [
         "C1-D2-O8-ANALYZER-Q001",
@@ -834,15 +750,17 @@
         "C1-D2-O8-TONER-Q003",
         "C1-D2-O8-TONER-Q004"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D2-O8-TOOLS-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O1",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O1-L1",
         "C1-D3-O1-L2"
@@ -854,6 +772,10 @@
         "C1-D3-O1-DISPLAY-LAB"
       ],
       "quizQuestionIds": [
+        "C1-D3-O1-ATTR-Q001",
+        "C1-D3-O1-ATTR-Q002",
+        "C1-D3-O1-ATTR-Q003",
+        "C1-D3-O1-ATTR-Q004",
         "C1-D3-O1-DIGITIZER-Q001",
         "C1-D3-O1-DIGITIZER-Q002",
         "C1-D3-O1-DIGITIZER-Q003",
@@ -889,13 +811,13 @@
         "C1-D3-O1-DISPLAY-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O2",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O2-L1",
         "C1-D3-O2-L2"
@@ -915,9 +837,11 @@
         "C1-D3-O2-FIBER-Q002",
         "C1-D3-O2-FIBER-Q003",
         "C1-D3-O2-FIBER-Q004",
+        "C1-D3-O2-FIBER-Q005",
         "C1-D3-O2-HDMI-Q001",
         "C1-D3-O2-HDMI-Q002",
         "C1-D3-O2-HDMI-Q003",
+        "C1-D3-O2-HDMI-Q004",
         "C1-D3-O2-MOLEX-Q001",
         "C1-D3-O2-MOLEX-Q002",
         "C1-D3-O2-RJ45-Q001",
@@ -940,19 +864,20 @@
         "C1-D3-O2-USB-Q003",
         "C1-D3-O2-USB-Q004",
         "C1-D3-O2-UTP-Q003",
-        "C1-D3-O2-UTP-Q004"
+        "C1-D3-O2-UTP-Q004",
+        "C1-D3-O2-UTP-Q005"
       ],
       "pbqLabIds": [
         "C1-D3-O2-CABLE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O3",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O3-L1"
       ],
@@ -976,6 +901,7 @@
         "C1-D3-O3-DDR-Q004",
         "C1-D3-O3-DDR-Q005",
         "C1-D3-O3-DDR-Q006",
+        "C1-D3-O3-DDR-Q007",
         "C1-D3-O3-DIMM-Q001",
         "C1-D3-O3-DIMM-Q002",
         "C1-D3-O3-DIMM-Q003",
@@ -999,13 +925,13 @@
         "C1-D3-O3-RAM-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O4",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O4-L1",
         "C1-D3-O4-L2",
@@ -1055,14 +981,18 @@
         "C1-D3-O4-RAID5-Q002",
         "C1-D3-O4-RAID5-Q003",
         "C1-D3-O4-RAID5-Q004",
-        "C1-D3-O4-RAID6-Q001",
-        "C1-D3-O4-RAID6-Q002"
-      ],
-      "reviewQuestionIds": [
         "C1-D3-O4-RAID5-Q005",
+        "C1-D3-O4-RAID6-Q001",
+        "C1-D3-O4-RAID6-Q002",
         "C1-D3-O4-RAID6-Q003",
         "C1-D3-O4-RAID6-Q004",
-        "C1-D3-O4-RAID6-Q005",
+        "C1-D3-O4-RAID6-Q005"
+      ],
+      "reviewQuestionIds": [
+        "C1-D3-O4-REMOVABLE-Q001",
+        "C1-D3-O4-REMOVABLE-Q002",
+        "C1-D3-O4-REMOVABLE-Q003",
+        "C1-D3-O4-REMOVABLE-Q004",
         "C1-D3-O4-SSD-Q001",
         "C1-D3-O4-SSD-Q002",
         "C1-D3-O4-SSD-Q003",
@@ -1072,13 +1002,13 @@
         "C1-D3-O4-RAID-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O5",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O5-L1",
         "C1-D3-O5-L2",
@@ -1115,6 +1045,7 @@
         "C1-D3-O5-CPU-Q004",
         "C1-D3-O5-CPU-Q005",
         "C1-D3-O5-CPU-Q006",
+        "C1-D3-O5-CPU-Q007",
         "C1-D3-O5-HSM-Q001",
         "C1-D3-O5-HSM-Q002",
         "C1-D3-O5-HSM-Q003",
@@ -1123,13 +1054,14 @@
         "C1-D3-O5-PCIE-Q002",
         "C1-D3-O5-PCIE-Q003",
         "C1-D3-O5-PCIE-Q004",
+        "C1-D3-O5-PCIE-Q005",
         "C1-D3-O5-TPM-Q001",
         "C1-D3-O5-TPM-Q002",
         "C1-D3-O5-UEFI-Q001",
         "C1-D3-O5-UEFI-Q002"
       ],
       "reviewQuestionIds": [
-        "C1-D3-O5-PCIE-Q005",
+        "C1-D3-O5-PCIE-Q006",
         "C1-D3-O5-TPM-Q003",
         "C1-D3-O5-TPM-Q004",
         "C1-D3-O5-TPM-Q005",
@@ -1142,19 +1074,21 @@
         "C1-D3-O5-MOBO-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O6",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O6-L1"
       ],
       "interactionIds": [
         "C1-D3-O6-L1-see1",
-        "C1-D3-O6-L1-d1"
+        "C1-D3-O6-L1-d1",
+        "C1-D3-O6-L1-lab",
+        "C1-D3-O6-PSU-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O6-ATX24-Q001",
@@ -1188,20 +1122,24 @@
         "C1-D3-O6-WATTAGE-Q004",
         "C1-D3-O6-WATTAGE-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O6-PSU-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O7",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O7-L1"
       ],
       "interactionIds": [
-        "C1-D3-O7-L1-d1"
+        "C1-D3-O7-L1-d1",
+        "C1-D3-O7-L1-lab",
+        "C1-D3-O7-MFD-LAB"
       ],
       "quizQuestionIds": [
         "C1-D3-O7-ADF-Q001",
@@ -1235,15 +1173,17 @@
         "C1-D3-O7-SECUREPRINT-Q005",
         "C1-D3-O7-SECUREPRINT-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C1-D3-O7-MFD-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D3-O8",
       "core": "C1",
       "domain": "C1-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D3-O8-L1"
       ],
@@ -1289,13 +1229,13 @@
         "C1-D3-O8-PRINTER-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D4-O1",
       "core": "C1",
       "domain": "C1-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D4-O1-L1",
         "C1-D4-O1-L2",
@@ -1337,32 +1277,36 @@
         "C1-D4-O1-VDI-Q002",
         "C1-D4-O1-VDI-Q003",
         "C1-D4-O1-VDI-Q004",
+        "C1-D4-O1-VDI-Q005",
+        "C1-D4-O1-VDI-Q006",
+        "C1-D4-O1-VDI-Q007",
+        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q001",
         "C1-D4-O1-VM-Q002",
         "C1-D4-O1-VM-Q003",
         "C1-D4-O1-VM-Q008"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O1-VDI-Q005",
-        "C1-D4-O1-VDI-Q006",
-        "C1-D4-O1-VDI-Q007",
-        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q004",
         "C1-D4-O1-VM-Q005",
         "C1-D4-O1-VM-Q006",
-        "C1-D4-O1-VM-Q007"
+        "C1-D4-O1-VM-Q007",
+        "C1-D4-O1-VM-Q009",
+        "C1-D4-O1-VM-Q010",
+        "C1-D4-O1-VM-Q011",
+        "C1-D4-O1-VM-Q012"
       ],
       "pbqLabIds": [
         "C1-D4-O1-HYPERVISOR-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D4-O2",
       "core": "C1",
       "domain": "C1-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D4-O2-L1",
         "C1-D4-O2-L2",
@@ -1383,6 +1327,7 @@
         "C1-D4-O2-ELASTIC-Q005",
         "C1-D4-O2-ELASTIC-Q006",
         "C1-D4-O2-ELASTIC-Q007",
+        "C1-D4-O2-ELASTIC-Q008",
         "C1-D4-O2-HYBRID-Q001",
         "C1-D4-O2-HYBRID-Q002",
         "C1-D4-O2-HYBRID-Q003",
@@ -1390,6 +1335,7 @@
         "C1-D4-O2-HYBRID-Q005",
         "C1-D4-O2-HYBRID-Q006",
         "C1-D4-O2-HYBRID-Q007",
+        "C1-D4-O2-HYBRID-Q008",
         "C1-D4-O2-IAAS-Q001",
         "C1-D4-O2-IAAS-Q002",
         "C1-D4-O2-IAAS-Q003",
@@ -1404,34 +1350,36 @@
         "C1-D4-O2-MULTITENANT-Q005",
         "C1-D4-O2-MULTITENANT-Q006",
         "C1-D4-O2-MULTITENANT-Q007",
+        "C1-D4-O2-MULTITENANT-Q008",
         "C1-D4-O2-PAAS-Q001",
         "C1-D4-O2-PAAS-Q002",
         "C1-D4-O2-PAAS-Q003",
+        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-SAAS-Q001",
         "C1-D4-O2-SAAS-Q002",
         "C1-D4-O2-SAAS-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-PAAS-Q005",
         "C1-D4-O2-PAAS-Q006",
         "C1-D4-O2-PAAS-Q007",
         "C1-D4-O2-SAAS-Q003",
         "C1-D4-O2-SAAS-Q004",
         "C1-D4-O2-SAAS-Q005",
-        "C1-D4-O2-SAAS-Q007"
+        "C1-D4-O2-SAAS-Q007",
+        "C1-D4-O2-SAAS-Q008"
       ],
       "pbqLabIds": [
         "C1-D4-O2-CLOUD-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O1",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O1-L1",
         "C1-D5-O1-L2"
@@ -1471,32 +1419,33 @@
         "C1-D5-O1-OVERHEAT-Q002",
         "C1-D5-O1-OVERHEAT-Q003",
         "C1-D5-O1-OVERHEAT-Q004",
+        "C1-D5-O1-OVERHEAT-Q005",
         "C1-D5-O1-OVERHEAT-Q006",
         "C1-D5-O1-POST-Q001",
         "C1-D5-O1-POST-Q002",
         "C1-D5-O1-POST-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O1-OVERHEAT-Q005",
         "C1-D5-O1-OVERHEAT-Q007",
         "C1-D5-O1-OVERHEAT-Q008",
         "C1-D5-O1-POST-Q003",
         "C1-D5-O1-POST-Q004",
         "C1-D5-O1-POST-Q005",
         "C1-D5-O1-POST-Q007",
-        "C1-D5-O1-POST-Q008"
+        "C1-D5-O1-POST-Q008",
+        "C1-D5-O1-POST-Q009"
       ],
       "pbqLabIds": [
         "C1-D5-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O2",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O2-L1",
         "C1-D5-O2-L2"
@@ -1516,6 +1465,7 @@
         "C1-D5-O2-CLICKING-Q005",
         "C1-D5-O2-CLICKING-Q006",
         "C1-D5-O2-CLICKING-Q007",
+        "C1-D5-O2-CLICKING-Q008",
         "C1-D5-O2-IOPS-Q001",
         "C1-D5-O2-IOPS-Q002",
         "C1-D5-O2-IOPS-Q003",
@@ -1523,6 +1473,7 @@
         "C1-D5-O2-IOPS-Q005",
         "C1-D5-O2-IOPS-Q006",
         "C1-D5-O2-IOPS-Q007",
+        "C1-D5-O2-IOPS-Q008",
         "C1-D5-O2-RAIDFAIL-Q001",
         "C1-D5-O2-RAIDFAIL-Q002",
         "C1-D5-O2-RAIDFAIL-Q003",
@@ -1545,13 +1496,13 @@
         "C1-D5-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O3",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O3-L1"
       ],
@@ -1579,30 +1530,33 @@
         "C1-D5-O3-PROJECTOR-Q002",
         "C1-D5-O3-PROJECTOR-Q003",
         "C1-D5-O3-PROJECTOR-Q004",
+        "C1-D5-O3-PROJECTOR-Q005",
         "C1-D5-O3-PROJECTOR-Q006",
+        "C1-D5-O3-PROJECTOR-Q007",
+        "C1-D5-O3-PROJECTOR-Q008",
         "C1-D5-O3-SOURCE-Q001",
         "C1-D5-O3-SOURCE-Q002",
         "C1-D5-O3-SOURCE-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O3-PROJECTOR-Q005",
-        "C1-D5-O3-PROJECTOR-Q007",
         "C1-D5-O3-SOURCE-Q003",
         "C1-D5-O3-SOURCE-Q004",
         "C1-D5-O3-SOURCE-Q005",
-        "C1-D5-O3-SOURCE-Q007"
+        "C1-D5-O3-SOURCE-Q007",
+        "C1-D5-O3-SOURCE-Q008",
+        "C1-D5-O3-SOURCE-Q009"
       ],
       "pbqLabIds": [
         "C1-D5-O3-DISPLAY-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O4",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O4-L1",
         "C1-D5-O4-L2"
@@ -1621,6 +1575,7 @@
         "C1-D5-O4-DIGITIZER-Q005",
         "C1-D5-O4-DIGITIZER-Q006",
         "C1-D5-O4-DIGITIZER-Q007",
+        "C1-D5-O4-DIGITIZER-Q008",
         "C1-D5-O4-LIQUID-Q001",
         "C1-D5-O4-LIQUID-Q002",
         "C1-D5-O4-LIQUID-Q003",
@@ -1633,13 +1588,14 @@
         "C1-D5-O4-MOBILEMALWARE-Q003",
         "C1-D5-O4-MOBILEMALWARE-Q004",
         "C1-D5-O4-MOBILEMALWARE-Q005",
+        "C1-D5-O4-MOBILEMALWARE-Q006",
         "C1-D5-O4-SWELL-Q001",
         "C1-D5-O4-SWELL-Q002",
         "C1-D5-O4-SWELL-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O4-MOBILEMALWARE-Q006",
         "C1-D5-O4-MOBILEMALWARE-Q007",
+        "C1-D5-O4-MOBILEMALWARE-Q008",
         "C1-D5-O4-SWELL-Q003",
         "C1-D5-O4-SWELL-Q004",
         "C1-D5-O4-SWELL-Q005",
@@ -1649,13 +1605,13 @@
         "C1-D5-O4-MOBILE-HW-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O5",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O5-L1",
         "C1-D5-O5-L2"
@@ -1698,15 +1654,16 @@
         "C1-D5-O5-LIMITED-Q002",
         "C1-D5-O5-LIMITED-Q003",
         "C1-D5-O5-LIMITED-Q004",
+        "C1-D5-O5-LIMITED-Q005",
         "C1-D5-O5-LIMITED-Q008",
         "C1-D5-O5-VOIP-Q001",
         "C1-D5-O5-VOIP-Q002",
         "C1-D5-O5-VOIP-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O5-LIMITED-Q005",
         "C1-D5-O5-LIMITED-Q006",
         "C1-D5-O5-LIMITED-Q007",
+        "C1-D5-O5-LIMITED-Q009",
         "C1-D5-O5-VOIP-Q003",
         "C1-D5-O5-VOIP-Q004",
         "C1-D5-O5-VOIP-Q005",
@@ -1718,13 +1675,13 @@
         "C1-D5-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C1-D5-O6",
       "core": "C1",
       "domain": "C1-D5",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/1oSdlyujpaX3GrM0rir6Ge/91afb2be72785281e8fb4c0d9a70c6f4/CompTIA-A-220-1201-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/34be017cb73211ef8985a6f347fbf652",
       "lessonIds": [
         "C1-D5-O6-L1",
         "C1-D5-O6-L2"
@@ -1755,6 +1712,7 @@
         "C1-D5-O6-GHOST-Q003",
         "C1-D5-O6-GHOST-Q004",
         "C1-D5-O6-GHOST-Q005",
+        "C1-D5-O6-GHOST-Q006",
         "C1-D5-O6-JAM-Q001",
         "C1-D5-O6-JAM-Q002",
         "C1-D5-O6-JAM-Q003",
@@ -1764,9 +1722,9 @@
         "C1-D5-O6-QUEUE-Q005"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O6-GHOST-Q006",
         "C1-D5-O6-JAM-Q004",
         "C1-D5-O6-JAM-Q005",
+        "C1-D5-O6-JAM-Q007",
         "C1-D5-O6-QUEUE-Q003",
         "C1-D5-O6-QUEUE-Q004",
         "C1-D5-O6-QUEUE-Q006"
@@ -1776,19 +1734,21 @@
         "C1-D5-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O1",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O1-L1",
         "C2-D1-O1-L2"
       ],
       "interactionIds": [
-        "C2-D1-O1-L1-d1"
+        "C2-D1-O1-L1-d1",
+        "C2-D1-O1-L2-lab",
+        "C2-D1-O1-OSTYPES-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O1-CHROMEOS-Q001",
@@ -1826,20 +1786,25 @@
         "C2-D1-O1-WIN-Q005",
         "C2-D1-O1-WIN-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O1-OSTYPES-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O2",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O2-L1",
         "C2-D1-O2-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O2-L1-lab",
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O2-CLEAN-Q001",
         "C2-D1-O2-CLEAN-Q002",
@@ -1874,15 +1839,17 @@
         "C2-D1-O2-ZEROTOUCH-Q005",
         "C2-D1-O2-ZEROTOUCH-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O2-BOOT-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O3",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O3-L1",
         "C2-D1-O3-L2"
@@ -1930,13 +1897,13 @@
         "C2-D1-O3-EDITION-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O4",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O4-L1",
         "C2-D1-O4-L2",
@@ -1992,13 +1959,13 @@
         "C2-D1-O4-WINTOOLS-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O5",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O5-L1",
         "C2-D1-O5-L2",
@@ -2060,18 +2027,21 @@
         "C2-D1-O5-CMD-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O6",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O6-L1",
         "C2-D1-O6-L2"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O6-L2-lab",
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O6-EXPLOREROPT-Q001",
         "C2-D1-O6-EXPLOREROPT-Q002",
@@ -2106,21 +2076,25 @@
         "C2-D1-O6-POWER-Q007",
         "C2-D1-O6-POWER-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O6-SETTINGS-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O7",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O7-L1",
         "C2-D1-O7-L2"
       ],
       "interactionIds": [
-        "C2-D1-O7-L2-d1"
+        "C2-D1-O7-L2-d1",
+        "C2-D1-O7-L2-lab",
+        "C2-D1-O7-CLIENTNET-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O7-DOMAINJOIN-Q001",
@@ -2156,15 +2130,17 @@
         "C2-D1-O7-WORKGROUP-Q005",
         "C2-D1-O7-WORKGROUP-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O7-CLIENTNET-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O8",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O8-L1",
         "C2-D1-O8-L2"
@@ -2209,13 +2185,13 @@
         "C2-D1-O8-MACOS-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O9",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O9-L1",
         "C2-D1-O9-L2",
@@ -2276,17 +2252,20 @@
         "C2-D1-O9-LINUX-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O10",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O10-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D1-O10-L1-lab",
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D1-O10-IMPACT-Q001",
         "C2-D1-O10-IMPACT-Q002",
@@ -2321,20 +2300,24 @@
         "C2-D1-O10-X86APP-Q007",
         "C2-D1-O10-X86APP-Q008"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O10-APPINSTALL-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D1-O11",
       "core": "C2",
       "domain": "C2-D1",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D1-O11-L1"
       ],
       "interactionIds": [
-        "C2-D1-O11-L1-d1"
+        "C2-D1-O11-L1-d1",
+        "C2-D1-O11-L1-lab",
+        "C2-D1-O11-CLOUDPROD-LAB"
       ],
       "quizQuestionIds": [
         "C2-D1-O11-COLLAB-Q001",
@@ -2368,15 +2351,17 @@
         "C2-D1-O11-LICENSE-Q008",
         "C2-D1-O11-LICENSE-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D1-O11-CLOUDPROD-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O1",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O1-L1",
         "C2-D2-O1-L2"
@@ -2421,13 +2406,13 @@
         "C2-D2-O1-AUTH-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O2",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O2-L1",
         "C2-D2-O2-L2"
@@ -2473,17 +2458,20 @@
         "C2-D2-O2-ACL-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O3",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O3-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O3-L1-lab",
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O3-AES-Q001",
         "C2-D2-O3-AES-Q002",
@@ -2516,15 +2504,17 @@
         "C2-D2-O3-WPA3-Q005",
         "C2-D2-O3-WPA3-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O3-WIFISEC-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O4",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O4-L1",
         "C2-D2-O4-L2"
@@ -2576,13 +2566,13 @@
         "C2-D2-O5-PHISH-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O5",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O5-L1",
         "C2-D2-O5-L2"
@@ -2636,13 +2626,13 @@
         "C2-D2-O5-PHISH-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O6",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O6-L1",
         "C2-D2-O6-L2"
@@ -2696,17 +2686,20 @@
         "C2-D2-O6-MALWARE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O7",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O7-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D2-O7-L1-lab",
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D2-O7-AUTORUN-Q001",
         "C2-D2-O7-AUTORUN-Q002",
@@ -2739,20 +2732,24 @@
         "C2-D2-O7-LOCKOUT-Q006",
         "C2-D2-O7-LOCKOUT-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O7-HARDEN-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O8",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O8-L1"
       ],
       "interactionIds": [
-        "C2-D2-O8-L1-d1"
+        "C2-D2-O8-L1-d1",
+        "C2-D2-O8-L1-lab",
+        "C2-D2-O8-MOBSEC-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O8-MDMPROFILE-Q001",
@@ -2786,20 +2783,24 @@
         "C2-D2-O8-SCREENLOCK-Q008",
         "C2-D2-O8-SCREENLOCK-Q009"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O8-MOBSEC-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O9",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O9-L1"
       ],
       "interactionIds": [
-        "C2-D2-O9-L1-see1"
+        "C2-D2-O9-L1-see1",
+        "C2-D2-O9-L1-lab",
+        "C2-D2-O9-DESTROY-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O9-COD-Q001",
@@ -2833,15 +2834,17 @@
         "C2-D2-O9-WIPE-Q006",
         "C2-D2-O9-WIPE-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O9-DESTROY-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O10",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O10-L1"
       ],
@@ -2885,18 +2888,20 @@
         "C1-D2-O6-ROUTER-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D2-O11",
       "core": "C2",
       "domain": "C2-D2",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D2-O11-L1"
       ],
       "interactionIds": [
-        "C2-D2-O11-L1-d1"
+        "C2-D2-O11-L1-d1",
+        "C2-D2-O11-L1-lab",
+        "C2-D2-O11-BROWSER-LAB"
       ],
       "quizQuestionIds": [
         "C2-D2-O11-CERTWARN-Q001",
@@ -2930,15 +2935,17 @@
         "C2-D2-O11-SECUREDNS-Q006",
         "C2-D2-O11-SECUREDNS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D2-O11-BROWSER-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D3-O1",
       "core": "C2",
       "domain": "C2-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D3-O1-L1",
         "C2-D3-O1-L2",
@@ -2990,13 +2997,13 @@
         "C2-D3-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D3-O2",
       "core": "C2",
       "domain": "C2-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D3-O2-L1",
         "C2-D3-O2-L2"
@@ -3042,13 +3049,13 @@
         "C2-D3-O2-MOBILE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D3-O3",
       "core": "C2",
       "domain": "C2-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D3-O3-L1",
         "C2-D3-O3-L2"
@@ -3094,13 +3101,13 @@
         "C2-D3-O3-COMPROMISE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D3-O4",
       "core": "C2",
       "domain": "C2-D3",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D3-O4-L1",
         "C2-D3-O4-L2"
@@ -3146,13 +3153,13 @@
         "C2-D3-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O1",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O1-L1",
         "C2-D4-O1-L2"
@@ -3194,13 +3201,13 @@
         "C2-D4-O1-TICKET-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O2",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O2-L1"
       ],
@@ -3241,13 +3248,13 @@
         "C2-D4-O2-CHANGE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O3",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O3-L1",
         "C2-D4-O3-L2"
@@ -3301,18 +3308,20 @@
         "C2-D4-O3-BACKUP-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O4",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O4-L1"
       ],
       "interactionIds": [
-        "C2-D4-O4-L1-see1"
+        "C2-D4-O4-L1-see1",
+        "C2-D4-O4-L1-lab",
+        "C2-D4-O4-SAFETY-LAB"
       ],
       "quizQuestionIds": [
         "C2-D4-O4-ESD-Q001",
@@ -3343,20 +3352,24 @@
         "C2-D4-O4-PPE-Q005",
         "C2-D4-O4-PPE-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O4-SAFETY-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O5",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O5-L1"
       ],
       "interactionIds": [
-        "C2-D4-O5-L1-see1"
+        "C2-D4-O5-L1-see1",
+        "C2-D4-O5-L1-lab",
+        "C2-D4-O5-ENV-LAB"
       ],
       "quizQuestionIds": [
         "C2-D4-O5-BROWNOUT-Q001",
@@ -3387,19 +3400,24 @@
         "C2-D4-O5-UPS-Q006",
         "C2-D4-O5-UPS-Q007"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O5-ENV-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O6",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O6-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O6-L1-lab",
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O6-AUP-Q001",
         "C2-D4-O6-AUP-Q002",
@@ -3429,15 +3447,17 @@
         "C2-D4-O6-VOLATILITY-Q005",
         "C2-D4-O6-VOLATILITY-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O6-PRIVACY-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O7",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O7-L1",
         "C2-D4-O7-L2"
@@ -3490,17 +3510,20 @@
         "C2-D4-O7-VOICE-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O8",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O8-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O8-L1-lab",
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O8-BAT-Q001",
         "C2-D4-O8-BAT-Q002",
@@ -3530,19 +3553,24 @@
         "C2-D4-O8-SCRIPTRISK-Q005",
         "C2-D4-O8-SCRIPTRISK-Q006"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O8-SCRIPT-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O9",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O9-L1"
       ],
-      "interactionIds": [],
+      "interactionIds": [
+        "C2-D4-O9-L1-lab",
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "quizQuestionIds": [
         "C2-D4-O9-RDP-Q001",
         "C2-D4-O9-RDP-Q002",
@@ -3572,15 +3600,17 @@
         "C2-D4-O9-WINRM-Q004",
         "C2-D4-O9-WINRM-Q005"
       ],
-      "pbqLabIds": [],
+      "pbqLabIds": [
+        "C2-D4-O9-REMOTE-LAB"
+      ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     },
     {
       "objectiveId": "C2-D4-O10",
       "core": "C2",
       "domain": "C2-D4",
-      "source": "https://assets.ctfassets.net/82ripq7fjls2/6I8WL66IBa1AUovioDGrnM/f74a7eca336fd4e4c8e723a1f893086d/CompTIA-A-220-1202-Exam-Objectives-3.0.pdf",
+      "source": "https://lecbyo.files.cmp.optimizely.com/download/cefedfb2b8a511ef809306d06d323538",
       "lessonIds": [
         "C2-D4-O10-L1",
         "C2-D4-O10-L2"
@@ -3633,7 +3663,7 @@
         "C2-D3-SHIFT-LAB"
       ],
       "status": "verified",
-      "lastVerified": "2026-09-01"
+      "lastVerified": "2026-10-19"
     }
   ]
 }
