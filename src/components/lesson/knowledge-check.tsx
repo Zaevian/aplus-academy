@@ -1,9 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Check } from "lucide-react";
 import type { Question } from "@/content/schema";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { AnswerChoice, bigCheckClass } from "@/components/quiz/answer-choice";
+import { MISS_LINE, choiceLetter, successLine } from "@/lib/answer-feedback";
+import { vibrateFail, vibrateSuccess } from "@/lib/haptics";
 import { shuffle, isCorrect } from "@/lib/questions";
 import { completeBlock, recordAnswer } from "@/lib/progress-actions";
 import { useAcademy } from "@/components/academy-provider";
@@ -43,6 +46,7 @@ export function KnowledgeCheck({
   /** Stays true after the explanation has been revealed for the current item. */
   const [explanationShown, setExplanationShown] = useState(false);
   const [attemptNumber, setAttemptNumber] = useState(1);
+  const [feedbackTick, setFeedbackTick] = useState(0);
 
   const question = questions[index];
   const order = useMemo(
@@ -83,7 +87,10 @@ export function KnowledgeCheck({
     });
     setSubmitted(true);
     setCorrectNow(result.correct);
-    if (!result.correct) {
+    setFeedbackTick((n) => n + 1);
+    if (result.correct) vibrateSuccess();
+    else {
+      vibrateFail();
       setExplanationShown(true);
     }
     onItemResult?.(index, result.correct, { firstAttempt, assisted });
@@ -118,6 +125,7 @@ export function KnowledgeCheck({
     setAlt(false);
     setExplanationShown(false);
     setAttemptNumber(1);
+    setFeedbackTick(0);
   }
 
   const chosen = question.choices.filter((c) => selected.includes(c.id));
@@ -130,7 +138,7 @@ export function KnowledgeCheck({
 
   return (
     <section
-      className="rounded-lg border bg-card p-4"
+      className="rounded-2xl border-2 bg-card p-4 sm:p-5"
       aria-labelledby={`${blockId}-title`}
     >
       <h3 id={`${blockId}-title`} className="text-sm font-semibold">
@@ -150,57 +158,74 @@ export function KnowledgeCheck({
         </p>
       ) : null}
       <div className="mt-3 flex flex-wrap items-start justify-between gap-2">
-        <p className="text-sm leading-6 font-medium">{question.stem}</p>
+        <p className="text-base leading-7 font-semibold">{question.stem}</p>
         <ListenButton
           text={`${question.scenario ? question.scenario + ". " : ""}${question.stem}. ${order.map((c) => c.text).join(". ")}`}
           title={`Check ${index + 1}`}
           label="Listen"
         />
       </div>
-      <ul className="mt-3 space-y-2" key={question.id}>
-        {order.map((choice) => {
+      <ul className="mt-4 space-y-3" key={`${question.id}-${feedbackTick}`}>
+        {order.map((choice, choiceIndex) => {
           const on = selected.includes(choice.id);
-          const show = submitted;
           const isKey = question.correct.includes(choice.id);
+          const mark =
+            submitted && isKey ? "correct" : submitted && on && !isKey ? "wrong" : undefined;
           return (
             <li key={choice.id}>
-              <button
-                type="button"
+              <AnswerChoice
+                letter={choiceLetter(choiceIndex)}
+                text={choice.text}
+                pressed={on}
+                mark={mark}
+                dim={submitted && !isKey && !on}
+                disabled={submitted && correctNow}
                 onClick={() => toggle(choice.id)}
-                className={cn(
-                  "w-full min-h-11 rounded-md border px-3 py-2 text-left text-sm leading-6 transition-colors focus-visible:ring-3 focus-visible:ring-ring/50",
-                  on && !show && "border-foreground bg-muted",
-                  show && isKey && "border-emerald-600 bg-emerald-500/10",
-                  show && on && !isKey && "border-destructive bg-destructive/10",
-                )}
-              >
-                {choice.text}
-                {show ? (
-                  <span className="mt-1 block text-xs text-muted-foreground">
-                    {choice.rationale}
-                  </span>
-                ) : null}
-              </button>
+              />
             </li>
           );
         })}
       </ul>
-      <div className="mt-3 flex flex-wrap items-center gap-2">
+      {submitted && correctNow ? (
+        <div
+          role="status"
+          data-testid="answer-feedback"
+          data-state="correct"
+          className="answer-card-glow mt-4 flex items-center gap-3 rounded-2xl border-2 border-emerald-600 bg-emerald-500/15 px-4 py-3"
+        >
+          <span className="answer-pop flex size-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+            <Check className="size-6" strokeWidth={3} />
+          </span>
+          <p className="text-lg font-semibold text-emerald-800 dark:text-emerald-200">
+            {successLine(index)}
+          </p>
+        </div>
+      ) : null}
+      {submitted && !correctNow ? (
+        <div
+          role="status"
+          data-testid="answer-feedback"
+          data-state="wrong"
+          className="mt-4 rounded-2xl border-2 border-red-400 bg-red-500/10 px-4 py-3"
+        >
+          <p className="text-base font-semibold text-red-800 dark:text-red-200">{MISS_LINE}</p>
+        </div>
+      ) : null}
+      <div className="mt-4 flex flex-col gap-2">
         {!correctNow ? (
           <Button
-            size="sm"
-            className="min-h-11"
+            className={bigCheckClass}
             onClick={() => void submit()}
             disabled={selected.length === 0}
           >
             Check answer
           </Button>
         ) : index < questions.length - 1 ? (
-          <Button size="sm" className="min-h-11" onClick={next}>
+          <Button className={bigCheckClass} onClick={next}>
             Next question
           </Button>
         ) : (
-          <p className="text-sm text-emerald-700 dark:text-emerald-400">
+          <p className="text-base font-semibold text-emerald-700 dark:text-emerald-400">
             {already
               ? "This check is complete. Continue."
               : "Correct. This block is unlocked."}
@@ -208,9 +233,8 @@ export function KnowledgeCheck({
         )}
         {submitted && !correctNow ? (
           <Button
-            size="sm"
-            variant="ghost"
-            className="min-h-11"
+            variant="outline"
+            className="h-12 rounded-full text-base"
             onClick={() => {
               setAlt((v) => !v);
             }}
@@ -219,21 +243,26 @@ export function KnowledgeCheck({
           </Button>
         ) : null}
       </div>
+      {submitted && correctNow ? (
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
+          {correctChoices.map((c) => c.rationale).join(" ")}
+        </p>
+      ) : null}
       {submitted && !correctNow ? (
         <div className="mt-3 space-y-2 text-sm leading-6">
           <p>
-            <span className="font-medium">Why your choice is wrong. </span>
+            <span className="font-medium">Why that option misses. </span>
             {chosen
               .map((c) => c.rationale)
               .join(" ") || "That option is not the key."}
           </p>
           <p>
-            <span className="font-medium">Why the correct answer is right. </span>
+            <span className="font-medium">Why the right one fits. </span>
             {correctChoices.map((c) => c.rationale).join(" ")}
           </p>
           {otherDistractors.length ? (
             <p>
-              <span className="font-medium">Why the other distractors fail. </span>
+              <span className="font-medium">Why the other options miss. </span>
               {otherDistractors.map((c) => `${c.text}: ${c.rationale}`).join(" ")}
             </p>
           ) : null}

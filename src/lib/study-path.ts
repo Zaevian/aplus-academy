@@ -7,6 +7,118 @@ import type { Lesson } from "@/content/schema";
 export const FIRST_LESSON_HREF = "/course/foundation/what-a-plus-is";
 export const FIRST_LESSON_TITLE = "What CompTIA A+ actually certifies";
 
+export type OpeningResume = {
+  /** saved: last lesson URL. next: completions exist but that URL was not stored. begin: nothing to resume. */
+  source: "saved" | "next" | "begin";
+  href: string;
+  title: string;
+  objectiveTitle: string;
+};
+
+/** Strip hash, query, and a trailing slash so stored hrefs match lesson routes. */
+export function normalizePath(href: string): string {
+  const path = (href.split("#")[0] ?? "").split("?")[0] ?? "";
+  if (path.length > 1 && path.endsWith("/")) return path.slice(0, -1);
+  return path;
+}
+
+let lessonHrefIndex: Map<string, Lesson> | null = null;
+
+function lessonsByHref(): Map<string, Lesson> {
+  if (lessonHrefIndex) return lessonHrefIndex;
+  const map = new Map<string, Lesson>();
+  for (const lesson of getLessons()) {
+    map.set(lessonPath(lesson.id), lesson);
+  }
+  lessonHrefIndex = map;
+  return map;
+}
+
+export function lessonAtHref(href: string | null | undefined): Lesson | null {
+  if (!href) return null;
+  return lessonsByHref().get(normalizePath(href)) ?? null;
+}
+
+function completionCount(progress: ProgressSnapshot): number {
+  return (
+    progress.completedBlocks.length +
+    progress.completedLessons.length +
+    progress.completedObjectives.length +
+    progress.completedDomains.length +
+    progress.completedLabs.length
+  );
+}
+
+function objectiveTitleFor(objectiveId: string): string {
+  return ALL_OBJECTIVES.find((objective) => objective.id === objectiveId)?.title ?? "";
+}
+
+function describeLesson(lesson: Lesson): Pick<OpeningResume, "href" | "title" | "objectiveTitle"> {
+  return {
+    href: lessonPath(lesson.id),
+    title: lesson.title,
+    objectiveTitle: objectiveTitleFor(lesson.objectiveId),
+  };
+}
+
+/**
+ * Remember a lesson visit without letting shell pages (Start, Settings, Progress)
+ * erase it. Older rows only have currentLocation, so the first later navigation
+ * copies a studied lesson URL forward.
+ */
+export function rememberContentHref(
+  progress: Pick<ProgressSnapshot, "currentLocation" | "lastContentHref" | "lastStudyDay">,
+  pathname: string,
+): { currentLocation: string; lastContentHref: string | null } {
+  const path = normalizePath(pathname) || "/";
+  let last = progress.lastContentHref ? normalizePath(progress.lastContentHref) : null;
+  if (last && !lessonAtHref(last)) last = null;
+  if (lessonAtHref(path)) {
+    last = path;
+  } else if (!last && progress.lastStudyDay && lessonAtHref(progress.currentLocation)) {
+    last = normalizePath(progress.currentLocation);
+  }
+  return { currentLocation: path, lastContentHref: last };
+}
+
+/** Where the opening hero should send the learner. */
+export function openingResume(progress?: ProgressSnapshot): OpeningResume {
+  const saved = lessonAtHref(progress?.lastContentHref);
+  if (saved) return { source: "saved", ...describeLesson(saved) };
+
+  const located = lessonAtHref(progress?.currentLocation);
+  const completions = progress ? completionCount(progress) : 0;
+  // Onboarding writes lesson 1 into currentLocation before the learner opens it.
+  const onboardingPointer =
+    located != null &&
+    lessonPath(located.id) === FIRST_LESSON_HREF &&
+    completions === 0;
+
+  if (located && !onboardingPointer) {
+    return { source: "saved", ...describeLesson(located) };
+  }
+
+  if (progress && completions > 0) {
+    const next = nextStudy(progress);
+    const lesson = lessonAtHref(next.href);
+    if (lesson) return { source: "next", ...describeLesson(lesson) };
+    return {
+      source: "next",
+      href: next.href,
+      title: next.title,
+      objectiveTitle: next.stepLabel,
+    };
+  }
+
+  const first = lessonAtHref(FIRST_LESSON_HREF);
+  return {
+    source: "begin",
+    href: FIRST_LESSON_HREF,
+    title: first?.title ?? FIRST_LESSON_TITLE,
+    objectiveTitle: first ? objectiveTitleFor(first.objectiveId) : "",
+  };
+}
+
 export type StudyStep = {
   n: number;
   title: string;

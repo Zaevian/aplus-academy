@@ -33,6 +33,11 @@ export type Note = {
 export type ProgressSnapshot = {
   id: "local";
   currentLocation: string;
+  /**
+   * Last lesson URL. Shell routes such as /start must not overwrite this.
+   * Absent on rows written before the field existed.
+   */
+  lastContentHref?: string | null;
   completedBlocks: string[];
   completedLessons: string[];
   completedObjectives: string[];
@@ -116,6 +121,7 @@ const INITIAL_UNLOCKS = ["FND-D0", "C1-D1", "C2-D1"];
 export const initialProgress = (): ProgressSnapshot => ({
   id: "local",
   currentLocation: "/start",
+  lastContentHref: null,
   completedBlocks: [],
   completedLessons: [],
   completedObjectives: [],
