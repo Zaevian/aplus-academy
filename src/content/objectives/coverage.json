@@ -1277,20 +1277,24 @@
         "C1-D4-O1-VDI-Q002",
         "C1-D4-O1-VDI-Q003",
         "C1-D4-O1-VDI-Q004",
+        "C1-D4-O1-VDI-Q005",
+        "C1-D4-O1-VDI-Q006",
+        "C1-D4-O1-VDI-Q007",
+        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q001",
         "C1-D4-O1-VM-Q002",
         "C1-D4-O1-VM-Q003",
         "C1-D4-O1-VM-Q008"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O1-VDI-Q005",
-        "C1-D4-O1-VDI-Q006",
-        "C1-D4-O1-VDI-Q007",
-        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q004",
         "C1-D4-O1-VM-Q005",
         "C1-D4-O1-VM-Q006",
-        "C1-D4-O1-VM-Q007"
+        "C1-D4-O1-VM-Q007",
+        "C1-D4-O1-VM-Q009",
+        "C1-D4-O1-VM-Q010",
+        "C1-D4-O1-VM-Q011",
+        "C1-D4-O1-VM-Q012"
       ],
       "pbqLabIds": [
         "C1-D4-O1-HYPERVISOR-LAB"
@@ -1323,6 +1327,7 @@
         "C1-D4-O2-ELASTIC-Q005",
         "C1-D4-O2-ELASTIC-Q006",
         "C1-D4-O2-ELASTIC-Q007",
+        "C1-D4-O2-ELASTIC-Q008",
         "C1-D4-O2-HYBRID-Q001",
         "C1-D4-O2-HYBRID-Q002",
         "C1-D4-O2-HYBRID-Q003",
@@ -1330,6 +1335,7 @@
         "C1-D4-O2-HYBRID-Q005",
         "C1-D4-O2-HYBRID-Q006",
         "C1-D4-O2-HYBRID-Q007",
+        "C1-D4-O2-HYBRID-Q008",
         "C1-D4-O2-IAAS-Q001",
         "C1-D4-O2-IAAS-Q002",
         "C1-D4-O2-IAAS-Q003",
@@ -1344,22 +1350,24 @@
         "C1-D4-O2-MULTITENANT-Q005",
         "C1-D4-O2-MULTITENANT-Q006",
         "C1-D4-O2-MULTITENANT-Q007",
+        "C1-D4-O2-MULTITENANT-Q008",
         "C1-D4-O2-PAAS-Q001",
         "C1-D4-O2-PAAS-Q002",
         "C1-D4-O2-PAAS-Q003",
+        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-SAAS-Q001",
         "C1-D4-O2-SAAS-Q002",
         "C1-D4-O2-SAAS-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-PAAS-Q005",
         "C1-D4-O2-PAAS-Q006",
         "C1-D4-O2-PAAS-Q007",
         "C1-D4-O2-SAAS-Q003",
         "C1-D4-O2-SAAS-Q004",
         "C1-D4-O2-SAAS-Q005",
-        "C1-D4-O2-SAAS-Q007"
+        "C1-D4-O2-SAAS-Q007",
+        "C1-D4-O2-SAAS-Q008"
       ],
       "pbqLabIds": [
         "C1-D4-O2-CLOUD-LAB"
