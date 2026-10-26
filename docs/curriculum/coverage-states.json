@@ -1,9 +1,9 @@
 {
-  "generated": "2026-10-26T13:39:29.589Z",
+  "generated": "2026-10-26T16:56:50.698Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
-    "Practiced": 5,
+    "Practiced": 4,
     "Assessed": 0,
     "Retained": 0,
     "Exam Ready": 63
@@ -29,72 +29,6 @@
     ]
   },
   "entries": [
-    {
-      "objectiveId": "FND-D0-O1",
-      "core": "FND",
-      "domain": "FND-D0",
-      "officialCode": "0.1",
-      "title": "What CompTIA A+ is — and is not",
-      "examPercent": 0,
-      "coverageStatus": "missing",
-      "state": "Practiced",
-      "evidence": {
-        "hasLessons": true,
-        "hasPracticeInteractions": true,
-        "assessedDepth": 4,
-        "hasDisjointHoldout": false,
-        "hasScoredPbq": false,
-        "scoredPbqIds": [],
-        "hasDelayedRetentionHook": false
-      },
-      "blockers": [
-        "Assessment depth 4 (need ≥8 practice/quiz items)",
-        "No scored LabHost PBQ (pbqLabIds empty)",
-        "No disjoint holdout pool (review ≡ quiz)",
-        "No per-objective delayed-retention content hook (academy spaced review is runtime-only)"
-      ],
-      "concepts": [
-        {
-          "conceptId": "FND-D0-O1-CERT",
-          "label": "CERT",
-          "state": "Assessed",
-          "questionCount": 2,
-          "inPbq": false
-        },
-        {
-          "conceptId": "FND-D0-O1-CORES",
-          "label": "CORES",
-          "state": "Assessed",
-          "questionCount": 2,
-          "inPbq": false
-        },
-        {
-          "conceptId": "FND-D0-O1-SCORES",
-          "label": "SCORES",
-          "state": "Practiced",
-          "questionCount": 1,
-          "inPbq": false
-        }
-      ],
-      "subtopics": [
-        {
-          "label": "Core 1 vs Core 2",
-          "state": "Assessed"
-        },
-        {
-          "label": "exam structure and question formats",
-          "state": "Assessed"
-        },
-        {
-          "label": "objective numbering",
-          "state": "Practiced"
-        },
-        {
-          "label": "internal readiness vs CompTIA scaled scores",
-          "state": "Taught"
-        }
-      ]
-    },
     {
       "objectiveId": "FND-D0-O2",
       "core": "FND",

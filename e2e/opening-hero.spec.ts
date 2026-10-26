@@ -3,7 +3,8 @@ import { lessonPath } from "../src/lib/course";
 
 const LATEST_HREF = lessonPath("C1-D1-O1-L1");
 const LATEST_TITLE = "Laptop serviceability, batteries, and keyboards";
-const FIRST_HREF = "/course/foundation/what-a-plus-is";
+const FIRST_HREF = "/course/foundation/how-the-academy-works";
+const FIRST_TITLE = "How this academy forces you to learn";
 
 test.describe.configure({ timeout: 90_000 });
 
@@ -208,8 +209,9 @@ test("new learner can begin lesson 1 from the opening hero", async ({ page }) =>
   });
   const hero = page.getByRole("region", { name: "Foundation lesson 1" });
   await expect(hero).toBeVisible();
-  await expect(hero).toContainText("What CompTIA A+ actually certifies");
-  await expect(hero).toContainText("What CompTIA A+ is, and is not");
+  await expect(hero).toContainText(FIRST_TITLE);
+  await expect(hero).toContainText("How this academy teaches");
+  await expect(hero).not.toContainText("What CompTIA A+");
   await expect(hero).not.toContainText("—");
   await expect(hero.getByRole("link", { name: /Start over from Foundation lesson 1/ })).toHaveAttribute(
     "href",
@@ -220,7 +222,7 @@ test("new learner can begin lesson 1 from the opening hero", async ({ page }) =>
   await expect(begin).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(new RegExp(`${FIRST_HREF}$`));
-  await expect(page.getByRole("heading", { name: "What CompTIA A+ actually certifies" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: FIRST_TITLE })).toBeVisible();
 });
 
 test("returning learner continues the saved lesson or confirms start over", async ({ page }) => {
@@ -230,7 +232,7 @@ test("returning learner continues the saved lesson or confirms start over", asyn
       currentLocation: "/start",
       lastContentHref: LATEST_HREF,
       completedBlocks: [],
-      completedLessons: ["FND-D0-O1-L1"],
+      completedLessons: ["FND-D0-O2-L1"],
       completedObjectives: [],
       completedDomains: [],
       completedLabs: [],
@@ -265,7 +267,7 @@ test("returning learner continues the saved lesson or confirms start over", asyn
   await startOver.click();
   await dialog.getByRole("button", { name: "Clear progress and start over" }).click();
   await expect(page).toHaveURL(new RegExp(`${FIRST_HREF}$`));
-  await expect(page.getByRole("heading", { name: "What CompTIA A+ actually certifies" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: FIRST_TITLE })).toBeVisible();
 
   await expect
     .poll(async () => {
@@ -284,7 +286,7 @@ test("hero actions stay tappable on a phone", async ({ page }) => {
   await seedOpening(page, {
     currentLocation: "/start",
     lastContentHref: LATEST_HREF,
-    completedLessons: ["FND-D0-O1-L1"],
+    completedLessons: ["FND-D0-O2-L1"],
     lastStudyDay: "2026-09-30",
   });
   const hero = page.getByRole("region", { name: LATEST_TITLE });

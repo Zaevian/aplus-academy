@@ -8,7 +8,7 @@ import { openingResume, studySteps } from "@/lib/study-path";
 import { cn } from "@/lib/utils";
 
 const INTRO =
-  "CompTIA A+ is two exams: Core 1, then Core 2. This academy begins with a short Foundation, then Core 1 hardware, then Core 2 software and security. Continue your latest lesson, or begin Foundation lesson 1. The list below is the path. Progress is the scoreboard.";
+  "CompTIA A+ is two exams: Core 1, then Core 2. This academy begins with Foundation lesson 1, then Core 1 hardware, then Core 2 software and security. Continue your latest lesson, or begin Foundation lesson 1. The list below is the path. Progress is the scoreboard.";
 
 export default function StartPage() {
   const { ready, progress, profile } = useAcademy();

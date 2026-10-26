@@ -69,7 +69,7 @@ describe("opening resume", () => {
   it("falls back to the next open lesson when completions exist without a url", () => {
     const progress = initialProgress();
     progress.currentLocation = "/settings";
-    progress.completedLessons = ["FND-D0-O1-L1"];
+    progress.completedLessons = ["FND-D0-O2-L1"];
     const resume = openingResume(progress);
     expect(resume.source).toBe("next");
     expect(resume.href.startsWith("/course/")).toBe(true);

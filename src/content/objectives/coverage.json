@@ -1,33 +1,6 @@
 {
-  "generated": "2026-10-26T13:39:29.582Z",
+  "generated": "2026-10-26T16:56:50.698Z",
   "entries": [
-    {
-      "objectiveId": "FND-D0-O1",
-      "core": "FND",
-      "domain": "FND-D0",
-      "source": "https://www.comptia.org/en-us/certifications/a/core-1-and-2-v15/",
-      "lessonIds": [
-        "FND-D0-O1-L1"
-      ],
-      "interactionIds": [
-        "FND-D0-O1-L1-d1"
-      ],
-      "quizQuestionIds": [
-        "FND-D0-O1-CERT-Q001",
-        "FND-D0-O1-CERT-Q002",
-        "FND-D0-O1-CORES-Q001",
-        "FND-D0-O1-SCORES-Q001"
-      ],
-      "reviewQuestionIds": [
-        "FND-D0-O1-CERT-Q001",
-        "FND-D0-O1-CERT-Q002",
-        "FND-D0-O1-CORES-Q001",
-        "FND-D0-O1-SCORES-Q001"
-      ],
-      "pbqLabIds": [],
-      "status": "missing",
-      "lastVerified": "2026-10-19"
-    },
     {
       "objectiveId": "FND-D0-O2",
       "core": "FND",
