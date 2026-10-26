@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-20T14:12:19.913Z",
+  "generated": "2026-10-26T13:39:29.582Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O1",
@@ -1277,20 +1277,24 @@
         "C1-D4-O1-VDI-Q002",
         "C1-D4-O1-VDI-Q003",
         "C1-D4-O1-VDI-Q004",
+        "C1-D4-O1-VDI-Q005",
+        "C1-D4-O1-VDI-Q006",
+        "C1-D4-O1-VDI-Q007",
+        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q001",
         "C1-D4-O1-VM-Q002",
         "C1-D4-O1-VM-Q003",
         "C1-D4-O1-VM-Q008"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O1-VDI-Q005",
-        "C1-D4-O1-VDI-Q006",
-        "C1-D4-O1-VDI-Q007",
-        "C1-D4-O1-VDI-Q008",
         "C1-D4-O1-VM-Q004",
         "C1-D4-O1-VM-Q005",
         "C1-D4-O1-VM-Q006",
-        "C1-D4-O1-VM-Q007"
+        "C1-D4-O1-VM-Q007",
+        "C1-D4-O1-VM-Q009",
+        "C1-D4-O1-VM-Q010",
+        "C1-D4-O1-VM-Q011",
+        "C1-D4-O1-VM-Q012"
       ],
       "pbqLabIds": [
         "C1-D4-O1-HYPERVISOR-LAB"
@@ -1323,6 +1327,7 @@
         "C1-D4-O2-ELASTIC-Q005",
         "C1-D4-O2-ELASTIC-Q006",
         "C1-D4-O2-ELASTIC-Q007",
+        "C1-D4-O2-ELASTIC-Q008",
         "C1-D4-O2-HYBRID-Q001",
         "C1-D4-O2-HYBRID-Q002",
         "C1-D4-O2-HYBRID-Q003",
@@ -1330,6 +1335,7 @@
         "C1-D4-O2-HYBRID-Q005",
         "C1-D4-O2-HYBRID-Q006",
         "C1-D4-O2-HYBRID-Q007",
+        "C1-D4-O2-HYBRID-Q008",
         "C1-D4-O2-IAAS-Q001",
         "C1-D4-O2-IAAS-Q002",
         "C1-D4-O2-IAAS-Q003",
@@ -1344,22 +1350,24 @@
         "C1-D4-O2-MULTITENANT-Q005",
         "C1-D4-O2-MULTITENANT-Q006",
         "C1-D4-O2-MULTITENANT-Q007",
+        "C1-D4-O2-MULTITENANT-Q008",
         "C1-D4-O2-PAAS-Q001",
         "C1-D4-O2-PAAS-Q002",
         "C1-D4-O2-PAAS-Q003",
+        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-SAAS-Q001",
         "C1-D4-O2-SAAS-Q002",
         "C1-D4-O2-SAAS-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D4-O2-PAAS-Q004",
         "C1-D4-O2-PAAS-Q005",
         "C1-D4-O2-PAAS-Q006",
         "C1-D4-O2-PAAS-Q007",
         "C1-D4-O2-SAAS-Q003",
         "C1-D4-O2-SAAS-Q004",
         "C1-D4-O2-SAAS-Q005",
-        "C1-D4-O2-SAAS-Q007"
+        "C1-D4-O2-SAAS-Q007",
+        "C1-D4-O2-SAAS-Q008"
       ],
       "pbqLabIds": [
         "C1-D4-O2-CLOUD-LAB"
@@ -1411,20 +1419,21 @@
         "C1-D5-O1-OVERHEAT-Q002",
         "C1-D5-O1-OVERHEAT-Q003",
         "C1-D5-O1-OVERHEAT-Q004",
+        "C1-D5-O1-OVERHEAT-Q005",
         "C1-D5-O1-OVERHEAT-Q006",
         "C1-D5-O1-POST-Q001",
         "C1-D5-O1-POST-Q002",
         "C1-D5-O1-POST-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O1-OVERHEAT-Q005",
         "C1-D5-O1-OVERHEAT-Q007",
         "C1-D5-O1-OVERHEAT-Q008",
         "C1-D5-O1-POST-Q003",
         "C1-D5-O1-POST-Q004",
         "C1-D5-O1-POST-Q005",
         "C1-D5-O1-POST-Q007",
-        "C1-D5-O1-POST-Q008"
+        "C1-D5-O1-POST-Q008",
+        "C1-D5-O1-POST-Q009"
       ],
       "pbqLabIds": [
         "C1-D5-SHIFT-LAB"
@@ -1456,6 +1465,7 @@
         "C1-D5-O2-CLICKING-Q005",
         "C1-D5-O2-CLICKING-Q006",
         "C1-D5-O2-CLICKING-Q007",
+        "C1-D5-O2-CLICKING-Q008",
         "C1-D5-O2-IOPS-Q001",
         "C1-D5-O2-IOPS-Q002",
         "C1-D5-O2-IOPS-Q003",
@@ -1463,6 +1473,7 @@
         "C1-D5-O2-IOPS-Q005",
         "C1-D5-O2-IOPS-Q006",
         "C1-D5-O2-IOPS-Q007",
+        "C1-D5-O2-IOPS-Q008",
         "C1-D5-O2-RAIDFAIL-Q001",
         "C1-D5-O2-RAIDFAIL-Q002",
         "C1-D5-O2-RAIDFAIL-Q003",
@@ -1519,18 +1530,21 @@
         "C1-D5-O3-PROJECTOR-Q002",
         "C1-D5-O3-PROJECTOR-Q003",
         "C1-D5-O3-PROJECTOR-Q004",
+        "C1-D5-O3-PROJECTOR-Q005",
         "C1-D5-O3-PROJECTOR-Q006",
+        "C1-D5-O3-PROJECTOR-Q007",
+        "C1-D5-O3-PROJECTOR-Q008",
         "C1-D5-O3-SOURCE-Q001",
         "C1-D5-O3-SOURCE-Q002",
         "C1-D5-O3-SOURCE-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O3-PROJECTOR-Q005",
-        "C1-D5-O3-PROJECTOR-Q007",
         "C1-D5-O3-SOURCE-Q003",
         "C1-D5-O3-SOURCE-Q004",
         "C1-D5-O3-SOURCE-Q005",
-        "C1-D5-O3-SOURCE-Q007"
+        "C1-D5-O3-SOURCE-Q007",
+        "C1-D5-O3-SOURCE-Q008",
+        "C1-D5-O3-SOURCE-Q009"
       ],
       "pbqLabIds": [
         "C1-D5-O3-DISPLAY-LAB"
@@ -1561,6 +1575,7 @@
         "C1-D5-O4-DIGITIZER-Q005",
         "C1-D5-O4-DIGITIZER-Q006",
         "C1-D5-O4-DIGITIZER-Q007",
+        "C1-D5-O4-DIGITIZER-Q008",
         "C1-D5-O4-LIQUID-Q001",
         "C1-D5-O4-LIQUID-Q002",
         "C1-D5-O4-LIQUID-Q003",
@@ -1573,13 +1588,14 @@
         "C1-D5-O4-MOBILEMALWARE-Q003",
         "C1-D5-O4-MOBILEMALWARE-Q004",
         "C1-D5-O4-MOBILEMALWARE-Q005",
+        "C1-D5-O4-MOBILEMALWARE-Q006",
         "C1-D5-O4-SWELL-Q001",
         "C1-D5-O4-SWELL-Q002",
         "C1-D5-O4-SWELL-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O4-MOBILEMALWARE-Q006",
         "C1-D5-O4-MOBILEMALWARE-Q007",
+        "C1-D5-O4-MOBILEMALWARE-Q008",
         "C1-D5-O4-SWELL-Q003",
         "C1-D5-O4-SWELL-Q004",
         "C1-D5-O4-SWELL-Q005",
@@ -1638,15 +1654,16 @@
         "C1-D5-O5-LIMITED-Q002",
         "C1-D5-O5-LIMITED-Q003",
         "C1-D5-O5-LIMITED-Q004",
+        "C1-D5-O5-LIMITED-Q005",
         "C1-D5-O5-LIMITED-Q008",
         "C1-D5-O5-VOIP-Q001",
         "C1-D5-O5-VOIP-Q002",
         "C1-D5-O5-VOIP-Q006"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O5-LIMITED-Q005",
         "C1-D5-O5-LIMITED-Q006",
         "C1-D5-O5-LIMITED-Q007",
+        "C1-D5-O5-LIMITED-Q009",
         "C1-D5-O5-VOIP-Q003",
         "C1-D5-O5-VOIP-Q004",
         "C1-D5-O5-VOIP-Q005",
@@ -1695,6 +1712,7 @@
         "C1-D5-O6-GHOST-Q003",
         "C1-D5-O6-GHOST-Q004",
         "C1-D5-O6-GHOST-Q005",
+        "C1-D5-O6-GHOST-Q006",
         "C1-D5-O6-JAM-Q001",
         "C1-D5-O6-JAM-Q002",
         "C1-D5-O6-JAM-Q003",
@@ -1704,9 +1722,9 @@
         "C1-D5-O6-QUEUE-Q005"
       ],
       "reviewQuestionIds": [
-        "C1-D5-O6-GHOST-Q006",
         "C1-D5-O6-JAM-Q004",
         "C1-D5-O6-JAM-Q005",
+        "C1-D5-O6-JAM-Q007",
         "C1-D5-O6-QUEUE-Q003",
         "C1-D5-O6-QUEUE-Q004",
         "C1-D5-O6-QUEUE-Q006"

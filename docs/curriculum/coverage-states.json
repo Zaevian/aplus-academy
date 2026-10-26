@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-20T14:12:19.915Z",
+  "generated": "2026-10-26T13:39:29.589Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
@@ -2748,7 +2748,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 32,
+        "assessedDepth": 36,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2764,7 +2764,7 @@
           "conceptId": "C1-D4-O1-VM",
           "label": "VM",
           "state": "Retained",
-          "questionCount": 8,
+          "questionCount": 12,
           "inPbq": false
         },
         {
@@ -2843,7 +2843,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 34,
+        "assessedDepth": 38,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2873,28 +2873,28 @@
           "conceptId": "C1-D4-O2-SAAS",
           "label": "SAAS",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": true
         },
         {
           "conceptId": "C1-D4-O2-HYBRID",
           "label": "HYBRID",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         },
         {
           "conceptId": "C1-D4-O2-ELASTIC",
           "label": "ELASTIC",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         },
         {
           "conceptId": "C1-D4-O2-MULTITENANT",
           "label": "MULTITENANT",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         }
       ],
@@ -2953,7 +2953,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 32,
+        "assessedDepth": 33,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -2969,7 +2969,7 @@
           "conceptId": "C1-D5-O1-POST",
           "label": "POST",
           "state": "Exam Ready",
-          "questionCount": 8,
+          "questionCount": 9,
           "inPbq": true
         },
         {
@@ -3064,7 +3064,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 24,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3088,7 +3088,7 @@
           "conceptId": "C1-D5-O2-CLICKING",
           "label": "CLICKING",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         },
         {
@@ -3102,7 +3102,7 @@
           "conceptId": "C1-D5-O2-IOPS",
           "label": "IOPS",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         }
       ],
@@ -3165,7 +3165,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 25,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3181,7 +3181,7 @@
           "conceptId": "C1-D5-O3-SOURCE",
           "label": "SOURCE",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 9,
           "inPbq": true
         },
         {
@@ -3202,7 +3202,7 @@
           "conceptId": "C1-D5-O3-PROJECTOR",
           "label": "PROJECTOR",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": true
         }
       ],
@@ -3273,7 +3273,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 24,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3296,7 +3296,7 @@
           "conceptId": "C1-D5-O4-DIGITIZER",
           "label": "DIGITIZER",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": true
         },
         {
@@ -3310,7 +3310,7 @@
           "conceptId": "C1-D5-O4-MOBILEMALWARE",
           "label": "MOBILEMALWARE",
           "state": "Retained",
-          "questionCount": 7,
+          "questionCount": 8,
           "inPbq": false
         }
       ],
@@ -3385,7 +3385,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 32,
+        "assessedDepth": 33,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3402,7 +3402,7 @@
           "conceptId": "C1-D5-O5-LIMITED",
           "label": "LIMITED",
           "state": "Exam Ready",
-          "questionCount": 8,
+          "questionCount": 9,
           "inPbq": true
         },
         {
@@ -3489,7 +3489,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 24,
+        "assessedDepth": 25,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3520,7 +3520,7 @@
           "conceptId": "C1-D5-O6-JAM",
           "label": "JAM",
           "state": "Retained",
-          "questionCount": 6,
+          "questionCount": 7,
           "inPbq": false
         },
         {

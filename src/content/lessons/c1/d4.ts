@@ -102,6 +102,16 @@ A guest with no virtual NIC is not "offline because of DNS." It has no adapter. 
             "Leaving a physical XP box on the LAN forever",
           ],
           [
+            "Test development across OS versions",
+            "You clone disposable guests from templates, test the build, then revert or delete them",
+            "Testing a new build on a user's production PC",
+          ],
+          [
+            "Application virtualization (legacy or cross-platform)",
+            "The app is streamed or isolated from the local OS, or a guest runs the other OS (Windows on a Mac)",
+            "Installing an unsupported legacy app directly on Windows 11",
+          ],
+          [
             "Need one process, not an OS",
             "Usually a container (next lesson)",
             "A 40 GB Windows VM for a 20 MB service",
