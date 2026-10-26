@@ -1,10 +1,11 @@
 import { expect, test, type Page } from "@playwright/test";
 import { lessonPath } from "../src/lib/course";
 
-const LATEST_HREF = lessonPath("C1-D1-O1-L1");
-const LATEST_TITLE = "Laptop serviceability, batteries, and keyboards";
-const FIRST_HREF = "/course/foundation/how-the-academy-works";
-const FIRST_TITLE = "How this academy forces you to learn";
+// Lesson 1 is now Core 1 objective 1.1, so "latest" must be a different lesson.
+const LATEST_HREF = lessonPath("C1-D1-O1-L2");
+const LATEST_TITLE = "Laptop RAM, storage, and wireless cards";
+const FIRST_HREF = "/course/core-1/domain-1/1-1-laptop-hardware/laptop-battery-keyboard";
+const FIRST_TITLE = "Laptop serviceability, batteries, and keyboards";
 
 test.describe.configure({ timeout: 90_000 });
 
@@ -207,13 +208,13 @@ test("new learner can begin lesson 1 from the opening hero", async ({ page }) =>
     completedLabs: [],
     lastStudyDay: null,
   });
-  const hero = page.getByRole("region", { name: "Foundation lesson 1" });
+  const hero = page.getByRole("region", { name: "Core 1 lesson 1" });
   await expect(hero).toBeVisible();
   await expect(hero).toContainText(FIRST_TITLE);
-  await expect(hero).toContainText("How this academy teaches");
+  await expect(hero).toContainText("Laptop and mobile hardware replacement");
   await expect(hero).not.toContainText("What CompTIA A+");
   await expect(hero).not.toContainText("—");
-  await expect(hero.getByRole("link", { name: /Start over from Foundation lesson 1/ })).toHaveAttribute(
+  await expect(hero.getByRole("link", { name: /Start over from Core 1 lesson 1/ })).toHaveAttribute(
     "href",
     FIRST_HREF,
   );
@@ -232,7 +233,7 @@ test("returning learner continues the saved lesson or confirms start over", asyn
       currentLocation: "/start",
       lastContentHref: LATEST_HREF,
       completedBlocks: [],
-      completedLessons: ["FND-D0-O2-L1"],
+      completedLessons: ["C1-D1-O1-L1"],
       completedObjectives: [],
       completedDomains: [],
       completedLabs: [],
@@ -251,7 +252,7 @@ test("returning learner continues the saved lesson or confirms start over", asyn
 
   await page.goto("/start");
   const again = page.getByRole("region", { name: LATEST_TITLE });
-  const startOver = again.getByRole("button", { name: /Start over from Foundation lesson 1/ });
+  const startOver = again.getByRole("button", { name: /Start over from Core 1 lesson 1/ });
   await startOver.focus();
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Start over?" });
@@ -286,7 +287,7 @@ test("hero actions stay tappable on a phone", async ({ page }) => {
   await seedOpening(page, {
     currentLocation: "/start",
     lastContentHref: LATEST_HREF,
-    completedLessons: ["FND-D0-O2-L1"],
+    completedLessons: ["C1-D1-O1-L1"],
     lastStudyDay: "2026-09-30",
   });
   const hero = page.getByRole("region", { name: LATEST_TITLE });

@@ -428,7 +428,7 @@ export const DOMAINS: Domain[] = [
     slug: "foundation",
     title: "Course orientation and IT foundations",
     examPercent: 0,
-    paraphrase: "Required onboarding before Core 1. Not an exam domain.",
+    paraphrase: "Optional study skills: how the academy gates you, exam wording, troubleshooting habit, safety and units. Not an exam domain.",
     objectiveIds: FOUNDATION_OBJECTIVES.map((o) => o.id),
   },
   {

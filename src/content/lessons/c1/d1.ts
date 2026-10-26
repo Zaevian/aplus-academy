@@ -10,7 +10,7 @@ export const C1_D1_LESSONS: Lesson[] = [
       "Open a laptop without creating a fire or a second ticket: FRUs versus soldered parts, lithium-ion health, swelling, and keyboard/top-case replacement.",
     estimatedMinutes: 22,
     conceptIds: ["C1-D1-O1-BATTERY", "C1-D1-O1-KEYBOARD"],
-    prerequisites: ["FND-D0-O5-L1"],
+    prerequisites: [],
     lastVerified: "2026-09-01",
     sources: ["c1-obj-3.0", "comptia-a-v15"],
     blocks: [

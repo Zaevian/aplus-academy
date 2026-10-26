@@ -16,6 +16,7 @@ import {
 import { restartCourse } from "@/lib/progress-actions";
 import {
   FIRST_LESSON_HREF,
+  FIRST_LESSON_LABEL,
   type OpeningResume,
 } from "@/lib/study-path";
 
@@ -54,7 +55,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
   const [error, setError] = useState(false);
   const primary = primaryCopy(resume);
   const title =
-    resume.source === "begin" ? "Foundation lesson 1" : labelForUi(resume.title);
+    resume.source === "begin" ? FIRST_LESSON_LABEL : labelForUi(resume.title);
   const objective = labelForUi(resume.objectiveTitle);
   const detail =
     resume.source === "begin"
@@ -117,7 +118,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
                 <Button
                   variant="outline"
                   className="h-14 w-full rounded-full px-6 text-base font-semibold sm:w-auto"
-                  aria-label="Start over from Foundation lesson 1"
+                  aria-label={`Start over from ${FIRST_LESSON_LABEL}`}
                 />
               }
             >
@@ -128,7 +129,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
                 <DialogTitle>Start over?</DialogTitle>
                 <DialogDescription>
                   This clears lesson progress, quiz scores, and review cards on this
-                  device, then opens Foundation lesson 1. Notes and bookmarks stay.
+                  device, then opens {FIRST_LESSON_LABEL}. Notes and bookmarks stay.
                 </DialogDescription>
               </DialogHeader>
               {error ? (
@@ -159,7 +160,7 @@ export function OpeningHero({ resume }: { resume: OpeningResume }) {
         ) : (
           <Link
             href={FIRST_LESSON_HREF}
-            aria-label="Start over from Foundation lesson 1"
+            aria-label={`Start over from ${FIRST_LESSON_LABEL}`}
             className={cn(
               buttonVariants({ variant: "outline" }),
               "h-14 w-full rounded-full px-6 text-base font-semibold sm:w-auto",

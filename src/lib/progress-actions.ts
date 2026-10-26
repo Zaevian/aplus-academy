@@ -88,7 +88,7 @@ export async function touchLocation(pathname: string): Promise<void> {
   });
 }
 
-/** Clear course progress on this device and point at Foundation lesson 1. Notes, bookmarks, and the profile stay. */
+/** Clear course progress on this device and point at Core 1 lesson 1. Notes, bookmarks, and the profile stay. */
 export async function restartCourse(): Promise<void> {
   await ensureLocalState();
   await db.transaction("rw", [db.progress, db.attempts, db.quizzes, db.mastery], async () => {

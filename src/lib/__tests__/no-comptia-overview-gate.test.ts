@@ -13,7 +13,7 @@ import {
   studySteps,
 } from "@/lib/study-path";
 
-describe("no CompTIA overview gate before Foundation lesson 1", () => {
+describe("no CompTIA overview gate before lesson 1", () => {
   it("removes the What CompTIA A+ is objective, lesson, and questions", () => {
     expect(FOUNDATION_OBJECTIVES.some((o) => o.slug === "what-a-plus-is")).toBe(false);
     expect(FOUNDATION_OBJECTIVES.some((o) => o.id === "FND-D0-O1")).toBe(false);
@@ -33,7 +33,7 @@ describe("no CompTIA overview gate before Foundation lesson 1", () => {
     }
   });
 
-  it("Foundation lesson 1 is the first lesson on the path, with no prerequisite", () => {
+  it("lesson 1 is the first lesson on the path, with no prerequisite", () => {
     const first = getLessons().find((l) => lessonPath(l.id) === FIRST_LESSON_HREF);
     expect(first?.title).toBe(FIRST_LESSON_TITLE);
     expect(first?.prerequisites).toEqual([]);
@@ -45,7 +45,7 @@ describe("no CompTIA overview gate before Foundation lesson 1", () => {
     expect(resume.href).toBe(FIRST_LESSON_HREF);
   });
 
-  it("a learner saved on the retired overview URL starts at Foundation lesson 1", () => {
+  it("a learner saved on the retired overview URL starts at lesson 1", () => {
     const progress = initialProgress();
     progress.currentLocation = RETIRED_OVERVIEW_HREF;
     progress.lastContentHref = RETIRED_OVERVIEW_HREF;
@@ -54,7 +54,7 @@ describe("no CompTIA overview gate before Foundation lesson 1", () => {
     expect(resume.href).toBe(FIRST_LESSON_HREF);
   });
 
-  it("a learner who already finished the retired overview continues at Foundation lesson 1", () => {
+  it("a learner who already finished the retired overview continues at lesson 1", () => {
     const progress = initialProgress();
     progress.currentLocation = "/start";
     progress.completedLessons = ["FND-D0-O1-L1"];
