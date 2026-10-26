@@ -2,102 +2,6 @@ import type { Lesson } from "../schema";
 
 export const FOUNDATION_LESSONS: Lesson[] = [
   {
-    id: "FND-D0-O1-L1",
-    objectiveId: "FND-D0-O1",
-    slug: "what-a-plus-is",
-    title: "What CompTIA A+ actually certifies",
-    description:
-      "Core 1 versus Core 2, how objectives are weighted, and why this academy never promises a pass.",
-    estimatedMinutes: 18,
-    conceptIds: ["FND-D0-O1-CERT", "FND-D0-O1-CORES", "FND-D0-O1-SCORES"],
-    prerequisites: [],
-    lastVerified: "2026-09-01",
-    sources: ["comptia-a-v15", "c1-obj-3.0", "c2-obj-3.0"],
-    blocks: [
-      {
-        type: "callout",
-        id: "FND-D0-O1-L1-why",
-        callout: {
-          kind: "why",
-          title: "Why this matters",
-          body: "If you do not know what the two exams measure, you will study the wrong things at the wrong depth. A+ is an entry-level support credential, not a networking engineering license and not a guarantee of employment.",
-        },
-      },
-      {
-        type: "reading",
-        id: "FND-D0-O1-L1-r1",
-        title: "Two exams, one certification",
-        markdown: `CompTIA A+ is awarded only after you pass **two** exams from the same version. The current version is **V15**:
-
-- **Core 1 (220-1201)** — hardware, mobile devices, networking, virtualization/cloud, and hardware/network troubleshooting.
-- **Core 2 (220-1202)** — operating systems, security, software troubleshooting, and operational procedures.
-
-You cannot mix a V14 Core 1 with a V15 Core 2. Employers and CompTIA treat the pair as one credential.
-
-Each exam allows a **maximum of 90 questions** in **90 minutes**. Question formats include single-answer multiple choice, multiple-response, drag-and-drop, and performance-based questions (PBQs). CompTIA's passing scores are **675** (Core 1) and **700** (Core 2) on a **100–900** scale.
-
-This academy **does not** translate those scaled scores into a fake percentage, and it **does not** claim you will pass. What it does is teach, force you to interact, and assess every current objective deeply enough that this can be your primary study resource.
-
-Core 1 domain weights (official): Mobile Devices 13%, Networking 23%, Hardware 25%, Virtualization and Cloud 11%, Hardware and Network Troubleshooting 28%.
-
-Core 2 domain weights (official): Operating Systems 28%, Security 28%, Software Troubleshooting 23%, Operational Procedures 21%.
-
-Troubleshooting is the largest Core 1 domain. Security and operating systems share the largest Core 2 slices. Study time should follow those weights, not your comfort zone.`,
-      },
-      {
-        type: "diagram",
-        id: "FND-D0-O1-L1-d1",
-        component: "ExamMapDiagram",
-        title: "A+ V15 exam map",
-        caption: "Two exams, nine scored domains, one credential.",
-        notice:
-          "Notice that troubleshooting is 28% of Core 1 — larger than hardware itself. Notice that Core 2 is not 'the easy Windows exam'; security is 28%.",
-        alt: "Two columns labeled Core 1 220-1201 and Core 2 220-1202 with official domain percentages.",
-      },
-      {
-        type: "knowledge-check",
-        id: "FND-D0-O1-L1-kc1",
-        questionIds: ["FND-D0-O1-CERT-Q001"],
-      },
-      {
-        type: "reading",
-        id: "FND-D0-O1-L1-r2",
-        title: "Internal readiness is not a CompTIA score",
-        markdown: `When this application shows **Internal Readiness: 82%**, that number is owned by this academy. It combines objective mastery, recent unseen-question performance, spaced-review retention, lab completion, and mock history.
-
-It is **not** CompTIA's 100–900 scale. A 675 on Core 1 is not "67.5%." Do not invent a conversion. If someone online says "you need 85% to pass," they are guessing.
-
-Treat mocks here as practice under time pressure, not as a psychic reading of exam day.
-
-The other trap is the opposite: treating A+ as trivia. The credential exists because a help-desk tech must install hardware, join a workstation to a network, recognize malware symptoms, and talk to a human who is late for a meeting. If you can only recite port numbers, you are not ready.`,
-      },
-      {
-        type: "callout",
-        id: "FND-D0-O1-L1-exam",
-        callout: {
-          kind: "exam",
-          title: "Exam lens",
-          body: "You will not be asked CompTIA's passing score as trivia on the real exam. You will be asked to act like someone who already knows Core 1 and Core 2 are different jobs.",
-        },
-      },
-      {
-        type: "knowledge-check",
-        id: "FND-D0-O1-L1-kc2",
-        questionIds: ["FND-D0-O1-SCORES-Q001"],
-      },
-      {
-        type: "summary",
-        id: "FND-D0-O1-L1-sum",
-        bullets: [
-          "A+ V15 = 220-1201 + 220-1202 from the same version.",
-          "90 questions / 90 minutes each; MCQ and PBQ.",
-          "Official pass marks are 675 and 700 on a 100–900 scale — not a percentage.",
-          "This app reports Internal Readiness only.",
-        ],
-      },
-    ],
-  },
-  {
     id: "FND-D0-O2-L1",
     objectiveId: "FND-D0-O2",
     slug: "how-the-academy-works",
@@ -106,7 +10,7 @@ The other trap is the opposite: treating A+ as trivia. The credential exists bec
       "Mandatory checks, 100% domain gates, spaced review, and guest progress that actually saves.",
     estimatedMinutes: 16,
     conceptIds: ["FND-D0-O2-CYCLE", "FND-D0-O2-GATES", "FND-D0-O2-REVIEW"],
-    prerequisites: ["FND-D0-O1-L1"],
+    prerequisites: [],
     lastVerified: "2026-09-01",
     sources: ["comptia-a-v15"],
     blocks: [
@@ -420,11 +324,11 @@ Keep this map in your head. When a later lesson says "default gateway," you shou
         type: "checkpoint",
         id: "FND-D0-O5-L1-cp",
         questionIds: [
-          "FND-D0-O1-CERT-Q002",
-          "FND-D0-O1-CORES-Q001",
           "FND-D0-O2-GATES-Q002",
+          "FND-D0-O3-PBQ-Q001",
           "FND-D0-O3-STEMS-Q002",
           "FND-D0-O4-TS-METHOD-Q002",
+          "FND-D0-O4-DOCUMENT-Q001",
           "FND-D0-O5-UNITS-Q002",
         ],
       },

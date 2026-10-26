@@ -14,10 +14,6 @@ const STEPS = [
     body: `This is A+ Academy, a full self-study course for CompTIA A+ ${EXAM_META.version}. It is a primary resource, not a flashcard toy. It does not guarantee an exam pass.`,
   },
   {
-    title: "Two exams",
-    body: "Certification requires Core 1 (220-1201) and Core 2 (220-1202) from the same version. Each exam is up to 90 questions in 90 minutes. Official passing scores are 675 and 700 on a 100–900 scale. This app never converts Internal Readiness into those numbers.",
-  },
-  {
     title: "How you will study",
     body: "The path is Foundation, then Core 1, then Core 2. You will read, inspect diagrams, use labs, and pass required multiple-choice checks. Domain mastery quizzes are 100 percent gates.",
   },
@@ -64,7 +60,7 @@ export default function OnboardingPage() {
       <div className="mt-4 space-y-3 text-sm leading-6">
         <p>{current.body}</p>
         <ListenButton text={current.body} title={current.title} />
-        {step === 4 && (
+        {current.title === "Experience" && (
           <div className="flex flex-col gap-2">
             {(["new", "some", "experienced"] as const).map((v) => (
               <Button
@@ -82,7 +78,7 @@ export default function OnboardingPage() {
             ))}
           </div>
         )}
-        {step === 6 && (
+        {current.title === "Your name" && (
           <label className="block text-sm">
             Display name
             <input

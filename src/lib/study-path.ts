@@ -4,8 +4,15 @@ import { lessonPath } from "@/lib/course";
 import type { ProgressSnapshot } from "@/db/client";
 import type { Lesson } from "@/content/schema";
 
-export const FIRST_LESSON_HREF = "/course/foundation/what-a-plus-is";
-export const FIRST_LESSON_TITLE = "What CompTIA A+ actually certifies";
+/**
+ * Foundation lesson 1. The old "What CompTIA A+ is" overview was removed, so the
+ * path opens on the first real lesson. /course/foundation/what-a-plus-is
+ * redirects here (next.config.ts) for old bookmarks and saved locations.
+ */
+export const FIRST_LESSON_HREF = "/course/foundation/how-the-academy-works";
+export const FIRST_LESSON_TITLE = "How this academy forces you to learn";
+/** Removed CompTIA overview lesson; kept only so old saved URLs can be recognized. */
+export const RETIRED_OVERVIEW_HREF = "/course/foundation/what-a-plus-is";
 
 export type OpeningResume = {
   /** saved: last lesson URL. next: completions exist but that URL was not stored. begin: nothing to resume. */
@@ -180,7 +187,7 @@ export function nextStudy(progress?: ProgressSnapshot): NextStudy {
     stepLabel: `Step ${step} of 3 · ${core}`,
     detail:
       core === "Foundation"
-        ? "Start here. Orientation comes before Core 1 hardware."
+        ? "Start here. Foundation comes before Core 1 hardware."
         : core === "Core 1"
           ? "Core 1 (220-1201): hardware, networking, mobile, cloud, troubleshooting."
           : "Core 2 (220-1202): OS, security, software troubleshooting, procedures.",
@@ -197,7 +204,7 @@ export function studySteps(progress?: ProgressSnapshot): StudyStep[] {
       n: 1,
       title: "Foundation",
       href: FIRST_LESSON_HREF,
-      blurb: "How A+ works, how this course gates you, and how to think like a technician. Do this first.",
+      blurb: "How this course gates you, exam-style language, and how to think like a technician. Do this first.",
       status: fndDone ? "done" : "current",
     },
     {

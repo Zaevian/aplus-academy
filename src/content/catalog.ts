@@ -33,23 +33,6 @@ export const FOUNDATION_OBJECTIVES: Objective[] = [
   obj(
     "FND",
     0,
-    1,
-    "what-a-plus-is",
-    "What CompTIA A+ is — and is not",
-    "How Core 1 and Core 2 work together, how objectives are weighted, and why this course never claims a guaranteed pass.",
-    0,
-    [
-      "Core 1 vs Core 2",
-      "exam structure and question formats",
-      "objective numbering",
-      "internal readiness vs CompTIA scaled scores",
-    ],
-    ["exam-map-explorer"],
-    ["CERT", "CORES", "SCORES"],
-  ),
-  obj(
-    "FND",
-    0,
     2,
     "how-the-academy-works",
     "How this academy teaches",

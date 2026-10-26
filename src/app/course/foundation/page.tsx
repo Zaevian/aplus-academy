@@ -14,8 +14,8 @@ export default function FoundationPage() {
       </p>
       <h1 className="text-2xl font-semibold">Course orientation & IT foundations</h1>
       <p className="text-sm text-muted-foreground">
-        Required orientation before Core 1. Not a scored exam domain. Lesson 1 is
-        the beginning of the academy.
+        Foundation before Core 1. Not a scored exam domain. Lesson 1 is the
+        beginning of the academy.
       </p>
       <div className="rounded-xl border-2 border-foreground p-4">
         <p className="text-xs font-medium uppercase text-muted-foreground">Lesson 1</p>
