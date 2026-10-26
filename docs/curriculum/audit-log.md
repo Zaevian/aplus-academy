@@ -7,6 +7,40 @@ Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Ag
 
 ---
 
+## 2026-10-26 — C1 Domain 5 Hardware and Network Troubleshooting second-pass learner audit
+
+**Auditor/Implementer:** Miyuki (weekly rotation)
+**Branch:** `miyuki/audit-2026-10-26-c1d5-troubleshooting` from `master` @ 13747f0. Touches only `questions/c1/d5.ts`, a new test, and regenerated coverage files.
+**Official:** CompTIA A+ V15 220-1201 Domain 5 (28%), Exam Objectives Document Version 4.0 (bullets identical to 3.0; see 2026-10-19). No dumps.
+**Rotation note:** C1-D4 already had its second pass on 2026-10-12 (docs branch `miyuki/audit-2026-10-12-virtualization`), so this run moved on to C1-D5.
+
+### Live smoke
+`/course/core-1/domain-5`, its quiz and review pages, all 11 D5 lessons, and the D5 labs (`display-fault-match`, `mobile-hardware-ts`, `ticket-shift-core1`) return 200. O1 to O6 all have scored LabHost coverage (O1/O2/O5/O6 through the shift capstone and borrowed labs, O3 DisplayFaultLab, O4 MobileHardwareTsLab), and C1-D5 is in `HOLDOUT_DOMAIN_IDS`.
+
+### Learner pass — findings
+- **Answer-key leak (MUST-FIX):** of 221 correct keys, 193 were "a" (87%), 28 were "b", and none were "c" or "d". Every multi-select item was keyed "a, b". A beginner could score well by always choosing the first option, and the coverage map still showed all six objectives as Exam Ready.
+- **Longest-answer tell:** the correct choice was also the longest in 92% of single-answer items.
+- **Weak rationales:** 421 distractor rationales and 186 key rationales were under 25 characters ("No.", "Printer."), and 171 keys said only "Correct.". One rationale ("Criminal and stupid.") was off-tone for learners.
+- **Misconception tags:** 8 of 194 items carried them.
+- **Thin or missing bullet coverage (no keyed item, or one only as a side mention):** 5.1 proprietary crash screens; 5.2 extended read/write times and grinding noises; 5.3 sizing issues, audio issues, and intermittent projector shutdown; 5.4 broken screen and unable to install new applications; 5.5 authentication failures; 5.6 hole-punch finishing issues.
+- No factual contradictions with the 5.1 to 5.6 bullets were found in the existing keys.
+
+### Shipped
+- `src/content/questions/c1/d5.ts`: **all 607 short rationales rewritten** (421 distractors, 186 keys) so each names the trap or the deciding clue. **+10 coverage items** (194 → 204): `O1-POST-Q009` crash screens, `O2-IOPS-Q008` extended R/W, `O2-CLICKING-Q008` grinding, `O3-PROJECTOR-Q008` thermal shutdown, `O3-SOURCE-Q008` overscan sizing, `O3-SOURCE-Q009` HDMI audio, `O4-MOBILEMALWARE-Q008` app install, `O4-DIGITIZER-Q008` broken screen, `O5-LIMITED-Q009` Wi-Fi auth failure, `O6-JAM-Q007` hole punch. New items use same-length, in-domain distractors.
+- **Key letters rebalanced** by rotation (text and rationale stay paired; nothing reworded by the move). Now a/b/c/d = 52/57/56/55. Multi-select keys are rotated too.
+- `C1_D5_MISCONCEPTION_TAGS` (27 families); all 204 items tagged.
+- `src/lib/__tests__/c1-d5-audit.test.ts`: tags, rationale length, no bare "Correct.", key balance, multi-select spread, and the new coverage items.
+- Regenerated `coverage-states.json` and `coverage.json` (Exam Ready still 63/68).
+
+### Residuals
+- The longest choice is still correct in about 90% of single-answer items, and many distractors are cross-domain fillers (APIPA, projector lamp, CMOS on unrelated stems). Rationales now explain the trap, but the next pass should replace fillers with plausible in-domain distractors.
+- The mock shuffle `id.length/100` salt is still Diablo-held; the source rebalance mitigates it for D5.
+- **Cross-domain (MUST-FIX, not fixed here):** a bank-wide key check on master shows the same leak everywhere except D3 and D5. Share of keys on "a": C1-D1 71%, C1-D2 75%, C1-D4 72%, C2-D1 73%, C2-D2 94%, C2-D3 89%, C2-D4 87% (Foundation is b 69%). Either the held mock/practice shuffle fix or a per-domain source rotation like D3/D5 is needed before any of those domains can honestly be called Exam Ready. Left out of this PR to avoid conflicts with open PR #16 (`d2.ts`).
+
+**Next rotation:** C2-D1 Operating Systems.
+
+---
+
 ## 2026-10-19 — C1 Domain 3 Hardware second-pass learner audit
 
 **Auditor/Implementer:** Miyuki (Diablo rotation)
