@@ -52,4 +52,4 @@ export const EXAM_META = {
 } as const;
 
 export const INTERNAL_SCORING_DISCLAIMER =
-  "Internal Readiness is this academy's own mastery measure. It is not CompTIA's 100–900 scaled score and does not predict an official exam result.";
+  "Scores here are this academy's own internal measures: quiz and mock scores record first attempts, and Course completion counts finished objectives, labs, and domains. None of them is CompTIA's 100–900 scaled score or predicts an official exam result.";

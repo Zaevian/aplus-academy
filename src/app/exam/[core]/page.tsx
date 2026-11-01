@@ -269,7 +269,7 @@ export default function MockExamPage() {
       <div className="mx-auto max-w-3xl space-y-3 px-4 py-8">
         <h1 className="text-2xl font-semibold">Mock report · {coreId}</h1>
         <p>
-          Internal Readiness this sitting: {score}/{totalItems} ({pct}%).{" "}
+          Mock score this sitting: {score}/{totalItems} ({pct}%).{" "}
           {INTERNAL_SCORING_DISCLAIMER} Official CompTIA scaled scores (675 Core 1
           / 700 Core 2 on 100–900) are not computed here and this result is not a
           pass guarantee.

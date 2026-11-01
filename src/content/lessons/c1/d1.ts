@@ -39,12 +39,12 @@ Power discipline is part of replacement, not a nicety. Shut the OS down. Unplug 
         type: "diagram",
         id: "C1-D1-O1-L1-d1",
         component: "LaptopExplodedDiagram",
-        title: "Exploded laptop — rotate and identify",
+        title: "Laptop internals — identify the FRUs",
         caption:
           "Bottom cover, battery, SODIMM or soldered memory, M.2 or 2.5-inch storage, WLAN card with pigtails, and a display assembly that carries camera, microphone, and antennas.",
         notice:
           "Notice the Wi-Fi antennas are not on the wireless card. They live in the display bezel and only connect to the card with two (sometimes three) coaxial pigtails. Notice many ultrabooks have no SODIMM slots at all.",
-        alt: "Rotatable exploded laptop showing battery, memory, storage, wireless card, keyboard top case, and display assembly with antenna paths in the bezel.",
+        alt: "Labeled list of laptop internals: battery, SODIMM or soldered memory, M.2 or 2.5-inch storage, WLAN card with antenna leads in the bezel, and webcam and microphone in the lid.",
       },
       {
         type: "knowledge-check",
