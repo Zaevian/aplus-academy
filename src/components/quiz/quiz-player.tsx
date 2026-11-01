@@ -137,7 +137,8 @@ export function QuizPlayer({
         <p className="text-xs text-muted-foreground">
           Domain mastery requires eventually answering every item correctly to
           unlock the next domain. The recorded score still reflects first-attempt
-          misses so Internal Readiness is not inflated by assisted retries.
+          misses, so assisted retries do not inflate it. Passing this gate counts
+          toward course completion, not toward a mastery score.
         </p>
       ) : null}
       {done && score !== null ? (

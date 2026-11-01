@@ -35,6 +35,8 @@ export default function DashboardPage() {
     .slice(0, 5);
   const attempts = quizzes.slice(-5).reverse();
   const labsDone = progress?.completedLabs.length ?? 0;
+  // Completion meter, not a performance score: objectives, labs, and domains
+  // all complete after retry-until-correct. Keep the label honest.
   const readiness = Math.round(
     ((objDone / Math.max(objTotal, 1)) * 0.5 +
       (labsDone / Math.max(getLabs().length, 1)) * 0.2 +
@@ -78,7 +80,7 @@ export default function DashboardPage() {
           ["A+ completion", `${objDone}/${objTotal} objectives`],
           ["Core 1", `${c1done}/${c1.length}`],
           ["Core 2", `${c2done}/${c2.length}`],
-          ["Internal Readiness", `${readiness}%`],
+          ["Course completion (weighted)", `${readiness}%`],
           ["Labs", `${labsDone}/${getLabs().length}`],
           ["Streak", `${progress?.streakDays ?? 0} days`],
           ["Study time", `${Math.round((progress?.totalMs ?? 0) / 60000)} min`],

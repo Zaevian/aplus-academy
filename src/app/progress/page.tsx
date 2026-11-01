@@ -32,8 +32,8 @@ export default function ProgressPage() {
         <h1 className="text-2xl font-semibold">Progress</h1>
         <p className="text-sm text-muted-foreground">
           No attempts yet. Progress is stored on this device. Start Core 1
-          lesson 1, then Core 2 — Internal Readiness is this academy&apos;s own
-          percent, not CompTIA&apos;s 100–900 scale.
+          lesson 1, then Core 2. Every number here is this academy&apos;s own
+          count or first-try accuracy, not CompTIA&apos;s 100–900 scale.
         </p>
         <Link className="inline-flex min-h-11 items-center underline" href={FIRST_LESSON_HREF}>
           Open Core 1 lesson 1
@@ -46,8 +46,9 @@ export default function ProgressPage() {
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
       <h1 className="text-2xl font-semibold">Progress</h1>
       <p className="text-xs text-muted-foreground">
-        Internal Readiness below is this app&apos;s mastery mix. It is not a
-        CompTIA 675/700 conversion and is not a pass guarantee.
+        These are this app&apos;s own counts. Completion is not mastery: checks
+        and domain quizzes unlock after retry-until-correct. Nothing here is a
+        CompTIA 675/700 conversion or a pass guarantee.
       </p>
       <dl className="grid grid-cols-2 gap-3 text-sm">
         <div className="rounded border p-3">
@@ -84,7 +85,11 @@ export default function ProgressPage() {
           Exam-week cram ({cramDue.length} due)
         </Link>
       </p>
-      <h2 className="font-medium">Concept retention</h2>
+      <h2 className="font-medium">Concept accuracy</h2>
+      <p className="text-xs text-muted-foreground">
+        Share of answers correct for each concept on this device. Fewer than 3
+        tries is too little evidence to call a concept mastered.
+      </p>
       <ul className="max-h-96 space-y-1 overflow-y-auto text-sm">
         {mastery.filter((m) => m.kind === "concept").length === 0 ? (
           <li className="text-muted-foreground">Answer checks to build a retention queue.</li>
@@ -95,7 +100,9 @@ export default function ProgressPage() {
               <li key={m.id} className="flex justify-between">
                 <span className="truncate pr-2">{m.id}</span>
                 <span>
-                  {masteryPercent(m)}% · due {new Date(m.dueAt).toLocaleDateString()}
+                  {masteryPercent(m)}% of {m.correct + m.incorrect}{" "}
+                  {m.correct + m.incorrect === 1 ? "try" : "tries"} · due{" "}
+                  {new Date(m.dueAt).toLocaleDateString()}
                 </span>
               </li>
             ))
