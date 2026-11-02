@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T16:56:50.698Z",
+  "generated": "2026-11-02T14:33:19.669Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O2",
@@ -1785,6 +1785,8 @@
         "C2-D1-O2-CLEAN-Q004",
         "C2-D1-O2-CLEAN-Q005",
         "C2-D1-O2-CLEAN-Q006",
+        "C2-D1-O2-CLEAN-Q007",
+        "C2-D1-O2-CLEAN-Q008",
         "C2-D1-O2-GPT-Q001",
         "C2-D1-O2-GPT-Q002",
         "C2-D1-O2-GPT-Q003",
@@ -1850,6 +1852,7 @@
         "C2-D1-O3-HOME-Q001",
         "C2-D1-O3-HOME-Q002",
         "C2-D1-O3-HOME-Q003",
+        "C2-D1-O3-HOME-Q004",
         "C2-D1-O3-PRO-Q001",
         "C2-D1-O3-PRO-Q002",
         "C2-D1-O3-PRO-Q003",
@@ -1859,8 +1862,8 @@
         "C2-D1-O3-TPMWIN-Q004"
       ],
       "reviewQuestionIds": [
-        "C2-D1-O3-HOME-Q004",
         "C2-D1-O3-HOME-Q005",
+        "C2-D1-O3-HOME-Q006",
         "C2-D1-O3-PRO-Q004",
         "C2-D1-O3-PRO-Q005",
         "C2-D1-O3-PRO-Q006",
@@ -2025,6 +2028,10 @@
         "C2-D1-O6-EXPLOREROPT-Q007",
         "C2-D1-O6-EXPLOREROPT-Q008",
         "C2-D1-O6-EXPLOREROPT-Q009",
+        "C2-D1-O6-EXPLOREROPT-Q010",
+        "C2-D1-O6-EXPLOREROPT-Q011",
+        "C2-D1-O6-EXPLOREROPT-Q012",
+        "C2-D1-O6-EXPLOREROPT-Q013",
         "C2-D1-O6-FIREWALL-Q001",
         "C2-D1-O6-FIREWALL-Q002",
         "C2-D1-O6-FIREWALL-Q003",
@@ -2032,16 +2039,18 @@
         "C2-D1-O6-FIREWALL-Q005",
         "C2-D1-O6-FIREWALL-Q006",
         "C2-D1-O6-FIREWALL-Q007",
+        "C2-D1-O6-FIREWALL-Q008",
+        "C2-D1-O6-FIREWALL-Q009",
         "C2-D1-O6-INDEXING-Q001",
         "C2-D1-O6-INDEXING-Q002",
         "C2-D1-O6-INDEXING-Q003",
-        "C2-D1-O6-INDEXING-Q004",
         "C2-D1-O6-POWER-Q001",
         "C2-D1-O6-POWER-Q002",
         "C2-D1-O6-POWER-Q003",
         "C2-D1-O6-POWER-Q004"
       ],
       "reviewQuestionIds": [
+        "C2-D1-O6-INDEXING-Q004",
         "C2-D1-O6-INDEXING-Q005",
         "C2-D1-O6-INDEXING-Q006",
         "C2-D1-O6-POWER-Q005",
@@ -2129,6 +2138,8 @@
         "C2-D1-O8-DMG-Q004",
         "C2-D1-O8-DMG-Q005",
         "C2-D1-O8-DMG-Q006",
+        "C2-D1-O8-DMG-Q007",
+        "C2-D1-O8-DMG-Q008",
         "C2-D1-O8-FILEVAULT-Q001",
         "C2-D1-O8-FILEVAULT-Q002",
         "C2-D1-O8-FILEVAULT-Q003",
@@ -2139,6 +2150,11 @@
         "C2-D1-O8-KEYCHAIN-Q002",
         "C2-D1-O8-KEYCHAIN-Q003",
         "C2-D1-O8-KEYCHAIN-Q004",
+        "C2-D1-O8-KEYCHAIN-Q005",
+        "C2-D1-O8-KEYCHAIN-Q006",
+        "C2-D1-O8-KEYCHAIN-Q007",
+        "C2-D1-O8-KEYCHAIN-Q008",
+        "C2-D1-O8-KEYCHAIN-Q009",
         "C2-D1-O8-RSR-Q001",
         "C2-D1-O8-RSR-Q002",
         "C2-D1-O8-RSR-Q003",
@@ -2147,12 +2163,13 @@
         "C2-D1-O8-TIMEMACHINE-Q003"
       ],
       "reviewQuestionIds": [
-        "C2-D1-O8-KEYCHAIN-Q005",
         "C2-D1-O8-RSR-Q004",
         "C2-D1-O8-RSR-Q005",
         "C2-D1-O8-TIMEMACHINE-Q004",
         "C2-D1-O8-TIMEMACHINE-Q005",
-        "C2-D1-O8-TIMEMACHINE-Q006"
+        "C2-D1-O8-TIMEMACHINE-Q006",
+        "C2-D1-O8-TIMEMACHINE-Q007",
+        "C2-D1-O8-TIMEMACHINE-Q008"
       ],
       "pbqLabIds": [
         "C2-D1-O8-MACOS-LAB"

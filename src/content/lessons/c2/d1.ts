@@ -430,7 +430,7 @@ If any of those checks fail, stop and do a clean install onto supported hardware
         callout: {
           kind: "exam",
           title: "Exam lens",
-          body: "Disk larger than 2 TB plus old BIOS-only firmware is a hardware/firmware problem, not a format-as-NTFS problem. GPT needs UEFI. MBR is the 2 TB trap.",
+          body: "A boot disk larger than 2 TB on old BIOS-only firmware is a firmware problem, not a format-as-NTFS problem: booting from GPT needs UEFI. A non-boot data disk can still be GPT on a BIOS PC, because 64-bit Windows reads GPT data disks on any firmware. MBR is the 2 TB trap.",
         },
       },
       {
@@ -658,6 +658,8 @@ PC Health Check and Setup itself will block ineligible devices. A technician's f
         markdown: `The Start menu and Settings app look similar across Home and Pro. That is deliberate, and it fools users into thinking they already have Pro. The differences are in **what the UI will let you turn on**: Remote Desktop host, Join a domain, BitLocker in Control Panel/Settings, \`gpedit.msc\` in Run.
 
 Enterprise images may look *less* like the consumer desktop because Group Policy and AppLocker hide Store, consumer Microsoft account prompts, and widgets. "Desktop styles / user interface" on the objective list is this management overlay, not a secret third shell.
+
+Between versions the default desktop style does change: Windows 11 centers Start and the taskbar icons, where Windows 10 kept them on the left. Settings → Personalization → Taskbar → Taskbar behaviors → Taskbar alignment moves them back. A user who says "Start moved" after an upgrade is describing this, not a broken install.
 
 Confirm edition with \`winver\`, Settings → System → About, or \`slmgr /dli\`. If the ticket requires domain join and About says Home, the fix is an edition upgrade or a reimage — not a registry prank.`,
       },
@@ -1533,7 +1535,7 @@ Those two checkboxes — hidden files and extensions — are among the highest-y
 - **Turn on fast startup** (hybrid shutdown) writes a partial hibernate of the kernel at Shutdown so the next boot is faster. Side effect: firmware/BIOS setup is often skipped, USB devices and dual-boot bootloaders misbehave, and "Shutdown" is not a full power-off. Disable Fast Startup when you are flashing BIOS, imaging, or dual-booting.
 - **USB selective suspend** lets Windows power down idle USB devices. It also puts docks and some scanners to sleep until you toggle the setting or the device.
 
-**Ease of Access** (Accessibility) is narrator, magnifier, closed captions, sticky keys — required for the job, not decoration. **Time and Language** is timezone (a surprising number of Kerberos tickets break here), display language, and input methods. **Update and Security** (Windows 10 name; Windows 11 splits Windows Update and Privacy/Security) is pause updates, delivery optimization, and the Windows Security link. **Personalization** is theme and taskbar. **Apps** is installed apps and defaults. **Privacy** is camera/mic/diagnostics. **Accounts** is Microsoft vs local, workplace Entra join, family. **Gaming** is Game Bar and Game Mode — disable Game Mode on a workstation that is not a console. **Devices** and **Network and Internet** and **System** duplicate pieces of Control Panel in the modern UI.`,
+**Ease of Access** (Accessibility) is narrator, magnifier, closed captions, sticky keys — required for the job, not decoration. **Time and Language** is timezone (a surprising number of Kerberos tickets break here), display language, and input methods. **Update and Security** (Windows 10 name; Windows 11 splits Windows Update and Privacy/Security) is pause updates, delivery optimization, and the Windows Security link. **Personalization** is theme and taskbar. **Apps** is installed apps and defaults. **Privacy** is camera/mic/diagnostics. **Accounts** is Microsoft vs local, workplace Entra join, family. **Gaming** is Xbox Game Bar, Captures, and Game Mode — on a work PC you may turn off Game Bar shortcuts and background captures if policy asks for it. **Devices** and **Network and Internet** and **System** duplicate pieces of Control Panel in the modern UI.`,
       },
       {
         type: "table",

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T16:56:50.698Z",
+  "generated": "2026-11-02T14:33:19.670Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
@@ -3685,7 +3685,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 24,
+        "assessedDepth": 26,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3701,7 +3701,7 @@
           "conceptId": "C2-D1-O2-CLEAN",
           "label": "CLEAN",
           "state": "Exam Ready",
-          "questionCount": 8,
+          "questionCount": 10,
           "inPbq": true
         },
         {
@@ -3780,7 +3780,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 24,
+        "assessedDepth": 25,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -3796,7 +3796,7 @@
           "conceptId": "C2-D1-O3-HOME",
           "label": "HOME",
           "state": "Exam Ready",
-          "questionCount": 5,
+          "questionCount": 6,
           "inPbq": true
         },
         {
@@ -4165,7 +4165,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 24,
+        "assessedDepth": 29,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -4188,7 +4188,7 @@
           "conceptId": "C2-D1-O6-FIREWALL",
           "label": "FIREWALL",
           "state": "Exam Ready",
-          "questionCount": 7,
+          "questionCount": 9,
           "inPbq": true
         },
         {
@@ -4202,7 +4202,7 @@
           "conceptId": "C2-D1-O6-EXPLOREROPT",
           "label": "EXPLOREROPT",
           "state": "Exam Ready",
-          "questionCount": 9,
+          "questionCount": 13,
           "inPbq": true
         }
       ],
@@ -4408,7 +4408,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 29,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -4424,14 +4424,14 @@
           "conceptId": "C2-D1-O8-DMG",
           "label": "DMG",
           "state": "Retained",
-          "questionCount": 6,
+          "questionCount": 8,
           "inPbq": false
         },
         {
           "conceptId": "C2-D1-O8-TIMEMACHINE",
           "label": "TIMEMACHINE",
           "state": "Exam Ready",
-          "questionCount": 6,
+          "questionCount": 8,
           "inPbq": true
         },
         {
@@ -4445,7 +4445,7 @@
           "conceptId": "C2-D1-O8-KEYCHAIN",
           "label": "KEYCHAIN",
           "state": "Retained",
-          "questionCount": 5,
+          "questionCount": 9,
           "inPbq": false
         },
         {
