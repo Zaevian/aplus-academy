@@ -6,6 +6,67 @@ Live site: https://aplus-academy-gules.vercel.app/
 Work path (2026-09-28 onward): **local clone** at `/tmp/aplus-academy` (Cloud Agents path dropped; Diablo authorized local-clone PRs). `gh` authenticated as Zaevian.
 
 ---
+## 2026-11-02 — C2 Domain 1 Operating Systems second-pass learner audit
+
+**Auditor/Implementer:** Miyuki (weekly rotation)
+**Branch:** `miyuki/audit-2026-11-02-c2d1-os` from `master` @ 4ffdfaf. It touches `questions/c2/d1.ts`, `lessons/c2/d1.ts`, the D1 CLI lab sandbox (`components/labs/cli-lab.tsx`, its `labs/index.ts` solution text), one Windows-tools lab string, a new test, and the regenerated coverage files. It shares no files with #23. The answer-key rebalance and the practice/mock choice shuffle are both **held** (Diablo), so neither is in this branch.
+**Official:** CompTIA A+ V15 220-1202 Domain 1.0 (28%), Exam Objectives Document Version 4.0. The bullets 1.1–1.11 were re-read from the 2026-11-01 cert-health copy of the 4.0 PDF and are unchanged from 3.0. No dumps were used.
+
+### Live smoke (2026-11-02 ET)
+These all return 200: `/course/core-2/domain-1` and its quiz, all 23 D1 lesson pages, `/practice/core-2`, `/exam/core-2`, and all 11 D1 labs (os-types, boot-install, windows-editions, windows-tools, windows-cli, windows-settings, win-client-net, macos-support, linux-terminal, app-install, cloud-productivity). Every O1–O11 objective has a scored LabHost PBQ and a disjoint holdout (overlap 0). C2-D1 is in `HOLDOUT_DOMAIN_IDS`. All 5 lesson diagrams resolve to registered components, and there are no image refs to break.
+
+### Learner pass — findings
+- **Bare "Correct." keys (MUST-FIX):** 298 key rationales across 281 of 362 items said only "Correct.". When the learner answers correctly, the UI shows only the key rationale, so on most of D1 the learner saw no explanation.
+- **Factual error:** `O2-MBR-Q006` and the O2-L2 exam callout taught that a BIOS-only PC cannot use a 4 TB GPT *data* disk. Only the boot disk is tied to firmware mode, because 64-bit Windows reads GPT data disks on BIOS.
+- **Unverifiable claim:** `O6-EXPLOREROPT-Q008` and the O6-L2 text said Game Mode "should usually be disabled" on a CAD PC. **Wording:** "security bullets" (O1-EOL-Q004), "A confession" as key text (O9-CHMOD-Q009), and "a 8 GB" plus a non-device distractor (O10-VRAM-Q006).
+- **Keyed-coverage gaps:** the lessons taught these bullets but no item keyed them:
+  - 1.2: solid-state/flash boot; hardware compatibility.
+  - 1.3: desktop styles/UI.
+  - 1.6: Devices and Printers; Device Manager (CP); Update and Security; Network and Internet; Devices; Personalization.
+  - 1.8: /System; Displays; Printers/Scanners; Accessibility; iMessage/FaceTime; Gestures; Finder; Dock; Terminal.
+- **Answer-key position bias (report only; HELD):** of 334 single-answer source keys, 77% were "a", 20% "b", 3% "c", and 0% "d". O5, O8, O9, O10, and O11 were 100% "a". All 28 multi-select keys were "a,b" or "a,c". Displayed positions differ by renderer:
+  - Mastery quiz, practice, and lesson KC (`saltFromId` shuffle): 20/27/25/28%, so no letter leak.
+  - **Mock exam** (`id.length/100` salt): 17/**47**/16/20%, so B leaks.
+- **Longest-answer tell:** the key was the longest option in 71% of single-answer items, whichever shuffle is used.
+- **Weak distractors:** O4–O11 rely on cross-domain filler ("hostname /scannow", "md name 1.1.1.1", "Install the app on FAT32 RAM"), so a beginner can eliminate most options without knowing the tool.
+- **Other debt:** 688 distractor rationales are under 25 characters, and only 11 of 362 items carry tags.
+- **Sources:** there are no wrong-Core or wrong-objective tags (all `c2-obj-3.0`, and every ID matches its objective). The vendor sources (`ms-windows`, `apple-macos`, `debian-ref`, `man7`, `ms-bitlocker`, `apple-filevault`) all return 200 but still carry `verified: 2026-09-01`, as do all 23 D1 lessons. They were left alone because `sources.ts` is in draft #23.
+- **Holdout use:** mastery and practice exclude holdout. The mock exam draws from the full Core 2 bank, holdout included, and this is by design.
+
+### Shipped
+- `questions/c2/d1.ts`: **all 298 bare "Correct." key rationales filled** with that item's existing authored explanation. No new facts were added. The second key of a multi-select says it is the other required key. One side effect: on a wrong answer, the explanation now appears twice.
+- **Factual fix:** `O2-MBR-Q006` is rewritten around "BIOS cannot boot GPT, but a GPT data disk works", and the O2-L2 callout is corrected to match.
+- **Quality fixes:** `O6-EXPLOREROPT-Q008` now asks where Game Bar and captures are configured (Settings → Gaming), and the O6-L2 Gaming sentence is neutralised. The O1-EOL-Q004, O9-CHMOD-Q009, and O10-VRAM-Q006 wording is fixed. The key letter is unchanged on every edited item.
+- **+17 coverage items** (362 → 379) for every gap listed above. Each has in-domain distractors, rationales of 40+ characters, and tags. Their keys are spread b/c/d/a. This applies only to the new items; no existing key moved.
+- O3-L2 gains one paragraph on the Windows 11 centered taskbar/Start and alignment setting.
+- `src/lib/__tests__/c2-d1-audit.test.ts`: no bare "Correct." keys, the MBR-Q006 fix plus its lesson callout, the Gaming item, the 17 coverage items, and Core 2 source/objective tags.
+- Regenerated `coverage.json` and `coverage-states.json`. Exam Ready is still 63/67. typecheck, vitest (20 files / 127 tests), verify:content, and next build pass.
+
+### Learner pass, session 2 (2026-11-02 ET)
+- **Method:** answered 33 items (3 per objective, 1.1–1.11) and all 28 multi-select items before reading keys, then read every key and explanation in D1 (379) against the V4.0 bullets. Walked all 11 D1 labs and the Core 2 mock report.
+- **Fixed:**
+  - **Win10 scope contradiction:** `O1-WIN-Q002` keyed "versions still in Microsoft support, including Windows 10", and O1-L1 said "while they remain in mainstream support". O1-L2 and `O1-EOL-Q002` teach that Windows 10 reached end of support on 14 Oct 2025. Both now say that 1.3 names the Win10 and Win11 editions, so both are exam content, and that Win10 is an EOL risk.
+  - `O3-HOME-Q002`: the stem asked for an "inbound" role, but the key is the outbound client. The stem now asks for the role.
+  - `O8-FILEVAULT-Q001` and O8-L2 called FileVault "APFS native". They now say "built-in full-disk encryption".
+  - O2-L2 said "many 32-bit kernel drivers are gone". It now says no 32-bit kernel driver loads on 64-bit-only Windows 11.
+- **Lab fixes (linux-terminal, windows-cli):**
+  - **Linux:** the help line told learners to try `chmod` and `sudo`, and both returned "not recognized". The solution text promised chmod/chown and "systemctl-like help" that did not exist. Added `ls -l`, `ip addr`, `ip a`, `ip route`, `ping -c 4`, `chmod`, `chown` (fails without root), `sudo chown`, and `sudo whoami`.
+  - **Windows:** the real `sfc /scannow` and `gpresult /r` now run. Both were "not recognized" before.
+  - **Solution text** now matches the commands that exist.
+  - **Test:** a new test asserts that every command the help suggests runs. Also fixed "A add-in" in the windows-tools lab.
+- **Clean:** the other 9 labs had no broken steps or exam mismatches. There are no new factual errors in 1.4–1.7 or 1.9–1.11 keys. Multi-select keys are accurate, and no distractor is also correct.
+- **Mock note (not fixed, file owned by #23):** the `/exam/[core]` report lists the stem and explanation only. It does not show the learner's pick or the key, so a learner cannot see which items they missed. D1 explanations do state the answer, so they read correctly without the key.
+
+### Open risks (not fixed here)
+- **Key-position bias (HELD):** the C2-D1 source is 74% "a" after this pass. It only reaches learners through the mock-exam salt (B 46%). Either the held shuffle fix or a source rebalance is needed before C2-D1 can honestly be called Exam Ready on the mock. This waits for Diablo's green light.
+- **Longest-answer tell (69%) and filler distractors in O4–O11:** these need a hand rewrite with in-domain distractors.
+- **Core 2 rationale debt:** 693 short rationales remain in D1 (684 distractors, 9 keys). D2–D4 have not been measured this pass.
+- Misconception tags: 28/379. Vendor-source and lesson `lastVerified` dates are stale (2026-09-01) until after #23.
+
+**Next rotation:** C2-D2 Security.
+
+---
+
 ## 2026-10-26 — C1 Domain 4 Virtualization and Cloud Computing second-pass learner audit (fix pass)
 
 **Auditor/Implementer:** Miyuki (Diablo rotation order, 2026-10-26)
