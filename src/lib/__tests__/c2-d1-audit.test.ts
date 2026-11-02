@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { C2_D1_QUESTIONS } from "@/content/questions/c2/d1";
 import { C2_D1_LESSONS } from "@/content/lessons/c2/d1";
+import { LINUX, WIN } from "@/components/labs/cli-lab";
 
 const byId = (id: string) => C2_D1_QUESTIONS.find((q) => q.id === id);
 const keyText = (id: string) => {
@@ -66,6 +67,25 @@ describe("C2-D1 Operating Systems audit (2026-11-02)", () => {
     for (const q of C2_D1_QUESTIONS) {
       expect(q.sourceBasis, q.id).toBe("c2-obj-3.0");
       expect(q.id.startsWith(`${q.objectiveId}-`), q.id).toBe(true);
+    }
+  });
+  it("learner pass: Windows 10 scope is consistent with its October 2025 end of support", () => {
+    const q = byId("C2-D1-O1-WIN-Q002")!;
+    expect(keyText(q.id)).not.toMatch(/still in Microsoft support/);
+    expect(q.explanation).toMatch(/14 October 2025/);
+    const lesson = JSON.stringify(C2_D1_LESSONS.find((l) => l.id === "C2-D1-O1-L1"));
+    expect(lesson).not.toMatch(/while they remain in mainstream support/);
+  });
+
+  it("learner pass: Home RDP stem no longer asks for an 'inbound' role it then denies", () => {
+    expect(byId("C2-D1-O3-HOME-Q002")!.stem).not.toMatch(/inbound/i);
+  });
+
+  it("learner pass: every command the CLI lab help suggests actually runs in the sandbox", () => {
+    for (const map of [WIN, LINUX]) {
+      const suggested = map.help.replace(/^.*Try:\s*/, "").replace(/\.$/, "").split(/,\s*/);
+      const known = Object.keys(map).map((k) => k.toLowerCase());
+      expect(suggested.filter((c) => !known.includes(c.toLowerCase()))).toEqual([]);
     }
   });
 });

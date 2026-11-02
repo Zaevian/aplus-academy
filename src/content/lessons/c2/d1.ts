@@ -34,7 +34,7 @@ export const C2_D1_LESSONS: Lesson[] = [
         title: "Four workstation families",
         markdown: `CompTIA A+ Core 2 treats **workstation operating systems** and **mobile operating systems** as two lists. A workstation OS is what you expect on a desk or a laptop that a knowledge worker uses all day. A mobile OS is what you expect on a phone or tablet that is managed more like a personally owned or corporate-issued handheld.
 
-**Windows** is Microsoft's client OS. Help-desk work still lives here: Active Directory or Microsoft Entra ID join, Group Policy, BitLocker, and the enormous Windows application catalog. Current A+ content covers Windows 10 and Windows 11 while they remain in mainstream support. Windows is licensed per device or per user depending on the channel; it is not tied to one hardware vendor.
+**Windows** is Microsoft's client OS. Help-desk work still lives here: Active Directory or Microsoft Entra ID join, Group Policy, BitLocker, and the enormous Windows application catalog. The V15 objectives name Windows 10 and Windows 11 editions, so both are exam content. Windows 10 reached end of support in October 2025, so on a real bench it is also a life-cycle risk (see O1-L2). Windows is licensed per device or per user depending on the channel; it is not tied to one hardware vendor.
 
 **Linux** is a kernel plus a distribution (Ubuntu, Fedora, Debian, Red Hat Enterprise Linux, and many others). Technicians meet it on developer laptops, kiosks, network appliances, and a surprising number of "just a PC" roles. There is no single Linux vendor. Package managers, default filesystems, and support contracts differ by distro. The exam wants you fluent in the shared command line, not in every flavor's installer theme.
 
@@ -416,7 +416,7 @@ During Windows Setup you still pick GPT vs MBR by firmware mode: UEFI boot of th
 
 **Back up files and user preferences first.** User profiles, browser data, PST files, and the Downloads folder that everyone swears is empty. An upgrade that fails mid-driver can leave the PC unbootable until you roll back or recover.
 
-**Application and driver support / backward compatibility.** Vendor VPN clients, printer drivers, and kernel antivirus filters are the usual breakers. Check the app's Windows 11 statement, not a forum rumor. 16-bit and many 32-bit kernel drivers are gone. Windows 11 is 64-bit only.
+**Application and driver support / backward compatibility.** Vendor VPN clients, printer drivers, and kernel antivirus filters are the usual breakers. Check the app's Windows 11 statement, not a forum rumor. Windows 11 is 64-bit only, so 16-bit apps will not run and 32-bit kernel drivers cannot load; only a 64-bit driver works.
 
 **Hardware compatibility.** TPM 2.0, UEFI Secure Boot, RAM, CPU generation, and GPU WDDM level for Windows 11. A perfectly good Windows 10 PC can be ineligible. Forcing unsupported hardware is out of scope for a professional install.
 
@@ -1974,7 +1974,7 @@ Change settings in \`ncpa.cpl\` → NIC → Properties → IPv4, or Settings →
         title: "Backups, encryption, and patches",
         markdown: `**Time Machine** is Apple's built-in backup. Attach a dedicated disk (APFS or HFS+ depending on macOS generation) or a network destination (Time Capsule-style SMB). Time Machine takes local snapshots and incremental backups, and it can restore files or the whole Mac from Recovery. Best practice: a disk that is *only* the backup target, encrypted, and not the user's scratch drive. Time Machine is not iCloud Drive, and iCloud Photos is not a backup of the Mac.
 
-**FileVault** is full-disk encryption for macOS (APFS native). Enable in System Settings → Privacy & Security. Escrow the recovery key in MDM or print it into the ticket vault — without it, a forgotten password on a FileVault volume is a wipe. FileVault at rest protects a stolen Mac; it does not replace a firmware password or MDM lost-mode.
+**FileVault** is the full-disk encryption built into macOS. Enable in System Settings → Privacy & Security. Escrow the recovery key in MDM or print it into the ticket vault — without it, a forgotten password on a FileVault volume is a wipe. FileVault at rest protects a stolen Mac; it does not replace a firmware password or MDM lost-mode.
 
 **Updates / patches** come through System Settings → General → Software Update. Install macOS updates on a Time Machine disk that is healthy.
 
