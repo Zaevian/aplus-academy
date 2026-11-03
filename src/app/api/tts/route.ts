@@ -8,17 +8,22 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  let body: { text?: string; voiceId?: string };
+  let raw: unknown;
   try {
-    body = (await req.json()) as { text?: string; voiceId?: string };
+    raw = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
+  // `null`, arrays, and primitives parse as valid JSON but are not a request body.
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+    return NextResponse.json({ error: "Missing text" }, { status: 400 });
+  }
+  const body = raw as { text?: unknown; voiceId?: unknown };
   const text = typeof body.text === "string" ? body.text.trim() : "";
   if (!text) return NextResponse.json({ error: "Missing text" }, { status: 400 });
   const result = await synthesizeSpeech({
     text,
-    voiceId: body.voiceId,
+    voiceId: typeof body.voiceId === "string" ? body.voiceId : undefined,
   });
   if ("fallback" in result) {
     return new NextResponse(null, { status: 204 });
