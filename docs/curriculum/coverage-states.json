@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T16:56:50.698Z",
+  "generated": "2026-11-09T14:33:39.493Z",
   "summary": {
     "Missing": 0,
     "Taught": 0,
@@ -4795,7 +4795,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 31,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -4811,7 +4811,7 @@
           "conceptId": "C2-D2-O1-VESTIBULE",
           "label": "VESTIBULE",
           "state": "Exam Ready",
-          "questionCount": 4,
+          "questionCount": 11,
           "inPbq": true
         },
         {
@@ -4825,7 +4825,7 @@
           "conceptId": "C2-D2-O1-MFA",
           "label": "MFA",
           "state": "Exam Ready",
-          "questionCount": 6,
+          "questionCount": 10,
           "inPbq": true
         },
         {
@@ -4968,7 +4968,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 26,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -4998,7 +4998,7 @@
           "conceptId": "C2-D2-O2-UAC",
           "label": "UAC",
           "state": "Retained",
-          "questionCount": 4,
+          "questionCount": 6,
           "inPbq": false
         },
         {
@@ -5012,7 +5012,7 @@
           "conceptId": "C2-D2-O2-AD",
           "label": "AD",
           "state": "Retained",
-          "questionCount": 5,
+          "questionCount": 7,
           "inPbq": false
         },
         {
@@ -5316,7 +5316,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 29,
+        "assessedDepth": 30,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -5360,7 +5360,7 @@
           "conceptId": "C2-D2-O5-XSS",
           "label": "XSS",
           "state": "Retained",
-          "questionCount": 6,
+          "questionCount": 7,
           "inPbq": false
         }
       ],
@@ -5536,7 +5536,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 20,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -5552,14 +5552,14 @@
           "conceptId": "C2-D2-O7-HARDEN",
           "label": "HARDEN",
           "state": "Exam Ready",
-          "questionCount": 9,
+          "questionCount": 7,
           "inPbq": true
         },
         {
           "conceptId": "C2-D2-O7-AUTORUN",
           "label": "AUTORUN",
           "state": "Exam Ready",
-          "questionCount": 6,
+          "questionCount": 5,
           "inPbq": true
         },
         {
@@ -5648,7 +5648,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 26,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [

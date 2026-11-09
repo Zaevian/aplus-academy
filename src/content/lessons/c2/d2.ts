@@ -39,7 +39,7 @@ An **access control vestibule** (still nicknamed a mantrap in older material) is
 
 **Door locks** and **equipment locks** (cable locks, rack doors, Kensington-style laptop locks) are different jobs. A locked office with an unlocked docking station still loses the laptop. **Fences** set a legal and physical perimeter. **Security guards** add judgment: they challenge a visitor whose badge does not match a face, and they can stop tailgating that a camera only records.
 
-**Biometrics** are "something you are": fingerprint, palm, retina, facial recognition technology (FRT), and voice. They fail when the reader is dirty, the user has a bandage, or the policy treats a biometric as a secret instead of an identifier that still needs a second factor for high-value systems. On the exam, biometrics are physical or logical depending on whether they open a door or a laptop.`,
+**Biometrics** are "something you are": fingerprint, palm, retina, facial recognition technology (FRT), and voice recognition technology. They fail when the reader is dirty, the user has a bandage, or the policy treats a biometric as a secret instead of an identifier that still needs a second factor for high-value systems. On the exam, biometrics are physical or logical depending on whether they open a door or a laptop.`,
       },
       {
         type: "table",
@@ -1220,7 +1220,7 @@ Document what you found, what you ran, and whether data was exfiltrated as far a
 
 **Account management:** restrict permissions (least privilege), restrict **logon hours** if the business needs that, **disable Guest**, **lockout** after failed attempts (stops casual brute force; watch for denial-of-service against the account), **timeout / screen lock**, and **account expiration** for contractors. **Change the default administrator** username/password — "Administrator / admin" is the first pair in every list.
 
-**Disable AutoRun** (and treat AutoPlay as guilty). USB malware still uses convenient autorun-style behavior. **Disable unused services** (legacy SMBv1, unused remote listeners). **Patch** OS and applications. **Endpoint security software:** antivirus, anti-malware, and **content filtering** where the SOHO router or a browser extension provides it.
+**Disable AutoRun** (and treat AutoPlay as guilty). USB malware still uses convenient autorun-style behavior. **Disable unused services** (legacy SMBv1, unused remote listeners). Keep the OS and applications patched and antivirus running as well; that is good practice on any PC. On the V15 list, though, **patch management** and **endpoint security software** (antivirus, anti-malware, content filtering) are 2.8 mobile-device bullets, and AV/AM and software firewalls are 2.4 tools. They are not 2.7 bullets.
 
 Hardening is a posture, not a single checkbox. The exam will give you a weak setting and ask which change is BEST.`,
       },
@@ -1255,7 +1255,7 @@ AutoRun/AutoPlay on removable media is how conference USB drops still work. Disa
 
 Lockout thresholds need a reset process or you will spend Friday unlocking the owner who cannot type. That is still better than an unbounded RDP guesser.
 
-Content filtering at the workstation or the SOHO DNS (see 2.10/2.11) blocks categories; it is not a full secure web gateway. Pair it with browser hardening.
+Content filtering on a device (2.8 endpoint security software) or at the SOHO router (2.10) blocks categories; it is not a full secure web gateway. Pair it with browser hardening (2.11).
 
 When you image a new PC, harden before you hand it over: encryption, local admin rotated, Guest off, AutoRun off, firewall on, updates current, screen lock 5–15 minutes, standard user for daily work.`,
       },
@@ -1302,7 +1302,7 @@ When you image a new PC, harden before you hand it over: encryption, local admin
           "Encrypt data at rest; escrow recovery keys.",
           "Passwords: long, unique, complex; managers beat sticky notes.",
           "UEFI passwords, disable Guest, lockout, timeouts, expire contractors.",
-          "Disable AutoRun and unused services; patch OS and apps; keep AV/AM and content filtering.",
+          "Disable AutoRun and unused services; still patch and run AV/AM, which V15 lists under 2.4 and 2.8.",
         ],
       },
     ],
@@ -1319,6 +1319,7 @@ When you image a new PC, harden before you hand it over: encryption, local admin
       "C2-D2-O8-REMOTEWIPE",
       "C2-D2-O8-SCREENLOCK",
       "C2-D2-O8-MDMPROFILE",
+      "C2-D2-O8-PATCH",
     ],
     prerequisites: ["C2-D2-O7-L1"],
     lastVerified: "2026-09-01",
@@ -1344,6 +1345,8 @@ When you image a new PC, harden before you hand it over: encryption, local admin
 **Remote backup** (iCloud, Google Backup, MDM-managed backups) is how a wiped phone is not a career-ending data loss. Test restore, not just a green check.
 
 **Configuration profiles** push Wi-Fi EAP settings, VPN, email, certificates, restriction payloads (camera, USB, screenshots). That is MDM's daily job, not only wipe.
+
+**Patch management** on 2.8 means **OS updates** and **application updates**. A phone on the current OS with months-old mail, browser, or banking apps is only half patched. **Endpoint security software** on 2.8 is **antivirus**, **anti-malware**, and **content filtering**, which blocks categories of web content on the device. MDM can report patch levels and push all three.
 
 **MDM** inventories devices, enforces encryption and lock, distributes apps, and separates **BYOD versus corporate-owned**. Corporate-owned can be fully managed. BYOD typically uses a work profile / user enrollment with a privacy boundary. **Profile security requirements** are the written bar: OS version, lock, encryption, no jailbreak/root.
 
@@ -1418,6 +1421,7 @@ MFA authenticator apps on a lost phone are an identity incident, not only a hard
           "Locator finds; remote wipe kills data; backups make wipe survivable.",
           "Failed-attempt limits slow guessing.",
           "MDM profiles enforce BYOD versus corporate-owned rules.",
+          "Patch management is OS updates plus app updates; endpoint security is AV, anti-malware, and content filtering.",
         ],
       },
     ],
