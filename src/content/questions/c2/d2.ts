@@ -347,7 +347,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A PAM vault rotates the local admin password after each checkout. Why?",
     choices: [
-      { id: "a", text: "So a password used on one change is not a standing secret forever", rationale: "Correct." },
+      { id: "a", text: "So a password used on one change is not a standing secret forever", rationale: "Correct. Rotation prevents a known admin password from remaining valid indefinitely." },
       { id: "b", text: "So BitLocker cannot escrow keys", rationale: "Unrelated." },
       { id: "c", text: "Because RADIUS cannot use AES", rationale: "Confused protocols." },
       { id: "d", text: "To disable System Restore", rationale: "Wrong objective." },
@@ -416,7 +416,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MDM is BEST described as:",
     choices: [
-      { id: "a", text: "Enrolling and governing phones/tablets: profiles, encryption, inventory, wipe", rationale: "Correct." },
+      { id: "a", text: "Enrolling and governing phones/tablets: profiles, encryption, inventory, wipe", rationale: "Correct. MDM is device management. DLP is data. IAM is identity. Do not swap the acronyms." },
       { id: "b", text: "A Wi-Fi cipher replacing AES", rationale: "Wrong layer." },
       { id: "c", text: "The 10-step malware process", rationale: "That is 2.6." },
       { id: "d", text: "A type of vestibule", rationale: "Physical." },
@@ -451,7 +451,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A joiner does not get the Finance SaaS app. Directory groups look wrong. Which function owns that?",
     choices: [
-      { id: "a", text: "IAM / directory group assignment — not a new WPA3 passphrase", rationale: "Correct." },
+      { id: "a", text: "IAM / directory group assignment — not a new WPA3 passphrase", rationale: "Correct. App access after join is IAM: groups, roles, and provisioning." },
       { id: "b", text: "Incinerating the laptop", rationale: "Destruction is not onboarding." },
       { id: "c", text: "Enabling UPnP", rationale: "SOHO risk, not identity." },
       { id: "d", text: "Disabling the pop-up blocker", rationale: "Browser setting." },
@@ -468,7 +468,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Directory services in the 2.1 logical list are used to:",
     choices: [
-      { id: "a", text: "Store identities, groups, and policies that IAM uses", rationale: "Correct." },
+      { id: "a", text: "Store identities, groups, and policies that IAM uses", rationale: "Correct. AD and cloud directories are the identity store behind IAM." },
       { id: "b", text: "Replace hashing of downloads", rationale: "Unrelated." },
       { id: "c", text: "Perform low-level formats", rationale: "2.9." },
       { id: "d", text: "Hide SSIDs", rationale: "2.10." },
@@ -506,7 +506,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A remote user has share permission Change and NTFS permission Read on the same folder. What is the effective right over the network?",
     choices: [
-      { id: "a", text: "Read — the most restrictive combination wins", rationale: "Correct." },
+      { id: "a", text: "Read — the most restrictive combination wins", rationale: "Correct. Remote access: most restrictive of share + NTFS. Change ∩ Read = Read." },
       { id: "b", text: "Change — share always wins", rationale: "Share does not override a tighter NTFS ACL." },
       { id: "c", text: "Full Control", rationale: "Neither ACL granted Full Control as the combination." },
       { id: "d", text: "No access because mixed ACLs always deny", rationale: "Mixed Allow still yields the tighter Allow." },
@@ -523,7 +523,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "An admin tests a Finance share by logging on at the file server console and opening the folder on NTFS. Share permission is Read; NTFS is Modify. The console session can modify files. Why?",
     choices: [
-      { id: "a", text: "Share permissions do not apply to local logon; only NTFS does", rationale: "Correct." },
+      { id: "a", text: "Share permissions do not apply to local logon; only NTFS does", rationale: "Correct. To test what remote users see, map the share from another PC. Console tests skip the share ACL." },
       { id: "b", text: "Share permissions always override NTFS, so this result is impossible", rationale: "The result is expected for a local logon." },
       { id: "c", text: "UAC disables NTFS for administrators", rationale: "UAC is elevation, not an ACL bypass of this kind." },
       { id: "d", text: "EFS ignores Modify", rationale: "EFS is encryption, not this symptom." },
@@ -558,7 +558,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A new file in a folder 'lost' the department ACL. Inheritance was broken last year on that folder. What should the technician do?",
     choices: [
-      { id: "a", text: "Inspect the folder ACL, restore inheritance or set the intended NTFS entries, then verify a new file", rationale: "Correct." },
+      { id: "a", text: "Inspect the folder ACL, restore inheritance or set the intended NTFS entries, then verify a new file", rationale: "Correct. Broken inheritance means new objects may not get the parent ACL you expect." },
       { id: "b", text: "Enable UPnP so permissions replicate", rationale: "UPnP is a router feature." },
       { id: "c", text: "Convert the volume to FAT32 so ACLs 'reset'", rationale: "FAT32 has no NTFS ACLs." },
       { id: "d", text: "Disable BitLocker, which is known to strip ACLs", rationale: "BitLocker encrypts the volume; it does not remove NTFS ACLs as a feature." },
@@ -592,7 +592,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "The Read-only file attribute is checked. A user has NTFS Modify. Can they clear the attribute and edit?",
     choices: [
-      { id: "a", text: "Yes — the attribute is not a replacement for NTFS ACLs", rationale: "Correct." },
+      { id: "a", text: "Yes — the attribute is not a replacement for NTFS ACLs", rationale: "Correct. Read-only is a convenience flag. NTFS Modify includes the ability to change attributes." },
       { id: "b", text: "No — attributes override NTFS", rationale: "False." },
       { id: "c", text: "Only if share permission is Full Control and they are local", rationale: "Overcomplicated and wrong." },
       { id: "d", text: "Only after disabling UAC", rationale: "UAC is unrelated." },
@@ -626,7 +626,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A recommended design is a coarse share ACL and a detailed NTFS ACL. Why?",
     choices: [
-      { id: "a", text: "You maintain one real permission set (NTFS) instead of two detailed lists that drift", rationale: "Correct." },
+      { id: "a", text: "You maintain one real permission set (NTFS) instead of two detailed lists that drift", rationale: "Correct. Common practice: Authenticated Users = Change on the share, then do the real work in NTFS groups." },
       { id: "b", text: "Share permissions apply to local console users only", rationale: "Opposite: share is remote-only." },
       { id: "c", text: "NTFS is ignored on domain-joined PCs", rationale: "False." },
       { id: "d", text: "FAT32 requires this split", rationale: "FAT32 has no NTFS ACL." },
@@ -643,7 +643,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Which users are affected by share permissions?",
     choices: [
-      { id: "a", text: "Remote (SMB) connections to that share", rationale: "Correct." },
+      { id: "a", text: "Remote (SMB) connections to that share", rationale: "Correct. Share permissions exist at the share point for network access." },
       { id: "b", text: "Anyone logged on at the server console", rationale: "Console ignores share ACLs." },
       { id: "c", text: "Linux clients using chmod only", rationale: "chmod is not a Windows share ACL." },
       { id: "d", text: "Printers using USB", rationale: "Unrelated." },
@@ -678,8 +678,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO true statements about Windows share versus NTFS permissions.",
     choices: [
-      { id: "a", text: "Remote effective access is the most restrictive combination of the two", rationale: "Correct." },
-      { id: "b", text: "Local interactive logon is governed by NTFS, not the share ACL", rationale: "Correct." },
+      { id: "a", text: "Remote effective access is the most restrictive combination of the two", rationale: "Correct. Those two sentences are the entire exam skill, plus Deny and inheritance." },
+      { id: "b", text: "Local interactive logon is governed by NTFS, not the share ACL", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Share permissions encrypt the files with EFS automatically", rationale: "False." },
       { id: "d", text: "NTFS permissions apply only after 5 p.m.", rationale: "False." },
       { id: "e", text: "Everyone: Full Control on a share always bypasses NTFS Deny", rationale: "Deny still wins on NTFS." },
@@ -713,7 +713,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "What does User Account Control actually do for an administrator?",
     choices: [
-      { id: "a", text: "Runs most of the session with a standard token and prompts for elevation when a higher token is needed", rationale: "Correct." },
+      { id: "a", text: "Runs most of the session with a standard token and prompts for elevation when a higher token is needed", rationale: "Correct. UAC is split-token elevation, not encryption or a firewall." },
       { id: "b", text: "Replaces the host firewall", rationale: "Firewall is separate." },
       { id: "c", text: "Encrypts the volume like BitLocker", rationale: "Different feature." },
       { id: "d", text: "Joins the PC to Active Directory", rationale: "Domain join is separate." },
@@ -730,7 +730,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A technician needs one elevated command. BEST method?",
     choices: [
-      { id: "a", text: "Elevate that process (Run as administrator) rather than disabling UAC or living in an elevated prompt all day", rationale: "Correct." },
+      { id: "a", text: "Elevate that process (Run as administrator) rather than disabling UAC or living in an elevated prompt all day", rationale: "Correct. Least privilege: elevate the task, not the entire workday." },
       { id: "b", text: "Set UAC to Never notify", rationale: "Defeats the control." },
       { id: "c", text: "Enable the Guest account so elevation is unnecessary", rationale: "Worse." },
       { id: "d", text: "Turn off Defender", rationale: "Unrelated and harmful." },
@@ -747,7 +747,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "An installer fails without a prompt on a standard user account. NEXT?",
     choices: [
-      { id: "a", text: "Run the installer elevated with an authorized admin token, or install via software deployment — do not just disable UAC", rationale: "Correct." },
+      { id: "a", text: "Run the installer elevated with an authorized admin token, or install via software deployment — do not just disable UAC", rationale: "Correct. Standard users should not install software. Elevation or IT deployment is the path." },
       { id: "b", text: "Add the user to Domain Admins permanently", rationale: "Standing privilege." },
       { id: "c", text: "Format the disk as FAT32", rationale: "Unrelated." },
       { id: "d", text: "Disable the firewall profile permanently", rationale: "Unrelated." },
@@ -798,7 +798,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A second local user on the same PC cannot open a folder the owner encrypted. The volume is not BitLocker-protected. What feature is that?",
     choices: [
-      { id: "a", text: "EFS — per-file encryption bound to the user's certificate", rationale: "Correct." },
+      { id: "a", text: "EFS — per-file encryption bound to the user's certificate", rationale: "Correct. EFS hides files from other local users. It does not replace BitLocker against disk theft." },
       { id: "b", text: "BitLocker To Go", rationale: "That is removable-volume BitLocker." },
       { id: "c", text: "Windows Hello PIN", rationale: "Logon method, not folder encryption." },
       { id: "d", text: "Folder redirection", rationale: "Moves folders to a server; does not encrypt by itself." },
@@ -832,7 +832,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "After a motherboard swap, BitLocker asks for a recovery key. What happened?",
     choices: [
-      { id: "a", text: "TPM/PCR measurements changed; use the escrowed recovery key, then reseal — this is expected", rationale: "Correct." },
+      { id: "a", text: "TPM/PCR measurements changed; use the escrowed recovery key, then reseal — this is expected", rationale: "Correct. Escrow recovery keys or a hardware change is a data-loss event." },
       { id: "b", text: "EFS always triggers after hardware changes", rationale: "This prompt is BitLocker recovery." },
       { id: "c", text: "The share ACL reset", rationale: "Unrelated." },
       { id: "d", text: "UAC lost the admin token forever", rationale: "Unrelated." },
@@ -849,7 +849,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A company PC must receive the same password policy and software restrictions as the rest of Finance. BEST mechanism?",
     choices: [
-      { id: "a", text: "Join the domain, place the object in the Finance OU, apply Group Policy", rationale: "Correct." },
+      { id: "a", text: "Join the domain, place the object in the Finance OU, apply Group Policy", rationale: "Correct. AD join + OU + GPO is how Windows security baselines scale." },
       { id: "b", text: "Create a unique local admin on each PC with the policy printed on a sticker", rationale: "Does not scale." },
       { id: "c", text: "Enable Guest so GPO is unnecessary", rationale: "Opposite of hardening." },
       { id: "d", text: "Use FAT32 so policies apply faster", rationale: "FAT32 has no NTFS/AD relationship of that kind." },
@@ -866,7 +866,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Folder redirection and home folders in AD are used to:",
     choices: [
-      { id: "a", text: "Place user data on a server path instead of (or in addition to) the local profile", rationale: "Correct." },
+      { id: "a", text: "Place user data on a server path instead of (or in addition to) the local profile", rationale: "Correct. Home folders and redirection are AD user-object/GPO features for data location." },
       { id: "b", text: "Encrypt the BIOS", rationale: "No." },
       { id: "c", text: "Replace RADIUS for Wi-Fi", rationale: "No." },
       { id: "d", text: "Disable AutoRun worldwide via DNS", rationale: "No." },
@@ -883,7 +883,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user moved from Sales to HR and lost a share they still need for a week. Groups were not updated. Where do you fix it?",
     choices: [
-      { id: "a", text: "Security group membership (and any OU/GPO that adds groups) — rights should come from groups", rationale: "Correct." },
+      { id: "a", text: "Security group membership (and any OU/GPO that adds groups) — rights should come from groups", rationale: "Correct. Select security groups, move OUs, apply GPO — the AD toolkit on the objective." },
       { id: "b", text: "The WPA3 PSK", rationale: "Wireless." },
       { id: "c", text: "The certificate of destruction", rationale: "2.9." },
       { id: "d", text: "Private browsing mode", rationale: "2.11." },
@@ -900,7 +900,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Logon scripts in Active Directory typically:",
     choices: [
-      { id: "a", text: "Run at sign-in to map drives, printers, or set environment items for that user/computer", rationale: "Correct." },
+      { id: "a", text: "Run at sign-in to map drives, printers, or set environment items for that user/computer", rationale: "Correct. Assigning a logon script is an explicit AD task on V15." },
       { id: "b", text: "Degauss attached USB drives", rationale: "No." },
       { id: "c", text: "Replace MFA", rationale: "No." },
       { id: "d", text: "Disable the host firewall as a feature", rationale: "That would be a bad script, not the purpose." },
@@ -917,7 +917,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Guest user accounts on Windows should be:",
     choices: [
-      { id: "a", text: "Disabled on a business workstation", rationale: "Correct." },
+      { id: "a", text: "Disabled on a business workstation", rationale: "Correct. Guest is a legacy convenience and a finding. Standard vs administrator vs Microsoft vs local is the rest of the account list." },
       { id: "b", text: "Used as the daily help-desk logon", rationale: "No." },
       { id: "c", text: "Granted Domain Admin so visitors can print", rationale: "No." },
       { id: "d", text: "Required for BitLocker", rationale: "No." },
@@ -934,7 +934,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A Windows Hello PIN is BEST described as:",
     choices: [
-      { id: "a", text: "A device-bound credential that unlocks keys in the TPM — not a short copy of the domain password sent to the DC", rationale: "Correct." },
+      { id: "a", text: "A device-bound credential that unlocks keys in the TPM — not a short copy of the domain password sent to the DC", rationale: "Correct. Hello PIN/biometric is passwordless/device-local as listed under log-in OS options." },
       { id: "b", text: "The first four characters of the Microsoft account password", rationale: "It is not supposed to be a password substring." },
       { id: "c", text: "A share permission level", rationale: "No." },
       { id: "d", text: "A type of screened subnet", rationale: "No." },
@@ -951,7 +951,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user can sign in with Hello face at their desk PC but cannot use that face enrollment on a loaner laptop. Why?",
     choices: [
-      { id: "a", text: "Hello credentials are bound to the device (and its TPM), not roaming facial data by default", rationale: "Correct." },
+      { id: "a", text: "Hello credentials are bound to the device (and its TPM), not roaming facial data by default", rationale: "Correct. Enroll Hello on each device, or use a roaming identity that still meets policy — do not expect the PIN/face blob to be the domain password." },
       { id: "b", text: "Face logon requires WPA3", rationale: "Unrelated." },
       { id: "c", text: "EFS deletes biometrics nightly", rationale: "False." },
       { id: "d", text: "UAC blocks cameras unless Guest is enabled", rationale: "False." },
@@ -987,7 +987,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A SOHO AP still offers 'WPA2-PSK + TKIP' or mixed AES/TKIP. What should the technician set?",
     choices: [
-      { id: "a", text: "WPA2-AES (CCMP) or WPA3; treat TKIP as a finding", rationale: "Correct." },
+      { id: "a", text: "WPA2-AES (CCMP) or WPA3; treat TKIP as a finding", rationale: "Correct. AES is the cipher you want. TKIP is the legacy WPA patch." },
       { id: "b", text: "WEP-128 because it is faster", rationale: "WEP is obsolete and broken." },
       { id: "c", text: "Open authentication with a hidden SSID only", rationale: "Hiding is not encryption." },
       { id: "d", text: "TKIP-only to support Windows 95", rationale: "Do not keep TKIP for nostalgia." },
@@ -1004,7 +1004,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "WPA2-Personal uses:",
     choices: [
-      { id: "a", text: "A pre-shared key (passphrase) shared by clients", rationale: "Correct." },
+      { id: "a", text: "A pre-shared key (passphrase) shared by clients", rationale: "Correct. Personal = PSK. Enterprise = 802.1X/RADIUS." },
       { id: "b", text: "Per-user 802.1X against RADIUS as the only option", rationale: "That is Enterprise." },
       { id: "c", text: "Kerberos tickets instead of a cipher", rationale: "Kerberos is not the Wi-Fi cipher." },
       { id: "d", text: "Degaussing of the radio", rationale: "No." },
@@ -1021,7 +1021,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "An employee leaves a tiny office that uses WPA2-PSK. BEST revocation step for the wireless secret?",
     choices: [
-      { id: "a", text: "Change the PSK (and update remaining devices) because a shared passphrase cannot be revoked per user", rationale: "Correct." },
+      { id: "a", text: "Change the PSK (and update remaining devices) because a shared passphrase cannot be revoked per user", rationale: "Correct. PSK does not scale for staff turnover. That is why Enterprise exists." },
       { id: "b", text: "Disable SSID broadcast so the former employee 'cannot see it'", rationale: "They already know the name and key." },
       { id: "c", text: "Enable UPnP", rationale: "Unrelated risk." },
       { id: "d", text: "Switch to TKIP", rationale: "Weaker." },
@@ -1038,7 +1038,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Hiding the SSID is:",
     choices: [
-      { id: "a", text: "Not a real confidentiality control; the SSID still appears in wireless traffic", rationale: "Correct." },
+      { id: "a", text: "Not a real confidentiality control; the SSID still appears in wireless traffic", rationale: "Correct. Encryption and 802.1X are security. Hidden SSID is obscurity." },
       { id: "b", text: "Equivalent to WPA3-Enterprise", rationale: "False." },
       { id: "c", text: "Required for AES", rationale: "False." },
       { id: "d", text: "A substitute for RADIUS", rationale: "False." },
@@ -1055,7 +1055,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A company wants per-user wireless authentication that can disable one lost laptop without changing a building-wide passphrase. Choose:",
     choices: [
-      { id: "a", text: "WPA2/WPA3-Enterprise with 802.1X and RADIUS", rationale: "Correct." },
+      { id: "a", text: "WPA2/WPA3-Enterprise with 802.1X and RADIUS", rationale: "Correct. Enterprise mode is how you revoke a user or machine credential." },
       { id: "b", text: "WPA2-PSK with a 63-character key", rationale: "Still one shared secret." },
       { id: "c", text: "Open network plus a paper NDA", rationale: "Not technical control." },
       { id: "d", text: "WEP with MAC filtering", rationale: "Broken." },
@@ -1072,7 +1072,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "WPA2's proper encryption mode on A+ is associated with:",
     choices: [
-      { id: "a", text: "AES (CCMP), not TKIP", rationale: "Correct." },
+      { id: "a", text: "AES (CCMP), not TKIP", rationale: "Correct. Protocols and encryption on 2.3: WPA2, WPA3, TKIP, AES." },
       { id: "b", text: "SAML assertions in the beacon", rationale: "SAML is federation." },
       { id: "c", text: "BitLocker To Go frames", rationale: "Disk encryption." },
       { id: "d", text: "EFS on the SSID", rationale: "EFS is NTFS files." },
@@ -1089,7 +1089,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Compared with WPA2-PSK, WPA3-Personal is stronger primarily because of:",
     choices: [
-      { id: "a", text: "SAE (Simultaneous Authentication of Equals), which resists offline dictionary attacks on the passphrase better", rationale: "Correct." },
+      { id: "a", text: "SAE (Simultaneous Authentication of Equals), which resists offline dictionary attacks on the passphrase better", rationale: "Correct. WPA3-Personal/SAE is the exam-relevant upgrade over WPA2-PSK." },
       { id: "b", text: "Mandatory TKIP", rationale: "WPA3 does not bring TKIP back." },
       { id: "c", text: "Removing AES", rationale: "AES remains the cipher family." },
       { id: "d", text: "Hiding the SSID by default", rationale: "Not the improvement." },
@@ -1106,7 +1106,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "When AP and clients support it, the preferred SOHO setting is:",
     choices: [
-      { id: "a", text: "WPA3 (or WPA3-transition only as long as needed)", rationale: "Correct." },
+      { id: "a", text: "WPA3 (or WPA3-transition only as long as needed)", rationale: "Correct. Prefer WPA3; mixed mode is a transition, not the destination." },
       { id: "b", text: "WEP + MAC allow list", rationale: "Obsolete." },
       { id: "c", text: "Open + captive portal that harvests AD passwords on an evil twin", rationale: "Attack pattern." },
       { id: "d", text: "TKIP-only for 'compatibility mode forever'", rationale: "Finding." },
@@ -1123,7 +1123,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A legacy scanner supports only WPA2-AES, not WPA3. BEST approach?",
     choices: [
-      { id: "a", text: "Use a transition SSID or mixed mode as a documented exception, and plan to replace the scanner — do not drop the whole office to TKIP", rationale: "Correct." },
+      { id: "a", text: "Use a transition SSID or mixed mode as a documented exception, and plan to replace the scanner — do not drop the whole office to TKIP", rationale: "Correct. Compatibility is a temporary exception, not a reason to choose TKIP or open." },
       { id: "b", text: "Disable encryption so the scanner can join", rationale: "Unacceptable." },
       { id: "c", text: "Put the scanner in the WAN port", rationale: "Nonsensical." },
       { id: "d", text: "Enable WPS PIN for 24/7", rationale: "WPS is a weak add-on." },
@@ -1140,7 +1140,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "WPA3-Enterprise still typically authenticates users with:",
     choices: [
-      { id: "a", text: "802.1X and a RADIUS backend, not a single PSK", rationale: "Correct." },
+      { id: "a", text: "802.1X and a RADIUS backend, not a single PSK", rationale: "Correct. Enterprise remains 802.1X whether WPA2 or WPA3." },
       { id: "b", text: "A printed WEP key under the AP", rationale: "No." },
       { id: "c", text: "UPnP mappings", rationale: "No." },
       { id: "d", text: "EFS certificates on the SSID string", rationale: "No." },
@@ -1157,7 +1157,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Guest Wi-Fi at a clinic should:",
     choices: [
-      { id: "a", text: "Use modern encryption and be isolated from the LAN (no path to EHR file shares)", rationale: "Correct." },
+      { id: "a", text: "Use modern encryption and be isolated from the LAN (no path to EHR file shares)", rationale: "Correct. Isolation is the point of guest. Encryption is still required." },
       { id: "b", text: "Use the same PSK and VLAN as radiology PCs for 'simplicity'", rationale: "That is how guests reach clinical data." },
       { id: "c", text: "Be open and bridged to the IDF management VLAN", rationale: "Worse." },
       { id: "d", text: "Require TKIP so old phones can attack AES", rationale: "No." },
@@ -1191,7 +1191,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "On the A+ wireless list, AES is:",
     choices: [
-      { id: "a", text: "The modern symmetric cipher you want for WPA2/WPA3", rationale: "Correct." },
+      { id: "a", text: "The modern symmetric cipher you want for WPA2/WPA3", rationale: "Correct. AES versus TKIP is the encryption contrast on 2.3." },
       { id: "b", text: "A social-engineering attack", rationale: "No." },
       { id: "c", text: "A type of vestibule", rationale: "No." },
       { id: "d", text: "An email gateway brand required by CompTIA", rationale: "No." },
@@ -1208,7 +1208,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "TKIP exists on the exam so you can:",
     choices: [
-      { id: "a", text: "Recognize a weak/legacy AP setting and move to AES", rationale: "Correct." },
+      { id: "a", text: "Recognize a weak/legacy AP setting and move to AES", rationale: "Correct. Know TKIP to reject it." },
       { id: "b", text: "Prefer it over AES on new deployments", rationale: "Opposite." },
       { id: "c", text: "Use it as MFA", rationale: "No." },
       { id: "d", text: "Replace RADIUS", rationale: "No." },
@@ -1225,7 +1225,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A heat-map survey is clean, but a laptop shows the AP as WPA2-TKIP. BEST action?",
     choices: [
-      { id: "a", text: "Change the AP to AES/WPA3; RF design did not fix the cipher", rationale: "Correct." },
+      { id: "a", text: "Change the AP to AES/WPA3; RF design did not fix the cipher", rationale: "Correct. Coverage ≠ confidentiality. Fix the protocol/cipher." },
       { id: "b", text: "Add more bollards", rationale: "Physical, wrong problem." },
       { id: "c", text: "Disable Defender", rationale: "No." },
       { id: "d", text: "Format the laptop as exFAT", rationale: "No." },
@@ -1242,7 +1242,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Which pairing is correct?",
     choices: [
-      { id: "a", text: "AES = current; TKIP = legacy integrity protocol from the WPA era", rationale: "Correct." },
+      { id: "a", text: "AES = current; TKIP = legacy integrity protocol from the WPA era", rationale: "Correct. Memorize the pairing as a finding versus a baseline." },
       { id: "b", text: "TKIP = quantum-safe replacement for AES", rationale: "False." },
       { id: "c", text: "AES is only for email", rationale: "AES is widely used; here it is the Wi-Fi cipher." },
       { id: "d", text: "TKIP is a type of smart card", rationale: "False." },
@@ -1259,7 +1259,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MFA on wireless in the 2.3 authentication list most nearly means:",
     choices: [
-      { id: "a", text: "More than one factor at the identity source (for example 802.1X credentials plus another factor), not a PSK by itself", rationale: "Correct." },
+      { id: "a", text: "More than one factor at the identity source (for example 802.1X credentials plus another factor), not a PSK by itself", rationale: "Correct. 2.3 authentication: RADIUS, TACACS+, Kerberos, multifactor." },
       { id: "b", text: "AES plus TKIP at the same time is MFA", rationale: "Two ciphers are not two factors." },
       { id: "c", text: "Hiding the SSID plus MAC filter is MFA", rationale: "Neither is an authentication factor type in the MFA sense." },
       { id: "d", text: "UPnP plus a guest network", rationale: "No." },
@@ -1277,8 +1277,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO settings that belong on a hardened AP.",
     choices: [
-      { id: "a", text: "WPA3 or WPA2-AES", rationale: "Correct." },
-      { id: "b", text: "Unique admin password and current firmware", rationale: "Correct." },
+      { id: "a", text: "WPA3 or WPA2-AES", rationale: "Correct. Cipher plus management-plane hygiene." },
+      { id: "b", text: "Unique admin password and current firmware", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "WEP-40 to reduce CPU", rationale: "Broken." },
       { id: "d", text: "TKIP-only BSS for 'stability'", rationale: "Legacy." },
       { id: "e", text: "Default vendor password on WAN management", rationale: "Finding." },
@@ -1295,7 +1295,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Employees join corporate Wi-Fi with their own usernames against a central server. The AP is a client of that server. Which protocol?",
     choices: [
-      { id: "a", text: "RADIUS (typically with 802.1X)", rationale: "Correct." },
+      { id: "a", text: "RADIUS (typically with 802.1X)", rationale: "Correct. RADIUS is the AAA service for enterprise Wi-Fi and many VPNs." },
       { id: "b", text: "TKIP as the identity store", rationale: "TKIP is a cipher." },
       { id: "c", text: "SAML beacons in 802.11 management frames", rationale: "SAML is app federation." },
       { id: "d", text: "BitLocker To Go", rationale: "USB encryption." },
@@ -1310,12 +1310,12 @@ export const C2_D2_QUESTIONS: Question[] = [
     objectiveId: "C2-D2-O3",
     conceptIds: ["C2-D2-O3-RADIUS"],
     difficulty: "exam",
-    stem: "Network engineers log into routers and switches with centralized authorization that is often Cisco-associated and encrypts the TACACS+ payload. BEST name?",
+    stem: "Network engineers log in to routers and switches through a central AAA server that was developed by Cisco, separates authentication from authorization, and encrypts the entire packet body. Which protocol is that?",
     choices: [
       { id: "a", text: "TACACS+", rationale: "Correct. Device administration AAA." },
-      { id: "b", text: "WPA2-PSK", rationale: "Wi-Fi personal." },
-      { id: "c", text: "EFS", rationale: "NTFS files." },
-      { id: "d", text: "QR phishing", rationale: "Attack." },
+      { id: "b", text: "RADIUS", rationale: "RADIUS is AAA for Wi-Fi/VPN users; it combines authentication and authorization and encrypts only the password field." },
+      { id: "c", text: "Kerberos", rationale: "Kerberos issues domain tickets after AD logon; it is not the router/switch admin AAA protocol." },
+      { id: "d", text: "WPA2-Enterprise", rationale: "WPA2-Enterprise is a wireless security mode that uses 802.1X/RADIUS; it is not device-administration AAA." },
     ],
     correct: "a",
     explanation: "RADIUS for users/VPN/Wi-Fi; TACACS+ often for network-device admins.",
@@ -1329,7 +1329,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A RADIUS server in enterprise Wi-Fi usually checks credentials against:",
     choices: [
-      { id: "a", text: "An identity store such as Active Directory or certificates", rationale: "Correct." },
+      { id: "a", text: "An identity store such as Active Directory or certificates", rationale: "Correct. The AP does not hold all user passwords; RADIUS asks the directory or CA." },
       { id: "b", text: "The guest printer's toner level", rationale: "No." },
       { id: "c", text: "A degausser log", rationale: "No." },
       { id: "d", text: "The BIOS power-on password of a random PC", rationale: "No." },
@@ -1363,7 +1363,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "AAA in RADIUS stands for the jobs:",
     choices: [
-      { id: "a", text: "Authentication, authorization, and accounting", rationale: "Correct." },
+      { id: "a", text: "Authentication, authorization, and accounting", rationale: "Correct. AAA is the framework: prove identity, grant rights, log it." },
       { id: "b", text: "AES, AutoRun, and ACLs", rationale: "Wrong expansion." },
       { id: "c", text: "Adware, APTs, and AUP", rationale: "Wrong." },
       { id: "d", text: "Always allow all", rationale: "Wrong." },
@@ -1380,7 +1380,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A PSK is one shared secret. RADIUS accounting records who connected. Why does that matter after an incident?",
     choices: [
-      { id: "a", text: "You can identify a user/device account rather than 'someone who knew the café password'", rationale: "Correct." },
+      { id: "a", text: "You can identify a user/device account rather than 'someone who knew the café password'", rationale: "Correct. Enterprise AAA gives per-user accountability that PSK cannot." },
       { id: "b", text: "Accounting degausses the AP", rationale: "No." },
       { id: "c", text: "Accounting replaces TLS", rationale: "No." },
       { id: "d", text: "Accounting is the same as a vestibule", rationale: "No." },
@@ -1397,7 +1397,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Kerberos on A+ is BEST described as:",
     choices: [
-      { id: "a", text: "The ticket-based authentication protocol used heavily inside Active Directory domains", rationale: "Correct." },
+      { id: "a", text: "The ticket-based authentication protocol used heavily inside Active Directory domains", rationale: "Correct. After domain logon you get tickets for file/print. That is Kerberos, not WPA3." },
       { id: "b", text: "A Wi-Fi encryption protocol replacing AES", rationale: "Kerberos is not a Wi-Fi cipher." },
       { id: "c", text: "A malware family", rationale: "No." },
       { id: "d", text: "A certificate of destruction", rationale: "No." },
@@ -1414,7 +1414,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user authenticates to AD and opens a file share without typing the password again. Wireless is WPA3-Enterprise via RADIUS. Which statement is accurate?",
     choices: [
-      { id: "a", text: "RADIUS authenticated Wi-Fi; Kerberos then provided SSO tickets on the domain — different protocols, both may be in the path", rationale: "Correct." },
+      { id: "a", text: "RADIUS authenticated Wi-Fi; Kerberos then provided SSO tickets on the domain — different protocols, both may be in the path", rationale: "Correct. Keep RADIUS, Kerberos, and SAML in their lanes even when one logon story uses more than one." },
       { id: "b", text: "Kerberos encrypted the 802.11 frames instead of AES", rationale: "Frames are still AES/WPA3." },
       { id: "c", text: "RADIUS is only for TACACS+ device admins", rationale: "Backwards." },
       { id: "d", text: "This is SAML in the AP firmware", rationale: "SAML is not the 802.11 cipher." },
@@ -1431,7 +1431,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Time drift on a domain client often breaks:",
     choices: [
-      { id: "a", text: "Kerberos (tickets are time-sensitive)", rationale: "Correct." },
+      { id: "a", text: "Kerberos (tickets are time-sensitive)", rationale: "Correct. If the clock is too far off, Kerberos fails. That is a classic ticket." },
       { id: "b", text: "Bollards", rationale: "Physical." },
       { id: "c", text: "Paper shredders", rationale: "2.9." },
       { id: "d", text: "Guest VLAN isolation as a protocol", rationale: "Isolation is switching/firewall, not tickets." },
@@ -1449,8 +1449,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Choose TWO accurate protocol-to-job mappings.",
     choices: [
-      { id: "a", text: "RADIUS — enterprise Wi-Fi / VPN AAA", rationale: "Correct." },
-      { id: "b", text: "Kerberos — AD domain tickets after logon", rationale: "Correct." },
+      { id: "a", text: "RADIUS — enterprise Wi-Fi / VPN AAA", rationale: "Correct. 2.3 authentication methods: RADIUS, TACACS+, Kerberos, multifactor." },
+      { id: "b", text: "Kerberos — AD domain tickets after logon", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "TKIP — preferred WPA3 cipher", rationale: "TKIP is legacy; AES is preferred." },
       { id: "d", text: "SAML — 802.11 frame encryption", rationale: "SAML is federation." },
       { id: "e", text: "TACACS+ — NTFS inheritance", rationale: "Wrong layer." },
@@ -1554,7 +1554,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "After ransomware, the owner wants to pay so 'we can open QuickBooks today.' What is the BEST technical recovery path on A+?",
     choices: [
-      { id: "a", text: "Isolate, do not treat payment as the IT plan, restore from known-good backups / reimage", rationale: "Correct." },
+      { id: "a", text: "Isolate, do not treat payment as the IT plan, restore from known-good backups / reimage", rationale: "Correct. Backups and rebuilds beat ransom. Payment is a business/legal decision, not a CompTIA remediation step." },
       { id: "b", text: "Keep the PC on the NAS so the decryptor 'finds more files'", rationale: "That spreads the encryption." },
       { id: "c", text: "Disable BitLocker so the ransomware can reverse itself", rationale: "Nonsense." },
       { id: "d", text: "Enable UPnP to reach the attacker more reliably", rationale: "Harmful." },
@@ -1588,7 +1588,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A classic virus differs from a Trojan because a virus typically:",
     choices: [
-      { id: "a", text: "Infects files or boot records and needs a host to carry it", rationale: "Correct." },
+      { id: "a", text: "Infects files or boot records and needs a host to carry it", rationale: "Correct. Trojans trick the user into running a program; viruses infect hosts." },
       { id: "b", text: "Is always fileless PowerShell", rationale: "That is a different class." },
       { id: "c", text: "Is a vestibule", rationale: "Physical." },
       { id: "d", text: "Is a valid certificate", rationale: "No." },
@@ -1605,7 +1605,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Malware lives in memory, WMI, registry Run keys, and signed PowerShell — no tidy bad.exe on disk. Name it.",
     choices: [
-      { id: "a", text: "Fileless malware", rationale: "Correct." },
+      { id: "a", text: "Fileless malware", rationale: "Correct. Fileless living-off-the-land is why EDR behavior telemetry beats hash-only AV." },
       { id: "b", text: "A boot-sector virus that only writes to platters", rationale: "Boot sector is on disk by definition." },
       { id: "c", text: "A PUP toolbar MSI", rationale: "That is a file." },
       { id: "d", text: "Degaussing", rationale: "Destruction." },
@@ -1622,7 +1622,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Signature antivirus reports clean, but Word spawned encoded PowerShell that opened a remote prompt. BEST next class of tool?",
     choices: [
-      { id: "a", text: "EDR (or equivalent behavior telemetry) to inspect the process tree and isolate the host", rationale: "Correct." },
+      { id: "a", text: "EDR (or equivalent behavior telemetry) to inspect the process tree and isolate the host", rationale: "Correct. Fileless activity is a process-tree problem. EDR is the named tool." },
       { id: "b", text: "A magnetometer", rationale: "Physical metal detector." },
       { id: "c", text: "TKIP", rationale: "Wi-Fi legacy." },
       { id: "d", text: "A quick format of the recovery partition only", rationale: "Not a hunt." },
@@ -1656,7 +1656,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Why is a recovery console / WinRE / PE environment useful against some malware?",
     choices: [
-      { id: "a", text: "You can scan or replace files when the running OS kernel may be lying", rationale: "Correct." },
+      { id: "a", text: "You can scan or replace files when the running OS kernel may be lying", rationale: "Correct. 2.4 tools list recovery console; 2.6 step 6 names safe mode and PE." },
       { id: "b", text: "It enables UPnP automatically", rationale: "No." },
       { id: "c", text: "It is the same as paying ransomware", rationale: "No." },
       { id: "d", text: "It issues SAML tickets", rationale: "No." },
@@ -1673,7 +1673,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Which statement about fileless malware is accurate?",
     choices: [
-      { id: "a", text: "It often abuses legitimate tools (PowerShell, WMI, Office macros) so a hash scan of Program Files misses it", rationale: "Correct." },
+      { id: "a", text: "It often abuses legitimate tools (PowerShell, WMI, Office macros) so a hash scan of Program Files misses it", rationale: "Correct. Living-off-the-land plus memory is the fileless story." },
       { id: "b", text: "It cannot persist across reboot by definition", rationale: "Registry, WMI, and scheduled tasks persist." },
       { id: "c", text: "It is another name for bollards", rationale: "No." },
       { id: "d", text: "It is fixed by hiding the SSID", rationale: "No." },
@@ -1690,7 +1690,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Spyware is to general activity collection as stalkerware is to:",
     choices: [
-      { id: "a", text: "Covert monitoring of a specific person (location, messages, mic) often in a domestic context", rationale: "Correct." },
+      { id: "a", text: "Covert monitoring of a specific person (location, messages, mic) often in a domestic context", rationale: "Correct. V15 added stalkerware as its own named type. Treat it as more than 'adware.'" },
       { id: "b", text: "Encrypting the file server for bitcoin", rationale: "Ransomware." },
       { id: "c", text: "Mining Ether on the GPU", rationale: "Cryptominer." },
       { id: "d", text: "A guest VLAN", rationale: "Network." },
@@ -1707,7 +1707,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "OS reinstallation is listed as a 2.4 method because:",
     choices: [
-      { id: "a", text: "When integrity is gone (rootkit, stubborn ransomware, unknown persistence), a known-good image is the honest end-state", rationale: "Correct." },
+      { id: "a", text: "When integrity is gone (rootkit, stubborn ransomware, unknown persistence), a known-good image is the honest end-state", rationale: "Correct. Reinstall/reimage is on both 2.4 tools and 2.6 step 7." },
       { id: "b", text: "It replaces user education forever", rationale: "Education is still required." },
       { id: "c", text: "It is step 1 of every pop-up", rationale: "Verify first (2.6)." },
       { id: "d", text: "It degausses SSDs automatically", rationale: "No." },
@@ -1732,7 +1732,7 @@ export const C2_D2_QUESTIONS: Question[] = [
       { id: "e", text: "RAID 6", rationale: "Storage." },
     ],
     correct: ["a", "b"],
-    explanation: "V15 2.4 also names cryptominer. Do not study only the old virus/worm/Trojan trio.",
+    explanation: "Fileless and stalkerware are new names on V15 2.4. Cryptominers were already on 220-1102, and worm no longer appears in the V15 2.4 malware list, so study the current list rather than an older virus/worm/Trojan trio.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O4-L1",
   }),
@@ -1743,7 +1743,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Which description matches endpoint detection and response (EDR)?",
     choices: [
-      { id: "a", text: "Records process trees and behavior on the endpoint and supports hunt/isolate, not just signature matching", rationale: "Correct." },
+      { id: "a", text: "Records process trees and behavior on the endpoint and supports hunt/isolate, not just signature matching", rationale: "Correct. EDR is the endpoint sensor plus response. MDR is who watches. XDR is broader correlation." },
       { id: "b", text: "A vendor SOC retainer with no agent anywhere", rationale: "That is closer to a service (MDR) and still needs telemetry." },
       { id: "c", text: "Correlation across email, identity, cloud, and endpoints as the defining scope", rationale: "That is XDR's broader pitch." },
       { id: "d", text: "A vestibule", rationale: "Physical." },
@@ -1760,7 +1760,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A small company has EDR agents but no 24/7 analysts. They pay a vendor to watch the telemetry and help contain incidents. That service is:",
     choices: [
-      { id: "a", text: "MDR (managed detection and response)", rationale: "Correct." },
+      { id: "a", text: "MDR (managed detection and response)", rationale: "Correct. MDR is the managed service. The on-disk product may still be EDR." },
       { id: "b", text: "TKIP", rationale: "Wi-Fi." },
       { id: "c", text: "A certificate of destruction", rationale: "2.9." },
       { id: "d", text: "Folder redirection", rationale: "AD." },
@@ -1777,7 +1777,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "An email security gateway is designed to:",
     choices: [
-      { id: "a", text: "Filter mail-borne malware, spoofing, and many phishing URLs before the inbox", rationale: "Correct." },
+      { id: "a", text: "Filter mail-borne malware, spoofing, and many phishing URLs before the inbox", rationale: "Correct. 2.4 tools: recovery console, EDR, MDR, XDR, AV/AM, email gateway, software firewalls, user education, OS reinstall." },
       { id: "b", text: "Replace BitLocker", rationale: "No." },
       { id: "c", text: "Authenticate 802.1X", rationale: "RADIUS." },
       { id: "d", text: "Shred platters", rationale: "2.9." },
@@ -1794,7 +1794,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "EDR flags a process the user wants allowed 'so Word works.' BEST action?",
     choices: [
-      { id: "a", text: "Do not blindly allow; isolate per runbook and investigate — users do not override malware verdicts", rationale: "Correct." },
+      { id: "a", text: "Do not blindly allow; isolate per runbook and investigate — users do not override malware verdicts", rationale: "Correct. Response is isolate and follow the process, not click Allow for convenience." },
       { id: "b", text: "Whitelist globally because productivity always wins", rationale: "That is how persistent malware stays." },
       { id: "c", text: "Disable the host firewall instead", rationale: "Wrong control." },
       { id: "d", text: "Enable AutoRun so the file can 'repair itself'", rationale: "Harmful." },
@@ -1828,7 +1828,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Antiphishing training is listed under 2.4 because:",
     choices: [
-      { id: "a", text: "User education is a prevention method alongside technical tools", rationale: "Correct." },
+      { id: "a", text: "User education is a prevention method alongside technical tools", rationale: "Correct. Posters without tools fail; tools without education still lose to a Trojan." },
       { id: "b", text: "Training degausses laptops", rationale: "No." },
       { id: "c", text: "Training replaces patching", rationale: "No." },
       { id: "d", text: "Training is only a Core 1 domain", rationale: "It is on Core 2 2.4." },
@@ -1845,7 +1845,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Antivirus definitions are a year old. What is true?",
     choices: [
-      { id: "a", text: "Signature AV will miss recent samples; update intelligence and consider EDR for behavior", rationale: "Correct." },
+      { id: "a", text: "Signature AV will miss recent samples; update intelligence and consider EDR for behavior", rationale: "Correct. 2.2 already said update Defender definitions. 2.4/2.6 repeat update AM before you trust a scan." },
       { id: "b", text: "Old definitions are better because they are 'stable'", rationale: "False." },
       { id: "c", text: "Definitions only matter for printers", rationale: "False." },
       { id: "d", text: "This is how WPA3 works", rationale: "False." },
@@ -1879,7 +1879,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "EDR vs MDR vs XDR — which mapping is correct?",
     choices: [
-      { id: "a", text: "EDR = endpoint telemetry/response; MDR = managed service watching telemetry; XDR = cross-domain correlation", rationale: "Correct." },
+      { id: "a", text: "EDR = endpoint telemetry/response; MDR = managed service watching telemetry; XDR = cross-domain correlation", rationale: "Correct. Do not mix the acronyms on the exam." },
       { id: "b", text: "They are three names for BitLocker", rationale: "False." },
       { id: "c", text: "XDR is only for printers; EDR is only for switches", rationale: "False." },
       { id: "d", text: "MDR replaces the need to isolate a host", rationale: "MDR still isolates; it just has humans on the console." },
@@ -1947,7 +1947,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MDR without any endpoint or log source is:",
     choices: [
-      { id: "a", text: "A retainer with nothing to watch — you still need agents or logs (often EDR)", rationale: "Correct." },
+      { id: "a", text: "A retainer with nothing to watch — you still need agents or logs (often EDR)", rationale: "Correct. Service versus sensor. Both matter." },
       { id: "b", text: "Sufficient to stop USB Trojans by telepathy", rationale: "No." },
       { id: "c", text: "A replacement for physical locks", rationale: "No." },
       { id: "d", text: "The 10-step process by itself", rationale: "2.6 is a procedure, not MDR." },
@@ -1965,8 +1965,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO true statements.",
     choices: [
-      { id: "a", text: "EDR is especially relevant to fileless malware because it watches behavior", rationale: "Correct." },
-      { id: "b", text: "XDR aims to correlate more than just the endpoint", rationale: "Correct." },
+      { id: "a", text: "EDR is especially relevant to fileless malware because it watches behavior", rationale: "Correct. Behavior on the host (EDR) plus broader correlation (XDR)." },
+      { id: "b", text: "XDR aims to correlate more than just the endpoint", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "MDR means 'malware disk recovery' on V15", rationale: "False expansion." },
       { id: "d", text: "Antivirus makes backups unnecessary", rationale: "False." },
       { id: "e", text: "Rootkits should be trusted if Task Manager is empty", rationale: "Opposite." },
@@ -2000,7 +2000,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Adware's primary tell is:",
     choices: [
-      { id: "a", text: "Intrusive ads, browser hijacks, and bundled junk rather than file encryption", rationale: "Correct." },
+      { id: "a", text: "Intrusive ads, browser hijacks, and bundled junk rather than file encryption", rationale: "Correct. Match the tell to the name." },
       { id: "b", text: "A ransom note on every NTFS folder", rationale: "Ransomware." },
       { id: "c", text: "Covert spouse tracking", rationale: "Stalkerware." },
       { id: "d", text: "100% GPU with no browser open", rationale: "Miner, unless the ad SDK is mining — still name miner if that is the tell." },
@@ -2017,7 +2017,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "The same PUP returns after uninstall. FIRST things to check?",
     choices: [
-      { id: "a", text: "Reinstall source (bundled installer), browser reset, Task Scheduler persistence, leftover profiles", rationale: "Correct." },
+      { id: "a", text: "Reinstall source (bundled installer), browser reset, Task Scheduler persistence, leftover profiles", rationale: "Correct. PUPs persist via scheduled tasks, browser policies, and the user re-running the pack." },
       { id: "b", text: "Whether bollards are installed", rationale: "Physical." },
       { id: "c", text: "Whether the SSID is hidden", rationale: "Not the cause." },
       { id: "d", text: "Whether RAID 0 is a backup", rationale: "It is not, and it is the wrong domain." },
@@ -2034,7 +2034,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "On a company PC, a PUP that the user 'agreed to' should be:",
     choices: [
-      { id: "a", text: "Treated as unwanted/malware for the business baseline and removed", rationale: "Correct." },
+      { id: "a", text: "Treated as unwanted/malware for the business baseline and removed", rationale: "Correct. Gray-zone software is still a finding on a managed workstation." },
       { id: "b", text: "Left in place because EULAs always override policy", rationale: "Policy still forbids junk." },
       { id: "c", text: "Promoted to Domain Admin", rationale: "No." },
       { id: "d", text: "Used as the email gateway", rationale: "No." },
@@ -2051,7 +2051,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A keylogger is BEST classified as:",
     choices: [
-      { id: "a", text: "Spyware that records keystrokes (and often clipboard/screen) to steal secrets", rationale: "Correct." },
+      { id: "a", text: "Spyware that records keystrokes (and often clipboard/screen) to steal secrets", rationale: "Correct. Keylogger is its own named 2.4 type next to spyware." },
       { id: "b", text: "A type of WPA3", rationale: "No." },
       { id: "c", text: "A password manager", rationale: "Opposite intent." },
       { id: "d", text: "A physical bollard", rationale: "No." },
@@ -2068,7 +2068,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Which user-education point BEST prevents Trojans and PUPs?",
     choices: [
-      { id: "a", text: "Do not run unexpected installers, cracks, or 'codecs'; use trusted sources and hashes", rationale: "Correct." },
+      { id: "a", text: "Do not run unexpected installers, cracks, or 'codecs'; use trusted sources and hashes", rationale: "Correct. Education plus trusted sources (2.11 hashing) plus AM." },
       { id: "b", text: "Always click Enable macros from unknown invoices", rationale: "That is how fileless/Trojans start." },
       { id: "c", text: "Disable Defender to speed downloads", rationale: "Harmful." },
       { id: "d", text: "Share the local admin password with vendors by SMS", rationale: "Harmful." },
@@ -2121,7 +2121,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A caller pretending to be IT asks the user to read an authenticator code. That is:",
     choices: [
-      { id: "a", text: "Vishing (and MFA-bypass social engineering)", rationale: "Correct." },
+      { id: "a", text: "Vishing (and MFA-bypass social engineering)", rationale: "Correct. Vishing is voice phishing. Never read OTP codes to a caller." },
       { id: "b", text: "On-path via ARP only", rationale: "Not what a phone call is." },
       { id: "c", text: "A zero-day in the desk phone hardware by definition", rationale: "Overfit." },
       { id: "d", text: "A PUP toolbar", rationale: "Wrong class." },
@@ -2172,7 +2172,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A CEO-targeted email demands an urgent, secret wire. It may still be called:",
     choices: [
-      { id: "a", text: "Whaling (and possibly BEC if it impersonates an executive/vendor for money)", rationale: "Correct." },
+      { id: "a", text: "Whaling (and possibly BEC if it impersonates an executive/vendor for money)", rationale: "Correct. Whaling is executive spear phishing. BEC is the payment-fraud pattern that often uses that mail." },
       { id: "b", text: "A cryptominer", rationale: "Wrong tell." },
       { id: "c", text: "WPA2-PSK", rationale: "Wi-Fi." },
       { id: "d", text: "EFS", rationale: "NTFS encryption." },
@@ -2189,7 +2189,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user hovered a link that displays paypal.com but the status bar shows paypa1-secure.example. BEST action?",
     choices: [
-      { id: "a", text: "Do not click; report as phishing using the real domain, not the display text", rationale: "Correct." },
+      { id: "a", text: "Do not click; report as phishing using the real domain, not the display text", rationale: "Correct. Display name and link text lie. The actual domain matters." },
       { id: "b", text: "Click to 'check if the site is real'", rationale: "That is how you get owned." },
       { id: "c", text: "Disable Defender so the site loads faster", rationale: "Harmful." },
       { id: "d", text: "Forward it to all-staff 'as a test'", rationale: "Spreads the lure." },
@@ -2206,7 +2206,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Watching someone enter a PIN at a kiosk is:",
     choices: [
-      { id: "a", text: "Shoulder surfing", rationale: "Correct." },
+      { id: "a", text: "Shoulder surfing", rationale: "Correct. Physical observation of secrets. Privacy screens and awareness help." },
       { id: "b", text: "SQL injection", rationale: "Web/database." },
       { id: "c", text: "XSS", rationale: "Browser script injection." },
       { id: "d", text: "A zero-day", rationale: "Unknown vuln exploit." },
@@ -2223,7 +2223,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A person carries boxes and asks you to hold the badge door. That social-engineering play is:",
     choices: [
-      { id: "a", text: "Tailgating / impersonation of a delivery person", rationale: "Correct." },
+      { id: "a", text: "Tailgating / impersonation of a delivery person", rationale: "Correct. Tailgating is the door follow. Vestibules and guards are 2.1 counters." },
       { id: "b", text: "On-path TLS interception by definition", rationale: "Wrong layer." },
       { id: "c", text: "A dictionary attack", rationale: "Passwords." },
       { id: "d", text: "Secure DNS", rationale: "Control." },
@@ -2240,7 +2240,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "An attacker pulls printed password lists and old backup tapes from an unlocked bin. That is:",
     choices: [
-      { id: "a", text: "Dumpster diving", rationale: "Correct." },
+      { id: "a", text: "Dumpster diving", rationale: "Correct. Lock dumpsters, shred paper, destroy media (2.9)." },
       { id: "b", text: "XSS", rationale: "Web." },
       { id: "c", text: "WPA3-SAE", rationale: "Wi-Fi." },
       { id: "d", text: "Hello PIN", rationale: "Windows logon." },
@@ -2274,7 +2274,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "The BEST control when a vendor requests new bank details by email is:",
     choices: [
-      { id: "a", text: "Verify out-of-band using a known phone number or portal — not the number in the requesting mail", rationale: "Correct." },
+      { id: "a", text: "Verify out-of-band using a known phone number or portal — not the number in the requesting mail", rationale: "Correct. BEC dies when payment-change requests must be verified on a second channel." },
       { id: "b", text: "Wire immediately because urgency is a business value", rationale: "Urgency is the tell." },
       { id: "c", text: "Disable MFA on the mailbox so the vendor can 'help'", rationale: "Harmful." },
       { id: "d", text: "Post the routing number on the guest SSID splash page", rationale: "Harmful." },
@@ -2291,7 +2291,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A compromised mailbox silently forwards Finance mail to an external address. That persistence is typical of:",
     choices: [
-      { id: "a", text: "BEC / mailbox-rule abuse after credential theft", rationale: "Correct." },
+      { id: "a", text: "BEC / mailbox-rule abuse after credential theft", rationale: "Correct. Hunt forwarding rules and MFA enrollment. XDR/EDR+email tools help; the attack name is still BEC-related compromise." },
       { id: "b", text: "A bollard failure", rationale: "Physical." },
       { id: "c", text: "TKIP", rationale: "Wi-Fi." },
       { id: "d", text: "Low-level format", rationale: "2.9." },
@@ -2308,7 +2308,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Why is BEC not 'just ransomware'?",
     choices: [
-      { id: "a", text: "BEC is fraud via impersonated or hijacked email to steal money/data; ransomware encrypts files for a payment to decrypt", rationale: "Correct." },
+      { id: "a", text: "BEC is fraud via impersonated or hijacked email to steal money/data; ransomware encrypts files for a payment to decrypt", rationale: "Correct. Different objectives in the same domain: 2.4 ransomware vs 2.5 BEC." },
       { id: "b", text: "They are defined as identical on V15", rationale: "They are separate named items." },
       { id: "c", text: "BEC only works on Linux", rationale: "False." },
       { id: "d", text: "Ransomware is only vishing", rationale: "False." },
@@ -2342,7 +2342,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MFA on mail plus alerting on new inbox rules BEST reduces:",
     choices: [
-      { id: "a", text: "BEC that starts with a stolen mailbox password", rationale: "Correct." },
+      { id: "a", text: "BEC that starts with a stolen mailbox password", rationale: "Correct. Credential theft plus mailbox persistence is a BEC path. MFA and rule audits help." },
       { id: "b", text: "Vehicle ramming", rationale: "Bollards." },
       { id: "c", text: "Need for any backups", rationale: "Still need backups." },
       { id: "d", text: "The need to patch", rationale: "Still patch." },
@@ -2360,8 +2360,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO phishing-family items named on V15 2.5.",
     choices: [
-      { id: "a", text: "QR code phishing", rationale: "Correct." },
-      { id: "b", text: "Whaling", rationale: "Correct." },
+      { id: "a", text: "QR code phishing", rationale: "Correct. 2.5 social engineering: phishing including vishing, smishing, QR, spear, whale; plus shoulder surf, tailgate, impersonation, dumpster." },
+      { id: "b", text: "Whaling", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "RAID 10", rationale: "Storage." },
       { id: "d", text: "T568A", rationale: "Cabling." },
       { id: "e", text: "PoE budget", rationale: "Power over Ethernet, Core 1." },
@@ -2412,7 +2412,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "FIRST action when a technician recognizes an evil-twin SSID in the list?",
     choices: [
-      { id: "a", text: "Do not join it; forget unknown clones; use the known EAP-TLS/PSK network; treat entered secrets as compromised if anyone already joined", rationale: "Correct." },
+      { id: "a", text: "Do not join it; forget unknown clones; use the known EAP-TLS/PSK network; treat entered secrets as compromised if anyone already joined", rationale: "Correct. Isolation from the fake AP first. Then credential rotation if anyone authenticated." },
       { id: "b", text: "Join it to 'collect evidence' with the CEO's mailbox", rationale: "Do not." },
       { id: "c", text: "Disable BitLocker so roaming works", rationale: "No." },
       { id: "d", text: "Enable UPnP on the evil twin", rationale: "No." },
@@ -2429,7 +2429,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Why does enterprise 802.1X/EAP-TLS make evil twins harder?",
     choices: [
-      { id: "a", text: "Clients validate the network/server certificate and do not send a shared PSK to a look-alike portal", rationale: "Correct." },
+      { id: "a", text: "Clients validate the network/server certificate and do not send a shared PSK to a look-alike portal", rationale: "Correct. Certificate-based enterprise Wi-Fi beats a captive-portal clone of a PSK guest network." },
       { id: "b", text: "802.1X degausses rogue APs", rationale: "No." },
       { id: "c", text: "Evil twins cannot copy an SSID string if 802.1X exists anywhere on Earth", rationale: "They can still clone the name; clients should refuse the auth." },
       { id: "d", text: "It hides the SSID, which is sufficient", rationale: "Hiding is not the control." },
@@ -2446,7 +2446,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A coffee-shop laptop accepts a new Wi-Fi certificate warning and then a banking password is stolen. That chain is:",
     choices: [
-      { id: "a", text: "On-path interception, possibly via evil twin or rogue proxy, after the user ignored a cert warning", rationale: "Correct." },
+      { id: "a", text: "On-path interception, possibly via evil twin or rogue proxy, after the user ignored a cert warning", rationale: "Correct. Certificate warnings are how the browser tries to detect on-path. Clicking through is the fail." },
       { id: "b", text: "A successful vestibule design", rationale: "No." },
       { id: "c", text: "Secure DNS working as intended", rationale: "Secure DNS would not ask you to ignore a bad site cert." },
       { id: "d", text: "BitLocker To Go on the AP", rationale: "No." },
@@ -2463,7 +2463,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Spoofing, as used on 2.5, means:",
     choices: [
-      { id: "a", text: "Forging a source such as MAC, IP, email From, or caller ID", rationale: "Correct." },
+      { id: "a", text: "Forging a source such as MAC, IP, email From, or caller ID", rationale: "Correct. Spoofing forges identity. Evil twin spoofs an SSID. BEC spoofs a From line." },
       { id: "b", text: "Shredding an HDD", rationale: "2.9." },
       { id: "c", text: "Enabling MFA", rationale: "A control." },
       { id: "d", text: "Updating Defender", rationale: "A control." },
@@ -2480,7 +2480,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A volumetric attack from thousands of bots makes the company website unreachable. Name it.",
     choices: [
-      { id: "a", text: "DDoS (distributed denial of service)", rationale: "Correct." },
+      { id: "a", text: "DDoS (distributed denial of service)", rationale: "Correct. DoS is one source; DDoS is many. A SOHO router does not 'patch' the internet; isolate a local flood, call the ISP/cloud for volumetric." },
       { id: "b", text: "Shoulder surfing", rationale: "Watching a PIN." },
       { id: "c", text: "EFS", rationale: "File encryption." },
       { id: "d", text: "A Hello PIN", rationale: "Logon." },
@@ -2514,7 +2514,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Trying every password in a language dictionary against a login is a:",
     choices: [
-      { id: "a", text: "Dictionary attack (a subset of password guessing; brute force tries broader/exhaustively)", rationale: "Correct." },
+      { id: "a", text: "Dictionary attack (a subset of password guessing; brute force tries broader/exhaustively)", rationale: "Correct. Counters: long unique passwords, lockout, MFA." },
       { id: "b", text: "XSS", rationale: "Script in a web page." },
       { id: "c", text: "Whaling only", rationale: "Executive phishing." },
       { id: "d", text: "BitLocker To Go", rationale: "USB encryption." },
@@ -2531,7 +2531,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "An exploit is in the wild and the vendor has no patch yet. A+ name?",
     choices: [
-      { id: "a", text: "Zero-day", rationale: "Correct." },
+      { id: "a", text: "Zero-day", rationale: "Correct. Mitigate with least privilege, isolation, vendor guidance — not 'just update' if the update does not exist." },
       { id: "b", text: "EOL only, always", rationale: "EOL means the product will never get a patch; a zero-day can hit supported software." },
       { id: "c", text: "A guest SSID", rationale: "No." },
       { id: "d", text: "UAC", rationale: "A Windows control." },
@@ -2548,7 +2548,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A trusted software update channel was poisoned so thousands of customers installed malware. That class is:",
     choices: [
-      { id: "a", text: "Supply chain / pipeline attack", rationale: "Correct." },
+      { id: "a", text: "Supply chain / pipeline attack", rationale: "Correct. Hash/signature checks and staged updates are how A+ technicians reduce this risk." },
       { id: "b", text: "Shoulder surfing", rationale: "Watching a PIN." },
       { id: "c", text: "A vestibule", rationale: "Door." },
       { id: "d", text: "Private browsing", rationale: "2.11." },
@@ -2565,7 +2565,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "An employee with legitimate access copies the customer list to a USB for a competitor. That is:",
     choices: [
-      { id: "a", text: "An insider threat (DLP and least privilege are counters)", rationale: "Correct." },
+      { id: "a", text: "An insider threat (DLP and least privilege are counters)", rationale: "Correct. Insiders already have some trust. Offboarding, DLP, and logging matter." },
       { id: "b", text: "An evil twin by definition", rationale: "Wireless clone." },
       { id: "c", text: "A DDoS", rationale: "Availability." },
       { id: "d", text: "WPA3", rationale: "Wi-Fi." },
@@ -2582,7 +2582,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A shop-floor PC runs an OS that no longer receives security updates. V15 vulnerability name?",
     choices: [
-      { id: "a", text: "EOL (end-of-life) — isolate/compensate; it will not get a fix", rationale: "Correct." },
+      { id: "a", text: "EOL (end-of-life) — isolate/compensate; it will not get a fix", rationale: "Correct. EOL, unpatched, unprotected (missing AV/firewall), non-compliant, and BYOD are the vulnerability list." },
       { id: "b", text: "WPA3-Enterprise", rationale: "A control." },
       { id: "c", text: "Hello PIN", rationale: "Logon." },
       { id: "d", text: "A CoD", rationale: "Certificate of destruction." },
@@ -2599,7 +2599,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Malicious script is stored in a web app comment field and runs in another user's browser, stealing a session cookie. Name it.",
     choices: [
-      { id: "a", text: "Cross-site scripting (XSS)", rationale: "Correct." },
+      { id: "a", text: "Cross-site scripting (XSS)", rationale: "Correct. XSS injects script into a web app so another browser runs it. A+ is conceptual, not exploit-writing." },
       { id: "b", text: "SQL injection", rationale: "SQLi hits the database engine, not primarily the other user's browser." },
       { id: "c", text: "Degaussing", rationale: "2.9." },
       { id: "d", text: "Tailgating", rationale: "Doors." },
@@ -2616,7 +2616,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A login form concatenates user input into a database query and an attacker submits SQL that dumps tables. Name it.",
     choices: [
-      { id: "a", text: "SQL injection", rationale: "Correct." },
+      { id: "a", text: "SQL injection", rationale: "Correct. SQLi is a web/database input handling failure. Patch the app; least privilege on the DB account." },
       { id: "b", text: "XSS", rationale: "Browser script, not the database command." },
       { id: "c", text: "Smishing", rationale: "SMS." },
       { id: "d", text: "BitLocker", rationale: "Volume encryption." },
@@ -2633,7 +2633,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "XSS vs SQLi — which contrast is accurate?",
     choices: [
-      { id: "a", text: "XSS hits other users' browsers; SQLi hits the database", rationale: "Correct." },
+      { id: "a", text: "XSS hits other users' browsers; SQLi hits the database", rationale: "Correct. Keep the two web-app attacks distinct. A+ will not ask you to write the payload." },
       { id: "b", text: "They are two names for WPA2", rationale: "False." },
       { id: "c", text: "SQLi is only physical", rationale: "False." },
       { id: "d", text: "XSS is a type of bollard", rationale: "False." },
@@ -2650,7 +2650,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A personal phone with corporate mail, no MDM, unknown patch level. Vulnerability name?",
     choices: [
-      { id: "a", text: "BYOD risk", rationale: "Correct." },
+      { id: "a", text: "BYOD risk", rationale: "Correct. BYOD without a profile mixes personal malware with corp data. MDM or deny the data." },
       { id: "b", text: "A screened subnet", rationale: "Network zoning." },
       { id: "c", text: "Kerberos", rationale: "Tickets." },
       { id: "d", text: "A CoD", rationale: "Destruction paper." },
@@ -2667,7 +2667,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A PC has no antivirus and the host firewall is off. V15 calls this:",
     choices: [
-      { id: "a", text: "An unprotected system (missing antivirus / missing firewall)", rationale: "Correct." },
+      { id: "a", text: "An unprotected system (missing antivirus / missing firewall)", rationale: "Correct. Unprotected, unpatched, non-compliant, EOL, BYOD — name the hole in the stem." },
       { id: "b", text: "Zero Trust", rationale: "A model, not this finding." },
       { id: "c", text: "WPA3", rationale: "Wi-Fi." },
       { id: "d", text: "Hello", rationale: "Logon." },
@@ -2685,8 +2685,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO items from the 2.5 vulnerability list (not the attack names).",
     choices: [
-      { id: "a", text: "Unpatched systems", rationale: "Correct." },
-      { id: "b", text: "EOL software", rationale: "Correct." },
+      { id: "a", text: "Unpatched systems", rationale: "Correct. Vulnerabilities: non-compliant, unpatched, unprotected, EOL, BYOD. Attacks are a separate bullet list." },
+      { id: "b", text: "EOL software", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Evil twin", rationale: "A threat/attack, not the vulnerability bullet." },
       { id: "d", text: "XSS", rationale: "A threat/attack." },
       { id: "e", text: "BEC", rationale: "A threat." },
@@ -2739,7 +2739,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Quarantine in the 10-step process primarily means:",
     choices: [
-      { id: "a", text: "Isolate the system from the network (and shared storage) to stop spread and C2", rationale: "Correct." },
+      { id: "a", text: "Isolate the system from the network (and shared storage) to stop spread and C2", rationale: "Correct. Unplug / isolate. EDR isolation maps to this step in enterprise." },
       { id: "b", text: "Only clicking Defender's quarantine folder and staying online", rationale: "Folder quarantine is a tool action, not the whole step." },
       { id: "c", text: "Mailing the PC to the attacker", rationale: "No." },
       { id: "d", text: "Enabling UPnP", rationale: "Opposite of isolation." },
@@ -2756,7 +2756,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Why is quarantine before remediation?",
     choices: [
-      { id: "a", text: "A still-connected host can infect peers or keep talking to C2 while you 'clean'", rationale: "Correct." },
+      { id: "a", text: "A still-connected host can infect peers or keep talking to C2 while you 'clean'", rationale: "Correct. Lateral movement is why step 2 is early." },
       { id: "b", text: "CompTIA wants extra steps for padding", rationale: "The order has a reason." },
       { id: "c", text: "Isolation encrypts the disk with EFS", rationale: "No." },
       { id: "d", text: "Quarantine replaces backups", rationale: "No." },
@@ -2773,7 +2773,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "On a phone, quarantine may look like:",
     choices: [
-      { id: "a", text: "Airplane mode / remove from corp Wi-Fi and cellular data per policy", rationale: "Correct." },
+      { id: "a", text: "Airplane mode / remove from corp Wi-Fi and cellular data per policy", rationale: "Correct. 2.6 covers SOHO workstation or mobile device. Isolation still comes early." },
       { id: "b", text: "Enabling AutoRun", rationale: "PCs, and the opposite of hardening." },
       { id: "c", text: "Joining an evil twin to 'compare'", rationale: "No." },
       { id: "d", text: "Posting the IMEI in a public Discord", rationale: "No." },
@@ -2841,7 +2841,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Step 4, 'remediate infected systems,' is BEST described as:",
     choices: [
-      { id: "a", text: "The work of removing the threat with a plan and tools — distinct from later update/scan/reimage/schedule steps", rationale: "Correct." },
+      { id: "a", text: "The work of removing the threat with a plan and tools — distinct from later update/scan/reimage/schedule steps", rationale: "Correct. V15 split remediation, update AM, scan, and reimage into separate numbered steps." },
       { id: "b", text: "Only educating the user", rationale: "Step 10." },
       { id: "c", text: "Only enabling System Restore", rationale: "Step 9." },
       { id: "d", text: "Buying XDR and leaving", rationale: "Not the SOHO numbered step." },
@@ -2858,7 +2858,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "In the V15 SOHO malware-removal process, step 8 is:",
     choices: [
-      { id: "a", text: "Schedule scans and run updates", rationale: "Correct." },
+      { id: "a", text: "Schedule scans and run updates", rationale: "Correct. After the machine is clean (or rebuilt), make scans and updates persistent." },
       { id: "b", text: "Investigate and verify", rationale: "Step 1." },
       { id: "c", text: "Disable System Restore", rationale: "Step 3." },
       { id: "d", text: "Educate the user", rationale: "Step 10." },
@@ -2875,7 +2875,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Updating anti-malware software is which numbered step?",
     choices: [
-      { id: "a", text: "5", rationale: "Correct." },
+      { id: "a", text: "5", rationale: "Correct. 5 update AM, 6 scan/removal techniques. Do not scan with last month's signatures as your plan." },
       { id: "b", text: "1", rationale: "Verify." },
       { id: "c", text: "9", rationale: "Enable System Restore + point." },
       { id: "d", text: "10", rationale: "Educate." },
@@ -2928,7 +2928,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A technician's FIRST action on a verified-infected Windows Home PC is to create a restore point 'for safety.' Why is that wrong?",
     choices: [
-      { id: "a", text: "That snapshots the infection; V15 disables System Restore before remediation and only creates a point after the PC is clean", rationale: "Correct." },
+      { id: "a", text: "That snapshots the infection; V15 disables System Restore before remediation and only creates a point after the PC is clean", rationale: "Correct. This is the most common process miss from people who memorized 'backups first' without the malware order." },
       { id: "b", text: "Restore points are illegal", rationale: "They are not." },
       { id: "c", text: "Home edition cannot get malware", rationale: "False." },
       { id: "d", text: "Step 1 is reimage only", rationale: "Step 1 is verify." },
@@ -2945,7 +2945,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "In the V15 SOHO malware-removal process, step 9 says:",
     choices: [
-      { id: "a", text: "Enable System Restore and create a restore point in Windows Home", rationale: "Correct." },
+      { id: "a", text: "Enable System Restore and create a restore point in Windows Home", rationale: "Correct. Same feature, opposite direction, because the machine is now trusted." },
       { id: "b", text: "Disable System Restore in Windows Home", rationale: "Step 3." },
       { id: "c", text: "Quarantine", rationale: "Step 2." },
       { id: "d", text: "Investigate", rationale: "Step 1." },
@@ -2962,7 +2962,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "System Restore is not a backup because:",
     choices: [
-      { id: "a", text: "It snapshots system files/settings, not a full user-data backup strategy, and can contain malware", rationale: "Correct." },
+      { id: "a", text: "It snapshots system files/settings, not a full user-data backup strategy, and can contain malware", rationale: "Correct. Do not tell a SOHO customer that a restore point is their 3-2-1 backup." },
       { id: "b", text: "It always degausses the disk", rationale: "False." },
       { id: "c", text: "It is RAID 1", rationale: "False." },
       { id: "d", text: "It is BitLocker To Go", rationale: "False." },
@@ -2979,7 +2979,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "V15 explicitly mentions Windows Home in steps 3 and 9 because:",
     choices: [
-      { id: "a", text: "Home's consumer recovery story is System Restore; that is the wording you must not drop", rationale: "Correct." },
+      { id: "a", text: "Home's consumer recovery story is System Restore; that is the wording you must not drop", rationale: "Correct. Enterprise shops have images and EDR; the exam procedure still uses the Home wording." },
       { id: "b", text: "Pro cannot get malware", rationale: "False." },
       { id: "c", text: "Home cannot run Defender", rationale: "False." },
       { id: "d", text: "Home requires TKIP", rationale: "False." },
@@ -3013,7 +3013,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user wants to 'roll back to last Tuesday' during an active infection. BEST response?",
     choices: [
-      { id: "a", text: "Do not — that point may be dirty; follow disable-restore, remediate/reimage, then a new point", rationale: "Correct." },
+      { id: "a", text: "Do not — that point may be dirty; follow disable-restore, remediate/reimage, then a new point", rationale: "Correct. This is why step 3 exists." },
       { id: "b", text: "Roll back immediately; restore points are guaranteed clean", rationale: "They are not." },
       { id: "c", text: "Roll back and also map every drive first", rationale: "Spreads more." },
       { id: "d", text: "Enable Guest so the rollback works", rationale: "No." },
@@ -3030,7 +3030,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Educate the user (step 10) should include:",
     choices: [
-      { id: "a", text: "The specific lure they clicked, how to report, and not replaying the USB/installer — not a vague 'be careful'", rationale: "Correct." },
+      { id: "a", text: "The specific lure they clicked, how to report, and not replaying the USB/installer — not a vague 'be careful'", rationale: "Correct. Step 10 is specific and last." },
       { id: "b", text: "Instructions to disable Defender permanently", rationale: "Harmful." },
       { id: "c", text: "The WEP key for the evil twin", rationale: "Harmful." },
       { id: "d", text: "How to pay ransomware faster", rationale: "Harmful." },
@@ -3047,7 +3047,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Credential rotation after a keylogger should happen:",
     choices: [
-      { id: "a", text: "From a known-clean device after isolation — not from the still-infected PC", rationale: "Correct." },
+      { id: "a", text: "From a known-clean device after isolation — not from the still-infected PC", rationale: "Correct. Remediation includes identity, not only files." },
       { id: "b", text: "On the infected PC first so the keylogger 'sees the new password'", rationale: "That is how you donate the new password." },
       { id: "c", text: "Never, because education is enough", rationale: "Secrets were stolen." },
       { id: "d", text: "By texting all passwords to the original attacker", rationale: "No." },
@@ -3064,7 +3064,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Safe mode helps in step 6 because:",
     choices: [
-      { id: "a", text: "It loads a minimal set of drivers/startup items so some malware does not load", rationale: "Correct." },
+      { id: "a", text: "It loads a minimal set of drivers/startup items so some malware does not load", rationale: "Correct. PE/WinRE goes further when the kernel itself is untrusted." },
       { id: "b", text: "It enables UPnP", rationale: "No." },
       { id: "c", text: "It is WPA3", rationale: "No." },
       { id: "d", text: "It prints a CoD", rationale: "No." },
@@ -3079,12 +3079,12 @@ export const C2_D2_QUESTIONS: Question[] = [
     objectiveId: "C2-D2-O6",
     conceptIds: ["C2-D2-O6-SYSRESTORE"],
     difficulty: "core",
-    stem: "Which pair is in the WRONG order for V15?",
+    stem: "Which sequence is in the WRONG order for the V15 SOHO malware-removal process?",
     choices: [
-      { id: "a", text: "Enable System Restore, then quarantine, then verify", rationale: "Correct choice — this pair is backwards and skips the start." },
-      { id: "b", text: "Verify, then quarantine", rationale: "Correct official start." },
-      { id: "c", text: "Disable System Restore, then remediate", rationale: "Correct 3 then 4." },
-      { id: "d", text: "Update AM, then scan", rationale: "Correct 5 then 6." },
+      { id: "a", text: "Enable System Restore, then quarantine, then verify", rationale: "Correct. This sequence runs backwards: verify is step 1, quarantine is step 2, and enabling System Restore is step 9." },
+      { id: "b", text: "Verify, then quarantine", rationale: "This order is right: investigate and verify is step 1 and quarantine is step 2." },
+      { id: "c", text: "Disable System Restore, then remediate", rationale: "This order is right: disable System Restore is step 3 and remediate is step 4." },
+      { id: "d", text: "Update AM, then scan", rationale: "This order is right: update anti-malware is step 5 and scan/removal is step 6." },
     ],
     correct: "a",
     explanation: "The wrong sequence is the answer. Official: verify → quarantine → disable restore → remediate → update AM → scan → reimage → schedule → enable restore → educate.",
@@ -3132,7 +3132,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A rootkit makes the live OS an unreliable witness. BEST step-7 decision?",
     choices: [
-      { id: "a", text: "Reimage/reinstall from known-good media rather than declare victory after one Defender pass", rationale: "Correct." },
+      { id: "a", text: "Reimage/reinstall from known-good media rather than declare victory after one Defender pass", rationale: "Correct. Rootkits, ransomware without a decryptor, and repeat infections are reimage territory." },
       { id: "b", text: "Keep the OS and disable the firewall only", rationale: "Insufficient." },
       { id: "c", text: "Hide the SSID", rationale: "Unrelated." },
       { id: "d", text: "Enable Guest", rationale: "Worse." },
@@ -3149,7 +3149,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "When restoring user data after a reimage, you should:",
     choices: [
-      { id: "a", text: "Use backups from before the incident or scan data on a separate clean system — do not blindly copy Desktop\\malware.exe back", rationale: "Correct." },
+      { id: "a", text: "Use backups from before the incident or scan data on a separate clean system — do not blindly copy Desktop\\malware.exe back", rationale: "Correct. A ghost of the infected disk is not a known-good image." },
       { id: "b", text: "Robocopy the entire infected volume onto the new image as the first step", rationale: "Reinfects." },
       { id: "c", text: "Skip backups forever", rationale: "No." },
       { id: "d", text: "Restore from the ransomware note folder", rationale: "No." },
@@ -3166,7 +3166,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A simple PUP is fully removed, scans are clean with updated AM in Safe Mode, and persistence is gone. Must you always reimage?",
     choices: [
-      { id: "a", text: "No — step 7 is when you cannot prove cleanliness; a fully removed PUP may not need it", rationale: "Correct." },
+      { id: "a", text: "No — step 7 is when you cannot prove cleanliness; a fully removed PUP may not need it", rationale: "Correct. Know when 7 is mandatory: rootkit, ransomware, unknown persistence, untrusted OS." },
       { id: "b", text: "Yes — step 7 is mandatory even for a toolbar", rationale: "The step exists as a decision, not a ritual format of every PC." },
       { id: "c", text: "Yes, and also degauss the SSD every time", rationale: "Overkill and wrong media advice." },
       { id: "d", text: "No, and you should skip education", rationale: "Education is still step 10." },
@@ -3183,7 +3183,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "The same Trojan returns two days after 'removal' because the user re-ran the crack. BEST process answer?",
     choices: [
-      { id: "a", text: "Treat as repeat infection: isolate, consider reimage, and educate about the installer — persistence may also remain", rationale: "Correct." },
+      { id: "a", text: "Treat as repeat infection: isolate, consider reimage, and educate about the installer — persistence may also remain", rationale: "Correct. Repeat infection is a step-7 plus step-10 problem." },
       { id: "b", text: "Ignore it because PUPs are legal", rationale: "No." },
       { id: "c", text: "Disable Defender so it cannot come back", rationale: "Harmful." },
       { id: "d", text: "Put the PC in DMZ host mode", rationale: "Exposes it." },
@@ -3217,7 +3217,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A SOHO customer says 'just delete the virus' on a PC with a bootkit. How do you justify step 7?",
     choices: [
-      { id: "a", text: "The running OS cannot be trusted as a witness; a known-good image is the honest fix", rationale: "Correct." },
+      { id: "a", text: "The running OS cannot be trusted as a witness; a known-good image is the honest fix", rationale: "Correct. That is the technician conversation for 2.6 step 7." },
       { id: "b", text: "Reimage is never allowed on Home", rationale: "False." },
       { id: "c", text: "Bootkits are fixed by hiding SSID", rationale: "False." },
       { id: "d", text: "Bootkits require TKIP", rationale: "False." },
@@ -3234,7 +3234,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "After reimage, you still perform steps 8–10 because:",
     choices: [
-      { id: "a", text: "A new image still needs scheduled scans/updates, a fresh restore point, and user education", rationale: "Correct." },
+      { id: "a", text: "A new image still needs scheduled scans/updates, a fresh restore point, and user education", rationale: "Correct. Reimage is not a skip-the-rest card." },
       { id: "b", text: "The process ends at 7 by definition", rationale: "False." },
       { id: "c", text: "Education is illegal after a reimage", rationale: "False." },
       { id: "d", text: "System Restore must stay off forever", rationale: "You re-enable when clean." },
@@ -3268,7 +3268,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Scanning with stale signatures as your only cleanup is theatre because:",
     choices: [
-      { id: "a", text: "Step 5 (update AM) exists so step 6 is not a scan with last month's intelligence", rationale: "Correct." },
+      { id: "a", text: "Step 5 (update AM) exists so step 6 is not a scan with last month's intelligence", rationale: "Correct. Order: remediate plan, update tools, then scan." },
       { id: "b", text: "Signatures never matter", rationale: "They do, especially without EDR." },
       { id: "c", text: "Step 5 is educate", rationale: "No." },
       { id: "d", text: "AM updates replace isolation", rationale: "No." },
@@ -3286,8 +3286,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO situations that justify reimage/reinstall (step 7).",
     choices: [
-      { id: "a", text: "Ransomware with no trusted decryptor", rationale: "Correct." },
-      { id: "b", text: "Rootkit / bootkit / OS you cannot trust", rationale: "Correct." },
+      { id: "a", text: "Ransomware with no trusted decryptor", rationale: "Correct. Untrusted OS and irreversible encryption are the textbook step-7 cases." },
+      { id: "b", text: "Rootkit / bootkit / OS you cannot trust", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "A single user-approved dictionary in Word", rationale: "Not malware." },
       { id: "d", text: "A printer needing toner", rationale: "Hardware." },
       { id: "e", text: "A guest needing Wi-Fi isolation", rationale: "2.10." },
@@ -3374,7 +3374,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A contractor account should not live forever. Which 2.7 account setting fits?",
     choices: [
-      { id: "a", text: "Apply an account expiration date", rationale: "Correct." },
+      { id: "a", text: "Apply an account expiration date", rationale: "Correct. Account management: restrict permissions, logon hours, disable guest, lockout, timeout, expiration." },
       { id: "b", text: "Make them Domain Admin 'just in case'", rationale: "Opposite of restrict permissions." },
       { id: "c", text: "Enable Guest instead", rationale: "Disable Guest." },
       { id: "d", text: "Turn off patching for contractors", rationale: "Still patch." },
@@ -3402,40 +3402,6 @@ export const C2_D2_QUESTIONS: Question[] = [
     remediationLessonId: "C2-D2-O7-L1",
   }),
   q({
-    id: "C2-D2-O7-HARDEN-Q006",
-    objectiveId: "C2-D2-O7",
-    conceptIds: ["C2-D2-O7-HARDEN"],
-    difficulty: "core",
-    stem: "Patch management on 2.7 includes:",
-    choices: [
-      { id: "a", text: "OS updates and application updates", rationale: "Correct." },
-      { id: "b", text: "Only BIOS fonts", rationale: "Incomplete." },
-      { id: "c", text: "Only printer paper", rationale: "No." },
-      { id: "d", text: "Disabling Windows Update to 'freeze' malware", rationale: "Opposite." },
-    ],
-    correct: "a",
-    explanation: "Unpatched apps (browser, Office, PDF) are as dangerous as an unpatched OS.",
-    sourceBasis: "c2-obj-3.0",
-    remediationLessonId: "C2-D2-O7-L1",
-  }),
-  q({
-    id: "C2-D2-O7-HARDEN-Q007",
-    objectiveId: "C2-D2-O7",
-    conceptIds: ["C2-D2-O7-HARDEN"],
-    difficulty: "core",
-    stem: "Endpoint security software on 2.7 includes antivirus, anti-malware, and:",
-    choices: [
-      { id: "a", text: "Content filtering", rationale: "Correct. Named third." },
-      { id: "b", text: "TKIP", rationale: "Wi-Fi." },
-      { id: "c", text: "A vestibule", rationale: "Physical." },
-      { id: "d", text: "Degaussing", rationale: "2.9." },
-    ],
-    correct: "a",
-    explanation: "Content filtering may live on the box or the SOHO DNS/router, but it is on the workstation-hardening list.",
-    sourceBasis: "c2-obj-3.0",
-    remediationLessonId: "C2-D2-O7-L1",
-  }),
-  q({
     id: "C2-D2-O7-HARDEN-Q008",
     objectiveId: "C2-D2-O7",
     conceptIds: ["C2-D2-O7-HARDEN"],
@@ -3443,8 +3409,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO workstation-hardening moves from 2.7.",
     choices: [
-      { id: "a", text: "Disable unused services", rationale: "Correct." },
-      { id: "b", text: "Restrict user permissions (least privilege)", rationale: "Correct." },
+      { id: "a", text: "Disable unused services", rationale: "Correct. Least privilege and reducing listeners are core posture." },
+      { id: "b", text: "Restrict user permissions (least privilege)", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Enable AutoRun for all USB", rationale: "Disable AutoRun." },
       { id: "d", text: "Leave Guest enabled", rationale: "Disable Guest." },
       { id: "e", text: "Never encrypt data at rest", rationale: "Opposite." },
@@ -3478,7 +3444,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Unused services should be disabled because:",
     choices: [
-      { id: "a", text: "Every listener is extra attack surface you must patch and watch", rationale: "Correct." },
+      { id: "a", text: "Every listener is extra attack surface you must patch and watch", rationale: "Correct. Leftover remote tools and legacy SMB are classic findings." },
       { id: "b", text: "Windows cannot boot without Telnet", rationale: "False." },
       { id: "c", text: "Services replace BitLocker", rationale: "False." },
       { id: "d", text: "Disabling services enables AutoRun", rationale: "False." },
@@ -3512,7 +3478,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A previous vendor left a remote-support service listening inbound with a default password. BEST 2.7 action?",
     choices: [
-      { id: "a", text: "Disable the unused/unneeded service and rotate credentials; do not leave mystery listeners", rationale: "Correct." },
+      { id: "a", text: "Disable the unused/unneeded service and rotate credentials; do not leave mystery listeners", rationale: "Correct. Disable unused services is the named control." },
       { id: "b", text: "Enable AutoRun to match", rationale: "Worse." },
       { id: "c", text: "Put the PC in DMZ host mode", rationale: "Exposes it more." },
       { id: "d", text: "Disable the firewall so the vendor can return unannounced", rationale: "Worse." },
@@ -3540,30 +3506,13 @@ export const C2_D2_QUESTIONS: Question[] = [
     remediationLessonId: "C2-D2-O7-L1",
   }),
   q({
-    id: "C2-D2-O7-AUTORUN-Q006",
-    objectiveId: "C2-D2-O7",
-    conceptIds: ["C2-D2-O7-AUTORUN"],
-    difficulty: "core",
-    stem: "Content filtering on a workstation is meant to:",
-    choices: [
-      { id: "a", text: "Block categories of web content as part of endpoint security software", rationale: "Correct." },
-      { id: "b", text: "Replace disk encryption", rationale: "No." },
-      { id: "c", text: "Degauss SSDs", rationale: "No." },
-      { id: "d", text: "Issue SAML assertions", rationale: "No." },
-    ],
-    correct: "a",
-    explanation: "It is not a full secure web gateway, but it is on the list.",
-    sourceBasis: "c2-obj-3.0",
-    remediationLessonId: "C2-D2-O7-L1",
-  }),
-  q({
     id: "C2-D2-O7-LOCKOUT-Q001",
     objectiveId: "C2-D2-O7",
     conceptIds: ["C2-D2-O7-LOCKOUT"],
     difficulty: "core",
     stem: "Failed-attempts lockout on a workstation is designed to:",
     choices: [
-      { id: "a", text: "Slow brute-force and dictionary guessing against the local/domain logon", rationale: "Correct." },
+      { id: "a", text: "Slow brute-force and dictionary guessing against the local/domain logon", rationale: "Correct. Use failed attempts lockout is an account-management bullet. Watch for lockout-as-DoS." },
       { id: "b", text: "Replace MFA forever", rationale: "Still use MFA." },
       { id: "c", text: "Disable patching", rationale: "No." },
       { id: "d", text: "Enable Guest after 3 tries", rationale: "Opposite." },
@@ -3580,7 +3529,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A user walks away from an unlocked PC in Finance. Which 2.7 practices apply?",
     choices: [
-      { id: "a", text: "Screensaver lock / timeout and log off when not in use", rationale: "Correct." },
+      { id: "a", text: "Screensaver lock / timeout and log off when not in use", rationale: "Correct. Timeout/screen lock plus user habit. That is not BitLocker, but it stops the coworker." },
       { id: "b", text: "Enable AutoRun", rationale: "Unrelated/harmful." },
       { id: "c", text: "Disable the firewall", rationale: "Harmful." },
       { id: "d", text: "Share the PIN on a sticky note", rationale: "Opposite of protecting passwords." },
@@ -3597,7 +3546,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Disable the Guest account because:",
     choices: [
-      { id: "a", text: "It is a legacy convenience account and a finding on a business PC", rationale: "Correct." },
+      { id: "a", text: "It is a legacy convenience account and a finding on a business PC", rationale: "Correct. Disable guest account is explicit on 2.7." },
       { id: "b", text: "Guest is required for BitLocker", rationale: "False." },
       { id: "c", text: "Guest is the only way to print", rationale: "False." },
       { id: "d", text: "Guest replaces PAM", rationale: "False." },
@@ -3614,7 +3563,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Restricting logon hours is MOST appropriate when:",
     choices: [
-      { id: "a", text: "Policy says a role should not authenticate after close of business (for example a register PC)", rationale: "Correct." },
+      { id: "a", text: "Policy says a role should not authenticate after close of business (for example a register PC)", rationale: "Correct. Restrict log-in times is on the account-management list." },
       { id: "b", text: "You want to break Kerberos on purpose for executives", rationale: "Wrong tool." },
       { id: "c", text: "You are hiding the SSID", rationale: "Unrelated." },
       { id: "d", text: "You are enabling UPnP", rationale: "Unrelated." },
@@ -3631,7 +3580,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Lockout without a reset process causes which operational problem?",
     choices: [
-      { id: "a", text: "Help desk spends the day unlocking fat-fingered owners — still better than unbounded RDP guessing, but plan the unlock", rationale: "Correct." },
+      { id: "a", text: "Help desk spends the day unlocking fat-fingered owners — still better than unbounded RDP guessing, but plan the unlock", rationale: "Correct. Security controls need an operational path. That does not mean 'no lockout.'" },
       { id: "b", text: "BitLocker cannot escrow keys", rationale: "Unrelated." },
       { id: "c", text: "WPA3 stops working", rationale: "Unrelated." },
       { id: "d", text: "NTFS inheritance breaks", rationale: "Unrelated." },
@@ -3665,7 +3614,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A 12-character unique passphrase in a password manager is generally BETTER than a 90-day rotate to Winter2026! because:",
     choices: [
-      { id: "a", text: "Length and uniqueness beat predictable seasonal complexity; expiration still exists on the objective but is not the whole story", rationale: "Correct." },
+      { id: "a", text: "Length and uniqueness beat predictable seasonal complexity; expiration still exists on the objective but is not the whole story", rationale: "Correct. Teach all five password considerations without worshipping ritual expiration." },
       { id: "b", text: "Complexity season names are unguessable", rationale: "They are in every dictionary list." },
       { id: "c", text: "Managers are forbidden on 2.7", rationale: "They are required as a best practice." },
       { id: "d", text: "Uniqueness does not matter", rationale: "It is listed." },
@@ -3682,7 +3631,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A BIOS/UEFI supervisor password is meant to:",
     choices: [
-      { id: "a", text: "Stop a walk-up from changing boot order, Secure Boot, or firmware options — it is not the Windows password", rationale: "Correct." },
+      { id: "a", text: "Stop a walk-up from changing boot order, Secure Boot, or firmware options — it is not the Windows password", rationale: "Correct. Firmware passwords plus disk encryption together. Firmware alone is not data-at-rest encryption." },
       { id: "b", text: "Replace BitLocker on a stolen disk by itself", rationale: "A live USB still reads an unencrypted disk." },
       { id: "c", text: "Enable AutoRun", rationale: "No." },
       { id: "d", text: "Issue RADIUS tickets", rationale: "No." },
@@ -3699,7 +3648,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Where should the UEFI admin password live?",
     choices: [
-      { id: "a", text: "In the same vault as other break-glass secrets — not on a sticky note under the laptop", rationale: "Correct." },
+      { id: "a", text: "In the same vault as other break-glass secrets — not on a sticky note under the laptop", rationale: "Correct. If you forget it, you own a brick or a jumper-reset adventure. Vault it." },
       { id: "b", text: "In the SSID name", rationale: "No." },
       { id: "c", text: "As the Guest password", rationale: "No." },
       { id: "d", text: "Unset, always, for convenience", rationale: "That is the finding." },
@@ -3750,7 +3699,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Power-on firmware passwords are rarer in help desk because:",
     choices: [
-      { id: "a", text: "They add friction on every boot; supervisor passwords that lock firmware settings are the usual compromise", rationale: "Correct." },
+      { id: "a", text: "They add friction on every boot; supervisor passwords that lock firmware settings are the usual compromise", rationale: "Correct. Use them if policy says so. Know both exist." },
       { id: "b", text: "They are illegal", rationale: "False." },
       { id: "c", text: "UEFI cannot store passwords", rationale: "False." },
       { id: "d", text: "They replace MDM on phones", rationale: "Wrong device class." },
@@ -3785,7 +3734,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO controls that protect a stolen laptop's data better than a screensaver alone.",
     choices: [
-      { id: "a", text: "BitLocker (data-at-rest encryption)", rationale: "Correct." },
+      { id: "a", text: "BitLocker (data-at-rest encryption)", rationale: "Correct. Encryption is the data control. Firmware slows boot-kit/live-USB on that hardware. Screensaver only stops a polite coworker." },
       { id: "b", text: "Firmware password plus Secure Boot (harder to boot alternative media on that chassis)", rationale: "Correct as a complement — still encrypt the disk." },
       { id: "c", text: "A hidden SSID", rationale: "Does not encrypt the disk." },
       { id: "d", text: "TKIP", rationale: "Wi-Fi legacy." },
@@ -3805,7 +3754,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A corporate-owned phone is confirmed stolen. Data is more valuable than the glass. BEST control?",
     choices: [
-      { id: "a", text: "Remote wipe (after locate/lock per policy)", rationale: "Correct." },
+      { id: "a", text: "Remote wipe (after locate/lock per policy)", rationale: "Correct. Remote wipes are a named 2.8 method. Locator first if policy allows a wait." },
       { id: "b", text: "Hide the office SSID", rationale: "Does not erase the phone." },
       { id: "c", text: "Enable AutoRun on the desktop", rationale: "Wrong device." },
       { id: "d", text: "Degauss the phone in the user's bag remotely", rationale: "Cannot degauss a phone over the air; also SSD/flash." },
@@ -3822,7 +3771,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Locator apps need the device to be:",
     choices: [
-      { id: "a", text: "Powered, enrolled, and able to reach the network — a Faraday bag or dead battery hides it", rationale: "Correct." },
+      { id: "a", text: "Powered, enrolled, and able to reach the network — a Faraday bag or dead battery hides it", rationale: "Correct. Find My / Find My Device are not magic through a powered-off, offline device." },
       { id: "b", text: "Degaussed first", rationale: "Opposite." },
       { id: "c", text: "On WEP only", rationale: "No." },
       { id: "d", text: "Jailbroken as a requirement", rationale: "Jailbreak is a 3.3 concern, not a locator prerequisite." },
@@ -3839,7 +3788,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "BYOD lost-phone wipe should prefer which option when policy allows a privacy split?",
     choices: [
-      { id: "a", text: "Selective wipe of the work profile rather than erasing personal photos by default", rationale: "Correct." },
+      { id: "a", text: "Selective wipe of the work profile rather than erasing personal photos by default", rationale: "Correct. Corporate-owned: full wipe is normal. BYOD: container/selective wipe unless corp data was everywhere." },
       { id: "b", text: "Always full-wipe a personal phone with no policy discussion", rationale: "May be required if data was unrestricted — but prefer container/selective wipe when that was the design." },
       { id: "c", text: "No action because BYOD cannot be wiped", rationale: "MDM can still wipe the work profile." },
       { id: "d", text: "Enable UPnP on the phone", rationale: "No." },
@@ -3856,7 +3805,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Remote backup applications matter because:",
     choices: [
-      { id: "a", text: "A wiped phone is not a career-ending data loss if backups restore", rationale: "Correct." },
+      { id: "a", text: "A wiped phone is not a career-ending data loss if backups restore", rationale: "Correct. Remote backup is on the 2.8 list. Test restore." },
       { id: "b", text: "Backups replace screen locks", rationale: "No." },
       { id: "c", text: "Backups are evil twins", rationale: "No." },
       { id: "d", text: "Backups disable encryption", rationale: "No." },
@@ -3890,7 +3839,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "The only MFA authenticator was on the stolen phone. After wipe you must also:",
     choices: [
-      { id: "a", text: "Revoke that device in the IdP and enroll a new factor — it is an identity incident", rationale: "Correct." },
+      { id: "a", text: "Revoke that device in the IdP and enroll a new factor — it is an identity incident", rationale: "Correct. Wipe without IdP revocation leaves sessions and factors in play." },
       { id: "b", text: "Assume MFA still works because the glass is gone", rationale: "The seed may be stealable if the phone is still on." },
       { id: "c", text: "Disable all logging", rationale: "No." },
       { id: "d", text: "Switch corporate Wi-Fi to TKIP", rationale: "No." },
@@ -3924,7 +3873,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Device encryption on modern phones is typically tied to:",
     choices: [
-      { id: "a", text: "Having a screen lock set — verify encryption is on and require the lock", rationale: "Correct." },
+      { id: "a", text: "Having a screen lock set — verify encryption is on and require the lock", rationale: "Correct. Encryption is the first hardening technique on 2.8." },
       { id: "b", text: "WEP", rationale: "No." },
       { id: "c", text: "A vestibule", rationale: "No." },
       { id: "d", text: "RAID 0", rationale: "No." },
@@ -3941,7 +3890,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A locator that was never enrolled in MDM will:",
     choices: [
-      { id: "a", text: "Not help you as the company — personal Find My may still work for the owner", rationale: "Correct." },
+      { id: "a", text: "Not help you as the company — personal Find My may still work for the owner", rationale: "Correct. Enrollment is a prerequisite for corporate locate/wipe." },
       { id: "b", text: "Automatically wipe after 10 minutes anyway", rationale: "Not without policy/agent." },
       { id: "c", text: "Degauss the SoC", rationale: "No." },
       { id: "d", text: "Issue a CoD", rationale: "No." },
@@ -3959,8 +3908,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO 2.8 capabilities used after a phone is missing.",
     choices: [
-      { id: "a", text: "Locator applications", rationale: "Correct." },
-      { id: "b", text: "Remote wipes", rationale: "Correct." },
+      { id: "a", text: "Locator applications", rationale: "Correct. Locate, lock, wipe, restore from remote backup." },
+      { id: "b", text: "Remote wipes", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "TKIP as the only control", rationale: "Wi-Fi legacy." },
       { id: "d", text: "Access control vestibule on the SIM", rationale: "Nonsensical." },
       { id: "e", text: "Low-level format over SMS", rationale: "Not how phones work." },
@@ -3994,7 +3943,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Patterns as a screen lock are weaker than a long PIN mainly because:",
     choices: [
-      { id: "a", text: "They are easy to shoulder-surf and smudge-read", rationale: "Correct." },
+      { id: "a", text: "They are easy to shoulder-surf and smudge-read", rationale: "Correct. Pattern is in scope. Still prefer PIN/biometric for business." },
       { id: "b", text: "They encrypt better than AES", rationale: "False." },
       { id: "c", text: "They replace MDM", rationale: "False." },
       { id: "d", text: "They are not on the objective list", rationale: "Pattern is listed." },
@@ -4011,7 +3960,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Configuration profiles on mobile devices typically push:",
     choices: [
-      { id: "a", text: "Wi-Fi/VPN/email/certificates and restriction payloads (camera, USB, passcode)", rationale: "Correct." },
+      { id: "a", text: "Wi-Fi/VPN/email/certificates and restriction payloads (camera, USB, passcode)", rationale: "Correct. Profiles are MDM's daily job, not only wipe." },
       { id: "b", text: "RAID arrays", rationale: "No." },
       { id: "c", text: "Bollards", rationale: "No." },
       { id: "d", text: "TKIP as a required cipher for LTE", rationale: "No." },
@@ -4045,7 +3994,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "MDM reports a phone with swipe unlock and OS two years behind. BEST first policy action?",
     choices: [
-      { id: "a", text: "Mark non-compliant: require PIN/biometric and a current OS via the profile — block corp data until it complies", rationale: "Correct." },
+      { id: "a", text: "Mark non-compliant: require PIN/biometric and a current OS via the profile — block corp data until it complies", rationale: "Correct. Profile security requirements are the written bar: OS version, lock, encryption, no jailbreak." },
       { id: "b", text: "Ignore because swipe is listed on the exam", rationale: "Listed ≠ acceptable for policy." },
       { id: "c", text: "Enable Guest on the phone", rationale: "No." },
       { id: "d", text: "Switch the AP to WEP so the phone can join", rationale: "No." },
@@ -4062,7 +4011,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Facial recognition on a phone is:",
     choices: [
-      { id: "a", text: "A biometric screen-lock factor — still pair with MDM encryption/wipe policy", rationale: "Correct." },
+      { id: "a", text: "A biometric screen-lock factor — still pair with MDM encryption/wipe policy", rationale: "Correct. FRT is on both 2.1 biometrics and 2.8 screen locks." },
       { id: "b", text: "A replacement for all server-side MFA forever", rationale: "Device unlock ≠ every app factor." },
       { id: "c", text: "Illegal on V15", rationale: "It is listed." },
       { id: "d", text: "The same as a vestibule", rationale: "No." },
@@ -4079,7 +4028,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Ask whose device it is before a factory reset because:",
     choices: [
-      { id: "a", text: "Corporate-owned and BYOD have different wipe/privacy rules", rationale: "Correct." },
+      { id: "a", text: "Corporate-owned and BYOD have different wipe/privacy rules", rationale: "Correct. Technician lens: ownership before destruction of personal data." },
       { id: "b", text: "All phones are legally the help desk's property", rationale: "False." },
       { id: "c", text: "BYOD cannot have profiles", rationale: "False." },
       { id: "d", text: "Factory reset is required daily", rationale: "False." },
@@ -4096,7 +4045,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A PIN on a phone is:",
     choices: [
-      { id: "a", text: "A knowledge-factor screen lock, often device-local", rationale: "Correct." },
+      { id: "a", text: "A knowledge-factor screen lock, often device-local", rationale: "Correct. PIN codes are listed under 2.8 screen locks." },
       { id: "b", text: "A type of RAID", rationale: "No." },
       { id: "c", text: "Always the Microsoft 365 password in four digits", rationale: "Should not be a short copy of a cloud password." },
       { id: "d", text: "A wireless cipher", rationale: "No." },
@@ -4113,7 +4062,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Jailbreak/root on a managed phone should be:",
     choices: [
-      { id: "a", text: "A compliance fail — MDM blocks corp data; it is also a 3.3 troubleshooting symptom", rationale: "Correct." },
+      { id: "a", text: "A compliance fail — MDM blocks corp data; it is also a 3.3 troubleshooting symptom", rationale: "Correct. Prevent with MDM here; troubleshoot symptoms in 3.3." },
       { id: "b", text: "Required for encryption", rationale: "Opposite." },
       { id: "c", text: "The same as a locator", rationale: "No." },
       { id: "d", text: "Ignored because V15 removed MDM", rationale: "MDM is on 2.8." },
@@ -4130,7 +4079,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MDM is used to:",
     choices: [
-      { id: "a", text: "Inventory devices, enforce encryption and lock, distribute apps, wipe, and apply profiles", rationale: "Correct." },
+      { id: "a", text: "Inventory devices, enforce encryption and lock, distribute apps, wipe, and apply profiles", rationale: "Correct. Policies and procedures on 2.8: MDM, BYOD vs corporate-owned, profile security requirements." },
       { id: "b", text: "Replace all firewalls on the WAN", rationale: "No." },
       { id: "c", text: "Degauss HDDs", rationale: "2.9." },
       { id: "d", text: "Terminate T568B", rationale: "Cabling." },
@@ -4147,7 +4096,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Corporate-owned versus BYOD — which is accurate?",
     choices: [
-      { id: "a", text: "Corporate-owned can be fully managed; BYOD typically uses a work profile with a privacy boundary", rationale: "Correct." },
+      { id: "a", text: "Corporate-owned can be fully managed; BYOD typically uses a work profile with a privacy boundary", rationale: "Correct. If the company cannot accept the privacy split, it should issue hardware." },
       { id: "b", text: "BYOD means the company may never apply any profile", rationale: "False." },
       { id: "c", text: "Corporate-owned phones cannot be wiped", rationale: "False." },
       { id: "d", text: "They are identical in law everywhere", rationale: "False." },
@@ -4164,7 +4113,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Profile security requirements are:",
     choices: [
-      { id: "a", text: "The written bar (OS version, lock, encryption, no unofficial stores/root) a device must meet", rationale: "Correct." },
+      { id: "a", text: "The written bar (OS version, lock, encryption, no unofficial stores/root) a device must meet", rationale: "Correct. Named on 2.8 policies and procedures." },
       { id: "b", text: "A WPA2 PSK", rationale: "No." },
       { id: "c", text: "A CoD", rationale: "No." },
       { id: "d", text: "A RAID level", rationale: "No." },
@@ -4198,7 +4147,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Offboarding a BYOD user. BEST MDM action?",
     choices: [
-      { id: "a", text: "Selective wipe/retire the work profile and revoke tokens — do not casually factory-reset their family photos unless policy and law say the whole device was in scope", rationale: "Correct." },
+      { id: "a", text: "Selective wipe/retire the work profile and revoke tokens — do not casually factory-reset their family photos unless policy and law say the whole device was in scope", rationale: "Correct. Retire the profile. That is the point of BYOD enrollment." },
       { id: "b", text: "Remote-wipe every personal device they have ever owned without inventory", rationale: "Overreach." },
       { id: "c", text: "Leave corp mail and VPN certs in place as a courtesy", rationale: "Standing access." },
       { id: "d", text: "Email them the Domain Admin password as a farewell", rationale: "No." },
@@ -4215,7 +4164,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A clinic will not accept photos mixed with EHR attachments on a personal phone. BEST 2.8 decision?",
     choices: [
-      { id: "a", text: "Issue corporate-owned devices (or a strict container that blocks copy-out) rather than unmanaged BYOD", rationale: "Correct." },
+      { id: "a", text: "Issue corporate-owned devices (or a strict container that blocks copy-out) rather than unmanaged BYOD", rationale: "Correct. Profile security requirements plus ownership model." },
       { id: "b", text: "Allow unmanaged BYOD and a stern email", rationale: "Insufficient." },
       { id: "c", text: "Disable encryption so DLP is easier", rationale: "Worse." },
       { id: "d", text: "Use swipe locks only", rationale: "Worse." },
@@ -4232,7 +4181,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "MDM can require a PIN length and encryption. That is an example of:",
     choices: [
-      { id: "a", text: "A configuration profile / policy payload", rationale: "Correct." },
+      { id: "a", text: "A configuration profile / policy payload", rationale: "Correct. Profiles enforce the bar continuously, not once at hire." },
       { id: "b", text: "A screened subnet", rationale: "Network." },
       { id: "c", text: "A CoD", rationale: "2.9." },
       { id: "d", text: "TKIP", rationale: "Wi-Fi." },
@@ -4249,7 +4198,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Why might MDM block unofficial app stores?",
     choices: [
-      { id: "a", text: "Sideloaded/spoofed apps are a mobile malware path (also 3.3)", rationale: "Correct." },
+      { id: "a", text: "Sideloaded/spoofed apps are a mobile malware path (also 3.3)", rationale: "Correct. Application source is a 3.3 symptom and a 2.8 profile restriction." },
       { id: "b", text: "Official stores are slower", rationale: "Not the security reason." },
       { id: "c", text: "Unofficial stores enable BitLocker", rationale: "No." },
       { id: "d", text: "V15 requires sideloading", rationale: "No." },
@@ -4268,13 +4217,13 @@ export const C2_D2_QUESTIONS: Question[] = [
     stem: "Select TWO true statements about 2.8 versus 2.7.",
     choices: [
       { id: "a", text: "2.7 is workstation hardening (AutoRun, UEFI passwords, Guest, BitLocker on PCs)", rationale: "Correct. Official V15 order." },
-      { id: "b", text: "2.8 is mobile device security (screen locks, MDM, remote wipe)", rationale: "Correct." },
-      { id: "c", text: "2.7 is mobile and 2.8 is destruction — that is the retired blog numbering", rationale: "False for V15." },
+      { id: "b", text: "2.8 is mobile device security (screen locks, MDM, remote wipe)", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
+      { id: "c", text: "2.7 is mobile and 2.8 is destruction on 220-1202", rationale: "That was the retired 220-1102 numbering. On 220-1202, 2.7 is workstation hardening, 2.8 is mobile, and 2.9 is destruction." },
       { id: "d", text: "Neither objective mentions encryption", rationale: "Both do." },
       { id: "e", text: "Remote wipe is a workstation BIOS setting only", rationale: "It is a mobile control." },
     ],
     correct: ["a", "b"],
-    explanation: "Do not study from a blog that swapped 2.7/2.8/2.9.",
+    explanation: "220-1102 numbered mobile as 2.7 and destruction as 2.8. V15 inserted SOHO malware removal as 2.6, so workstation hardening is 2.7, mobile is 2.8, and destruction is 2.9.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O8-L1",
   }),
@@ -4304,7 +4253,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "After a proper degauss, an HDD is usually:",
     choices: [
-      { id: "a", text: "Unusable as a drive — do not promise the customer they can keep using it", rationale: "Correct." },
+      { id: "a", text: "Unusable as a drive — do not promise the customer they can keep using it", rationale: "Correct. Degauss is destruction of magnetic order, not a reuse wipe." },
       { id: "b", text: "Faster in RAID 0", rationale: "No." },
       { id: "c", text: "Converted to an SSD", rationale: "No." },
       { id: "d", text: "WPA3-encrypted only", rationale: "No." },
@@ -4321,7 +4270,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Why does degaussing fail as the SSD plan?",
     choices: [
-      { id: "a", text: "Flash cells are not magnetic domains; the magnet does not purge NAND", rationale: "Correct." },
+      { id: "a", text: "Flash cells are not magnetic domains; the magnet does not purge NAND", rationale: "Correct. Media-specific method is the whole objective." },
       { id: "b", text: "SSDs are illegal to destroy", rationale: "False." },
       { id: "c", text: "SSDs have no data at rest", rationale: "False." },
       { id: "d", text: "NIST forbids all SSD sanitization", rationale: "False; crypto-erase/sanitize exist." },
@@ -4338,7 +4287,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A box of backup tapes is leaving as scrap. BEST destruction method named on A+?",
     choices: [
-      { id: "a", text: "Degauss and/or shred (and encrypt backups before they ever ship)", rationale: "Correct." },
+      { id: "a", text: "Degauss and/or shred (and encrypt backups before they ever ship)", rationale: "Correct. Magnetic tape is the other degauss target besides HDD." },
       { id: "b", text: "Windows quick format on each tape via File Explorer", rationale: "Not how tape sanitization works." },
       { id: "c", text: "Hide the SSID so the tapes are secret", rationale: "No." },
       { id: "d", text: "Enable Guest on the tape library", rationale: "No." },
@@ -4372,7 +4321,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Drilling platters is:",
     choices: [
-      { id: "a", text: "Physical destruction — valid if policy says so and you document serials; it is not a reuse wipe", rationale: "Correct." },
+      { id: "a", text: "Physical destruction — valid if policy says so and you document serials; it is not a reuse wipe", rationale: "Correct. Destroy versus sanitize/reuse is the fork in every stem." },
       { id: "b", text: "A standard format", rationale: "Format is a recycling method." },
       { id: "c", text: "Crypto-erase", rationale: "That is key destruction on encrypting devices." },
       { id: "d", text: "MDM selective wipe", rationale: "Phones." },
@@ -4389,7 +4338,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Incineration of e-waste in the parking lot is wrong because:",
     choices: [
-      { id: "a", text: "Regulatory and environmental requirements demand licensed handling — you cannot just burn plastics and metals", rationale: "Correct." },
+      { id: "a", text: "Regulatory and environmental requirements demand licensed handling — you cannot just burn plastics and metals", rationale: "Correct. 2.9 ends with regulatory and environmental requirements." },
       { id: "b", text: "Incineration is not on the objective at all", rationale: "It is listed." },
       { id: "c", text: "Fire always preserves NTFS ACLs", rationale: "Nonsense." },
       { id: "d", text: "EPA requires WEP first", rationale: "Nonsense." },
@@ -4406,7 +4355,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A company wants to reuse an HDD in another PC. BEST class of method?",
     choices: [
-      { id: "a", text: "Erase/wipe (overwrite or vendor sanitize) — not a quick format and not degauss (degauss kills reuse)", rationale: "Correct." },
+      { id: "a", text: "Erase/wipe (overwrite or vendor sanitize) — not a quick format and not degauss (degauss kills reuse)", rationale: "Correct. Recycling/repurposing: erasing/wiping, low-level formatting, standard formatting — with wipe being the real sanitization." },
       { id: "b", text: "Incineration", rationale: "Destroys the asset." },
       { id: "c", text: "Shred", rationale: "Destroys the asset." },
       { id: "d", text: "Drill the platters, then install Windows", rationale: "Destroyed." },
@@ -4423,7 +4372,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A Windows quick/standard format is insufficient sanitization because:",
     choices: [
-      { id: "a", text: "It often only removes file-table entries; data is recoverable with tools", rationale: "Correct." },
+      { id: "a", text: "It often only removes file-table entries; data is recoverable with tools", rationale: "Correct. Do not donate a PC after a quick format." },
       { id: "b", text: "It always degausses the magnet", rationale: "False." },
       { id: "c", text: "It issues a CoD", rationale: "False." },
       { id: "d", text: "It enables BitLocker by law", rationale: "False." },
@@ -4474,7 +4423,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A phone with corp data is being retired. BEST high-assurance sequence?",
     choices: [
-      { id: "a", text: "MDM wipe / crypto-erase, then factory reset is not the last word for high assurance — certified destruction or e-waste process if policy requires", rationale: "Correct." },
+      { id: "a", text: "Remote-wipe/crypto-erase through MDM, then send it to certified destruction or recycling if policy requires more than a factory reset", rationale: "Correct. Crypto-erase removes the key that protects the data, and regulated data may also require a certificate of destruction." },
       { id: "b", text: "Quick format in Windows Disk Management on the phone's LTE radio", rationale: "Nonsensical." },
       { id: "c", text: "Degauss the OLED", rationale: "Wrong." },
       { id: "d", text: "Leave Find My on for the next owner", rationale: "Activation lock / data leftover." },
@@ -4508,7 +4457,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Donating a PC requires:",
     choices: [
-      { id: "a", text: "A real wipe or disk removal — not a quick format and a smile", rationale: "Correct." },
+      { id: "a", text: "A real wipe or disk removal — not a quick format and a smile", rationale: "Correct. Repurposing best practices exist so charity is not a data breach." },
       { id: "b", text: "Enabling AutoRun for the charity", rationale: "No." },
       { id: "c", text: "The default BIOS password left in place", rationale: "Change or document; still wipe the disk." },
       { id: "d", text: "Domain Admin cached forever", rationale: "No." },
@@ -4525,7 +4474,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "An SSD must leave the building as unreadable scrap. Degauss is off the table. BEST physical options?",
     choices: [
-      { id: "a", text: "Shred/incinerate (or crushers designed for flash) — physical destruction", rationale: "Correct." },
+      { id: "a", text: "Shred/incinerate (or crushers designed for flash) — physical destruction", rationale: "Correct. Destroy flash with methods that actually hit NAND, not a magnet." },
       { id: "b", text: "A single file delete", rationale: "Not destruction." },
       { id: "c", text: "Hide SSID", rationale: "No." },
       { id: "d", text: "WPA3-Personal", rationale: "No." },
@@ -4542,7 +4491,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Paper with account numbers should be:",
     choices: [
-      { id: "a", text: "Cross-cut shredded (or incinerated per policy) — dumpster diving is 2.5", rationale: "Correct." },
+      { id: "a", text: "Cross-cut shredded (or incinerated per policy) — dumpster diving is 2.5", rationale: "Correct. Shred is on 2.9; dumpster diving is why you bother." },
       { id: "b", text: "Degaussed", rationale: "Paper is not magnetic storage." },
       { id: "c", text: "Quick formatted", rationale: "Not a paper control." },
       { id: "d", text: "Posted on the guest Wi-Fi page", rationale: "No." },
@@ -4559,7 +4508,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Optical discs with patient images, no reuse:",
     choices: [
-      { id: "a", text: "Shred or incinerate per policy — not degauss", rationale: "Correct." },
+      { id: "a", text: "Shred or incinerate per policy — not degauss", rationale: "Correct. Match method to media." },
       { id: "b", text: "Degauss", rationale: "Wrong physics." },
       { id: "c", text: "Enable BitLocker To Go on the CD tray", rationale: "Not how optical works." },
       { id: "d", text: "Store in the lobby dumpster intact", rationale: "Dumpster diving." },
@@ -4576,7 +4525,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A drive will NOT be reused and auditors want high assurance. BEST class?",
     choices: [
-      { id: "a", text: "Physical destruction (shred/drill/degauss-if-HDD/incinerate) plus paperwork", rationale: "Correct." },
+      { id: "a", text: "Physical destruction (shred/drill/degauss-if-HDD/incinerate) plus paperwork", rationale: "Correct. Reuse vs destroy is the exam fork. Destroy when it must not come back." },
       { id: "b", text: "Quick format only", rationale: "Weak." },
       { id: "c", text: "Delete the shortcut on the desktop", rationale: "Weak." },
       { id: "d", text: "Unplug the Ethernet cable", rationale: "Not sanitization." },
@@ -4593,7 +4542,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "You drilled a hole through an HDD in the shop. You still need:",
     choices: [
-      { id: "a", text: "Documentation of serials and policy — a drill is destruction, not a CoD from a vendor unless you issue equivalent records", rationale: "Correct." },
+      { id: "a", text: "Documentation of serials and policy — a drill is destruction, not a CoD from a vendor unless you issue equivalent records", rationale: "Correct. Chain of custody/inventory even for in-house destruction." },
       { id: "b", text: "To reinstall Windows on the drilled platters", rationale: "No." },
       { id: "c", text: "To enable UPnP", rationale: "No." },
       { id: "d", text: "To hide the SSID", rationale: "No." },
@@ -4610,7 +4559,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Encrypting backups before destruction is:",
     choices: [
-      { id: "a", text: "Belt-and-suspenders — a stolen tape is less useful if the key is elsewhere, and you still shred/degauss", rationale: "Correct." },
+      { id: "a", text: "Belt-and-suspenders — a stolen tape is less useful if the key is elsewhere, and you still shred/degauss", rationale: "Correct. Destruction does not replace encryption in transit/storage." },
       { id: "b", text: "Forbidden by 2.9", rationale: "False." },
       { id: "c", text: "The same as UPnP", rationale: "False." },
       { id: "d", text: "Only for RAID 0", rationale: "False." },
@@ -4628,8 +4577,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO physical destruction methods from 2.9.",
     choices: [
-      { id: "a", text: "Shredding", rationale: "Correct." },
-      { id: "b", text: "Drilling", rationale: "Correct." },
+      { id: "a", text: "Shredding", rationale: "Correct. Also degaussing and incineration." },
+      { id: "b", text: "Drilling", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "SAML", rationale: "Federation." },
       { id: "d", text: "WPA3", rationale: "Wi-Fi." },
       { id: "e", text: "Hello PIN", rationale: "Logon." },
@@ -4646,7 +4595,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A certificate of destruction is:",
     choices: [
-      { id: "a", text: "Paperwork from a vetted third-party vendor proving media was destroyed/recycled, tied to serials", rationale: "Correct." },
+      { id: "a", text: "Paperwork from a vetted third-party vendor proving media was destroyed/recycled, tied to serials", rationale: "Correct. Outsourcing concepts: third-party vendor and certification of destruction/recycling." },
       { id: "b", text: "A TLS website certificate", rationale: "2.11." },
       { id: "c", text: "A Hello PIN", rationale: "Logon." },
       { id: "d", text: "A WPA3 SAE handshake", rationale: "Wi-Fi." },
@@ -4663,7 +4612,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Why inventory serial numbers before the shred bin leaves?",
     choices: [
-      { id: "a", text: "So the CoD and chain of custody match the assets you claimed to destroy", rationale: "Correct." },
+      { id: "a", text: "So the CoD and chain of custody match the assets you claimed to destroy", rationale: "Correct. Without serials, a CoD is a story." },
       { id: "b", text: "Serials enable WEP", rationale: "No." },
       { id: "c", text: "Auditors forbid serials", rationale: "Opposite." },
       { id: "d", text: "Serials replace encryption", rationale: "No." },
@@ -4680,7 +4629,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A verbal 'we tossed them' for payment-PC drives fails because:",
     choices: [
-      { id: "a", text: "Regulators want a CoD and inventory, not folklore", rationale: "Correct." },
+      { id: "a", text: "Regulators want a CoD and inventory, not folklore", rationale: "Correct. Outsource or in-house, you still prove it." },
       { id: "b", text: "Tossing is always the BEST method", rationale: "Dumpster diving." },
       { id: "c", text: "Payment PCs cannot have disks", rationale: "False." },
       { id: "d", text: "CoDs are only for printers", rationale: "False." },
@@ -4697,7 +4646,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Choosing a destruction vendor, you still care about:",
     choices: [
-      { id: "a", text: "Vetting, chain of custody, CoD, and environmental licensing — not the cheapest unlabeled van", rationale: "Correct." },
+      { id: "a", text: "Vetting, chain of custody, CoD, and environmental licensing — not the cheapest unlabeled van", rationale: "Correct. Third-party vendor is on the objective. Cheap dumpster is how tapes leak." },
       { id: "b", text: "Whether they enable TKIP", rationale: "No." },
       { id: "c", text: "Whether they hide SSIDs", rationale: "No." },
       { id: "d", text: "Whether they disable Defender", rationale: "No." },
@@ -4731,7 +4680,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "E-waste rules mean:",
     choices: [
-      { id: "a", text: "You cannot throw drives in the municipal dumpster even after a wipe — use proper recycling channels", rationale: "Correct." },
+      { id: "a", text: "You cannot throw drives in the municipal dumpster even after a wipe — use proper recycling channels", rationale: "Correct. Regulatory and environmental requirements are the last 2.9 bullet." },
       { id: "b", text: "Dumpsters are the official CoD", rationale: "No." },
       { id: "c", text: "Environmental law forbids shredding", rationale: "Shredding is listed." },
       { id: "d", text: "Incinerate in the alley", rationale: "Unlicensed burning is the finding." },
@@ -4803,7 +4752,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Router firmware should be current because:",
     choices: [
-      { id: "a", text: "WAN-side bugs are often full-takeover of the LAN", rationale: "Correct." },
+      { id: "a", text: "WAN-side bugs are often full-takeover of the LAN", rationale: "Correct. Firmware updates are an explicit 2.10 router setting." },
       { id: "b", text: "Firmware updates disable AES as a feature", rationale: "False." },
       { id: "c", text: "Old firmware is a type of MFA", rationale: "False." },
       { id: "d", text: "Updates replace physical placement", rationale: "Still lock the closet." },
@@ -4854,7 +4803,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Secure management access means:",
     choices: [
-      { id: "a", text: "HTTPS/SSH from LAN or VPN — not WAN admin with default creds", rationale: "Correct." },
+      { id: "a", text: "HTTPS/SSH from LAN or VPN — not WAN admin with default creds", rationale: "Correct. Configure secure management access is an explicit bullet." },
       { id: "b", text: "Telnet from the entire internet", rationale: "Finding." },
       { id: "c", text: "HTTP with admin/admin from WAN", rationale: "Finding." },
       { id: "d", text: "UPnP mapping of TCP 80 to the admin UI", rationale: "Finding." },
@@ -4888,7 +4837,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Changing the SSID from NETGEAR12 is useful because:",
     choices: [
-      { id: "a", text: "You stop advertising the hardware default; it is not equivalent to encryption", rationale: "Correct." },
+      { id: "a", text: "You stop advertising the hardware default; it is not equivalent to encryption", rationale: "Correct. Change SSID yes; treat disable broadcast as not security." },
       { id: "b", text: "A new name is WPA3", rationale: "False." },
       { id: "c", text: "It disables UPnP automatically", rationale: "False." },
       { id: "d", text: "It is the same as hiding broadcast, which is a strong control", rationale: "Hiding is not a strong control." },
@@ -4905,7 +4854,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Disabling SSID broadcast is:",
     choices: [
-      { id: "a", text: "Not a real confidentiality control; scanners still see the network", rationale: "Correct." },
+      { id: "a", text: "Not a real confidentiality control; scanners still see the network", rationale: "Correct. The objective lists disable broadcast so you know it exists; the course tells you not to worship it." },
       { id: "b", text: "Required for AES", rationale: "False." },
       { id: "c", text: "Equivalent to RADIUS", rationale: "False." },
       { id: "d", text: "The BEST hardening step on 2.10", rationale: "False — encryption, defaults, UPnP, guest isolation matter more." },
@@ -4956,7 +4905,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "IoT cameras on the same SSID as payroll PCs is a problem because:",
     choices: [
-      { id: "a", text: "Guest/IoT isolation is missing — a camera compromise becomes a LAN compromise", rationale: "Correct." },
+      { id: "a", text: "Guest/IoT isolation is missing — a camera compromise becomes a LAN compromise", rationale: "Correct. Guest/IoT VLAN or guest SSID with isolation." },
       { id: "b", text: "Cameras require TKIP", rationale: "False." },
       { id: "c", text: "Payroll requires UPnP to cameras", rationale: "False." },
       { id: "d", text: "This is a screened subnet done right", rationale: "Opposite." },
@@ -4991,8 +4940,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO wireless-specific 2.10 settings.",
     choices: [
-      { id: "a", text: "Changing the SSID", rationale: "Correct." },
-      { id: "b", text: "Configuring guest access", rationale: "Correct." },
+      { id: "a", text: "Changing the SSID", rationale: "Correct. Also disable broadcast (weak), encryption settings." },
+      { id: "b", text: "Configuring guest access", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Degaussing the AP nightly", rationale: "Destroys it." },
       { id: "d", text: "EFS on the beacon", rationale: "No." },
       { id: "e", text: "BitLocker To Go on the SSID string", rationale: "No." },
@@ -5009,7 +4958,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Port forwarding/mapping is:",
     choices: [
-      { id: "a", text: "An explicit inbound hole to an internal host — minimize it and do not forward RDP 3389 to the world", rationale: "Correct." },
+      { id: "a", text: "An explicit inbound hole to an internal host — minimize it and do not forward RDP 3389 to the world", rationale: "Correct. Firewall settings: disable unused ports; port forwarding/mapping." },
       { id: "b", text: "A type of MFA", rationale: "No." },
       { id: "c", text: "The same as hiding SSID", rationale: "No." },
       { id: "d", text: "Degaussing", rationale: "No." },
@@ -5026,7 +4975,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Unused inbound ports on the SOHO firewall should be:",
     choices: [
-      { id: "a", text: "Disabled / not forwarded", rationale: "Correct." },
+      { id: "a", text: "Disabled / not forwarded", rationale: "Correct. Disabling unused ports is listed under firewall settings." },
       { id: "b", text: "Forwarded to Guest for fun", rationale: "Finding." },
       { id: "c", text: "Opened by UPnP without review", rationale: "Finding." },
       { id: "d", text: "Bound to TKIP", rationale: "Nonsense." },
@@ -5043,7 +4992,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Forwarding TCP 3389 from WAN to a desktop is:",
     choices: [
-      { id: "a", text: "A brute-force magnet — use VPN or another broker, not raw RDP to the world", rationale: "Correct." },
+      { id: "a", text: "A brute-force magnet — use VPN or another broker, not raw RDP to the world", rationale: "Correct. Port forward only what you must, and not default remote-admin ports to the internet." },
       { id: "b", text: "Required for WPA3", rationale: "False." },
       { id: "c", text: "A screened subnet done correctly by itself", rationale: "A single forwarded port to a desktop is not a screened subnet design." },
       { id: "d", text: "The same as disabling UPnP", rationale: "Opposite risk profile." },
@@ -5077,7 +5026,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Changing a forwarded port number from 3389 to 3390 without VPN or lockout:",
     choices: [
-      { id: "a", text: "Is obscurity — scanners still find RDP; you still need auth, updates, and not exposing it", rationale: "Correct." },
+      { id: "a", text: "Is obscurity — scanners still find RDP; you still need auth, updates, and not exposing it", rationale: "Correct. Non-default ports still need real controls." },
       { id: "b", text: "Is equivalent to MFA", rationale: "False." },
       { id: "c", text: "Disables all brute force by physics", rationale: "False." },
       { id: "d", text: "Is a CoD", rationale: "False." },
@@ -5094,7 +5043,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Content filtering at the SOHO edge can:",
     choices: [
-      { id: "a", text: "Block categories (malware/porn/etc.) for LAN clients as a listed 2.10 setting", rationale: "Correct." },
+      { id: "a", text: "Block categories (malware/porn/etc.) for LAN clients as a listed 2.10 setting", rationale: "Correct. IP filtering and content filtering are both named." },
       { id: "b", text: "Replace endpoint AV entirely always", rationale: "Still keep AV." },
       { id: "c", text: "Encrypt the HDD", rationale: "No." },
       { id: "d", text: "Issue Kerberos TGTs", rationale: "No." },
@@ -5111,7 +5060,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A WAN-facing admin UI plus default password is:",
     choices: [
-      { id: "a", text: "A full-takeover risk — disable WAN management and change defaults FIRST", rationale: "Correct." },
+      { id: "a", text: "A full-takeover risk — disable WAN management and change defaults FIRST", rationale: "Correct. Same idea as AP WAN admin in 2.3, now on 2.10." },
       { id: "b", text: "Required for guest isolation", rationale: "False." },
       { id: "c", text: "How screened subnets are certified", rationale: "False." },
       { id: "d", text: "A Hello PIN", rationale: "False." },
@@ -5145,7 +5094,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Putting the only office PC in 'DMZ' because a game would not NAT is:",
     choices: [
-      { id: "a", text: "How ransomware and scanners reach that PC — avoid all-ports expose", rationale: "Correct." },
+      { id: "a", text: "How ransomware and scanners reach that PC — avoid all-ports expose", rationale: "Correct. Common mistake called out in the lesson." },
       { id: "b", text: "A BEST practice on 2.10", rationale: "False." },
       { id: "c", text: "Required for WPA3", rationale: "False." },
       { id: "d", text: "The same as disabling unused ports", rationale: "Opposite." },
@@ -5162,7 +5111,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A public web server at a small office should sit:",
     choices: [
-      { id: "a", text: "On a screened subnet/DMZ with firewall rules, not on the same flat LAN as workstations", rationale: "Correct." },
+      { id: "a", text: "On a screened subnet/DMZ with firewall rules, not on the same flat LAN as workstations", rationale: "Correct. That is the point of a screened subnet." },
       { id: "b", text: "On the receptionist laptop with UPnP", rationale: "Finding." },
       { id: "c", text: "On the domain controller with Guest enabled", rationale: "Finding." },
       { id: "d", text: "On the WAN port of a switch with no firewall", rationale: "Finding." },
@@ -5179,7 +5128,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Consumer 'DMZ host' vs screened subnet — BEST contrast?",
     choices: [
-      { id: "a", text: "DMZ host = all inbound to one LAN IP; screened subnet = firewalled zone with limited paths to internal networks", rationale: "Correct." },
+      { id: "a", text: "DMZ host = all inbound to one LAN IP; screened subnet = firewalled zone with limited paths to internal networks", rationale: "Correct. If the stem says 'every port forwarded to the NAS,' that is not a screened subnet." },
       { id: "b", text: "They are identical on V15", rationale: "The course teaches the distinction." },
       { id: "c", text: "Screened subnet means hide SSID", rationale: "No." },
       { id: "d", text: "DMZ host encrypts with EFS", rationale: "No." },
@@ -5196,7 +5145,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A NAS in exposed-host/DMZ mode on a consumer router is BEST described as:",
     choices: [
-      { id: "a", text: "A sacrifice — the NAS is the internet's playground and often still has a path to PCs", rationale: "Correct." },
+      { id: "a", text: "A sacrifice — the NAS is the internet's playground and often still has a path to PCs", rationale: "Correct. Put exposed services in a real isolated zone with no path to PCs." },
       { id: "b", text: "Zero Trust done completely", rationale: "Opposite." },
       { id: "c", text: "A vestibule", rationale: "Physical." },
       { id: "d", text: "A CoD", rationale: "2.9." },
@@ -5213,7 +5162,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Which set is the SOHO hardening baseline?",
     choices: [
-      { id: "a", text: "Change defaults, current firmware, WPA3/AES, guest isolation, UPnP off, no WAN admin, no wide-open DMZ host", rationale: "Correct." },
+      { id: "a", text: "Change defaults, current firmware, WPA3/AES, guest isolation, UPnP off, no WAN admin, no wide-open DMZ host", rationale: "Correct. That is the router lab solution in sentence form." },
       { id: "b", text: "admin/admin, UPnP on, hidden SSID as the only control, DMZ host the PC", rationale: "The insecure starting lab." },
       { id: "c", text: "WEP, Telnet WAN, Guest on the NAS VLAN", rationale: "Worse." },
       { id: "d", text: "TKIP-only, default PSK printed on the AP in the window", rationale: "Worse." },
@@ -5231,7 +5180,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO SOHO settings that should usually be OFF.",
     choices: [
-      { id: "a", text: "UPnP (unless a documented exception)", rationale: "Correct." },
+      { id: "a", text: "UPnP (unless a documented exception)", rationale: "Correct. Off: UPnP, WAN admin, unused forwards, DMZ-host-the-PC. On: encryption, guest isolation, firmware, unique admin." },
       { id: "b", text: "WAN remote administration with default credentials", rationale: "Correct — off, and defaults changed." },
       { id: "c", text: "WPA3", rationale: "Should be on." },
       { id: "d", text: "Guest isolation", rationale: "Should be on." },
@@ -5251,7 +5200,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A banking site shows an unexpected certificate warning (name mismatch / untrusted CA). BEST action?",
     choices: [
-      { id: "a", text: "Stop — do not continue; treat as hostile (on-path or wrong site) until proven a known lab exception", rationale: "Correct." },
+      { id: "a", text: "Stop — do not continue; treat as hostile (on-path or wrong site) until proven a known lab exception", rationale: "Correct. Valid certificates are a 2.11 secure-connection topic. Unexpected warnings are stop-the-line." },
       { id: "b", text: "Click through because padlocks are decorative", rationale: "How on-path wins." },
       { id: "c", text: "Disable Defender to load the page", rationale: "Harmful." },
       { id: "d", text: "Enable UPnP so the cert can renew", rationale: "Unrelated." },
@@ -5268,7 +5217,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A valid certificate proves (at A+ depth):",
     choices: [
-      { id: "a", text: "You have TLS to a name that matches, issued by a trusted CA, within dates — not that the page cannot be a look-alike you typed wrong", rationale: "Correct." },
+      { id: "a", text: "You have TLS to a name that matches, issued by a trusted CA, within dates — not that the page cannot be a look-alike you typed wrong", rationale: "Correct. Padlock ≠ 'safe website' in the marketing sense." },
       { id: "b", text: "The company is financially honest", rationale: "Overclaim." },
       { id: "c", text: "There is no phishing on that domain", rationale: "The real domain can still host a bad app." },
       { id: "d", text: "Hashing is unnecessary for downloads from that CA", rationale: "Still hash vendor ISOs." },
@@ -5285,7 +5234,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A lab server uses a self-signed cert. Users are trained to click through everywhere. Risk?",
     choices: [
-      { id: "a", text: "They will click through a real on-path warning on mail/banking", rationale: "Correct." },
+      { id: "a", text: "They will click through a real on-path warning on mail/banking", rationale: "Correct. Use a private CA or known exception list; do not train click-through as a lifestyle." },
       { id: "b", text: "Self-signed certs disable AutoRun", rationale: "No." },
       { id: "c", text: "This enables WPA3", rationale: "No." },
       { id: "d", text: "This is a CoD", rationale: "No." },
@@ -5302,7 +5251,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Inspecting a certificate, you check issued-to matches the site, a known CA, and dates. That is:",
     choices: [
-      { id: "a", text: "Validating a secure connection as listed on 2.11", rationale: "Correct." },
+      { id: "a", text: "Validating a secure connection as listed on 2.11", rationale: "Correct. Secure connections/sites–valid certificates is the objective language." },
       { id: "b", text: "Degaussing", rationale: "No." },
       { id: "c", text: "NTFS inheritance", rationale: "No." },
       { id: "d", text: "TACACS+", rationale: "No." },
@@ -5336,7 +5285,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Pop-up blocker should be:",
     choices: [
-      { id: "a", text: "On — it is a listed 2.11 setting", rationale: "Correct." },
+      { id: "a", text: "On — it is a listed 2.11 setting", rationale: "Correct. Pop-up blocker is under browser settings." },
       { id: "b", text: "Off so ads can 'verify your PC'", rationale: "Malvertising path." },
       { id: "c", text: "Replaced by TKIP", rationale: "No." },
       { id: "d", text: "A type of RAID", rationale: "No." },
@@ -5353,7 +5302,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Browser patching is urgent because:",
     choices: [
-      { id: "a", text: "Drive-by exploits hit the renderer first — treat browser updates like OS updates", rationale: "Correct." },
+      { id: "a", text: "Drive-by exploits hit the renderer first — treat browser updates like OS updates", rationale: "Correct. Browser patching is its own 2.11 bullet." },
       { id: "b", text: "Patches disable TLS on purpose", rationale: "False." },
       { id: "c", text: "Unpatched browsers are required for SAML", rationale: "False." },
       { id: "d", text: "Patching replaces hashing", rationale: "You still hash installers." },
@@ -5370,7 +5319,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "A vendor publishes SHA-256 next to an ISO. You hash the download and it does not match. NEXT?",
     choices: [
-      { id: "a", text: "Do not install — the bits were swapped or truncated; re-download from the trusted source", rationale: "Correct." },
+      { id: "a", text: "Do not install — the bits were swapped or truncated; re-download from the trusted source", rationale: "Correct. Hashing is listed under trusted sources for browser/download install." },
       { id: "b", text: "Install anyway; hashes are decorative", rationale: "Supply-chain fail." },
       { id: "c", text: "Disable Defender and retry", rationale: "Harmful." },
       { id: "d", text: "Rename the ISO to match the hash", rationale: "Does not fix bytes." },
@@ -5387,7 +5336,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A matching hash proves:",
     choices: [
-      { id: "a", text: "Integrity — you got the bits the publisher posted, not that the software is bug-free", rationale: "Correct." },
+      { id: "a", text: "Integrity — you got the bits the publisher posted, not that the software is bug-free", rationale: "Correct. Hash = integrity versus the published digest." },
       { id: "b", text: "The vendor is legally incapable of malice", rationale: "Overclaim." },
       { id: "c", text: "TLS is off", rationale: "False." },
       { id: "d", text: "UPnP is on", rationale: "False." },
@@ -5421,7 +5370,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A fake password-manager extension wants 'read all site data.' BEST?",
     choices: [
-      { id: "a", text: "Do not install — use a known manager from a trusted source; this is a credential harvester pattern", rationale: "Correct." },
+      { id: "a", text: "Do not install — use a known manager from a trusted source; this is a credential harvester pattern", rationale: "Correct. Password managers are on 2.11 — fake ones are how passwords leave." },
       { id: "b", text: "Install because password managers are always listed as safe no matter the source", rationale: "The feature is listed; the store listing can still be fake." },
       { id: "c", text: "Grant it, then hide the SSID", rationale: "No." },
       { id: "d", text: "Grant it, then degauss the GPU", rationale: "No." },
@@ -5438,7 +5387,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "Feature management (enable/disable plug-ins, extensions, features) is for:",
     choices: [
-      { id: "a", text: "Reducing attack surface — especially on kiosks — by turning off what you do not need", rationale: "Correct." },
+      { id: "a", text: "Reducing attack surface — especially on kiosks — by turning off what you do not need", rationale: "Correct. Browser feature management is the last 2.11 bullet group." },
       { id: "b", text: "Forcing AutoRun", rationale: "No." },
       { id: "c", text: "Replacing firewalls on routers only", rationale: "No." },
       { id: "d", text: "Degaussing", rationale: "No." },
@@ -5455,7 +5404,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Ad blockers reduce:",
     choices: [
-      { id: "a", text: "Malvertising and some trackers — they do not remove a Trojan already on disk", rationale: "Correct." },
+      { id: "a", text: "Malvertising and some trackers — they do not remove a Trojan already on disk", rationale: "Correct. Ad blockers are a listed setting with a realistic scope." },
       { id: "b", text: "The need for any AM", rationale: "False." },
       { id: "c", text: "The need for cert warnings to be heeded", rationale: "False." },
       { id: "d", text: "RAID rebuild times", rationale: "False." },
@@ -5472,7 +5421,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Untrusted download sources are in scope so you will:",
     choices: [
-      { id: "a", text: "Refuse random optimizer sites and sideload installers; prefer vendor/store plus hash", rationale: "Correct." },
+      { id: "a", text: "Refuse random optimizer sites and sideload installers; prefer vendor/store plus hash", rationale: "Correct. Trusted vs untrusted is the first 2.11 group." },
       { id: "b", text: "Prefer cracks for paid software as 'faster patching'", rationale: "Trojan path." },
       { id: "c", text: "Disable hashing on trusted sites only", rationale: "Still hash when published." },
       { id: "d", text: "Mirror every EXE from a USB in the lobby", rationale: "No." },
@@ -5489,7 +5438,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Private-browsing mode (Incognito/InPrivate) does:",
     choices: [
-      { id: "a", text: "Drop local history/cookies at close — it does not anonymize you to the site, employer proxy, or ISP", rationale: "Correct." },
+      { id: "a", text: "Drop local history/cookies at close — it does not anonymize you to the site, employer proxy, or ISP", rationale: "Correct. Private-browsing mode is listed. Teach what it is not." },
       { id: "b", text: "Make you invisible to malware and on-path attackers", rationale: "Overclaim." },
       { id: "c", text: "Replace TLS", rationale: "No." },
       { id: "d", text: "Disable all extensions' network access by physics", rationale: "Not guaranteed; depends on browser." },
@@ -5506,7 +5455,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Clearing browsing data/cache is useful when:",
     choices: [
-      { id: "a", text: "A hijack or stale SSO cookie is in play, or a shared PC changes hands", rationale: "Correct." },
+      { id: "a", text: "A hijack or stale SSO cookie is in play, or a shared PC changes hands", rationale: "Correct. Clearing browsing data and clearing cache are both listed." },
       { id: "b", text: "You want to remove a PUP binary from Program Files", rationale: "Cache clear does not uninstall disk malware." },
       { id: "c", text: "You need to degauss an HDD", rationale: "No." },
       { id: "d", text: "You need WPA3", rationale: "No." },
@@ -5523,7 +5472,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Browser sign-in / data synchronization on a shared kiosk should usually be:",
     choices: [
-      { id: "a", text: "Off or enterprise-controlled — it copies passwords and history to the vendor cloud", rationale: "Correct." },
+      { id: "a", text: "Off or enterprise-controlled — it copies passwords and history to the vendor cloud", rationale: "Correct. Sign-in/browser data synchronization is a listed setting." },
       { id: "b", text: "On with the last customer's Google account", rationale: "Finding." },
       { id: "c", text: "Required for pop-up blocking", rationale: "False." },
       { id: "d", text: "The same as a vestibule", rationale: "False." },
@@ -5540,7 +5489,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "A user thinks Incognito means the employer cannot see HTTPS destinations on a corp proxy. BEST correction?",
     choices: [
-      { id: "a", text: "Private mode is local privacy on that profile; the proxy/SOC can still see or inspect per policy", rationale: "Correct." },
+      { id: "a", text: "Private mode is local privacy on that profile; the proxy/SOC can still see or inspect per policy", rationale: "Correct. This is the misconception item for private browsing." },
       { id: "b", text: "Incognito disables all corporate DLP by RFC", rationale: "False." },
       { id: "c", text: "Incognito is a screened subnet", rationale: "False." },
       { id: "d", text: "Incognito degausses RAM", rationale: "False." },
@@ -5557,7 +5506,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "After a browser hijack PUP, clearing data is:",
     choices: [
-      { id: "a", text: "Part of cleanup — also uninstall the PUP and check extensions; cache clear alone is not enough", rationale: "Correct." },
+      { id: "a", text: "Part of cleanup — also uninstall the PUP and check extensions; cache clear alone is not enough", rationale: "Correct. Settings exist; they are not a substitute for 2.4/2.6 when the disk is hostile." },
       { id: "b", text: "The entire 10-step malware process", rationale: "2.6 is more than cache." },
       { id: "c", text: "Forbidden on V15", rationale: "It is listed." },
       { id: "d", text: "Equivalent to reimage always", rationale: "Overkill for a simple hijack, maybe not for a rootkit." },
@@ -5574,7 +5523,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Password managers in the browser should be paired with:",
     choices: [
-      { id: "a", text: "MFA and a master password — and not a fake extension", rationale: "Correct." },
+      { id: "a", text: "MFA and a master password — and not a fake extension", rationale: "Correct. Password managers are listed on 2.11 (and 2.7 as a user practice)." },
       { id: "b", text: "The same password reused as the manager master", rationale: "Bad uniqueness." },
       { id: "c", text: "AutoRun", rationale: "No." },
       { id: "d", text: "TKIP", rationale: "No." },
@@ -5592,8 +5541,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO 2.11 settings that are about local privacy/hygiene rather than TLS identity.",
     choices: [
-      { id: "a", text: "Private-browsing mode", rationale: "Correct." },
-      { id: "b", text: "Clearing cache / browsing data", rationale: "Correct." },
+      { id: "a", text: "Private-browsing mode", rationale: "Correct. Certs/hashes are trust of identity/integrity. Private mode and cache are local hygiene." },
+      { id: "b", text: "Clearing cache / browsing data", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Valid certificates", rationale: "That is TLS identity." },
       { id: "d", text: "Hashing an ISO", rationale: "Integrity of a file, not browsing privacy." },
       { id: "e", text: "WPA3", rationale: "Wi-Fi, 2.3/2.10." },
@@ -5610,7 +5559,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "core",
     stem: "Secure DNS (DoH/DoT or a configured secure resolver) is meant to:",
     choices: [
-      { id: "a", text: "Encrypt or pin DNS lookups so a coffee-shop LAN cannot as easily spoof name resolution", rationale: "Correct." },
+      { id: "a", text: "Encrypt or pin DNS lookups so a coffee-shop LAN cannot as easily spoof name resolution", rationale: "Correct. Secure DNS is listed. TLS still has to check out." },
       { id: "b", text: "Replace HTTPS for the whole web", rationale: "It does not encrypt the rest of the site." },
       { id: "c", text: "Replace a VPN for all traffic", rationale: "Not a VPN." },
       { id: "d", text: "Degauss the NIC", rationale: "No." },
@@ -5627,7 +5576,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A corporate proxy is required, but the browser was set to a random internet proxy. FIRST?",
     choices: [
-      { id: "a", text: "Reset proxy to the organization-intended value and hunt why it changed (policy vs malware)", rationale: "Correct." },
+      { id: "a", text: "Reset proxy to the organization-intended value and hunt why it changed (policy vs malware)", rationale: "Correct. Proxy is a 2.11 setting. It must be the one you intended." },
       { id: "b", text: "Leave it; any proxy is Zero Trust", rationale: "A surprise proxy is on-path." },
       { id: "c", text: "Disable TLS", rationale: "Harmful." },
       { id: "d", text: "Enable UPnP", rationale: "Unrelated." },
@@ -5661,7 +5610,7 @@ export const C2_D2_QUESTIONS: Question[] = [
     difficulty: "exam",
     stem: "On a managed PC, DoH to a public resolver that bypasses corp DNS filtering may:",
     choices: [
-      { id: "a", text: "Violate policy — enterprise-controlled secure DNS is not 'any DoH'", rationale: "Correct." },
+      { id: "a", text: "Violate policy — enterprise-controlled secure DNS is not 'any DoH'", rationale: "Correct. Secure DNS is a control you configure, not a free-for-all bypass of content filtering." },
       { id: "b", text: "Always be required by CompTIA regardless of GPO", rationale: "A+ names the feature; shops still own policy." },
       { id: "c", text: "Disable DLP legally", rationale: "No." },
       { id: "d", text: "Replace MDM", rationale: "No." },
@@ -5713,8 +5662,8 @@ export const C2_D2_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Select TWO stop-the-line browser events.",
     choices: [
-      { id: "a", text: "Unexpected certificate warning on a sensitive site", rationale: "Correct." },
-      { id: "b", text: "Published hash does not match the installer", rationale: "Correct." },
+      { id: "a", text: "Unexpected certificate warning on a sensitive site", rationale: "Correct. If the hash does not match, do not install. If the cert warning is unexpected, do not continue." },
+      { id: "b", text: "Published hash does not match the installer", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Pop-up blocker is on", rationale: "That is the desired state." },
       { id: "d", text: "Private mode is available", rationale: "Not an incident." },
       { id: "e", text: "Ad blocker is installed from the official store", rationale: "Not an incident." },
@@ -5724,6 +5673,366 @@ export const C2_D2_QUESTIONS: Question[] = [
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D2-O11-L1",
   }),
+
+  // --- 2026-11-09 audit: keyed coverage for 2.1 physical access, biometrics, tokens; 2.2 firewall/accounts; 2.5 non-compliant; 2.8 patching/endpoint security ---
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q005",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "core",
+    stem: "An employee leaves on bad terms, and Facilities must revoke their server-room access this afternoon without re-keying the door. Which physical access method makes that easiest?",
+    choices: [
+      { id: "a", text: "Traditional metal keys cut for each employee", rationale: "An unreturned metal key keeps working until the lock is re-keyed, which is exactly what Facilities wants to avoid." },
+      { id: "b", text: "A badge reader with key fobs or smart cards tied to a central access list", rationale: "Correct. Fobs and smart cards are possession factors checked against a central list, so one credential can be disabled without touching the lock." },
+      { id: "c", text: "Brighter lighting in the hallway outside the server room", rationale: "Lighting helps cameras and deters, but it does not stop a person who still holds a working credential." },
+      { id: "d", text: "A magnetometer at the server-room door", rationale: "A magnetometer finds concealed metal; it cannot tell a former employee from a current one." },
+    ],
+    correct: "b",
+    explanation: "Key fobs and smart cards are revocable in software. Metal keys require re-keying when one is not returned.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-access", "key-fob", "smart-card", "scenario"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q006",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "core",
+    stem: "A coworking space lets members unlock doors with a mobile digital key in a phone app. The manager worries that a lost phone will open the building. Which control BEST pairs with the mobile key?",
+    choices: [
+      { id: "a", text: "Hide the coworking Wi-Fi SSID", rationale: "Hiding an SSID is wireless obscurity and does nothing to the door credential stored on the phone." },
+      { id: "b", text: "Print each member's door PIN on the back of their badge", rationale: "Printing the PIN next to the credential defeats it, because whoever finds one finds both." },
+      { id: "c", text: "Require the phone's screen lock and enroll it in MDM so the key can be revoked or the device wiped", rationale: "Correct. A mobile key inherits the phone's lock and MDM posture, so a locked, managed phone can have the key revoked when lost." },
+      { id: "d", text: "Replace the door lock with a bollard", rationale: "Bollards stop vehicles; they are not a door lock and do not address a lost phone credential." },
+    ],
+    correct: "c",
+    explanation: "Mobile digital keys are possession factors that live on the phone, so their security depends on the phone's screen lock and on MDM revocation.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-access", "mobile-digital-key"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q007",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "intro",
+    stem: "Which physical access credential can carry a certificate that is used both to open a badge door and to sign in to a workstation?",
+    choices: [
+      { id: "a", text: "A proximity key fob that only transmits an ID number", rationale: "A basic proximity fob sends an identifier for the door reader; it does not hold a logon certificate." },
+      { id: "b", text: "A physical metal key", rationale: "A metal key works only on its lock and carries no digital certificate." },
+      { id: "c", text: "A fence around the parking lot", rationale: "A fence is a perimeter control, not a credential a person carries." },
+      { id: "d", text: "A smart card", rationale: "Correct. Smart cards have a chip that can store certificates for door access and for workstation logon." },
+    ],
+    correct: "d",
+    explanation: "Smart cards contain a chip that stores certificates, so one card can serve as a door credential and a logon factor.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-access", "smart-card"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q008",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "core",
+    stem: "Cameras show visitors tailgating through the lobby at shift change, and the company cannot rebuild the entrance as a vestibule this year. Which control adds human judgment to challenge and escort visitors?",
+    choices: [
+      { id: "a", text: "Security guards at the lobby entrance", rationale: "Correct. Guards can check that a badge matches a face, challenge a tailgater, and escort visitors in real time." },
+      { id: "b", text: "Additional motion sensors in the lobby", rationale: "Motion sensors raise an event when something moves; during shift change everything moves, and a sensor cannot challenge anyone." },
+      { id: "c", text: "Equipment locks on the reception laptops", rationale: "Equipment locks protect devices from theft; they do not stop a person walking through the door." },
+      { id: "d", text: "More cameras pointed at the lobby door", rationale: "Cameras record and deter, and the stem already shows that recording alone did not stop the tailgating." },
+    ],
+    correct: "a",
+    explanation: "Cameras record and sensors detect, but security guards add judgment: they challenge, verify, and escort.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-security", "security-guard", "scenario"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q009",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "intro",
+    stem: "Which control is designed to keep an unauthorized person out of the wiring closet room itself?",
+    choices: [
+      { id: "a", text: "A cable lock on the switch inside the closet", rationale: "An equipment lock keeps one device from being carried off; the person is still inside the room." },
+      { id: "b", text: "Brighter lighting in the closet", rationale: "Lighting improves camera footage and deters; it does not block entry." },
+      { id: "c", text: "A door lock on the closet door", rationale: "Correct. Door locks control entry to a room; equipment locks protect individual devices." },
+      { id: "d", text: "A magnetometer at the building entrance", rationale: "A magnetometer screens for concealed metal at a checkpoint; it does not lock a specific room." },
+    ],
+    correct: "c",
+    explanation: "Door locks protect rooms, and equipment locks protect devices. They are separate 2.1 bullets because they do different jobs.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-security", "door-lock"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q010",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "core",
+    stem: "At night the parking-lot camera records footage too dark to identify anyone. Which 2.1 physical control fixes the root cause?",
+    choices: [
+      { id: "a", text: "Add motion sensors to the parking lot", rationale: "Motion sensors can trigger an alert, but the footage is still too dark to identify the person." },
+      { id: "b", text: "Improve the lighting over the parking lot", rationale: "Correct. Lighting removes the shadows an attacker relies on and makes camera footage usable." },
+      { id: "c", text: "Install a magnetometer at the lot entrance", rationale: "A magnetometer detects concealed metal at a checkpoint and does not improve camera images." },
+      { id: "d", text: "Replace the badge reader with a key fob reader", rationale: "Fob and badge readers are both door credentials; neither changes how bright the lot is." },
+    ],
+    correct: "b",
+    explanation: "Lighting is a 2.1 physical control because it deters and makes video surveillance useful.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-security", "lighting"],
+  }),
+  q({
+    id: "C2-D2-O1-VESTIBULE-Q011",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-VESTIBULE"],
+    difficulty: "core",
+    stem: "A concert venue must find concealed metal objects on attendees before they reach the floor. Which 2.1 physical control is designed for that?",
+    choices: [
+      { id: "a", text: "Magnetometers (walk-through or handheld metal detectors)", rationale: "Correct. Magnetometers detect concealed metal at a checkpoint." },
+      { id: "b", text: "Bollards at the curb", rationale: "Bollards stop vehicles from reaching the building; they do not screen people." },
+      { id: "c", text: "An access control vestibule", rationale: "A vestibule stops tailgating by holding one person between two doors; it does not detect metal." },
+      { id: "d", text: "Video surveillance of the entrance", rationale: "Cameras record who entered, but they cannot see metal hidden under clothing." },
+    ],
+    correct: "a",
+    explanation: "Match the control to the threat: concealed metal calls for magnetometers, vehicles call for bollards, and tailgating calls for a vestibule.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["physical-security", "magnetometer"],
+  }),
+  q({
+    id: "C2-D2-O1-MFA-Q006",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-MFA"],
+    difficulty: "intro",
+    stem: "A research lab installs a biometric reader that scans the pattern of blood vessels at the back of the eye. Which 2.1 biometric is that?",
+    choices: [
+      { id: "a", text: "Palm print scanner", rationale: "A palm print scanner reads the ridges and lines of the hand, not the eye." },
+      { id: "b", text: "Facial recognition technology (FRT)", rationale: "FRT measures facial geometry from a camera image, not the blood vessels inside the eye." },
+      { id: "c", text: "Fingerprint scanner", rationale: "A fingerprint scanner reads fingertip ridges, not the eye." },
+      { id: "d", text: "Retina scanner", rationale: "Correct. A retina scanner reads the blood-vessel pattern on the retina at the back of the eye." },
+    ],
+    correct: "d",
+    explanation: "2.1 biometrics are retina, fingerprint, palm print, facial recognition technology, and voice recognition. A retina scan reads the back of the eye.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["biometrics", "retina"],
+  }),
+  q({
+    id: "C2-D2-O1-MFA-Q007",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-MFA"],
+    difficulty: "core",
+    stem: "A bank's phone system verifies callers by analyzing how they speak a short passphrase. Which 2.1 method is that?",
+    choices: [
+      { id: "a", text: "A voice-call one-time passcode", rationale: "A voice-call OTP reads a code to a phone you possess, which is a possession factor rather than a biometric." },
+      { id: "b", text: "Voice recognition technology", rationale: "Correct. Voice recognition is a biometric (something you are) that matches the caller's voice characteristics." },
+      { id: "c", text: "Facial recognition technology (FRT)", rationale: "FRT needs a camera image of the face, and a phone call has no image." },
+      { id: "d", text: "TOTP from an authenticator app", rationale: "TOTP is a time-based code from a device you have; it does not analyze the caller's voice." },
+    ],
+    correct: "b",
+    explanation: "Voice recognition is a biometric. A voice call that delivers an OTP is a possession factor. Both are on 2.1, so read the stem carefully.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["biometrics", "voice-recognition", "misconception"],
+  }),
+  q({
+    id: "C2-D2-O1-MFA-Q008",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-MFA"],
+    difficulty: "intro",
+    stem: "A door reader unlocks for employees using facial recognition technology (FRT). Which authentication factor type is FRT?",
+    choices: [
+      { id: "a", text: "Something you know", rationale: "Knowledge factors are secrets such as passwords and PINs. A face is not a memorized secret." },
+      { id: "b", text: "Something you have", rationale: "Possession factors are objects such as badges, fobs, smart cards, and hardware tokens." },
+      { id: "c", text: "Something you are", rationale: "Correct. FRT, fingerprint, palm, retina, and voice recognition are all inherence (biometric) factors." },
+      { id: "d", text: "Somewhere you are", rationale: "Location is a context signal, such as GPS or IP range. It is not a biometric measurement." },
+    ],
+    correct: "c",
+    explanation: "Biometrics, including FRT, are something you are. Pair a biometric with another factor type to make MFA.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L1",
+    tags: ["biometrics", "facial-recognition", "mfa-factors"],
+  }),
+  q({
+    id: "C2-D2-O1-MFA-Q009",
+    objectiveId: "C2-D2-O1",
+    conceptIds: ["C2-D2-O1-MFA"],
+    difficulty: "core",
+    stem: "Which MFA method on the 2.1 list is a dedicated physical device that generates or holds the second factor?",
+    choices: [
+      { id: "a", text: "An OTP sent by email", rationale: "An email OTP arrives in a mailbox the user can reach from any device; it is not a dedicated token." },
+      { id: "b", text: "An OTP read out by an automated voice call", rationale: "A voice call delivers a code to a phone number; the phone is not a dedicated authentication device." },
+      { id: "c", text: "An OTP sent by SMS", rationale: "SMS delivers a code to the SIM and is vulnerable to SIM swap; it is not a dedicated token." },
+      { id: "d", text: "A hardware token", rationale: "Correct. A hardware token, such as a key-fob code generator or a FIDO security key, exists only to generate or hold the factor." },
+    ],
+    correct: "d",
+    explanation: "2.1 MFA methods are email, hardware token, authenticator app, SMS, voice call, TOTP, and OTP. Only the hardware token is a purpose-built device.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O1-L2",
+    tags: ["mfa", "hardware-token"],
+  }),
+  q({
+    id: "C2-D2-O2-UAC-Q005",
+    objectiveId: "C2-D2-O2",
+    conceptIds: ["C2-D2-O2-UAC"],
+    difficulty: "core",
+    stem: "A technician suspects Microsoft Defender Firewall is blocking a line-of-business app. What is the right way to test and fix it?",
+    choices: [
+      { id: "a", text: "Turn the firewall off for every profile and leave it off if the app works", rationale: "Leaving the firewall deactivated removes host protection for every app to fix one app." },
+      { id: "b", text: "Deactivate it briefly on the active profile to confirm, turn it back on, then add an app or port rule for only what is needed", rationale: "Correct. Activate/deactivate is a diagnostic step; the fix is a narrow allow rule with the firewall on." },
+      { id: "c", text: "Disable Defender Antivirus, because the antivirus is what blocks network ports", rationale: "Defender Antivirus scans for malware; inbound and outbound connection rules belong to the firewall." },
+      { id: "d", text: "Switch the network profile from Private to Public to open more ports", rationale: "The Public profile is the more restrictive one, so switching to it blocks more inbound traffic, not less." },
+    ],
+    correct: "b",
+    explanation: "2.2 lists firewall activate/deactivate, port security, and application security. Confirm the cause, re-enable the firewall, and allow only the specific app or port.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O2-L1",
+    tags: ["windows-firewall", "scenario"],
+  }),
+  q({
+    id: "C2-D2-O2-UAC-Q006",
+    objectiveId: "C2-D2-O2",
+    conceptIds: ["C2-D2-O2-UAC"],
+    difficulty: "exam",
+    stem: "A vendor's app listens on a different random port each time it launches. Which Windows Defender Firewall rule type BEST allows it?",
+    choices: [
+      { id: "a", text: "An inbound port rule for the port the app used today", rationale: "A port rule opens one fixed port; tomorrow the app picks a different port and is blocked again." },
+      { id: "b", text: "An inbound rule that allows all ports from any address", rationale: "An any/any allow means the firewall is effectively off; it is not port security." },
+      { id: "c", text: "An application (program) rule that allows that executable", rationale: "Correct. An application rule follows the program, whichever port it opens, which is the application-security option on 2.2." },
+      { id: "d", text: "A port forward on the SOHO router", rationale: "Port forwarding is a 2.10 router setting; it does not change the Windows host firewall on the PC." },
+    ],
+    correct: "c",
+    explanation: "Port rules fit services with fixed ports. Application rules fit programs whose ports change. Both are 2.2 firewall settings.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O2-L1",
+    tags: ["windows-firewall", "port-security", "application-security"],
+  }),
+  q({
+    id: "C2-D2-O2-AD-Q006",
+    objectiveId: "C2-D2-O2",
+    conceptIds: ["C2-D2-O2-AD"],
+    difficulty: "intro",
+    stem: "A home user wants Windows 11 settings to sync and wants the BitLocker device-encryption recovery key backed up online when they sign in. Which account type fits?",
+    choices: [
+      { id: "a", text: "A local account", rationale: "A local account exists only on that PC and does not sync settings or back up a recovery key online." },
+      { id: "b", text: "The built-in Guest account", rationale: "Guest is a legacy, limited account that should be disabled; it does not sync anything." },
+      { id: "c", text: "A domain account in an Active Directory OU", rationale: "A home user without a company domain cannot use AD, and AD is not the consumer cloud account." },
+      { id: "d", text: "A Microsoft account", rationale: "Correct. A Microsoft account syncs settings across devices and can store the device-encryption recovery key online." },
+    ],
+    correct: "d",
+    explanation: "Local accounts live on one PC. Microsoft accounts are cloud identities that sync settings and can back up the recovery key.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O2-L1",
+    tags: ["local-vs-microsoft-account"],
+  }),
+  q({
+    id: "C2-D2-O2-AD-Q007",
+    objectiveId: "C2-D2-O2",
+    conceptIds: ["C2-D2-O2-AD"],
+    difficulty: "core",
+    stem: "An old how-to says to add staff to the Power Users group so they can install software. What is the accurate response on modern Windows?",
+    choices: [
+      { id: "a", text: "Power Users is kept mainly for backward compatibility and does not grant the old XP-era install rights by default, so use standard accounts and elevate per task", rationale: "Correct. Treat Power Users as legacy; least privilege means standard users plus Run as administrator or managed deployment." },
+      { id: "b", text: "Power Users is the same as Domain Admins and is the recommended daily account", rationale: "Domain Admins is a domain-wide administrative group; a standing admin account is the opposite of least privilege." },
+      { id: "c", text: "Power Users replaces UAC prompts for every member", rationale: "Group membership does not remove UAC; admin elevation still uses the UAC prompt." },
+      { id: "d", text: "Power Users is the same as the built-in Guest account", rationale: "Guest is a separate, restricted account that should be disabled; it is not the Power Users group." },
+    ],
+    correct: "a",
+    explanation: "2.2 lists standard, administrator, guest, and power user. Power Users is a legacy group; the secure design is standard daily accounts and per-task elevation.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O2-L1",
+    tags: ["power-user", "least-privilege", "misconception"],
+  }),
+  q({
+    id: "C2-D2-O5-XSS-Q007",
+    objectiveId: "C2-D2-O5",
+    conceptIds: ["C2-D2-O5-XSS"],
+    difficulty: "core",
+    stem: "A laptop is fully patched and has antivirus running, but USB mass storage is enabled and the disk is not encrypted. The company's written baseline forbids both. Which 2.5 vulnerability term fits?",
+    choices: [
+      { id: "a", text: "Unpatched system", rationale: "The stem says the laptop is fully patched, so unpatched does not fit." },
+      { id: "b", text: "Unprotected system", rationale: "Unprotected means missing antivirus or firewall, and this laptop has antivirus running." },
+      { id: "c", text: "End-of-life (EOL) system", rationale: "EOL means the vendor no longer ships fixes; nothing in the stem says the OS is out of support." },
+      { id: "d", text: "Non-compliant system", rationale: "Correct. Non-compliant means it violates the written security baseline, even if it is patched and protected." },
+    ],
+    correct: "d",
+    explanation: "Non-compliant, unpatched, unprotected, EOL, and BYOD are separate 2.5 vulnerabilities. Name the one the stem actually describes.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O5-L2",
+    tags: ["vulnerability", "non-compliant", "misconception"],
+  }),
+  q({
+    id: "C2-D2-O8-PATCH-Q001",
+    objectiveId: "C2-D2-O8",
+    conceptIds: ["C2-D2-O8-PATCH"],
+    difficulty: "core",
+    stem: "Patch management for company phones on objective 2.8 covers which updates?",
+    choices: [
+      { id: "a", text: "Only firmware updates for the phone's charger", rationale: "Charger firmware is not the 2.8 patch-management bullet; the phone's OS and apps are." },
+      { id: "b", text: "OS updates and application updates", rationale: "Correct. 2.8 patch management names both OS updates and application updates." },
+      { id: "c", text: "Only OS updates, because store apps patch themselves safely", rationale: "Apps such as mail, browser, and banking need managed updates too; an outdated app is an exploit path." },
+      { id: "d", text: "Deferring all updates so the phone stays stable", rationale: "Deferring every update leaves known vulnerabilities open and defeats patch management." },
+    ],
+    correct: "b",
+    explanation: "On V15, patch management (OS updates and application updates) is a 2.8 mobile-device bullet. Unpatched apps are as dangerous as an unpatched OS.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O8-L1",
+    tags: ["patch-management", "mobile"],
+  }),
+  q({
+    id: "C2-D2-O8-PATCH-Q002",
+    objectiveId: "C2-D2-O8",
+    conceptIds: ["C2-D2-O8-PATCH"],
+    difficulty: "core",
+    stem: "Endpoint security software for mobile devices on objective 2.8 lists antivirus, anti-malware, and which other item?",
+    choices: [
+      { id: "a", text: "Remote backup applications", rationale: "Remote backup is a separate 2.8 bullet about restoring data, not endpoint security software." },
+      { id: "b", text: "Configuration profiles", rationale: "Configuration profiles are a 2.8 hardening technique delivered by MDM, not endpoint security software." },
+      { id: "c", text: "Content filtering", rationale: "Correct. 2.8 endpoint security software is antivirus, anti-malware, and content filtering." },
+      { id: "d", text: "Locator applications", rationale: "Locator apps find a lost device; they are their own 2.8 bullet." },
+    ],
+    correct: "c",
+    explanation: "2.8 endpoint security software is antivirus, anti-malware, and content filtering. The other options are separate 2.8 bullets.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O8-L1",
+    tags: ["endpoint-security", "mobile"],
+  }),
+  q({
+    id: "C2-D2-O8-PATCH-Q003",
+    objectiveId: "C2-D2-O8",
+    conceptIds: ["C2-D2-O8-PATCH"],
+    difficulty: "core",
+    stem: "MDM pushes a content-filtering policy to company tablets. What does that policy do?",
+    choices: [
+      { id: "a", text: "It encrypts the tablet's storage", rationale: "Device encryption is a separate 2.8 hardening technique; content filtering does not encrypt storage." },
+      { id: "b", text: "It wipes the tablet after failed unlock attempts", rationale: "That is the failed log-in attempts restriction, which is a different 2.8 bullet." },
+      { id: "c", text: "It replaces the need for a screen lock", rationale: "A screen lock is still required; filtering web categories does not protect a lost device." },
+      { id: "d", text: "It blocks categories of web content, such as malware or adult sites, on the device", rationale: "Correct. Content filtering is endpoint security software that restricts which sites and categories load." },
+    ],
+    correct: "d",
+    explanation: "Content filtering blocks unwanted web categories. It works alongside antivirus and anti-malware and does not replace encryption or screen locks.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O8-L1",
+    tags: ["endpoint-security", "content-filtering", "mobile"],
+  }),
+  q({
+    id: "C2-D2-O8-PATCH-Q004",
+    objectiveId: "C2-D2-O8",
+    conceptIds: ["C2-D2-O8-PATCH"],
+    difficulty: "exam",
+    stem: "MDM shows a company phone on the current OS release, but its mail, browser, and banking apps are months out of date. What is still missing from patch management?",
+    choices: [
+      { id: "a", text: "Application updates", rationale: "Correct. 2.8 patch management covers application updates as well as OS updates, and outdated apps are still exploitable." },
+      { id: "b", text: "Nothing, because a current OS also patches every app", rationale: "OS updates do not update third-party apps, which ship their own fixes." },
+      { id: "c", text: "A remote wipe", rationale: "Remote wipe is for lost or stolen devices; it does not patch an app on a phone the user still has." },
+      { id: "d", text: "A swipe screen lock", rationale: "Swipe is not a credential, and screen locks do not update apps." },
+    ],
+    correct: "a",
+    explanation: "Patch management on 2.8 is OS updates plus application updates. A current OS with stale apps is only half patched.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D2-O8-L1",
+    tags: ["patch-management", "mobile", "scenario"],
+  }),
 ];
-
-

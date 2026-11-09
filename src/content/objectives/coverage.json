@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T16:56:50.698Z",
+  "generated": "2026-11-09T14:33:39.492Z",
   "entries": [
     {
       "objectiveId": "FND-D0-O2",
@@ -2356,22 +2356,33 @@
         "C2-D2-O1-MFA-Q003",
         "C2-D2-O1-MFA-Q004",
         "C2-D2-O1-MFA-Q005",
+        "C2-D2-O1-MFA-Q006",
+        "C2-D2-O1-MFA-Q007",
+        "C2-D2-O1-MFA-Q008",
+        "C2-D2-O1-MFA-Q009",
         "C2-D2-O1-PAM-Q001",
         "C2-D2-O1-PAM-Q002",
         "C2-D2-O1-PAM-Q003",
+        "C2-D2-O1-PAM-Q004",
         "C2-D2-O1-SAML-Q001",
         "C2-D2-O1-SAML-Q002",
+        "C2-D2-O1-SAML-Q003",
+        "C2-D2-O1-SAML-Q004",
         "C2-D2-O1-VESTIBULE-Q001",
         "C2-D2-O1-VESTIBULE-Q002",
         "C2-D2-O1-VESTIBULE-Q003",
+        "C2-D2-O1-VESTIBULE-Q004",
+        "C2-D2-O1-VESTIBULE-Q005",
         "C2-D2-O1-ZEROTRUST-Q001",
         "C2-D2-O1-ZEROTRUST-Q003"
       ],
       "reviewQuestionIds": [
-        "C2-D2-O1-PAM-Q004",
-        "C2-D2-O1-SAML-Q003",
-        "C2-D2-O1-SAML-Q004",
-        "C2-D2-O1-VESTIBULE-Q004",
+        "C2-D2-O1-VESTIBULE-Q006",
+        "C2-D2-O1-VESTIBULE-Q007",
+        "C2-D2-O1-VESTIBULE-Q008",
+        "C2-D2-O1-VESTIBULE-Q009",
+        "C2-D2-O1-VESTIBULE-Q010",
+        "C2-D2-O1-VESTIBULE-Q011",
         "C2-D2-O1-ZEROTRUST-Q002",
         "C2-D2-O1-ZEROTRUST-Q004"
       ],
@@ -2401,6 +2412,8 @@
         "C2-D2-O2-AD-Q003",
         "C2-D2-O2-AD-Q004",
         "C2-D2-O2-AD-Q005",
+        "C2-D2-O2-AD-Q006",
+        "C2-D2-O2-AD-Q007",
         "C2-D2-O2-EFS-Q001",
         "C2-D2-O2-EFS-Q002",
         "C2-D2-O2-EFS-Q003",
@@ -2413,19 +2426,21 @@
         "C2-D2-O2-NTFS-Q003",
         "C2-D2-O2-NTFS-Q004",
         "C2-D2-O2-NTFS-Q005",
+        "C2-D2-O2-NTFS-Q006",
         "C2-D2-O2-SHAREPERM-Q001",
+        "C2-D2-O2-SHAREPERM-Q002",
         "C2-D2-O2-SHAREPERM-Q004",
         "C2-D2-O2-SHAREPERM-Q005",
         "C2-D2-O2-UAC-Q001",
         "C2-D2-O2-UAC-Q003"
       ],
       "reviewQuestionIds": [
-        "C2-D2-O2-NTFS-Q006",
-        "C2-D2-O2-SHAREPERM-Q002",
         "C2-D2-O2-SHAREPERM-Q003",
         "C2-D2-O2-SHAREPERM-Q006",
         "C2-D2-O2-UAC-Q002",
-        "C2-D2-O2-UAC-Q004"
+        "C2-D2-O2-UAC-Q004",
+        "C2-D2-O2-UAC-Q005",
+        "C2-D2-O2-UAC-Q006"
       ],
       "pbqLabIds": [
         "C2-D2-O2-ACL-LAB"
@@ -2583,17 +2598,18 @@
         "C2-D2-O5-PHISH-Q005",
         "C2-D2-O5-PHISH-Q006",
         "C2-D2-O5-PHISH-Q007",
+        "C2-D2-O5-PHISH-Q008",
         "C2-D2-O5-XSS-Q001",
         "C2-D2-O5-XSS-Q003"
       ],
       "reviewQuestionIds": [
-        "C2-D2-O5-PHISH-Q008",
         "C2-D2-O5-PHISH-Q009",
         "C2-D2-O5-PHISH-Q010",
         "C2-D2-O5-XSS-Q002",
         "C2-D2-O5-XSS-Q004",
         "C2-D2-O5-XSS-Q005",
-        "C2-D2-O5-XSS-Q006"
+        "C2-D2-O5-XSS-Q006",
+        "C2-D2-O5-XSS-Q007"
       ],
       "pbqLabIds": [
         "C2-D2-O5-PHISH-LAB"
@@ -2679,7 +2695,6 @@
         "C2-D2-O7-AUTORUN-Q003",
         "C2-D2-O7-AUTORUN-Q004",
         "C2-D2-O7-AUTORUN-Q005",
-        "C2-D2-O7-AUTORUN-Q006",
         "C2-D2-O7-BIOSPW-Q001",
         "C2-D2-O7-BIOSPW-Q002",
         "C2-D2-O7-BIOSPW-Q003",
@@ -2692,13 +2707,11 @@
         "C2-D2-O7-HARDEN-Q003",
         "C2-D2-O7-HARDEN-Q004",
         "C2-D2-O7-HARDEN-Q005",
-        "C2-D2-O7-HARDEN-Q006",
         "C2-D2-O7-LOCKOUT-Q001",
         "C2-D2-O7-LOCKOUT-Q004",
         "C2-D2-O7-LOCKOUT-Q005"
       ],
       "reviewQuestionIds": [
-        "C2-D2-O7-HARDEN-Q007",
         "C2-D2-O7-HARDEN-Q008",
         "C2-D2-O7-LOCKOUT-Q002",
         "C2-D2-O7-LOCKOUT-Q003",
@@ -2734,6 +2747,10 @@
         "C2-D2-O8-MDMPROFILE-Q007",
         "C2-D2-O8-MDMPROFILE-Q008",
         "C2-D2-O8-MDMPROFILE-Q009",
+        "C2-D2-O8-PATCH-Q001",
+        "C2-D2-O8-PATCH-Q002",
+        "C2-D2-O8-PATCH-Q003",
+        "C2-D2-O8-PATCH-Q004",
         "C2-D2-O8-REMOTEWIPE-Q001",
         "C2-D2-O8-REMOTEWIPE-Q002",
         "C2-D2-O8-REMOTEWIPE-Q003",

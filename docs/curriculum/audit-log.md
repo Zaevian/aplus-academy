@@ -664,4 +664,81 @@ Short rationales remain in O2/O3/O4/O5/O7/O8 (287). The next pass should take O8
 
 I rewrote all short (<25 chars) distractor rationales in O7 (63) and O8 (68), 131 in total, so each one names the mistake and states the correct 220-1201 v3.0 fact. The regression test now covers O1/O6/O7/O8. Remaining short rationales in C1-D2: O2 22, O3 27, O4 57, O5 50 (156 total). O6-MASK-Q004 is deliberately unchanged.
 
+## 2026-11-09 — C2 Domain 2 Security learner-perspective audit
+
+**Auditor/Implementer:** Miyuki (weekly rotation)
+**Branch:** `miyuki/audit-2026-11-09-c2d2-security` from `master` @ 4ffdfaf. It touches only `questions/c2/d2.ts`, `lessons/c2/d2.ts` (O1-L1, O7-L1, and O8-L1 text), a new test, and the regenerated coverage files. It shares no content files with draft #23 or #24. Because #24 also appends to this log, the second of the two to merge needs a trivial conflict resolution here. The answer-key rebalance and the practice/mock choice shuffle are both **held** (Diablo), so neither is in this branch.
+**Official:** CompTIA A+ V15 220-1202 Domain 2.0 Security (28%), Exam Objectives Document Version 4.0. Bullets 2.1–2.11 were re-read from the 4.0 PDF (the 2026-11-01 cert-health copy, and the CompTIA-hosted 4.0 file is still current on 2026-11-09). No dumps were used.
+
+### Live smoke (2026-11-09 ET)
+All 31 checked URLs return 200 and render real content:
+- `/course/core-2/domain-2`, its quiz and review pages, `/practice/core-2`, and `/exam/core-2`.
+- All 16 D2 lesson pages.
+- All 10 D2 labs: auth-factors, permissions-lab, wireless-security, phishing-lab, malware-response, workstation-harden, mobile-device-security, data-destruction, soho-router, and browser-security.
+
+Every O1–O11 objective has a scored PBQ and a disjoint holdout (overlap 0). C2-D2 is in `HOLDOUT_DOMAIN_IDS`. All 6 lesson media blocks (4 diagrams, 2 videos) resolve, and there are no broken KC references.
+
+### Learner pass — findings
+- **Bare "Correct." keys (MUST-FIX):** 233 key rationales said only "Correct.". A learner who answers correctly sees only the key rationale, so on most of D2 they got no explanation.
+- **Wrong-objective teaching:**
+  - O7-L1 and items `O7-HARDEN-Q006`, `O7-HARDEN-Q007`, and `O7-AUTORUN-Q006` taught patch management and endpoint security software (AV, anti-malware, content filtering) as **2.7** bullets.
+  - On V4.0 these are **2.8** mobile-device bullets. 2.4 separately lists AV/AM and software firewalls as tools. O8-L1 did not teach either bullet at all.
+- **Factual or misleading wording:**
+  - `O4-FILELESS-Q008` implied that cryptominer is new on V15. It was already on 220-1102, and worm is no longer listed.
+  - `O8-MDMPROFILE-Q009` called the 2.7-mobile/2.8-destruction order "blog numbering". It was the official 220-1102 numbering.
+  - `O6-SYSRESTORE-Q011` asked for a "pair" while its key had three steps, and its distractor rationales began with "Correct ...".
+  - `O9-WIPE-Q005` had a garbled run-on key.
+- **Stem gives away the key:** the `O3-RADIUS-Q002` stem contained "TACACS+", which was also the answer.
+- **Keyed-coverage gaps:** the lessons taught these bullets, but no item keyed them:
+  - 2.1: door locks, security guards, key fobs, smart cards, mobile digital key, keys, retina, voice recognition, FRT as a factor type, lighting, magnetometers, hardware token.
+  - 2.2: firewall activate/deactivate, port vs application rules, local vs Microsoft account, power user.
+  - 2.5: non-compliant systems.
+  - 2.8: patch management and endpoint security software.
+- **Answer-key position bias (report only; HELD):** of 311 single-answer source keys, **100% were "a"**. All 21 multi-select keys were "a,b". Displayed positions differ by renderer:
+  - Mastery quiz, practice, and lesson KC (`saltFromId` shuffle): 28/24/23/25%, so no letter leak.
+  - **Mock exam** (`id.length/100` salt): 22/**52**/26/**0**%, so B leaks and D never appears.
+- **Longest-answer tell:** the key was the longest option on 83% of single-answer items.
+- **Weak distractors:** most items use cross-domain or absurd filler, such as "Degauss the laptop TPM", "A type of bollard", and a bare "No." rationale. A beginner can eliminate most options without knowing the topic.
+- **Other debt:** 1,035 rationales were under 25 characters (260 of them keys), and only 15 of 332 items carried tags.
+- **Sources:** no item has the wrong Core or the wrong objective tag (all `c2-obj-3.0`, and every ID matches its objective). All 16 D2 lessons still carry `lastVerified: 2026-09-01`. They were left alone because `sources.ts` and the cert-health dates sit in draft #23.
+- **Holdout use:** mastery and practice exclude the holdout. The mock exam draws from the full Core 2 bank, holdout included, and this is by design.
+
+### Shipped
+- **230 bare "Correct." key rationales filled** with each item's own authored explanation. No new facts were added. The other 3 stubs were in the items moved below. One side effect: on a wrong answer, the explanation now appears twice.
+- **Objective fix:**
+  - The O7-L1 text and summary now say that patching and AV still matter on PCs, and that V15 lists them under 2.8 and 2.4, not 2.7.
+  - O8-L1 gains a paragraph and a summary bullet on 2.8 patch management (OS and app updates) and endpoint security software (AV, AM, content filtering), plus the concept `C2-D2-O8-PATCH`.
+  - The 3 mis-attributed O7 items are removed and replaced by 4 O8 items, `O8-PATCH-Q001` through `Q004`.
+- **Wording and factual fixes:**
+  - `O4-FILELESS-Q008`: the explanation is corrected.
+  - `O8-MDMPROFILE-Q009`: choice c and the explanation now cite the 220-1102 numbering.
+  - `O6-SYSRESTORE-Q011`: the stem now asks for a "sequence", and the distractor rationales no longer start with "Correct".
+  - `O9-WIPE-Q005`: the key is rewritten.
+  - `O3-RADIUS-Q002`: the stem no longer names the answer, and the distractors are now in-domain (RADIUS, Kerberos, WPA2-Enterprise).
+  - O1-L1 now names "voice recognition technology".
+- **+16 coverage items** for every gap listed above:
+  - O1: `VESTIBULE-Q005`–`Q011` and `MFA-Q006`–`Q009`.
+  - O2: `UAC-Q005`/`Q006` and `AD-Q006`/`Q007`.
+  - O5: `XSS-Q007`.
+  - O8: `PATCH-Q004`, plus the 3 rewritten PATCH items.
+  - Each has in-domain distractors, rationales of 40+ characters, and tags. Their keys are spread across b/c/d/a. This applies only to the new items; no existing key moved.
+- The D2 bank goes from 332 to 349 items (+20 new, −3 removed).
+- `src/lib/__tests__/c2-d2-audit.test.ts` covers:
+  - no bare "Correct." keys, and no distractor rationale that starts with "Correct"
+  - the RADIUS-Q002 giveaway fix
+  - the 2.7→2.8 attribution, for both lessons and items
+  - the wording fixes
+  - the 18 coverage items, including the 40-character rationale floor and tags
+  - Core 2 source and objective tags
+- Regenerated `coverage.json` and `coverage-states.json`. Exam Ready is still 63/67. typecheck, vitest (20 files / 129 tests), verify:content, and next build all pass.
+
+### Open risks (not fixed here)
+- **Key-position bias (HELD):** the C2-D2 source is 95% "a" after this pass (312/328 single-answer items; the 16 new non-"a" keys are new items only), and all 21 multi-select keys are still "a,b". This only reaches learners through the mock-exam salt (B 50%, D 2%). It needs the held shuffle fix or a source rebalance, and waits for Diablo's green light.
+- **Longest-answer tell (80%) and filler distractors across O1–O11:** these need a hand rewrite with in-domain distractors. This is a bigger tell than C2-D1 had.
+- **Core 2 rationale debt:** 785 short rationales remain in D2 (759 distractors, 26 keys). Tags cover 35/349 items.
+- Fingerprint, palm print, and the voice-call OTP appear only as distractors in keyed items, not as keys. The lessons teach them.
+- Lesson `lastVerified` dates (2026-09-01) stay stale until after #23.
+
+**Next rotation:** C2-D3 Software Troubleshooting.
+
 ---
