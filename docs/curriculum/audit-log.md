@@ -664,6 +664,7 @@ Short rationales remain in O2/O3/O4/O5/O7/O8 (287). The next pass should take O8
 
 I rewrote all short (<25 chars) distractor rationales in O7 (63) and O8 (68), 131 in total, so each one names the mistake and states the correct 220-1201 v3.0 fact. The regression test now covers O1/O6/O7/O8. Remaining short rationales in C1-D2: O2 22, O3 27, O4 57, O5 50 (156 total). O6-MASK-Q004 is deliberately unchanged.
 
+---
 ## 2026-11-09 — C2 Domain 2 Security learner-perspective audit
 
 **Auditor/Implementer:** Miyuki (weekly rotation)
