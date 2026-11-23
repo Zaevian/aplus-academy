@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 import type { Lab } from "@/content/schema";
 import { LabStatus } from "@/components/labs/lab-kit";
 
-const WIN: Record<string, string> = {
-  help: "Sandboxed educational prompt. Try: ipconfig, ping 1.1.1.1, ping intranet.lab, nslookup, hostname, whoami, sfc, gpresult.",
+export const WIN: Record<string, string> = {
+  help: "Sandboxed educational prompt. Try: ipconfig, ipconfig /all, ping 1.1.1.1, ping intranet.lab, nslookup, hostname, whoami, sfc /scannow, gpresult /r.",
   hostname: "HELP-PC-14",
   whoami: "helpdesk\\jlee",
   ipconfig:
@@ -18,17 +18,30 @@ const WIN: Record<string, string> = {
     "Ping request could not find host intranet.lab. Check the name and try again.",
   nslookup: "Default Server: router.lab\nAddress: 192.168.1.1\n*** router.lab can't find intranet.lab: Non-existent domain",
   sfc: "Beginning system scan. This is a simulated sfc /scannow — host is not scanned.",
+  "sfc /scannow":
+    "Beginning system scan. This is a simulated sfc /scannow — host is not scanned.\nWindows Resource Protection did not find any integrity violations.",
   gpresult: "Simulated gpresult: computer is workgroup-joined, no domain GPOs.",
+  "gpresult /r": "Simulated gpresult /r: computer is workgroup-joined, no domain GPOs applied.",
 };
 
-const LINUX: Record<string, string> = {
-  help: "Sandboxed Linux. Try: pwd, ls, cat /etc/hosts, ip, ping, man, chmod, sudo.",
+export const LINUX: Record<string, string> = {
+  help: "Sandboxed Linux. Try: pwd, ls, ls -l, cat /etc/hosts, cat /etc/resolv.conf, ip addr, ping -c 4 192.168.1.1, chmod 640 notes.txt, chown alice notes.txt, sudo chown alice:staff notes.txt, sudo whoami, man.",
   pwd: "/home/tech",
   ls: "notes.txt  ticket.md",
   "cat /etc/hosts": "127.0.0.1 localhost\n192.168.1.10 printer.lab",
   "cat /etc/resolv.conf": "nameserver 192.168.1.1",
-  ip: "eth0  192.168.1.50/24  gw 192.168.1.1",
-  ping: "PING 192.168.1.1: 64 bytes time=1 ms",
+  "ls -l": "-rw-r--r-- 1 tech staff 120 notes.txt\n-rw-r--r-- 1 tech staff 340 ticket.md",
+  ip: "Usage: ip [ OPTIONS ] OBJECT { COMMAND | help } — try ip addr",
+  "ip addr": "2: eth0: <UP> inet 192.168.1.50/24 brd 192.168.1.255\n(default route via 192.168.1.1 — see ip route)",
+  "ip a": "2: eth0: <UP> inet 192.168.1.50/24 brd 192.168.1.255",
+  "ip route": "default via 192.168.1.1 dev eth0",
+  ping: "ping: usage error: Destination address required — try ping -c 4 192.168.1.1",
+  "ping -c 4 192.168.1.1":
+    "PING 192.168.1.1 56(84) bytes of data.\n64 bytes from 192.168.1.1: time=1 ms\n--- 4 packets transmitted, 4 received, 0% packet loss",
+  "chmod 640 notes.txt": "(no output) notes.txt is now -rw-r----- : owner read/write, group read, others none.",
+  "chown alice notes.txt": "chown: changing ownership of 'notes.txt': Operation not permitted — giving a file to another user needs root; try sudo.",
+  "sudo chown alice:staff notes.txt": "[sudo] password for tech: (simulated)\n(no output) notes.txt is now owned by alice, group staff.",
+  "sudo whoami": "[sudo] password for tech: (simulated)\nroot",
   whoami: "tech",
   man: "Use man <command> in real life. This sandbox prints short help.",
 };

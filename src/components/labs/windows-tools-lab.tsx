@@ -192,7 +192,7 @@ const APPLICATION_EVENTS: LogEvent[] = [
     time: "07:08:44",
     source: "Outlook",
     eventId: 26,
-    message: "A add-in was slow to load (ContosoSearch, 3.2 s).",
+    message: "An add-in was slow to load (ContosoSearch, 3.2 s).",
   },
   {
     id: "a3",
