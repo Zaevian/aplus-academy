@@ -6041,7 +6041,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 23,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -6059,7 +6059,7 @@
           "conceptId": "C2-D3-O1-BSOD",
           "label": "BSOD",
           "state": "Exam Ready",
-          "questionCount": 8,
+          "questionCount": 9,
           "inPbq": true
         },
         {
@@ -6147,7 +6147,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 23,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -6163,7 +6163,7 @@
           "conceptId": "C2-D3-O2-APPCRASH",
           "label": "APPCRASH",
           "state": "Exam Ready",
-          "questionCount": 10,
+          "questionCount": 11,
           "inPbq": true
         },
         {
@@ -6220,7 +6220,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 23,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -6250,7 +6250,7 @@
           "conceptId": "C2-D3-O3-DATAUSAGE",
           "label": "DATAUSAGE",
           "state": "Exam Ready",
-          "questionCount": 9,
+          "questionCount": 10,
           "inPbq": true
         }
       ],
@@ -6317,7 +6317,7 @@
       "evidence": {
         "hasLessons": true,
         "hasPracticeInteractions": true,
-        "assessedDepth": 22,
+        "assessedDepth": 23,
         "hasDisjointHoldout": true,
         "hasScoredPbq": true,
         "scoredPbqIds": [
@@ -6340,7 +6340,7 @@
           "conceptId": "C2-D3-O4-FAKEAV",
           "label": "FAKEAV",
           "state": "Retained",
-          "questionCount": 9,
+          "questionCount": 10,
           "inPbq": false
         },
         {

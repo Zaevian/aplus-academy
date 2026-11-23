@@ -665,3 +665,54 @@ Short rationales remain in O2/O3/O4/O5/O7/O8 (287). The next pass should take O8
 I rewrote all short (<25 chars) distractor rationales in O7 (63) and O8 (68), 131 in total, so each one names the mistake and states the correct 220-1201 v3.0 fact. The regression test now covers O1/O6/O7/O8. Remaining short rationales in C1-D2: O2 22, O3 27, O4 57, O5 50 (156 total). O6-MASK-Q004 is deliberately unchanged.
 
 ---
+
+## 2026-11-23 — C2-D3 Software Troubleshooting (220-1202 obj 3.x)
+
+**Auditor/Implementer:** Miyuki
+**Branch:** `miyuki/audit-2026-11-23-c2d3-software-troubleshooting` from `master` @ 4ffdfaf. Draft. Does not touch the answer-key rebalance or the practice/mock shuffle (both held). Independent of open #24 and #27 except this log append.
+**Official:** CompTIA A+ 220-1202 Exam Objectives Document Version 4.0, re-downloaded 2026-11-23 (same CMP URL as `sources.ts` `c2-obj-3.0`, still Version 4.0). Domain 3 is 23%. Bullets are symptoms only. 3.1 does not list a numbered repair ladder. 3.2 has no AirDrop bullet. 3.4 "altered files" includes missing/renamed files and inability to access files, plus degraded browser performance. No dumps.
+
+### Learner pass
+Walked the nine lessons, the 112-item bank, the mobile-OS and compromised-phone labs, the shared Windows tools/CLI labs, and the Core 2 shift. Canonical live URLs for the domain, quiz, review, four objectives, nine lessons, five labs, practice, and the Core 2 exam returned 200. Diagrams (`TsMethodDiagram`, `PhoneSettingsDiagram`, `MalwareStepsDiagram`) are registered. No lesson or lab 404.
+
+### Findings
+- **Short rationales:** 261 choice rationales were under 25 characters (212 distractors, 49 keys), including "Unrelated.", "Listed.", "Classic.", "Correct scope.", and "The store."
+- **Factual:** The O1 lesson and three items said CompTIA lists reboot / SFC / reimage / profile rebuild as objective bullets. V4.0 3.1 does not. `bootrec /fixmbr` was taught as how firmware finds Windows, including on UEFI/GPT. `certmgr.msc` was the only trusted-root tool (that snap-in is the current-user store). One Wi-Fi distractor ("Disable rotation lock") was explained as replacing the SoC.
+- **Stems:** `AUTOROTATE-Q009` stated that Airplane mode was already on. `JAILBREAK-Q008` was a true/false giveaway. `FAKEAV-Q006` asked which symptoms are "on the list" and used Core 1 cabling/RAID/PoE as the only distractors.
+- **Coverage gaps (no keyed item):** 3.1 system instability, 3.2 random reboots, 3.3 limited internet connectivity, 3.4 inability to access files. The other 3.x bullets already had a keyed item. AirDrop is not taught as a 3.2 bullet.
+- **Pools:** C2-D3 holdout is disjoint (6 items per objective). No holdout id was in the practice pool.
+- **Key-letter bias (measured, not changed):** see below.
+- **Readiness:** all four objectives are Exam Ready on the PBQ + disjoint-holdout gate. Concept rows for profile, time drift, USB resources, fake AV, and certificate warnings are Retained (not in a scored PBQ). Subtopic labels are still index-paired, so several official bullets display as Taught.
+
+### Fixes shipped
+- Rewrote all 261 rationales under 25 characters so each names the trap or the deciding fact.
+- Lesson and three explanations no longer claim a numbered 3.1 repair list. UEFI/GPT boot repair now points at `bootrec /rebuildbcd` and `bcdboot`; `/fixmbr` is limited to BIOS/MBR.
+- `CERTBROWSER-Q009` names `certmgr.msc` (current user) and `certlm.msc` (computer). The rotation-lock Wi-Fi distractor rationale matches the choice. Airplane-mode and jailbreak stems no longer give away the answer. `FAKEAV-Q006` distractors are 3.1 symptoms.
+- **+4 practice-pool MCQs** (112 → 116), keys not moved on existing items, and the previous 24 holdout ids stay out of practice: `BSOD-Q009` system instability, `APPCRASH-Q011` random reboots, `DATAUSAGE-Q010` limited internet, `FAKEAV-Q010` inability to access files.
+- Lesson `lastVerified` set to 2026-11-23. Regression test `src/lib/__tests__/c2-d3-audit.test.ts`. Coverage files regenerated with `verify:content`. Exam Ready count unchanged.
+
+### Bank and key bias
+Bank **112 → 116** (28 → 29 per objective). Practice depth 22 → 23. Holdout remains 6 per objective.
+
+Answer letters were not rebalanced. Single-answer source keys before: a/b/c/d = **97.0 / 3.0 / 0 / 0** (98/3/0/0 of 101). After, only because the four new items are not all "a": **93.3 / 4.8 / 1.0 / 1.0** (98/5/1/1 of 105). All keys (including multi-select) after: a/b/c/d = **85.8 / 11.0 / 2.4 / 0.8** (109/14/3/1 of 127).
+
+Displayed positions, shuffle code unchanged. Practice salt (`saltFromId`): single-answer a/b/c/d = **22.9 / 29.5 / 23.8 / 23.8%**. Mock salt (`id.length / 100`): single-answer a/b/c/d = **1.0 / 81.0 / 13.3 / 4.8%** (B-heavy). Longest choice is the key on **94.1%** of single-answer items before (95/101) and **91.4%** after (96/105).
+
+### Per-objective readiness
+| Obj | State | Practice depth | Scored PBQ | Concept notes |
+| --- | --- | --- | --- | --- |
+| 3.1 | Exam Ready | 23 | Windows CLI, Windows tools, Core 2 shift (shared) | BSOD Exam Ready; profile, time drift, USB resources Retained |
+| 3.2 | Exam Ready | 23 | Mobile OS triage | App, autorotate, and update concepts Exam Ready |
+| 3.3 | Exam Ready | 23 | Compromised phone | Jailbreak, spoofed app, and data-usage concepts Exam Ready |
+| 3.4 | Exam Ready | 23 | Core 2 shift (shared) | Redirects Exam Ready; fake AV and certificates Retained |
+
+### Open risks
+- Source keys remain about 93% "a". The mock salt displays about 81% of single-answer keys as B. Both are held.
+- The longest option is still the key about 91% of the time, and many distractors are still cross-domain fillers. Rationales now name the trap.
+- Misconception tags cover 15 of 116 items.
+- Objective-level Exam Ready for 3.1 and 3.4 depends on shared labs. Subtopic rows are index-paired with concepts, so several official bullets still render as Taught.
+- No per-objective delayed-retention content hook (same academy-wide blocker).
+- `sources.ts` vendor rows (`ms-windows`, `usb-if`, `cisa-phishing`) are still stamped 2026-09-01. Left unchanged so this branch does not collide with other source edits. The 220-1202 PDF itself was re-checked today.
+
+**Next rotation:** C2-D4 Operational Procedures.
+

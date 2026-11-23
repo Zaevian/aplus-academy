@@ -11,7 +11,7 @@ export const C2_D3_LESSONS: Lesson[] = [
     estimatedMinutes: 24,
     conceptIds: ["C2-D3-O1-BSOD"],
     prerequisites: [],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "ms-windows"],
     blocks: [
       {
@@ -62,7 +62,7 @@ After reboot, open **Event Viewer** (\`eventvwr.msc\`) and **Reliability Monitor
 
 1. Confirm the disk still exists in the firmware setup utility. A dead NVMe, a loose SATA cable, or a RAID volume that dropped a member will never boot, and \`bootrec\` will not grow a new disk.
 2. Confirm **boot order** and **UEFI versus legacy**. A GPT disk with Windows expects UEFI. A technician who "fixed" a machine by enabling CSM after a motherboard swap has created a new outage.
-3. Repair the **Boot Configuration Data (BCD)** store only after the disk is visible: \`bootrec /fixmbr\`, \`bootrec /fixboot\`, \`bootrec /rebuildbcd\` (and \`bcdboot\` when rebuild is not enough). These commands repair how firmware finds Windows; they are not disk formatters.
+3. Repair the **Boot Configuration Data (BCD)** store only after the disk is visible. On a **BIOS/MBR** disk, \`bootrec /fixmbr\` rewrites the master boot record and \`bootrec /fixboot\` rewrites the boot sector. On **UEFI/GPT** (what current Windows expects), \`/fixmbr\` does not repair the EFI boot path — use \`bootrec /rebuildbcd\` and, when that is not enough, \`bcdboot\` to recreate the EFI boot files. None of these commands format the disk.
 4. **BitLocker** recovery may be required after firmware or boot-file changes. That is expected, not optional.
 
 Startup Repair, System Restore, and uninstalling a quality update are legitimate **repair Windows** steps. **Reimage** is last among software options when the image is not trustworthy — after you have captured user data if the volume still mounts. The common mistake is formatting the OS volume because the BCD is corrupt. The data was probably fine.`,
@@ -127,7 +127,7 @@ Startup Repair, System Restore, and uninstalling a quality update are legitimate
     estimatedMinutes: 22,
     conceptIds: ["C2-D3-O1-USBRES", "C2-D3-O1-BSOD"],
     prerequisites: ["C2-D3-O1-L1"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "ms-windows", "usb-if"],
     blocks: [
       {
@@ -228,7 +228,7 @@ If a specific USB device also BSODs the machine, treat it as a driver crash: uni
     estimatedMinutes: 22,
     conceptIds: ["C2-D3-O1-PROFILE", "C2-D3-O1-TIMEDRIFT"],
     prerequisites: ["C2-D3-O1-L2"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "ms-windows"],
     blocks: [
       {
@@ -266,7 +266,7 @@ Locally, a huge Desktop, a corrupted \`NTUSER.DAT\`, or a profile that never fin
           ["Rebuild profile", "One user broken, others fine", "A domain account delete"],
           ["Reimage", "Image untrustworthy or repair exhausted", "FIRST action on a BSOD"],
         ],
-        caption: "CompTIA lists reboot, services, repair, SFC, restore, profile rebuild, and reimage for a reason — they are ordered tools.",
+        caption: "Ordered repairs for the 3.1 symptoms. Exam Objectives V4.0 lists those symptoms (BSOD, degraded performance, boot, shutdowns, services, crashes, low memory, USB resources, instability, no OS found, slow profile, time drift). It does not publish this ladder as numbered bullets.",
       },
       {
         type: "knowledge-check",
@@ -342,7 +342,7 @@ Keep **user education** for the end of a confirmed malware case (Core 2 objectiv
     estimatedMinutes: 20,
     conceptIds: ["C2-D3-O2-APPCRASH", "C2-D3-O2-MOBILEUPDATE"],
     prerequisites: ["C2-D3-O1-L3"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0"],
     blocks: [
       {
@@ -362,7 +362,9 @@ Keep **user education** for the end of a confirmed malware case (Core 2 objectiv
 
 **Permissions** matter. A camera app that "won't open" may be launching into a blank screen because Camera and Photos are denied. A banking app may refuse to run if the user denied phone state or if the device fails a Play Integrity / jailbreak check — that last case is a security symptom (objective 3.3), not a store glitch.
 
-**Application fails to close or crashes** in a loop: force-stop, reboot the device, update the app, then reinstall. If the crash started after an OS update, check the vendor's compatibility note; the BEST fix may be waiting for the vendor, not sideloading an old APK. Random reboots that coincide with one app still point at that app first.
+**Application fails to close or crashes** in a loop: force-stop, reboot the device, update the app, then reinstall. If the crash started after an OS update, check the vendor's compatibility note; the BEST fix may be waiting for the vendor, not sideloading an old APK.
+
+**Random reboots** (the phone restarts by itself, battery health is fine, the pack is not swollen) are a 3.2 software symptom until hardware evidence says otherwise. If Safe mode stays up and the reboots started with one app or a failed OS update, remove or roll back that change and retest a normal boot. A swollen pack or a health reading the vendor already calls failed is a battery replacement, not a jailbreak.
 
 **Application fails to install** is usually: not enough storage, a blocked **unofficial package** (see 3.3), a corporate **MDM** restriction, a wrong architecture (32-bit APK on a 64-bit-only build), a corrupted download, or the wrong store account. On iOS, a failed install is often Apple ID, network, or an enterprise profile. On Android, "Play Protect doesn't recognise this app" is a warning, not a suggestion to disable Play Protect.
 
@@ -443,7 +445,7 @@ Do not factory-reset as FIRST. Reset is a valid last step for a device that will
     estimatedMinutes: 20,
     conceptIds: ["C2-D3-O2-AUTOROTATE", "C2-D3-O2-APPCRASH"],
     prerequisites: ["C2-D3-O2-L1"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0"],
     blocks: [
       {
@@ -564,7 +566,7 @@ Do not skip the OS battery-health screen. A pack at 94% with one greedy app is a
     estimatedMinutes: 20,
     conceptIds: ["C2-D3-O3-JAILBREAK", "C2-D3-O3-SPOOFAPP"],
     prerequisites: ["C2-D3-O2-L2"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "cisa-phishing"],
     blocks: [
       {
@@ -662,7 +664,7 @@ MDM can block unknown sources and require a managed Google Play / Apple Business
     estimatedMinutes: 20,
     conceptIds: ["C2-D3-O3-DATAUSAGE", "C2-D3-O3-SPOOFAPP"],
     prerequisites: ["C2-D3-O3-L1"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "cisa-phishing"],
     blocks: [
       {
@@ -782,7 +784,7 @@ Tell the user which accounts to rotate from a **clean** device: Apple ID / Googl
     estimatedMinutes: 22,
     conceptIds: ["C2-D3-O4-REDIRECT", "C2-D3-O4-CERTBROWSER"],
     prerequisites: ["C2-D3-O3-L2"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "ms-windows", "cisa-phishing"],
     blocks: [
       {
@@ -880,7 +882,7 @@ Invalid certs plus redirects plus a new trusted root in \`certmgr.msc\` is a com
     estimatedMinutes: 22,
     conceptIds: ["C2-D3-O4-FAKEAV", "C2-D3-O4-REDIRECT"],
     prerequisites: ["C2-D3-O4-L1"],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-23",
     sources: ["c2-obj-3.0", "ms-windows", "cisa-phishing"],
     blocks: [
       {
@@ -903,6 +905,8 @@ Uninstall the rogue app from Installed apps if it appears there. If it traps the
 **Desktop alerts** and **unwanted notifications** include lock-screen ads, Windows notification spam from a sideloaded store app, and balloon tips from PUPs. Browser notification permission abuse ("news sites" that ping every two minutes) is a Settings > Notifications / browser site-permission cleanup, which may be enough if that is the only symptom. Coupled with redirects and a disabled Defender, it is malware.
 
 **Altered or missing files**, renamed extensions, ransom notes, or a desktop wallpaper you did not set are ransomware or destructive malware until proven otherwise. Do not decrypt with a tool the pop-up sells. Isolate, preserve evidence per 4.6, restore from **backup** (4.3). Missing files after a "optimizer" that emptied Documents is still a restore-from-backup problem; the optimizer is a PUP.
+
+**Inability to access files** is the other half of that V4.0 bullet: the names are still in the folder, but this account gets Access Denied while another admin can open them. That is NTFS permissions, ownership, or EFS for the account that encrypted the file — not a missing-file restore and not a display driver. Fix the ACL or take ownership (or open the file as the encrypting user) before you reimage.
 
 Write down the exact product name on the fake AV dialog. It often appears in Programs and Features, a Run key, and a scheduled task under a slightly different spelling. If Windows Security still shows Defender on, that mismatch is your teaching moment for the user: Microsoft does not cold-call, and it does not demand a credit card over a full-screen Explorer overlay. After removal, confirm Defender is on and a definition update succeeds before you call the ticket done.`,
       },
