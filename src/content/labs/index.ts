@@ -207,7 +207,7 @@ export const LABS: Lab[] = [
     component: "LinuxCliLab",
     description: "Virtual Linux filesystem and command set from the objectives.",
     solution:
-      "pwd/ls to locate yourself, cat the /etc files, chmod/chown to fix permissions, ip/ping for network, journal-unaware systemd status conceptually via systemctl-like help.",
+      "pwd and ls -l to locate yourself and read permissions, cat /etc/hosts and /etc/resolv.conf, chmod to set a mode, chown (with sudo) to change the owner, and ip addr / ping -c 4 for the network check.",
     estimatedMinutes: 20,
     capstone: true,
   },
