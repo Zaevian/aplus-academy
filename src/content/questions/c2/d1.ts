@@ -27,12 +27,12 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Which statement about Windows as a workstation OS is accurate for A+ V15?",
     choices: [
       { id: "a", text: "Windows 11 is 32-bit only so it can run on 2 GB tablets.", rationale: "Windows 11 is 64-bit only." },
-      { id: "b", text: "Windows client versions still in Microsoft support, including Windows 10 and 11, are in scope.", rationale: "Correct. The objectives document says versions not end of Mainstream Support, up to Windows 11." },
+      { id: "b", text: "Windows 10 and Windows 11 client editions are both named in the objectives and in scope.", rationale: "Correct. Objective 1.3 lists Windows 10 and Windows 11 editions by name, and the Windows note covers versions up to and including Windows 11." },
       { id: "c", text: "Windows may only be installed on Microsoft-branded hardware.", rationale: "Windows is licensed for standard PCs from many OEMs." },
       { id: "d", text: "Windows cannot join a cloud identity and must use a local workgroup.", rationale: "Windows can join Active Directory or Microsoft Entra ID." },
     ],
     correct: "b",
-    explanation: "V15 covers currently supported Windows 10 and Windows 11 client versions, not retired desktop OS names.",
+    explanation: "V15 names Windows 10 and Windows 11 editions in 1.3, so both are exam content. Windows 10 reached end of support on 14 October 2025, which makes it a 1.1 life-cycle (EOL) risk on real benches, not out of scope for the exam.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D1-O1-L1",
   }),
@@ -181,7 +181,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Which statement about macOS is accurate?",
     choices: [
       { id: "a", text: "macOS is a Microsoft edition of Windows optimized for design apps.", rationale: "macOS is Apple's desktop OS." },
-      { id: "b", text: "macOS runs on Apple hardware and uses APFS as the modern default filesystem.", rationale: "Correct." },
+      { id: "b", text: "macOS runs on Apple hardware and uses APFS as the modern default filesystem.", rationale: "Correct. macOS is Apple's workstation OS, APFS-based, on Mac hardware." },
       { id: "c", text: "macOS is the kernel inside ChromeOS.", rationale: "ChromeOS is Google's OS." },
       { id: "d", text: "macOS is the mobile OS on iPhone.", rationale: "That is iOS." },
     ],
@@ -229,7 +229,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A design team's line-of-business app is Final Cut Pro. Which OS family matches that constraint?",
     choices: [
       { id: "a", text: "Windows Home", rationale: "Final Cut Pro is a macOS app." },
-      { id: "b", text: "macOS on a Mac", rationale: "Correct." },
+      { id: "b", text: "macOS on a Mac", rationale: "Correct. Application catalog can dictate the OS family — Final Cut is macOS." },
       { id: "c", text: "ChromeOS", rationale: "Not a Final Cut platform." },
       { id: "d", text: "Android", rationale: "Mobile OS, not Final Cut." },
     ],
@@ -246,7 +246,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Where does ChromeOS sit on the A+ 1.1 list?",
     choices: [
       { id: "a", text: "Mobile OS, same group as Android.", rationale: "ChromeOS is listed under workstation systems." },
-      { id: "b", text: "Workstation OS, alongside Windows, Linux, and macOS.", rationale: "Correct." },
+      { id: "b", text: "Workstation OS, alongside Windows, Linux, and macOS.", rationale: "Correct. V15 lists ChromeOS as a workstation OS, not a mobile OS." },
       { id: "c", text: "It is not an OS; it is a browser extension.", rationale: "ChromeOS is a full OS for Chromebooks." },
       { id: "d", text: "It is a Windows edition with a Google skin.", rationale: "It is Google's OS, not a Windows SKU." },
     ],
@@ -261,7 +261,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O1-CHROMEOS"],
     stem: "A school issues Chromebooks managed in Google Admin. Which description is BEST?",
     choices: [
-      { id: "a", text: "ChromeOS devices with automatic updates until Auto Update Expiration, managed by Google Admin.", rationale: "Correct." },
+      { id: "a", text: "ChromeOS devices with automatic updates until Auto Update Expiration, managed by Google Admin.", rationale: "Correct. Chromebooks run ChromeOS, update until AUE, and are typically managed with Google Admin." },
       { id: "b", text: "Android phones that happen to fold into laptops.", rationale: "Some Chromebooks can run Android apps, but the OS is ChromeOS." },
       { id: "c", text: "Windows Home PCs joined to a Google workgroup.", rationale: "Chromebooks are not Windows." },
       { id: "d", text: "iPadOS tablets in a clamshell case.", rationale: "Wrong family." },
@@ -278,7 +278,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A user on a Chromebook wants to install a traditional Win32 .exe. What should you explain?",
     choices: [
       { id: "a", text: "ChromeOS natively executes Win32 after enabling gpedit.", rationale: "gpedit is Windows; ChromeOS does not run Win32 natively." },
-      { id: "b", text: "Win32 installers are not native to ChromeOS; use a web app, Android/Linux container if allowed, or a Windows PC.", rationale: "Correct." },
+      { id: "b", text: "Win32 installers are not native to ChromeOS; use a web app, Android/Linux container if allowed, or a Windows PC.", rationale: "Correct. ChromeOS is web-first; Win32 is a Windows ABI. Use approved alternatives, not pretend installers." },
       { id: "c", text: "Rename the .exe to .dmg and open it.", rationale: "File extensions do not change OS ABIs." },
       { id: "d", text: "Format the Chromebook NTFS so Windows apps appear.", rationale: "Filesystem format does not add a Win32 subsystem." },
     ],
@@ -294,7 +294,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Google has reached Auto Update Expiration for a Chromebook model. What does that mean?",
     choices: [
       { id: "a", text: "The device immediately bricks and cannot browse.", rationale: "It may still work; it just stops getting OS updates." },
-      { id: "b", text: "The vendor will no longer ship ChromeOS updates for that model — treat it as life-cycle limited.", rationale: "Correct." },
+      { id: "b", text: "The vendor will no longer ship ChromeOS updates for that model — treat it as life-cycle limited.", rationale: "Correct. AUE is ChromeOS's device-level end of updates — a vendor life-cycle limit." },
       { id: "c", text: "The device upgrades itself to Windows 11 Home.", rationale: "AUE is not an OS family change." },
       { id: "d", text: "Only Android apps stop; ChromeOS still gets kernel patches forever.", rationale: "AUE ends ChromeOS updates for the device." },
     ],
@@ -396,7 +396,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     choices: [
       { id: "a", text: "FAT32", rationale: "No ACL/EFS model worth using." },
       { id: "b", text: "exFAT", rationale: "Designed for flash interoperability, not Windows ACLs." },
-      { id: "c", text: "NTFS", rationale: "Correct." },
+      { id: "c", text: "NTFS", rationale: "Correct. NTFS is the Windows internal default with ACLs, EFS, compression, and journaling." },
       { id: "d", text: "ext4", rationale: "Linux POSIX permissions, not NTFS ACLs." },
     ],
     correct: "c",
@@ -414,7 +414,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "What is the MOST likely cause?",
     choices: [
       { id: "a", text: "UEFI cannot boot ISOs from USB.", rationale: "The copy failed; this is not a boot problem yet." },
-      { id: "b", text: "FAT32 cannot store a file larger than 4 GB.", rationale: "Correct." },
+      { id: "b", text: "FAT32 cannot store a file larger than 4 GB.", rationale: "Correct. A 6 GB file cannot live on FAT32. Reformat exFAT (or NTFS if Windows-only)." },
       { id: "c", text: "ISO files may only live on NTFS ReFS dual volumes.", rationale: "Not a real restriction." },
       { id: "d", text: "Windows GUI format always creates APFS on USB.", rationale: "Windows does not format USB as APFS." },
     ],
@@ -462,7 +462,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Windows 10 reached end of support on 14 October 2025. A PC still boots Windows 10 22H2. What should a technician tell the owner?",
     choices: [
       { id: "a", text: "Booting proves Microsoft still patches it for free forever.", rationale: "End of support means no more free security updates (ESU is a paid exception, not a new edition)." },
-      { id: "b", text: "The OS is past vendor life cycle; plan ESU, isolation, or a move to a supported OS.", rationale: "Correct." },
+      { id: "b", text: "The OS is past vendor life cycle; plan ESU, isolation, or a move to a supported OS.", rationale: "Correct. A booting Windows 10 PC after end of support is an unpatched (unless ESU) asset — treat it as life-cycle risk." },
       { id: "c", text: "Format C: as exFAT to extend the life cycle.", rationale: "Filesystem choice does not extend Microsoft support." },
       { id: "d", text: "Install ChromeOS over the top without wiping because all Google OSs share NTFS.", rationale: "Nonsense on both filesystems and install types." },
     ],
@@ -496,7 +496,7 @@ export const C2_D1_QUESTIONS: Question[] = [
       { id: "a", text: "Microsoft's published end-of-support date for a Windows version.", rationale: "That is EOL." },
       { id: "b", text: "A Windows .exe will not run natively on macOS or ChromeOS.", rationale: "Correct. Cross-OS binary incompatibility." },
       { id: "c", text: "A Chromebook reaching Auto Update Expiration.", rationale: "That is a vendor life-cycle limit." },
-      { id: "d", text: "An OEM stopping Android security bullets.", rationale: "Update limitation / EOL-class issue." },
+      { id: "d", text: "An OEM stopping Android security updates.", rationale: "Update limitation / EOL-class issue." },
     ],
     correct: "b",
     explanation: "Compatibility concerns are about whether software and filesystems work across families, not about a support calendar.",
@@ -511,7 +511,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Which filesystem is the usual default on Ubuntu desktop installs?",
     choices: [
       { id: "a", text: "NTFS", rationale: "Windows." },
-      { id: "b", text: "ext4", rationale: "Correct." },
+      { id: "b", text: "ext4", rationale: "Correct. Ubuntu/Debian-family desktops typically use ext4. XFS is the RHEL-family headline default." },
       { id: "c", text: "APFS", rationale: "Apple." },
       { id: "d", text: "ReFS", rationale: "Microsoft selected SKUs." },
     ],
@@ -629,7 +629,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     choices: [
       { id: "a", text: "PXE network boot", rationale: "That is the NIC talking to a server." },
       { id: "b", text: "Internet-based cloud download only", rationale: "That pulls an image from the vendor/cloud." },
-      { id: "c", text: "Internal hard drive recovery partition", rationale: "Correct." },
+      { id: "c", text: "Internal hard drive recovery partition", rationale: "Correct. Internal hard drive (partition) on the 1.2 list is the recovery/WinRE partition." },
       { id: "d", text: "Multiboot GRUB USB", rationale: "That is removable media plus a boot manager, not the internal recovery partition." },
     ],
     correct: "c",
@@ -644,7 +644,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Forty identical accounting PCs need the same apps and settings. Which install type is designed for that?",
     choices: [
       { id: "a", text: "Forty manual in-place upgrades from the user's ISOs.", rationale: "That does not standardize a fleet." },
-      { id: "b", text: "Image deployment from a captured golden/reference image.", rationale: "Correct." },
+      { id: "b", text: "Image deployment from a captured golden/reference image.", rationale: "Correct. Image deployment clones a reference system (after Sysprep on Windows) onto many PCs." },
       { id: "c", text: "FAT32 format of each C: so they match.", rationale: "Format is not an imaging strategy." },
       { id: "d", text: "Multiboot Windows and Linux on each PC.", rationale: "Multiboot is a layout, not fleet standardization." },
     ],
@@ -659,7 +659,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O2-IMAGE"],
     stem: "What is the usual Windows step before capturing a reference PC so machine-specific data is stripped?",
     choices: [
-      { id: "a", text: "Sysprep generalize", rationale: "Correct." },
+      { id: "a", text: "Sysprep generalize", rationale: "Correct. Sysprep generalize prepares a Windows reference PC for imaging." },
       { id: "b", text: "diskpart clean on disk 0 while still in Windows", rationale: "That wipes the reference instead of capturing it." },
       { id: "c", text: "Convert the image to APFS", rationale: "Windows images are not APFS." },
       { id: "d", text: "Disable UEFI so WIM files shrink", rationale: "Firmware mode is unrelated to generalize." },
@@ -676,7 +676,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "PXE boot of an installer from WDS/MDT is BEST classified as which combination?",
     choices: [
       { id: "a", text: "USB boot method plus clean install only", rationale: "PXE is network boot, not USB." },
-      { id: "b", text: "Network boot method, often used for remote/image deployment", rationale: "Correct." },
+      { id: "b", text: "Network boot method, often used for remote/image deployment", rationale: "Correct. Network/PXE is the boot method; the payload is often an image or task sequence." },
       { id: "c", text: "Internet-based Autopilot without a NIC", rationale: "PXE requires a NIC." },
       { id: "d", text: "Internal recovery partition", rationale: "PXE is not on-disk recovery." },
     ],
@@ -692,7 +692,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A technician attaches a known-good SSD in a USB enclosure and boots it to clone onto an internal disk. Which boot method is that?",
     choices: [
       { id: "a", text: "PXE", rationale: "No network boot server is mentioned." },
-      { id: "b", text: "External / hot-swappable drive", rationale: "Correct." },
+      { id: "b", text: "External / hot-swappable drive", rationale: "Correct. Booting an external/hot-swap enclosure is a named 1.2 boot method." },
       { id: "c", text: "Internal recovery partition of the dead disk", rationale: "They booted the enclosure, not the internal recovery area." },
       { id: "d", text: "Internet-based cloud reset", rationale: "No cloud download is described." },
     ],
@@ -724,7 +724,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two statements about multiboot are accurate?",
     choices: [
-      { id: "a", text: "Firmware or a boot manager presents a menu of installed operating systems.", rationale: "Correct." },
+      { id: "a", text: "Firmware or a boot manager presents a menu of installed operating systems.", rationale: "Correct. Multiboot is a disk/boot-manager layout. Plan it or Windows Setup will eat GRUB." },
       { id: "b", text: "Multiboot is another name for Autopilot zero-touch.", rationale: "Different concepts." },
       { id: "c", text: "Windows Setup can overwrite another OS's bootloader if you do not plan the layout.", rationale: "Correct. Classic Linux+Windows foot-gun." },
       { id: "d", text: "Multiboot requires FAT32 on every volume including C:.", rationale: "System volumes stay on native filesystems." },
@@ -741,7 +741,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A sealed laptop is unboxed, plugged into Ethernet, and enrolls in Intune via Windows Autopilot with almost no technician clicks. What install/deployment model is this?",
     choices: [
       { id: "a", text: "Clean install from a local recovery partition only", rationale: "Recovery partition is local OEM reset, not Autopilot enrollment." },
-      { id: "b", text: "Zero-touch deployment", rationale: "Correct." },
+      { id: "b", text: "Zero-touch deployment", rationale: "Correct. Zero-touch is Autopilot/MDM (or Apple ADE / Android zero-touch / ChromeOS zero-touch): unbox, network, enroll." },
       { id: "c", text: "Repair installation", rationale: "Repair is for a broken existing OS." },
       { id: "d", text: "MBR dual-boot", rationale: "Unrelated." },
     ],
@@ -757,7 +757,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "How does zero-touch differ from walking a USB image to each desk?",
     choices: [
       { id: "a", text: "Zero-touch still requires the technician to click through Setup on every PC.", rationale: "The point is little or no clicking." },
-      { id: "b", text: "Identity join and MDM/Autopilot profiles configure the device after it reaches the network.", rationale: "Correct." },
+      { id: "b", text: "Identity join and MDM/Autopilot profiles configure the device after it reaches the network.", rationale: "Correct. Zero-touch is a process plus identity/MDM, not a special USB filesystem." },
       { id: "c", text: "Zero-touch only works on MBR disks.", rationale: "Firmware/partition style is separate." },
       { id: "d", text: "Zero-touch formats every disk FAT32 automatically.", rationale: "False." },
     ],
@@ -773,7 +773,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Apple Automated Device Enrollment and Android zero-touch are cousins of which Windows technology?",
     choices: [
       { id: "a", text: "chkdsk /r", rationale: "Disk repair, not enrollment." },
-      { id: "b", text: "Windows Autopilot", rationale: "Correct." },
+      { id: "b", text: "Windows Autopilot", rationale: "Correct. All are zero-touch enrollment programs for their platforms." },
       { id: "c", text: "lusrmgr.msc", rationale: "Local users MMC." },
       { id: "d", text: "dfrgui.exe", rationale: "Optimize Drives." },
     ],
@@ -820,7 +820,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O2-ZEROTOUCH", "C2-D1-O2-CLEAN"],
     stem: "An in-place upgrade failed because a VPN filter driver is unsupported on Windows 11. Which upgrade consideration did the technician skip?",
     choices: [
-      { id: "a", text: "Application and driver support / backward compatibility", rationale: "Correct." },
+      { id: "a", text: "Application and driver support / backward compatibility", rationale: "Correct. Check app and driver compatibility before an in-place upgrade — kernel VPN filters are classic breakers." },
       { id: "b", text: "Choosing GPT versus MBR after the fact", rationale: "The failure named is a driver, not the partition table." },
       { id: "c", text: "Internet Options zones", rationale: "Unrelated." },
       { id: "d", text: "Time Machine encryption", rationale: "macOS topic." },
@@ -837,7 +837,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A 4 TB disk initialized as MBR in Disk Management shows roughly 2 TB. What should the technician do?",
     choices: [
       { id: "a", text: "Format the 2 TB as FAT32 to unlock the rest.", rationale: "FAT32 does not fix MBR's 2 TB disk limit." },
-      { id: "b", text: "Convert/use GPT so the partition table can address the full disk.", rationale: "Correct." },
+      { id: "b", text: "Convert/use GPT so the partition table can address the full disk.", rationale: "Correct. MBR's practical disk cap is 2 TB. GPT is required for large disks (and for a normal UEFI Windows install)." },
       { id: "c", text: "Enable Fast Startup.", rationale: "Power setting, not capacity." },
       { id: "d", text: "Install Windows 11 Home so RAM limits rise.", rationale: "RAM SKU limits are not disk addressing." },
     ],
@@ -884,7 +884,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O2-GPT"],
     stem: "What does GPT store that MBR does not use for partition identity?",
     choices: [
-      { id: "a", text: "Globally unique identifiers (GUIDs) for the disk and partitions, plus a backup table", rationale: "Correct." },
+      { id: "a", text: "Globally unique identifiers (GUIDs) for the disk and partitions, plus a backup table", rationale: "Correct. GPT is GUID Partition Table: GUIDs plus a replicated table at the end of the disk." },
       { id: "b", text: "A single 512-byte table with no backup", rationale: "That is MBR." },
       { id: "c", text: "Apple APFS snapshots in sector 0", rationale: "Wrong OS." },
       { id: "d", text: "Only extended partitions, never primary", rationale: "GPT does not use the MBR extended/logical model." },
@@ -933,7 +933,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O2-MBR"],
     stem: "Which pair of limits is associated with MBR?",
     choices: [
-      { id: "a", text: "2 TB practical disk size and four primary partitions (or three plus extended)", rationale: "Correct." },
+      { id: "a", text: "2 TB practical disk size and four primary partitions (or three plus extended)", rationale: "Correct. MBR: ~2 TB and four primary (or 3+extended). GPT removes those caps for practical purposes." },
       { id: "b", text: "128 partitions and no 2 TB cap", rationale: "GPT." },
       { id: "c", text: "APFS snapshots and FileVault only", rationale: "macOS." },
       { id: "d", text: "6 TB RAM and four CPU sockets", rationale: "Windows Pro for Workstations SKU limits." },
@@ -950,7 +950,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "MBR historically pairs with which firmware boot mode?",
     choices: [
       { id: "a", text: "UEFI-only Secure Boot with GPT ESP", rationale: "That is the GPT/UEFI pairing." },
-      { id: "b", text: "BIOS / CSM legacy boot", rationale: "Correct." },
+      { id: "b", text: "BIOS / CSM legacy boot", rationale: "Correct. Legacy BIOS/CSM boots MBR. UEFI boots GPT for a normal Windows install." },
       { id: "c", text: "Apple T2 only", rationale: "Wrong platform." },
       { id: "d", text: "PXE without a NIC", rationale: "PXE needs a NIC; not an MBR property." },
     ],
@@ -966,7 +966,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Where does MBR store its partition table?",
     choices: [
       { id: "a", text: "In a backup copy at the end of the disk and in GUIDs per partition", rationale: "GPT." },
-      { id: "b", text: "In the first 512-byte sector of the disk along with boot code", rationale: "Correct." },
+      { id: "b", text: "In the first 512-byte sector of the disk along with boot code", rationale: "Correct. Master Boot Record is sector 0: boot code plus the four-slot table." },
       { id: "c", text: "In /etc/fstab", rationale: "Linux mount table." },
       { id: "d", text: "In the TPM 2.0 NVRAM only", rationale: "TPM stores keys, not the MBR table." },
     ],
@@ -997,7 +997,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O2-MBR", "C2-D1-O2-CLEAN"],
     stem: "Drive format during Setup chooses which of the following?",
     choices: [
-      { id: "a", text: "The filesystem on a partition (NTFS, exFAT, FAT32, and so on)", rationale: "Correct." },
+      { id: "a", text: "The filesystem on a partition (NTFS, exFAT, FAT32, and so on)", rationale: "Correct. Format applies a filesystem. GPT/MBR is the partition table, a different click." },
       { id: "b", text: "Whether Autopilot hashes the hardware", rationale: "Enrollment, not format." },
       { id: "c", text: "The TPM version", rationale: "Firmware/hardware." },
       { id: "d", text: "The Windows edition SKU", rationale: "Product key/channel, not format." },
@@ -1016,13 +1016,13 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "An old BIOS-only desktop cannot enable UEFI. The user bought a 4 TB data disk.",
     stem: "What is the honest constraint?",
     choices: [
-      { id: "a", text: "Install Windows 11 anyway; MBR will see all 4 TB on BIOS.", rationale: "MBR will not address 4 TB, and Win11 wants UEFI." },
-      { id: "b", text: "BIOS+MBR will not use the full 4 TB; the PC is the wrong platform for that disk as a boot/OS disk, and even as data MBR caps ~2 TB.", rationale: "Correct." },
+      { id: "a", text: "Initialize the data disk as MBR; on BIOS, MBR addresses all 4 TB.", rationale: "MBR with 512-byte sectors tops out near 2 TB, so an MBR layout strands about half of a 4 TB disk." },
+      { id: "b", text: "BIOS cannot boot from GPT, but as a secondary data disk it can be initialized as GPT in Disk Management and Windows uses the full 4 TB.", rationale: "Correct. Only the boot disk is tied to firmware mode; 64-bit Windows reads GPT data disks on BIOS PCs, so GPT unlocks the whole 4 TB." },
       { id: "c", text: "Format APFS to bypass MBR.", rationale: "Windows/BIOS will not boot APFS." },
       { id: "d", text: "Enable gpedit to raise the MBR cap.", rationale: "Policy editor does not change partition-table math." },
     ],
     correct: "b",
-    explanation: "A 4 TB disk needs GPT, which wants UEFI. BIOS-only hardware is the wrong tool.",
+    explanation: "Legacy BIOS cannot boot from GPT, so a BIOS-only PC keeps an MBR system disk. A non-boot data disk is different: initialize it as GPT and Windows uses the whole 4 TB. MBR would cap usable space near 2 TB.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D1-O2-L2",
   }),
@@ -1048,7 +1048,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     id: "C2-D1-O3-HOME-Q002",
     objectiveId: "C2-D1-O3",
     conceptIds: ["C2-D1-O3-HOME"],
-    stem: "Which inbound Remote Desktop role does Windows 11 Home provide?",
+    stem: "Which Remote Desktop role does Windows 11 Home provide?",
     choices: [
       { id: "a", text: "Full RDP host so others can connect to this PC.", rationale: "Inbound RDP host is Pro and up — Home can only run the client outbound." },
       { id: "b", text: "RDP client (can connect out) but not RDP host.", rationale: "Correct. Home connects out; it does not host inbound Remote Desktop." },
@@ -1102,7 +1102,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Windows Home on some modern devices offers Device Encryption. How should a technician treat that versus BitLocker on Pro?",
     choices: [
       { id: "a", text: "They are identical, including manage-bde and GPO control.", rationale: "Device Encryption is not full BitLocker administration." },
-      { id: "b", text: "Full BitLocker management (To Go, GPO, manage-bde) is a Pro-and-up feature.", rationale: "Correct." },
+      { id: "b", text: "Full BitLocker management (To Go, GPO, manage-bde) is a Pro-and-up feature.", rationale: "Correct. Do not tell a Home user to 'open BitLocker in Control Panel and use manage-bde' as if they had Pro." },
       { id: "c", text: "Home BitLocker encrypts only RAM, not disks.", rationale: "BitLocker is volume encryption, and Home does not ship the full feature." },
       { id: "d", text: "Device Encryption requires Enterprise LTSC only.", rationale: "Device Encryption is a Home/modern-standby hardware feature, not LTSC." },
     ],
@@ -1118,7 +1118,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Which edition is the small-business baseline that adds domain join, RDP host, BitLocker, and gpedit.msc over Home?",
     choices: [
       { id: "a", text: "Windows 11 Home N", rationale: "N omits media features; it is still Home." },
-      { id: "b", text: "Windows 10/11 Pro", rationale: "Correct." },
+      { id: "b", text: "Windows 10/11 Pro", rationale: "Correct. Pro is the edition that unlocks the management features A+ tests against Home." },
       { id: "c", text: "Windows 10 Pro for Workstations only", rationale: "PWS is the high-end hardware SKU; Pro already has those management features." },
       { id: "d", text: "ChromeOS Enterprise", rationale: "Wrong OS family." },
     ],
@@ -1134,7 +1134,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "What is the 64-bit RAM limit for Windows 10/11 Pro?",
     choices: [
       { id: "a", text: "128 GB", rationale: "Home." },
-      { id: "b", text: "2 TB", rationale: "Correct." },
+      { id: "b", text: "2 TB", rationale: "Correct. Pro: 2 TB RAM. Home 128 GB. Enterprise/PWS 6 TB." },
       { id: "c", text: "6 TB", rationale: "Enterprise and Pro for Workstations." },
       { id: "d", text: "4 GB", rationale: "32-bit Windows 10." },
     ],
@@ -1168,7 +1168,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Windows 10 Pro for Workstations is on the V15 list. Which capability is a PWS differentiator versus ordinary Pro?",
     choices: [
       { id: "a", text: "It is the only edition that can join a workgroup.", rationale: "All editions can use a workgroup." },
-      { id: "b", text: "Higher hardware ceilings: 6 TB RAM, four CPU sockets, ReFS, NVDIMM, SMB Direct.", rationale: "Correct." },
+      { id: "b", text: "Higher hardware ceilings: 6 TB RAM, four CPU sockets, ReFS, NVDIMM, SMB Direct.", rationale: "Correct. Pro for Workstations is Pro plus workstation-grade hardware and ReFS/RDMA/NVDIMM." },
       { id: "c", text: "It removes BitLocker to save RAM.", rationale: "PWS includes Pro features including BitLocker." },
       { id: "d", text: "It is 32-bit only.", rationale: "False." },
     ],
@@ -1215,7 +1215,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O3-ENT"],
     stem: "How does a PC typically become Windows Enterprise rather than a Home→Pro store upgrade?",
     choices: [
-      { id: "a", text: "Volume licensing / corporate image / qualifying upgrade channel — not the consumer Home upgrade screen.", rationale: "Correct." },
+      { id: "a", text: "Volume licensing / corporate image / qualifying upgrade channel — not the consumer Home upgrade screen.", rationale: "Correct. Enterprise is a volume-licensed corporate SKU, not a secret Home checkbox." },
       { id: "b", text: "Typing 'Enterprise' in winver.", rationale: "winver displays the SKU; it does not change it." },
       { id: "c", text: "Formatting C: as ReFS.", rationale: "Filesystem ≠ edition." },
       { id: "d", text: "Enabling Fast Startup twice.", rationale: "Power option." },
@@ -1297,7 +1297,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Full BitLocker volume encryption management is a feature of which editions?",
     choices: [
       { id: "a", text: "Home only", rationale: "Home lacks full BitLocker." },
-      { id: "b", text: "Pro, Pro for Workstations, and Enterprise", rationale: "Correct." },
+      { id: "b", text: "Pro, Pro for Workstations, and Enterprise", rationale: "Correct. BitLocker (and BitLocker To Go) is Pro and up on the A+ edition matrix." },
       { id: "c", text: "N editions of Home exclusively", rationale: "N is media, not encryption." },
       { id: "d", text: "Linux distros that mount NTFS", rationale: "BitLocker is a Windows feature." },
     ],
@@ -1313,7 +1313,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "BitLocker commonly stores protectors in which hardware component?",
     choices: [
       { id: "a", text: "The GPU's VRAM", rationale: "VRAM is for graphics." },
-      { id: "b", text: "Trusted Platform Module (TPM)", rationale: "Correct." },
+      { id: "b", text: "Trusted Platform Module (TPM)", rationale: "Correct. BitLocker uses TPM (plus optional PIN/USB key). TPM 2.0 is also a Windows 11 hardware requirement — related but not the same sentence." },
       { id: "c", text: "The MBR backup GPT header only", rationale: "Partition tables are not the TPM." },
       { id: "d", text: "exFAT metadata", rationale: "Wrong filesystem and mechanism." },
     ],
@@ -1328,7 +1328,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O3-BITLOCKER"],
     stem: "BitLocker To Go encrypts which kind of media?",
     choices: [
-      { id: "a", text: "Removable drives", rationale: "Correct." },
+      { id: "a", text: "Removable drives", rationale: "Correct. BitLocker To Go is BitLocker for removable drives, Pro and up." },
       { id: "b", text: "Only Apple APFS Time Machine volumes", rationale: "Wrong OS." },
       { id: "c", text: "Only RAM dumps", rationale: "BitLocker is disk/volume encryption." },
       { id: "d", text: "Only the EFI system partition on Home", rationale: "To Go is removable media; Home lacks full BitLocker." },
@@ -1363,7 +1363,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "BEST response?",
     choices: [
       { id: "a", text: "Walk them through manage-bde; Home includes it.", rationale: "Full BitLocker is not a Home feature." },
-      { id: "b", text: "Upgrade to Pro (or use a Pro+ image) if they need managed BitLocker; mention Device Encryption only if the hardware offers it.", rationale: "Correct." },
+      { id: "b", text: "Upgrade to Pro (or use a Pro+ image) if they need managed BitLocker; mention Device Encryption only if the hardware offers it.", rationale: "Correct. Edition upgrade is the professional path to BitLocker management." },
       { id: "c", text: "Format C: FAT32 so BitLocker attaches.", rationale: "FAT32 is a downgrade and does not add BitLocker." },
       { id: "d", text: "Enable gpedit by copying files from a friend, then BitLocker appears.", rationale: "Unsupported and still the wrong SKU." },
     ],
@@ -1379,7 +1379,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "gpedit.msc is available on which client editions?",
     choices: [
       { id: "a", text: "Home and Pro only, not Enterprise", rationale: "Enterprise includes it; Home does not." },
-      { id: "b", text: "Pro, Pro for Workstations, and Enterprise — not Home", rationale: "Correct." },
+      { id: "b", text: "Pro, Pro for Workstations, and Enterprise — not Home", rationale: "Correct. Local Group Policy Editor is a Pro-and-up feature difference." },
       { id: "c", text: "Every Windows SKU including Home", rationale: "Home omits the editor." },
       { id: "d", text: "N editions of Home only", rationale: "N does not add gpedit." },
     ],
@@ -1395,7 +1395,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "On a domain-joined Pro PC, who wins if domain GPO and local gpedit conflict?",
     choices: [
       { id: "a", text: "Local gpedit always wins because it is closer to the disk.", rationale: "Domain policy overrides local for the same setting." },
-      { id: "b", text: "Domain Group Policy overrides local policy for the same setting.", rationale: "Correct." },
+      { id: "b", text: "Domain Group Policy overrides local policy for the same setting.", rationale: "Correct. Local gpedit is useful on workgroup Pro PCs; on a domain, domain GPO is the authority." },
       { id: "c", text: "whichever was edited last according to winver", rationale: "winver is not a policy engine." },
       { id: "d", text: "Home-style Settings app always wins", rationale: "The PC is Pro and domain-joined." },
     ],
@@ -1411,7 +1411,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "gpedit.msc organizes settings into which two top-level trees?",
     choices: [
       { id: "a", text: "GPT and MBR", rationale: "Partition tables." },
-      { id: "b", text: "Computer Configuration and User Configuration", rationale: "Correct." },
+      { id: "b", text: "Computer Configuration and User Configuration", rationale: "Correct. Editing the wrong tree (user vs computer) is how a 'policy did nothing' ticket starts." },
       { id: "c", text: "Public and metered", rationale: "Firewall/network profiles." },
       { id: "d", text: "apt and dnf", rationale: "Linux package managers." },
     ],
@@ -1443,7 +1443,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Windows 11's published hardware baseline includes which TPM version?",
     choices: [
       { id: "a", text: "TPM 1.2 only; 2.0 is forbidden", rationale: "Win11 requires 2.0." },
-      { id: "b", text: "TPM 2.0", rationale: "Correct." },
+      { id: "b", text: "TPM 2.0", rationale: "Correct. Windows 11 requires TPM 2.0 (firmware fTPM/PTT counts when enabled)." },
       { id: "c", text: "No TPM; BitLocker replaced it", rationale: "BitLocker uses TPM; Win11 still requires TPM 2.0." },
       { id: "d", text: "TPM is optional if RAM is 128 GB", rationale: "RAM does not waive TPM." },
     ],
@@ -1459,7 +1459,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Besides TPM 2.0, Windows 11 expects which firmware boot capability?",
     choices: [
       { id: "a", text: "Legacy BIOS without Secure Boot, MBR only", rationale: "Opposite of the requirement." },
-      { id: "b", text: "UEFI with Secure Boot capable", rationale: "Correct." },
+      { id: "b", text: "UEFI with Secure Boot capable", rationale: "Correct. UEFI + Secure Boot capable + TPM 2.0 are the firmware/hardware gates." },
       { id: "c", text: "Option ROM only, no UEFI", rationale: "UEFI is required." },
       { id: "d", text: "Apple T2 exclusively", rationale: "Windows PCs use UEFI/TPM, not T2 as the Win11 gate." },
     ],
@@ -1492,7 +1492,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O3-TPMWIN"],
     stem: "Which other Windows 11 minima should a technician recite besides TPM and UEFI?",
     choices: [
-      { id: "a", text: "4 GB RAM, 64 GB storage, 64-bit dual-core 1 GHz+ CPU, DX12/WDDM 2.0", rationale: "Correct." },
+      { id: "a", text: "4 GB RAM, 64 GB storage, 64-bit dual-core 1 GHz+ CPU, DX12/WDDM 2.0", rationale: "Correct. Know the published Win11 floor: 4 GB/64 GB/64-bit dual-core/TPM 2.0/UEFI Secure Boot/DX12." },
       { id: "b", text: "512 MB RAM and a 32-bit CPU", rationale: "Windows 11 is 64-bit and needs 4 GB RAM." },
       { id: "c", text: "8 TB RAM minimum on Home", rationale: "Home's cap is 128 GB; the minimum is 4 GB." },
       { id: "d", text: "A dedicated GPU with 8 GB VRAM for Notepad", rationale: "Not a Windows 11 SKU requirement." },
@@ -1509,7 +1509,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A clean install of Windows 11 still refuses a PC that failed an in-place upgrade on TPM. Why?",
     choices: [
       { id: "a", text: "Clean install bypasses all hardware checks.", rationale: "It does not." },
-      { id: "b", text: "Both in-place and clean still enforce the Windows 11 hardware baseline.", rationale: "Correct." },
+      { id: "b", text: "Both in-place and clean still enforce the Windows 11 hardware baseline.", rationale: "Correct. Install type does not waive TPM 2.0 or UEFI. Unsupported bypasses are not the A+ answer." },
       { id: "c", text: "Clean install only checks for APFS.", rationale: "Wrong OS." },
       { id: "d", text: "TPM is checked only on Enterprise.", rationale: "The baseline is edition-agnostic." },
     ],
@@ -1541,7 +1541,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-TASKMGR"],
     stem: "Logon is slow because twelve vendor updaters start with the user. Which Task Manager area?",
     choices: [
-      { id: "a", text: "Startup apps", rationale: "Correct." },
+      { id: "a", text: "Startup apps", rationale: "Correct. Startup apps (Startup) is the named Task Manager area for logon slowness." },
       { id: "b", text: "Disk Management foreign disks", rationale: "Wrong tool." },
       { id: "c", text: "Certificate Manager Personal store", rationale: "Wrong tool." },
       { id: "d", text: "Performance graphs from last Thursday", rationale: "Task Manager is live, not a week of history — and the symptom is logon apps." },
@@ -1557,7 +1557,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-TASKMGR"],
     stem: "You need a live graph of disk and NIC utilization, then a jump to more detail. Where in Task Manager?",
     choices: [
-      { id: "a", text: "Performance (Open Resource Monitor from here)", rationale: "Correct." },
+      { id: "a", text: "Performance (Open Resource Monitor from here)", rationale: "Correct. Performance is live hardware graphs; Resource Monitor is the deeper live view." },
       { id: "b", text: "lusrmgr.msc Users tab", rationale: "Local users MMC, not graphs." },
       { id: "c", text: "cleanmgr.exe", rationale: "Disk Cleanup." },
       { id: "d", text: "File Explorer Options View tab", rationale: "Hidden files, not graphs." },
@@ -1589,7 +1589,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-TASKMGR"],
     stem: "Print Spooler is stopped. Which Task Manager area lets you see/start the service or jump to the Services MMC?",
     choices: [
-      { id: "a", text: "Services", rationale: "Correct." },
+      { id: "a", text: "Services", rationale: "Correct. Task Manager Services is the named area; services.msc is the full MMC." },
       { id: "b", text: "Startup apps", rationale: "Logon programs, not the spooler service." },
       { id: "c", text: "App history", rationale: "Not the named fix for a stopped service." },
       { id: "d", text: "Details affinity only", rationale: "PID/affinity is not how you start Spooler." },
@@ -1605,7 +1605,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-TASKMGR"],
     stem: "CPU spikes every night at 02:00 but Task Manager is idle when you look at 09:00. What is the BETTER next tool?",
     choices: [
-      { id: "a", text: "Task Scheduler and/or Performance Monitor for history — Task Manager is 'right now.'", rationale: "Correct." },
+      { id: "a", text: "Task Scheduler and/or Performance Monitor for history — Task Manager is 'right now.'", rationale: "Correct. Task Manager does not remember last night. perfmon logs counters; taskschd shows 02:00 tasks." },
       { id: "b", text: "Stay in Task Manager Processes overnight without logging.", rationale: "You can, but the exam wants you to know perfmon/taskschd exist for history/schedule." },
       { id: "c", text: "diskpart clean disk 0", rationale: "Destructive and unrelated." },
       { id: "d", text: "Hide extensions in Folder Options", rationale: "Unrelated." },
@@ -1621,7 +1621,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-TASKMGR"],
     stem: "Which keyboard shortcut opens Task Manager directly?",
     choices: [
-      { id: "a", text: "Ctrl+Shift+Esc", rationale: "Correct." },
+      { id: "a", text: "Ctrl+Shift+Esc", rationale: "Correct. Ctrl+Shift+Esc launches taskmgr. Ctrl+Alt+Del is another path that includes the Task Manager tile." },
       { id: "b", text: "Win+R then gpedit.msc", rationale: "Group Policy Editor." },
       { id: "c", text: "Ctrl+Alt+F8 in BIOS", rationale: "Not Task Manager." },
       { id: "d", text: "Alt+F4 on the desktop only", rationale: "That is shutdown/close, not Task Manager." },
@@ -1654,7 +1654,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two Task Manager areas are on the V15 named list?",
     choices: [
-      { id: "a", text: "Processes", rationale: "Correct." },
+      { id: "a", text: "Processes", rationale: "Correct. V15 names Processes, Performance, Users, Startup, and Services under Task Manager." },
       { id: "b", text: "Registry Editor", rationale: "regedit is an additional tool, not a Task Manager tab." },
       { id: "c", text: "Startup", rationale: "Correct. Startup apps." },
       { id: "d", text: "Time Machine", rationale: "macOS." },
@@ -1687,7 +1687,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A service died at 03:02 AM. Which tool holds that history?",
     choices: [
       { id: "a", text: "Task Manager Processes at 09:00", rationale: "Live now, not 03:02." },
-      { id: "b", text: "Event Viewer (eventvwr.msc)", rationale: "Correct." },
+      { id: "b", text: "Event Viewer (eventvwr.msc)", rationale: "Correct. eventvwr is the historical record: Application, System, Security, and more." },
       { id: "c", text: "dfrgui Optimize Drives", rationale: "TRIM/defrag." },
       { id: "d", text: "winver", rationale: "Version dialog." },
     ],
@@ -1702,7 +1702,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-EVENTVWR"],
     stem: "Which filename opens Event Viewer?",
     choices: [
-      { id: "a", text: "eventvwr.msc", rationale: "Correct." },
+      { id: "a", text: "eventvwr.msc", rationale: "Correct. Memorize the .msc names; the exam loves them." },
       { id: "b", text: "diskmgmt.msc", rationale: "Disk Management." },
       { id: "c", text: "taskschd.msc", rationale: "Task Scheduler." },
       { id: "d", text: "devmgmt.msc", rationale: "Device Manager." },
@@ -1718,7 +1718,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-EVENTVWR"],
     stem: "You need to prove a driver failed last Thursday. Where?",
     choices: [
-      { id: "a", text: "Event Viewer System log, filtered by time and source", rationale: "Correct." },
+      { id: "a", text: "Event Viewer System log, filtered by time and source", rationale: "Correct. Filter Event Viewer rather than staring at Task Manager." },
       { id: "b", text: "Task Manager Startup apps", rationale: "Not historical driver errors." },
       { id: "c", text: "Indexing Options rebuild", rationale: "Search." },
       { id: "d", text: "Mail MAPI profiles", rationale: "Outlook profiles." },
@@ -1734,7 +1734,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-EVENTVWR"],
     stem: "Which Windows Logs bucket is the usual home for service and driver errors?",
     choices: [
-      { id: "a", text: "System", rationale: "Correct." },
+      { id: "a", text: "System", rationale: "Correct. System log: services, drivers, Windows components. Application: app crashes. Security: audits." },
       { id: "b", text: "Setup (always empty on clients)", rationale: "Setup log is for install events, not daily service failures." },
       { id: "c", text: "Forwarded Events only", rationale: "That is collected from other PCs." },
       { id: "d", text: "Security, because every error is an audit failure", rationale: "Security is audits/logons, not typically driver yellow-bangs." },
@@ -1751,7 +1751,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "Critical versus Error versus Warning in Event Viewer means:",
     choices: [
       { id: "a", text: "They are identical severities Microsoft randomizes", rationale: "They are ordered severities." },
-      { id: "b", text: "They are different severities; Critical/Error deserve investigation before Information noise", rationale: "Correct." },
+      { id: "b", text: "They are different severities; Critical/Error deserve investigation before Information noise", rationale: "Correct. Read severity. Do not treat Information events as incidents by default." },
       { id: "c", text: "Warning always means the disk is GPT", rationale: "Unrelated." },
       { id: "d", text: "Critical events only appear on Home", rationale: "SKU does not change severity names." },
     ],
@@ -1782,7 +1782,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-EVENTVWR"],
     stem: "An application crashes repeatedly. FIRST console after reproducing?",
     choices: [
-      { id: "a", text: "Event Viewer Application log", rationale: "Correct." },
+      { id: "a", text: "Event Viewer Application log", rationale: "Correct. Application log records app crashes and .NET/runtime errors." },
       { id: "b", text: "diskpart list disk", rationale: "Not an app crash tool." },
       { id: "c", text: "gpedit Computer Configuration for wallpaper", rationale: "Unrelated." },
       { id: "d", text: "Devices and Printers default printer", rationale: "Unrelated unless it is a print app." },
@@ -1801,7 +1801,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "What should the technician do NEXT?",
     choices: [
       { id: "a", text: "Reimage immediately; Task Manager is the only log.", rationale: "Event Viewer exists for a reason." },
-      { id: "b", text: "Check Event Viewer System for Kernel-Power / unexpected shutdown IDs around that time.", rationale: "Correct." },
+      { id: "b", text: "Check Event Viewer System for Kernel-Power / unexpected shutdown IDs around that time.", rationale: "Correct. Unexpected restarts leave System log breadcrumbs. Read them before you rebuild." },
       { id: "c", text: "Disable the firewall Public profile as a first step.", rationale: "Unrelated." },
       { id: "d", text: "Convert MBR to GPT because reboots mean partition style.", rationale: "False coupling." },
     ],
@@ -1816,7 +1816,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-DISKMGMT"],
     stem: "A new 4 TB disk shows as Not Initialized. Which console?",
     choices: [
-      { id: "a", text: "diskmgmt.msc (choose GPT)", rationale: "Correct." },
+      { id: "a", text: "diskmgmt.msc (choose GPT)", rationale: "Correct. Disk Management initializes disks (GPT vs MBR), creates volumes, and assigns letters." },
       { id: "b", text: "eventvwr.msc", rationale: "Logs, not initialization." },
       { id: "c", text: "certmgr.msc", rationale: "Certificates." },
       { id: "d", text: "Indexing Options", rationale: "Search." },
@@ -1833,7 +1833,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "dfrgui.exe on an SSD primarily does which job?",
     choices: [
       { id: "a", text: "Classic 2004-style daily defrag that you must schedule aggressively", rationale: "SSDs get TRIM/retrim via Optimize, not spinning-rust defrag as a lifestyle." },
-      { id: "b", text: "Optimize Drives: TRIM/retrim on SSD, defrag on HDD", rationale: "Correct." },
+      { id: "b", text: "Optimize Drives: TRIM/retrim on SSD, defrag on HDD", rationale: "Correct. Optimize Drives (dfrgui) is media-aware. Do not 'defrag SSDs for speed' as if they were 2004 HDDs." },
       { id: "c", text: "Initialize GPT disks", rationale: "Disk Management / diskpart." },
       { id: "d", text: "Cleanmgr Windows Update cleanup", rationale: "cleanmgr." },
     ],
@@ -1848,7 +1848,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-DISKMGMT"],
     stem: "A volume is Online, a new disk is Unallocated, another is Foreign. Which tool surfaces those statuses?",
     choices: [
-      { id: "a", text: "Disk Management", rationale: "Correct." },
+      { id: "a", text: "Disk Management", rationale: "Correct. Online/Offline/Failed/Unallocated/Foreign are Disk Management vocabulary." },
       { id: "b", text: "Task Manager Users", rationale: "Sessions." },
       { id: "c", text: "gpedit User Configuration", rationale: "Policy." },
       { id: "d", text: "Mail applet", rationale: "Outlook profiles." },
@@ -1864,7 +1864,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-DISKMGMT"],
     stem: "You need to change a data volume from letter E: to M: without deleting files. BEST tool on the 1.4 list?",
     choices: [
-      { id: "a", text: "Disk Management change drive letter", rationale: "Correct." },
+      { id: "a", text: "Disk Management change drive letter", rationale: "Correct. Change letter/mount path in diskmgmt. Do not format to rename a letter." },
       { id: "b", text: "format E: /fs:NTFS", rationale: "Format destroys the filesystem's files." },
       { id: "c", text: "cleanmgr.exe", rationale: "Temp cleanup." },
       { id: "d", text: "regedit of a random HKCU key", rationale: "Not the UI for letters." },
@@ -1896,7 +1896,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-DISKMGMT"],
     stem: "cleanmgr.exe is BEST used to:",
     choices: [
-      { id: "a", text: "Reclaim temp files, Recycle Bin, and Windows Update leftovers", rationale: "Correct." },
+      { id: "a", text: "Reclaim temp files, Recycle Bin, and Windows Update leftovers", rationale: "Correct. Disk Cleanup is space recovery, not partitioning." },
       { id: "b", text: "Initialize GPT", rationale: "diskmgmt/diskpart." },
       { id: "c", text: "Edit HKLM", rationale: "regedit." },
       { id: "d", text: "Start Print Spooler", rationale: "Services." },
@@ -1912,7 +1912,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-DISKMGMT"],
     stem: "A dynamic disk moved from another PC shows Foreign. NEXT in Disk Management?",
     choices: [
-      { id: "a", text: "Import Foreign Disks after you are sure it is the right disk", rationale: "Correct." },
+      { id: "a", text: "Import Foreign Disks after you are sure it is the right disk", rationale: "Correct. Foreign is a Disk Management status for imported dynamic disks." },
       { id: "b", text: "format C: /q because Foreign means virus", rationale: "Foreign means a dynamic disk from another system." },
       { id: "c", text: "Disable TPM", rationale: "Unrelated." },
       { id: "d", text: "Convert to APFS", rationale: "Wrong OS." },
@@ -1929,9 +1929,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two jobs belong to Disk Management rather than Task Manager?",
     choices: [
-      { id: "a", text: "Assign a drive letter", rationale: "Correct." },
+      { id: "a", text: "Assign a drive letter", rationale: "Correct. Letters, GPT/MBR, volumes, status = diskmgmt. Live CPU/startup = Task Manager." },
       { id: "b", text: "Sort live CPU by process", rationale: "Task Manager." },
-      { id: "c", text: "Initialize a disk as GPT", rationale: "Correct." },
+      { id: "c", text: "Initialize a disk as GPT", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "Disable a startup app", rationale: "Task Manager Startup." },
     ],
     correct: ["a", "c"],
@@ -1945,7 +1945,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "devmgmt.msc is which snap-in?",
     choices: [
-      { id: "a", text: "Device Manager — drivers, yellow bangs, disable/rollback", rationale: "Correct." },
+      { id: "a", text: "Device Manager — drivers, yellow bangs, disable/rollback", rationale: "Correct. Device Manager filename is devmgmt.msc." },
       { id: "b", text: "Disk Management", rationale: "diskmgmt.msc." },
       { id: "c", text: "Event Viewer", rationale: "eventvwr.msc." },
       { id: "d", text: "Certificate Manager", rationale: "certmgr.msc." },
@@ -1977,7 +1977,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "A vendor asks for BIOS/UEFI version without rebooting. Which additional tool?",
     choices: [
-      { id: "a", text: "msinfo32.exe System Information", rationale: "Correct." },
+      { id: "a", text: "msinfo32.exe System Information", rationale: "Correct. msinfo32 System Summary includes BIOS version, baseboard, and a hardware inventory." },
       { id: "b", text: "dfrgui.exe", rationale: "Optimize Drives." },
       { id: "c", text: "cleanmgr.exe", rationale: "Cleanup." },
       { id: "d", text: "pathping", rationale: "Network path stats." },
@@ -1993,7 +1993,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "You need Safe boot. Which additional tool is the classic place for that boot checkbox?",
     choices: [
-      { id: "a", text: "msconfig.exe System Configuration", rationale: "Correct." },
+      { id: "a", text: "msconfig.exe System Configuration", rationale: "Correct. msconfig Boot tab: Safe boot, boot log, selective startup." },
       { id: "b", text: "certmgr.msc", rationale: "User certificates." },
       { id: "c", text: "perfmon.msc", rationale: "Counters." },
       { id: "d", text: "Mail applet", rationale: "Outlook profiles." },
@@ -2009,7 +2009,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "A scheduled task relaunches a browser hijacker at logon. Which MMC?",
     choices: [
-      { id: "a", text: "taskschd.msc Task Scheduler", rationale: "Correct." },
+      { id: "a", text: "taskschd.msc Task Scheduler", rationale: "Correct. Malware loves Task Scheduler. Inspect non-Microsoft folders." },
       { id: "b", text: "diskmgmt.msc", rationale: "Volumes." },
       { id: "c", text: "dfrgui.exe", rationale: "Optimize Drives." },
       { id: "d", text: "winver", rationale: "Version." },
@@ -2041,7 +2041,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "perfmon.msc is the right answer when:",
     choices: [
-      { id: "a", text: "You need counter logs over time (disk queue, pages/sec), not a one-second Task Manager glance", rationale: "Correct." },
+      { id: "a", text: "You need counter logs over time (disk queue, pages/sec), not a one-second Task Manager glance", rationale: "Correct. Performance Monitor is historical/periodic counters. Task Manager is now." },
       { id: "b", text: "You need to assign drive letter F:", rationale: "diskmgmt." },
       { id: "c", text: "You need Safe boot", rationale: "msconfig." },
       { id: "d", text: "You need to hide file extensions", rationale: "Folder Options." },
@@ -2057,7 +2057,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "resmon.exe compared with Task Manager Performance is:",
     choices: [
-      { id: "a", text: "Deeper live view: per-process disk queues, handles, associated services", rationale: "Correct." },
+      { id: "a", text: "Deeper live view: per-process disk queues, handles, associated services", rationale: "Correct. Resource Monitor is Task Manager's Performance tab with teeth." },
       { id: "b", text: "A replacement for Disk Cleanup", rationale: "No." },
       { id: "c", text: "The Event Viewer XML exporter", rationale: "No." },
       { id: "d", text: "Only available on Home", rationale: "It is a standard tool, not a Home exclusive." },
@@ -2073,7 +2073,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "regedit.exe should be used when:",
     choices: [
-      { id: "a", text: "A documented value must change and no Settings/gpedit UI exists — after export/backup", rationale: "Correct." },
+      { id: "a", text: "A documented value must change and no Settings/gpedit UI exists — after export/backup", rationale: "Correct. Registry Editor is last-resort and documented, not a first-line console." },
       { id: "b", text: "It is always FIRST before Event Viewer", rationale: "Opposite of good practice." },
       { id: "c", text: "You want to initialize a disk", rationale: "diskmgmt." },
       { id: "d", text: "You want TRIM an SSD", rationale: "dfrgui." },
@@ -2089,7 +2089,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "A wireless adapter has a yellow bang. BEST 1.4 tool?",
     choices: [
-      { id: "a", text: "Device Manager", rationale: "Correct." },
+      { id: "a", text: "Device Manager", rationale: "Correct. Yellow bang = Device Manager: driver, disable, roll back, resources." },
       { id: "b", text: "Task Scheduler", rationale: "Not driver status." },
       { id: "c", text: "Mail profiles", rationale: "Outlook." },
       { id: "d", text: "Indexing Options", rationale: "Search." },
@@ -2105,7 +2105,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O4-MMC"],
     stem: "Which snap-in adds a local user to Remote Desktop Users on Pro?",
     choices: [
-      { id: "a", text: "lusrmgr.msc", rationale: "Correct." },
+      { id: "a", text: "lusrmgr.msc", rationale: "Correct. Local Users and Groups is how you put an account in Remote Desktop Users on Pro+." },
       { id: "b", text: "dfrgui.exe", rationale: "Optimize Drives." },
       { id: "c", text: "cleanmgr.exe", rationale: "Cleanup." },
       { id: "d", text: "nslookup", rationale: "DNS queries." },
@@ -2139,7 +2139,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "Which command shows DHCP yes/no, DNS servers, MAC, and lease on a Windows client?",
     choices: [
-      { id: "a", text: "ipconfig /all", rationale: "Correct." },
+      { id: "a", text: "ipconfig /all", rationale: "Correct. ipconfig /all is the NIC's autobiography. Bare ipconfig is the short version." },
       { id: "b", text: "gpupdate /force", rationale: "Refreshes policy." },
       { id: "c", text: "sfc /scannow", rationale: "System files." },
       { id: "d", text: "winver", rationale: "Version dialog." },
@@ -2155,7 +2155,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "A DHCP address is stale after moving VLANs. Which pair recycles the lease?",
     choices: [
-      { id: "a", text: "ipconfig /release then ipconfig /renew", rationale: "Correct." },
+      { id: "a", text: "ipconfig /release then ipconfig /renew", rationale: "Correct. Release/renew is the DHCP lease recycle. flushdns is the resolver cache." },
       { id: "b", text: "sfc /scannow then winver", rationale: "Wrong tools." },
       { id: "c", text: "diskpart clean then format", rationale: "Destroys disks, not leases." },
       { id: "d", text: "gpresult /r then hostname", rationale: "Identity/policy, not DHCP." },
@@ -2171,7 +2171,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "After a DNS record change the PC still hits the old IP. Which ipconfig switch?",
     choices: [
-      { id: "a", text: "/flushdns", rationale: "Correct." },
+      { id: "a", text: "/flushdns", rationale: "Correct. ipconfig /flushdns dumps the client resolver cache." },
       { id: "b", text: "/renew only, which always flushes DNS", rationale: "Renew is DHCP; flushdns is the cache." },
       { id: "c", text: "/all /clean", rationale: "Not a real combo that means flush." },
       { id: "d", text: "/unregisterdns /format", rationale: "format is a disk command." },
@@ -2189,7 +2189,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "ipconfig /all shows 169.254.17.20 and no default gateway.",
     stem: "What does that indicate?",
     choices: [
-      { id: "a", text: "APIPA — DHCP failed; this is not a DNS-first problem", rationale: "Correct." },
+      { id: "a", text: "APIPA — DHCP failed; this is not a DNS-first problem", rationale: "Correct. 169.254.x.x means the client gave up on DHCP. Fix Layer 2/DHCP before nslookup." },
       { id: "b", text: "A valid static reservation in every enterprise", rationale: "169.254/16 is APIPA, not a planned corporate static." },
       { id: "c", text: "IPv6-only success", rationale: "That is an IPv4 APIPA address." },
       { id: "d", text: "gpedit blocked DHCP on Home", rationale: "gpedit is not on Home and this is a lease failure pattern." },
@@ -2221,7 +2221,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "dir /a is useful because it:",
     choices: [
-      { id: "a", text: "Includes hidden and system items in the listing", rationale: "Correct." },
+      { id: "a", text: "Includes hidden and system items in the listing", rationale: "Correct. dir lists files. /a shows hidden/system. /s recurses." },
       { id: "b", text: "Formats the volume automatically", rationale: "format does that." },
       { id: "c", text: "Flushes DNS", rationale: "ipconfig /flushdns." },
       { id: "d", text: "Maps a drive letter", rationale: "net use." },
@@ -2237,7 +2237,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "Which command prints the computer's name?",
     choices: [
-      { id: "a", text: "hostname", rationale: "Correct." },
+      { id: "a", text: "hostname", rationale: "Correct. hostname is the informational command for the computer name." },
       { id: "b", text: "pathping", rationale: "Path plus loss stats." },
       { id: "c", text: "robocopy", rationale: "Tree copy." },
       { id: "d", text: "chkdsk", rationale: "Volume check." },
@@ -2253,7 +2253,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "whoami /groups is the fast way to see:",
     choices: [
-      { id: "a", text: "The current identity's group memberships", rationale: "Correct." },
+      { id: "a", text: "The current identity's group memberships", rationale: "Correct. whoami prints the current user; /groups lists memberships." },
       { id: "b", text: "Disk partition style", rationale: "diskpart/diskmgmt." },
       { id: "c", text: "Windows edition only", rationale: "winver / About." },
       { id: "d", text: "SMB mappings", rationale: "net use." },
@@ -2269,7 +2269,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "winver displays:",
     choices: [
-      { id: "a", text: "The Windows version/edition dialog (build string)", rationale: "Correct." },
+      { id: "a", text: "The Windows version/edition dialog (build string)", rationale: "Correct. winver is the About-style version box. Use it to confirm 22H2 vs 24H2." },
       { id: "b", text: "A traceroute", rationale: "tracert." },
       { id: "c", text: "Local user hashes", rationale: "Not a winver job; and hashes are not dumped that way." },
       { id: "d", text: "The GPT backup header", rationale: "Unrelated." },
@@ -2285,7 +2285,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-IPCONFIG"],
     stem: "net user jsmith * /add does what (when run elevated on a workgroup PC)?",
     choices: [
-      { id: "a", text: "Creates local account jsmith and prompts for a password", rationale: "Correct." },
+      { id: "a", text: "Creates local account jsmith and prompts for a password", rationale: "Correct. net user manages local (or /domain) accounts. net use manages SMB maps — easy swap on exams." },
       { id: "b", text: "Maps a drive to \\\\jsmith\\share", rationale: "net use maps drives." },
       { id: "c", text: "Flushes DNS for user jsmith", rationale: "ipconfig /flushdns." },
       { id: "d", text: "Runs SFC as jsmith", rationale: "sfc is system files." },
@@ -2333,7 +2333,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-PING"],
     stem: "Which command prints each hop to a destination?",
     choices: [
-      { id: "a", text: "tracert", rationale: "Correct." },
+      { id: "a", text: "tracert", rationale: "Correct. tracert is Windows traceroute. pathping adds per-hop statistics and is slower." },
       { id: "b", text: "md", rationale: "Make directory." },
       { id: "c", text: "whoami", rationale: "Identity." },
       { id: "d", text: "winver", rationale: "Version." },
@@ -2365,7 +2365,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-PING"],
     stem: "netstat -ano is used to:",
     choices: [
-      { id: "a", text: "List sockets with owning PID", rationale: "Correct." },
+      { id: "a", text: "List sockets with owning PID", rationale: "Correct. netstat -ano shows addresses, ports, and PID. -b (admin) shows the executable." },
       { id: "b", text: "Map Z: to a share", rationale: "net use." },
       { id: "c", text: "Create a folder", rationale: "md." },
       { id: "d", text: "Check NTFS metadata", rationale: "chkdsk." },
@@ -2381,7 +2381,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-PING"],
     stem: "Which command maps a drive letter to a UNC share?",
     choices: [
-      { id: "a", text: "net use Z: \\\\filesrv\\share", rationale: "Correct." },
+      { id: "a", text: "net use Z: \\\\filesrv\\share", rationale: "Correct. net use maps/lists SMB connections. net user is a different command." },
       { id: "b", text: "net user Z: /add", rationale: "net user is accounts." },
       { id: "c", text: "nslookup Z:", rationale: "DNS." },
       { id: "d", text: "cd /d \\\\filesrv\\share always assigns Z:", rationale: "cd does not map a persistent letter." },
@@ -2413,7 +2413,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-PING"],
     stem: "You can query a specific DNS server instead of the NIC's DNS with:",
     choices: [
-      { id: "a", text: "nslookup name 1.1.1.1", rationale: "Correct." },
+      { id: "a", text: "nslookup name 1.1.1.1", rationale: "Correct. nslookup can target a resolver other than the one ipconfig /all shows." },
       { id: "b", text: "chkdsk name 1.1.1.1", rationale: "Disk check." },
       { id: "c", text: "robocopy name 1.1.1.1", rationale: "Copy." },
       { id: "d", text: "md name 1.1.1.1", rationale: "Make directory." },
@@ -2430,9 +2430,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two commands belong to the 1.5 network group?",
     choices: [
-      { id: "a", text: "tracert", rationale: "Correct." },
+      { id: "a", text: "tracert", rationale: "Correct. Network: ipconfig, ping, netstat, nslookup, net use, tracert, pathping." },
       { id: "b", text: "diskpart", rationale: "Disk group." },
-      { id: "c", text: "netstat", rationale: "Correct." },
+      { id: "c", text: "netstat", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "sfc", rationale: "OS management." },
     ],
     correct: ["a", "c"],
@@ -2446,7 +2446,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-PING"],
     stem: "Ping fails to a host that a browser can load. What is a fair interpretation?",
     choices: [
-      { id: "a", text: "ICMP may be blocked; ping is a hint, not a verdict that the host is down", rationale: "Correct." },
+      { id: "a", text: "ICMP may be blocked; ping is a hint, not a verdict that the host is down", rationale: "Correct. Firewalls drop ICMP. Pair ping with TCP tests (browser, Test-NetConnection) before you declare death." },
       { id: "b", text: "The host is guaranteed offline because ping is mandatory on the internet", rationale: "Many networks drop ICMP." },
       { id: "c", text: "You must diskpart clean the client", rationale: "No." },
       { id: "d", text: "nslookup cannot work if ping ICMP is blocked", rationale: "DNS is UDP/TCP 53, not ICMP." },
@@ -2462,7 +2462,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-DISKPART"],
     stem: "diskpart clean does what to the selected disk?",
     choices: [
-      { id: "a", text: "Deletes the partition table — treat as destructive", rationale: "Correct." },
+      { id: "a", text: "Deletes the partition table — treat as destructive", rationale: "Correct. Always list disk and match size before clean. The lab is sandboxed; production is not." },
       { id: "b", text: "Flushes DNS", rationale: "ipconfig /flushdns." },
       { id: "c", text: "Creates a user named clean", rationale: "net user." },
       { id: "d", text: "Runs a non-destructive chkdsk", rationale: "Different command." },
@@ -2494,7 +2494,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-DISKPART"],
     stem: "format E: /fs:exFAT /q does what?",
     choices: [
-      { id: "a", text: "Quick-formats E: as exFAT", rationale: "Correct." },
+      { id: "a", text: "Quick-formats E: as exFAT", rationale: "Correct. format writes a filesystem. /q is quick. Pick NTFS/exFAT/FAT32 on purpose." },
       { id: "b", text: "Maps E: to a share", rationale: "net use." },
       { id: "c", text: "Prints hops to E:", rationale: "tracert." },
       { id: "d", text: "Creates user exFAT", rationale: "net user." },
@@ -2510,7 +2510,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-DISKPART"],
     stem: "robocopy C:\\src D:\\dst /MIR is dangerous because:",
     choices: [
-      { id: "a", text: "/MIR mirrors and can delete extra files on the destination", rationale: "Correct." },
+      { id: "a", text: "/MIR mirrors and can delete extra files on the destination", rationale: "Correct. Use /E for a tree copy. Use /MIR only when you truly want a mirror." },
       { id: "b", text: "robocopy cannot copy files at all", rationale: "It is the robust copier." },
       { id: "c", text: "/MIR formats the source GPT", rationale: "No." },
       { id: "d", text: "It always encrypts with BitLocker", rationale: "No." },
@@ -2526,7 +2526,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-DISKPART"],
     stem: "md C:\\Support\\8841 creates:",
     choices: [
-      { id: "a", text: "A directory (mkdir)", rationale: "Correct." },
+      { id: "a", text: "A directory (mkdir)", rationale: "Correct. md/mkdir makes a directory. rmdir removes one." },
       { id: "b", text: "A GPT protective partition", rationale: "diskpart." },
       { id: "c", text: "A local user 8841", rationale: "net user." },
       { id: "d", text: "A firewall rule", rationale: "wf.msc / netsh." },
@@ -2558,7 +2558,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-DISKPART"],
     stem: "Inside diskpart, what should you do BEFORE clean?",
     choices: [
-      { id: "a", text: "list disk (and select the correct size/index)", rationale: "Correct." },
+      { id: "a", text: "list disk (and select the correct size/index)", rationale: "Correct. list disk → select disk N → list partition. Then maybe clean. Never skip identification." },
       { id: "b", text: "gpresult /h", rationale: "Wrong tool." },
       { id: "c", text: "nslookup localhost", rationale: "Wrong tool." },
       { id: "d", text: "winver /force", rationale: "Not a real switch for this job." },
@@ -2575,9 +2575,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are 1.5 disk-management commands?",
     choices: [
-      { id: "a", text: "chkdsk", rationale: "Correct." },
+      { id: "a", text: "chkdsk", rationale: "Correct. Disk group: chkdsk, format, diskpart. File group: md, rmdir, robocopy." },
       { id: "b", text: "ping", rationale: "Network." },
-      { id: "c", text: "diskpart", rationale: "Correct." },
+      { id: "c", text: "diskpart", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "gpupdate", rationale: "OS management." },
     ],
     correct: ["a", "c"],
@@ -2591,7 +2591,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-SFC"],
     stem: "Protected Windows system files look corrupt. Which command is the named 1.5 repair?",
     choices: [
-      { id: "a", text: "sfc /scannow (elevated)", rationale: "Correct." },
+      { id: "a", text: "sfc /scannow (elevated)", rationale: "Correct. System File Checker /scannow is the OS-management repair on the list." },
       { id: "b", text: "pathping /scannow", rationale: "pathping is network stats." },
       { id: "c", text: "net use /scannow", rationale: "SMB maps." },
       { id: "d", text: "hostname /scannow", rationale: "Computer name." },
@@ -2607,7 +2607,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-SFC"],
     stem: "How do sfc and chkdsk differ?",
     choices: [
-      { id: "a", text: "sfc verifies protected OS files; chkdsk verifies volume filesystem metadata/sectors", rationale: "Correct." },
+      { id: "a", text: "sfc verifies protected OS files; chkdsk verifies volume filesystem metadata/sectors", rationale: "Correct. Do not run chkdsk because Explorer.dll looks wrong, and do not run sfc because a data volume has dirty NTFS." },
       { id: "b", text: "They are aliases", rationale: "Different targets." },
       { id: "c", text: "sfc formats USB; chkdsk maps drives", rationale: "Wrong jobs." },
       { id: "d", text: "chkdsk refreshes GPO; sfc prints hops", rationale: "Wrong jobs." },
@@ -2673,7 +2673,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-SFC"],
     stem: "Which informational command shows the current user as DOMAIN\\user?",
     choices: [
-      { id: "a", text: "whoami", rationale: "Correct." },
+      { id: "a", text: "whoami", rationale: "Correct. whoami is identity. hostname is the computer. net user is account administration." },
       { id: "b", text: "format", rationale: "Filesystem." },
       { id: "c", text: "tracert", rationale: "Hops." },
       { id: "d", text: "md", rationale: "Make dir." },
@@ -2689,7 +2689,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-SFC"],
     stem: "net user jsmith on a workgroup PC shows:",
     choices: [
-      { id: "a", text: "That local account's flags, last logon, and group memberships", rationale: "Correct." },
+      { id: "a", text: "That local account's flags, last logon, and group memberships", rationale: "Correct. net user with a name is an account report. Add /domain when you mean AD." },
       { id: "b", text: "A traceroute to jsmith.com", rationale: "tracert." },
       { id: "c", text: "SMB maps for Z:", rationale: "net use." },
       { id: "d", text: "SFC scan results", rationale: "sfc." },
@@ -2706,9 +2706,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are 1.5 informational commands?",
     choices: [
-      { id: "a", text: "hostname", rationale: "Correct." },
+      { id: "a", text: "hostname", rationale: "Correct. Informational: hostname, net user, winver, whoami, and /? help." },
       { id: "b", text: "chkdsk", rationale: "Disk." },
-      { id: "c", text: "winver", rationale: "Correct." },
+      { id: "c", text: "winver", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "ipconfig", rationale: "Network group." },
     ],
     correct: ["a", "c"],
@@ -2722,7 +2722,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "A GPO changed and the user should not wait ~90 minutes. Which command applies policy?",
     choices: [
-      { id: "a", text: "gpupdate /force", rationale: "Correct." },
+      { id: "a", text: "gpupdate /force", rationale: "Correct. gpupdate applies. gpresult reports. Memorize that pair." },
       { id: "b", text: "gpresult /force as the apply step", rationale: "gpresult reports; it does not apply." },
       { id: "c", text: "sfc /force", rationale: "Not a real SFC apply-policy switch." },
       { id: "d", text: "ipconfig /force", rationale: "Not a real ipconfig switch for GPO." },
@@ -2738,7 +2738,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "A setting 'didn't apply.' FIRST command to see which GPOs actually landed?",
     choices: [
-      { id: "a", text: "gpresult /r (or /h report.html)", rationale: "Correct." },
+      { id: "a", text: "gpresult /r (or /h report.html)", rationale: "Correct. gpresult is RSOP in CLI form. Security filtering and link mistakes show up here." },
       { id: "b", text: "format /r", rationale: "Wrong tool." },
       { id: "c", text: "pathping /r", rationale: "Wrong tool." },
       { id: "d", text: "dir /r", rationale: "Wrong tool." },
@@ -2754,7 +2754,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "Which pair is correctly matched?",
     choices: [
-      { id: "a", text: "gpupdate = apply; gpresult = report", rationale: "Correct." },
+      { id: "a", text: "gpupdate = apply; gpresult = report", rationale: "Correct. The exam will swap those two names in distractors." },
       { id: "b", text: "gpupdate = report; gpresult = apply", rationale: "Backwards." },
       { id: "c", text: "Both format USB drives", rationale: "No." },
       { id: "d", text: "Both are Linux systemd units", rationale: "Windows commands." },
@@ -2770,7 +2770,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "gpresult /h C:\\temp\\gpo.html creates:",
     choices: [
-      { id: "a", text: "An HTML report of applied policy", rationale: "Correct." },
+      { id: "a", text: "An HTML report of applied policy", rationale: "Correct. /r is console summary; /h writes HTML. Either is gpresult." },
       { id: "b", text: "A new GPT disk", rationale: "No." },
       { id: "c", text: "A mapped drive H:", rationale: "net use." },
       { id: "d", text: "A chkdsk log only", rationale: "No." },
@@ -2786,7 +2786,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "You need help for gpupdate switches. BEST 1.5 action?",
     choices: [
-      { id: "a", text: "gpupdate /?", rationale: "Correct." },
+      { id: "a", text: "gpupdate /?", rationale: "Correct. /? is the built-in help for every command on the list." },
       { id: "b", text: "Open Time Machine", rationale: "macOS." },
       { id: "c", text: "dnf install gpupdate", rationale: "Linux package manager." },
       { id: "d", text: "format /fs:NTFS gpupdate", rationale: "Nonsense." },
@@ -2820,7 +2820,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O5-GPUPDATE"],
     stem: "Which 1.5 group includes gpupdate, gpresult, and sfc?",
     choices: [
-      { id: "a", text: "OS management", rationale: "Correct." },
+      { id: "a", text: "OS management", rationale: "Correct. The objective groups those three as OS management." },
       { id: "b", text: "Navigation only", rationale: "cd/dir." },
       { id: "c", text: "Disk management only", rationale: "chkdsk/format/diskpart." },
       { id: "d", text: "macOS RSR", rationale: "Wrong OS." },
@@ -2837,8 +2837,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "A no-network ticket: which two commands belong in the first wave?",
     choices: [
-      { id: "a", text: "ipconfig /all", rationale: "Correct." },
-      { id: "b", text: "ping <gateway>", rationale: "Correct." },
+      { id: "a", text: "ipconfig /all", rationale: "Correct. See the address, then ping the gateway. Do not format your way to DNS." },
+      { id: "b", text: "ping <gateway>", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "diskpart clean", rationale: "Not a network first wave." },
       { id: "d", text: "format D: /q", rationale: "Not a network first wave." },
     ],
@@ -2853,7 +2853,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "A docked laptop sleeps when the lid closes and drops RDP. Which Power Options setting?",
     choices: [
-      { id: "a", text: "Choose what closing the lid does — set plugged-in to Do nothing", rationale: "Correct." },
+      { id: "a", text: "Choose what closing the lid does — set plugged-in to Do nothing", rationale: "Correct. Lid action is a named Power Options item. Docked workstations often need Do nothing when plugged in." },
       { id: "b", text: "Hide extensions for known file types", rationale: "Explorer Options." },
       { id: "c", text: "Indexing Options rebuild", rationale: "Search." },
       { id: "d", text: "Internet Options security zones", rationale: "IE engine." },
@@ -2869,7 +2869,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "Fast Startup causes BIOS setup to be skipped after Shutdown. What is Fast Startup?",
     choices: [
-      { id: "a", text: "A hybrid shutdown that hibernates the kernel session", rationale: "Correct." },
+      { id: "a", text: "A hybrid shutdown that hibernates the kernel session", rationale: "Correct. Disable Fast Startup for firmware flashes, dual-boot, and some USB quirks." },
       { id: "b", text: "A GPT conversion", rationale: "No." },
       { id: "c", text: "An RDP host feature on Home", rationale: "No." },
       { id: "d", text: "A Linux systemd target", rationale: "Wrong OS." },
@@ -2885,7 +2885,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "Sleep versus hibernate: which pair is accurate?",
     choices: [
-      { id: "a", text: "Sleep keeps RAM powered; hibernate writes RAM to hiberfil.sys and powers off", rationale: "Correct." },
+      { id: "a", text: "Sleep keeps RAM powered; hibernate writes RAM to hiberfil.sys and powers off", rationale: "Correct. Sleep is fast and volatile. Hibernate survives battery removal." },
       { id: "b", text: "They are identical names for Fast Startup", rationale: "Three different states." },
       { id: "c", text: "Hibernate requires APFS", rationale: "Windows file is hiberfil.sys on NTFS." },
       { id: "d", text: "Sleep formats the pagefile as exFAT", rationale: "No." },
@@ -2901,7 +2901,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "A USB scanner sleeps until you jiggle it, then Windows 'cannot find' it. Which Power Options related setting is a suspect?",
     choices: [
-      { id: "a", text: "USB selective suspend", rationale: "Correct." },
+      { id: "a", text: "USB selective suspend", rationale: "Correct. USB selective suspend powers down idle USB devices and docks — a named 1.6 item." },
       { id: "b", text: "Hide protected OS files", rationale: "Explorer view." },
       { id: "c", text: "Mail profiles", rationale: "Outlook." },
       { id: "d", text: "N edition Media Feature Pack", rationale: "Codecs, not USB power." },
@@ -2917,7 +2917,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "Balanced, Power saver, and High performance are:",
     choices: [
-      { id: "a", text: "Power plans", rationale: "Correct." },
+      { id: "a", text: "Power plans", rationale: "Correct. Power plans set timers and processor states. OEM plans also appear." },
       { id: "b", text: "NTFS permission levels", rationale: "No." },
       { id: "c", text: "Windows editions", rationale: "No." },
       { id: "d", text: "Firewall profiles", rationale: "Domain/Private/Public." },
@@ -2933,7 +2933,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "Hibernate is missing from the shutdown menu. What must often be enabled first?",
     choices: [
-      { id: "a", text: "powercfg /hibernate on (and enough disk for hiberfil.sys)", rationale: "Correct." },
+      { id: "a", text: "powercfg /hibernate on (and enough disk for hiberfil.sys)", rationale: "Correct. Hibernate is optional. Enable it, then the menu can show it." },
       { id: "b", text: "diskpart clean", rationale: "Destroys the disk." },
       { id: "c", text: "gpedit on Home only", rationale: "Home has no gpedit; not the usual enable path." },
       { id: "d", text: "exFAT on C:", rationale: "Do not reformat C: to get a menu item." },
@@ -2949,7 +2949,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-POWER"],
     stem: "Exam language 'standby' on a Windows client is closest to:",
     choices: [
-      { id: "a", text: "A sleep-like low-power state", rationale: "Correct." },
+      { id: "a", text: "A sleep-like low-power state", rationale: "Correct. Standby in older docs maps to sleep/suspend-class states on the 1.6 list." },
       { id: "b", text: "A clean GPT install", rationale: "No." },
       { id: "c", text: "BitLocker recovery", rationale: "No." },
       { id: "d", text: "apt update", rationale: "Linux." },
@@ -2966,9 +2966,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two belong under Power Options on the 1.6 list?",
     choices: [
-      { id: "a", text: "Turn on fast startup", rationale: "Correct." },
+      { id: "a", text: "Turn on fast startup", rationale: "Correct. Power Options: hibernate, plans, sleep/suspend, standby, lid, Fast Startup, USB selective suspend." },
       { id: "b", text: "View hidden files", rationale: "File Explorer Options." },
-      { id: "c", text: "Choose what closing the lid does", rationale: "Correct." },
+      { id: "c", text: "Choose what closing the lid does", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "Indexing rebuild", rationale: "Indexing Options." },
     ],
     correct: ["a", "c"],
@@ -2982,7 +2982,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-FIREWALL"],
     stem: "Windows Defender Firewall applet is the place to:",
     choices: [
-      { id: "a", text: "Enable/disable the firewall per profile and allow an app through", rationale: "Correct." },
+      { id: "a", text: "Enable/disable the firewall per profile and allow an app through", rationale: "Correct. firewall.cpl is per-profile on/off and app exceptions. wf.msc is advanced rules." },
       { id: "b", text: "Initialize a 4 TB disk as GPT", rationale: "diskmgmt." },
       { id: "c", text: "Hide file extensions", rationale: "Folder Options." },
       { id: "d", text: "Run sfc /scannow", rationale: "CLI." },
@@ -2998,7 +2998,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-FIREWALL"],
     stem: "A line-of-business app needs IE-mode proxy settings. Which applet still owns that classic dialog?",
     choices: [
-      { id: "a", text: "Internet Options", rationale: "Correct." },
+      { id: "a", text: "Internet Options", rationale: "Correct. Internet Options (inetcpl.cpl) still appears on 1.6 for proxy, zones, and IE-engine settings." },
       { id: "b", text: "Optimize Drives", rationale: "dfrgui." },
       { id: "c", text: "Task Scheduler", rationale: "Scheduled tasks." },
       { id: "d", text: "Disk Management", rationale: "Volumes." },
@@ -3030,7 +3030,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-FIREWALL"],
     stem: "Outlook keeps asking which profile to use. Which applet?",
     choices: [
-      { id: "a", text: "Mail (MAPI profiles)", rationale: "Correct." },
+      { id: "a", text: "Mail (MAPI profiles)", rationale: "Correct. The Mail applet is Outlook desktop profiles — not the Windows Mail app and not a Microsoft account reset." },
       { id: "b", text: "Sound", rationale: "Playback device." },
       { id: "c", text: "Indexing Options only", rationale: "Search, not profiles." },
       { id: "d", text: "Gaming Game Mode", rationale: "Unrelated." },
@@ -3046,7 +3046,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-FIREWALL"],
     stem: "No audio after plugging a USB headset. FIRST applet?",
     choices: [
-      { id: "a", text: "Sound — default playback device", rationale: "Correct." },
+      { id: "a", text: "Sound — default playback device", rationale: "Correct. Wrong default endpoint is more common than a dead driver as FIRST." },
       { id: "b", text: "diskpart", rationale: "Disks." },
       { id: "c", text: "gpresult", rationale: "Policy report." },
       { id: "d", text: "File Explorer Options extensions", rationale: "Not audio." },
@@ -3062,7 +3062,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-FIREWALL"],
     stem: "Network and Sharing Center is still useful because it:",
     choices: [
-      { id: "a", text: "Shows the profile and links to adapter settings (ncpa.cpl)", rationale: "Correct." },
+      { id: "a", text: "Shows the profile and links to adapter settings (ncpa.cpl)", rationale: "Correct. Classic path to IPv4 properties on a NIC." },
       { id: "b", text: "Encrypts APFS volumes", rationale: "macOS." },
       { id: "c", text: "Installs dnf packages", rationale: "Linux." },
       { id: "d", text: "Runs chkdsk /r by default", rationale: "No." },
@@ -3080,7 +3080,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "A game is blocked inbound on a Private network. The technician turns the firewall off for all profiles and leaves it off.",
     stem: "What is the BETTER configuration?",
     choices: [
-      { id: "a", text: "An allow rule for that app/port on the correct profile; do not leave the firewall off", rationale: "Correct." },
+      { id: "a", text: "An allow rule for that app/port on the correct profile; do not leave the firewall off", rationale: "Correct. Exceptions beat 'firewall off.' Profiles matter (domain/private/public)." },
       { id: "b", text: "Firewall off is the documented long-term 1.6 setting", rationale: "It is a 30-second test, not a config." },
       { id: "c", text: "Disable the NIC instead", rationale: "Worse." },
       { id: "d", text: "Format C: NTFS again", rationale: "Unrelated." },
@@ -3096,7 +3096,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "SearchIndexer.exe pins the disk because a huge PST on a slow path is included. Which applet?",
     choices: [
-      { id: "a", text: "Indexing Options — shrink or rebuild the index", rationale: "Correct." },
+      { id: "a", text: "Indexing Options — shrink or rebuild the index", rationale: "Correct. Indexing Options controls what Windows Search crawls. It is not defrag." },
       { id: "b", text: "Devices and Printers default printer", rationale: "Print." },
       { id: "c", text: "winver", rationale: "Version." },
       { id: "d", text: "BitLocker To Go", rationale: "Removable encryption." },
@@ -3112,7 +3112,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "File Explorer finds a document but Start search does not. NEXT?",
     choices: [
-      { id: "a", text: "Rebuild the search index / confirm the location is included", rationale: "Correct." },
+      { id: "a", text: "Rebuild the search index / confirm the location is included", rationale: "Correct. If Explorer sees it and Search does not, the index is wrong — not the file." },
       { id: "b", text: "diskpart clean", rationale: "Destructive." },
       { id: "c", text: "Switch to MBR", rationale: "Unrelated." },
       { id: "d", text: "Install ChromeOS", rationale: "Unrelated." },
@@ -3128,7 +3128,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "Administrative Tools (Windows Tools) is:",
     choices: [
-      { id: "a", text: "A folder of shortcuts to MMCs and admin utilities", rationale: "Correct." },
+      { id: "a", text: "A folder of shortcuts to MMCs and admin utilities", rationale: "Correct. 1.6 lists Administrative Tools as the launch pad, not a separate product." },
       { id: "b", text: "A filesystem like ReFS", rationale: "No." },
       { id: "c", text: "The only way to hide extensions", rationale: "Folder Options." },
       { id: "d", text: "Linux systemd", rationale: "Wrong OS." },
@@ -3144,7 +3144,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "User Accounts applet / netplwiz is where you:",
     choices: [
-      { id: "a", text: "Manage local users and the UAC prompt level / auto-logon checkbox", rationale: "Correct." },
+      { id: "a", text: "Manage local users and the UAC prompt level / auto-logon checkbox", rationale: "Correct. User Accounts is the classic local-user/UAC surface on the 1.6 list." },
       { id: "b", text: "TRIM an SSD", rationale: "dfrgui." },
       { id: "c", text: "Edit /etc/sudoers", rationale: "Linux." },
       { id: "d", text: "Assign Microsoft 365 licenses", rationale: "Cloud admin center — objective 1.11." },
@@ -3160,7 +3160,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "Ease of Access (Accessibility) includes:",
     choices: [
-      { id: "a", text: "Narrator, Magnifier, captions, sticky keys", rationale: "Correct." },
+      { id: "a", text: "Narrator, Magnifier, captions, sticky keys", rationale: "Correct. Accessibility settings are a named 1.6 category — required for the job." },
       { id: "b", text: "GPT conversion", rationale: "No." },
       { id: "c", text: "apt install", rationale: "Linux." },
       { id: "d", text: "RDP host on Home", rationale: "Edition feature, not Ease of Access." },
@@ -3176,7 +3176,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-INDEXING"],
     stem: "Wrong timezone breaking Kerberos tickets is configured under:",
     choices: [
-      { id: "a", text: "Time and Language", rationale: "Correct." },
+      { id: "a", text: "Time and Language", rationale: "Correct. Time and Language is on the Settings list. Time skew kills Kerberos." },
       { id: "b", text: "Optimize Drives", rationale: "TRIM/defrag." },
       { id: "c", text: "Devices and Printers queues only", rationale: "Print." },
       { id: "d", text: "Gaming Game Bar only", rationale: "Unrelated." },
@@ -3192,7 +3192,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "A phishing file named invoice.pdf.exe fools a user. Which File Explorer Options checkbox would have helped?",
     choices: [
-      { id: "a", text: "Uncheck Hide extensions for known file types", rationale: "Correct." },
+      { id: "a", text: "Uncheck Hide extensions for known file types", rationale: "Correct. Show extensions on every bench PC. Hidden extensions are a social-engineering gift." },
       { id: "b", text: "Enable Fast Startup", rationale: "Power." },
       { id: "c", text: "Set lid to Sleep", rationale: "Power." },
       { id: "d", text: "Turn off the firewall", rationale: "Does not reveal extensions." },
@@ -3208,7 +3208,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "A technician needs to see desktop.ini and other protected OS files. Which View option?",
     choices: [
-      { id: "a", text: "Show hidden files and unhide protected operating system files (then put it back)", rationale: "Correct." },
+      { id: "a", text: "Show hidden files and unhide protected operating system files (then put it back)", rationale: "Correct. Two View checkboxes: hidden files, and protected OS files. Use the second sparingly." },
       { id: "b", text: "gpupdate /force", rationale: "Policy refresh, not view flags." },
       { id: "c", text: "winver", rationale: "Version." },
       { id: "d", text: "Internet Options Advanced TLS boxes", rationale: "Wrong applet." },
@@ -3224,7 +3224,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "File Explorer Options General tab covers:",
     choices: [
-      { id: "a", text: "Browse folders, click vs double-click, privacy of recent files", rationale: "Correct." },
+      { id: "a", text: "Browse folders, click vs double-click, privacy of recent files", rationale: "Correct. General / View are the two technician tabs. View holds hidden files and extensions." },
       { id: "b", text: "Hibernate enablement", rationale: "Power." },
       { id: "c", text: "BitLocker PIN", rationale: "BitLocker." },
       { id: "d", text: "apt repositories", rationale: "Linux." },
@@ -3242,7 +3242,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "After imaging, a bench PC still hides extensions and hidden files.",
     stem: "BEST hardening click for that PC?",
     choices: [
-      { id: "a", text: "File Explorer Options View: show extensions and hidden files", rationale: "Correct." },
+      { id: "a", text: "File Explorer Options View: show extensions and hidden files", rationale: "Correct. Imaging checklist: extensions visible, hidden files visible, lid/Fast Startup as the site requires." },
       { id: "b", text: "Set power plan to Power saver so malware slows down", rationale: "Not a substitute for seeing filenames." },
       { id: "c", text: "Disable indexing forever on a knowledge-worker PC as policy", rationale: "Hurts search; not the extension issue." },
       { id: "d", text: "Turn on Game Mode", rationale: "Unrelated." },
@@ -3258,7 +3258,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "Privacy camera/microphone toggles live under which Settings category?",
     choices: [
-      { id: "a", text: "Privacy", rationale: "Correct." },
+      { id: "a", text: "Privacy", rationale: "Correct. Settings → Privacy (and Privacy & security on Windows 11) owns camera/mic/diagnostics." },
       { id: "b", text: "Optimize Drives", rationale: "TRIM." },
       { id: "c", text: "Programs and Features Windows features only", rationale: "Optional components." },
       { id: "d", text: "Mail MAPI", rationale: "Outlook profiles." },
@@ -3274,7 +3274,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "Workplace Entra join is configured under which Settings category?",
     choices: [
-      { id: "a", text: "Accounts", rationale: "Correct." },
+      { id: "a", text: "Accounts", rationale: "Correct. Accounts is Microsoft vs local, family, and workplace/school (Entra) join." },
       { id: "b", text: "Gaming", rationale: "Game Bar/Mode." },
       { id: "c", text: "Personalization wallpaper only", rationale: "Theme." },
       { id: "d", text: "Devices printers only", rationale: "Hardware." },
@@ -3290,7 +3290,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
     stem: "Default apps and installed Store apps are managed under:",
     choices: [
-      { id: "a", text: "Settings → Apps (Win32 uninstall may still be Programs and Features)", rationale: "Correct." },
+      { id: "a", text: "Settings → Apps (Win32 uninstall may still be Programs and Features)", rationale: "Correct. Know both surfaces: Settings Apps vs Control Panel Programs and Features." },
       { id: "b", text: "diskmgmt only", rationale: "Volumes." },
       { id: "c", text: "nslookup", rationale: "DNS." },
       { id: "d", text: "FileVault", rationale: "macOS." },
@@ -3304,15 +3304,15 @@ export const C2_D1_QUESTIONS: Question[] = [
     id: "C2-D1-O6-EXPLOREROPT-Q008",
     objectiveId: "C2-D1-O6",
     conceptIds: ["C2-D1-O6-EXPLOREROPT"],
-    stem: "Game Mode on a CAD workstation should usually be:",
+    stem: "A CAD user on a work PC wants the Xbox Game Bar shortcut and background game captures turned off. Which Settings category does the technician open?",
     choices: [
-      { id: "a", text: "Left enabled because CAD is a game", rationale: "Game Mode can interfere with workstation apps." },
-      { id: "b", text: "Disabled; Gaming settings are for Game Bar/Mode, not CAD", rationale: "Correct." },
-      { id: "c", text: "Required for BitLocker", rationale: "No." },
-      { id: "d", text: "The only way to show file extensions", rationale: "Folder Options." },
+      { id: "a", text: "Personalization", rationale: "Personalization covers wallpaper, colors, themes, and taskbar layout, not Game Bar or captures." },
+      { id: "b", text: "Gaming", rationale: "Correct. Settings → Gaming holds Xbox Game Bar, Captures, and Game Mode." },
+      { id: "c", text: "Accounts", rationale: "Accounts covers sign-in options, email accounts, and work or school access, not game capture." },
+      { id: "d", text: "File Explorer Options", rationale: "File Explorer Options is a Control Panel applet for view and folder behavior, not a Settings category for Game Bar." },
     ],
     correct: "b",
-    explanation: "Gaming is on the 1.6 list so you can turn Game Mode off on a work PC.",
+    explanation: "Gaming is a 1.6 Settings category: Xbox Game Bar, Captures, and Game Mode are configured there.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D1-O6-L2",
   }),
@@ -3323,7 +3323,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two File Explorer Options items are highest-yield on A+?",
     choices: [
-      { id: "a", text: "Show hidden files, folders, and drives", rationale: "Correct." },
+      { id: "a", text: "Show hidden files, folders, and drives", rationale: "Correct. View tab: hidden files on, extensions visible. That pair is the exam and the bench." },
       { id: "b", text: "Hide extensions for known file types (uncheck it)", rationale: "Correct — you want extensions visible." },
       { id: "c", text: "Convert the disk to XFS", rationale: "Linux." },
       { id: "d", text: "Enable Autopilot hardware hash from Folder Options", rationale: "Not a Folder Options feature." },
@@ -3340,7 +3340,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "In a workgroup, where do user accounts live?",
     choices: [
-      { id: "a", text: "On each PC's local SAM — there is no central directory", rationale: "Correct." },
+      { id: "a", text: "On each PC's local SAM — there is no central directory", rationale: "Correct. Workgroup = peer-to-peer local accounts. Domain = directory accounts." },
       { id: "b", text: "Only in Active Directory, even on Home", rationale: "Home cannot join AD; workgroup is local." },
       { id: "c", text: "Only in /etc/passwd", rationale: "Linux." },
       { id: "d", text: "Only in iCloud Keychain", rationale: "Apple." },
@@ -3356,7 +3356,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-WORKGROUP"],
     stem: "Which edition is limited to workgroup (cannot AD-join)?",
     choices: [
-      { id: "a", text: "Windows Home", rationale: "Correct." },
+      { id: "a", text: "Windows Home", rationale: "Correct. Home is the workgroup-only SKU on the edition matrix." },
       { id: "b", text: "Windows Pro", rationale: "Pro can join." },
       { id: "c", text: "Windows Enterprise", rationale: "Enterprise can join." },
       { id: "d", text: "Windows 10 Pro for Workstations", rationale: "PWS can join." },
@@ -3373,7 +3373,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     stem: "A 40-person office using a workgroup and duplicated local Administrator passwords is:",
     choices: [
       { id: "a", text: "The intended enterprise design", rationale: "Scale wants a domain or Entra join." },
-      { id: "b", text: "A scale/identity problem — workgroups do not centralize policy or accounts", rationale: "Correct." },
+      { id: "b", text: "A scale/identity problem — workgroups do not centralize policy or accounts", rationale: "Correct. Workgroups are houses and tiny labs. Offices need a directory." },
       { id: "c", text: "Fixed by formatting all PCs FAT32", rationale: "No." },
       { id: "d", text: "Fixed by disabling File Explorer", rationale: "No." },
     ],
@@ -3388,7 +3388,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-WORKGROUP"],
     stem: "File and printer sharing works on a workgroup when:",
     choices: [
-      { id: "a", text: "Matching local accounts/passwords or explicit share credentials, plus a non-Public firewall profile", rationale: "Correct." },
+      { id: "a", text: "Matching local accounts/passwords or explicit share credentials, plus a non-Public firewall profile", rationale: "Correct. Workgroup shares use local creds (or guest, which you should not enable casually) and the right firewall profile." },
       { id: "b", text: "Kerberos from a DC that does not exist", rationale: "No DC in a pure workgroup." },
       { id: "c", text: "The PCs are Home and joined to AD", rationale: "Home cannot join AD." },
       { id: "d", text: "All volumes are APFS", rationale: "Windows." },
@@ -3404,7 +3404,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-WORKGROUP"],
     stem: "The default workgroup name on many Windows PCs is:",
     choices: [
-      { id: "a", text: "WORKGROUP", rationale: "Correct." },
+      { id: "a", text: "WORKGROUP", rationale: "Correct. WORKGROUP is the peer name. Matching names do not create a domain." },
       { id: "b", text: "DOMAIN", rationale: "Not the default peer name." },
       { id: "c", text: "GPT", rationale: "Partition table." },
       { id: "d", text: "root", rationale: "Linux superuser." },
@@ -3421,8 +3421,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are true of workgroups versus domains?",
     choices: [
-      { id: "a", text: "Workgroup: local SAM on each PC", rationale: "Correct." },
-      { id: "b", text: "Domain: computer object in AD and domain user logons", rationale: "Correct." },
+      { id: "a", text: "Workgroup: local SAM on each PC", rationale: "Correct. Identity boundary is the whole point of 1.7's first bullet." },
+      { id: "b", text: "Domain: computer object in AD and domain user logons", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Home can AD-join if the workgroup name equals the UPN", rationale: "False." },
       { id: "d", text: "Domains require FAT32 on C:", rationale: "False." },
     ],
@@ -3437,7 +3437,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-DOMAINJOIN"],
     stem: "A Pro PC cannot join contoso.local. DNS cannot resolve the SRV/LDAP names. FIRST?",
     choices: [
-      { id: "a", text: "Fix DNS so the PC can find a domain controller", rationale: "Correct." },
+      { id: "a", text: "Fix DNS so the PC can find a domain controller", rationale: "Correct. Domain join needs Pro+, DNS, time, and a DC (or Entra for cloud-only). DNS is the usual FIRST miss." },
       { id: "b", text: "Upgrade to Home", rationale: "Home cannot join." },
       { id: "c", text: "format C: /fs:exFAT", rationale: "Unrelated." },
       { id: "d", text: "Disable the NIC", rationale: "Makes join impossible." },
@@ -3453,7 +3453,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-DOMAINJOIN"],
     stem: "Microsoft Entra ID join (Azure AD join) is:",
     choices: [
-      { id: "a", text: "A cloud directory join, often with Intune, without an on-prem DC", rationale: "Correct." },
+      { id: "a", text: "A cloud directory join, often with Intune, without an on-prem DC", rationale: "Correct. Know domain join vs Entra join vs workgroup as three identity stories." },
       { id: "b", text: "The same as a workgroup named AZURE", rationale: "It is a real identity join." },
       { id: "c", text: "Only available on Windows Home N", rationale: "Home is not the AD/Entra workstation SKU for full join scenarios the exam contrasts with domain." },
       { id: "d", text: "A Linux dnf plugin", rationale: "Wrong OS." },
@@ -3471,7 +3471,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "Mapped drives fail at logon but work after the user connects the corporate VPN.",
     stem: "MOST likely cause?",
     choices: [
-      { id: "a", text: "The logon script raced the VPN; file servers are only reachable through the tunnel", rationale: "Correct." },
+      { id: "a", text: "The logon script raced the VPN; file servers are only reachable through the tunnel", rationale: "Correct. VPN connection type plus logon order is a classic 1.7 ticket." },
       { id: "b", text: "GPT disks cannot map letters", rationale: "False." },
       { id: "c", text: "RDP host is missing on Pro", rationale: "Pro has RDP host; this is a map/VPN order issue." },
       { id: "d", text: "exFAT cannot store UNCs", rationale: "UNCs are paths, not files on exFAT." },
@@ -3487,7 +3487,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-DOMAINJOIN"],
     stem: "WWAN on a laptop is:",
     choices: [
-      { id: "a", text: "The cellular modem / wireless WAN — treat as metered, higher latency", rationale: "Correct." },
+      { id: "a", text: "The cellular modem / wireless WAN — treat as metered, higher latency", rationale: "Correct. 1.7 connection types: VPN, wireless, wired, WWAN/cellular, plus shares/printers/maps." },
       { id: "b", text: "A wired VLAN tag", rationale: "Wired is Ethernet." },
       { id: "c", text: "The domain controller protocol", rationale: "No." },
       { id: "d", text: "Apple FileVault", rationale: "Wrong OS." },
@@ -3503,7 +3503,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-DOMAINJOIN"],
     stem: "A new Wi-Fi join cannot see \\\\nas because the profile is Public. NEXT?",
     choices: [
-      { id: "a", text: "Set the network to Private if it is trusted so sharing rules open", rationale: "Correct." },
+      { id: "a", text: "Set the network to Private if it is trusted so sharing rules open", rationale: "Correct. Public vs private (and domain) firewall profiles change sharing. Public is default-deny on purpose." },
       { id: "b", text: "diskpart clean the NAS", rationale: "Wrong device and tool." },
       { id: "c", text: "Install Linux because Windows cannot share", rationale: "False." },
       { id: "d", text: "Disable DNS entirely", rationale: "Makes names worse." },
@@ -3519,7 +3519,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-DOMAINJOIN"],
     stem: "A static IP was set without a DNS server. Ping to 8.8.8.8 works; names fail. Cause?",
     choices: [
-      { id: "a", text: "Client DNS setting is empty — static forgot DNS", rationale: "Correct." },
+      { id: "a", text: "Client DNS setting is empty — static forgot DNS", rationale: "Correct. Client network configuration is address, mask, gateway, and DNS. Static that omits DNS looks like 'the internet is down.'" },
       { id: "b", text: "The cable is unplugged", rationale: "Ping to a public IP already worked." },
       { id: "c", text: "The disk is MBR", rationale: "Unrelated." },
       { id: "d", text: "gpedit is missing on Pro", rationale: "Pro has gpedit; this is IP config." },
@@ -3551,7 +3551,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-UNC"],
     stem: "A mapped Z: shows a red X. The UNC \\\\filesrv\\data opens. What does that tell you?",
     choices: [
-      { id: "a", text: "The share works; the letter/reconnect/credential mapping is the problem", rationale: "Correct." },
+      { id: "a", text: "The share works; the letter/reconnect/credential mapping is the problem", rationale: "Correct. Always test the UNC before you rebuild the map. File Explorer address bar accepts UNCs without a letter." },
       { id: "b", text: "The server is down", rationale: "UNC would fail too." },
       { id: "c", text: "DNS is down and nothing can work", rationale: "The UNC by name opened." },
       { id: "d", text: "You must format Z:", rationale: "Z: is a letter, not a volume to format." },
@@ -3567,7 +3567,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-UNC"],
     stem: "Connecting a printer at \\\\printsrv\\Color-4 uses which idea?",
     choices: [
-      { id: "a", text: "The same UNC/share model as a file share", rationale: "Correct." },
+      { id: "a", text: "The same UNC/share model as a file share", rationale: "Correct. Shared printers and file shares are both UNC resources in 1.7." },
       { id: "b", text: "APFS snapshots", rationale: "macOS." },
       { id: "c", text: "GPT protective MBR", rationale: "Disks." },
       { id: "d", text: "dnf install cups on Windows", rationale: "Wrong OS." },
@@ -3583,7 +3583,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-UNC"],
     stem: "Effective permission for a remote user is:",
     choices: [
-      { id: "a", text: "The more restrictive combination of share permissions and NTFS", rationale: "Correct." },
+      { id: "a", text: "The more restrictive combination of share permissions and NTFS", rationale: "Correct. Share + NTFS: most restrictive wins for remote users. Local interactive users skip the share ACL." },
       { id: "b", text: "Share permissions only; NTFS is ignored remotely", rationale: "Both apply remotely." },
       { id: "c", text: "NTFS only; share is ignored remotely", rationale: "Share caps remote access." },
       { id: "d", text: "Neither; only the firewall Public profile matters", rationale: "Firewall is another layer, not a replacement for ACLs." },
@@ -3599,7 +3599,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-UNC"],
     stem: "net use without arguments is useful because it:",
     choices: [
-      { id: "a", text: "Lists current SMB mappings", rationale: "Correct." },
+      { id: "a", text: "Lists current SMB mappings", rationale: "Correct. When two maps fight over Q:, net use shows the truth." },
       { id: "b", text: "Creates a domain", rationale: "No." },
       { id: "c", text: "Formats USB", rationale: "format." },
       { id: "d", text: "Starts SFC", rationale: "sfc." },
@@ -3615,7 +3615,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-UNC"],
     stem: "File Explorer → Network is empty on a healthy modern LAN. BEST teaching point?",
     choices: [
-      { id: "a", text: "Do not rely on SMBv1 browsing; use UNC or a mapped letter", rationale: "Correct." },
+      { id: "a", text: "Do not rely on SMBv1 browsing; use UNC or a mapped letter", rationale: "Correct. Teach UNC. Browsing is a convenience that often fails on modern Windows." },
       { id: "b", text: "The LAN is always down if Network is empty", rationale: "Discovery can be off on a healthy LAN." },
       { id: "c", text: "Enable SMBv1 as corporate standard", rationale: "SMBv1 is a last-resort compatibility risk." },
       { id: "d", text: "Convert to MBR to enable discovery", rationale: "Unrelated." },
@@ -3631,7 +3631,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-METERED"],
     stem: "Windows delays large updates on a cellular NIC. Which setting is likely on?",
     choices: [
-      { id: "a", text: "Metered connection", rationale: "Correct." },
+      { id: "a", text: "Metered connection", rationale: "Correct. Metered connections throttle Windows Update, Store, and some sync clients on purpose." },
       { id: "b", text: "Hide extensions", rationale: "Explorer." },
       { id: "c", text: "gpedit missing", rationale: "Not the cause of update throttle on LTE." },
       { id: "d", text: "ReFS on C:", rationale: "Unrelated." },
@@ -3647,7 +3647,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-METERED"],
     stem: "Forcing a 4 GB feature update over a phone hotspot is a bad idea because:",
     choices: [
-      { id: "a", text: "Metered WWAN has quota/cost and the OS is trying to protect it", rationale: "Correct." },
+      { id: "a", text: "Metered WWAN has quota/cost and the OS is trying to protect it", rationale: "Correct. Respect metered flags. Use Ethernet/Wi-Fi for large servicing." },
       { id: "b", text: "Hotspots cannot carry IPv4", rationale: "They can." },
       { id: "c", text: "Feature updates require APFS", rationale: "Windows." },
       { id: "d", text: "Hotspots disable TPM", rationale: "No." },
@@ -3679,7 +3679,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-METERED"],
     stem: "A printer should get a static/reserved address because:",
     choices: [
-      { id: "a", text: "Clients and queues target a stable IP/DNS name; DHCP reservations beat random pool addresses", rationale: "Correct." },
+      { id: "a", text: "Clients and queues target a stable IP/DNS name; DHCP reservations beat random pool addresses", rationale: "Correct. Static vs dynamic: clients DHCP; infrastructure (printers/servers) static or reserved, documented, outside the pool." },
       { id: "b", text: "Printers cannot use Ethernet otherwise", rationale: "They can DHCP; they just should not drift." },
       { id: "c", text: "Static IPs disable the firewall forever", rationale: "No." },
       { id: "d", text: "GPT requires static printer IPs", rationale: "No." },
@@ -3695,7 +3695,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-METERED"],
     stem: "Subnet mask and default gateway on a client must:",
     choices: [
-      { id: "a", text: "Place the host on the same network as the gateway", rationale: "Correct." },
+      { id: "a", text: "Place the host on the same network as the gateway", rationale: "Correct. Wrong mask/gateway = 'limited connectivity' with a pretty address." },
       { id: "b", text: "Always be 255.255.0.0 and 1.1.1.1", rationale: "Not universal." },
       { id: "c", text: "Match the TPM version", rationale: "Unrelated." },
       { id: "d", text: "Be blank on domain-joined PCs", rationale: "Domain PCs still need IP config (usually DHCP)." },
@@ -3712,7 +3712,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two client settings are required besides an IP address?",
     choices: [
-      { id: "a", text: "Subnet mask", rationale: "Correct." },
+      { id: "a", text: "Subnet mask", rationale: "Correct. IP, mask, gateway, DNS — four knobs. DHCP usually fills all four." },
       { id: "b", text: "Default gateway (to leave the LAN)", rationale: "Correct for internet/other subnets." },
       { id: "c", text: "APFS container UUID", rationale: "macOS." },
       { id: "d", text: "A 6 TB RAM module", rationale: "Hardware SKU, not IP config." },
@@ -3728,7 +3728,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-PROXY"],
     stem: "Browser fails; ping and nslookup work. A leftover 127.0.0.1:8888 is in LAN settings. Cause?",
     choices: [
-      { id: "a", text: "Proxy settings pointing at a dead local proxy", rationale: "Correct." },
+      { id: "a", text: "Proxy settings pointing at a dead local proxy", rationale: "Correct. Proxy breaks HTTP(S) while ICMP and DNS still look healthy." },
       { id: "b", text: "The default gateway is missing", rationale: "Ping to off-LAN IPs would fail." },
       { id: "c", text: "APIPA", rationale: "Would not ping off-LAN normally." },
       { id: "d", text: "The disk is FAT32", rationale: "Unrelated." },
@@ -3744,7 +3744,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-PROXY"],
     stem: "Where can a Windows client proxy be configured (classic path named on exams)?",
     choices: [
-      { id: "a", text: "Internet Options → Connections → LAN settings (and Settings → Proxy)", rationale: "Correct." },
+      { id: "a", text: "Internet Options → Connections → LAN settings (and Settings → Proxy)", rationale: "Correct. Know both the Internet Options dialog and the modern Settings proxy page." },
       { id: "b", text: "dfrgui.exe", rationale: "Optimize Drives." },
       { id: "c", text: "lusrmgr certificates", rationale: "Wrong MMC." },
       { id: "d", text: "nano /etc/resolv.conf on Windows", rationale: "Linux file." },
@@ -3760,7 +3760,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-PROXY"],
     stem: "A PAC file is used to:",
     choices: [
-      { id: "a", text: "Send some destinations to a proxy and others direct", rationale: "Correct." },
+      { id: "a", text: "Send some destinations to a proxy and others direct", rationale: "Correct. Proxy auto-config (PAC/WPAD) is still how many enterprises split traffic." },
       { id: "b", text: "Convert MBR to GPT", rationale: "No." },
       { id: "c", text: "Store BitLocker keys", rationale: "No." },
       { id: "d", text: "Replace ipconfig /all", rationale: "No." },
@@ -3776,7 +3776,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-PROXY"],
     stem: "Local firewall 'application restrictions and exceptions' means:",
     choices: [
-      { id: "a", text: "Allow/block this app or port on a given profile — not 'firewall off' as the design", rationale: "Correct." },
+      { id: "a", text: "Allow/block this app or port on a given profile — not 'firewall off' as the design", rationale: "Correct. 1.7 wants you to configure exceptions per profile." },
       { id: "b", text: "NTFS vs share ACLs only", rationale: "Different permission layer." },
       { id: "c", text: "exFAT cannot be firewalled", rationale: "Firewall is host-based, not filesystem-based." },
       { id: "d", text: "Home cannot have a firewall", rationale: "Home has Windows Defender Firewall." },
@@ -3792,7 +3792,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O7-PROXY"],
     stem: "Split-tunnel VPN versus force-tunnel: which statement is accurate?",
     choices: [
-      { id: "a", text: "Split tunnel keeps local internet; force-tunnel sends everything through the concentrator", rationale: "Correct." },
+      { id: "a", text: "Split tunnel keeps local internet; force-tunnel sends everything through the concentrator", rationale: "Correct. Know the traffic implication. Mapped drives still need a route to the file server either way." },
       { id: "b", text: "Force-tunnel is only for Home edition", rationale: "SKU-independent design choice." },
       { id: "c", text: "Split tunnel formats the VPN NIC as FAT32", rationale: "No." },
       { id: "d", text: "They are both names for RDP host", rationale: "RDP is not VPN." },
@@ -3810,7 +3810,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "Wired desktop, wireless laptop, WWAN on a field tablet, and a vendor VPN client for all three.",
     stem: "Which 1.7 idea is the technician documenting?",
     choices: [
-      { id: "a", text: "Establish network connections by type: wired, wireless, WWAN, VPN", rationale: "Correct." },
+      { id: "a", text: "Establish network connections by type: wired, wireless, WWAN, VPN", rationale: "Correct. Name the connection type first. Failures differ: Ethernet link, SSID/profile, cellular quota, VPN auth/routes." },
       { id: "b", text: "N editions omit Ethernet", rationale: "False." },
       { id: "c", text: "All of them must use APIPA", rationale: "False." },
       { id: "d", text: "Only workgroup PCs may use VPN", rationale: "Domain PCs use VPN constantly." },
@@ -3827,7 +3827,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A Mac user downloads an application as a .dmg. What happens next typically?",
     choices: [
-      { id: "a", text: "The disk image mounts; drag the .app into /Applications; eject the image", rationale: "Correct." },
+      { id: "a", text: "The disk image mounts; drag the .app into /Applications; eject the image", rationale: "Correct. .dmg is a disk image. The app bundle is what you copy to /Applications." },
       { id: "b", text: "Setup.exe runs because dmg is a Windows installer", rationale: "dmg is macOS." },
       { id: "c", text: "apt install the dmg", rationale: "apt is Debian/Ubuntu." },
       { id: "d", text: "diskpart clean the dmg letter", rationale: "Windows disk tool." },
@@ -3843,7 +3843,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-DMG"],
     stem: "A .pkg on macOS is BEST described as:",
     choices: [
-      { id: "a", text: "A package installer wizard that can write files outside /Applications", rationale: "Correct." },
+      { id: "a", text: "A package installer wizard that can write files outside /Applications", rationale: "Correct. .pkg is the wizard. .app is the bundle. .dmg is the image. Three verbs." },
       { id: "b", text: "Always just a mounted disk image", rationale: "That is .dmg." },
       { id: "c", text: "An NTFS repair utility", rationale: "Windows." },
       { id: "d", text: "The App Store receipt only", rationale: "Store installs are a different channel." },
@@ -3859,7 +3859,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-DMG"],
     stem: "How do you uninstall a simple .app that was dragged to /Applications?",
     choices: [
-      { id: "a", text: "Drag it to Trash (then check ~/Library leftovers if needed)", rationale: "Correct." },
+      { id: "a", text: "Drag it to Trash (then check ~/Library leftovers if needed)", rationale: "Correct. There is no guaranteed Programs-and-Features list. Bundles drag to Trash; pkgs may need an uninstaller." },
       { id: "b", text: "Programs and Features", rationale: "Windows." },
       { id: "c", text: "dnf remove", rationale: "Fedora/RHEL." },
       { id: "d", text: "diskpart delete partition", rationale: "Windows disk." },
@@ -3875,7 +3875,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-DMG"],
     stem: "App Store installs on a Mac are tied to:",
     choices: [
-      { id: "a", text: "An Apple ID (or Apple Business Manager assignment)", rationale: "Correct." },
+      { id: "a", text: "An Apple ID (or Apple Business Manager assignment)", rationale: "Correct. Store apps are signed and identity-tied. Corporate VPP/ABM can avoid personal Apple IDs." },
       { id: "b", text: "A Windows Microsoft account only", rationale: "Wrong store." },
       { id: "c", text: "apt repositories", rationale: "Debian." },
       { id: "d", text: "MBR slot 4", rationale: "Unrelated." },
@@ -3891,7 +3891,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-DMG"],
     stem: "Which folder holds machine-wide applications?",
     choices: [
-      { id: "a", text: "/Applications", rationale: "Correct." },
+      { id: "a", text: "/Applications", rationale: "Correct. Know /Applications, /Users, /Library, /System, and ~/Library." },
       { id: "b", text: "C:\\Program Files", rationale: "Windows." },
       { id: "c", text: "/etc/apt", rationale: "Debian configs." },
       { id: "d", text: "/boot/grub only", rationale: "Bootloader files." },
@@ -3924,7 +3924,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-TIMEMACHINE"],
     stem: "What is Time Machine?",
     choices: [
-      { id: "a", text: "Apple's built-in versioned backup to a dedicated disk or network destination", rationale: "Correct." },
+      { id: "a", text: "Apple's built-in versioned backup to a dedicated disk or network destination", rationale: "Correct. Time Machine is the exam's macOS backup story. Test a restore. Do not confuse it with iCloud." },
       { id: "b", text: "iCloud Drive sync, which is a backup because it copies files", rationale: "Sync is not a versioned backup." },
       { id: "c", text: "Windows File History renamed on Macs", rationale: "Different product; the named macOS tool is Time Machine." },
       { id: "d", text: "A Disk Utility RAID-0 stripe", rationale: "Not backup." },
@@ -3940,7 +3940,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-TIMEMACHINE"],
     stem: "A user turns on iCloud Drive and declares backups done. Why is that a mistake?",
     choices: [
-      { id: "a", text: "Sync mirrors deletes and malware; it is not a versioned Time Machine backup", rationale: "Correct." },
+      { id: "a", text: "Sync mirrors deletes and malware; it is not a versioned Time Machine backup", rationale: "Correct. Sync ≠ backup. Ransomware-encrypted files sync too." },
       { id: "b", text: "iCloud Drive formats the Mac as NTFS", rationale: "False." },
       { id: "c", text: "Time Machine cannot run if iCloud exists", rationale: "They can coexist; they are different jobs." },
       { id: "d", text: "iCloud Drive is FileVault", rationale: "FileVault is encryption." },
@@ -3956,7 +3956,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-TIMEMACHINE"],
     stem: "Disk Utility on macOS is used to:",
     choices: [
-      { id: "a", text: "Format APFS/HFS+, First Aid, and disk images", rationale: "Correct." },
+      { id: "a", text: "Format APFS/HFS+, First Aid, and disk images", rationale: "Correct. Disk Utility is the macOS volume tool — cousin to diskmgmt/chkdsk, not Time Machine itself." },
       { id: "b", text: "gpupdate the Mac", rationale: "Windows." },
       { id: "c", text: "net user /add", rationale: "Windows." },
       { id: "d", text: "Enable Game Mode", rationale: "Windows Settings." },
@@ -3972,7 +3972,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-TIMEMACHINE"],
     stem: "Force Quit on a Mac is closest to:",
     choices: [
-      { id: "a", text: "Task Manager End task (Command+Option+Esc)", rationale: "Correct." },
+      { id: "a", text: "Task Manager End task (Command+Option+Esc)", rationale: "Correct. Force Quit kills a stuck app. It is not a backup or a disk repair." },
       { id: "b", text: "diskpart clean", rationale: "Destructive Windows disk." },
       { id: "c", text: "sfc /scannow", rationale: "Windows system files." },
       { id: "d", text: "Hibernate", rationale: "Power state." },
@@ -3988,7 +3988,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-TIMEMACHINE"],
     stem: "Mission Control / multiple desktops (Spaces) are:",
     choices: [
-      { id: "a", text: "macOS window management — a 'lost' window is often on another Space", rationale: "Correct." },
+      { id: "a", text: "macOS window management — a 'lost' window is often on another Space", rationale: "Correct. Features list: Mission Control, gestures, Dock, Finder, Spotlight, Continuity." },
       { id: "b", text: "Windows workgroup names", rationale: "No." },
       { id: "c", text: "Linux systemd targets", rationale: "No." },
       { id: "d", text: "BitLocker protectors", rationale: "No." },
@@ -4006,7 +4006,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "A designer needs a dedicated encrypted backup disk, not iCloud Photos.",
     stem: "BEST macOS feature?",
     choices: [
-      { id: "a", text: "Time Machine to that disk", rationale: "Correct." },
+      { id: "a", text: "Time Machine to that disk", rationale: "Correct. Time Machine is the named backup. Encrypt the destination and test restore." },
       { id: "b", text: "Spotlight only", rationale: "Search." },
       { id: "c", text: "Continuity clipboard", rationale: "Handoff, not backup." },
       { id: "d", text: "App Store reviews", rationale: "Not backup." },
@@ -4022,13 +4022,13 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-FILEVAULT"],
     stem: "FileVault is:",
     choices: [
-      { id: "a", text: "macOS full-disk encryption (APFS native)", rationale: "Correct." },
+      { id: "a", text: "macOS built-in full-disk encryption", rationale: "Correct. FileVault is the macOS full-disk encryption feature and the BitLocker analog. Escrow the recovery key." },
       { id: "b", text: "Windows BitLocker To Go on FAT32 only", rationale: "Wrong OS." },
       { id: "c", text: "The login keychain itself", rationale: "Keychain stores secrets; FileVault encrypts the volume." },
       { id: "d", text: "Time Machine's schedule editor", rationale: "Backup ≠ encryption, though both are best practices." },
     ],
     correct: "a",
-    explanation: "FileVault is the BitLocker analog. Escrow the recovery key.",
+    explanation: "FileVault is macOS built-in full-disk encryption, the BitLocker analog. Turn it on in System Settings → Privacy & Security and escrow the recovery key.",
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D1-O8-L2",
   }),
@@ -4038,7 +4038,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-FILEVAULT"],
     stem: "A FileVault recovery key was not escrowed and the password is lost. MOST likely outcome?",
     choices: [
-      { id: "a", text: "The volume is unrecoverable without the key — treat as a wipe", rationale: "Correct." },
+      { id: "a", text: "The volume is unrecoverable without the key — treat as a wipe", rationale: "Correct. Escrow FileVault keys in MDM or the ticket vault. No key, no data." },
       { id: "b", text: "Apple always emails the plaintext key", rationale: "Not a safe assumption; iCloud recovery is a specific setup, not magic." },
       { id: "c", text: "Boot Windows and manage-bde", rationale: "Wrong OS." },
       { id: "d", text: "Disable SIP from a Windows USB", rationale: "No." },
@@ -4054,7 +4054,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-FILEVAULT"],
     stem: "Where do you enable FileVault on a modern Mac?",
     choices: [
-      { id: "a", text: "System Settings → Privacy & Security", rationale: "Correct." },
+      { id: "a", text: "System Settings → Privacy & Security", rationale: "Correct. Privacy & Security is also where TCC (camera, Full Disk Access) lives." },
       { id: "b", text: "gpedit.msc", rationale: "Windows." },
       { id: "c", text: "Programs and Features", rationale: "Windows." },
       { id: "d", text: "Internet Options", rationale: "Windows." },
@@ -4070,7 +4070,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-FILEVAULT"],
     stem: "A backup app cannot see Mail data until Full Disk Access is granted. This is:",
     choices: [
-      { id: "a", text: "Privacy & Security TCC — not a broken Time Machine disk by default", rationale: "Correct." },
+      { id: "a", text: "Privacy & Security TCC — not a broken Time Machine disk by default", rationale: "Correct. macOS privacy prompts block apps on purpose. Grant Full Disk Access to legitimate backup tools." },
       { id: "b", text: "Proof APFS is corrupt", rationale: "Too fast." },
       { id: "c", text: "A Windows UAC prompt", rationale: "Wrong OS." },
       { id: "d", text: "dnf repo failure", rationale: "Wrong OS." },
@@ -4103,9 +4103,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are macOS best practices named on 1.8?",
     choices: [
-      { id: "a", text: "Backups (Time Machine or equivalent)", rationale: "Correct." },
+      { id: "a", text: "Backups (Time Machine or equivalent)", rationale: "Correct. Backups, antivirus/EDR policy, and updates/RSR are the listed best practices." },
       { id: "b", text: "diskpart clean weekly", rationale: "Windows destructive CLI." },
-      { id: "c", text: "Updates/patches including RSR", rationale: "Correct." },
+      { id: "c", text: "Updates/patches including RSR", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "FAT32 as the system volume", rationale: "macOS uses APFS." },
     ],
     correct: ["a", "c"],
@@ -4119,7 +4119,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-KEYCHAIN"],
     stem: "Keychain Access stores:",
     choices: [
-      { id: "a", text: "Passwords, certificates, and Wi-Fi secrets", rationale: "Correct." },
+      { id: "a", text: "Passwords, certificates, and Wi-Fi secrets", rationale: "Correct. A login keychain that will not unlock produces password prompt storms after a directory password reset." },
       { id: "b", text: "GPT partition GUIDs for Windows", rationale: "Wrong OS." },
       { id: "c", text: "/etc/shadow hashes only", rationale: "Linux." },
       { id: "d", text: "BitLocker numerical keys exclusively", rationale: "Windows." },
@@ -4135,7 +4135,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-KEYCHAIN"],
     stem: "Endless password prompts after an AD password reset on a Mac usually mean:",
     choices: [
-      { id: "a", text: "The login keychain password is out of sync", rationale: "Correct." },
+      { id: "a", text: "The login keychain password is out of sync", rationale: "Correct. Update or recreate the login keychain. Do not panic-disable FileVault first." },
       { id: "b", text: "Time Machine is full-disk encryption", rationale: "That's FileVault." },
       { id: "c", text: "gpedit is missing", rationale: "Windows." },
       { id: "d", text: "The disk must be MBR", rationale: "Macs are GPT/APFS." },
@@ -4151,7 +4151,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-KEYCHAIN"],
     stem: "Spotlight is:",
     choices: [
-      { id: "a", text: "macOS search/launcher (Command+Space); indexing can pin CPU after migration", rationale: "Correct." },
+      { id: "a", text: "macOS search/launcher (Command+Space); indexing can pin CPU after migration", rationale: "Correct. If CPU is high after a migration, check Spotlight indexing before you reinstall macOS." },
       { id: "b", text: "Windows Indexing Options renamed", rationale: "Similar job, different OS tool." },
       { id: "c", text: "A VPN concentrator", rationale: "No." },
       { id: "d", text: "The bootloader", rationale: "That's typically GRUB on Linux or Apple's boot picker." },
@@ -4167,7 +4167,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-KEYCHAIN"],
     stem: "Continuity (Handoff, Universal Clipboard, iPhone calls on Mac) requires:",
     choices: [
-      { id: "a", text: "Same Apple ID, radios on, supported hardware — not a reinstall as FIRST", rationale: "Correct." },
+      { id: "a", text: "Same Apple ID, radios on, supported hardware — not a reinstall as FIRST", rationale: "Correct. Continuity is an identity + radio feature. Check Apple ID and Bluetooth/Wi-Fi first." },
       { id: "b", text: "A Windows domain join", rationale: "Wrong identity plane." },
       { id: "c", text: "FAT32 on the Mac SSD", rationale: "APFS." },
       { id: "d", text: "gpedit Computer Configuration", rationale: "Windows." },
@@ -4183,7 +4183,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-KEYCHAIN"],
     stem: "A corporate Mac is ADE-enrolled. The user wants a personal iCloud on it. BEST first question?",
     choices: [
-      { id: "a", text: "What do MDM/Apple ID restrictions allow on this supervised device?", rationale: "Correct." },
+      { id: "a", text: "What do MDM/Apple ID restrictions allow on this supervised device?", rationale: "Correct. Apple ID and corporate restrictions are on the 1.8 list. Ask before you fight MDM." },
       { id: "b", text: "Just sign in; MDM never blocks Apple ID", rationale: "Supervised devices often restrict Apple ID." },
       { id: "c", text: "Wipe FileVault because iCloud needs it off", rationale: "Opposite of policy." },
       { id: "d", text: "Install Windows Home beside macOS so iCloud works", rationale: "Nonsense." },
@@ -4199,7 +4199,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-RSR"],
     stem: "Rapid Security Response (RSR) is:",
     choices: [
-      { id: "a", text: "Apple's out-of-band security patches between macOS point releases", rationale: "Correct." },
+      { id: "a", text: "Apple's out-of-band security patches between macOS point releases", rationale: "Correct. RSR delivers critical WebKit/kernel fixes without waiting for the next 14.x minor. Version strings gain a letter, e.g. (a)." },
       { id: "b", text: "A full macOS major upgrade", rationale: "RSR is smaller and faster than a full upgrade." },
       { id: "c", text: "Windows Update for Business", rationale: "Wrong vendor." },
       { id: "d", text: "Time Machine's hourly snapshot name", rationale: "Backup, not patching." },
@@ -4215,7 +4215,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-RSR"],
     stem: "A Mac shows 13.4.1 (a). What does the letter indicate at A+ depth?",
     choices: [
-      { id: "a", text: "An RSR patch on top of 13.4.1", rationale: "Correct." },
+      { id: "a", text: "An RSR patch on top of 13.4.1", rationale: "Correct. RSR appends a letter to the version. You can also remove an RSR if it breaks a vendor tool." },
       { id: "b", text: "A Home vs Pro edition", rationale: "macOS is not those Windows SKUs." },
       { id: "c", text: "APFS vs FAT32", rationale: "Filesystem." },
       { id: "d", text: "That FileVault is off", rationale: "Unrelated." },
@@ -4231,7 +4231,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-RSR"],
     stem: "Where do macOS updates and RSR apply from?",
     choices: [
-      { id: "a", text: "System Settings → General → Software Update", rationale: "Correct." },
+      { id: "a", text: "System Settings → General → Software Update", rationale: "Correct. Software Update is the patch surface. RSR is the between-releases security mechanism." },
       { id: "b", text: "Windows Update", rationale: "Wrong OS." },
       { id: "c", text: "apt upgrade on all Macs", rationale: "Not the Apple channel." },
       { id: "d", text: "gpedit Computer Configuration Windows Update", rationale: "Windows." },
@@ -4247,7 +4247,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O8-RSR"],
     stem: "'Macs don't get malware' as a control is:",
     choices: [
-      { id: "a", text: "Not a control — use XProtect/Gatekeeper plus enterprise EDR per policy", rationale: "Correct." },
+      { id: "a", text: "Not a control — use XProtect/Gatekeeper plus enterprise EDR per policy", rationale: "Correct. The objective lists antivirus under best practices. Platform myths are not configurations." },
       { id: "b", text: "Sufficient because 1.8 omitted antivirus", rationale: "1.8 names antivirus as a best practice." },
       { id: "c", text: "Why FileVault is illegal", rationale: "False." },
       { id: "d", text: "Why RSR does not exist", rationale: "RSR exists because threats exist." },
@@ -4265,7 +4265,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "A critical Safari/WebKit bug is patched by Apple this afternoon; the next macOS 14.x is weeks away.",
     stem: "What mechanism should a technician expect?",
     choices: [
-      { id: "a", text: "Rapid Security Response", rationale: "Correct." },
+      { id: "a", text: "Rapid Security Response", rationale: "Correct. RSR exists specifically so security fixes are not hostage to the next full point release." },
       { id: "b", text: "A Windows feature update", rationale: "Wrong OS." },
       { id: "c", text: "chkdsk /r on the APFS container from cmd.exe", rationale: "Wrong OS/tool." },
       { id: "d", text: "N edition Media Feature Pack", rationale: "Windows SKU." },
@@ -4298,7 +4298,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "chmod 644 file.txt is:",
     choices: [
-      { id: "a", text: "rw-r--r--", rationale: "Correct." },
+      { id: "a", text: "rw-r--r--", rationale: "Correct. 644 is the default file mode people should reach for instead of 777." },
       { id: "b", text: "rwxrwxrwx", rationale: "777." },
       { id: "c", text: "A chown to root", rationale: "chown changes owner." },
       { id: "d", text: "Mounting a filesystem", rationale: "mount." },
@@ -4314,7 +4314,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "Execute on a directory means:",
     choices: [
-      { id: "a", text: "You can traverse (enter) the directory", rationale: "Correct." },
+      { id: "a", text: "You can traverse (enter) the directory", rationale: "Correct. Directory +x is traverse. Without it, you cannot cd even if you can read names." },
       { id: "b", text: "The folder runs as a binary", rationale: "Directories are not programs." },
       { id: "c", text: "NTFS inheritance is enabled", rationale: "Wrong permission model." },
       { id: "d", text: "The directory is a systemd unit", rationale: "No." },
@@ -4330,7 +4330,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "chown alice:staff report.pdf does what?",
     choices: [
-      { id: "a", text: "Sets owner alice and group staff", rationale: "Correct." },
+      { id: "a", text: "Sets owner alice and group staff", rationale: "Correct. chown owner:group. Usually needs root/sudo." },
       { id: "b", text: "Sets mode 777", rationale: "chmod." },
       { id: "c", text: "Installs the file with apt", rationale: "apt." },
       { id: "d", text: "Edits /etc/fstab", rationale: "nano/fstab." },
@@ -4346,7 +4346,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "Which command prints the working directory?",
     choices: [
-      { id: "a", text: "pwd", rationale: "Correct." },
+      { id: "a", text: "pwd", rationale: "Correct. pwd orients you. ls shows contents. Linux has no drive letters." },
       { id: "b", text: "ip addr", rationale: "Addresses." },
       { id: "c", text: "systemctl", rationale: "Services." },
       { id: "d", text: "dnf", rationale: "Packages." },
@@ -4378,7 +4378,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "mv versus cp versus rm:",
     choices: [
-      { id: "a", text: "mv moves/renames; cp copies (cp -r for dirs); rm deletes (rm -r recursive)", rationale: "Correct." },
+      { id: "a", text: "mv moves/renames; cp copies (cp -r for dirs); rm deletes (rm -r recursive)", rationale: "Correct. rm -rf is the famous foot-cannon. There is no Recycle Bin in the shell." },
       { id: "b", text: "They are aliases of chmod", rationale: "No." },
       { id: "c", text: "rm creates files", rationale: "Opposite." },
       { id: "d", text: "cp always needs a Windows drive letter", rationale: "Linux paths." },
@@ -4394,7 +4394,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "grep searches ____; find searches ____.",
     choices: [
-      { id: "a", text: "file contents; file names/metadata", rationale: "Correct." },
+      { id: "a", text: "file contents; file names/metadata", rationale: "Correct. grep -R 'error' /var/log versus find /home -name '*.pdf'." },
       { id: "b", text: "DNS; routes", rationale: "dig / ip route." },
       { id: "c", text: "Packages; kernels", rationale: "apt/dnf; uname." },
       { id: "d", text: "Users; hashes", rationale: "passwd/shadow." },
@@ -4410,7 +4410,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-CHMOD"],
     stem: "chmod 777 on a world-facing directory is:",
     choices: [
-      { id: "a", text: "A confession — everyone can read/write/traverse", rationale: "Correct." },
+      { id: "a", text: "A security risk — everyone can read, write, and traverse it", rationale: "Correct. Do not chmod 777 to 'make it work.' Fix owner and the minimum mode." },
       { id: "b", text: "Required for nginx to start", rationale: "No; use correct owner/mode." },
       { id: "c", text: "The same as 644", rationale: "777 is rwxrwxrwx." },
       { id: "d", text: "How FileVault is enabled", rationale: "macOS." },
@@ -4427,8 +4427,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two commands change identity of a file (mode or owner)?",
     choices: [
-      { id: "a", text: "chmod", rationale: "Correct." },
-      { id: "b", text: "chown", rationale: "Correct." },
+      { id: "a", text: "chmod", rationale: "Correct. chmod mode bits; chown owner:group. Both are on the 1.9 file-management list." },
+      { id: "b", text: "chown", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "ping", rationale: "ICMP." },
       { id: "d", text: "dig", rationale: "DNS." },
     ],
@@ -4443,7 +4443,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "sudo runs a command as root after:",
     choices: [
-      { id: "a", text: "Your password, if you are in sudoers", rationale: "Correct." },
+      { id: "a", text: "Your password, if you are in sudoers", rationale: "Correct. Ubuntu-style desktops prefer sudo and may leave root's password unset. su wants the target user's password." },
       { id: "b", text: "The root password always, even when root is locked", rationale: "That is su's model." },
       { id: "c", text: "No authentication ever", rationale: "sudoers can NOPASSWD, but that is not the default story." },
       { id: "d", text: "A Windows UAC click on every distro", rationale: "Wrong OS." },
@@ -4459,7 +4459,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "su - (or su - root) starts:",
     choices: [
-      { id: "a", text: "A login shell as that user (asks for that user's password)", rationale: "Correct." },
+      { id: "a", text: "A login shell as that user (asks for that user's password)", rationale: "Correct. su switches user. sudo is per-command. sudo -i is an interactive root shell." },
       { id: "b", text: "apt update", rationale: "Packages." },
       { id: "c", text: "A Windows domain join", rationale: "Wrong OS." },
       { id: "d", text: "Time Machine", rationale: "macOS." },
@@ -4475,7 +4475,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "The Linux superuser account is:",
     choices: [
-      { id: "a", text: "root (UID 0)", rationale: "Correct." },
+      { id: "a", text: "root (UID 0)", rationale: "Correct. root is UID 0. Direct SSH root logins are often disabled on purpose." },
       { id: "b", text: "Administrator in lusrmgr", rationale: "Windows." },
       { id: "c", text: "Guest on Home", rationale: "Windows." },
       { id: "d", text: "apple", rationale: "No." },
@@ -4507,7 +4507,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "fsck should be run on:",
     choices: [
-      { id: "a", text: "An unmounted volume (or at boot) — not the live root casually", rationale: "Correct." },
+      { id: "a", text: "An unmounted volume (or at boot) — not the live root casually", rationale: "Correct. fsck is chkdsk's cousin. Unmount first." },
       { id: "b", text: "The live / while users write to it, always", rationale: "Dangerous." },
       { id: "c", text: "APFS from Windows cmd", rationale: "Wrong OS." },
       { id: "d", text: "Only FAT32 USB sticks on Macs", rationale: "fsck is the Linux checker (ext family); XFS has xfs_repair." },
@@ -4523,7 +4523,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "mount /dev/sdb1 /mnt/usb then later you must:",
     choices: [
-      { id: "a", text: "umount (note the spelling) before yanking the disk", rationale: "Correct." },
+      { id: "a", text: "umount (note the spelling) before yanking the disk", rationale: "Correct. mount attaches; umount detaches. fstab is the persistent list." },
       { id: "b", text: "diskpart clean", rationale: "Windows." },
       { id: "c", text: "gpupdate /force", rationale: "Windows." },
       { id: "d", text: "Format as ReFS from Linux by default", rationale: "Wrong default." },
@@ -4539,7 +4539,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SUDO"],
     stem: "cat /etc/resolv.conf is used to:",
     choices: [
-      { id: "a", text: "Read the file to the terminal (often DNS nameserver lines)", rationale: "Correct." },
+      { id: "a", text: "Read the file to the terminal (often DNS nameserver lines)", rationale: "Correct. cat dumps a file. Combine with grep. nano edits." },
       { id: "b", text: "Compile the kernel", rationale: "No." },
       { id: "c", text: "Change owner", rationale: "chown." },
       { id: "d", text: "Install nginx", rationale: "apt/dnf." },
@@ -4556,8 +4556,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are administrative elevation commands on the 1.9 list?",
     choices: [
-      { id: "a", text: "su", rationale: "Correct." },
-      { id: "b", text: "sudo", rationale: "Correct." },
+      { id: "a", text: "su", rationale: "Correct. su and sudo are the administrative pair. Prefer sudo for one command." },
+      { id: "b", text: "sudo", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "tracert", rationale: "Windows traceroute." },
       { id: "d", text: "gpedit", rationale: "Windows." },
     ],
@@ -4572,7 +4572,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "On Ubuntu, which pair installs nginx?",
     choices: [
-      { id: "a", text: "sudo apt update then sudo apt install nginx", rationale: "Correct." },
+      { id: "a", text: "sudo apt update then sudo apt install nginx", rationale: "Correct. apt = Debian/Ubuntu. dnf = Fedora/RHEL. Do not mix them." },
       { id: "b", text: "sudo dnf install nginx as the native Ubuntu path", rationale: "dnf is Fedora/RHEL family." },
       { id: "c", text: "Programs and Features", rationale: "Windows." },
       { id: "d", text: "a .dmg drag to /Applications", rationale: "macOS." },
@@ -4588,7 +4588,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "dnf is the package manager for:",
     choices: [
-      { id: "a", text: "Fedora / modern RHEL family (replacing yum)", rationale: "Correct." },
+      { id: "a", text: "Fedora / modern RHEL family (replacing yum)", rationale: "Correct. If the stem says Fedora or RHEL, pick dnf. If it says Debian/Ubuntu, pick apt." },
       { id: "b", text: "Ubuntu exclusively", rationale: "Ubuntu is apt." },
       { id: "c", text: "Windows Store", rationale: "Wrong OS." },
       { id: "d", text: "macOS App Store", rationale: "Wrong OS." },
@@ -4604,7 +4604,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "ip addr (or ip a) replaces which legacy Linux command on current distros?",
     choices: [
-      { id: "a", text: "ifconfig (iproute2 is the modern tool; the objective lists ip)", rationale: "Correct." },
+      { id: "a", text: "ifconfig (iproute2 is the modern tool; the objective lists ip)", rationale: "Correct. Use ip addr, ip link, ip route — not ifconfig — on the V15 list." },
       { id: "b", text: "ipconfig /all on Linux as a native binary", rationale: "ipconfig is Windows." },
       { id: "c", text: "winver", rationale: "Windows." },
       { id: "d", text: "gpedit", rationale: "Windows." },
@@ -4620,7 +4620,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "Linux ping runs until Ctrl+C unless you:",
     choices: [
-      { id: "a", text: "ping -c 4 host", rationale: "Correct." },
+      { id: "a", text: "ping -c 4 host", rationale: "Correct. Windows ping defaults to four. Linux ping is continuous unless -c sets a count." },
       { id: "b", text: "ping -n 4 as the Linux default flag", rationale: "-n is Windows count; Linux uses -c. (Linux -n can mean numeric, depending on tool.)" },
       { id: "c", text: "Use tracert instead, which is the Linux name", rationale: "Linux is traceroute." },
       { id: "d", text: "Must always use pathping", rationale: "Windows." },
@@ -4636,7 +4636,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "curl -I https://example.com is useful because:",
     choices: [
-      { id: "a", text: "It fetches HTTP(S) (headers with -I) without a browser", rationale: "Correct." },
+      { id: "a", text: "It fetches HTTP(S) (headers with -I) without a browser", rationale: "Correct. curl tests HTTP. ping tests ICMP. They answer different questions." },
       { id: "b", text: "It is ping with a new name", rationale: "curl is application-layer HTTP, not ICMP." },
       { id: "c", text: "It formats ext4", rationale: "No." },
       { id: "d", text: "It is Windows nslookup", rationale: "dig/nslookup are DNS." },
@@ -4652,7 +4652,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "The Linux DNS lookup tool named on 1.9 is:",
     choices: [
-      { id: "a", text: "dig", rationale: "Correct." },
+      { id: "a", text: "dig", rationale: "Correct. dig is the Linux DNS tool on the list. traceroute is the hop tool (not tracert)." },
       { id: "b", text: "nslookup only — dig is not listed", rationale: "The objective lists dig." },
       { id: "c", text: "ipconfig /displaydns", rationale: "Windows." },
       { id: "d", text: "winver", rationale: "Windows." },
@@ -4668,7 +4668,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-APT"],
     stem: "man 5 fstab means:",
     choices: [
-      { id: "a", text: "Read the manual page for fstab in section 5 (file formats)", rationale: "Correct." },
+      { id: "a", text: "Read the manual page for fstab in section 5 (file formats)", rationale: "Correct. man is the Linux /? analog. Section 5 is file formats; section 1 is commands." },
       { id: "b", text: "chmod 5 on fstab", rationale: "man is documentation." },
       { id: "c", text: "Delete fstab", rationale: "No." },
       { id: "d", text: "Windows help /?", rationale: "Similar job, different OS. Linux is man." },
@@ -4701,7 +4701,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "systemctl status ssh is interacting with which OS component?",
     choices: [
-      { id: "a", text: "systemd — the init/service manager", rationale: "Correct." },
+      { id: "a", text: "systemd — the init/service manager", rationale: "Correct. systemd manages services (systemctl, journalctl). The kernel is separate. The bootloader (GRUB) is separate." },
       { id: "b", text: "The Linux kernel only, never userspace", rationale: "The kernel is vmlinuz; systemd is init." },
       { id: "c", text: "GRUB exclusively", rationale: "Bootloader." },
       { id: "d", text: "Windows Services MMC", rationale: "Wrong OS, similar job." },
@@ -4717,7 +4717,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "The Linux kernel typically lives as a file like:",
     choices: [
-      { id: "a", text: "/boot/vmlinuz-*", rationale: "Correct." },
+      { id: "a", text: "/boot/vmlinuz-*", rationale: "Correct. Kernel talks to hardware. Bootloader loads it. systemd starts after." },
       { id: "b", text: "C:\\Windows\\System32\\ntoskrnl.exe on Linux", rationale: "Windows kernel path." },
       { id: "c", text: "/Applications/kernel.app", rationale: "macOS-style path, not the Linux kernel file." },
       { id: "d", text: "/etc/passwd", rationale: "Account list." },
@@ -4733,7 +4733,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "GRUB is an example of which 1.9 OS component?",
     choices: [
-      { id: "a", text: "Bootloader", rationale: "Correct." },
+      { id: "a", text: "Bootloader", rationale: "Correct. When /boot is broken, repair the bootloader from a live USB." },
       { id: "b", text: "Package manager", rationale: "apt/dnf." },
       { id: "c", text: "Text editor", rationale: "nano." },
       { id: "d", text: "DNS resolver file", rationale: "resolv.conf." },
@@ -4749,7 +4749,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "top versus ps:",
     choices: [
-      { id: "a", text: "top is live; ps is a snapshot (ps aux / ps -ef)", rationale: "Correct." },
+      { id: "a", text: "top is live; ps is a snapshot (ps aux / ps -ef)", rationale: "Correct. Process view: top live, ps snapshot — Task Manager cousins." },
       { id: "b", text: "They both format disks", rationale: "No." },
       { id: "c", text: "ps is Windows Task Manager only", rationale: "ps is Unix." },
       { id: "d", text: "top is dig's alias", rationale: "DNS vs processes." },
@@ -4765,7 +4765,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "df -h versus du -sh /var/log:",
     choices: [
-      { id: "a", text: "df is free space on mounts; du is usage of a path", rationale: "Correct." },
+      { id: "a", text: "df is free space on mounts; du is usage of a path", rationale: "Correct. Disk full? df -h first, then du -sh in the suspect mount. Do not rm -rf /var first." },
       { id: "b", text: "They are identical", rationale: "Different questions." },
       { id: "c", text: "df deletes files; du defrags", rationale: "No." },
       { id: "d", text: "Both are Windows diskpart aliases", rationale: "Linux." },
@@ -4781,7 +4781,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-SYSTEMD"],
     stem: "traceroute on Linux is the cousin of:",
     choices: [
-      { id: "a", text: "tracert on Windows", rationale: "Correct." },
+      { id: "a", text: "tracert on Windows", rationale: "Correct. 1.9 network: ip, ping, curl, dig, traceroute." },
       { id: "b", text: "chkdsk", rationale: "Disk." },
       { id: "c", text: "gpedit", rationale: "Policy." },
       { id: "d", text: "winver", rationale: "Version." },
@@ -4799,7 +4799,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "sshd will not stay running. The unit exists.",
     stem: "BEST first Linux tools?",
     choices: [
-      { id: "a", text: "systemctl status ssh and journal/logs — systemd + logs, not 'Linux is down'", rationale: "Correct." },
+      { id: "a", text: "systemctl status ssh and journal/logs — systemd + logs, not 'Linux is down'", rationale: "Correct. Service failures are systemd + logs. The kernel and bootloader are different layers." },
       { id: "b", text: "diskpart clean", rationale: "Windows, destructive." },
       { id: "c", text: "Time Machine", rationale: "macOS." },
       { id: "d", text: "Internet Options proxy", rationale: "Windows." },
@@ -4815,7 +4815,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "Password hashes live in which file?",
     choices: [
-      { id: "a", text: "/etc/shadow (root-readable)", rationale: "Correct." },
+      { id: "a", text: "/etc/shadow (root-readable)", rationale: "Correct. passwd lists accounts; shadow holds hashes. That split is an exam favorite." },
       { id: "b", text: "/etc/passwd in the password field as plaintext", rationale: "passwd has an x; hashes moved to shadow." },
       { id: "c", text: "/etc/hosts", rationale: "Static names." },
       { id: "d", text: "/etc/fstab", rationale: "Mounts." },
@@ -4831,7 +4831,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "/etc/passwd contains:",
     choices: [
-      { id: "a", text: "Username, UID, GID, home, shell (password field is x)", rationale: "Correct." },
+      { id: "a", text: "Username, UID, GID, home, shell (password field is x)", rationale: "Correct. A user who cannot log in may have the wrong shell in passwd, or a locked shadow entry." },
       { id: "b", text: "Only DNS servers", rationale: "resolv.conf." },
       { id: "c", text: "Boot mounts", rationale: "fstab." },
       { id: "d", text: "Windows product keys", rationale: "Wrong OS." },
@@ -4863,7 +4863,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "A desktop waits 90 seconds at boot for a missing USB disk listed in:",
     choices: [
-      { id: "a", text: "/etc/fstab (use nofail for removable devices)", rationale: "Correct." },
+      { id: "a", text: "/etc/fstab (use nofail for removable devices)", rationale: "Correct. fstab typos hang boot. Device, mountpoint, type, options." },
       { id: "b", text: "/etc/shadow", rationale: "Hashes." },
       { id: "c", text: "/etc/passwd", rationale: "Accounts." },
       { id: "d", text: "Internet Options", rationale: "Windows." },
@@ -4879,7 +4879,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "Names fail, IPs work on a Linux client. Which file is the DNS resolver list?",
     choices: [
-      { id: "a", text: "/etc/resolv.conf", rationale: "Correct." },
+      { id: "a", text: "/etc/resolv.conf", rationale: "Correct. On systemd-resolved, resolv.conf may be a stub to 127.0.0.53 — edit the real source or the change vanishes." },
       { id: "b", text: "/etc/fstab", rationale: "Mounts." },
       { id: "c", text: "/etc/shadow", rationale: "Hashes." },
       { id: "d", text: "/boot/grub/grub.cfg only", rationale: "Bootloader config, not DNS." },
@@ -4896,8 +4896,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two /etc files are on the V15 list?",
     choices: [
-      { id: "a", text: "/etc/passwd", rationale: "Correct." },
-      { id: "b", text: "/etc/fstab", rationale: "Correct." },
+      { id: "a", text: "/etc/passwd", rationale: "Correct. Listed: passwd, shadow, hosts, fstab, resolv.conf." },
+      { id: "b", text: "/etc/fstab", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "/etc/gpedit.conf", rationale: "Not a thing." },
       { id: "d", text: "C:\\Windows\\System32\\drivers\\etc\\hosts as a Linux path", rationale: "Windows hosts path." },
     ],
@@ -4912,7 +4912,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "Why is /etc/shadow not world-readable while /etc/passwd is?",
     choices: [
-      { id: "a", text: "Hashes must not be world-readable; account metadata may be", rationale: "Correct." },
+      { id: "a", text: "Hashes must not be world-readable; account metadata may be", rationale: "Correct. If shadow were 644, every user could copy hashes for offline cracking." },
       { id: "b", text: "shadow is unused on systemd systems", rationale: "Still used." },
       { id: "c", text: "passwd holds the hashes now", rationale: "Opposite of modern Linux." },
       { id: "d", text: "Both files are APFS-only", rationale: "Linux /etc." },
@@ -4928,7 +4928,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O9-ETC"],
     stem: "nano is on the list because:",
     choices: [
-      { id: "a", text: "It is the named text editor for /etc files", rationale: "Correct." },
+      { id: "a", text: "It is the named text editor for /etc files", rationale: "Correct. vi may exist; the exam named nano." },
       { id: "b", text: "It replaces systemd", rationale: "No." },
       { id: "c", text: "It is Windows Notepad's filename on Linux", rationale: "Different program." },
       { id: "d", text: "It is a package manager", rationale: "apt/dnf." },
@@ -4946,7 +4946,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "You need to confirm a Linux client's address, ping the gateway, and see why names fail.",
     stem: "BEST command/file set?",
     choices: [
-      { id: "a", text: "ip addr / ip route, ping, cat /etc/resolv.conf and/or dig", rationale: "Correct." },
+      { id: "a", text: "ip addr / ip route, ping, cat /etc/resolv.conf and/or dig", rationale: "Correct. Translate the Windows ladder into ip, ping, dig, and resolv.conf." },
       { id: "b", text: "ipconfig /all and tracert only, because they exist natively on Linux", rationale: "Those are Windows names." },
       { id: "c", text: "lusrmgr and gpedit", rationale: "Windows." },
       { id: "d", text: "Time Machine and FileVault", rationale: "macOS." },
@@ -4979,7 +4979,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "setup_x86.exe versus setup_x64.exe is:",
     choices: [
-      { id: "a", text: "Architecture matching — not decoration", rationale: "Correct." },
+      { id: "a", text: "Architecture matching — not decoration", rationale: "Correct. Match the app to the OS architecture, then consider RAM (32-bit processes still ~4 GB)." },
       { id: "b", text: "A filesystem type", rationale: "No." },
       { id: "c", text: "A Windows edition SKU", rationale: "No." },
       { id: "d", text: "A TPM version", rationale: "No." },
@@ -4995,7 +4995,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "An app requires Windows 11 24H2 and refuses Windows 10. This is:",
     choices: [
-      { id: "a", text: "Application-to-OS compatibility", rationale: "Correct." },
+      { id: "a", text: "Application-to-OS compatibility", rationale: "Correct. Check the vendor OS matrix: edition, version, distro, macOS major." },
       { id: "b", text: "A GPT vs MBR requirement only", rationale: "Version matrix, not partition style." },
       { id: "c", text: "Always fixed by compatibility mode for kernel drivers", rationale: "Compatibility mode is not for kernel drivers." },
       { id: "d", text: "Proof the CPU is 32-bit", rationale: "Unrelated leap." },
@@ -5011,7 +5011,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "A vendor tool refuses Windows Home. NEXT?",
     choices: [
-      { id: "a", text: "Confirm the edition requirement; upgrade to Pro or use a supported SKU", rationale: "Correct." },
+      { id: "a", text: "Confirm the edition requirement; upgrade to Pro or use a supported SKU", rationale: "Correct. OS compatibility includes edition, not just 'Windows.'" },
       { id: "b", text: "format C: FAT32", rationale: "Unrelated." },
       { id: "c", text: "Disable TPM so Home looks like Pro", rationale: "No." },
       { id: "d", text: "Install it on ChromeOS natively as Win32", rationale: "ChromeOS is not Win32." },
@@ -5027,7 +5027,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "CPU requirements that list AVX or a generation are:",
     choices: [
-      { id: "a", text: "Real gates — a '1 GHz' legal minimum is not a CAD workstation", rationale: "Correct." },
+      { id: "a", text: "Real gates — a '1 GHz' legal minimum is not a CAD workstation", rationale: "Correct. Read CPU generation, cores, and instruction sets. Apple silicon vs Intel is another split." },
       { id: "b", text: "Ignored if RAM is 4 GB", rationale: "Instruction sets still matter." },
       { id: "c", text: "Only for Linux", rationale: "All OSs." },
       { id: "d", text: "The same as VRAM", rationale: "CPU ≠ GPU memory." },
@@ -5043,7 +5043,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "8 GB minimum / 16 GB recommended on a browser-heavy app means:",
     choices: [
-      { id: "a", text: "Believe recommended; 8 GB will page", rationale: "Correct." },
+      { id: "a", text: "Believe recommended; 8 GB will page", rationale: "Correct. RAM requirements are workload numbers. VMs and browsers eat recommended, not minimum." },
       { id: "b", text: "Minimum is always enough", rationale: "Minimum is idle-plus-legal, not workload." },
       { id: "c", text: "RAM requirements only apply to 32-bit OSs", rationale: "64-bit apps need RAM too." },
       { id: "d", text: "VRAM substitutes for RAM 1:1", rationale: "Different pools." },
@@ -5059,7 +5059,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-X86APP"],
     stem: "Installer wants 4 GB on C: but C: has 3.9 GB free. Result?",
     choices: [
-      { id: "a", text: "Install can fail — storage includes footprint plus working space", rationale: "Correct." },
+      { id: "a", text: "Install can fail — storage includes footprint plus working space", rationale: "Correct. Count temp/scratch/cache, not just the advertised MSI size." },
       { id: "b", text: "Windows will always steal 4 GB from VRAM", rationale: "No." },
       { id: "c", text: "exFAT on a USB always counts as C:", rationale: "No." },
       { id: "d", text: "GPT raises free space magically", rationale: "No." },
@@ -5076,9 +5076,9 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two architecture statements are accurate?",
     choices: [
-      { id: "a", text: "A 64-bit Windows OS can typically run 32-bit user-mode apps (WoW64)", rationale: "Correct." },
+      { id: "a", text: "A 64-bit Windows OS can typically run 32-bit user-mode apps (WoW64)", rationale: "Correct. WoW64 is one-way. Win11 dropped 32-bit Windows." },
       { id: "b", text: "A 32-bit OS can run 64-bit apps if you rename them", rationale: "False." },
-      { id: "c", text: "Windows 11 is 64-bit only", rationale: "Correct." },
+      { id: "c", text: "Windows 11 is 64-bit only", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "d", text: "x86 always means 64-bit", rationale: "x86 often means 32-bit; x64/amd64 is 64-bit." },
     ],
     correct: ["a", "c"],
@@ -5092,7 +5092,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-VRAM"],
     stem: "A CAD suite wants 4 GB dedicated VRAM. The PC has an iGPU with 128 MB carved from system RAM. BEST action?",
     choices: [
-      { id: "a", text: "Install a dedicated GPU that meets the VRAM spec (or pick a supported PC)", rationale: "Correct." },
+      { id: "a", text: "Install a dedicated GPU that meets the VRAM spec (or pick a supported PC)", rationale: "Correct. Dedicated vs integrated GPU and VRAM minima are 1.10 items. Office is fine on iGPU; CAD is not." },
       { id: "b", text: "Add 4 GB system RAM and call it VRAM", rationale: "Vendors usually mean dedicated VRAM, not shared." },
       { id: "c", text: "Format C: as ReFS", rationale: "Unrelated." },
       { id: "d", text: "Enable Fast Startup to double VRAM", rationale: "No." },
@@ -5108,7 +5108,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-VRAM"],
     stem: "Integrated graphics typically:",
     choices: [
-      { id: "a", text: "Share system RAM; dedicated GPUs have their own VRAM", rationale: "Correct." },
+      { id: "a", text: "Share system RAM; dedicated GPUs have their own VRAM", rationale: "Correct. Name the GPU type before you promise a 3D app will run." },
       { id: "b", text: "Always beat dedicated cards for 3D", rationale: "Opposite for CAD/3D." },
       { id: "c", text: "Require TPM 2.0 to render pixels", rationale: "TPM is crypto." },
       { id: "d", text: "Are illegal on Windows 11", rationale: "iGPUs are common and allowed." },
@@ -5126,7 +5126,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "A laptop has a discrete NVIDIA GPU but the CAD app still uses Intel graphics.",
     stem: "What should the technician do NEXT?",
     choices: [
-      { id: "a", text: "Force the app onto the discrete GPU in Windows Graphics / vendor control panel", rationale: "Correct." },
+      { id: "a", text: "Force the app onto the discrete GPU in Windows Graphics / vendor control panel", rationale: "Correct. Hybrid laptops can ignore the dGPU until you assign the app. Confirm before blaming the vendor." },
       { id: "b", text: "Immediately replace the motherboard", rationale: "Too far." },
       { id: "c", text: "Convert GPT to MBR", rationale: "Unrelated." },
       { id: "d", text: "Install the app on FAT32 RAM", rationale: "Nonsense." },
@@ -5142,7 +5142,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-VRAM"],
     stem: "A USB HASP dongle is required or the app will not launch. This is:",
     choices: [
-      { id: "a", text: "An external hardware token for licensing (or MFA) — not a failed Setup.exe", rationale: "Correct." },
+      { id: "a", text: "An external hardware token for licensing (or MFA) — not a failed Setup.exe", rationale: "Correct. Hardware tokens need the device, driver, and sometimes a license server. Document them." },
       { id: "b", text: "Proof the GPU lacks VRAM", rationale: "Different requirement." },
       { id: "c", text: "A GPT protective partition", rationale: "No." },
       { id: "d", text: "A ChromeOS-only feature", rationale: "Dongles are common on Windows CAD." },
@@ -5158,7 +5158,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-VRAM"],
     stem: "FIDO2 keys and smart cards at install/launch time are examples of:",
     choices: [
-      { id: "a", text: "External hardware tokens", rationale: "Correct." },
+      { id: "a", text: "External hardware tokens", rationale: "Correct. 1.10 lists external hardware tokens next to RAM/CPU/VRAM." },
       { id: "b", text: "Power plans", rationale: "No." },
       { id: "c", text: "N editions", rationale: "No." },
       { id: "d", text: "exFAT labels", rationale: "No." },
@@ -5172,12 +5172,12 @@ export const C2_D1_QUESTIONS: Question[] = [
     id: "C2-D1-O10-VRAM-Q006",
     objectiveId: "C2-D1-O10",
     conceptIds: ["C2-D1-O10-VRAM"],
-    stem: "Local AI/runtime apps that publish a 8 GB VRAM minimum will not be satisfied by:",
+    stem: "Local AI/runtime apps that publish an 8 GB VRAM minimum will not be satisfied by:",
     choices: [
-      { id: "a", text: "An office iGPU with 128 MB shared memory", rationale: "Correct." },
+      { id: "a", text: "An office iGPU with 128 MB shared memory", rationale: "Correct. VRAM is not system RAM. Read dedicated vs integrated." },
       { id: "b", text: "A dedicated GPU with 12 GB VRAM", rationale: "That meets 8 GB." },
-      { id: "c", text: "The vendor's own supported GPU list matching 8 GB+", rationale: "That's the path." },
-      { id: "d", text: "A workstation that actually has 8 GB dedicated", rationale: "Meets the spec." },
+      { id: "c", text: "A dedicated GPU with exactly 8 GB VRAM that is on the vendor's supported list", rationale: "Exactly 8 GB of dedicated VRAM meets an 8 GB minimum, and the card is vendor-supported." },
+      { id: "d", text: "A workstation card with 16 GB of dedicated VRAM", rationale: "16 GB of dedicated VRAM is double the published minimum, so it satisfies the requirement." },
     ],
     correct: "a",
     explanation: "VRAM is not system RAM. Read dedicated vs integrated.",
@@ -5191,8 +5191,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are GPU-related 1.10 checks?",
     choices: [
-      { id: "a", text: "Dedicated vs integrated", rationale: "Correct." },
-      { id: "b", text: "VRAM amount", rationale: "Correct." },
+      { id: "a", text: "Dedicated vs integrated", rationale: "Correct. GPU type and VRAM are first-class requirements beside RAM and CPU." },
+      { id: "b", text: "VRAM amount", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Whether the workgroup is named GPU", rationale: "Unrelated." },
       { id: "d", text: "Whether gpedit exists on Home for VRAM", rationale: "Edition ≠ VRAM." },
     ],
@@ -5207,7 +5207,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "A vendor publishes SHA-256 for an ISO. You should:",
     choices: [
-      { id: "a", text: "Hash the download and match the vendor digest before mounting/burning", rationale: "Correct." },
+      { id: "a", text: "Hash the download and match the vendor digest before mounting/burning", rationale: "Correct. ISO is a distribution method. Hash it. Mount in Explorer on Windows 8+." },
       { id: "b", text: "Always use the first Google ad mirror", rationale: "Supply-chain risk." },
       { id: "c", text: "Skip hashing because ISO means trusted", rationale: "ISO is just a file format." },
       { id: "d", text: "Rename .iso to .exe so Windows trusts it", rationale: "No." },
@@ -5223,7 +5223,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "Physical media vs mountable ISO vs downloadable package vs image deployment — which is baked into a golden image/Intune?",
     choices: [
-      { id: "a", text: "Image deployment", rationale: "Correct." },
+      { id: "a", text: "Image deployment", rationale: "Correct. Four distribution methods on 1.10. Image deployment is the fleet path." },
       { id: "b", text: "Physical DVD only", rationale: "That's mailed media." },
       { id: "c", text: "A random .exe from a blog", rationale: "Downloadable, but not image deployment." },
       { id: "d", text: "A .dmg on a USB that is not captured", rationale: "That's media, not a fleet image." },
@@ -5239,7 +5239,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "A mailed USB installer is which distribution method?",
     choices: [
-      { id: "a", text: "Physical media", rationale: "Correct." },
+      { id: "a", text: "Physical media", rationale: "Correct. Physical media is still on the list: lost discs, old builds, no TLS on the stick itself." },
       { id: "b", text: "Identity sync", rationale: "1.11." },
       { id: "c", text: "RSR", rationale: "macOS patches." },
       { id: "d", text: "APIPA", rationale: "DHCP failure." },
@@ -5255,7 +5255,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "An HTTPS vendor .msi/.dmg/.deb is:",
     choices: [
-      { id: "a", text: "A downloadable package — still verify signature/hash", rationale: "Correct." },
+      { id: "a", text: "A downloadable package — still verify signature/hash", rationale: "Correct. Downloadable package ≠ ISO ≠ physical ≠ image. All four are in scope." },
       { id: "b", text: "Always an ISO", rationale: "ISO is a disk image file." },
       { id: "c", text: "Always image deployment", rationale: "That's the golden image path." },
       { id: "d", text: "Illegal on Pro", rationale: "No." },
@@ -5271,7 +5271,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "Mounting an ISO in File Explorer is available on:",
     choices: [
-      { id: "a", text: "Modern Windows (8+) without burning a disc", rationale: "Correct." },
+      { id: "a", text: "Modern Windows (8+) without burning a disc", rationale: "Correct. ISO is both a 1.2 installer source and a 1.10 distribution method." },
       { id: "b", text: "Only Linux via apt", rationale: "Windows can mount ISOs." },
       { id: "c", text: "Only if the ISO is FAT32-inside-FAT32", rationale: "No." },
       { id: "d", text: "Only Windows Home N", rationale: "Not SKU-limited that way." },
@@ -5287,7 +5287,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-ISO"],
     stem: "Version drift happens when:",
     choices: [
-      { id: "a", text: "The golden image has app v12 while the vendor store already ships v14", rationale: "Correct." },
+      { id: "a", text: "The golden image has app v12 while the vendor store already ships v14", rationale: "Correct. Image deployment is consistent and can be stale. Plan updates after imaging." },
       { id: "b", text: "GPT disks cannot be imaged", rationale: "False." },
       { id: "c", text: "Hashing an ISO changes the app version", rationale: "Hashing verifies integrity." },
       { id: "d", text: "Physical media updates itself over LTE", rationale: "Discs do not patch themselves." },
@@ -5304,8 +5304,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are 1.10 distribution methods?",
     choices: [
-      { id: "a", text: "Mountable ISO file", rationale: "Correct." },
-      { id: "b", text: "Downloadable package", rationale: "Correct." },
+      { id: "a", text: "Mountable ISO file", rationale: "Correct. Physical media, ISO, downloadable package, image deployment." },
+      { id: "b", text: "Downloadable package", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "chkdsk /r", rationale: "Repair, not distribution." },
       { id: "d", text: "gpedit wallpaper", rationale: "Policy, not distribution." },
     ],
@@ -5320,7 +5320,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "Installing a 20 GB SDK over a metered WWAN is which impact?",
     choices: [
-      { id: "a", text: "Network (and possibly business cost)", rationale: "Correct." },
+      { id: "a", text: "Network (and possibly business cost)", rationale: "Correct. Impact: device, network, operation, business. Large downloads on metered links are network/business." },
       { id: "b", text: "APFS snapshots", rationale: "macOS backup-ish, not this." },
       { id: "c", text: "A TPM downgrade", rationale: "No." },
       { id: "d", text: "N edition media codecs", rationale: "No." },
@@ -5336,7 +5336,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "A GPU driver co-installer resets the display mid-day. That is:",
     choices: [
-      { id: "a", text: "Device and operation impact — schedule it", rationale: "Correct." },
+      { id: "a", text: "Device and operation impact — schedule it", rationale: "Correct. Installers reboot, reset GPUs, and bind ports. That is operational impact." },
       { id: "b", text: "Proof VRAM increased", rationale: "A blink is not extra VRAM." },
       { id: "c", text: "A successful domain unjoin", rationale: "No." },
       { id: "d", text: "Required on every .txt copy", rationale: "No." },
@@ -5354,7 +5354,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "A technician installs a 'free codec pack' from an ad on a finance PC.",
     stem: "Which impacts did they ignore?",
     choices: [
-      { id: "a", text: "Business/security (supply chain, support, licensing) — not just 'it played the file'", rationale: "Correct." },
+      { id: "a", text: "Business/security (supply chain, support, licensing) — not just 'it played the file'", rationale: "Correct. Package from the approved catalog or file a change. Codec packs are a classic own-goal." },
       { id: "b", text: "GPT partition count only", rationale: "Not the issue." },
       { id: "c", text: "Whether ping -t was running", rationale: "Unrelated." },
       { id: "d", text: "Whether Time Machine exists on Windows", rationale: "Wrong OS." },
@@ -5370,7 +5370,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "A new add-in breaks Outlook for the whole team. Impact type?",
     choices: [
-      { id: "a", text: "Operation (and business)", rationale: "Correct." },
+      { id: "a", text: "Operation (and business)", rationale: "Correct. Operation impact is 'the job stopped working.' Business impact is money/policy/licensing." },
       { id: "b", text: "VRAM only", rationale: "Not a GPU story." },
       { id: "c", text: "MBR 2 TB cap", rationale: "No." },
       { id: "d", text: "ChromeOS AUE", rationale: "No." },
@@ -5386,7 +5386,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "Per-user vs device vs concurrent licensing is which 1.10 consideration?",
     choices: [
-      { id: "a", text: "Business impact", rationale: "Correct." },
+      { id: "a", text: "Business impact", rationale: "Correct. Licensing assignment also appears in 1.11; 1.10 wants you to think before Setup.exe." },
       { id: "b", text: "ext4 vs XFS", rationale: "Linux filesystems." },
       { id: "c", text: "USB selective suspend", rationale: "Power." },
       { id: "d", text: "pathping", rationale: "Network CLI." },
@@ -5402,7 +5402,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "An installer binds a port already used by the line-of-business app. That is:",
     choices: [
-      { id: "a", text: "Operation (and device) impact — check netstat before/after", rationale: "Correct." },
+      { id: "a", text: "Operation (and device) impact — check netstat before/after", rationale: "Correct. Port conflicts are operational. netstat -ano finds the PID." },
       { id: "b", text: "A successful static DNS", rationale: "No." },
       { id: "c", text: "Proof you need FAT32", rationale: "No." },
       { id: "d", text: "An RSR on Windows", rationale: "RSR is Apple." },
@@ -5418,7 +5418,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O10-IMPACT"],
     stem: "Delivery Optimization saturating a small WAN during a fleet install is:",
     choices: [
-      { id: "a", text: "Network impact", rationale: "Correct." },
+      { id: "a", text: "Network impact", rationale: "Correct. Peer-to-peer delivery is great until it eats the WAN. Plan it." },
       { id: "b", text: "FileVault impact", rationale: "macOS encryption." },
       { id: "c", text: "A missing .dmg", rationale: "macOS installer type." },
       { id: "d", text: "Always desirable at 3 p.m. payroll", rationale: "Schedule it." },
@@ -5435,8 +5435,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are named 1.10 impact considerations?",
     choices: [
-      { id: "a", text: "Device", rationale: "Correct." },
-      { id: "b", text: "Business", rationale: "Correct." },
+      { id: "a", text: "Device", rationale: "Correct. Device, network, operation, business — all four are on the objective." },
+      { id: "b", text: "Business", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "Whether the workgroup is spelled IMPACT", rationale: "No." },
       { id: "d", text: "Whether nano is installed on Windows", rationale: "Linux editor." },
     ],
@@ -5452,7 +5452,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     difficulty: "intro",
     stem: "A new hire can open Word but has no mailbox. FIRST cloud layer to check?",
     choices: [
-      { id: "a", text: "License SKU — mailbox right may be missing", rationale: "Correct." },
+      { id: "a", text: "License SKU — mailbox right may be missing", rationale: "Correct. Identity + license + client. Signs in with no mailbox is a SKU problem more often than Outlook." },
       { id: "b", text: "diskpart clean", rationale: "Unrelated." },
       { id: "c", text: "Whether C: is GPT", rationale: "Unrelated." },
       { id: "d", text: "FAT32 file-size limits on the mailbox", rationale: "Cloud mail is not a FAT32 file." },
@@ -5468,7 +5468,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "OneDrive Known Folder Move puts Desktop/Documents/Pictures into:",
     choices: [
-      { id: "a", text: "The cloud drive client cache/sync, not a substitute for backup policy", rationale: "Correct." },
+      { id: "a", text: "The cloud drive client cache/sync, not a substitute for backup policy", rationale: "Correct. Storage sync/folder settings are 1.11. Sync mirrors deletes. It is not Time Machine." },
       { id: "b", text: "Time Machine's APFS snapshot exclusively", rationale: "macOS backup tool." },
       { id: "c", text: "ReFS on the NIC", rationale: "No." },
       { id: "d", text: "/etc/fstab", rationale: "Linux mounts." },
@@ -5486,7 +5486,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "The user signed the desktop Outlook into a personal Outlook.com while the company uses Microsoft 365.",
     stem: "What happened?",
     choices: [
-      { id: "a", text: "Wrong identity in the client — corporate mailbox looks 'broken'", rationale: "Correct." },
+      { id: "a", text: "Wrong identity in the client — corporate mailbox looks 'broken'", rationale: "Correct. Document the UPN. Personal vs work account is the number-one false success." },
       { id: "b", text: "GPT conversion failed", rationale: "Unrelated." },
       { id: "c", text: "Home cannot run Outlook", rationale: "It can; this is account picker." },
       { id: "d", text: "RSR blocked Exchange", rationale: "Apple patch channel." },
@@ -5502,7 +5502,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "PC password works; Microsoft 365 says the account does not exist. Likely layer?",
     choices: [
-      { id: "a", text: "Identity synchronization (Entra Connect scoping, UPN, duplicate proxyAddresses)", rationale: "Correct." },
+      { id: "a", text: "Identity synchronization (Entra Connect scoping, UPN, duplicate proxyAddresses)", rationale: "Correct. Identity sync is how on-prem AD users become cloud users. Sync failures look like 'Outlook is broken.'" },
       { id: "b", text: "exFAT on C:", rationale: "Unrelated." },
       { id: "c", text: "Missing gpedit on Pro", rationale: "Pro has gpedit; this is directory sync." },
       { id: "d", text: "pathping to 127.0.0.1", rationale: "Not the M365 account object." },
@@ -5518,7 +5518,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "Files On-Demand versus always-available in a drive client is:",
     choices: [
-      { id: "a", text: "A folder/sync setting that changes local disk use", rationale: "Correct." },
+      { id: "a", text: "A folder/sync setting that changes local disk use", rationale: "Correct. Configure which folders sync and whether placeholders or full files live locally. Don't cache the entire C: on a 64 GB laptop." },
       { id: "b", text: "A Linux fsck flag", rationale: "No." },
       { id: "c", text: "BitLocker To Go", rationale: "Encryption." },
       { id: "d", text: "PXE boot", rationale: "Install method." },
@@ -5534,7 +5534,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "Corporate mail on modern tenants should use:",
     choices: [
-      { id: "a", text: "Modern Auth / OAuth — not basic IMAP if policy forbids it", rationale: "Correct." },
+      { id: "a", text: "Modern Auth / OAuth — not basic IMAP if policy forbids it", rationale: "Correct. Email systems on 1.11 are Exchange Online/Gmail-class, configured with modern auth." },
       { id: "b", text: "Telnet to port 25 from Home as the standard", rationale: "Not a client standard." },
       { id: "c", text: "APFS as the mail protocol", rationale: "Filesystem." },
       { id: "d", text: "net use \\\\mailbox", rationale: "SMB, not mail." },
@@ -5550,7 +5550,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "Pause OneDrive/Drive sync before a huge PST copy because:",
     choices: [
-      { id: "a", text: "Sync will fight the copy and can upload junk; sync is not backup", rationale: "Correct." },
+      { id: "a", text: "Sync will fight the copy and can upload junk; sync is not backup", rationale: "Correct. Folder settings include when to pause. Treat cloud drive as a cache." },
       { id: "b", text: "PST files can only live on FAT32", rationale: "4 GB cap would actually hurt PSTs — another reason not to FAT32, but not the pause reason." },
       { id: "c", text: "gpedit requires it on Home", rationale: "Home has no gpedit." },
       { id: "d", text: "RSR deletes PSTs hourly", rationale: "No." },
@@ -5566,7 +5566,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "Autodiscover/Autoconfig failing with a good password usually means:",
     choices: [
-      { id: "a", text: "Mailbox/license/DNS/profile — not 'reinstall Windows' as FIRST", rationale: "Correct." },
+      { id: "a", text: "Mailbox/license/DNS/profile — not 'reinstall Windows' as FIRST", rationale: "Correct. Read the error: no mailbox vs bad password vs autodiscover vs modern auth blocked." },
       { id: "b", text: "The disk must be MBR", rationale: "No." },
       { id: "c", text: "Linux-only mail", rationale: "No." },
       { id: "d", text: "VRAM too low for SMTP", rationale: "No." },
@@ -5582,7 +5582,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-EMAILSYNC"],
     stem: "Google Drive for Desktop and iCloud Drive are examples of:",
     choices: [
-      { id: "a", text: "Storage sync clients with folder settings", rationale: "Correct." },
+      { id: "a", text: "Storage sync clients with folder settings", rationale: "Correct. 1.11 is vendor-neutral: Microsoft/Google/Apple class tools." },
       { id: "b", text: "Windows editions", rationale: "No." },
       { id: "c", text: "Linux bootloaders", rationale: "No." },
       { id: "d", text: "MMC snap-ins", rationale: "No." },
@@ -5599,8 +5599,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two belong in a working onboarding sequence?",
     choices: [
-      { id: "a", text: "Identity exists and is licensed before the mail profile", rationale: "Correct." },
-      { id: "b", text: "Desktop apps signed into the same identity as mail", rationale: "Correct." },
+      { id: "a", text: "Identity exists and is licensed before the mail profile", rationale: "Correct. Identity, license, MFA, mail, same-identity desktop apps, then drive/Teams." },
+      { id: "b", text: "Desktop apps signed into the same identity as mail", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "diskpart clean as step one of mail setup", rationale: "Destructive and unrelated." },
       { id: "d", text: "Hide file extensions so PST files look safer", rationale: "Opposite of good practice." },
     ],
@@ -5631,7 +5631,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "Mailbox works; Word says unlicensed. Typical cause?",
     choices: [
-      { id: "a", text: "Web-only SKU vs apps license, or Word signed into the wrong account", rationale: "Correct." },
+      { id: "a", text: "Web-only SKU vs apps license, or Word signed into the wrong account", rationale: "Correct. Different checkboxes: Exchange vs Teams vs Microsoft 365 Apps. Match the SKU to the client." },
       { id: "b", text: "The PC is GPT", rationale: "Unrelated." },
       { id: "c", text: "Missing lusrmgr on Home causing Word to expire", rationale: "Stretch." },
       { id: "d", text: "ext4 on C:", rationale: "Windows is NTFS." },
@@ -5647,7 +5647,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "Why unassign licenses at offboarding?",
     choices: [
-      { id: "a", text: "You keep paying, and mail/files may keep syncing to a phone", rationale: "Correct." },
+      { id: "a", text: "You keep paying, and mail/files may keep syncing to a phone", rationale: "Correct. Licensing assignment is a life-cycle control, not a one-time onboarding checkbox." },
       { id: "b", text: "Windows converts to FAT32 automatically otherwise", rationale: "No." },
       { id: "c", text: "TPM explodes", rationale: "No." },
       { id: "d", text: "GRUB requires it", rationale: "Linux bootloader." },
@@ -5665,7 +5665,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "Group-based licensing assigns E3 to an Azure AD group. A user in the group still has no Teams.",
     stem: "What should the technician check NEXT?",
     choices: [
-      { id: "a", text: "Confirm group membership, license errors, and Teams service enabled on the SKU — then the client identity", rationale: "Correct." },
+      { id: "a", text: "Confirm group membership, license errors, and Teams service enabled on the SKU — then the client identity", rationale: "Correct. License assignment can fail silently (usage location, conflict, service disabled). Check the admin center before reinstalling the client." },
       { id: "b", text: "format C:", rationale: "No." },
       { id: "c", text: "Install ChromeOS to get Teams", rationale: "Not the FIRST fix for a license object." },
       { id: "d", text: "Disable FileVault so Teams can launch", rationale: "macOS encryption is unrelated here." },
@@ -5681,7 +5681,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "Google Workspace Business vs Enterprise is an example of:",
     choices: [
-      { id: "a", text: "Licensing assignment / SKU choice", rationale: "Correct." },
+      { id: "a", text: "Licensing assignment / SKU choice", rationale: "Correct. 1.11 is not Microsoft-only. SKUs exist in every suite." },
       { id: "b", text: "ext4 vs XFS", rationale: "Filesystems." },
       { id: "c", text: "MBR vs GPT", rationale: "Partition tables." },
       { id: "d", text: "apt vs dnf", rationale: "Linux packages." },
@@ -5697,7 +5697,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "Entra Connect password hash sync, PTA, and AD FS are patterns for:",
     choices: [
-      { id: "a", text: "Identity synchronization", rationale: "Correct." },
+      { id: "a", text: "Identity synchronization", rationale: "Correct. Identity sync is how the directory in the building becomes the cloud identity." },
       { id: "b", text: "Disk formatting", rationale: "No." },
       { id: "c", text: "Task Manager tabs", rationale: "No." },
       { id: "d", text: "RSR letters", rationale: "Apple patches." },
@@ -5713,7 +5713,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "A cloud-only account with no on-prem shadow means:",
     choices: [
-      { id: "a", text: "Identity lives in the cloud directory; there is nothing for Entra Connect to sync from AD", rationale: "Correct." },
+      { id: "a", text: "Identity lives in the cloud directory; there is nothing for Entra Connect to sync from AD", rationale: "Correct. Not every tenant is hybrid. Cloud-only vs synced is the first identity question." },
       { id: "b", text: "The PC cannot have a local user", rationale: "Local SAM can still exist." },
       { id: "c", text: "Windows Home is required", rationale: "No." },
       { id: "d", text: "Licenses cannot be assigned", rationale: "Cloud-only users get licenses all the time." },
@@ -5729,7 +5729,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-LICENSE"],
     stem: "MFA registration per policy belongs in onboarding because:",
     choices: [
-      { id: "a", text: "Identity is not 'done' at password set — cloud productivity clients will prompt/block", rationale: "Correct." },
+      { id: "a", text: "Identity is not 'done' at password set — cloud productivity clients will prompt/block", rationale: "Correct. Identity, MFA, license, then clients. Skipping MFA creates a flood of sign-in tickets on day one." },
       { id: "b", text: "MFA formats the boot disk", rationale: "No." },
       { id: "c", text: "MFA replaces File Explorer Options", rationale: "No." },
       { id: "d", text: "MFA is a Linux-only PAM file", rationale: "Different PAM." },
@@ -5746,8 +5746,8 @@ export const C2_D1_QUESTIONS: Question[] = [
     type: "multi",
     stem: "Which two are 1.11 identity/licensing ideas?",
     choices: [
-      { id: "a", text: "Identity synchronization", rationale: "Correct." },
-      { id: "b", text: "Licensing assignment", rationale: "Correct." },
+      { id: "a", text: "Identity synchronization", rationale: "Correct. The objective names identity sync and licensing assignment beside the productivity apps." },
+      { id: "b", text: "Licensing assignment", rationale: "Correct. This is the other keyed option; both are needed for full credit." },
       { id: "c", text: "RAID 6 parity", rationale: "Core 1 storage." },
       { id: "d", text: "T568B pinout", rationale: "Core 1 cabling." },
     ],
@@ -5762,7 +5762,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Word / Google Docs / Pages are which collaboration type?",
     choices: [
-      { id: "a", text: "Word processing", rationale: "Correct." },
+      { id: "a", text: "Word processing", rationale: "Correct. 1.11 names word processing, spreadsheets, presentations, videoconferencing, and IM." },
       { id: "b", text: "WWAN", rationale: "Cellular." },
       { id: "c", text: "Bootloaders", rationale: "GRUB." },
       { id: "d", text: "MMC snap-ins", rationale: "Windows admin." },
@@ -5778,7 +5778,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Excel, Google Sheets, and Numbers are:",
     choices: [
-      { id: "a", text: "Spreadsheets", rationale: "Correct." },
+      { id: "a", text: "Spreadsheets", rationale: "Correct. Match the tool type, not the brand, unless the stem names a tenant." },
       { id: "b", text: "Videoconferencing", rationale: "Teams/Meet/Zoom." },
       { id: "c", text: "Instant messaging", rationale: "Teams/Chat/Slack." },
       { id: "d", text: "FileVault keys", rationale: "macOS encryption." },
@@ -5794,7 +5794,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "PowerPoint / Google Slides / Keynote are:",
     choices: [
-      { id: "a", text: "Presentation tools", rationale: "Correct." },
+      { id: "a", text: "Presentation tools", rationale: "Correct. Presentations are on the collaboration list." },
       { id: "b", text: "Email systems", rationale: "Exchange/Gmail." },
       { id: "c", text: "Identity sync engines", rationale: "Entra Connect." },
       { id: "d", text: "Disk partitioners", rationale: "diskpart." },
@@ -5810,7 +5810,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Teams meetings missing from the calendar often mean:",
     choices: [
-      { id: "a", text: "Teams/Meet identity is not the mailbox identity", rationale: "Correct." },
+      { id: "a", text: "Teams/Meet identity is not the mailbox identity", rationale: "Correct. Collaboration clients must share an identity with mail. Add-ins fail when accounts differ." },
       { id: "b", text: "The disk is MBR", rationale: "Unrelated." },
       { id: "c", text: "Hidden file extensions hide ICS files only on GPT", rationale: "Stretch." },
       { id: "d", text: "apt is not installed on Windows", rationale: "Wrong OS." },
@@ -5826,7 +5826,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Teams, Chat, Slack, and Messages are examples of:",
     choices: [
-      { id: "a", text: "Instant messaging", rationale: "Correct." },
+      { id: "a", text: "Instant messaging", rationale: "Correct. IM is a named collaboration tool type." },
       { id: "b", text: "Boot methods", rationale: "USB/PXE." },
       { id: "c", text: "Filesystems", rationale: "NTFS etc." },
       { id: "d", text: "Windows 11 hardware gates", rationale: "TPM/UEFI." },
@@ -5842,7 +5842,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Teams, Meet, Zoom, and FaceTime are:",
     choices: [
-      { id: "a", text: "Videoconferencing (FaceTime is Apple-identity, not a tenant SKU)", rationale: "Correct." },
+      { id: "a", text: "Videoconferencing (FaceTime is Apple-identity, not a tenant SKU)", rationale: "Correct. Videoconferencing is on the list. FaceTime is not licensed like Teams; identity still matters." },
       { id: "b", text: "Package managers", rationale: "apt/dnf." },
       { id: "c", text: "Partition styles", rationale: "GPT/MBR." },
       { id: "d", text: "Task Manager tabs", rationale: "Processes etc." },
@@ -5858,7 +5858,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Files missing on a second PC with the same work account are usually:",
     choices: [
-      { id: "a", text: "Sync folder selection / Files On-Demand / wrong account on that PC", rationale: "Correct." },
+      { id: "a", text: "Sync folder selection / Files On-Demand / wrong account on that PC", rationale: "Correct. Storage sync is per-device folder settings plus identity. Check both PCs' clients." },
       { id: "b", text: "Proof RAID 0 failed", rationale: "Core 1, and unrelated to OneDrive selection." },
       { id: "c", text: "A missing MBR on the cloud", rationale: "No." },
       { id: "d", text: "gpedit deleting the tenant", rationale: "No." },
@@ -5874,7 +5874,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     conceptIds: ["C2-D1-O11-COLLAB"],
     stem: "Personal OneDrive mixed with work files is fixed by:",
     choices: [
-      { id: "a", text: "The account picker / separate profiles — not 'one drive to rule them all'", rationale: "Correct." },
+      { id: "a", text: "The account picker / separate profiles — not 'one drive to rule them all'", rationale: "Correct. Two identities, two clients/profiles. Mixing them is a data-spillage incident waiting to happen." },
       { id: "b", text: "format /fs:NTFS of the cloud", rationale: "No." },
       { id: "c", text: "Installing Home N", rationale: "No." },
       { id: "d", text: "Disabling DNS", rationale: "Makes clients worse." },
@@ -5892,7 +5892,7 @@ export const C2_D1_QUESTIONS: Question[] = [
     scenario: "Onboarding: identity licensed, MFA done, mail Autodiscovers, Word signed in, OneDrive Known Folder Move on, Teams can schedule.",
     stem: "This sequence maps to which objective?",
     choices: [
-      { id: "a", text: "1.11 cloud-based productivity — identity, license, then clients", rationale: "Correct." },
+      { id: "a", text: "1.11 cloud-based productivity — identity, license, then clients", rationale: "Correct. If you can walk that sequence, you have 1.11. The suite is not the Start-menu icon." },
       { id: "b", text: "1.2 GPT vs MBR only", rationale: "Install/partition." },
       { id: "c", text: "1.5 diskpart clean as productivity", rationale: "CLI disk." },
       { id: "d", text: "1.9 /etc/shadow as mail", rationale: "Linux hashes." },
@@ -5902,15 +5902,294 @@ export const C2_D1_QUESTIONS: Question[] = [
     sourceBasis: "c2-obj-3.0",
     remediationLessonId: "C2-D1-O11-L1",
   }),
+  // ---- 2026-11-02 C2-D1 audit: keyed coverage for 1.2 / 1.3 / 1.6 / 1.8 bullets that had no keyed item ----
+  q({
+    id: "C2-D1-O2-CLEAN-Q007",
+    objectiveId: "C2-D1-O2",
+    conceptIds: ["C2-D1-O2-CLEAN"],
+    stem: "A rugged tablet has no optical drive and no PXE server is available. The OEM ships its installer on a bootable SD card that the firmware boot menu can select. Which 1.2 boot method is this?",
+    choices: [
+      { id: "a", text: "Network boot (PXE)", rationale: "PXE pulls the installer over the LAN from a deployment server, and the stem says no PXE server exists." },
+      { id: "b", text: "Internet-based install or cloud download", rationale: "Internet-based installs download the image over the internet; here the installer is already on local media." },
+      { id: "c", text: "Solid-state/flash drive boot media", rationale: "Correct. An SD card or other flash device that firmware boots is the 1.2 solid-state/flash drive boot method." },
+      { id: "d", text: "Internal hard drive recovery partition", rationale: "A recovery partition lives on the internal disk; the SD card is separate, removable flash media." },
+    ],
+    correct: "c",
+    explanation: "1.2 lists solid-state/flash drives as their own boot method next to USB, network, internet-based, external, and internal-partition boot. Any bootable flash device the firmware can select fits.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O2-L1",
+    tags: ["boot-methods", "flash-boot"],
+  }),
+  q({
+    id: "C2-D1-O2-CLEAN-Q008",
+    objectiveId: "C2-D1-O2",
+    conceptIds: ["C2-D1-O2-CLEAN"],
+    stem: "Before an in-place upgrade to Windows 11, PC Health Check reports that the PC's CPU is not on the supported processor list. Which 1.2 upgrade consideration is this?",
+    choices: [
+      { id: "a", text: "Backup files and user preferences", rationale: "Backups protect user data during any upgrade, but they do not explain why the CPU is rejected." },
+      { id: "b", text: "Application and driver support/backward compatibility", rationale: "That consideration is about software and drivers running on the new OS, not whether the processor qualifies." },
+      { id: "c", text: "Feature update product life cycle", rationale: "Feature update life cycle is about how long a release such as 23H2 is serviced, not about CPU support." },
+      { id: "d", text: "Hardware compatibility", rationale: "Correct. The CPU, TPM, firmware, RAM, and storage must meet the target OS requirements before you upgrade." },
+    ],
+    correct: "d",
+    explanation: "Hardware compatibility is its own 1.2 upgrade consideration. An unsupported CPU blocks a Windows 11 upgrade no matter how good the backup is.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O2-L2",
+    tags: ["upgrade-considerations", "hardware-compatibility"],
+  }),
+  q({
+    id: "C2-D1-O3-HOME-Q006",
+    objectiveId: "C2-D1-O3",
+    conceptIds: ["C2-D1-O3-HOME"],
+    stem: "After an in-place upgrade from Windows 10 to Windows 11, a user says the Start button 'moved' to the middle of the taskbar. What is accurate?",
+    choices: [
+      { id: "a", text: "The upgrade failed and rolled the PC back to a Home N edition.", rationale: "N editions only omit some media features; they do not change where Start sits, and a rollback would leave Windows 10." },
+      { id: "b", text: "Windows 11's default desktop style centers Start and the taskbar icons; Taskbar alignment can be set to Left in Settings → Personalization → Taskbar.", rationale: "Correct. A centered taskbar is a Windows 11 user-interface difference, and alignment is a Personalization setting." },
+      { id: "c", text: "A domain GPO moved it, so the only fix is gpupdate /force.", rationale: "Centered Start is the Windows 11 default even on a workgroup PC; no policy refresh is involved." },
+      { id: "d", text: "The display driver is wrong; roll it back in Device Manager.", rationale: "A display driver changes resolution or performance, not the taskbar layout the shell draws." },
+    ],
+    correct: "b",
+    explanation: "Desktop styles and the user interface are a 1.3 feature difference. Windows 11 centers Start by default, and users can move it back to the left under Personalization → Taskbar → Taskbar behaviors.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O3-L2",
+    tags: ["edition-features", "desktop-style"],
+  }),
+  q({
+    id: "C2-D1-O6-FIREWALL-Q008",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-FIREWALL"],
+    stem: "A user wants one classic Control Panel view that shows every printer, scanner, and Bluetooth device and lets them set the default printer. Which applet?",
+    choices: [
+      { id: "a", text: "Sound", rationale: "Sound picks playback and recording devices; it does not list printers or set the default printer." },
+      { id: "b", text: "Programs and Features", rationale: "Programs and Features uninstalls desktop apps and toggles Windows features; it does not manage printers." },
+      { id: "c", text: "Devices and Printers", rationale: "Correct. Devices and Printers lists printers, scanners, and paired devices and offers Set as default printer." },
+      { id: "d", text: "Indexing Options", rationale: "Indexing Options controls which locations Windows Search indexes, not attached devices." },
+    ],
+    correct: "c",
+    explanation: "Devices and Printers is the 1.6 Control Panel applet for attached devices and default-printer choice.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L1",
+    tags: ["control-panel", "devices-and-printers"],
+  }),
+  q({
+    id: "C2-D1-O6-FIREWALL-Q009",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-FIREWALL"],
+    stem: "From Control Panel, which utility shows a yellow warning on an unknown device and lets you update or roll back its driver?",
+    choices: [
+      { id: "a", text: "System", rationale: "System shows the device name, edition, and specs, and links to other tools, but driver rollback lives elsewhere." },
+      { id: "b", text: "Device Manager", rationale: "Correct. Device Manager shows hardware status, including the yellow warning, and has Update and Roll Back Driver." },
+      { id: "c", text: "Devices and Printers", rationale: "Devices and Printers is a friendly device list and default-printer picker, not the driver-management console." },
+      { id: "d", text: "Administrative Tools", rationale: "Administrative Tools is a folder of shortcuts; it is not the driver console itself." },
+    ],
+    correct: "b",
+    explanation: "Device Manager is listed in both 1.4 (devmgmt.msc) and 1.6 (Control Panel). It is the place for device status and driver update or rollback.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L1",
+    tags: ["control-panel", "device-manager"],
+  }),
+  q({
+    id: "C2-D1-O6-EXPLOREROPT-Q010",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-EXPLOREROPT"],
+    stem: "A user must pause updates for a week and set active hours so the PC does not restart during work. Which Settings category is this (Update and Security on Windows 10)?",
+    choices: [
+      { id: "a", text: "System → Power", rationale: "Power settings control sleep and screen timeouts, not update pauses or active hours." },
+      { id: "b", text: "Privacy", rationale: "Privacy covers app permissions such as camera, microphone, and location, not update scheduling." },
+      { id: "c", text: "Apps", rationale: "Apps manages installed and default apps; Windows Update scheduling is not there." },
+      { id: "d", text: "Windows Update (Update and Security)", rationale: "Correct. Pause updates and active hours are in Windows Update, which Windows 10 groups under Update and Security." },
+    ],
+    correct: "d",
+    explanation: "Update and Security is the 1.6 Settings category for Windows Update, including pause and active hours. Windows 11 shows Windows Update as its own top-level page.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L2",
+    tags: ["settings-categories", "update-and-security"],
+  }),
+  q({
+    id: "C2-D1-O6-EXPLOREROPT-Q011",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-EXPLOREROPT"],
+    stem: "A laptop user wants to mark a phone-hotspot Wi-Fi as metered and check how much data each network used. Which Settings category?",
+    choices: [
+      { id: "a", text: "Devices", rationale: "Devices pairs Bluetooth hardware, printers, and mice; it does not hold Wi-Fi profiles or data usage." },
+      { id: "b", text: "Network and Internet", rationale: "Correct. Network and Internet holds Wi-Fi properties, including Metered connection, and data usage." },
+      { id: "c", text: "Time and Language", rationale: "Time and Language sets the clock, time zone, region, and input languages, not network cost." },
+      { id: "d", text: "Accounts", rationale: "Accounts manages sign-in and work or school access, not per-network settings." },
+    ],
+    correct: "b",
+    explanation: "Network and Internet is the 1.6 Settings category for Wi-Fi, Ethernet, VPN, proxy, metered connections, and data usage.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L2",
+    tags: ["settings-categories", "network-and-internet"],
+  }),
+  q({
+    id: "C2-D1-O6-EXPLOREROPT-Q012",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-EXPLOREROPT"],
+    stem: "A user needs to pair a new Bluetooth mouse. Which Settings category (Bluetooth & devices on Windows 11)?",
+    choices: [
+      { id: "a", text: "Personalization", rationale: "Personalization changes wallpaper, colors, lock screen, and taskbar, not hardware pairing." },
+      { id: "b", text: "Ease of Access", rationale: "Ease of Access adjusts accessibility features such as Narrator and mouse pointer size; it does not pair devices." },
+      { id: "c", text: "Devices", rationale: "Correct. Devices (Bluetooth & devices in Windows 11) is where you add Bluetooth mice, keyboards, and printers." },
+      { id: "d", text: "Gaming", rationale: "Gaming covers Game Bar, captures, and Game Mode, not Bluetooth pairing." },
+    ],
+    correct: "c",
+    explanation: "Devices is the 1.6 Settings category for Bluetooth, printers, mouse, and touchpad. Windows 11 names it Bluetooth & devices.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L2",
+    tags: ["settings-categories", "devices"],
+  }),
+  q({
+    id: "C2-D1-O6-EXPLOREROPT-Q013",
+    objectiveId: "C2-D1-O6",
+    conceptIds: ["C2-D1-O6-EXPLOREROPT"],
+    stem: "A user wants a new lock-screen image and a different accent color. Which Settings category?",
+    choices: [
+      { id: "a", text: "System → Display", rationale: "Display covers resolution, scaling, and multiple monitors, not the lock-screen image or accent color." },
+      { id: "b", text: "Accounts", rationale: "Accounts handles the profile picture and sign-in options, not themes or accent colors." },
+      { id: "c", text: "Privacy", rationale: "Privacy controls app permissions and diagnostics, not desktop appearance." },
+      { id: "d", text: "Personalization", rationale: "Correct. Personalization holds background, colors, themes, lock screen, Start, and taskbar." },
+    ],
+    correct: "d",
+    explanation: "Personalization is the 1.6 Settings category for how the desktop looks: background, colors, themes, lock screen, Start, and taskbar.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O6-L2",
+    tags: ["settings-categories", "personalization"],
+  }),
+  q({
+    id: "C2-D1-O8-DMG-Q007",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-DMG"],
+    stem: "A user signs into a new Mac with the same Apple ID as their iPhone and expects texts and video calls to appear on the Mac. Which macOS features are these?",
+    choices: [
+      { id: "a", text: "Time Machine and FileVault", rationale: "Time Machine backs up and FileVault encrypts the disk; neither carries messages or calls." },
+      { id: "b", text: "iMessage and FaceTime", rationale: "Correct. iMessage and FaceTime are Apple ID/iCloud features that follow the user across Apple devices." },
+      { id: "c", text: "Disk Utility and Terminal", rationale: "Disk Utility manages disks and Terminal is the shell; neither delivers messages or calls." },
+      { id: "d", text: "Mission Control and Spotlight", rationale: "Mission Control manages windows and Spotlight searches; neither syncs conversations." },
+    ],
+    correct: "b",
+    explanation: "1.8 lists iMessage, FaceTime, and Drive under iCloud features. They sync through the Apple ID, which is why corporate restrictions on Apple ID matter.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["macos-features", "icloud"],
+  }),
+  q({
+    id: "C2-D1-O8-DMG-Q008",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-DMG"],
+    stem: "Which macOS system folder holds the operating system itself, sits on the protected system volume, and should not be edited by users or installers?",
+    choices: [
+      { id: "a", text: "/Applications", rationale: "/Applications holds machine-wide apps that users and installers add and remove all the time." },
+      { id: "b", text: "/Users", rationale: "/Users holds each person's home folder and data, not the OS." },
+      { id: "c", text: "/Library", rationale: "/Library holds machine-wide support files, fonts, and preferences that admins and installers can change." },
+      { id: "d", text: "/System", rationale: "Correct. /System is the OS itself on the sealed, read-only system volume protected by System Integrity Protection." },
+    ],
+    correct: "d",
+    explanation: "1.8 lists /Applications, /Users, /Library, /System, and /Users/Library. /System is Apple's OS and is protected; the others are where apps, users, and support files live.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["macos-folders", "system-folder"],
+  }),
+  q({
+    id: "C2-D1-O8-TIMEMACHINE-Q007",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-TIMEMACHINE"],
+    stem: "A Mac user connects an external monitor and needs to set which screen is on the left and choose mirror or extend. Where?",
+    choices: [
+      { id: "a", text: "Disk Utility", rationale: "Disk Utility formats, repairs, and images disks; it has no monitor arrangement." },
+      { id: "b", text: "Mission Control", rationale: "Mission Control shows open windows and Spaces, but monitor arrangement and mirroring are set in Displays." },
+      { id: "c", text: "System Settings (System Preferences) → Displays", rationale: "Correct. Displays sets arrangement, mirroring, resolution, and the main display." },
+      { id: "d", text: "Finder settings", rationale: "Finder settings control sidebar items and file views, not monitors." },
+    ],
+    correct: "c",
+    explanation: "Displays is one of the 1.8 System Preferences panes (System Settings on current macOS). It sets arrangement, mirroring, and resolution.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["system-preferences", "displays"],
+  }),
+  q({
+    id: "C2-D1-O8-TIMEMACHINE-Q008",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-TIMEMACHINE"],
+    stem: "A Mac needs the office network printer and its flatbed scanner added. Which pane?",
+    choices: [
+      { id: "a", text: "System Settings (System Preferences) → Printers & Scanners", rationale: "Correct. Printers & Scanners adds network or USB printers and scanners and sets the default printer." },
+      { id: "b", text: "Keychain Access", rationale: "Keychain stores passwords and certificates; it may hold a printer password but it does not add printers." },
+      { id: "c", text: "Accessibility", rationale: "Accessibility covers VoiceOver, Zoom, and other assistive features, not printers." },
+      { id: "d", text: "Spotlight", rationale: "Spotlight searches and launches items; it does not configure printers." },
+    ],
+    correct: "a",
+    explanation: "1.8 lists Printers and Scanners as System Preferences panes. On current macOS they share one pane, Printers & Scanners.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["system-preferences", "printers-scanners"],
+  }),
+  q({
+    id: "C2-D1-O8-KEYCHAIN-Q006",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-KEYCHAIN"],
+    stem: "A low-vision user needs VoiceOver and screen zoom turned on. Which macOS pane?",
+    choices: [
+      { id: "a", text: "Privacy & Security", rationale: "Privacy & Security grants app permissions and FileVault; it does not turn on VoiceOver or Zoom." },
+      { id: "b", text: "Displays", rationale: "Displays changes resolution and arrangement, but VoiceOver and Zoom live in Accessibility." },
+      { id: "c", text: "Accessibility", rationale: "Correct. Accessibility holds VoiceOver, Zoom, display contrast, and other assistive settings." },
+      { id: "d", text: "Dock", rationale: "Dock settings change size, position, and magnification of the Dock only." },
+    ],
+    correct: "c",
+    explanation: "Accessibility is a 1.8 System Preferences pane: VoiceOver, Zoom, captions, and pointer and keyboard aids.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["system-preferences", "accessibility"],
+  }),
+  q({
+    id: "C2-D1-O8-KEYCHAIN-Q007",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-KEYCHAIN"],
+    stem: "A Mac technician needs to run a shell command such as diskutil list. Which macOS tool opens the command line?",
+    choices: [
+      { id: "a", text: "Force Quit", rationale: "Force Quit (Command+Option+Esc) ends a hung app; it is not a shell." },
+      { id: "b", text: "Terminal", rationale: "Correct. Terminal, in /Applications/Utilities, is the macOS command-line shell (zsh by default)." },
+      { id: "c", text: "Disk Utility First Aid", rationale: "First Aid repairs a volume from the GUI; it does not give you a shell prompt." },
+      { id: "d", text: "Mission Control", rationale: "Mission Control shows windows and Spaces; it is not a command line." },
+    ],
+    correct: "b",
+    explanation: "Terminal is the 1.8 macOS command-line tool. Disk Utility, Force Quit, and Terminal are all listed, each for a different job.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["macos-tools", "terminal"],
+  }),
+  q({
+    id: "C2-D1-O8-KEYCHAIN-Q008",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-KEYCHAIN"],
+    stem: "Which two are macOS desktop features named on the 1.8 list?",
+    choices: [
+      { id: "a", text: "Task View", rationale: "Task View is the Windows virtual-desktop switcher; the macOS equivalent is Mission Control." },
+      { id: "b", text: "Finder", rationale: "Correct. Finder is the macOS file manager and is on the 1.8 features list." },
+      { id: "c", text: "File Explorer", rationale: "File Explorer is the Windows file manager, not a macOS feature." },
+      { id: "d", text: "Dock", rationale: "Correct. The Dock launches and switches apps and is on the 1.8 features list." },
+    ],
+    correct: ["b", "d"],
+    explanation: "Finder and the Dock are 1.8 macOS features. Task View and File Explorer are their Windows counterparts.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["macos-features", "finder-dock"],
+  }),
+  q({
+    id: "C2-D1-O8-KEYCHAIN-Q009",
+    objectiveId: "C2-D1-O8",
+    conceptIds: ["C2-D1-O8-KEYCHAIN"],
+    stem: "A user's three-finger swipe up no longer opens Mission Control on the MacBook trackpad. Which 1.8 feature setting should the technician check first?",
+    choices: [
+      { id: "a", text: "Continuity", rationale: "Continuity hands work between Apple devices; it does not map trackpad swipes." },
+      { id: "b", text: "Keychain", rationale: "Keychain stores passwords and certificates, not trackpad behavior." },
+      { id: "c", text: "Spotlight", rationale: "Spotlight is search; it has nothing to do with swipe mappings." },
+      { id: "d", text: "Gestures (Trackpad settings)", rationale: "Correct. Gestures in Trackpad settings map swipes to Mission Control, App Exposé, and desktops." },
+    ],
+    correct: "d",
+    explanation: "Gestures is a 1.8 macOS feature. Trackpad settings decide which swipe opens Mission Control or switches desktops.",
+    sourceBasis: "c2-obj-3.0",
+    remediationLessonId: "C2-D1-O8-L1",
+    tags: ["macos-features", "gestures"],
+  }),
 ];
-
-
-
-
-
-
-
-
-
-
-
